@@ -1,6 +1,17 @@
 package interfaz;
 
+import interfaz.Contacto;
+
 public class Actor_comun {
+	public Cabecera_pagina _cabecera;
+	public Reproductor _reproductor;
+	public Canciones_favoritas _cancionesFavoritas;
+	public Canciones_recomendadas _cancionesRecomendadas;
+	public Ultimas_canciones_reproducidas _ultimasCancionesReproducidas;
+	public Estadisticas _unnamed_Estadisticas_;
+	public Artistas_recomendados _artistasRecomendados;
+	public Contacto _contacto;
+	public Listas_de_reproduccion_recomendadas _listasDeReproduccionRecomendadas;
 	private Button _cerrarSesionB;
 	private Button _verPerfilB;
 	private TextField _buscadorTF;
