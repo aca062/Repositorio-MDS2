@@ -19,31 +19,31 @@ export class VistaLogin_cibernauta extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 90%; height: 90%; align-self: center; align-items: center; flex-grow: 0; margin: 5%; background-color: var(--lumo-contrast-10pct);">
-  <vaadin-button id="vaadinButton">
-    Button 
+  <vaadin-button id="vaadinButton" style="margin-top: 7%; padding: var(--lumo-space-l); flex-grow: 1; width: 20%;" margin-top="">
+   Logo
   </vaadin-button>
-  <vaadin-text-field label="Label" placeholder="Placeholder" id="label"></vaadin-text-field>
-  <vaadin-text-field label="Label" placeholder="Placeholder" id="label1"></vaadin-text-field>
-  <a href="https://vaadin.com" id="a">Link</a>
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
+  <vaadin-text-field label="Dirección de correo" id="label" style="width: 40%;"></vaadin-text-field>
+  <vaadin-text-field label="Contraseña" id="label1" style="width: 40%;"></vaadin-text-field>
+  <a href="https://vaadin.com" id="a">¿Has olvidado la contraseña?</a>
+  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 50%; flex-grow: 0; flex-shrink: 0; justify-content: center;">
    <vaadin-button id="vaadinButton1">
-     Button 
+    Registrarse
    </vaadin-button>
    <vaadin-button id="vaadinButton2">
-     Button 
+    Iniciar sesión
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-items: baseline;">
    <vaadin-button id="vaadinButton3">
      Button 
    </vaadin-button>
-   <h5 id="h5">Heading 5</h5>
+   <h5 id="h5">Iniciar sesión con Facebook</h5>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-items: baseline;">
    <vaadin-button id="vaadinButton4">
      Button 
    </vaadin-button>
-   <h5 id="h51">Heading 5</h5>
+   <h5 id="h51">Iniciar sesión con Google</h5>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
