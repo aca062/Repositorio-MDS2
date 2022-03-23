@@ -3,8 +3,8 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
-@customElement('vista-artista_elemento')
-export class VistaArtista_elemento extends LitElement {
+@customElement('vista-lista_de_reproduccion_ajena')
+export class VistaLista_de_reproduccion_ajena extends LitElement {
   static get styles() {
     return css`
       :host {
@@ -18,9 +18,9 @@ export class VistaArtista_elemento extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
-  <img id="img" style="width: 150px;" src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg">
+  <img id="img" style="width: 150px;" src="https://www.intelcoms.net/wp-content/uploads/2018/08/cancion.png">
   <vaadin-button id="vaadinButton" style="align-self: center;">
-    Nombre artista 
+   Nombre lista
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
