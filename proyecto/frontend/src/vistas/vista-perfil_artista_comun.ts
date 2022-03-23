@@ -26,7 +26,12 @@ export class VistaPerfil_artista_comun extends LitElement {
     </vaadin-button>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="align-self: center; width: 50%;">
-    <h5 style="margin-top: 40px;">Heading 5</h5>
+    <vaadin-horizontal-layout style="width: 100%; justify-content: space-between;">
+     <h5 style="margin-top: 40px;">Nick del artista</h5>
+     <vaadin-button style="margin-right: 10%;">
+      Dejar de seguir
+     </vaadin-button>
+    </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="align-items: center;">
      <h5>Heading 5</h5>
      <vaadin-button>
