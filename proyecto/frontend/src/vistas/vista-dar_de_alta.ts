@@ -17,22 +17,22 @@ export class VistaDar_de_alta extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h2 id="h2" style="margin-left: 10%;">Altas</h2>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 80%; align-self: center; align-items: center;">
+ <h1 style="margin-left: 10%;">Altas</h1>
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 80%; align-self: center; align-items: center;background-color: var(--lumo-contrast-10pct);">
   <vaadin-horizontal-layout theme="" style="margin-left: 10%; width: 80%; justify-content: space-around;" id="vaadinHorizontalLayout">
    <vaadin-button id="vaadinButton">
-    Artistas
+     Artistas 
    </vaadin-button>
    <vaadin-button id="vaadinButton1">
-    Canciones
+     Canciones 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="" id="vaadinHorizontalLayout1" style="margin-left: 10%; width: 80%; justify-content: space-around;">
    <vaadin-button id="vaadinButton3">
-    Álbumes
+     Álbumes 
    </vaadin-button>
    <vaadin-button id="vaadinButton2">
-    Estilos
+     Estilos 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

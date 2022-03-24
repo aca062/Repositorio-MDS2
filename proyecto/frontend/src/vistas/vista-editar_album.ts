@@ -22,27 +22,21 @@ export class VistaEditar_album extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: 10%;">Editar album</h2>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout4" style="width: 100%; height: 20%; justify-content: flex-start; align-self: center;">
-  <img id="img" style="margin-left: 10%;" src="https://cdn-icons-png.flaticon.com/512/26/26805.png">
-  <vaadin-button id="vaadinButton" style="flex-grow: 0; align-self: center; margin-left: 10%;">
-   Cambiar imagen
-  </vaadin-button>
- </vaadin-horizontal-layout>
- <vaadin-horizontal-layout id="vaadinHorizontalLayout3" style="height: 10%; width: 100%; justify-content: flex-start;">
-  <vaadin-text-field label="Titulo" id="titulo" style="width: 80%; margin-left: 10%; align-self: center;"></vaadin-text-field>
- </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="height: 10%; width: 100%; justify-content: flex-start;" id="vaadinHorizontalLayout2">
-  <vaadin-text-field label="Nombre artista " style="width: 80%; margin-left: 10%; align-self: center;" id="nombreArtista"></vaadin-text-field>
- </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="height: 10%; width: 100%; justify-content: flex-start;" id="vaadinHorizontalLayout1">
-  <vaadin-text-field label="Fecha edición" style="width: 80%; margin-left: 10%; align-self: center;" id="fechaEdición"></vaadin-text-field>
- </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="height: 10%; width: 100%; justify-content: flex-start; flex-direction: row;" id="vaadinHorizontalLayout">
-  <vaadin-select value="Item one" id="vaadinSelect" style="width: 80%; margin-left: 10%;">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl);">
+  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout4" style="width: 100%; height: 20%; justify-content: flex-start; align-self: center;">
+   <img id="img" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
+   <vaadin-button id="vaadinButton" style="flex-grow: 0; align-self: center;">
+     Cambiar imagen 
+   </vaadin-button>
+  </vaadin-horizontal-layout>
+  <vaadin-text-field label="Nombre artista " style="width: 80%; align-self: flex-start;" id="nombreArtista" value="Bad bunny"></vaadin-text-field>
+  <vaadin-text-field label="Fecha edición" style="width: 80%; align-self: flex-start;" id="fechaEdición" value="27/11/2020"></vaadin-text-field>
+  <vaadin-text-field label="Titulo" id="titulo" style="width: 80%; align-self: flex-start;" value="El último tour del mundo"></vaadin-text-field>
+  <vaadin-select value="Item one" id="vaadinSelect" style="width: 80%;">
    <template>
     <vaadin-list-box id="vaadinListBox1" selected="0">
      <vaadin-item selected>
-       Item one 
+      ListaCanciones
      </vaadin-item>
      <vaadin-item>
        Item two 
@@ -53,18 +47,18 @@ export class VistaEditar_album extends LitElement {
     </vaadin-list-box>
    </template>
   </vaadin-select>
- </vaadin-horizontal-layout>
- <vaadin-list-box id="vaadinListBox" style="width: 80%; margin-left: 10%;">
-  <vaadin-item id="vaadinItem2">
-    Item one 
-  </vaadin-item>
-  <vaadin-item id="vaadinItem1">
-    Item two 
-  </vaadin-item>
-  <vaadin-item id="vaadinItem">
-    Item three 
-  </vaadin-item>
- </vaadin-list-box>
+  <vaadin-list-box id="vaadinListBox" style="width: 80%;">
+   <vaadin-item id="vaadinItem2">
+    120
+   </vaadin-item>
+   <vaadin-item id="vaadinItem1">
+    Dakiti
+   </vaadin-item>
+   <vaadin-item id="vaadinItem">
+    Booker T
+   </vaadin-item>
+  </vaadin-list-box>
+ </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }
