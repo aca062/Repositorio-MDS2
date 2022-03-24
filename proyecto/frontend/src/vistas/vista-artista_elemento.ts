@@ -18,9 +18,9 @@ export class VistaArtista_elemento extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
-  <img id="img" style="width: 150px;" src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg">
+  <img id="img" style="width: 150px;" src="https://www.runneruprecords.com/wp-content/uploads/2019/12/Juice-Wrld-promesa-del-rap-muere.jpg">
   <vaadin-button id="vaadinButton" style="align-self: center;">
-    Nombre artista 
+   Juice WRLD
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

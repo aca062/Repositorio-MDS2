@@ -1,6 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import './vista-cancion';
 
 @customElement('vista-canciones_favoritas')
 export class VistaCanciones_favoritas extends LitElement {
@@ -19,10 +20,14 @@ export class VistaCanciones_favoritas extends LitElement {
  <vaadin-horizontal-layout theme="spacing">
   <h1 id="h1">Canciones favoritas</h1>
   <vaadin-button style="align-self: center;">
-   Ver más
+    Ver más 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="height: 100%;"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
+  <vista-cancion></vista-cancion>
+  <vista-cancion></vista-cancion>
+  <vista-cancion></vista-cancion>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

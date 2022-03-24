@@ -1,4 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
+import './vista-album_admin';
 
 @customElement('vista-albumes_busqueda_admin')
 export class VistaAlbumes_busqueda_admin extends LitElement {
@@ -14,8 +15,11 @@ export class VistaAlbumes_busqueda_admin extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Heading 1</h1>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="height: 100%;"></vaadin-horizontal-layout>
+ <h1 id="h1">Álbumes</h1>
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
+  <vista-album_admin></vista-album_admin>
+  <vista-album_admin></vista-album_admin>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

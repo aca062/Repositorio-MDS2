@@ -1,5 +1,10 @@
 import { LitElement, html, css, customElement } from 'lit-element';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-select/src/vaadin-select.js';
+import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
+import '@vaadin/vaadin-item/src/vaadin-item.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import './vista-cancion';
 
 @customElement('vista-lista_de_reproduccion_favoritos')
 export class VistaLista_de_reproduccion_favoritos extends LitElement {
@@ -15,8 +20,35 @@ export class VistaLista_de_reproduccion_favoritos extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Heading 1</h1>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="height: 100%; width: 100%;"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing-xl">
+  <h1 id="h1">Lista de favoritos</h1>
+  <vaadin-select value="Opciones" style="align-self: center;">
+   <template>
+    <vaadin-list-box selected="0">
+     <vaadin-item selected>
+      Opciones
+     </vaadin-item>
+     <vaadin-item>
+       Item two 
+     </vaadin-item>
+     <vaadin-item>
+       Item three 
+     </vaadin-item>
+    </vaadin-list-box>
+   </template>
+  </vaadin-select>
+ </vaadin-horizontal-layout>
+ <h3>Paco12</h3>
+ <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
+  <vaadin-horizontal-layout theme="spacing" style="align-self: flex-end;">
+   <h2 style="margin-right: var(--lumo-space-xl);">3/1000</h2>
+  </vaadin-horizontal-layout>
+  <vaadin-vertical-layout theme="spacing" style="width: 100%;">
+   <vista-cancion id="vistaCancion" style="width: 100%;"></vista-cancion>
+   <vista-cancion id="vistaCancion1" style="width: 100%;"></vista-cancion>
+   <vista-cancion id="vistaCancion2" style="width: 100%;"></vista-cancion>
+  </vaadin-vertical-layout>
+ </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

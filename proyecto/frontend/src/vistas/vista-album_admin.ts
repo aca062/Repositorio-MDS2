@@ -16,15 +16,15 @@ export class VistaAlbum_admin extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center;">
-  <img id="img" style="width: 150px;" src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg">
-  <h4 id="h4">Nombre album</h4>
+  <img id="img" style="width: 150px;" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
+  <h4 id="h4">El último tour del mundo</h4>
   <vaadin-button id="vaadinButton">
-   Editar
+    Editar 
   </vaadin-button>
   <vaadin-button id="vaadinButton1">
-   Eliminar
+    Eliminar 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

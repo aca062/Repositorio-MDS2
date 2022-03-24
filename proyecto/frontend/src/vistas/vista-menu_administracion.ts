@@ -24,10 +24,10 @@ export class VistaMenu_administracion extends LitElement {
  <vaadin-vertical-layout id="vaadinVerticalLayout1" style="width: 90%; height: 90%; margin-top: 1%; margin-bottom: 5%; align-self: center;background-color: var(--lumo-contrast-10pct);">
   <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: center; flex-grow: 0; flex-shrink: 1; justify-content: center; align-items: flex-start; width: 100%;">
    <vaadin-button id="vaadinButton1" style="align-self: flex-start; flex-grow: 0; margin: var(--lumo-space-xl); width: 20%;">
-    Buscar elemento
+     Buscar elemento 
    </vaadin-button>
    <vaadin-button id="vaadinButton2" style="margin: var(--lumo-space-xl); width: 20%;">
-    Dar de alta
+     Dar de alta 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="width: 100%; height: 20%; align-self: flex-start; align-items: center; justify-content: space-around;">
@@ -44,17 +44,17 @@ export class VistaMenu_administracion extends LitElement {
   </vaadin-horizontal-layout>
   <vaadin-list-box id="vaadinListBox" style="width: 95%; height: 100%; align-self: flex-start; margin-right: var(--lumo-space-l); margin-bottom: var(--lumo-space-l); margin-left: var(--lumo-space-l); margin-top: var(--lumo-space-l); flex-grow: 0;">
    <vaadin-item id="vaadinItem" style="align-self: flex-start; width: 100%;">
-     Item one 
+    Whising Well
    </vaadin-item>
    <vaadin-item id="vaadinItem1" style="width: 100%;">
-     Item two 
+    Plan A
    </vaadin-item>
    <hr id="hr">
    <vaadin-item id="vaadinItem2" style="width: 100%;">
-     Item three 
+    Lifes a Mess
    </vaadin-item>
    <vaadin-item id="vaadinItem3" style="width: 100%;">
-     Item four 
+    Still Lost
    </vaadin-item>
   </vaadin-list-box>
  </vaadin-vertical-layout>

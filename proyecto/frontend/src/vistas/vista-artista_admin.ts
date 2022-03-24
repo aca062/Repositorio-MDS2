@@ -18,8 +18,8 @@ export class VistaArtista_admin extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center;">
-  <img id="img" style="width: 150px;" src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg">
-  <h4 id="h4">Nombre artista</h4>
+  <img id="img" style="width: 150px;" src="https://pbs.twimg.com/media/E51LjjnXIAMO8NM.jpg">
+  <h4 id="h4">Bad bunny</h4>
   <vaadin-button id="vaadinButton">
     Editar 
   </vaadin-button>

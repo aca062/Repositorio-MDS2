@@ -1,4 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
+import './vista-lista_de_reproduccion_ajena';
 
 @customElement('vista-listas_de_reproduccion_recomendadas')
 export class VistaListas_de_reproduccion_recomendadas extends LitElement {
@@ -13,9 +14,11 @@ export class VistaListas_de_reproduccion_recomendadas extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Heading 1</h1>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="height: 100%;"></vaadin-horizontal-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing">
+ <h1 id="h1">Listas de reproducción</h1>
+ <vista-lista_de_reproduccion_ajena></vista-lista_de_reproduccion_ajena>
+ <vista-lista_de_reproduccion_ajena></vista-lista_de_reproduccion_ajena>
+ <vista-lista_de_reproduccion_ajena></vista-lista_de_reproduccion_ajena>
 </vaadin-vertical-layout>
 `;
   }

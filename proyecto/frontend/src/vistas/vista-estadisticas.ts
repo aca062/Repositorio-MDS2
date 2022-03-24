@@ -17,11 +17,11 @@ export class VistaEstadisticas extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center;">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center;background-color: var(--lumo-contrast-10pct);">
   <h2>Tus estadísticas</h2>
  </vaadin-horizontal-layout>
  <h2 style="align-self: center;">Más escuchados</h2>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-vertical-layout theme="spacing" style="width: 100%;">
    <h4 style="align-self: center;">Canción</h4>
    <img style="align-self: center;">
@@ -48,7 +48,7 @@ export class VistaEstadisticas extends LitElement {
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <h2 style="align-self: center;">Tiempo de uso</h2>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-vertical-layout theme="spacing" style="width: 100%;">
    <h4 style="align-self: center;">Tiempo de uso de este año</h4>
    <h4 style="align-self: center;">Heading 4</h4>

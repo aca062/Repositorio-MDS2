@@ -18,7 +18,7 @@ export class VistaEstilo_admin extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center;">
-  <h4 id="h4">Nombre estilo</h4>
+  <h4 id="h4">Reguetón</h4>
   <vaadin-button id="vaadinButton">
     Editar 
   </vaadin-button>

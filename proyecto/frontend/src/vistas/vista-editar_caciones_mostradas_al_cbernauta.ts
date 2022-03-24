@@ -21,12 +21,12 @@ export class VistaEditar_caciones_mostradas_al_cbernauta extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: var(--lumo-space-xl);">Editar canciones mostradas al cibernauta</h2>
- <vaadin-vertical-layout id="vaadinVerticalLayout1" style="margin-left: var(--lumo-space-xl); width: 100%;">
+ <vaadin-vertical-layout id="vaadinVerticalLayout1" style="margin-left: var(--lumo-space-xl); width: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-select value="Item one" id="vaadinSelect" style="width: 80%;" placeholder="Buscar canciones">
    <template>
     <vaadin-list-box id="vaadinListBox1" selected="0">
-     <vaadin-item id="vaadinItem4">
-       Item one 
+     <vaadin-item id="vaadinItem4" selected>
+      Lista de canciones
      </vaadin-item>
      <vaadin-item id="vaadinItem5">
        Item two 
@@ -39,25 +39,24 @@ export class VistaEditar_caciones_mostradas_al_cbernauta extends LitElement {
   </vaadin-select>
   <vaadin-list-box id="vaadinListBox" style="align-self: flex-start; width: 80%;">
    <vaadin-item id="vaadinItem">
-     Item one 
+    Whising Well
    </vaadin-item>
    <vaadin-item id="vaadinItem1">
-     Item two 
+    Plan A
    </vaadin-item>
-   <hr id="hr">
    <vaadin-item id="vaadinItem2">
-     Item three 
+    Lifes a Mess
    </vaadin-item>
    <vaadin-item id="vaadinItem3">
-     Item four 
+    Still Lost
    </vaadin-item>
   </vaadin-list-box>
   <vaadin-horizontal-layout theme="spacing-l" id="vaadinHorizontalLayout" style="align-self: flex-end; margin-right: 10%;">
    <vaadin-button id="vaadinButton">
-    Cancelar
+     Cancelar 
    </vaadin-button>
    <vaadin-button id="vaadinButton1">
-    Confirmar
+     Confirmar 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

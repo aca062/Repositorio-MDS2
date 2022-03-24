@@ -18,7 +18,7 @@ export class VistaUsuario_admin extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center;">
-  <h4 id="h4">Nombre usuario</h4>
+  <h4 id="h4">Paco12</h4>
   <vaadin-button id="vaadinButton">
     Editar 
   </vaadin-button>
