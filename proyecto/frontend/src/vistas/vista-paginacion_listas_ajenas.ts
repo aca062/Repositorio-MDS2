@@ -15,7 +15,6 @@ export class VistaPaginacion_listas_ajenas extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h1 id="h1">Heading 1</h1>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="height: 100%;"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }
