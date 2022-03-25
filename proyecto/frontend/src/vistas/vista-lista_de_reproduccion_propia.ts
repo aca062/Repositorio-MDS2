@@ -18,9 +18,9 @@ export class VistaLista_de_reproduccion_propia extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
-  <img id="img" style="width: 150px;" src="https://www.intelcoms.net/wp-content/uploads/2018/08/cancion.png">
+  <img id="img" style="width: 150px;" src="https://i.scdn.co/image/ab67706f00000003568579a7b48bad7547095271">
   <vaadin-button id="vaadinButton" style="align-self: center;">
-    Nombre lista 
+   This is Bad Bunny
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

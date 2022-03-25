@@ -23,12 +23,12 @@ export class VistaCrear_lista_de_reproduccion extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%; margin: var(--lumo-space-l);" id="vaadinVerticalLayout">
  <h2 id="h2">Crear lista de reproducción</h2>
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%;">
-  <vaadin-text-field label="Label" placeholder="Placeholder" id="label" style="width: 70%;"></vaadin-text-field>
-  <vaadin-select value="Item one" id="vaadinSelect" style="width: 70%;">
+  <vaadin-text-field label="Nombre" id="label" style="width: 70%;" value="Mi lista nº 3"></vaadin-text-field>
+  <vaadin-select value="Buscador de canciones" id="vaadinSelect" style="width: 70%;" label="Lista de canciones">
    <template>
-    <vaadin-list-box>
-     <vaadin-item>
-       Item one 
+    <vaadin-list-box selected="0">
+     <vaadin-item selected>
+      Buscador de canciones
      </vaadin-item>
      <vaadin-item>
        Item two 
@@ -40,27 +40,25 @@ export class VistaCrear_lista_de_reproduccion extends LitElement {
    </template>
   </vaadin-select>
   <vaadin-list-box id="vaadinListBox" style="width: 70%;">
-   <b>Select an Item</b>
    <vaadin-item id="vaadinItem">
-     Item one 
+    Clouds
    </vaadin-item>
    <vaadin-item id="vaadinItem1">
-     Item two 
+    Whising Well
    </vaadin-item>
-   <hr id="hr">
    <vaadin-item id="vaadinItem2">
-     Item three 
+    Lucid Dreams
    </vaadin-item>
    <vaadin-item id="vaadinItem3">
-     Item four 
+    120
    </vaadin-item>
   </vaadin-list-box>
   <vaadin-horizontal-layout theme="spacing-xl" id="vaadinHorizontalLayout" style="width: 100%; justify-content: flex-end;">
    <vaadin-button id="vaadinButton" style="margin: var(--lumo-space-xl);">
-    Cancelar
+     Cancelar 
    </vaadin-button>
    <vaadin-button id="vaadinButton1" style="margin: var(--lumo-space-xl);">
-    Confirmar
+     Confirmar 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

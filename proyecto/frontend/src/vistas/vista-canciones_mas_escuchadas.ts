@@ -1,4 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
+import './vista-cancion';
 
 @customElement('vista-canciones_mas_escuchadas')
 export class VistaCanciones_mas_escuchadas extends LitElement {
@@ -14,8 +15,10 @@ export class VistaCanciones_mas_escuchadas extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Heading 1</h1>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="height: 100%;"></vaadin-horizontal-layout>
+ <h1 id="h1">Canciones más escuchadas</h1>
+ <vista-cancion></vista-cancion>
+ <vista-cancion></vista-cancion>
+ <vista-cancion></vista-cancion>
 </vaadin-vertical-layout>
 `;
   }

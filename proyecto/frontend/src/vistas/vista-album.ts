@@ -18,9 +18,9 @@ export class VistaAlbum extends LitElement {
     return html`
 <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center;">
-  <img id="img" style="width: 150px;" src="https://www.laneuronaatenta.com.ar/wp-content/uploads/DestruyendoAlAlbum-e1358122420170.jpg">
+  <img id="img" style="width: 150px;" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
   <vaadin-button id="vaadinButton">
-   Nombre de artista
+   El último tour del mundo
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

@@ -21,26 +21,26 @@ export class VistaAnadir_evento extends LitElement {
  <h2 id="h2">Añadir evento</h2>
  <vaadin-vertical-layout id="vaadinVerticalLayout1" style="width: 100%; height: 100%;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center; width: 30%;">
-   <img id="img" style="width: 200px;" src="https://www.bbva.com/wp-content/uploads/2020/05/festival2-1920x1180.jpg">
+   <img id="img" style="width: 200px;" src="https://cdn-icons-png.flaticon.com/512/42/42956.png">
    <vaadin-button id="vaadinButton" style="margin-left: var(--lumo-space-xl);">
-    Añadir foto
+     Añadir foto 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="width: 100%;">
-   <vaadin-text-field label="Fecha" id="fecha" style="width: 70%;"></vaadin-text-field>
+   <vaadin-text-field label="Fecha" id="fecha" style="width: 70%;" value="14/04/2022"></vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="width: 100%;">
-   <vaadin-text-field label="Hora" id="hora" style="width: 70%;"></vaadin-text-field>
+   <vaadin-text-field label="Hora" id="hora" style="width: 70%;" value="1.00"></vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout3" style="width: 100%;">
-   <vaadin-text-field label="Lugar" id="lugar" style="width: 70%;"></vaadin-text-field>
+   <vaadin-text-field label="Lugar" id="lugar" style="width: 70%;" value="State farm arena"></vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout id="vaadinHorizontalLayout4" style="justify-content: space-around; width: 100%;">
    <vaadin-button id="vaadinButton1">
-    Cancelar
+     Cancelar 
    </vaadin-button>
    <vaadin-button id="vaadinButton2" style="flex-grow: 0; flex-shrink: 1;">
-    Confirmar
+     Confirmar 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

@@ -23,14 +23,14 @@ export class VistaCancion extends LitElement {
         background-size: 100px 100px;
         background-position:center;"></vaadin-button>
  <vaadin-vertical-layout style="align-items: flex-start; width: 50%;">
-  <h5 id="h5" style="padding: var(--lumo-space-s); width: 50%; align-self: flex-start;">Nombre canción</h5>
-  <h5 style="width: 50%; padding: var(--lumo-space-s);">Número de reproducciones</h5>
+  <h5 id="h5" style="padding: var(--lumo-space-s); width: 50%; align-self: flex-start;">120</h5>
+  <h5 style="width: 50%; padding: var(--lumo-space-s);">252.146.850</h5>
  </vaadin-vertical-layout>
  <vaadin-button style="background-image:url('http://assets.stickpng.com/images/5a02bfca18e87004f1ca4395.png'); background-repeat:no-repeat;
         height:60px;
         width:70px;
         background-size: 60px 50px;
-        background-position:center;" src=""></vaadin-button>
+        background-position:center;background-color:#FFFFFF" src=""></vaadin-button>
 </vaadin-horizontal-layout>
 `;
   }

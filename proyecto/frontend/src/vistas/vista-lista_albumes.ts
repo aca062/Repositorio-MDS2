@@ -1,4 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
+import './vista-album';
 
 @customElement('vista-lista_albumes')
 export class VistaLista_albumes extends LitElement {
@@ -14,8 +15,13 @@ export class VistaLista_albumes extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Heading 1</h1>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="height: 100%;"></vaadin-horizontal-layout>
+ <h1 id="h1">Álbumes</h1>
+ <vaadin-horizontal-layout theme="spacing-xl" id="vaadinHorizontalLayout">
+  <vista-album></vista-album>
+  <vista-album></vista-album>
+  <vista-album></vista-album>
+  <vista-album></vista-album>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }
