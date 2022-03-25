@@ -1,5 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import './vista-lista_de_reproduccion_propia';
 
 @customElement('vista-paginacion_listas_propias')
 export class VistaPaginacion_listas_propias extends LitElement {
@@ -14,8 +16,12 @@ export class VistaPaginacion_listas_propias extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <h1 style="width: 100%;">Heading 1</h1>
+<vaadin-vertical-layout style="width: 100%;">
+ <vaadin-horizontal-layout theme="spacing-l">
+  <vista-lista_de_reproduccion_propia></vista-lista_de_reproduccion_propia>
+  <vista-lista_de_reproduccion_propia></vista-lista_de_reproduccion_propia>
+  <vista-lista_de_reproduccion_propia></vista-lista_de_reproduccion_propia>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

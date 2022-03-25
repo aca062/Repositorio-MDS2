@@ -1,4 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import './vista-lista_de_reproduccion_ajena';
 
 @customElement('vista-paginacion_listas_ajenas')
 export class VistaPaginacion_listas_ajenas extends LitElement {
@@ -13,8 +15,13 @@ export class VistaPaginacion_listas_ajenas extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Heading 1</h1>
+<vaadin-vertical-layout id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout theme="spacing-l">
+  <vista-lista_de_reproduccion_ajena></vista-lista_de_reproduccion_ajena>
+  <vista-lista_de_reproduccion_ajena></vista-lista_de_reproduccion_ajena>
+  <vista-lista_de_reproduccion_ajena></vista-lista_de_reproduccion_ajena>
+  <vista-lista_de_reproduccion_ajena></vista-lista_de_reproduccion_ajena>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }
