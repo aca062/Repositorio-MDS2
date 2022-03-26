@@ -1,7 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-lista_albumes';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-ver_todos_los_albumes')
@@ -19,7 +19,7 @@ export class VistaVer_todos_los_albumes extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout style="width: 100%; justify-content: space-between;">
-  <vista-lista_albumes style="margin-left: var(--lumo-space-xl);"></vista-lista_albumes>
+  <vista-lista_albumes style="margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);"></vista-lista_albumes>
   <vaadin-vertical-layout theme="spacing" style="align-self: center; margin-right: var(--lumo-space-xl);">
    <h5>Mostrando 4 listas por pagina</h5>
   </vaadin-vertical-layout>

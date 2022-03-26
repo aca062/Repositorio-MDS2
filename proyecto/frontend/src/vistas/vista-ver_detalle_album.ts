@@ -22,11 +22,11 @@ export class VistaVer_detalle_album extends LitElement {
  <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 0; margin: var(--lumo-space-l);">
   <vista-album id="vistaAlbum" style="flex-grow: 0; flex-shrink: 1; margin: var(--lumo-space-m);"></vista-album>
   <vaadin-button id="vaadinButton" style="align-self: center; flex-grow: 0; margin-left: 20%;">
-   Bad Bunny
+    Bad Bunny 
   </vaadin-button>
   <h5 id="h5" style="align-self: center; margin-left: 15%;">27/11/2020</h5>
  </vaadin-vertical-layout>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: center; width: 80%; height: 100%;">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: center; width: 80%; height: 100%;background-color: var(--lumo-contrast-10pct);">
   <vista-lista_de_canciones id="vistaLista_de_canciones" style="width: 100%;"></vista-lista_de_canciones>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

@@ -19,7 +19,7 @@ export class VistaPerfil extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-vertical-layout theme="spacing" style="width: 100%;">
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center;">
+  <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center;background-color: var(--lumo-contrast-10pct);">
    <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; align-self: center; align-items: center; width: fit-content;">
     <img style="width: 200px; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l);" src="https://i.pinimg.com/736x/cb/5d/64/cb5d64be736ab84602ee1bcd20303d4e.jpg">
     <vaadin-button>
@@ -49,7 +49,7 @@ export class VistaPerfil extends LitElement {
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: space-between;">
-  <vista-listas_de_reproduccion_propias></vista-listas_de_reproduccion_propias>
+  <vista-listas_de_reproduccion_propias style="background-color: var(--lumo-contrast-10pct);"></vista-listas_de_reproduccion_propias>
   <vaadin-button style="margin: var(--lumo-space-m);">
     Crear una nueva lista 
   </vaadin-button>

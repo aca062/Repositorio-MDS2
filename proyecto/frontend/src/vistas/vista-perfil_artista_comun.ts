@@ -22,7 +22,7 @@ export class VistaPerfil_artista_comun extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-vertical-layout theme="spacing" style="width: 100%;">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center;">
    <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; align-self: center; align-items: center; width: fit-content;">
     <img style="width: 200px; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l);" src="https://i.scdn.co/image/ab6761610000e5eb6ad57a3cb26ae3ffd0f28f22">
@@ -57,16 +57,16 @@ export class VistaPerfil_artista_comun extends LitElement {
     Recibir notificaciones 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-start;">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-start;background-color: var(--lumo-contrast-10pct);">
   <vista-listas_de_reproduccion_propias style="margin-left: var(--lumo-space-xl);"></vista-listas_de_reproduccion_propias>
   <vaadin-button style="margin: var(--lumo-space-m);">
     Crear una nueva lista 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end; align-self: flex-start; width: 100%;">
+ <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end; align-self: flex-start; width: 100%;background-color: var(--lumo-contrast-10pct);">
   <vista-listas_de_reproduccion_ajenas style="width: 100%; margin-left: var(--lumo-space-xl);"></vista-listas_de_reproduccion_ajenas>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-vertical-layout theme="spacing" style="width: 100%;">
    <vista-canciones_mas_escuchadas style="align-self: center;"></vista-canciones_mas_escuchadas>
   </vaadin-vertical-layout>
@@ -77,12 +77,12 @@ export class VistaPerfil_artista_comun extends LitElement {
    <vista-lista_album style="align-self: center;"></vista-lista_album>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" style="width: 100%;">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
    <vaadin-horizontal-layout style="width: 100%; margin-left: var(--lumo-space-xl);">
     <h2 style="margin-top: var(--lumo-space-xl); margin-right: var(--lumo-space-l); margin-left: var(--lumo-space-l); align-self: center;">Festivales y Conciertos</h2>
     <vaadin-button style="margin-top: var(--lumo-space-xl);">
-     Añadir
+      Añadir 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>

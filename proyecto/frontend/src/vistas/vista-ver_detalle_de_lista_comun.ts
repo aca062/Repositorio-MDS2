@@ -27,7 +27,7 @@ export class VistaVer_detalle_de_lista_comun extends LitElement {
    <template>
     <vaadin-list-box>
      <vaadin-item selected>
-      Opciones
+       Opciones 
      </vaadin-item>
      <vaadin-item>
        Item two 
@@ -40,9 +40,9 @@ export class VistaVer_detalle_de_lista_comun extends LitElement {
   </vaadin-select>
  </vaadin-horizontal-layout>
  <vaadin-button>
-  Nombre del creador
+  Paco12
  </vaadin-button>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-horizontal-layout style="align-self: flex-end; margin-right: 10%;">
    <h2>4/1000</h2>
   </vaadin-horizontal-layout>

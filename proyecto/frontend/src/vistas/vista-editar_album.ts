@@ -22,7 +22,7 @@ export class VistaEditar_album extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: 10%;">Editar album</h2>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl);">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout4" style="width: 100%; height: 20%; justify-content: flex-start; align-self: center;">
    <img id="img" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
    <vaadin-button id="vaadinButton" style="flex-grow: 0; align-self: center;">
@@ -36,7 +36,7 @@ export class VistaEditar_album extends LitElement {
    <template>
     <vaadin-list-box id="vaadinListBox1" selected="0">
      <vaadin-item selected>
-      ListaCanciones
+       ListaCanciones 
      </vaadin-item>
      <vaadin-item>
        Item two 
@@ -49,13 +49,13 @@ export class VistaEditar_album extends LitElement {
   </vaadin-select>
   <vaadin-list-box id="vaadinListBox" style="width: 80%;">
    <vaadin-item id="vaadinItem2">
-    120
+     120 
    </vaadin-item>
    <vaadin-item id="vaadinItem1">
-    Dakiti
+     Dakiti 
    </vaadin-item>
    <vaadin-item id="vaadinItem">
-    Booker T
+     Booker T 
    </vaadin-item>
   </vaadin-list-box>
  </vaadin-vertical-layout>

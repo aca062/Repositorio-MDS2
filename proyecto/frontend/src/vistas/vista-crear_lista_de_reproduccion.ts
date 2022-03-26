@@ -22,13 +22,13 @@ export class VistaCrear_lista_de_reproduccion extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; margin: var(--lumo-space-l);" id="vaadinVerticalLayout">
  <h2 id="h2">Crear lista de reproducción</h2>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%;">
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-text-field label="Nombre" id="label" style="width: 70%;" value="Mi lista nº 3"></vaadin-text-field>
   <vaadin-select value="Buscador de canciones" id="vaadinSelect" style="width: 70%;" label="Lista de canciones">
    <template>
     <vaadin-list-box selected="0">
      <vaadin-item selected>
-      Buscador de canciones
+       Buscador de canciones 
      </vaadin-item>
      <vaadin-item>
        Item two 
@@ -41,16 +41,16 @@ export class VistaCrear_lista_de_reproduccion extends LitElement {
   </vaadin-select>
   <vaadin-list-box id="vaadinListBox" style="width: 70%;">
    <vaadin-item id="vaadinItem">
-    Clouds
+     Clouds 
    </vaadin-item>
    <vaadin-item id="vaadinItem1">
-    Whising Well
+     Whising Well 
    </vaadin-item>
    <vaadin-item id="vaadinItem2">
-    Lucid Dreams
+     Lucid Dreams 
    </vaadin-item>
    <vaadin-item id="vaadinItem3">
-    120
+     120 
    </vaadin-item>
   </vaadin-list-box>
   <vaadin-horizontal-layout theme="spacing-xl" id="vaadinHorizontalLayout" style="width: 100%; justify-content: flex-end;">

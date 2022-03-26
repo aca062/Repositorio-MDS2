@@ -19,7 +19,7 @@ export class VistaAnadir_evento extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; padding-left: var(--lumo-space-xl);" id="vaadinVerticalLayout">
  <h2 id="h2">Añadir evento</h2>
- <vaadin-vertical-layout id="vaadinVerticalLayout1" style="width: 100%; height: 100%;">
+ <vaadin-vertical-layout id="vaadinVerticalLayout1" style="width: 100%; height: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center; width: 30%;">
    <img id="img" style="width: 200px;" src="https://cdn-icons-png.flaticon.com/512/42/42956.png">
    <vaadin-button id="vaadinButton" style="margin-left: var(--lumo-space-xl);">

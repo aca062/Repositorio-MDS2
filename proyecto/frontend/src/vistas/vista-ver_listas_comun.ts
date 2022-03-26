@@ -23,11 +23,11 @@ export class VistaVer_listas_comun extends LitElement {
   <h1>Listas de reproducción</h1>
   <h3>Mostrando 4 listas por página</h3>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing">
+ <vaadin-horizontal-layout theme="spacing" style="background-color: var(--lumo-contrast-10pct);">
   <vista-paginacion_listas_ajenas></vista-paginacion_listas_ajenas>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing">
-  <vista-paginacion_listas_propias></vista-paginacion_listas_propias>
+  <vista-paginacion_listas_propias style="background-color: var(--lumo-contrast-10pct);"></vista-paginacion_listas_propias>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="align-self: flex-end; align-items: center;">
   <vaadin-button style="background-image:url('https://cdn-icons-png.flaticon.com/512/545/545680.png');

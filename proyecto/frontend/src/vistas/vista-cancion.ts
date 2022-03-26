@@ -30,7 +30,7 @@ export class VistaCancion extends LitElement {
         height:60px;
         width:70px;
         background-size: 60px 50px;
-        background-position:center;background-color:#FFFFFF" src=""></vaadin-button>
+        background-position:center;" src=""></vaadin-button>
 </vaadin-horizontal-layout>
 `;
   }

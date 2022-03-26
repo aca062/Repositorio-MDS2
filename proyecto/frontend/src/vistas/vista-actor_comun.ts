@@ -21,7 +21,7 @@ export class VistaActor_comun extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center;background-color: var(--lumo-contrast-10pct);">
   <vaadin-button style="text-align: center;">
     Administración 

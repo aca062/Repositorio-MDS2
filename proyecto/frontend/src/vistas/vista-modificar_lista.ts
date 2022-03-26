@@ -22,13 +22,13 @@ export class VistaModificar_lista extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: flex-start;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: var(--lumo-space-xl); margin-top: var(--lumo-space-xl);">Editar lista de reproducción</h2>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 50%; align-self: center; align-items: center;">
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 50%; align-self: center; align-items: center;background-color: var(--lumo-contrast-10pct);">
   <vaadin-text-field label="Nombre" placeholder="" id="nombre" style="margin-left: var(--lumo-space-xl); align-self: flex-start;" value="Vibes Up"></vaadin-text-field>
   <vaadin-select value="Buscador de canciones" id="vaadinSelect" style="margin-left: var(--lumo-space-xl); width: 30%; align-self: flex-start;" label="Lista de canciones">
    <template>
     <vaadin-list-box>
      <vaadin-item selected>
-      Buscador de canciones
+       Buscador de canciones 
      </vaadin-item>
      <vaadin-item>
        Item two 
@@ -42,21 +42,21 @@ export class VistaModificar_lista extends LitElement {
   <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 85%; margin-left: var(--lumo-space-xl); flex-grow: 0; align-self: flex-start;">
    <vaadin-list-box id="vaadinListBox">
     <vaadin-item id="vaadinItem" style="flex-grow: 0; flex-shrink: 0;">
-     Heading Up High
+      Heading Up High 
      <vaadin-button id="vaadinButton" style="flex-grow: 0; margin-left: var(--lumo-space-xl);">
-      Eliminar
+       Eliminar 
      </vaadin-button>
     </vaadin-item>
     <vaadin-item id="vaadinItem1">
-     California
+      California 
      <vaadin-button style="flex-grow: 0; margin-left: var(--lumo-space-xl);" id="vaadinButton1">
-      Eliminar
+       Eliminar 
      </vaadin-button>
     </vaadin-item>
     <vaadin-item id="vaadinItem2">
-     Leave a Light On
+      Leave a Light On 
      <vaadin-button style="flex-grow: 0; margin-left: var(--lumo-space-xl);" id="vaadinButton2">
-      Eliminar
+       Eliminar 
      </vaadin-button>
     </vaadin-item>
    </vaadin-list-box>

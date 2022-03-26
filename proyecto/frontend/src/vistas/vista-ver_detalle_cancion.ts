@@ -20,7 +20,7 @@ export class VistaVer_detalle_cancion extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="margin-top: 8%; width: 100%; justify-content: center;">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="margin-top: 8%; width: 100%; justify-content: center;background-color: var(--lumo-contrast-10pct);">
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1">
    <img id="img" style="width: 300px;" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
    <vaadin-button id="vaadinButton" style="align-self: center;">
@@ -41,7 +41,7 @@ export class VistaVer_detalle_cancion extends LitElement {
      <template>
       <vaadin-list-box>
        <vaadin-item selected>
-        Añadir a lista de reproduccion
+         Añadir a lista de reproduccion 
        </vaadin-item>
        <vaadin-item>
          Item two 

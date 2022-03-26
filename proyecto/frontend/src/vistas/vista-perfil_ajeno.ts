@@ -18,7 +18,7 @@ export class VistaPerfil_ajeno extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-vertical-layout theme="spacing" style="width: 100%;">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center;">
    <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; align-self: center; align-items: center; width: fit-content;">
     <img style="width: 200px; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l);" src="https://www.runneruprecords.com/wp-content/uploads/2019/12/Juice-Wrld-promesa-del-rap-muere.jpg">
@@ -44,7 +44,7 @@ export class VistaPerfil_ajeno extends LitElement {
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vista-listas_de_reproduccion_ajenas style="width: 100%;"></vista-listas_de_reproduccion_ajenas>
+ <vista-listas_de_reproduccion_ajenas style="width: 100%;background-color: var(--lumo-contrast-10pct);"></vista-listas_de_reproduccion_ajenas>
 </vaadin-vertical-layout>
 `;
   }
