@@ -36,4 +36,44 @@ public class VistaCanciones_mas_escuchadas extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public H1 getH1() {
+		return h1;
+	}
+
+	public void setH1(H1 h1) {
+		this.h1 = h1;
+	}
+
+	public VistaCancion getVistaCancion() {
+		return vistaCancion;
+	}
+
+	public void setVistaCancion(VistaCancion vistaCancion) {
+		this.vistaCancion = vistaCancion;
+	}
+
+	public VistaCancion getVistaCancion2() {
+		return vistaCancion2;
+	}
+
+	public void setVistaCancion2(VistaCancion vistaCancion2) {
+		this.vistaCancion2 = vistaCancion2;
+	}
+
+	public VistaCancion getVistaCancion1() {
+		return vistaCancion1;
+	}
+
+	public void setVistaCancion1(VistaCancion vistaCancion1) {
+		this.vistaCancion1 = vistaCancion1;
+	}
+
 }

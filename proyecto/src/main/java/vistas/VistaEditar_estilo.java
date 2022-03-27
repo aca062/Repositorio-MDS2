@@ -42,5 +42,53 @@ public class VistaEditar_estilo extends LitTemplate {
     public VistaEditar_estilo() {
         // You can initialise any data required for the connected UI components here.
     }
+	public H2 getH2() {
+		return h2;
+	}
+	public void setH2(H2 h2) {
+		this.h2 = h2;
+	}
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+	public TextField getNombreDelEstilo() {
+		return nombreDelEstilo;
+	}
+	public void setNombreDelEstilo(TextField nombreDelEstilo) {
+		this.nombreDelEstilo = nombreDelEstilo;
+	}
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+	public Button getVaadinButton1() {
+		return vaadinButton1;
+	}
+	public void setVaadinButton1(Button vaadinButton1) {
+		this.vaadinButton1 = vaadinButton1;
+	}
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
 
 }

@@ -29,4 +29,21 @@ public class VistaVer_mas_canciones_favoritas extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public VistaLista_de_reproduccion_favoritos getVistaLista_de_reproduccion_favoritos() {
+		return vistaLista_de_reproduccion_favoritos;
+	}
+
+	public void setVistaLista_de_reproduccion_favoritos(
+			VistaLista_de_reproduccion_favoritos vistaLista_de_reproduccion_favoritos) {
+		this.vistaLista_de_reproduccion_favoritos = vistaLista_de_reproduccion_favoritos;
+	}
+
 }

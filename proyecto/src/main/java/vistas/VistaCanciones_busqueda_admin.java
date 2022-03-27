@@ -37,4 +37,44 @@ public class VistaCanciones_busqueda_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public H1 getH1() {
+		return h1;
+	}
+
+	public void setH1(H1 h1) {
+		this.h1 = h1;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public VistaCancion_admin getVistaCancion_admin() {
+		return vistaCancion_admin;
+	}
+
+	public void setVistaCancion_admin(VistaCancion_admin vistaCancion_admin) {
+		this.vistaCancion_admin = vistaCancion_admin;
+	}
+
+	public VistaCancion_admin getVistaCancion_admin1() {
+		return vistaCancion_admin1;
+	}
+
+	public void setVistaCancion_admin1(VistaCancion_admin vistaCancion_admin1) {
+		this.vistaCancion_admin1 = vistaCancion_admin1;
+	}
+
 }

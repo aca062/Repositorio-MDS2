@@ -41,4 +41,60 @@ public class VistaLista_albumes extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public H1 getH1() {
+		return h1;
+	}
+
+	public void setH1(H1 h1) {
+		this.h1 = h1;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public VistaAlbum getVistaAlbum() {
+		return vistaAlbum;
+	}
+
+	public void setVistaAlbum(VistaAlbum vistaAlbum) {
+		this.vistaAlbum = vistaAlbum;
+	}
+
+	public VistaAlbum getVistaAlbum1() {
+		return vistaAlbum1;
+	}
+
+	public void setVistaAlbum1(VistaAlbum vistaAlbum1) {
+		this.vistaAlbum1 = vistaAlbum1;
+	}
+
+	public VistaAlbum getVistaAlbum2() {
+		return vistaAlbum2;
+	}
+
+	public void setVistaAlbum2(VistaAlbum vistaAlbum2) {
+		this.vistaAlbum2 = vistaAlbum2;
+	}
+
+	public VistaAlbum getVistaAlbum3() {
+		return vistaAlbum3;
+	}
+
+	public void setVistaAlbum3(VistaAlbum vistaAlbum3) {
+		this.vistaAlbum3 = vistaAlbum3;
+	}
+
 }

@@ -55,5 +55,84 @@ public class VistaBuscar_administrador extends LitTemplate {
     public VistaBuscar_administrador() {
         // You can initialise any data required for the connected UI components here.
     }
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+	public VistaCanciones_busqueda_admin getVistaCanciones_busqueda_admin() {
+		return vistaCanciones_busqueda_admin;
+	}
+	public void setVistaCanciones_busqueda_admin(VistaCanciones_busqueda_admin vistaCanciones_busqueda_admin) {
+		this.vistaCanciones_busqueda_admin = vistaCanciones_busqueda_admin;
+	}
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+	public VistaAlbumes_busqueda_admin getVistaAlbumes_busqueda_admin() {
+		return vistaAlbumes_busqueda_admin;
+	}
+	public void setVistaAlbumes_busqueda_admin(VistaAlbumes_busqueda_admin vistaAlbumes_busqueda_admin) {
+		this.vistaAlbumes_busqueda_admin = vistaAlbumes_busqueda_admin;
+	}
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+	public VistaListas_de_reproduccion_busqueda_admin getVistaListas_de_reproduccion_busqueda_admin() {
+		return vistaListas_de_reproduccion_busqueda_admin;
+	}
+	public void setVistaListas_de_reproduccion_busqueda_admin(
+			VistaListas_de_reproduccion_busqueda_admin vistaListas_de_reproduccion_busqueda_admin) {
+		this.vistaListas_de_reproduccion_busqueda_admin = vistaListas_de_reproduccion_busqueda_admin;
+	}
+	public HorizontalLayout getVaadinHorizontalLayout3() {
+		return vaadinHorizontalLayout3;
+	}
+	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
+		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
+	}
+	public VistaArtistas_busqueda_admin getVistaArtistas_busqueda_admin() {
+		return vistaArtistas_busqueda_admin;
+	}
+	public void setVistaArtistas_busqueda_admin(VistaArtistas_busqueda_admin vistaArtistas_busqueda_admin) {
+		this.vistaArtistas_busqueda_admin = vistaArtistas_busqueda_admin;
+	}
+	public HorizontalLayout getVaadinHorizontalLayout4() {
+		return vaadinHorizontalLayout4;
+	}
+	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
+		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
+	}
+	public VistaUsuarios_busqueda_admin getVistaUsuarios_busqueda_admin() {
+		return vistaUsuarios_busqueda_admin;
+	}
+	public void setVistaUsuarios_busqueda_admin(VistaUsuarios_busqueda_admin vistaUsuarios_busqueda_admin) {
+		this.vistaUsuarios_busqueda_admin = vistaUsuarios_busqueda_admin;
+	}
+	public HorizontalLayout getVaadinHorizontalLayout5() {
+		return vaadinHorizontalLayout5;
+	}
+	public void setVaadinHorizontalLayout5(HorizontalLayout vaadinHorizontalLayout5) {
+		this.vaadinHorizontalLayout5 = vaadinHorizontalLayout5;
+	}
+	public VistaEstilos_busqueda_admin getVistaEstilos_busqueda_admin() {
+		return vistaEstilos_busqueda_admin;
+	}
+	public void setVistaEstilos_busqueda_admin(VistaEstilos_busqueda_admin vistaEstilos_busqueda_admin) {
+		this.vistaEstilos_busqueda_admin = vistaEstilos_busqueda_admin;
+	}
 
 }

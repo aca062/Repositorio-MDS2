@@ -73,4 +73,172 @@ public class VistaEditar_artista extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public H2 getH2() {
+		return h2;
+	}
+
+	public void setH2(H2 h2) {
+		this.h2 = h2;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public Image getImg() {
+		return img;
+	}
+
+	public void setImg(Image img) {
+		this.img = img;
+	}
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+	public TextField getNick() {
+		return nick;
+	}
+
+	public void setNick(TextField nick) {
+		this.nick = nick;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+	public TextField getContraseña() {
+		return contraseña;
+	}
+
+	public void setContraseña(TextField contraseña) {
+		this.contraseña = contraseña;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout3() {
+		return vaadinHorizontalLayout3;
+	}
+
+	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
+		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
+	}
+
+	public TextField getConfirmarContraseña() {
+		return confirmarContraseña;
+	}
+
+	public void setConfirmarContraseña(TextField confirmarContraseña) {
+		this.confirmarContraseña = confirmarContraseña;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout4() {
+		return vaadinHorizontalLayout4;
+	}
+
+	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
+		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
+	}
+
+	public TextField geteMail() {
+		return eMail;
+	}
+
+	public void seteMail(TextField eMail) {
+		this.eMail = eMail;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout5() {
+		return vaadinHorizontalLayout5;
+	}
+
+	public void setVaadinHorizontalLayout5(HorizontalLayout vaadinHorizontalLayout5) {
+		this.vaadinHorizontalLayout5 = vaadinHorizontalLayout5;
+	}
+
+	public Select getVaadinSelect() {
+		return vaadinSelect;
+	}
+
+	public void setVaadinSelect(Select vaadinSelect) {
+		this.vaadinSelect = vaadinSelect;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout6() {
+		return vaadinHorizontalLayout6;
+	}
+
+	public void setVaadinHorizontalLayout6(HorizontalLayout vaadinHorizontalLayout6) {
+		this.vaadinHorizontalLayout6 = vaadinHorizontalLayout6;
+	}
+
+	public Button getVaadinButton1() {
+		return vaadinButton1;
+	}
+
+	public void setVaadinButton1(Button vaadinButton1) {
+		this.vaadinButton1 = vaadinButton1;
+	}
+
+	public Button getVaadinButton2() {
+		return vaadinButton2;
+	}
+
+	public void setVaadinButton2(Button vaadinButton2) {
+		this.vaadinButton2 = vaadinButton2;
+	}
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+	public Element getVaadinListBox() {
+		return vaadinListBox;
+	}
+
+	public void setVaadinListBox(Element vaadinListBox) {
+		this.vaadinListBox = vaadinListBox;
+	}
+
+	public Element getVaadinItem() {
+		return vaadinItem;
+	}
+
+	public void setVaadinItem(Element vaadinItem) {
+		this.vaadinItem = vaadinItem;
+	}
+
 }

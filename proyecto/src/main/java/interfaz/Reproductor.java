@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Reproductor {
+import vistas.VistaReproductor;
+
+public class Reproductor extends VistaReproductor{
 	/*private event _reproducir;
 	private event _modificar_volumen;
 	private event _reproduccir_en_bucle;

@@ -42,4 +42,68 @@ public class VistaVer_creditos extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+	public H3 getH3() {
+		return h3;
+	}
+
+	public void setH3(H3 h3) {
+		this.h3 = h3;
+	}
+
+	public H4 getH4() {
+		return h4;
+	}
+
+	public void setH4(H4 h4) {
+		this.h4 = h4;
+	}
+
+	public H4 getH41() {
+		return h41;
+	}
+
+	public void setH41(H4 h41) {
+		this.h41 = h41;
+	}
+
+	public H4 getH42() {
+		return h42;
+	}
+
+	public void setH42(H4 h42) {
+		this.h42 = h42;
+	}
+
+	public H4 getH43() {
+		return h43;
+	}
+
+	public void setH43(H4 h43) {
+		this.h43 = h43;
+	}
+
+	public H4 getH44() {
+		return h44;
+	}
+
+	public void setH44(H4 h44) {
+		this.h44 = h44;
+	}
+
 }

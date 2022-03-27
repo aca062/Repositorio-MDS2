@@ -69,4 +69,164 @@ public class VistaMenu_administracion extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+	public H4 getH4() {
+		return h4;
+	}
+
+	public void setH4(H4 h4) {
+		this.h4 = h4;
+	}
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public H2 getH2() {
+		return h2;
+	}
+
+	public void setH2(H2 h2) {
+		this.h2 = h2;
+	}
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public Button getVaadinButton1() {
+		return vaadinButton1;
+	}
+
+	public void setVaadinButton1(Button vaadinButton1) {
+		this.vaadinButton1 = vaadinButton1;
+	}
+
+	public Button getVaadinButton2() {
+		return vaadinButton2;
+	}
+
+	public void setVaadinButton2(Button vaadinButton2) {
+		this.vaadinButton2 = vaadinButton2;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+	public Element getVaadinListBox() {
+		return vaadinListBox;
+	}
+
+	public void setVaadinListBox(Element vaadinListBox) {
+		this.vaadinListBox = vaadinListBox;
+	}
+
+	public Element getVaadinItem() {
+		return vaadinItem;
+	}
+
+	public void setVaadinItem(Element vaadinItem) {
+		this.vaadinItem = vaadinItem;
+	}
+
+	public Element getVaadinItem1() {
+		return vaadinItem1;
+	}
+
+	public void setVaadinItem1(Element vaadinItem1) {
+		this.vaadinItem1 = vaadinItem1;
+	}
+
+	public Hr getHr() {
+		return hr;
+	}
+
+	public void setHr(Hr hr) {
+		this.hr = hr;
+	}
+
+	public Element getVaadinItem2() {
+		return vaadinItem2;
+	}
+
+	public void setVaadinItem2(Element vaadinItem2) {
+		this.vaadinItem2 = vaadinItem2;
+	}
+
+	public Element getVaadinItem3() {
+		return vaadinItem3;
+	}
+
+	public void setVaadinItem3(Element vaadinItem3) {
+		this.vaadinItem3 = vaadinItem3;
+	}
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+	public H4 getH41() {
+		return h41;
+	}
+
+	public void setH41(H4 h41) {
+		this.h41 = h41;
+	}
+
+	public Button getVaadinButton3() {
+		return vaadinButton3;
+	}
+
+	public void setVaadinButton3(Button vaadinButton3) {
+		this.vaadinButton3 = vaadinButton3;
+	}
+
+	public Element getIronIcon1() {
+		return ironIcon1;
+	}
+
+	public void setIronIcon1(Element ironIcon1) {
+		this.ironIcon1 = ironIcon1;
+	}
+
 }

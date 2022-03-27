@@ -41,4 +41,60 @@ public class VistaPaginacion_listas_ajenas extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public H1 getH1() {
+		return h1;
+	}
+
+	public void setH1(H1 h1) {
+		this.h1 = h1;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public VistaLista_de_reproduccion_ajena getVistaLista_de_reproduccion_ajena() {
+		return vistaLista_de_reproduccion_ajena;
+	}
+
+	public void setVistaLista_de_reproduccion_ajena(VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena) {
+		this.vistaLista_de_reproduccion_ajena = vistaLista_de_reproduccion_ajena;
+	}
+
+	public VistaLista_de_reproduccion_ajena getVistaLista_de_reproduccion_ajena1() {
+		return vistaLista_de_reproduccion_ajena1;
+	}
+
+	public void setVistaLista_de_reproduccion_ajena1(VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena1) {
+		this.vistaLista_de_reproduccion_ajena1 = vistaLista_de_reproduccion_ajena1;
+	}
+
+	public VistaLista_de_reproduccion_ajena getVistaLista_de_reproduccion_ajena2() {
+		return vistaLista_de_reproduccion_ajena2;
+	}
+
+	public void setVistaLista_de_reproduccion_ajena2(VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena2) {
+		this.vistaLista_de_reproduccion_ajena2 = vistaLista_de_reproduccion_ajena2;
+	}
+
+	public VistaLista_de_reproduccion_ajena getVistaLista_de_reproduccion_ajena3() {
+		return vistaLista_de_reproduccion_ajena3;
+	}
+
+	public void setVistaLista_de_reproduccion_ajena3(VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena3) {
+		this.vistaLista_de_reproduccion_ajena3 = vistaLista_de_reproduccion_ajena3;
+	}
+
 }

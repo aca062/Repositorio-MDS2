@@ -37,4 +37,44 @@ public class VistaUsuarios_busqueda_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public H1 getH1() {
+		return h1;
+	}
+
+	public void setH1(H1 h1) {
+		this.h1 = h1;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public VistaUsuario_admin getVistaUsuario_admin() {
+		return vistaUsuario_admin;
+	}
+
+	public void setVistaUsuario_admin(VistaUsuario_admin vistaUsuario_admin) {
+		this.vistaUsuario_admin = vistaUsuario_admin;
+	}
+
+	public VistaUsuario_admin getVistaUsuario_admin1() {
+		return vistaUsuario_admin1;
+	}
+
+	public void setVistaUsuario_admin1(VistaUsuario_admin vistaUsuario_admin1) {
+		this.vistaUsuario_admin1 = vistaUsuario_admin1;
+	}
+
 }

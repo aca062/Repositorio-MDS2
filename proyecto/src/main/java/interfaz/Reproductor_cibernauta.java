@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Reproductor_cibernauta{
+import vistas.VistaReproductor_cibernauta;
+
+public class Reproductor_cibernauta extends VistaReproductor_cibernauta{
 	/*private event _reproducir;
 	private event _modificar_volumen;
 	private Label _nombreL;

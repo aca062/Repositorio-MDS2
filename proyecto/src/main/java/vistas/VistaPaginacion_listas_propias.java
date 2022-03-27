@@ -36,4 +36,46 @@ public class VistaPaginacion_listas_propias extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public VistaLista_de_reproduccion_propia getVistaLista_de_reproduccion_propia() {
+		return vistaLista_de_reproduccion_propia;
+	}
+
+	public void setVistaLista_de_reproduccion_propia(VistaLista_de_reproduccion_propia vistaLista_de_reproduccion_propia) {
+		this.vistaLista_de_reproduccion_propia = vistaLista_de_reproduccion_propia;
+	}
+
+	public VistaLista_de_reproduccion_propia getVistaLista_de_reproduccion_propia1() {
+		return vistaLista_de_reproduccion_propia1;
+	}
+
+	public void setVistaLista_de_reproduccion_propia1(
+			VistaLista_de_reproduccion_propia vistaLista_de_reproduccion_propia1) {
+		this.vistaLista_de_reproduccion_propia1 = vistaLista_de_reproduccion_propia1;
+	}
+
+	public VistaLista_de_reproduccion_propia getVistaLista_de_reproduccion_propia2() {
+		return vistaLista_de_reproduccion_propia2;
+	}
+
+	public void setVistaLista_de_reproduccion_propia2(
+			VistaLista_de_reproduccion_propia vistaLista_de_reproduccion_propia2) {
+		this.vistaLista_de_reproduccion_propia2 = vistaLista_de_reproduccion_propia2;
+	}
+
 }
