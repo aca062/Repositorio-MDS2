@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.H1;
 
 /**
  * A Designer generated component for the vista-dar_de_alta template.
@@ -33,6 +34,12 @@ public class VistaDar_de_alta extends LitTemplate {
 	private Button vaadinButton1;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
+	@Id("h1")
+	private H1 h1;
+	@Id("vaadinButton3")
+	private Button vaadinButton3;
+	@Id("vaadinButton2")
+	private Button vaadinButton2;
 	/**
      * Creates a new VistaDar_de_alta.
      */

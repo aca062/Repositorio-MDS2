@@ -23,7 +23,7 @@ export class VistaEditar_artista extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: 10%;">Editar artista</h2>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="height: 20%; width: 80%;" theme="spacing-l">
    <img id="img" src="https://pbs.twimg.com/media/E7Uy7foXIAIWziu.jpg">
    <vaadin-button id="vaadinButton" style="align-self: center;">
@@ -31,14 +31,14 @@ export class VistaEditar_artista extends LitElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field label="Nick" id="nick" value="Bad bunny"></vaadin-text-field>
-  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" has-value></vaadin-password-field>
-  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value></vaadin-password-field>
+  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" has-value id="contraseña"></vaadin-password-field>
+  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value id="confirmarContraseña"></vaadin-password-field>
   <vaadin-text-field label="E-mail" id="eMail" value="bbunny@gmail..com"></vaadin-text-field>
   <vaadin-select value="Regueton" id="vaadinSelect">
    <template>
-    <vaadin-list-box>
-     <vaadin-item selected>
-      Regueton
+    <vaadin-list-box id="vaadinListBox" selected="0">
+     <vaadin-item selected id="vaadinItem">
+       Regueton 
      </vaadin-item>
     </vaadin-list-box>
    </template>

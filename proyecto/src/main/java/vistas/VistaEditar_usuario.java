@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.textfield.PasswordField;
 
 /**
  * A Designer generated component for the vista-editar_usuario template.
@@ -53,6 +54,8 @@ public class VistaEditar_usuario extends LitTemplate {
 	private Button vaadinButton1;
 	@Id("vaadinButton2")
 	private Button vaadinButton2;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
 
 	/**
      * Creates a new VistaEditar_usuario.

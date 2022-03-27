@@ -16,8 +16,8 @@ export class VistaCanciones_recomendadas extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h1 id="h1">Canciones</h1>
- <vista-cancion></vista-cancion>
- <vista-cancion></vista-cancion>
+ <vista-cancion id="vistaCancion"></vista-cancion>
+ <vista-cancion id="vistaCancion1"></vista-cancion>
 </vaadin-vertical-layout>
 `;
   }

@@ -11,6 +11,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.textfield.PasswordField;
 
 /**
  * A Designer generated component for the vista-alta_artistas template.
@@ -58,7 +59,16 @@ public class VistaAlta_artistas extends LitTemplate {
 	private Button vaadinButton1;
 	@Id("vaadinButton2")
 	private Button vaadinButton2;
-
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+	@Id("vaadinListBox")
+	private Element vaadinListBox;
+	@Id("vaadinItem")
+	private Element vaadinItem;
+	@Id("vaadinItem1")
+	private Element vaadinItem1;
+	@Id("vaadinItem2")
+	private Element vaadinItem2;
 	/**
      * Creates a new VistaAlta_artistas.
      */

@@ -17,8 +17,8 @@ export class VistaAlbumes_busqueda_admin extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h1 id="h1">Álbumes</h1>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
-  <vista-album_admin></vista-album_admin>
-  <vista-album_admin></vista-album_admin>
+  <vista-album_admin id="vistaAlbum_admin"></vista-album_admin>
+  <vista-album_admin id="vistaAlbum_admin1"></vista-album_admin>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

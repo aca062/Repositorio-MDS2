@@ -25,17 +25,17 @@ export class VistaCabecera_pagina extends LitElement {
   </vaadin-button>
   <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end;" float="" margin-right="200px" id="vaadinHorizontalLayout1" margin="">
    <vaadin-button id="vaadinButton1">
-     Button 
+    Ver perfil
    </vaadin-button>
    <vaadin-button id="vaadinButton2">
-     Button 
+    Cerrar sesión
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout class="content" style="width: 100%; flex-grow: 1; flex-shrink: 1; flex-basis: auto; justify-content: space-between;" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout4" style="width: 100%; align-self: center; justify-content: center;">
    <vaadin-text-field placeholder="Search" id="vaadinTextField" style="width: 50%;">
-    <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
+    <iron-icon icon="lumo:search" slot="prefix" id="ironIcon"></iron-icon>
    </vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout id="vaadinHorizontalLayout3" style="width: 100%; align-self: center; align-items: baseline; justify-content: center;background-color: var(--lumo-contrast-10pct);">
@@ -43,7 +43,8 @@ export class VistaCabecera_pagina extends LitElement {
     <h3 id="h3" style="align-self: center;">Contacto</h3>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="width: 80%;">
-    <h4 id="h4"> assssssssssssssss</h4>
+    <h4 id="h4">+34 914257860</h4>
+    <h4 id="h41">Heading 4</h4>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

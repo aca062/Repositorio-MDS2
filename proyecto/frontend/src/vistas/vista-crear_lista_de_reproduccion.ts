@@ -26,14 +26,14 @@ export class VistaCrear_lista_de_reproduccion extends LitElement {
   <vaadin-text-field label="Nombre" id="label" style="width: 70%;" value="Mi lista nº 3"></vaadin-text-field>
   <vaadin-select value="Buscador de canciones" id="vaadinSelect" style="width: 70%;" label="Lista de canciones">
    <template>
-    <vaadin-list-box selected="0">
-     <vaadin-item selected>
+    <vaadin-list-box selected="0" id="vaadinListBox1">
+     <vaadin-item selected id="vaadinItem4">
        Buscador de canciones 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem5">
        Item two 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem6">
        Item three 
      </vaadin-item>
     </vaadin-list-box>

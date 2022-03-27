@@ -22,19 +22,19 @@ export class VistaEditar_cancion extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: var(--lumo-space-xl);">Editar cancion</h2>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
   <vaadin-text-field label="Título" id="título" value="120"></vaadin-text-field>
-  <vaadin-text-field label="Título álbum" value="El último tour del mundo"></vaadin-text-field>
-  <vaadin-text-field label="Compositores" value="Tainy"></vaadin-text-field>
+  <vaadin-text-field label="Título álbum" value="El último tour del mundo" id="títuloÁlbum" has-value></vaadin-text-field>
+  <vaadin-text-field label="Compositores" value="Tainy" id="compositores" has-value></vaadin-text-field>
   <vaadin-text-field label="Productores" id="productores" value="Tainy"></vaadin-text-field>
   <vaadin-text-field label="Interpretes" id="interpretes" value="Bad bunny"></vaadin-text-field>
-  <vaadin-select value="Regueton">
+  <vaadin-select value="Regueton" id="vaadinSelect">
    <template>
-    <vaadin-list-box>
-     <vaadin-item>
-      Regueton
+    <vaadin-list-box id="vaadinListBox" selected="0">
+     <vaadin-item id="vaadinItem" selected>
+       Regueton 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem1">
        Item three 
      </vaadin-item>
     </vaadin-list-box>

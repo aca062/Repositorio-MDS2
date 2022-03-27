@@ -17,16 +17,16 @@ export class VistaCanciones_favoritas extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1">
   <h1 id="h1">Canciones favoritas</h1>
-  <vaadin-button style="align-self: center;">
+  <vaadin-button style="align-self: center;" id="vaadinButton">
     Ver más 
   </vaadin-button>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
-  <vista-cancion></vista-cancion>
-  <vista-cancion></vista-cancion>
-  <vista-cancion></vista-cancion>
+  <vista-cancion id="vistaCancion"></vista-cancion>
+  <vista-cancion id="vistaCancion1"></vista-cancion>
+  <vista-cancion id="vistaCancion2"></vista-cancion>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

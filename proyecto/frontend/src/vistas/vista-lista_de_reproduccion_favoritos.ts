@@ -20,30 +20,30 @@ export class VistaLista_de_reproduccion_favoritos extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing-xl">
+ <vaadin-horizontal-layout theme="spacing-xl" id="vaadinHorizontalLayout">
   <h1 id="h1">Lista de favoritos</h1>
-  <vaadin-select value="Opciones" style="align-self: center;">
+  <vaadin-select value="Opciones" style="align-self: center;" id="vaadinSelect">
    <template>
-    <vaadin-list-box selected="0">
-     <vaadin-item selected>
-      Opciones
+    <vaadin-list-box selected="0" id="vaadinListBox">
+     <vaadin-item selected id="vaadinItem">
+       Opciones 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem1">
        Item two 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem2">
        Item three 
      </vaadin-item>
     </vaadin-list-box>
    </template>
   </vaadin-select>
  </vaadin-horizontal-layout>
- <h3>Paco12</h3>
- <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
-  <vaadin-horizontal-layout theme="spacing" style="align-self: flex-end;">
-   <h2 style="margin-right: var(--lumo-space-xl);">3/1000</h2>
+ <h3 id="h3">Paco12</h3>
+ <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
+  <vaadin-horizontal-layout theme="spacing" style="align-self: flex-end;" id="vaadinHorizontalLayout1">
+   <h2 style="margin-right: var(--lumo-space-xl);" id="h2">3/1000</h2>
   </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%;">
+  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout2">
    <vista-cancion id="vistaCancion" style="width: 100%;"></vista-cancion>
    <vista-cancion id="vistaCancion1" style="width: 100%;"></vista-cancion>
    <vista-cancion id="vistaCancion2" style="width: 100%;"></vista-cancion>

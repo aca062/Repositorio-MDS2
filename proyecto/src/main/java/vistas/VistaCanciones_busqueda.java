@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import vistas.VistaCancion;
 
 /**
  * A Designer generated component for the vista-canciones_busqueda template.
@@ -24,6 +25,12 @@ public class VistaCanciones_busqueda extends LitTemplate {
 	private H1 h1;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vistaCancion")
+	private VistaCancion vistaCancion;
+	@Id("vistaCancion1")
+	private VistaCancion vistaCancion1;
+	@Id("vistaCancion2")
+	private VistaCancion vistaCancion2;
 
 	/**
      * Creates a new VistaCanciones_busqueda.

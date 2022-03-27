@@ -20,34 +20,34 @@ export class VistaVer_detalle_de_lista_comun extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; margin-left: var(--lumo-space-xl); margin-top: var(--lumo-space-l);">
- <vaadin-horizontal-layout theme="spacing">
-  <h2>Lista de reproducción nº 21</h2>
-  <vaadin-select value="Opciones" style="align-self: center;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; margin-left: var(--lumo-space-xl); margin-top: var(--lumo-space-l);" id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
+  <h2 id="h2">Lista de reproducción nº 21</h2>
+  <vaadin-select value="Opciones" style="align-self: center;" id="vaadinSelect">
    <template>
-    <vaadin-list-box>
-     <vaadin-item selected>
+    <vaadin-list-box id="vaadinListBox" selected="0">
+     <vaadin-item selected id="vaadinItem">
        Opciones 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem1">
        Item two 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem2">
        Item three 
      </vaadin-item>
     </vaadin-list-box>
    </template>
   </vaadin-select>
  </vaadin-horizontal-layout>
- <vaadin-button>
-  Paco12
+ <vaadin-button id="vaadinButton">
+   Paco12 
  </vaadin-button>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;background-color: var(--lumo-contrast-10pct);">
-  <vaadin-horizontal-layout style="align-self: flex-end; margin-right: 10%;">
-   <h2>4/1000</h2>
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
+  <vaadin-horizontal-layout style="align-self: flex-end; margin-right: 10%;" id="vaadinHorizontalLayout1">
+   <h2 id="h21">4/1000</h2>
   </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%;">
-   <vista-lista_de_canciones style="width: 100%;"></vista-lista_de_canciones>
+  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout2">
+   <vista-lista_de_canciones style="width: 100%;" id="vistaLista_de_canciones"></vista-lista_de_canciones>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>

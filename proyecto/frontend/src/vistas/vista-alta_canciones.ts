@@ -22,7 +22,7 @@ export class VistaAlta_canciones extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: var(--lumo-space-xl);">Dar de alta canción</h2>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
   <vaadin-text-field label="Titulo" id="titulo" style="color: #000000" value="120"></vaadin-text-field>
   <vaadin-text-field label="Título álbum" id="títuloÁlbum" style="color: #000000; width: 10%;" value="El ultimo tour del mundo"></vaadin-text-field>
   <vaadin-text-field label="Compositores" id="compositores" style="color: #000000" value="Tainy"></vaadin-text-field>
@@ -30,14 +30,14 @@ export class VistaAlta_canciones extends LitElement {
   <vaadin-text-field label="Interpretes" id="interpretes" style="color: #000000" value="Bad Bunny"></vaadin-text-field>
   <vaadin-select value="Urbano Latino" id="vaadinSelect" style="color: #000000">
    <template>
-    <vaadin-list-box selected="0">
-     <vaadin-item style="color: #000000" selected>
-      Urbano Latino
+    <vaadin-list-box selected="0" id="vaadinListBox">
+     <vaadin-item style="color: #000000" selected id="vaadinItem">
+       Urbano Latino 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem1">
        Item two 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem2">
        Item three 
      </vaadin-item>
     </vaadin-list-box>

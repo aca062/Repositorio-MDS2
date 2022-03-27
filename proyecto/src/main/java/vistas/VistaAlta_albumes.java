@@ -62,6 +62,8 @@ public class VistaAlta_albumes extends LitTemplate {
 	private Button vaadinButton1;
 	@Id("vaadinButton2")
 	private Button vaadinButton2;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
 
 	/**
      * Creates a new VistaAlta_albumes.

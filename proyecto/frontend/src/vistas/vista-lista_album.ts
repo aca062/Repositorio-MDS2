@@ -18,11 +18,11 @@ export class VistaLista_album extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h1 id="h1">Albumes</h1>
- <vista-album></vista-album>
- <vista-album></vista-album>
- <vista-album></vista-album>
- <vaadin-horizontal-layout style="width: 100%; justify-content: flex-end;">
-  <vaadin-button style="margin-right: var(--lumo-space-xl);">
+ <vista-album id="vistaAlbum"></vista-album>
+ <vista-album id="vistaAlbum1"></vista-album>
+ <vista-album id="vistaAlbum2"></vista-album>
+ <vaadin-horizontal-layout style="width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout">
+  <vaadin-button style="margin-right: var(--lumo-space-xl);" id="vaadinButton">
     Button 
   </vaadin-button>
  </vaadin-horizontal-layout>

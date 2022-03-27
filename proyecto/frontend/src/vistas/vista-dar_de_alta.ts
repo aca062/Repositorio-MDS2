@@ -17,7 +17,7 @@ export class VistaDar_de_alta extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 style="margin-left: 10%;">Altas</h1>
+ <h1 style="margin-left: 10%;" id="h1">Altas</h1>
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 80%; align-self: center; align-items: center;background-color: var(--lumo-contrast-10pct);">
   <vaadin-horizontal-layout theme="" style="margin-left: 10%; width: 80%; justify-content: space-around;" id="vaadinHorizontalLayout">
    <vaadin-button id="vaadinButton">

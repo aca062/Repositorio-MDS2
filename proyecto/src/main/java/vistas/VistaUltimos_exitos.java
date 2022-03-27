@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import vistas.VistaCancion_cibernauta;
 
 /**
  * A Designer generated component for the vista-ultimos_exitos template.
@@ -24,6 +25,14 @@ public class VistaUltimos_exitos extends LitTemplate {
 	private H1 h1;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vistaCancion_cibernauta")
+	private VistaCancion_cibernauta vistaCancion_cibernauta;
+	@Id("vistaCancion_cibernauta1")
+	private VistaCancion_cibernauta vistaCancion_cibernauta1;
+	@Id("vistaCancion_cibernauta2")
+	private VistaCancion_cibernauta vistaCancion_cibernauta2;
+	@Id("vistaCancion_cibernauta3")
+	private VistaCancion_cibernauta vistaCancion_cibernauta3;
 
 	/**
      * Creates a new VistaUltimos_exitos.

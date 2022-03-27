@@ -23,7 +23,7 @@ export class VistaAlta_artistas extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: 10%;">Dar de alta artista</h2>
- <vaadin-vertical-layout theme="spacing" style="margin-left: var(--lumo-space-xl); width: 100%;background-color: var(--lumo-contrast-10pct);">
+ <vaadin-vertical-layout theme="spacing" style="margin-left: var(--lumo-space-xl); width: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 90%; height: 20%;">
    <img id="img" src="https://pbs.twimg.com/media/E3ATxGdWQAcSfBe.jpg">
    <vaadin-button id="vaadinButton" style="align-self: center; margin-left: 5%;">
@@ -31,19 +31,19 @@ export class VistaAlta_artistas extends LitElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field label="Nick" id="nick" style="color: #000000" value="Bad Bunny"></vaadin-text-field>
-  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" style="color: #000000" has-value></vaadin-password-field>
-  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value style="color: #000000"></vaadin-password-field>
+  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" style="color: #000000" has-value id="contraseña"></vaadin-password-field>
+  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value style="color: #000000" id="confirmarContraseña"></vaadin-password-field>
   <vaadin-text-field label="E-mail" id="eMail" style="color: #000000" value="bbunny@gmail.com"></vaadin-text-field>
   <vaadin-select value="Reguetón" id="vaadinSelect">
    <template>
-    <vaadin-list-box>
-     <vaadin-item style="color: #000000" selected>
-      Reguetón
+    <vaadin-list-box id="vaadinListBox" selected="0">
+     <vaadin-item style="color: #000000" selected id="vaadinItem">
+       Reguetón 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem1">
        Item two 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem2">
        Item three 
      </vaadin-item>
     </vaadin-list-box>

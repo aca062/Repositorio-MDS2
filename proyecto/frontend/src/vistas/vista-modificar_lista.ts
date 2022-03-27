@@ -26,14 +26,14 @@ export class VistaModificar_lista extends LitElement {
   <vaadin-text-field label="Nombre" placeholder="" id="nombre" style="margin-left: var(--lumo-space-xl); align-self: flex-start;" value="Vibes Up"></vaadin-text-field>
   <vaadin-select value="Buscador de canciones" id="vaadinSelect" style="margin-left: var(--lumo-space-xl); width: 30%; align-self: flex-start;" label="Lista de canciones">
    <template>
-    <vaadin-list-box>
-     <vaadin-item selected>
+    <vaadin-list-box id="vaadinListBox1" selected="0">
+     <vaadin-item selected id="vaadinItem3">
        Buscador de canciones 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem4">
        Item two 
      </vaadin-item>
-     <vaadin-item>
+     <vaadin-item id="vaadinItem5">
        Item three 
      </vaadin-item>
     </vaadin-list-box>

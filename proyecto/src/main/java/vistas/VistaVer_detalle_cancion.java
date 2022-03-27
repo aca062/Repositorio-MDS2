@@ -47,6 +47,14 @@ public class VistaVer_detalle_cancion extends LitTemplate {
 	private Select vaadinSelect;
 	@Id("vaadinButton2")
 	private Button vaadinButton2;
+	@Id("vaadinListBox")
+	private Element vaadinListBox;
+	@Id("vaadinItem")
+	private Element vaadinItem;
+	@Id("vaadinItem2")
+	private Element vaadinItem2;
+	@Id("vaadinItem1")
+	private Element vaadinItem1;
 
 	/**
      * Creates a new VistaVer_detalle_cancion.

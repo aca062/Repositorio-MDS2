@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import vistas.VistaLista_de_reproduccion_ajena;
 
 /**
  * A Designer generated component for the vista-paginacion_listas_ajenas template.
@@ -24,6 +25,14 @@ public class VistaPaginacion_listas_ajenas extends LitTemplate {
 	private H1 h1;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vistaLista_de_reproduccion_ajena")
+	private VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena;
+	@Id("vistaLista_de_reproduccion_ajena1")
+	private VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena1;
+	@Id("vistaLista_de_reproduccion_ajena2")
+	private VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena2;
+	@Id("vistaLista_de_reproduccion_ajena3")
+	private VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena3;
 
 	/**
      * Creates a new VistaPaginacion_listas_ajenas.

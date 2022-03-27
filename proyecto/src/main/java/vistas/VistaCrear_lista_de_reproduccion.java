@@ -50,6 +50,14 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
 	private Button vaadinButton;
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
+	@Id("vaadinListBox1")
+	private Element vaadinListBox1;
+	@Id("vaadinItem4")
+	private Element vaadinItem4;
+	@Id("vaadinItem5")
+	private Element vaadinItem5;
+	@Id("vaadinItem6")
+	private Element vaadinItem6;
 
 	/**
      * Creates a new VistaCrear_lista_de_reproduccion.

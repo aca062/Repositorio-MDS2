@@ -39,14 +39,14 @@ export class VistaVer_detalle_cancion extends LitElement {
         background-position:center;background-color:#FFFFFF"></vaadin-button>
     <vaadin-select value="Añadir a lista de reproduccion" id="vaadinSelect" style="width: 30%;">
      <template>
-      <vaadin-list-box>
-       <vaadin-item selected>
+      <vaadin-list-box id="vaadinListBox" selected="0">
+       <vaadin-item selected id="vaadinItem">
          Añadir a lista de reproduccion 
        </vaadin-item>
-       <vaadin-item>
+       <vaadin-item id="vaadinItem1">
          Item two 
        </vaadin-item>
-       <vaadin-item>
+       <vaadin-item id="vaadinItem2">
          Item three 
        </vaadin-item>
       </vaadin-list-box>

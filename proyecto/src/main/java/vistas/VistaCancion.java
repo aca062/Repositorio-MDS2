@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H5;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-cancion template.
@@ -24,6 +25,12 @@ public class VistaCancion extends LitTemplate {
 	private Button vaadinButton;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	@Id("h51")
+	private H5 h51;
+	@Id("vaadinButton1")
+	private Button vaadinButton1;
 
 	/**
      * Creates a new VistaCancion.

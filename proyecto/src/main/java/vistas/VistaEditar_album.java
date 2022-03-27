@@ -58,6 +58,14 @@ public class VistaEditar_album extends LitTemplate {
 	private H2 h2;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+	@Id("vaadinItem3")
+	private Element vaadinItem3;
+	@Id("vaadinItem4")
+	private Element vaadinItem4;
+	@Id("vaadinItem5")
+	private Element vaadinItem5;
 
 	/**
      * Creates a new VistaEditar_album.

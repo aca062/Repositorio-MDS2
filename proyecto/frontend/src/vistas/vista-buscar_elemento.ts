@@ -17,12 +17,12 @@ export class VistaBuscar_elemento extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%;">
- <h1 style="margin-left: var(--lumo-space-xl);">Buscar elemento</h1>
- <vaadin-text-field placeholder="Search" style="align-self: center; width: 50%;">
-  <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
+ <h1 style="margin-left: var(--lumo-space-xl);" id="h1">Buscar elemento</h1>
+ <vaadin-text-field placeholder="Search" style="align-self: center; width: 50%;" id="vaadinTextField">
+  <iron-icon icon="lumo:search" slot="prefix" id="ironIcon"></iron-icon>
  </vaadin-text-field>
- <vista-buscar_administrador style="margin-left: var(--lumo-space-xl); width: 100%;"></vista-buscar_administrador>
+ <vista-buscar_administrador style="margin-left: var(--lumo-space-xl); width: 100%;" id="vistaBuscar_administrador"></vista-buscar_administrador>
 </vaadin-vertical-layout>
 `;
   }

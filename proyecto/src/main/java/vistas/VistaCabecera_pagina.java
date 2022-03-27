@@ -51,6 +51,10 @@ public class VistaCabecera_pagina extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+	@Id("ironIcon")
+	private Element ironIcon;
+	@Id("h41")
+	private H4 h41;
 
 	/**
      * Creates a new VistaCabecera_pagina.

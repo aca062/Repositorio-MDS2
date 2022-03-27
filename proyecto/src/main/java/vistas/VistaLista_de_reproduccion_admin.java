@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-lista_de_reproduccion_admin template.
@@ -19,12 +20,14 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vistas/vista-lista_de_reproduccion_admin.ts")
 public class VistaLista_de_reproduccion_admin extends LitTemplate {
 
-    @Id("vaadinHorizontalLayout")
+    @Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("img")
-	private Image img;
 	@Id("h4")
 	private H4 h4;
+	@Id("img")
+	private Image img;
 	@Id("vaadinButton")
 	private Button vaadinButton;
 	@Id("vaadinButton1")

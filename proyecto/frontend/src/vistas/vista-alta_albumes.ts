@@ -22,7 +22,7 @@ export class VistaAlta_albumes extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: 10%;">Dar de alta álbum</h2>
- <vaadin-vertical-layout theme="spacing" style="margin-left: var(--lumo-space-xl); width: 100%; background-color: var(--lumo-contrast-10pct); height: 100%;">
+ <vaadin-vertical-layout theme="spacing" style="margin-left: var(--lumo-space-xl); width: 100%; background-color: var(--lumo-contrast-10pct); height: 100%;" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; height: 20%;" theme="spacing">
    <img id="img" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
    <vaadin-button id="vaadinButton" style="align-self: center;">
@@ -36,7 +36,7 @@ export class VistaAlta_albumes extends LitElement {
    <template>
     <vaadin-list-box id="vaadinListBox" selected="0">
      <vaadin-item id="vaadinItem" selected style="color: #000000">
-      Dakiti
+       Dakiti 
      </vaadin-item>
      <vaadin-item id="vaadinItem1">
        Item two 

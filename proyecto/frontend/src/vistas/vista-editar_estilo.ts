@@ -19,7 +19,7 @@ export class VistaEditar_estilo extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: var(--lumo-space-xl);">Editar estilo</h2>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; background-color: var(--lumo-contrast-10pct); height: 100%;">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; background-color: var(--lumo-contrast-10pct); height: 100%;" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout theme="" id="vaadinHorizontalLayout" style="width: 80%;">
    <vaadin-text-field label="Nombre del estilo" placeholder="" id="nombreDelEstilo" style="width: 100%; margin-left: var(--lumo-space-xl); height: 100%;"></vaadin-text-field>
   </vaadin-horizontal-layout>

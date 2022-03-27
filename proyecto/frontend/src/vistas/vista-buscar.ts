@@ -20,13 +20,13 @@ export class VistaBuscar extends LitElement {
     return html`
 <vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinHorizontalLayout">
  <vaadin-vertical-layout id="vaadinVerticalLayout" style="width: 100%;">
-  <vista-canciones_busqueda></vista-canciones_busqueda>
+  <vista-canciones_busqueda id="vistaCanciones_busqueda"></vista-canciones_busqueda>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout id="vaadinVerticalLayout1" style="width: 100%;">
-  <vista-listas_de_reproduccion_busqueda></vista-listas_de_reproduccion_busqueda>
+  <vista-listas_de_reproduccion_busqueda id="vistaListas_de_reproduccion_busqueda"></vista-listas_de_reproduccion_busqueda>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout id="vaadinVerticalLayout2" style="width: 100%;">
-  <vista-artistas_busqueda></vista-artistas_busqueda>
+  <vista-artistas_busqueda id="vistaArtistas_busqueda"></vista-artistas_busqueda>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
 `;

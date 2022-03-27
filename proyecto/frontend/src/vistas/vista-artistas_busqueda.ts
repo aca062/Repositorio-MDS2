@@ -16,9 +16,9 @@ export class VistaArtistas_busqueda extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing-l">
  <h1 id="h1">Artistas</h1>
- <vista-artista_elemento></vista-artista_elemento>
- <vista-artista_elemento></vista-artista_elemento>
- <vista-artista_elemento></vista-artista_elemento>
+ <vista-artista_elemento id="vistaArtista_elemento"></vista-artista_elemento>
+ <vista-artista_elemento id="vistaArtista_elemento1"></vista-artista_elemento>
+ <vista-artista_elemento id="vistaArtista_elemento2"></vista-artista_elemento>
 </vaadin-vertical-layout>
 `;
   }

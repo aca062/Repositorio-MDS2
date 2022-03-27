@@ -17,26 +17,26 @@ export class VistaRegistrarse extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-xl); align-items: center;">
-  <img style="width: 30%;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
-  <vaadin-button>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
+ <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-xl); align-items: center;" id="vaadinVerticalLayout1">
+  <img style="width: 30%;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" id="img">
+  <vaadin-button id="vaadinButton">
     Añadir foto de perfil 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; padding: var(--lumo-space-xl); padding-left: 10%; padding-right: 10%; padding-top: 0; padding-bottom: 0;">
-  <vaadin-text-field error-message="Por favor, introduzca un e-mail válido" required invalid="" label="E-mail" style="width: 100%;"></vaadin-text-field>
-  <vaadin-text-field error-message="Por favor, introduzca un nick válido" required invalid="" label="Nick" style="width: 100%;"></vaadin-text-field>
-  <vaadin-text-field error-message="Por favor, introduzca una contraseña válida" required invalid="" label="Contraseña" style="width: 100%;"></vaadin-text-field>
-  <vaadin-text-field error-message="Por favor, introduzca la misma contraseña que arriba" required invalid="" label="Repetir contraseña" style="width: 100%;"></vaadin-text-field>
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center;">
-   <vaadin-button>
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; padding: var(--lumo-space-xl); padding-left: 10%; padding-right: 10%; padding-top: 0; padding-bottom: 0;" id="vaadinVerticalLayout2">
+  <vaadin-text-field error-message="Por favor, introduzca un e-mail válido" required invalid="" label="E-mail" style="width: 100%;" id="eMail"></vaadin-text-field>
+  <vaadin-text-field error-message="Por favor, introduzca un nick válido" required invalid="" label="Nick" style="width: 100%;" id="nick"></vaadin-text-field>
+  <vaadin-text-field error-message="Por favor, introduzca una contraseña válida" required invalid="" label="Contraseña" style="width: 100%;" id="contraseña"></vaadin-text-field>
+  <vaadin-text-field error-message="Por favor, introduzca la misma contraseña que arriba" required invalid="" label="Repetir contraseña" style="width: 100%;" id="repetirContraseña"></vaadin-text-field>
+  <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center;" id="vaadinHorizontalLayout">
+   <vaadin-button id="vaadinButton1">
      Iniciar sesión 
    </vaadin-button>
-   <vaadin-button>
+   <vaadin-button id="vaadinButton3">
      Crear cuenta 
    </vaadin-button>
-   <vaadin-button>
+   <vaadin-button id="vaadinButton2">
      Cancelar 
    </vaadin-button>
   </vaadin-horizontal-layout>

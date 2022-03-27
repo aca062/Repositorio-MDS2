@@ -34,6 +34,8 @@ public class VistaEditar_estilo extends LitTemplate {
 	private Button vaadinButton1;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
 	/**
      * Creates a new VistaEditar_estilo.
      */

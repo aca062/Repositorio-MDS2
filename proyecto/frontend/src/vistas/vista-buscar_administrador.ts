@@ -22,23 +22,23 @@ export class VistaBuscar_administrador extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout style="width: 100%;">
-  <vista-canciones_busqueda_admin></vista-canciones_busqueda_admin>
+ <vaadin-horizontal-layout style="width: 100%;" id="vaadinHorizontalLayout">
+  <vista-canciones_busqueda_admin id="vistaCanciones_busqueda_admin"></vista-canciones_busqueda_admin>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing">
-  <vista-albumes_busqueda_admin></vista-albumes_busqueda_admin>
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1">
+  <vista-albumes_busqueda_admin id="vistaAlbumes_busqueda_admin"></vista-albumes_busqueda_admin>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="width: 100%;">
-  <vista-listas_de_reproduccion_busqueda_admin></vista-listas_de_reproduccion_busqueda_admin>
+ <vaadin-horizontal-layout style="width: 100%;" id="vaadinHorizontalLayout2">
+  <vista-listas_de_reproduccion_busqueda_admin id="vistaListas_de_reproduccion_busqueda_admin"></vista-listas_de_reproduccion_busqueda_admin>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout>
-  <vista-artistas_busqueda_admin></vista-artistas_busqueda_admin>
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout3">
+  <vista-artistas_busqueda_admin id="vistaArtistas_busqueda_admin"></vista-artistas_busqueda_admin>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="width: 100%;">
-  <vista-usuarios_busqueda_admin></vista-usuarios_busqueda_admin>
+ <vaadin-horizontal-layout style="width: 100%;" id="vaadinHorizontalLayout4">
+  <vista-usuarios_busqueda_admin id="vistaUsuarios_busqueda_admin"></vista-usuarios_busqueda_admin>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing">
-  <vista-estilos_busqueda_admin></vista-estilos_busqueda_admin>
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout5">
+  <vista-estilos_busqueda_admin id="vistaEstilos_busqueda_admin"></vista-estilos_busqueda_admin>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

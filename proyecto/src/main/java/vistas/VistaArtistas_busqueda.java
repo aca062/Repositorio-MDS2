@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import vistas.VistaArtista_elemento;
 
 /**
  * A Designer generated component for the vista-artistas_busqueda template.
@@ -24,6 +25,12 @@ public class VistaArtistas_busqueda extends LitTemplate {
 	private H1 h1;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vistaArtista_elemento")
+	private VistaArtista_elemento vistaArtista_elemento;
+	@Id("vistaArtista_elemento1")
+	private VistaArtista_elemento vistaArtista_elemento1;
+	@Id("vistaArtista_elemento2")
+	private VistaArtista_elemento vistaArtista_elemento2;
 
 	/**
      * Creates a new VistaArtistas_busqueda.

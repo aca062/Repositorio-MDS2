@@ -65,6 +65,16 @@ public class VistaAlta_canciones extends LitTemplate {
 	private Button vaadinButton1;
 	@Id("vaadinButton2")
 	private Button vaadinButton2;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+	@Id("vaadinListBox")
+	private Element vaadinListBox;
+	@Id("vaadinItem")
+	private Element vaadinItem;
+	@Id("vaadinItem1")
+	private Element vaadinItem1;
+	@Id("vaadinItem2")
+	private Element vaadinItem2;
 
 	/**
      * Creates a new VistaAlta_canciones.

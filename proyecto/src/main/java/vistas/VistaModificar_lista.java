@@ -53,6 +53,14 @@ public class VistaModificar_lista extends LitTemplate {
 	private Button vaadinButton3;
 	@Id("vaadinButton4")
 	private Button vaadinButton4;
+	@Id("vaadinListBox1")
+	private Element vaadinListBox1;
+	@Id("vaadinItem3")
+	private Element vaadinItem3;
+	@Id("vaadinItem4")
+	private Element vaadinItem4;
+	@Id("vaadinItem5")
+	private Element vaadinItem5;
 
 	/**
      * Creates a new VistaModificar_lista.

@@ -25,6 +25,8 @@ public class VistaLista_de_canciones extends LitTemplate {
 	private VistaCancion vistaCancion2;
 	@Id("vistaCancion3")
 	private VistaCancion vistaCancion3;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
 
 	/**
      * Creates a new VistaLista_de_canciones.

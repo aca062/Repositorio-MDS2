@@ -53,6 +53,14 @@ public class VistaMenu_administracion extends LitTemplate {
 	private Element vaadinItem2;
 	@Id("vaadinItem3")
 	private Element vaadinItem3;
+	@Id("ironIcon")
+	private Element ironIcon;
+	@Id("h41")
+	private H4 h41;
+	@Id("vaadinButton3")
+	private Button vaadinButton3;
+	@Id("ironIcon1")
+	private Element ironIcon1;
 
 	/**
      * Creates a new VistaMenu_administracion.

@@ -11,6 +11,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H5;
+import com.vaadin.flow.component.select.Select;
 
 /**
  * A Designer generated component for the vista-editar_cancion template.
@@ -56,6 +57,20 @@ public class VistaEditar_cancion extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout7;
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+	@Id("títuloÁlbum")
+	private TextField títuloÁlbum;
+	@Id("compositores")
+	private TextField compositores;
+	@Id("vaadinSelect")
+	private Select vaadinSelect;
+	@Id("vaadinListBox")
+	private Element vaadinListBox;
+	@Id("vaadinItem")
+	private Element vaadinItem;
+	@Id("vaadinItem1")
+	private Element vaadinItem1;
 
 	/**
      * Creates a new VistaEditar_cancion.
