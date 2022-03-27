@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Perfil_artista_comun {
-	private Image _fotoPerfil;
+import vistas.VistaPerfil_artista_comun;
+
+public class Perfil_artista_comun extends VistaPerfil_artista_comun{
+	/*private Image _fotoPerfil;
 	private Label _nickL;
 	private Label _emailL;
 	private Label _seguidoresL;
@@ -11,7 +13,7 @@ public class Perfil_artista_comun {
 	private Label _tituloEventosL;
 	private Image _imagenEvento;
 	private Label _fechaL;
-	private Label _lugarL;
+	private Label _lugarL;*/
 	public Lista_album _listaAlbum;
 	public Canciones_mas_escuchadas _cancionesMasEscuchadas;
 	public Listas_de_reproduccion_en_las_que_aparece _listasDeReproduccionEnLasQueAparece;

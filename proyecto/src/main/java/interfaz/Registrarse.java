@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Registrarse {
-	private Label _emailL;
+import vistas.VistaRegistrarse;
+
+public class Registrarse  extends VistaRegistrarse{
+	/*private Label _emailL;
 	private TextField _emailTF;
 	private Label _nickL;
 	private TextField _nickTF;
@@ -13,7 +15,7 @@ public class Registrarse {
 	private Button _crearCuentaB;
 	private Button _loginB;
 	private Image _imagen;
-	private Button _anadirFotoB;
+	private Button _anadirFotoB;*/
 	public Login_cibernauta _loginCibernauta;
 	public Verificar_e_mail _verificarE_mail;
 

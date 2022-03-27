@@ -1,9 +1,11 @@
 package interfaz;
 
-public class Cancion {
-	private event _imagen_reproducir;
+import vistas.VistaCancion;
+
+public class Cancion extends VistaCancion{
+	/*private event _imagen_reproducir;
 	private Image _imagen;
-	private Button _tituloCancionB;
+	private Button _tituloCancionB;*/
 	public Canciones_busqueda _cancionesBusqueda;
 	public Canciones_favoritas _cancionesFavoritas;
 	public Canciones_recomendadas _cancionesRecomendadas;

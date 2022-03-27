@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Menu_administracion {
-	private event _editar_numero_canciones_mostradas_al_cibernauta;
+import vistas.VistaMenu_administracion;
+
+public class Menu_administracion extends VistaMenu_administracion{
+	/*private event _editar_numero_canciones_mostradas_al_cibernauta;
 	private TextField _editarNumeroCancionesTF;
 	private Label _editarNumeroCancionesL;
 	private Label _limiteCancionesL;
@@ -10,7 +12,7 @@ public class Menu_administracion {
 	private Button _darAltaB;
 	private Label _cancionesMostradasL;
 	private Button _editarCancionesB;
-	private Label _cancionesMostradasLista;
+	private Label _cancionesMostradasLista;*/
 	public Administrador _administrador;
 	public Editar_caciones_mostradas_al_cbernauta _editarCancionesMostradasAlCibernauta;
 	public Dar_de_alta _darDeAlta;

@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Ver_detalle_cancion {
-	private event _reproducir;
+import vistas.VistaVer_detalle_cancion;
+
+public class Ver_detalle_cancion extends VistaVer_detalle_cancion{
+	/*private event _reproducir;
 	private event _marcar_como_favorito;
 	private event _imagen_reproducir;
 	private event _anadir_a_lista_de_reproduccion;
@@ -12,7 +14,7 @@ public class Ver_detalle_cancion {
 	private Button _anadirFavoritosB;
 	private Dropdown _anadirAListaD;
 	private Button _verCreditosB;
-	private Button _reproducirB;
+	private Button _reproducirB;*/
 	public Cancion _cancion;
 	public Reproductor _reproductor;
 	public Ver_creditos _verCreditos;

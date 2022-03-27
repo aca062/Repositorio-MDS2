@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Crear_lista_de_reproduccion {
-	private Label _tituloL;
+import vistas.VistaCrear_lista_de_reproduccion;
+
+public class Crear_lista_de_reproduccion extends VistaCrear_lista_de_reproduccion{
+	/*private Label _tituloL;
 	private Label _nombreL;
 	private TextField _nombreTF;
 	private Label _listaCancionL;
@@ -9,7 +11,7 @@ public class Crear_lista_de_reproduccion {
 	private TextField _listaCancionTF;
 	private Label _listaCancionList;
 	private Button _cancelarB;
-	private Button _confirmarB;
+	private Button _confirmarB;*/
 	public Perfil _perfil;
 	public Perfil_artista_propio _perfilArtista;
 }

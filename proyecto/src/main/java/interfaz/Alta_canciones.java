@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Alta_canciones {
-	private Label _altaCancionL;
+import vistas.VistaAlta_canciones;
+
+public class Alta_canciones extends VistaAlta_canciones{
+	/*private Label _altaCancionL;
 	private event _anadir_archivo_multimedia;
 	private Label _tituloL;
 	private TextField _tituloTF;
@@ -18,7 +20,7 @@ public class Alta_canciones {
 	private Label _archivoMultimimediaL;
 	private Button _anadirArchivoMultimediaB;
 	private Button _cancelarB;
-	private Button _confirmarB;
+	private Button _confirmarB;*/
 	public Dar_de_alta _darDeAlta;
 
 	public void Anadir_archivo_multimedia() {

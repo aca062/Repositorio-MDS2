@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Editar_cancion {
-	private Label _editarCancionL;
+import vistas.VistaEditar_cancion;
+
+public class Editar_cancion extends VistaEditar_cancion{
+	/*private Label _editarCancionL;
 	private event _anadir_archivo_multimedia;
 	private Label _tituloL;
 	private TextField _tituloTF;
@@ -18,7 +20,7 @@ public class Editar_cancion {
 	private Label _ficheroL;
 	private Button _anadirFicheroB;
 	private Button _cancelarB;
-	private Button _confirmarB;
+	private Button _confirmarB;*/
 	public Cancion_admin _cancionAdmin;
 
 	public void Anadir_archivo_multimedia() {

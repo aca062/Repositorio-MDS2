@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Modificar_lista {
-	private event _eliminar_cancion;
+import vistas.VistaModificar_lista;
+
+public class Modificar_lista extends VistaModificar_lista{
+	/*private event _eliminar_cancion;
 	private Label _editarListaL;
 	private Label _nombreL;
 	private TextField _nombreTF;
@@ -11,7 +13,7 @@ public class Modificar_lista {
 	private Label _listaCancionesList;
 	private Button _eliminarB;
 	private Button _cancelarB;
-	private Button _confirmarB;
+	private Button _confirmarB;*/
 	public Lista_de_reproduccion_admin _listaDeReproduccionAdmin;
 	public Ver_detalle_de_lista_propia _verDetalleDeListaPropia;
 

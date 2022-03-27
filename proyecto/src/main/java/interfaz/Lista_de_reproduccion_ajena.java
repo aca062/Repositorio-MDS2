@@ -1,10 +1,12 @@
 package interfaz;
 
-public class Lista_de_reproduccion_ajena {
-	private event _imagen_reproducir;
+import vistas.VistaLista_de_reproduccion_ajena;
+
+public class Lista_de_reproduccion_ajena extends VistaLista_de_reproduccion_ajena{
+	/*private event _imagen_reproducir;
 	private Image _imagen;
 	private Label _tituloListaL;
-	private Button _tituloListaB;
+	private Button _tituloListaB;*/
 	public Paginacion_listas_ajenas _paginacionListasAjenas;
 	public Listas_de_reproduccion_ajenas _listasDeReproduccionAjenas;
 	public Listas_de_reproduccion_busqueda _listaDeReproduccionBusqueda;

@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Editar_artista {
-	private Label _editarArtistaL;
+import vistas.VistaEditar_artista;
+
+public class Editar_artista extends VistaEditar_artista{
+	/*private Label _editarArtistaL;
 	private event _anadir_imagen;
 	private Image _imagen;
 	private Button _anadirFotoB;
@@ -16,7 +18,7 @@ public class Editar_artista {
 	private Label _estilosL;
 	private Dropdown _estilosD;
 	private Button _cancelarB;
-	private Button _confirmarB;
+	private Button _confirmarB;*/
 	public Artista_admin _artistaAdmin;
 
 	public void Anadir_imagen() {

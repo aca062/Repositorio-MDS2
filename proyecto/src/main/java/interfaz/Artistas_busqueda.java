@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Artistas_busqueda {
-	private Label _tituloL;
+import vistas.VistaArtistas_busqueda;
+
+public class Artistas_busqueda extends VistaArtistas_busqueda{
+	//private Label _tituloL;
 	public Buscar _buscar;
-	public Artista_elemento2 _artistaElemento;
+	public Artista_elemento _artistaElemento;
 }

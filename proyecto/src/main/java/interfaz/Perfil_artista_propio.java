@@ -1,7 +1,7 @@
 package interfaz;
 
 public class Perfil_artista_propio extends Perfil_artista_comun {
-	private event _editar_foto_perfil;
+	/*private event _editar_foto_perfil;
 	private event _recibir_notificacion;
 	private event _dar_de_baja;
 	private event _editar_e_mail;
@@ -14,7 +14,7 @@ public class Perfil_artista_propio extends Perfil_artista_comun {
 	private Button _verTodasB;
 	private Button _anadirFestivalesB;
 	private Button _darBajaB;
-	private Button _recibirNotificacionesB;
+	private Button _recibirNotificacionesB;*/
 	public Artista _artista;
 	public Anadir_evento _anadirEvento;
 	public Crear_lista_de_reproduccion _crearListaDeReproduccion;

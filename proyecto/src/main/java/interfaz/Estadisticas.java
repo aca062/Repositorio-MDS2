@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Estadisticas {
-	private Label _tituloEstadisticasL;
+import vistas.VistaEstadisticas;
+
+public class Estadisticas extends VistaEstadisticas{
+	/*private Label _tituloEstadisticasL;
 	private Label _tituloMasEscuchadosL;
 	private Label _tituloCancionL;
 	private Image _imagenCancion;
@@ -26,6 +28,6 @@ public class Estadisticas {
 	private Image _imagenUsoSemanal;
 	private Label _diasUsoSemanalL;
 	private Label _tituloMediaL;
-	private Label _mediaL;
-	public Actor_comun3 _actorComun;
+	private Label _mediaL;*/
+	public Actor_comun _actorComun;
 }

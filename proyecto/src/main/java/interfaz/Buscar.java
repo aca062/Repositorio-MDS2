@@ -1,9 +1,11 @@
 package interfaz;
 
-public class Buscar {
-	private Label _tituloCancionL;
+import vistas.VistaBuscar;
+
+public class Buscar extends VistaBuscar{
+	/*private Label _tituloCancionL;
 	private Label _tituloListaL;
-	private Label _tituloArtistaL;
+	private Label _tituloArtistaL;*/
 	public Cabecera_pagina _cabecera;
 	public Artistas_busqueda _artistasBusqueda;
 	public Canciones_busqueda _cancionesBusqueda;

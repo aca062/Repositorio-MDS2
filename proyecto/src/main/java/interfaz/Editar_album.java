@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Editar_album {
-	private Label _editarAlbumL;
+import vistas.VistaEditar_album;
+
+public class Editar_album extends VistaEditar_album{
+	/*private Label _editarAlbumL;
 	private event _anadir_imagen;
 	private Image _imagen;
 	private Button _cambiarImagenB;
@@ -15,7 +17,7 @@ public class Editar_album {
 	private Dropdown _listaCancionesD;
 	private Label _listaCancionesList;
 	private Button _cancelarB;
-	private Button _confirmarB;
+	private Button _confirmarB;*/
 	public Album_admin _albumAdmin;
 
 	public void Anadir_imagen() {

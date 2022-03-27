@@ -1,8 +1,8 @@
 package interfaz;
 
 public class Perfil_administrador extends Perfil {
-	private event _editar_foto_perfil;
-	private event _editar_e_mail;
+	/*private event _editar_foto_perfil;
+	private event _editar_e_mail;*/
 	public Administrador _administrador;
 
 	public void Editar_foto_perfil() {

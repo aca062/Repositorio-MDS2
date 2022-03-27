@@ -1,7 +1,9 @@
 package interfaz;
 
-public class Editar_usuario {
-	private Label _editarUsuarioL;
+import vistas.VistaEditar_usuario;
+
+public class Editar_usuario extends VistaEditar_usuario{
+	/*private Label _editarUsuarioL;
 	private event _anadir_imagen;
 	private Image _imagen;
 	private Button _anadirFotoB;
@@ -14,7 +16,7 @@ public class Editar_usuario {
 	private Label _emailL;
 	private TextField _emailTF;
 	private Button _cancelarB;
-	private Button _confirmarB;
+	private Button _confirmarB;*/
 	public Usuario_admin _usuarioAdmin;
 
 	public void Anadir_imagen() {

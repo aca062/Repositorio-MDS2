@@ -1,8 +1,9 @@
 package interfaz;
 
 import interfaz.Contacto;
+import vistas.VistaActor_comun;
 
-public class Actor_comun {
+public class Actor_comun extends VistaActor_comun{
 	public Cabecera_pagina _cabecera;
 	public Reproductor _reproductor;
 	public Canciones_favoritas _cancionesFavoritas;
@@ -12,7 +13,7 @@ public class Actor_comun {
 	public Artistas_recomendados _artistasRecomendados;
 	public Contacto _contacto;
 	public Listas_de_reproduccion_recomendadas _listasDeReproduccionRecomendadas;
-	private Button _cerrarSesionB;
+	/*private Button _cerrarSesionB;
 	private Button _verPerfilB;
 	private TextField _buscadorTF;
 	private Button _buscadorB;
@@ -27,5 +28,5 @@ public class Actor_comun {
 	private Label _contactoTituloL;
 	private Button _contactoCorreoB;
 	private Label _contactoTlfnL;
-	private Button _logoB;
+	private Button _logoB;*/
 }

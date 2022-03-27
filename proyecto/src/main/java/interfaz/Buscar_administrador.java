@@ -6,10 +6,11 @@ import interfaz.Canciones_busqueda_admin;
 import interfaz.Estilos_busqueda_admin;
 import interfaz.Listas_de_reproduccion_busqueda_admin;
 import interfaz.Usuarios_busqueda_admin;
+import vistas.VistaBuscar_administrador;
 import interfaz.Artistas_busqueda_admin;
 
-public class Buscar_administrador {
-	private Label _tituloL;
+public class Buscar_administrador extends VistaBuscar_administrador{
+	//private Label _tituloL;
 	public Buscar_elemento _buscarElemento;
 	public Vector<Albumes_busqueda_admin> _albumesBusquedaAdmin = new Vector<Albumes_busqueda_admin>();
 	public Vector<Canciones_busqueda_admin> _cancionesBusquedaAdmin = new Vector<Canciones_busqueda_admin>();
