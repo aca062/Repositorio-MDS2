@@ -14,11 +14,11 @@ export class VistaArtistas_recomendados extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing-l">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h1 id="h1">Artistas</h1>
- <vista-artista_elemento id="vistaArtista_elemento"></vista-artista_elemento>
- <vista-artista_elemento id="vistaArtista_elemento1"></vista-artista_elemento>
- <vista-artista_elemento id="vistaArtista_elemento2"></vista-artista_elemento>
+ <vista-artista_elemento id="vistaArtista_elemento" style="align-self: flex-start; height: 200px; flex-grow: 0; flex-shrink: 1;"></vista-artista_elemento>
+ <vista-artista_elemento id="vistaArtista_elemento1" style="height: 200px;"></vista-artista_elemento>
+ <vista-artista_elemento id="vistaArtista_elemento2" style="height: 200px;"></vista-artista_elemento>
 </vaadin-vertical-layout>
 `;
   }

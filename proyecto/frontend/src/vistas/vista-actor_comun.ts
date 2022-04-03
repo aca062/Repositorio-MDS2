@@ -22,16 +22,16 @@ export class VistaActor_comun extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout id="vaadinVerticalLayout1">
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center;background-color: var(--lumo-contrast-10pct);" id="vaadinHorizontalLayout">
-  <vaadin-button style="text-align: center;" id="vaadinButton">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="vaadinHorizontalLayout">
+  <vaadin-button style="text-align: center; padding: var(--lumo-space-xl); padding-top: var(--lumo-space-m); padding-bottom: var(--lumo-space-xl);" id="vaadinButton">
     Administración 
   </vaadin-button>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout1">
-  <vista-ultimas_canciones_reproducidas id="vistaUltimas_canciones_reproducidas"></vista-ultimas_canciones_reproducidas>
+  <vista-ultimas_canciones_reproducidas id="vistaUltimas_canciones_reproducidas" style="padding: var(--lumo-space-m);"></vista-ultimas_canciones_reproducidas>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 20%;background-color: var(--lumo-contrast-10pct);" id="vaadinHorizontalLayout2">
-  <vista-canciones_favoritas id="vistaCanciones_favoritas"></vista-canciones_favoritas>
+  <vista-canciones_favoritas id="vistaCanciones_favoritas" style="padding: var(--lumo-space-m);"></vista-canciones_favoritas>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout2">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout3">
