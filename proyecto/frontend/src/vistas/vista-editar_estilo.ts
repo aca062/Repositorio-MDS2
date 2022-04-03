@@ -19,11 +19,11 @@ export class VistaEditar_estilo extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: var(--lumo-space-xl);">Editar estilo</h2>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; background-color: var(--lumo-contrast-10pct); height: 100%;" id="vaadinVerticalLayout1">
+ <vaadin-vertical-layout theme="spacing" style="width: 90%; background-color: var(--lumo-contrast-10pct); height: 160px; align-self: center;" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout theme="" id="vaadinHorizontalLayout" style="width: 80%;">
    <vaadin-text-field label="Nombre del estilo" placeholder="" id="nombreDelEstilo" style="width: 100%; margin-left: var(--lumo-space-xl); height: 100%;"></vaadin-text-field>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="justify-content: flex-end; flex-wrap: wrap; flex-direction: row; width: 80%; margin-left: var(--lumo-space-xl);">
+  <vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="justify-content: flex-end; flex-wrap: wrap; flex-direction: row; width: 90%; margin-left: var(--lumo-space-xl);">
    <vaadin-button id="vaadinButton" style="margin-right: 10%;">
      Cancelar 
    </vaadin-button>

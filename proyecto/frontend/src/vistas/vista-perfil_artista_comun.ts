@@ -68,13 +68,13 @@ export class VistaPerfil_artista_comun extends LitElement {
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinHorizontalLayout4">
   <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout6">
-   <vista-canciones_mas_escuchadas style="align-self: center;" id="vistaCanciones_mas_escuchadas"></vista-canciones_mas_escuchadas>
+   <vista-canciones_mas_escuchadas style="align-self: center; padding: var(--lumo-space-l);" id="vistaCanciones_mas_escuchadas"></vista-canciones_mas_escuchadas>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout7">
-   <vista-artistas_similares style="align-self: center;" id="vistaArtistas_similares"></vista-artistas_similares>
+   <vista-artistas_similares style="align-self: center; padding: var(--lumo-space-l);" id="vistaArtistas_similares"></vista-artistas_similares>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout8">
-   <vista-lista_album style="align-self: center;" id="vistaLista_album"></vista-lista_album>
+   <vista-lista_album style="align-self: center; padding: var(--lumo-space-l);" id="vistaLista_album"></vista-lista_album>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout9">

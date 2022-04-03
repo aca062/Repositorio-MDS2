@@ -33,13 +33,13 @@ export class VistaMenu_administracion extends LitElement {
   <vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="width: 100%; height: 20%; align-self: flex-start; align-items: center; justify-content: space-around;">
    <h4 id="h4" style="width: 50%; height: 25%;">Límite de canciones a reproducir por un usuario no registrado</h4>
    <vaadin-button id="vaadinButton">
-    <iron-icon icon="lumo:edit" slot="prefix" id="ironIcon"></iron-icon> Edit 
+    <iron-icon icon="lumo:edit" slot="prefix" id="ironIcon"></iron-icon>Editar
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="width: 100%; height: 20%; align-items: center; justify-content: space-around;">
    <h4 style="width: 50%; height: 25%; flex-grow: 0;" id="h41">Canciones mostradas a un usuario no registrado</h4>
    <vaadin-button id="vaadinButton3">
-    <iron-icon icon="lumo:edit" slot="prefix" id="ironIcon1"></iron-icon> Edit 
+    <iron-icon icon="lumo:edit" slot="prefix" id="ironIcon1"></iron-icon>Editar
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-list-box id="vaadinListBox" style="width: 95%; height: 100%; align-self: flex-start; margin-right: var(--lumo-space-l); margin-bottom: var(--lumo-space-l); margin-left: var(--lumo-space-l); margin-top: var(--lumo-space-l); flex-grow: 0;">

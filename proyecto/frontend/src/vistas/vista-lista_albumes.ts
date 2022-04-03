@@ -20,7 +20,6 @@ export class VistaLista_albumes extends LitElement {
   <vista-album id="vistaAlbum"></vista-album>
   <vista-album id="vistaAlbum1"></vista-album>
   <vista-album id="vistaAlbum2"></vista-album>
-  <vista-album id="vistaAlbum3"></vista-album>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

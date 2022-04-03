@@ -16,8 +16,8 @@ export class VistaCancion_cibernauta extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
-  <img id="img" style="width: 150px;" src="https://i.scdn.co/image/ab67616d0000b2733e0698e4ae5ffb82a005aeeb">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="height: 200px; align-items: center;">
+  <img id="img" style="width: 150px; height: 150px; object-fit: contain" src="https://i.scdn.co/image/ab67616d0000b2733e0698e4ae5ffb82a005aeeb">
   <h5 id="h5" style="align-self: center;">Wishing Well</h5>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

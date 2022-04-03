@@ -14,7 +14,7 @@ export class VistaArtistas_similares extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing-xl">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h1 id="h1">Artistas similares</h1>
  <vista-artista_elemento id="vistaArtista_elemento"></vista-artista_elemento>
  <vista-artista_elemento id="vistaArtista_elemento1"></vista-artista_elemento>

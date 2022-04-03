@@ -19,12 +19,12 @@ export class VistaVer_todos_los_albumes extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout style="width: 100%; justify-content: space-between;" id="vaadinHorizontalLayout">
-  <vista-lista_albumes style="margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);" id="vistaLista_albumes"></vista-lista_albumes>
+  <vista-lista_albumes style="margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-l); margin-top: var(--lumo-space-xl); width: 90%;" id="vistaLista_albumes"></vista-lista_albumes>
   <vaadin-vertical-layout theme="spacing" style="align-self: center; margin-right: var(--lumo-space-xl);" id="vaadinVerticalLayout1">
    <h5 id="h5">Mostrando 4 listas por pagina</h5>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing-l" style="align-self: flex-end; align-items: center; margin-right: var(--lumo-space-xl); margin-top: var(--lumo-space-xl);" id="vaadinHorizontalLayout1">
+ <vaadin-horizontal-layout theme="spacing-l" style="align-self: flex-end; align-items: center;" id="vaadinHorizontalLayout1">
   <vaadin-button style="background-image:url('https://cdn-icons-png.flaticon.com/512/545/545680.png');
         background-repeat:no-repeat;
         height:60px;

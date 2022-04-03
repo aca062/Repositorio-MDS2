@@ -17,12 +17,12 @@ export class VistaAnadir_evento extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; padding-left: var(--lumo-space-xl);" id="vaadinVerticalLayout">
- <h2 id="h2">Añadir evento</h2>
- <vaadin-vertical-layout id="vaadinVerticalLayout1" style="width: 100%; height: 100%;background-color: var(--lumo-contrast-10pct);">
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center; width: 30%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout">
+ <h2 id="h2" style="align-self: flex-start; padding-left: 50px">Añadir evento</h2>
+ <vaadin-vertical-layout id="vaadinVerticalLayout1" style="width: 90%; height: 590px; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);">
+  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center; width: 50%;">
    <img id="img" style="width: 200px;" src="https://cdn-icons-png.flaticon.com/512/42/42956.png">
-   <vaadin-button id="vaadinButton" style="margin-left: var(--lumo-space-xl);">
+   <vaadin-button id="vaadinButton" style="margin-left: var(--lumo-space-xl); width: 100%;">
      Añadir foto 
    </vaadin-button>
   </vaadin-horizontal-layout>
@@ -35,11 +35,11 @@ export class VistaAnadir_evento extends LitElement {
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout3" style="width: 100%;">
    <vaadin-text-field label="Lugar" id="lugar" style="width: 70%;" value="State farm arena"></vaadin-text-field>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout id="vaadinHorizontalLayout4" style="justify-content: space-around; width: 100%;">
-   <vaadin-button id="vaadinButton1">
+  <vaadin-horizontal-layout id="vaadinHorizontalLayout4" style="justify-content: flex-end; width: 100%; align-self: flex-end;">
+   <vaadin-button id="vaadinButton1" style="margin-top: var(--lumo-space-xl); margin-right: var(--lumo-space-xl);">
      Cancelar 
    </vaadin-button>
-   <vaadin-button id="vaadinButton2" style="flex-grow: 0; flex-shrink: 1;">
+   <vaadin-button id="vaadinButton2" style="flex-grow: 0; flex-shrink: 1; margin-top: var(--lumo-space-xl);">
      Confirmar 
    </vaadin-button>
   </vaadin-horizontal-layout>

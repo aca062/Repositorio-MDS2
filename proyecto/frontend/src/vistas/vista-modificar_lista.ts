@@ -22,9 +22,9 @@ export class VistaModificar_lista extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: flex-start;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: var(--lumo-space-xl); margin-top: var(--lumo-space-xl);">Editar lista de reproducción</h2>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 50%; align-self: center; align-items: center;background-color: var(--lumo-contrast-10pct);">
-  <vaadin-text-field label="Nombre" placeholder="" id="nombre" style="margin-left: var(--lumo-space-xl); align-self: flex-start;" value="Vibes Up"></vaadin-text-field>
-  <vaadin-select value="Buscador de canciones" id="vaadinSelect" style="margin-left: var(--lumo-space-xl); width: 30%; align-self: flex-start;" label="Lista de canciones">
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 50%; align-self: center; align-items: center; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);">
+  <vaadin-text-field label="Nombre" placeholder="" id="nombre" style="margin-left: var(--lumo-space-xl); align-self: flex-start; width: 80%;" value="Vibes Up" has-value></vaadin-text-field>
+  <vaadin-select value="Buscador de canciones" id="vaadinSelect" style="margin-left: var(--lumo-space-xl); width: 80%; align-self: flex-start;" label="Lista de canciones">
    <template>
     <vaadin-list-box id="vaadinListBox1" selected="0">
      <vaadin-item selected id="vaadinItem3">

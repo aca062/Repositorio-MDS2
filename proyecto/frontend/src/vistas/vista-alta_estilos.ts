@@ -19,15 +19,15 @@ export class VistaAlta_estilos extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: 10%;">Dar de alta estilo</h2>
- <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="margin-left: 10%; width: 80%;background-color: var(--lumo-contrast-10pct);">
-  <vaadin-text-field label="Nombre del estilo" id="nombreDelEstilo" value="Urbano Latino"></vaadin-text-field>
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="margin-left: 10%; width: 80%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);">
+  <vaadin-text-field label="Nombre del estilo" id="nombreDelEstilo" value="Urbano Latino" has-value></vaadin-text-field>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="margin-left: 10%; justify-content: flex-end; width: 80%;">
-  <vaadin-button id="vaadinButton">
-    Button 
+  <vaadin-button id="vaadinButton" style="margin: var(--lumo-space-l);">
+   Cancelar
   </vaadin-button>
-  <vaadin-button id="vaadinButton1">
-    Button 
+  <vaadin-button id="vaadinButton1" style="margin: var(--lumo-space-l);">
+   Confirmar
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

@@ -17,7 +17,7 @@ export class VistaReproductor extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%;background-color: var(--lumo-contrast-10pct);">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-l);">
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="align-items: center;">
    <h3 id="h3">Canción</h3>
    <vaadin-button id="vaadinButton">

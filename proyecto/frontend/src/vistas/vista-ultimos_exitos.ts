@@ -16,13 +16,12 @@ export class VistaUltimos_exitos extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1" style="margin: var(--lumo-space-l);">Últimos éxitos</h1>
+<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl);" id="vaadinVerticalLayout">
+ <h1 id="h1">Últimos éxitos</h1>
  <vaadin-horizontal-layout theme="spacing-l" id="vaadinHorizontalLayout" style="width: 100%;">
-  <vista-cancion_cibernauta id="vistaCancion_cibernauta"></vista-cancion_cibernauta>
-  <vista-cancion_cibernauta id="vistaCancion_cibernauta1"></vista-cancion_cibernauta>
-  <vista-cancion_cibernauta id="vistaCancion_cibernauta2"></vista-cancion_cibernauta>
-  <vista-cancion_cibernauta id="vistaCancion_cibernauta3"></vista-cancion_cibernauta>
+  <vista-cancion_cibernauta id="vistaCancion_cibernauta" style="width: 100%;"></vista-cancion_cibernauta>
+  <vista-cancion_cibernauta id="vistaCancion_cibernauta1" style="width: 100%;"></vista-cancion_cibernauta>
+  <vista-cancion_cibernauta id="vistaCancion_cibernauta2" style="width: 100%;"></vista-cancion_cibernauta>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

@@ -21,7 +21,7 @@ export class VistaEstadisticas extends LitElement {
   <h2 id="h2">Tus estadísticas</h2>
  </vaadin-horizontal-layout>
  <h2 style="align-self: center;" id="h21">Más escuchados</h2>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinHorizontalLayout1">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-l);" id="vaadinHorizontalLayout1">
   <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout1">
    <h4 style="align-self: center;" id="h4">Canción</h4>
    <img style="align-self: center; width: 150px;" id="img" src="https://i.scdn.co/image/ab67616d00001e023e0698e4ae5ffb82a005aeeb">
@@ -48,8 +48,8 @@ export class VistaEstadisticas extends LitElement {
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <h2 style="align-self: center;" id="h22">Tiempo de uso</h2>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinHorizontalLayout2">
-  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout5">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="vaadinHorizontalLayout2">
+  <vaadin-vertical-layout theme="spacing" style="width: 100%; align-self: center;" id="vaadinVerticalLayout5">
    <h4 style="align-self: center;" id="h412">Tiempo de uso de este año</h4>
    <h4 style="align-self: center;" id="h413">1000 horas</h4>
   </vaadin-vertical-layout>
@@ -59,7 +59,7 @@ export class VistaEstadisticas extends LitElement {
     <vaadin-chart-series title="Uso diario" values="[5, 2, 3, 1, 8, 4, 3.5]"></vaadin-chart-series>
    </vaadin-chart>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout7">
+  <vaadin-vertical-layout theme="spacing" style="width: 100%; align-self: center;" id="vaadinVerticalLayout7">
    <h4 style="align-self: center;" id="h415">Media</h4>
    <h4 style="align-self: center;" id="h416">4 horas</h4>
   </vaadin-vertical-layout>

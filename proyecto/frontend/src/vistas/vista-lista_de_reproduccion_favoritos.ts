@@ -19,7 +19,7 @@ export class VistaLista_de_reproduccion_favoritos extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl);" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing-xl" id="vaadinHorizontalLayout">
   <h1 id="h1">Lista de favoritos</h1>
   <vaadin-select value="Opciones" style="align-self: center;" id="vaadinSelect">

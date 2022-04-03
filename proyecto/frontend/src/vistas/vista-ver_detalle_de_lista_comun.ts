@@ -39,10 +39,10 @@ export class VistaVer_detalle_de_lista_comun extends LitElement {
    </template>
   </vaadin-select>
  </vaadin-horizontal-layout>
- <vaadin-button id="vaadinButton">
+ <vaadin-button id="vaadinButton" style="margin-bottom: var(--lumo-space-xl);">
    Paco12 
  </vaadin-button>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
+ <vaadin-vertical-layout style="width: 90%; height: 100%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); margin-bottom: var(--lumo-space-xl);" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout style="align-self: flex-end; margin-right: 10%;" id="vaadinHorizontalLayout1">
    <h2 id="h21">4/1000</h2>
   </vaadin-horizontal-layout>

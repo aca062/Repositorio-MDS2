@@ -19,7 +19,7 @@ export class VistaPerfil extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout1">
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center;background-color: var(--lumo-contrast-10pct);" id="vaadinHorizontalLayout">
+  <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="vaadinHorizontalLayout">
    <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; align-self: center; align-items: center; width: fit-content;" id="vaadinVerticalLayout2">
     <img style="width: 200px; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l);" src="https://i.pinimg.com/736x/cb/5d/64/cb5d64be736ab84602ee1bcd20303d4e.jpg" id="img">
     <vaadin-button id="vaadinButton">

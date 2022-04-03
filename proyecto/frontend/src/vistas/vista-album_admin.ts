@@ -17,8 +17,8 @@ export class VistaAlbum_admin extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center;">
-  <img id="img" style="width: 150px;" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center; height: 200px;">
+  <img id="img" style="width: 150px; height: 150px; object-fit: contain" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
   <h4 id="h4">El último tour del mundo</h4>
   <vaadin-button id="vaadinButton">
     Editar 

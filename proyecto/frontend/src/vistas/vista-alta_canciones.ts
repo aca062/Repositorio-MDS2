@@ -22,12 +22,12 @@ export class VistaAlta_canciones extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: var(--lumo-space-xl);">Dar de alta canción</h2>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
-  <vaadin-text-field label="Titulo" id="titulo" style="color: #000000" value="120"></vaadin-text-field>
-  <vaadin-text-field label="Título álbum" id="títuloÁlbum" style="color: #000000; width: 10%;" value="El ultimo tour del mundo"></vaadin-text-field>
-  <vaadin-text-field label="Compositores" id="compositores" style="color: #000000" value="Tainy"></vaadin-text-field>
-  <vaadin-text-field label="Productores" id="productores" style="color: #000000" value="Tainy"></vaadin-text-field>
-  <vaadin-text-field label="Interpretes" id="interpretes" style="color: #000000" value="Bad Bunny"></vaadin-text-field>
+ <vaadin-vertical-layout theme="spacing" style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); height: 760px;" id="vaadinVerticalLayout1">
+  <vaadin-text-field label="Titulo" id="titulo" style="color: #000000; width: 60%;" value="120" has-value></vaadin-text-field>
+  <vaadin-text-field label="Título álbum" id="títuloÁlbum" style="color: #000000; width: 60%;" value="El ultimo tour del mundo" has-value></vaadin-text-field>
+  <vaadin-text-field label="Compositores" id="compositores" style="color: #000000; width: 60%;" value="Tainy" has-value></vaadin-text-field>
+  <vaadin-text-field label="Productores" id="productores" style="color: #000000; width: 60%;" value="Tainy" has-value></vaadin-text-field>
+  <vaadin-text-field label="Interpretes" id="interpretes" style="color: #000000; width: 60%;" value="Bad Bunny" has-value></vaadin-text-field>
   <vaadin-select value="Urbano Latino" id="vaadinSelect" style="color: #000000">
    <template>
     <vaadin-list-box selected="0" id="vaadinListBox">
@@ -43,7 +43,7 @@ export class VistaAlta_canciones extends LitElement {
     </vaadin-list-box>
    </template>
   </vaadin-select>
-  <vaadin-horizontal-layout id="vaadinHorizontalLayout6" style="align-self: flex-start; align-items: center; margin-left: var(--lumo-space-xl); width: 80%;background-color: var(--lumo-contrast-10pct);">
+  <vaadin-horizontal-layout id="vaadinHorizontalLayout6" style="align-self: flex-start; align-items: center; margin-left: var(--lumo-space-xl); width: 80%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-m);">
    <h4 id="h4">Fichero multimedia</h4>
    <vaadin-button id="vaadinButton" style="margin-left: 1%;">
      Añadir 

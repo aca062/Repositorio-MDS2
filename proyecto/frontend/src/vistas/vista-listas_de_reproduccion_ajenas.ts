@@ -22,7 +22,6 @@ export class VistaListas_de_reproduccion_ajenas extends LitElement {
   <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena"></vista-lista_de_reproduccion_ajena>
   <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena1"></vista-lista_de_reproduccion_ajena>
   <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena2"></vista-lista_de_reproduccion_ajena>
-  <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena3"></vista-lista_de_reproduccion_ajena>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 8%; justify-content: flex-end; align-items: center;" id="vaadinHorizontalLayout">
   <vaadin-button id="vaadinButton" style="margin-right: var(--lumo-space-xl);">

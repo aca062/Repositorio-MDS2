@@ -22,12 +22,12 @@ export class VistaEditar_cancion extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h2 id="h2" style="margin-left: var(--lumo-space-xl);">Editar cancion</h2>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
-  <vaadin-text-field label="Título" id="título" value="120"></vaadin-text-field>
-  <vaadin-text-field label="Título álbum" value="El último tour del mundo" id="títuloÁlbum" has-value></vaadin-text-field>
-  <vaadin-text-field label="Compositores" value="Tainy" id="compositores" has-value></vaadin-text-field>
-  <vaadin-text-field label="Productores" id="productores" value="Tainy"></vaadin-text-field>
-  <vaadin-text-field label="Interpretes" id="interpretes" value="Bad bunny"></vaadin-text-field>
+ <vaadin-vertical-layout style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="vaadinVerticalLayout1">
+  <vaadin-text-field label="Título" id="título" value="120" style="width: 60%;" has-value></vaadin-text-field>
+  <vaadin-text-field label="Título álbum" value="El último tour del mundo" id="títuloÁlbum" has-value style="width: 60%;"></vaadin-text-field>
+  <vaadin-text-field label="Compositores" value="Tainy" id="compositores" has-value style="width: 60%;"></vaadin-text-field>
+  <vaadin-text-field label="Productores" id="productores" value="Tainy" style="width: 60%;" has-value></vaadin-text-field>
+  <vaadin-text-field label="Interpretes" id="interpretes" value="Bad bunny" style="width: 60%;" has-value></vaadin-text-field>
   <vaadin-select value="Regueton" id="vaadinSelect">
    <template>
     <vaadin-list-box id="vaadinListBox" selected="0">

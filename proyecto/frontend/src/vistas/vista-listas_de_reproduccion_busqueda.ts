@@ -14,7 +14,7 @@ export class VistaListas_de_reproduccion_busqueda extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing">
+<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl);" id="vaadinVerticalLayout">
  <h1 id="h1">Listas de reproducción</h1>
  <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena"></vista-lista_de_reproduccion_ajena>
  <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena1"></vista-lista_de_reproduccion_ajena>

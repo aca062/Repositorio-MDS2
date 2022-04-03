@@ -20,7 +20,7 @@ export class VistaContacto extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout style="width: 100%; margin-top: var(--lumo-space-xl);background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
   <h2 style="align-self: center;" id="h2">Enviar mensaje al administrador</h2>
-  <vaadin-text-field label="Asunto" placeholder="Placeholder" style="align-self: center; width: 50%;" id="asunto"></vaadin-text-field>
+  <vaadin-text-field label="Asunto" style="align-self: center; width: 50%;" id="asunto"></vaadin-text-field>
   <vaadin-message-input style="align-self: center; width: 50%;" id="vaadinMessageInput"></vaadin-message-input>
   <vaadin-button style="align-self: center;" id="vaadinButton">
     Cancelar 
