@@ -9,6 +9,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
+
+import interfaz.Alta_estilos;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -31,6 +34,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 public class MainView extends VerticalLayout {
+	
 
     /**
      * Construct a new Vaadin view.
@@ -41,6 +45,9 @@ public class MainView extends VerticalLayout {
      */
     public MainView(@Autowired GreetService service) {
 
+    	/*Alta_estilos alta = new Alta_estilos();
+    	add(alta);*/
+    	
         // Use TextField for standard text input
         TextField textField = new TextField("Your name");
         textField.addThemeName("bordered");

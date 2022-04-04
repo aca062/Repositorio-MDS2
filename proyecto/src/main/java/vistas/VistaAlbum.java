@@ -19,14 +19,14 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vistas/vista-album.ts")
 public class VistaAlbum extends LitTemplate {
 
-    @Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("img")
-	private Image img;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutAlbum")
+	private HorizontalLayout layoutAlbum;
+	@Id("imgAlbum")
+	private Image imgAlbum;
+	@Id("titulo")
+	private Button titulo;
 
 	/**
      * Creates a new VistaAlbum.
@@ -34,37 +34,5 @@ public class VistaAlbum extends LitTemplate {
     public VistaAlbum() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
-
-	public Image getImg() {
-		return img;
-	}
-
-	public void setImg(Image img) {
-		this.img = img;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
 
 }

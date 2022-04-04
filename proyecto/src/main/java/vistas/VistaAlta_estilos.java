@@ -20,20 +20,20 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vistas/vista-alta_estilos.ts")
 public class VistaAlta_estilos extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h2")
-	private H2 h2;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("h2Titulo")
+	private H2 h2Titulo;
+	@Id("layoutEstilo")
+	private HorizontalLayout layoutEstilo;
 	@Id("nombreDelEstilo")
 	private TextField nombreDelEstilo;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("vaadinButton1")
-	private Button vaadinButton1;
+	@Id("layoutBotones")
+	private HorizontalLayout layoutBotones;
+	@Id("cancelar")
+	private Button cancelar;
+	@Id("confirmar")
+	private Button confirmar;
 
 	/**
      * Creates a new VistaAlta_estilos.
@@ -42,28 +42,28 @@ public class VistaAlta_estilos extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
 
-	public H2 getH2() {
-		return h2;
+	public H2 getH2Titulo() {
+		return h2Titulo;
 	}
 
-	public void setH2(H2 h2) {
-		this.h2 = h2;
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
 	}
 
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public HorizontalLayout getLayoutEstilo() {
+		return layoutEstilo;
 	}
 
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setLayoutEstilo(HorizontalLayout layoutEstilo) {
+		this.layoutEstilo = layoutEstilo;
 	}
 
 	public TextField getNombreDelEstilo() {
@@ -74,28 +74,28 @@ public class VistaAlta_estilos extends LitTemplate {
 		this.nombreDelEstilo = nombreDelEstilo;
 	}
 
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
 	}
 
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
 	}
 
-	public Button getVaadinButton() {
-		return vaadinButton;
+	public Button getCancelar() {
+		return cancelar;
 	}
 
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
 	}
 
-	public Button getVaadinButton1() {
-		return vaadinButton1;
+	public Button getConfirmar() {
+		return confirmar;
 	}
 
-	public void setVaadinButton1(Button vaadinButton1) {
-		this.vaadinButton1 = vaadinButton1;
+	public void setConfirmar(Button confirmar) {
+		this.confirmar = confirmar;
 	}
 
 }

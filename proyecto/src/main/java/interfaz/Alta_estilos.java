@@ -9,4 +9,13 @@ public class Alta_estilos extends VistaAlta_estilos{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Dar_de_alta _darDeAlta;
+	
+	public Alta_estilos() {
+		Inicializar();
+	}
+	
+	public void Inicializar() {
+		this.getConfirmar().setVisible(true);
+		this.getCancelar().setVisible(true);
+	}
 }
