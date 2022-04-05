@@ -6,8 +6,8 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-item/src/vaadin-item.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
-@customElement('vista-editar_caciones_mostradas_al_cbernauta')
-export class VistaEditar_caciones_mostradas_al_cbernauta extends LitElement {
+@customElement('vista-editar_canciones_mostradas_al_cibernauta')
+export class VistaEditar_canciones_mostradas_al_cibernauta extends LitElement {
   static get styles() {
     return css`
       :host {

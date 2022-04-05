@@ -17,9 +17,9 @@ import com.vaadin.flow.component.button.Button;
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("vista-editar_caciones_mostradas_al_cbernauta")
-@JsModule("./src/vistas/vista-editar_caciones_mostradas_al_cbernauta.ts")
-public class VistaEditar_caciones_mostradas_al_cbernauta extends LitTemplate {
+@Tag("vista-editar_canciones_mostradas_al_cibernauta")
+@JsModule("./src/vistas/vista-editar_canciones_mostradas_al_cibernauta.ts")
+public class VistaEditar_canciones_mostradas_al_cibernauta extends LitTemplate {
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
@@ -59,7 +59,7 @@ public class VistaEditar_caciones_mostradas_al_cbernauta extends LitTemplate {
 	/**
      * Creates a new VistaEditar_caciones_mostradas_al_cbernauta.
      */
-    public VistaEditar_caciones_mostradas_al_cbernauta() {
+    public VistaEditar_canciones_mostradas_al_cibernauta() {
         // You can initialise any data required for the connected UI components here.
     }
 
