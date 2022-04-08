@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H5;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.html.H6;
 
 /**
  * A Designer generated component for the vista-cancion template.
@@ -19,18 +20,19 @@ import com.vaadin.flow.dom.Element;
 @JsModule("./src/vistas/vista-cancion.ts")
 public class VistaCancion extends LitTemplate {
 
-    @Id("h5")
-	private H5 h5;
-	@Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h51")
-	private H5 h51;
-	@Id("vaadinButton1")
-	private Button vaadinButton1;
+
+	@Id("layoutPrincipal")
+	private HorizontalLayout layoutPrincipal;
+	@Id("botonCancion")
+	private Button botonCancion;
+	@Id("layoutCancion")
+	private Element layoutCancion;
+	@Id("numeroRep")
+	private H6 numeroRep;
+	@Id("h5Titulo")
+	private H5 h5Titulo;
+	@Id("meGusta")
+	private Button meGusta;
 
 	/**
      * Creates a new VistaCancion.
@@ -38,53 +40,5 @@ public class VistaCancion extends LitTemplate {
     public VistaCancion() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public H5 getH5() {
-		return h5;
-	}
-
-	public void setH5(H5 h5) {
-		this.h5 = h5;
-	}
-
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public H5 getH51() {
-		return h51;
-	}
-
-	public void setH51(H5 h51) {
-		this.h51 = h51;
-	}
-
-	public Button getVaadinButton1() {
-		return vaadinButton1;
-	}
-
-	public void setVaadinButton1(Button vaadinButton1) {
-		this.vaadinButton1 = vaadinButton1;
-	}
 
 }

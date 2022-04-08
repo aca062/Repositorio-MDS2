@@ -20,19 +20,19 @@ export class VistaEditar_album extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h2 id="h2" style="margin-left: 10%;">Editar album</h2>
- <vaadin-vertical-layout style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); height: 630px;" id="vaadinVerticalLayout1">
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout4" style="width: 100%; height: 20%; justify-content: flex-start; align-self: center;">
-   <img id="img" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
-   <vaadin-button id="vaadinButton" style="flex-grow: 0; align-self: center;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <h2 id="h2Titulo" style="margin-left: 10%;">Editar album</h2>
+ <vaadin-vertical-layout style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); height: 630px;" id="layoutAlbumes">
+  <vaadin-horizontal-layout theme="spacing" id="layoutAlbum" style="width: 100%; height: 20%; justify-content: flex-start; align-self: center;">
+   <img id="imgAlbum" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
+   <vaadin-button id="cambiarImagen" style="flex-grow: 0; align-self: center;">
      Cambiar imagen 
    </vaadin-button>
   </vaadin-horizontal-layout>
-  <vaadin-text-field label="Nombre artista " style="width: 80%; align-self: flex-start;" id="nombreArtista" value="Bad bunny"></vaadin-text-field>
-  <vaadin-text-field label="Fecha edición" style="width: 80%; align-self: flex-start;" id="fechaEdición" value="27/11/2020"></vaadin-text-field>
-  <vaadin-text-field label="Titulo" id="titulo" style="width: 80%; align-self: flex-start;" value="El último tour del mundo"></vaadin-text-field>
-  <vaadin-select value="Item one" id="vaadinSelect" style="width: 80%;">
+  <vaadin-text-field label="Nombre artista " style="width: 80%; align-self: flex-start;" id="nombreArtista" value="Bad bunny" has-value></vaadin-text-field>
+  <vaadin-text-field label="Fecha edición" style="width: 80%; align-self: flex-start;" id="fechaEdición" value="27/11/2020" has-value></vaadin-text-field>
+  <vaadin-text-field label="Titulo" id="titulo" style="width: 80%; align-self: flex-start;" value="El último tour del mundo" has-value></vaadin-text-field>
+  <vaadin-select value="Item one" id="buscadorCanciones" style="width: 80%;">
    <template>
     <vaadin-list-box id="vaadinListBox1" selected="0">
      <vaadin-item selected id="vaadinItem3">
@@ -47,29 +47,29 @@ export class VistaEditar_album extends LitElement {
     </vaadin-list-box>
    </template>
   </vaadin-select>
-  <vaadin-list-box id="vaadinListBox" style="width: 80%;">
-   <vaadin-horizontal-layout style="justify-content: space-between;">
-    <vaadin-item id="vaadinItem2">
+  <vaadin-list-box id="listaCanciones" style="width: 80%;">
+   <vaadin-horizontal-layout style="justify-content: space-between;" id="layoutCancion">
+    <vaadin-item id="nombreCancion">
       120 
     </vaadin-item>
-    <vaadin-button>
-     Eliminar
+    <vaadin-button id="eliminar">
+      Eliminar 
     </vaadin-button>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="justify-content: space-between;">
-    <vaadin-item id="vaadinItem1">
+   <vaadin-horizontal-layout style="justify-content: space-between;" id="layoutCancion1">
+    <vaadin-item id="nombreCancion1">
       Dakiti 
     </vaadin-item>
-    <vaadin-button>
-     Eliminar
+    <vaadin-button id="eliminar1">
+      Eliminar 
     </vaadin-button>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="justify-content: space-between;">
-    <vaadin-item id="vaadinItem">
+   <vaadin-horizontal-layout style="justify-content: space-between;" id="layoutCancion2">
+    <vaadin-item id="nombreCancion2">
       Booker T 
     </vaadin-item>
-    <vaadin-button>
-     Eliminar
+    <vaadin-button id="eliminar2">
+      Eliminar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-list-box>

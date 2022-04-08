@@ -19,16 +19,17 @@ import vistas.VistaBuscar_administrador;
 @JsModule("./src/vistas/vista-buscar_elemento.ts")
 public class VistaBuscar_elemento extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h1")
-	private H1 h1;
-	@Id("vaadinTextField")
-	private TextField vaadinTextField;
+
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("h1Titulo")
+	private H1 h1Titulo;
+	@Id("buscador")
+	private TextField buscador;
 	@Id("ironIcon")
 	private Element ironIcon;
 	@Id("vistaBuscar_administrador")
-	private VistaBuscar_administrador vistaBuscar_administrador;
+	private Element vistaBuscar_administrador;
 
 	/**
      * Creates a new VistaBuscar_elemento.
@@ -36,45 +37,5 @@ public class VistaBuscar_elemento extends LitTemplate {
     public VistaBuscar_elemento() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
-	}
-
-	public TextField getVaadinTextField() {
-		return vaadinTextField;
-	}
-
-	public void setVaadinTextField(TextField vaadinTextField) {
-		this.vaadinTextField = vaadinTextField;
-	}
-
-	public Element getIronIcon() {
-		return ironIcon;
-	}
-
-	public void setIronIcon(Element ironIcon) {
-		this.ironIcon = ironIcon;
-	}
-
-	public VistaBuscar_administrador getVistaBuscar_administrador() {
-		return vistaBuscar_administrador;
-	}
-
-	public void setVistaBuscar_administrador(VistaBuscar_administrador vistaBuscar_administrador) {
-		this.vistaBuscar_administrador = vistaBuscar_administrador;
-	}
 
 }

@@ -19,18 +19,18 @@ import vistas.VistaCancion;
 @JsModule("./src/vistas/vista-canciones_busqueda.ts")
 public class VistaCanciones_busqueda extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h1")
-	private H1 h1;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+    
+
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("h1Titulo")
+	private H1 h1Titulo;
 	@Id("vistaCancion")
-	private VistaCancion vistaCancion;
+	private Element vistaCancion;
 	@Id("vistaCancion1")
-	private VistaCancion vistaCancion1;
+	private Element vistaCancion1;
 	@Id("vistaCancion2")
-	private VistaCancion vistaCancion2;
+	private Element vistaCancion2;
 
 	/**
      * Creates a new VistaCanciones_busqueda.
@@ -38,53 +38,5 @@ public class VistaCanciones_busqueda extends LitTemplate {
     public VistaCanciones_busqueda() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public VistaCancion getVistaCancion() {
-		return vistaCancion;
-	}
-
-	public void setVistaCancion(VistaCancion vistaCancion) {
-		this.vistaCancion = vistaCancion;
-	}
-
-	public VistaCancion getVistaCancion1() {
-		return vistaCancion1;
-	}
-
-	public void setVistaCancion1(VistaCancion vistaCancion1) {
-		this.vistaCancion1 = vistaCancion1;
-	}
-
-	public VistaCancion getVistaCancion2() {
-		return vistaCancion2;
-	}
-
-	public void setVistaCancion2(VistaCancion vistaCancion2) {
-		this.vistaCancion2 = vistaCancion2;
-	}
 
 }

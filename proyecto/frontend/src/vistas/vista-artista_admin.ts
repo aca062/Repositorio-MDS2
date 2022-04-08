@@ -16,14 +16,14 @@ export class VistaArtista_admin extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center; height: 200px;">
-  <img id="img" style="width: 150px; height: 150px; object-fit: contain" src="https://pbs.twimg.com/media/E51LjjnXIAMO8NM.jpg">
-  <h4 id="h4">Bad bunny</h4>
-  <vaadin-button id="vaadinButton">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <vaadin-horizontal-layout theme="spacing" id="layoutArtista" style="align-items: center; height: 200px;">
+  <img id="imgArtista" style="width: 150px; height: 150px; object-fit: contain" src="https://pbs.twimg.com/media/E51LjjnXIAMO8NM.jpg">
+  <h4 id="h4Nombre">Bad bunny</h4>
+  <vaadin-button id="editar">
     Editar 
   </vaadin-button>
-  <vaadin-button id="vaadinButton1">
+  <vaadin-button id="eliminar">
     Eliminar 
   </vaadin-button>
  </vaadin-horizontal-layout>

@@ -20,18 +20,20 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vistas/vista-contacto.ts")
 public class VistaContacto extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("h2")
-	private H2 h2;
+    
+
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutMensaje")
+	private Element layoutMensaje;
+	@Id("h2Titulo")
+	private H2 h2Titulo;
 	@Id("asunto")
 	private TextField asunto;
-	@Id("vaadinMessageInput")
-	private MessageInput vaadinMessageInput;
-	@Id("vaadinButton")
-	private Button vaadinButton;
+	@Id("mensaje")
+	private MessageInput mensaje;
+	@Id("cancelar")
+	private Button cancelar;
 
 	/**
      * Creates a new VistaContacto.
@@ -40,52 +42,6 @@ public class VistaContacto extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
-	}
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-	public H2 getH2() {
-		return h2;
-	}
-
-	public void setH2(H2 h2) {
-		this.h2 = h2;
-	}
-
-	public TextField getAsunto() {
-		return asunto;
-	}
-
-	public void setAsunto(TextField asunto) {
-		this.asunto = asunto;
-	}
-
-	public MessageInput getVaadinMessageInput() {
-		return vaadinMessageInput;
-	}
-
-	public void setVaadinMessageInput(MessageInput vaadinMessageInput) {
-		this.vaadinMessageInput = vaadinMessageInput;
-	}
-
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
+	
 
 }

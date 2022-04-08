@@ -16,10 +16,10 @@ export class VistaArtista_elemento extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 200px; align-items: flex-start; justify-content: center;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="padding: var(--lumo-space-s); width: 100%; align-items: center; height: 200px;">
-  <img id="img" style="height: 150px; width: 150px; object-fit: contain;" src="https://www.runneruprecords.com/wp-content/uploads/2019/12/Juice-Wrld-promesa-del-rap-muere.jpg">
-  <vaadin-button id="vaadinButton" style="align-self: center; margin: var(--lumo-space-m);">
+<vaadin-vertical-layout style="width: 100%; height: 200px; align-items: flex-start; justify-content: center;" id="layoutPrincipal">
+ <vaadin-horizontal-layout id="layoutArtista" style="padding: var(--lumo-space-s); width: 100%; align-items: center; height: 200px;">
+  <img id="imgArtista" style="height: 150px; width: 150px; object-fit: contain;" src="https://www.runneruprecords.com/wp-content/uploads/2019/12/Juice-Wrld-promesa-del-rap-muere.jpg">
+  <vaadin-button id="botonNombre" style="align-self: center; margin: var(--lumo-space-m);">
     Juice WRLD 
   </vaadin-button>
  </vaadin-horizontal-layout>

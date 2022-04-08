@@ -3,9 +3,9 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-select/src/vaadin-select.js';
 import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-item/src/vaadin-item.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-item/src/vaadin-item.js';
 
 @customElement('vista-crear_lista_de_reproduccion')
 export class VistaCrear_lista_de_reproduccion extends LitElement {
@@ -20,13 +20,13 @@ export class VistaCrear_lista_de_reproduccion extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout">
- <h2 id="h2" style="align-self: flex-start; padding-left: 50px">Crear lista de reproducción</h2>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 90%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);">
-  <vaadin-text-field label="Nombre" id="label" style="width: 70%;" value="Mi lista nº 3" has-value></vaadin-text-field>
-  <vaadin-select value="Buscador de canciones" id="vaadinSelect" style="width: 70%;" label="Lista de canciones">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="layoutPrincipal">
+ <h2 id="h2Titulo" style="align-self: flex-start; padding-left: 50px">Crear lista de reproducción</h2>
+ <vaadin-vertical-layout theme="spacing" id="layoutLista" style="width: 90%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);">
+  <vaadin-text-field label="Nombre" id="nombre" style="width: 70%;" value="Mi lista nº 3" has-value></vaadin-text-field>
+  <vaadin-select value="Buscador de canciones" id="listaCanciones" style="width: 70%;" label="Lista de canciones">
    <template>
-    <vaadin-list-box selected="0" id="vaadinListBox1">
+    <vaadin-list-box selected="0" id="buscadorCanciones">
      <vaadin-item selected id="vaadinItem4">
        Buscador de canciones 
      </vaadin-item>
@@ -39,45 +39,29 @@ export class VistaCrear_lista_de_reproduccion extends LitElement {
     </vaadin-list-box>
    </template>
   </vaadin-select>
-  <vaadin-list-box id="vaadinListBox" style="width: 70%;">
-   <vaadin-horizontal-layout style="justify-content: space-between; width: 60%;">
-    <vaadin-item id="vaadinItem3">
+  <vaadin-list-box id="listaCancion" style="width: 70%;">
+   <vaadin-horizontal-layout style="justify-content: space-between; width: 60%;" id="layoutCancion">
+    <vaadin-item id="nombreCancion">
       120 
     </vaadin-item>
-    <vaadin-button>
-     Eliminar
+    <vaadin-button id="eliminar">
+      Eliminar 
     </vaadin-button>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="justify-content: space-between; width: 60%;">
-    <vaadin-item id="vaadinItem2">
+   <vaadin-horizontal-layout style="justify-content: space-between; width: 60%;" id="layoutCancion1">
+    <vaadin-item id="nombre1">
       Lucid Dreams 
     </vaadin-item>
-    <vaadin-button>
-     Eliminar
-    </vaadin-button>
-   </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="justify-content: space-between; width: 60%;">
-    <vaadin-item id="vaadinItem1">
-      Whising Well 
-    </vaadin-item>
-    <vaadin-button>
-     Eliminar
-    </vaadin-button>
-   </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="justify-content: space-between; width: 60%;">
-    <vaadin-item id="vaadinItem">
-      Clouds 
-    </vaadin-item>
-    <vaadin-button>
-     Eliminar
+    <vaadin-button id="eliminar1">
+      Eliminar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-list-box>
-  <vaadin-horizontal-layout theme="spacing-xl" id="vaadinHorizontalLayout" style="width: 100%; justify-content: flex-end;">
-   <vaadin-button id="vaadinButton">
+  <vaadin-horizontal-layout theme="spacing-xl" id="layoutBotones" style="width: 100%; justify-content: flex-end;">
+   <vaadin-button id="cancelar">
      Cancelar 
    </vaadin-button>
-   <vaadin-button id="vaadinButton1">
+   <vaadin-button id="confirmar">
      Confirmar 
    </vaadin-button>
   </vaadin-horizontal-layout>

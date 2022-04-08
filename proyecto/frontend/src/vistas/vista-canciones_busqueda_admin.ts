@@ -14,9 +14,9 @@ export class VistaCanciones_busqueda_admin extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Canciones</h1>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <h1 id="h1Titulo">Canciones</h1>
+ <vaadin-horizontal-layout theme="spacing" id="layoutCanciones" style="width: 100%;">
   <vista-cancion_admin id="vistaCancion_admin" style="width: 50%;"></vista-cancion_admin>
   <vista-cancion_admin id="vistaCancion_admin1" style="width: 50%;"></vista-cancion_admin>
  </vaadin-horizontal-layout>

@@ -16,22 +16,22 @@ export class VistaDar_de_alta extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 style="margin-left: 10%;" id="h1">Altas</h1>
- <vaadin-vertical-layout id="vaadinVerticalLayout1" style="align-self: center; align-items: center; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); width: 90%;">
-  <vaadin-horizontal-layout theme="" style="width: 100%; justify-content: space-evenly;" id="vaadinHorizontalLayout">
-   <vaadin-button id="vaadinButton">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <h1 style="margin-left: 10%;" id="h1Titulo">Altas</h1>
+ <vaadin-vertical-layout id="layoutAdministracion" style="align-self: center; align-items: center; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); width: 90%;">
+  <vaadin-horizontal-layout theme="" style="width: 100%; justify-content: space-evenly;" id="layoutBotones">
+   <vaadin-button id="botonArtistas">
      Artistas 
    </vaadin-button>
-   <vaadin-button id="vaadinButton1">
+   <vaadin-button id="botonCanciones">
      Canciones 
    </vaadin-button>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="" id="vaadinHorizontalLayout1" style="width: 100%; justify-content: space-evenly; margin-top: var(--lumo-space-l);">
-   <vaadin-button id="vaadinButton3">
+  <vaadin-horizontal-layout theme="" id="layoutBotones1" style="width: 100%; justify-content: space-evenly; margin-top: var(--lumo-space-l);">
+   <vaadin-button id="botonAlbumes">
      Álbumes 
    </vaadin-button>
-   <vaadin-button id="vaadinButton2">
+   <vaadin-button id="botonEstilos">
      Estilos 
    </vaadin-button>
   </vaadin-horizontal-layout>

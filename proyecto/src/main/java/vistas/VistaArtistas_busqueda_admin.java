@@ -19,16 +19,18 @@ import vistas.VistaArtista_admin;
 @JsModule("./src/vistas/vista-artistas_busqueda_admin.ts")
 public class VistaArtistas_busqueda_admin extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h1")
-	private H1 h1;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+    
+
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("h1Titulo")
+	private H1 h1Titulo;
+	@Id("layoutArtistas")
+	private HorizontalLayout layoutArtistas;
 	@Id("vistaArtista_admin")
-	private VistaArtista_admin vistaArtista_admin;
+	private Element vistaArtista_admin;
 	@Id("vistaArtista_admin1")
-	private VistaArtista_admin vistaArtista_admin1;
+	private Element vistaArtista_admin1;
 
 	/**
      * Creates a new VistaArtistas_busqueda_admin.
@@ -36,45 +38,5 @@ public class VistaArtistas_busqueda_admin extends LitTemplate {
     public VistaArtistas_busqueda_admin() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public VistaArtista_admin getVistaArtista_admin() {
-		return vistaArtista_admin;
-	}
-
-	public void setVistaArtista_admin(VistaArtista_admin vistaArtista_admin) {
-		this.vistaArtista_admin = vistaArtista_admin;
-	}
-
-	public VistaArtista_admin getVistaArtista_admin1() {
-		return vistaArtista_admin1;
-	}
-
-	public void setVistaArtista_admin1(VistaArtista_admin vistaArtista_admin1) {
-		this.vistaArtista_admin1 = vistaArtista_admin1;
-	}
 
 }

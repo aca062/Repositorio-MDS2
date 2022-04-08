@@ -20,17 +20,17 @@ export class VistaEditar_cancion extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h2 id="h2" style="margin-left: var(--lumo-space-xl);">Editar cancion</h2>
- <vaadin-vertical-layout style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="vaadinVerticalLayout1">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <h2 id="h2Titulo" style="margin-left: var(--lumo-space-xl);">Editar cancion</h2>
+ <vaadin-vertical-layout style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="layoutCancion">
   <vaadin-text-field label="Título" id="título" value="120" style="width: 60%;" has-value></vaadin-text-field>
   <vaadin-text-field label="Título álbum" value="El último tour del mundo" id="títuloÁlbum" has-value style="width: 60%;"></vaadin-text-field>
   <vaadin-text-field label="Compositores" value="Tainy" id="compositores" has-value style="width: 60%;"></vaadin-text-field>
   <vaadin-text-field label="Productores" id="productores" value="Tainy" style="width: 60%;" has-value></vaadin-text-field>
   <vaadin-text-field label="Interpretes" id="interpretes" value="Bad bunny" style="width: 60%;" has-value></vaadin-text-field>
-  <vaadin-select value="Regueton" id="vaadinSelect">
+  <vaadin-select value="Regueton" id="estilo">
    <template>
-    <vaadin-list-box id="vaadinListBox" selected="0">
+    <vaadin-list-box id="listaEstilos" selected="0">
      <vaadin-item id="vaadinItem" selected>
        Regueton 
      </vaadin-item>
@@ -40,18 +40,18 @@ export class VistaEditar_cancion extends LitElement {
     </vaadin-list-box>
    </template>
   </vaadin-select>
-  <vaadin-horizontal-layout style="width: 100%; align-self: flex-start; justify-content: flex-start; align-items: center;" id="vaadinHorizontalLayout6">
-   <h4 id="h4" style="align-self: center;">Fichero multimedia</h4>
-   <vaadin-button id="vaadinButton" style="margin-left: 1%;">
+  <vaadin-horizontal-layout style="width: 100%; align-self: flex-start; justify-content: flex-start; align-items: center;" id="layoutFichero">
+   <h4 id="h4Titulo" style="align-self: center;">Fichero multimedia</h4>
+   <vaadin-button id="anadirCancion" style="margin-left: 1%;">
      Añadir 
    </vaadin-button>
-   <h5 id="h5" style="flex-grow: 0; margin-left: 10%;">Solo son válidos los .mp3, .mp4, .ogg</h5>
+   <h5 id="h5Requisitos" style="flex-grow: 0; margin-left: 10%;">Solo son válidos los .mp3, .mp4, .ogg</h5>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout id="vaadinHorizontalLayout7" style="align-self: flex-end; justify-content: space-evenly; width: 25%;">
-   <vaadin-button id="vaadinButton1">
+  <vaadin-horizontal-layout id="layoutBotones" style="align-self: flex-end; justify-content: space-evenly; width: 25%;">
+   <vaadin-button id="cancelar">
      Cancelar 
    </vaadin-button>
-   <vaadin-button>
+   <vaadin-button id="confirmar">
      Confirmar 
    </vaadin-button>
   </vaadin-horizontal-layout>
