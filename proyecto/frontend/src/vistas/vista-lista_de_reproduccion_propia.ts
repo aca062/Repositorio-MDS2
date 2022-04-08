@@ -16,10 +16,10 @@ export class VistaLista_de_reproduccion_propia extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="height: 200px; align-items: center; align-self: flex-start;">
-  <img id="img" style="0 object-fit:contain; width: 150px; height: 150px;" src="https://i.scdn.co/image/ab67706f00000003568579a7b48bad7547095271">
-  <vaadin-button id="vaadinButton" style="align-self: center;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <vaadin-horizontal-layout theme="spacing" id="layoutListaPropia" style="height: 200px; align-items: center; align-self: flex-start;">
+  <img id="imgListaPropia" style="0 object-fit:contain; width: 150px; height: 150px;" src="https://i.scdn.co/image/ab67706f00000003568579a7b48bad7547095271">
+  <vaadin-button id="botonNombre" style="align-self: center;">
     This is Bad Bunny 
   </vaadin-button>
  </vaadin-horizontal-layout>

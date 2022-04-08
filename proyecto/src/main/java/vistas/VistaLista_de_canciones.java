@@ -17,16 +17,18 @@ import vistas.VistaCancion;
 @JsModule("./src/vistas/vista-lista_de_canciones.ts")
 public class VistaLista_de_canciones extends LitTemplate {
 
-    @Id("vistaCancion")
-	private VistaCancion vistaCancion;
+    
+
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("vistaCancion")
+	private Element vistaCancion;
 	@Id("vistaCancion1")
-	private VistaCancion vistaCancion1;
+	private Element vistaCancion1;
 	@Id("vistaCancion2")
-	private VistaCancion vistaCancion2;
+	private Element vistaCancion2;
 	@Id("vistaCancion3")
-	private VistaCancion vistaCancion3;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
+	private Element vistaCancion3;
 
 	/**
      * Creates a new VistaLista_de_canciones.
@@ -35,44 +37,6 @@ public class VistaLista_de_canciones extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public VistaCancion getVistaCancion() {
-		return vistaCancion;
-	}
-
-	public void setVistaCancion(VistaCancion vistaCancion) {
-		this.vistaCancion = vistaCancion;
-	}
-
-	public VistaCancion getVistaCancion1() {
-		return vistaCancion1;
-	}
-
-	public void setVistaCancion1(VistaCancion vistaCancion1) {
-		this.vistaCancion1 = vistaCancion1;
-	}
-
-	public VistaCancion getVistaCancion2() {
-		return vistaCancion2;
-	}
-
-	public void setVistaCancion2(VistaCancion vistaCancion2) {
-		this.vistaCancion2 = vistaCancion2;
-	}
-
-	public VistaCancion getVistaCancion3() {
-		return vistaCancion3;
-	}
-
-	public void setVistaCancion3(VistaCancion vistaCancion3) {
-		this.vistaCancion3 = vistaCancion3;
-	}
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
+	
 
 }

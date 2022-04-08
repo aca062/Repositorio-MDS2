@@ -19,16 +19,18 @@ import vistas.VistaEstilo_admin;
 @JsModule("./src/vistas/vista-estilos_busqueda_admin.ts")
 public class VistaEstilos_busqueda_admin extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h1")
-	private H1 h1;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+    
+
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("Titulo")
+	private H1 titulo;
+	@Id("layoutEstilo")
+	private HorizontalLayout layoutEstilo;
 	@Id("vistaEstilo_admin")
-	private VistaEstilo_admin vistaEstilo_admin;
+	private Element vistaEstilo_admin;
 	@Id("vistaEstilo_admin1")
-	private VistaEstilo_admin vistaEstilo_admin1;
+	private Element vistaEstilo_admin1;
 
 	/**
      * Creates a new VistaEstilos_busqueda_admin.
@@ -37,44 +39,6 @@ public class VistaEstilos_busqueda_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public VistaEstilo_admin getVistaEstilo_admin() {
-		return vistaEstilo_admin;
-	}
-
-	public void setVistaEstilo_admin(VistaEstilo_admin vistaEstilo_admin) {
-		this.vistaEstilo_admin = vistaEstilo_admin;
-	}
-
-	public VistaEstilo_admin getVistaEstilo_admin1() {
-		return vistaEstilo_admin1;
-	}
-
-	public void setVistaEstilo_admin1(VistaEstilo_admin vistaEstilo_admin1) {
-		this.vistaEstilo_admin1 = vistaEstilo_admin1;
-	}
+	
 
 }

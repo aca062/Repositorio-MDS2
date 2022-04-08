@@ -16,17 +16,17 @@ export class VistaListas_de_reproduccion_propias extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Tus listas de reproducción</h1>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <h1 id="h1Titulo">Tus listas de reproducción</h1>
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="layoutListasPropias">
   <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia"></vista-lista_de_reproduccion_propia>
   <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia1"></vista-lista_de_reproduccion_propia>
   <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia2"></vista-lista_de_reproduccion_propia>
   <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia3"></vista-lista_de_reproduccion_propia>
   <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia4"></vista-lista_de_reproduccion_propia>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout1">
-  <vaadin-button id="vaadinButton">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-end;" id="layoutBoton">
+  <vaadin-button id="verTodas">
     Ver todas 
   </vaadin-button>
  </vaadin-horizontal-layout>

@@ -17,20 +17,18 @@ export class VistaIntroducir_nueva_contrasena extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-self: center;" id="vaadinVerticalLayout1">
-  <h2 style="align-self: center; margin-top: var(--lumo-space-xl);" id="h2">Nueva contraseña</h2>
-  <vaadin-text-field error-message="Por favor, introduzca una contraseña" required invalid="" label="Nueva contraseña" style="align-self: center; width: 50%;" id="nuevaContraseña"></vaadin-text-field>
-  <vaadin-text-field error-message="Por favor, introduzca la misma contraseña que arriba" required invalid="" label="Vuelva a introducir la contraseña" style="align-self: center; width: 50%;" id="vuelvaAIntroducirLaContraseña"></vaadin-text-field>
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: center; justify-content: center;" id="vaadinHorizontalLayout">
-   <vaadin-button id="vaadinButton">
-     Cancelar 
-   </vaadin-button>
-   <vaadin-button id="vaadinButton1">
-     Confirmar 
-   </vaadin-button>
-  </vaadin-horizontal-layout>
- </vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <h2 style="align-self: center; margin-top: var(--lumo-space-xl);" id="h2Titulo">Nueva contraseña</h2>
+ <vaadin-text-field error-message="Por favor, introduzca una contraseña" required invalid="" label="Nueva contraseña" style="align-self: center; width: 50%;" id="nuevaContraseña"></vaadin-text-field>
+ <vaadin-text-field error-message="Por favor, introduzca la misma contraseña que arriba" required invalid="" label="Vuelva a introducir la contraseña" style="align-self: center; width: 50%;" id="vuelvaAIntroducirLaContraseña"></vaadin-text-field>
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: center; justify-content: center;" id="layoutBotones">
+  <vaadin-button id="cancelar">
+    Cancelar 
+  </vaadin-button>
+  <vaadin-button id="confirmar">
+    Confirmar 
+  </vaadin-button>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

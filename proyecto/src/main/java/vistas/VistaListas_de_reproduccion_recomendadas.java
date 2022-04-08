@@ -18,16 +18,18 @@ import vistas.VistaLista_de_reproduccion_ajena;
 @JsModule("./src/vistas/vista-listas_de_reproduccion_recomendadas.ts")
 public class VistaListas_de_reproduccion_recomendadas extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h1")
-	private H1 h1;
+    
+
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("Titulo")
+	private H1 titulo;
 	@Id("vistaLista_de_reproduccion_ajena")
-	private VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena;
+	private Element vistaLista_de_reproduccion_ajena;
 	@Id("vistaLista_de_reproduccion_ajena1")
-	private VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena1;
+	private Element vistaLista_de_reproduccion_ajena1;
 	@Id("vistaLista_de_reproduccion_ajena2")
-	private VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena2;
+	private Element vistaLista_de_reproduccion_ajena2;
 
 	/**
      * Creates a new VistaListas_de_reproduccion_recomendadas.
@@ -36,44 +38,6 @@ public class VistaListas_de_reproduccion_recomendadas extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
-	}
-
-	public VistaLista_de_reproduccion_ajena getVistaLista_de_reproduccion_ajena() {
-		return vistaLista_de_reproduccion_ajena;
-	}
-
-	public void setVistaLista_de_reproduccion_ajena(VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena) {
-		this.vistaLista_de_reproduccion_ajena = vistaLista_de_reproduccion_ajena;
-	}
-
-	public VistaLista_de_reproduccion_ajena getVistaLista_de_reproduccion_ajena1() {
-		return vistaLista_de_reproduccion_ajena1;
-	}
-
-	public void setVistaLista_de_reproduccion_ajena1(VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena1) {
-		this.vistaLista_de_reproduccion_ajena1 = vistaLista_de_reproduccion_ajena1;
-	}
-
-	public VistaLista_de_reproduccion_ajena getVistaLista_de_reproduccion_ajena2() {
-		return vistaLista_de_reproduccion_ajena2;
-	}
-
-	public void setVistaLista_de_reproduccion_ajena2(VistaLista_de_reproduccion_ajena vistaLista_de_reproduccion_ajena2) {
-		this.vistaLista_de_reproduccion_ajena2 = vistaLista_de_reproduccion_ajena2;
-	}
+	
 
 }

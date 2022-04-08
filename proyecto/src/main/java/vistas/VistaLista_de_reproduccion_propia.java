@@ -19,14 +19,16 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vistas/vista-lista_de_reproduccion_propia.ts")
 public class VistaLista_de_reproduccion_propia extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("img")
-	private Image img;
-	@Id("vaadinButton")
-	private Button vaadinButton;
+    
+
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutListaPropia")
+	private HorizontalLayout layoutListaPropia;
+	@Id("imgListaPropia")
+	private Image imgListaPropia;
+	@Id("botonNombre")
+	private Button botonNombre;
 
 	/**
      * Creates a new VistaLista_de_reproduccion_propia.
@@ -35,36 +37,6 @@ public class VistaLista_de_reproduccion_propia extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public Image getImg() {
-		return img;
-	}
-
-	public void setImg(Image img) {
-		this.img = img;
-	}
-
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
+	
 
 }

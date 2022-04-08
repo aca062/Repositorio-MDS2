@@ -19,10 +19,10 @@ export class VistaLista_de_reproduccion_favoritos extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl);" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing-xl" id="vaadinHorizontalLayout">
-  <h1 id="h1">Lista de favoritos</h1>
-  <vaadin-select value="Opciones" style="align-self: center;" id="vaadinSelect">
+<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl);" id="layoutPrincipal">
+ <vaadin-horizontal-layout theme="spacing-xl" id="layoutTitulo">
+  <h1 id="h1Titulo">Lista de favoritos</h1>
+  <vaadin-select value="Opciones" style="align-self: center;" id="opciones">
    <template>
     <vaadin-list-box selected="0" id="vaadinListBox">
      <vaadin-item selected id="vaadinItem">
@@ -38,12 +38,12 @@ export class VistaLista_de_reproduccion_favoritos extends LitElement {
    </template>
   </vaadin-select>
  </vaadin-horizontal-layout>
- <h3 id="h3">Paco12</h3>
- <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="vaadinVerticalLayout1">
-  <vaadin-horizontal-layout theme="spacing" style="align-self: flex-end;" id="vaadinHorizontalLayout1">
-   <h2 style="margin-right: var(--lumo-space-xl);" id="h2">3/1000</h2>
+ <h3 id="h3Creador">Paco12</h3>
+ <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="layoutLista">
+  <vaadin-horizontal-layout theme="spacing" style="align-self: flex-end;" id="layoutNumCanciones">
+   <h2 style="margin-right: var(--lumo-space-xl);" id="numCanciones">3/1000</h2>
   </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout2">
+  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="listaCanciones">
    <vista-cancion id="vistaCancion" style="width: 100%;"></vista-cancion>
    <vista-cancion id="vistaCancion1" style="width: 100%;"></vista-cancion>
    <vista-cancion id="vistaCancion2" style="width: 100%;"></vista-cancion>

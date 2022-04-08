@@ -19,16 +19,18 @@ import vistas.VistaLista_de_reproduccion_admin;
 @JsModule("./src/vistas/vista-listas_de_reproduccion_busqueda_admin.ts")
 public class VistaListas_de_reproduccion_busqueda_admin extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h1")
-	private H1 h1;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+    
+
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("h1Titulo")
+	private H1 h1Titulo;
+	@Id("layoutListas")
+	private HorizontalLayout layoutListas;
 	@Id("vistaLista_de_reproduccion_admin")
-	private VistaLista_de_reproduccion_admin vistaLista_de_reproduccion_admin;
+	private Element vistaLista_de_reproduccion_admin;
 	@Id("vistaLista_de_reproduccion_admin1")
-	private VistaLista_de_reproduccion_admin vistaLista_de_reproduccion_admin1;
+	private Element vistaLista_de_reproduccion_admin1;
 
 	/**
      * Creates a new VistaListas_de_reproduccion_busqueda_admin.
@@ -37,44 +39,6 @@ public class VistaListas_de_reproduccion_busqueda_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public VistaLista_de_reproduccion_admin getVistaLista_de_reproduccion_admin() {
-		return vistaLista_de_reproduccion_admin;
-	}
-
-	public void setVistaLista_de_reproduccion_admin(VistaLista_de_reproduccion_admin vistaLista_de_reproduccion_admin) {
-		this.vistaLista_de_reproduccion_admin = vistaLista_de_reproduccion_admin;
-	}
-
-	public VistaLista_de_reproduccion_admin getVistaLista_de_reproduccion_admin1() {
-		return vistaLista_de_reproduccion_admin1;
-	}
-
-	public void setVistaLista_de_reproduccion_admin1(VistaLista_de_reproduccion_admin vistaLista_de_reproduccion_admin1) {
-		this.vistaLista_de_reproduccion_admin1 = vistaLista_de_reproduccion_admin1;
-	}
+	
 
 }

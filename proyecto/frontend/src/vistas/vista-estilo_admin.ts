@@ -16,13 +16,13 @@ export class VistaEstilo_admin extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center;">
-  <h4 id="h4">Reguetón</h4>
-  <vaadin-button id="vaadinButton">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <vaadin-horizontal-layout theme="spacing" id="layoutEstilo" style="align-items: center;">
+  <h4 id="estilo">Reguetón</h4>
+  <vaadin-button id="editar">
     Editar 
   </vaadin-button>
-  <vaadin-button id="vaadinButton1">
+  <vaadin-button id="eliminar">
     Eliminar 
   </vaadin-button>
  </vaadin-horizontal-layout>

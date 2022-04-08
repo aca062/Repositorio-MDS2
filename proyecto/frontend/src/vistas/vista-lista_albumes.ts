@@ -14,9 +14,9 @@ export class VistaLista_albumes extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Álbumes</h1>
- <vaadin-horizontal-layout theme="spacing-xl" id="vaadinHorizontalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <h1 id="h1Titulo">Álbumes</h1>
+ <vaadin-horizontal-layout theme="spacing-xl" id="layoutAlbumes">
   <vista-album id="vistaAlbum"></vista-album>
   <vista-album id="vistaAlbum1"></vista-album>
   <vista-album id="vistaAlbum2"></vista-album>
