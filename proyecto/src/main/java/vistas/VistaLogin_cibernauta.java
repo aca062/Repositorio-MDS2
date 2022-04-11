@@ -20,162 +20,130 @@ import com.vaadin.flow.component.html.H5;
 @JsModule("./src/vistas/vista-login_cibernauta.ts")
 public class VistaLogin_cibernauta extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("label")
-	private TextField label;
-	@Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("label1")
-	private TextField label1;
-	@Id("a")
-	private Element a;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinButton1")
-	private Button vaadinButton1;
-	@Id("vaadinButton2")
-	private Button vaadinButton2;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinButton3")
-	private Button vaadinButton3;
-	@Id("h5")
-	private H5 h5;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("vaadinButton4")
-	private Button vaadinButton4;
-	@Id("h51")
-	private H5 h51;
-
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutLogin")
+	private Element layoutLogin;
+	@Id("logo")
+	private Button logo;
+	@Id("textFieldCorreo")
+	private TextField textFieldCorreo;
+	@Id("textFieldContrasena")
+	private TextField textFieldContrasena;
+	@Id("hasOlvidadoContrasena")
+	private Element hasOlvidadoContrasena;
+	@Id("layoutBotones")
+	private HorizontalLayout layoutBotones;
+	@Id("botonRegistrarse")
+	private Button botonRegistrarse;
+	@Id("layoutFacebook")
+	private HorizontalLayout layoutFacebook;
+	@Id("botonIniciarSesion")
+	private Button botonIniciarSesion;
+	@Id("botonFacebook")
+	private Button botonFacebook;
+	@Id("textoFacebook")
+	private H5 textoFacebook;
+	@Id("layoutGoogle")
+	private HorizontalLayout layoutGoogle;
+	@Id("textoGoogle")
+	private H5 textoGoogle;
+	@Id("botonGoogle")
+	private Button botonGoogle;
 	/**
      * Creates a new VistaLogin_cibernauta.
      */
     public VistaLogin_cibernauta() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
+	public Element getLayoutLogin() {
+		return layoutLogin;
 	}
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	public void setLayoutLogin(Element layoutLogin) {
+		this.layoutLogin = layoutLogin;
 	}
-
-	public TextField getLabel() {
-		return label;
+	public Button getLogo() {
+		return logo;
 	}
-
-	public void setLabel(TextField label) {
-		this.label = label;
+	public void setLogo(Button logo) {
+		this.logo = logo;
 	}
-
-	public Button getVaadinButton() {
-		return vaadinButton;
+	public TextField getTextFieldCorreo() {
+		return textFieldCorreo;
 	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
+	public void setTextFieldCorreo(TextField textFieldCorreo) {
+		this.textFieldCorreo = textFieldCorreo;
 	}
-
-	public TextField getLabel1() {
-		return label1;
+	public TextField getTextFieldContrasena() {
+		return textFieldContrasena;
 	}
-
-	public void setLabel1(TextField label1) {
-		this.label1 = label1;
+	public void setTextFieldContrasena(TextField textFieldContrasena) {
+		this.textFieldContrasena = textFieldContrasena;
 	}
-
-	public Element getA() {
-		return a;
+	public Element getHasOlvidadoContrasena() {
+		return hasOlvidadoContrasena;
 	}
-
-	public void setA(Element a) {
-		this.a = a;
+	public void setHasOlvidadoContrasena(Element hasOlvidadoContrasena) {
+		this.hasOlvidadoContrasena = hasOlvidadoContrasena;
 	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
 	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
 	}
-
-	public Button getVaadinButton1() {
-		return vaadinButton1;
+	public Button getBotonRegistrarse() {
+		return botonRegistrarse;
 	}
-
-	public void setVaadinButton1(Button vaadinButton1) {
-		this.vaadinButton1 = vaadinButton1;
+	public void setBotonRegistrarse(Button botonRegistrarse) {
+		this.botonRegistrarse = botonRegistrarse;
 	}
-
-	public Button getVaadinButton2() {
-		return vaadinButton2;
+	public HorizontalLayout getLayoutFacebook() {
+		return layoutFacebook;
 	}
-
-	public void setVaadinButton2(Button vaadinButton2) {
-		this.vaadinButton2 = vaadinButton2;
+	public void setLayoutFacebook(HorizontalLayout layoutFacebook) {
+		this.layoutFacebook = layoutFacebook;
 	}
-
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
+	public Button getBotonIniciarSesion() {
+		return botonIniciarSesion;
 	}
-
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	public void setBotonIniciarSesion(Button botonIniciarSesion) {
+		this.botonIniciarSesion = botonIniciarSesion;
 	}
-
-	public Button getVaadinButton3() {
-		return vaadinButton3;
+	public Button getBotonFacebook() {
+		return botonFacebook;
 	}
-
-	public void setVaadinButton3(Button vaadinButton3) {
-		this.vaadinButton3 = vaadinButton3;
+	public void setBotonFacebook(Button botonFacebook) {
+		this.botonFacebook = botonFacebook;
 	}
-
-	public H5 getH5() {
-		return h5;
+	public H5 getTextoFacebook() {
+		return textoFacebook;
 	}
-
-	public void setH5(H5 h5) {
-		this.h5 = h5;
+	public void setTextoFacebook(H5 textoFacebook) {
+		this.textoFacebook = textoFacebook;
 	}
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
+	public HorizontalLayout getLayoutGoogle() {
+		return layoutGoogle;
 	}
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	public void setLayoutGoogle(HorizontalLayout layoutGoogle) {
+		this.layoutGoogle = layoutGoogle;
 	}
-
-	public Button getVaadinButton4() {
-		return vaadinButton4;
+	public H5 getTextoGoogle() {
+		return textoGoogle;
 	}
-
-	public void setVaadinButton4(Button vaadinButton4) {
-		this.vaadinButton4 = vaadinButton4;
+	public void setTextoGoogle(H5 textoGoogle) {
+		this.textoGoogle = textoGoogle;
 	}
-
-	public H5 getH51() {
-		return h51;
+	public Button getBotonGoogle() {
+		return botonGoogle;
 	}
-
-	public void setH51(H5 h51) {
-		this.h51 = h51;
+	public void setBotonGoogle(Button botonGoogle) {
+		this.botonGoogle = botonGoogle;
 	}
-
 }

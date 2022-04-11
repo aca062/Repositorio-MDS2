@@ -15,12 +15,12 @@ export class VistaPaginacion_listas_ajenas extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing-l" id="vaadinHorizontalLayout">
-  <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena"></vista-lista_de_reproduccion_ajena>
-  <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena1"></vista-lista_de_reproduccion_ajena>
-  <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena2"></vista-lista_de_reproduccion_ajena>
-  <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena3"></vista-lista_de_reproduccion_ajena>
+<vaadin-vertical-layout id="layoutPrincipal">
+ <vaadin-horizontal-layout theme="spacing-l" id="layoutListas">
+  <vista-lista_de_reproduccion_ajena id="lista1"></vista-lista_de_reproduccion_ajena>
+  <vista-lista_de_reproduccion_ajena id="lista2"></vista-lista_de_reproduccion_ajena>
+  <vista-lista_de_reproduccion_ajena id="lista3"></vista-lista_de_reproduccion_ajena>
+  <vista-lista_de_reproduccion_ajena id="lista4"></vista-lista_de_reproduccion_ajena>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

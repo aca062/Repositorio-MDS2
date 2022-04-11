@@ -16,11 +16,11 @@ export class VistaPaginacion_listas_propias extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing-l" id="vaadinHorizontalLayout">
-  <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia"></vista-lista_de_reproduccion_propia>
-  <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia1"></vista-lista_de_reproduccion_propia>
-  <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia2"></vista-lista_de_reproduccion_propia>
+<vaadin-vertical-layout style="width: 100%;" id="layoutPrincipal">
+ <vaadin-horizontal-layout theme="spacing-l" id="layoutListas">
+  <vista-lista_de_reproduccion_propia id="lista1"></vista-lista_de_reproduccion_propia>
+  <vista-lista_de_reproduccion_propia id="lista2"></vista-lista_de_reproduccion_propia>
+  <vista-lista_de_reproduccion_propia id="lista3"></vista-lista_de_reproduccion_propia>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
