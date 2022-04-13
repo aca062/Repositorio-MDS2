@@ -19,16 +19,16 @@ import vistas.VistaUsuario_admin;
 @JsModule("./src/vistas/vista-usuarios_busqueda_admin.ts")
 public class VistaUsuarios_busqueda_admin extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h1")
-	private H1 h1;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("h1Usuarios")
+	private H1 h1Usuarios;
+	@Id("layoutUsuarios")
+	private HorizontalLayout layoutUsuarios;
 	@Id("vistaUsuario_admin")
-	private VistaUsuario_admin vistaUsuario_admin;
+	private Element vistaUsuario_admin;
 	@Id("vistaUsuario_admin1")
-	private VistaUsuario_admin vistaUsuario_admin1;
+	private Element vistaUsuario_admin1;
 
 	/**
      * Creates a new VistaUsuarios_busqueda_admin.
@@ -37,43 +37,43 @@ public class VistaUsuarios_busqueda_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
 
-	public H1 getH1() {
-		return h1;
+	public H1 getH1Usuarios() {
+		return h1Usuarios;
 	}
 
-	public void setH1(H1 h1) {
-		this.h1 = h1;
+	public void setH1Usuarios(H1 h1Usuarios) {
+		this.h1Usuarios = h1Usuarios;
 	}
 
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public HorizontalLayout getLayoutUsuarios() {
+		return layoutUsuarios;
 	}
 
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setLayoutUsuarios(HorizontalLayout layoutUsuarios) {
+		this.layoutUsuarios = layoutUsuarios;
 	}
 
-	public VistaUsuario_admin getVistaUsuario_admin() {
+	public Element getVistaUsuario_admin() {
 		return vistaUsuario_admin;
 	}
 
-	public void setVistaUsuario_admin(VistaUsuario_admin vistaUsuario_admin) {
+	public void setVistaUsuario_admin(Element vistaUsuario_admin) {
 		this.vistaUsuario_admin = vistaUsuario_admin;
 	}
 
-	public VistaUsuario_admin getVistaUsuario_admin1() {
+	public Element getVistaUsuario_admin1() {
 		return vistaUsuario_admin1;
 	}
 
-	public void setVistaUsuario_admin1(VistaUsuario_admin vistaUsuario_admin1) {
+	public void setVistaUsuario_admin1(Element vistaUsuario_admin1) {
 		this.vistaUsuario_admin1 = vistaUsuario_admin1;
 	}
 

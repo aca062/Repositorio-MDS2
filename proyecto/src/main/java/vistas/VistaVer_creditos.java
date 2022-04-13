@@ -18,22 +18,22 @@ import com.vaadin.flow.component.html.H4;
 @JsModule("./src/vistas/vista-ver_creditos.ts")
 public class VistaVer_creditos extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("h3")
-	private H3 h3;
-	@Id("h4")
-	private H4 h4;
-	@Id("h41")
-	private H4 h41;
-	@Id("h42")
-	private H4 h42;
-	@Id("h43")
-	private H4 h43;
-	@Id("h44")
-	private H4 h44;
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutCreditos")
+	private Element layoutCreditos;
+	@Id("h3VerCreditos")
+	private H3 h3VerCreditos;
+	@Id("h4TituloCancion")
+	private H4 h4TituloCancion;
+	@Id("h4TituloAlbum")
+	private H4 h4TituloAlbum;
+	@Id("h4Compositores")
+	private H4 h4Compositores;
+	@Id("h4Productores")
+	private H4 h4Productores;
+	@Id("h4Interpretes")
+	private H4 h4Interpretes;
 
 	/**
      * Creates a new VistaVer_creditos.
@@ -42,68 +42,68 @@ public class VistaVer_creditos extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
 
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
+	public Element getLayoutCreditos() {
+		return layoutCreditos;
 	}
 
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	public void setLayoutCreditos(Element layoutCreditos) {
+		this.layoutCreditos = layoutCreditos;
 	}
 
-	public H3 getH3() {
-		return h3;
+	public H3 getH3VerCreditos() {
+		return h3VerCreditos;
 	}
 
-	public void setH3(H3 h3) {
-		this.h3 = h3;
+	public void setH3VerCreditos(H3 h3VerCreditos) {
+		this.h3VerCreditos = h3VerCreditos;
 	}
 
-	public H4 getH4() {
-		return h4;
+	public H4 getH4TituloCancion() {
+		return h4TituloCancion;
 	}
 
-	public void setH4(H4 h4) {
-		this.h4 = h4;
+	public void setH4TituloCancion(H4 h4TituloCancion) {
+		this.h4TituloCancion = h4TituloCancion;
 	}
 
-	public H4 getH41() {
-		return h41;
+	public H4 getH4TituloAlbum() {
+		return h4TituloAlbum;
 	}
 
-	public void setH41(H4 h41) {
-		this.h41 = h41;
+	public void setH4TituloAlbum(H4 h4TituloAlbum) {
+		this.h4TituloAlbum = h4TituloAlbum;
 	}
 
-	public H4 getH42() {
-		return h42;
+	public H4 getH4Compositores() {
+		return h4Compositores;
 	}
 
-	public void setH42(H4 h42) {
-		this.h42 = h42;
+	public void setH4Compositores(H4 h4Compositores) {
+		this.h4Compositores = h4Compositores;
 	}
 
-	public H4 getH43() {
-		return h43;
+	public H4 getH4Productores() {
+		return h4Productores;
 	}
 
-	public void setH43(H4 h43) {
-		this.h43 = h43;
+	public void setH4Productores(H4 h4Productores) {
+		this.h4Productores = h4Productores;
 	}
 
-	public H4 getH44() {
-		return h44;
+	public H4 getH4Interpretes() {
+		return h4Interpretes;
 	}
 
-	public void setH44(H4 h44) {
-		this.h44 = h44;
+	public void setH4Interpretes(H4 h4Interpretes) {
+		this.h4Interpretes = h4Interpretes;
 	}
 
 }

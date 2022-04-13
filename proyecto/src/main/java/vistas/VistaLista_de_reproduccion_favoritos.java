@@ -56,6 +56,102 @@ public class VistaLista_de_reproduccion_favoritos extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutTitulo() {
+		return layoutTitulo;
+	}
+
+	public void setLayoutTitulo(HorizontalLayout layoutTitulo) {
+		this.layoutTitulo = layoutTitulo;
+	}
+
+	public H1 getH1Titulo() {
+		return h1Titulo;
+	}
+
+	public void setH1Titulo(H1 h1Titulo) {
+		this.h1Titulo = h1Titulo;
+	}
+
+	public Select getOpciones() {
+		return opciones;
+	}
+
+	public void setOpciones(Select opciones) {
+		this.opciones = opciones;
+	}
+
+	public H3 getH3Creador() {
+		return h3Creador;
+	}
+
+	public void setH3Creador(H3 h3Creador) {
+		this.h3Creador = h3Creador;
+	}
+
+	public Element getLayoutLista() {
+		return layoutLista;
+	}
+
+	public void setLayoutLista(Element layoutLista) {
+		this.layoutLista = layoutLista;
+	}
+
+	public HorizontalLayout getLayoutNumCanciones() {
+		return layoutNumCanciones;
+	}
+
+	public void setLayoutNumCanciones(HorizontalLayout layoutNumCanciones) {
+		this.layoutNumCanciones = layoutNumCanciones;
+	}
+
+	public H2 getNumCanciones() {
+		return numCanciones;
+	}
+
+	public void setNumCanciones(H2 numCanciones) {
+		this.numCanciones = numCanciones;
+	}
+
+	public Element getListaCanciones() {
+		return listaCanciones;
+	}
+
+	public void setListaCanciones(Element listaCanciones) {
+		this.listaCanciones = listaCanciones;
+	}
+
+	public Element getVistaCancion() {
+		return vistaCancion;
+	}
+
+	public void setVistaCancion(Element vistaCancion) {
+		this.vistaCancion = vistaCancion;
+	}
+
+	public Element getVistaCancion1() {
+		return vistaCancion1;
+	}
+
+	public void setVistaCancion1(Element vistaCancion1) {
+		this.vistaCancion1 = vistaCancion1;
+	}
+
+	public Element getVistaCancion2() {
+		return vistaCancion2;
+	}
+
+	public void setVistaCancion2(Element vistaCancion2) {
+		this.vistaCancion2 = vistaCancion2;
+	}
+
 	
 
 }

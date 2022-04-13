@@ -37,6 +37,38 @@ public class VistaLista_de_reproduccion_propia extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutListaPropia() {
+		return layoutListaPropia;
+	}
+
+	public void setLayoutListaPropia(HorizontalLayout layoutListaPropia) {
+		this.layoutListaPropia = layoutListaPropia;
+	}
+
+	public Image getImgListaPropia() {
+		return imgListaPropia;
+	}
+
+	public void setImgListaPropia(Image imgListaPropia) {
+		this.imgListaPropia = imgListaPropia;
+	}
+
+	public Button getBotonNombre() {
+		return botonNombre;
+	}
+
+	public void setBotonNombre(Button botonNombre) {
+		this.botonNombre = botonNombre;
+	}
+
 	
 
 }

@@ -39,6 +39,46 @@ public class VistaEstilo_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutEstilo() {
+		return layoutEstilo;
+	}
+
+	public void setLayoutEstilo(HorizontalLayout layoutEstilo) {
+		this.layoutEstilo = layoutEstilo;
+	}
+
+	public H4 getEstilo() {
+		return estilo;
+	}
+
+	public void setEstilo(H4 estilo) {
+		this.estilo = estilo;
+	}
+
+	public Button getEliminar() {
+		return eliminar;
+	}
+
+	public void setEliminar(Button eliminar) {
+		this.eliminar = eliminar;
+	}
+
+	public Button getEditar() {
+		return editar;
+	}
+
+	public void setEditar(Button editar) {
+		this.editar = editar;
+	}
+
 	
 
 }

@@ -42,6 +42,54 @@ public class VistaContacto extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public Element getLayoutMensaje() {
+		return layoutMensaje;
+	}
+
+	public void setLayoutMensaje(Element layoutMensaje) {
+		this.layoutMensaje = layoutMensaje;
+	}
+
+	public H2 getH2Titulo() {
+		return h2Titulo;
+	}
+
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
+	}
+
+	public TextField getAsunto() {
+		return asunto;
+	}
+
+	public void setAsunto(TextField asunto) {
+		this.asunto = asunto;
+	}
+
+	public MessageInput getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(MessageInput mensaje) {
+		this.mensaje = mensaje;
+	}
+
+	public Button getCancelar() {
+		return cancelar;
+	}
+
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
+	}
+
 	
 
 }

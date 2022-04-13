@@ -37,4 +37,36 @@ public class VistaArtista_elemento extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutArtista() {
+		return layoutArtista;
+	}
+
+	public void setLayoutArtista(HorizontalLayout layoutArtista) {
+		this.layoutArtista = layoutArtista;
+	}
+
+	public Image getImgArtista() {
+		return imgArtista;
+	}
+
+	public void setImgArtista(Image imgArtista) {
+		this.imgArtista = imgArtista;
+	}
+
+	public Button getBotonNombre() {
+		return botonNombre;
+	}
+
+	public void setBotonNombre(Button botonNombre) {
+		this.botonNombre = botonNombre;
+	}
+
 }

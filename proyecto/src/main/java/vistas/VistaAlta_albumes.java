@@ -62,5 +62,107 @@ public class VistaAlta_albumes extends LitTemplate {
     public VistaAlta_albumes() {
         // You can initialise any data required for the connected UI components here.
     }
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+	public Element getLayoutAlta() {
+		return layoutAlta;
+	}
+	public void setLayoutAlta(Element layoutAlta) {
+		this.layoutAlta = layoutAlta;
+	}
+	public H2 getH2Titulo() {
+		return h2Titulo;
+	}
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
+	}
+	public HorizontalLayout getLayoutAlbum() {
+		return layoutAlbum;
+	}
+	public void setLayoutAlbum(HorizontalLayout layoutAlbum) {
+		this.layoutAlbum = layoutAlbum;
+	}
+	public Image getImg() {
+		return img;
+	}
+	public void setImg(Image img) {
+		this.img = img;
+	}
+	public Button getAnadirImagen() {
+		return anadirImagen;
+	}
+	public void setAnadirImagen(Button anadirImagen) {
+		this.anadirImagen = anadirImagen;
+	}
+	public TextField getNombreArtista() {
+		return nombreArtista;
+	}
+	public void setNombreArtista(TextField nombreArtista) {
+		this.nombreArtista = nombreArtista;
+	}
+	public TextField getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(TextField titulo) {
+		this.titulo = titulo;
+	}
+	public TextField getFechaEdicion() {
+		return fechaEdicion;
+	}
+	public void setFechaEdicion(TextField fechaEdicion) {
+		this.fechaEdicion = fechaEdicion;
+	}
+	public Select getEstilo() {
+		return estilo;
+	}
+	public void setEstilo(Select estilo) {
+		this.estilo = estilo;
+	}
+	public Element getVaadinListBox() {
+		return vaadinListBox;
+	}
+	public void setVaadinListBox(Element vaadinListBox) {
+		this.vaadinListBox = vaadinListBox;
+	}
+	public Element getVaadinItem() {
+		return vaadinItem;
+	}
+	public void setVaadinItem(Element vaadinItem) {
+		this.vaadinItem = vaadinItem;
+	}
+	public Element getVaadinItem1() {
+		return vaadinItem1;
+	}
+	public void setVaadinItem1(Element vaadinItem1) {
+		this.vaadinItem1 = vaadinItem1;
+	}
+	public Element getVaadinItem2() {
+		return vaadinItem2;
+	}
+	public void setVaadinItem2(Element vaadinItem2) {
+		this.vaadinItem2 = vaadinItem2;
+	}
+	public Button getCancelar() {
+		return cancelar;
+	}
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
+	}
+	public Button getConfirmar() {
+		return confirmar;
+	}
+	public void setConfirmar(Button confirmar) {
+		this.confirmar = confirmar;
+	}
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
 
 }

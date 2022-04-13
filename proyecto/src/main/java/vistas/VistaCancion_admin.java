@@ -42,5 +42,53 @@ public class VistaCancion_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutCancion() {
+		return layoutCancion;
+	}
+
+	public void setLayoutCancion(HorizontalLayout layoutCancion) {
+		this.layoutCancion = layoutCancion;
+	}
+
+	public Image getImgCancion() {
+		return imgCancion;
+	}
+
+	public void setImgCancion(Image imgCancion) {
+		this.imgCancion = imgCancion;
+	}
+
+	public H4 getH4Titulo() {
+		return h4Titulo;
+	}
+
+	public void setH4Titulo(H4 h4Titulo) {
+		this.h4Titulo = h4Titulo;
+	}
+
+	public Button getEditar() {
+		return editar;
+	}
+
+	public void setEditar(Button editar) {
+		this.editar = editar;
+	}
+
+	public Button getEliminar() {
+		return eliminar;
+	}
+
+	public void setEliminar(Button eliminar) {
+		this.eliminar = eliminar;
+	}
+
 	
 }

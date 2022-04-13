@@ -21,40 +21,40 @@ import com.vaadin.flow.component.select.Select;
 @JsModule("./src/vistas/vista-ver_detalle_cancion.ts")
 public class VistaVer_detalle_cancion extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("img")
-	private Image img;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
-	@Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("h4")
-	private H4 h4;
-	@Id("h41")
-	private H4 h41;
-	@Id("h42")
-	private H4 h42;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinButton1")
-	private Button vaadinButton1;
-	@Id("vaadinSelect")
-	private Select vaadinSelect;
-	@Id("vaadinButton2")
-	private Button vaadinButton2;
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutCancion")
+	private HorizontalLayout layoutCancion;
+	@Id("layout")
+	private Element layout;
+	@Id("fotoCancion")
+	private Image fotoCancion;
+	@Id("botonReproducir")
+	private Button botonReproducir;
+	@Id("layoutInformacionBotones")
+	private Element layoutInformacionBotones;
+	@Id("h4NombreCancion")
+	private H4 h4NombreCancion;
+	@Id("botonArtista")
+	private Button botonArtista;
+	@Id("botonAlbum")
+	private Button botonAlbum;
+	@Id("layoutBotones")
+	private HorizontalLayout layoutBotones;
+	@Id("anadirLista")
+	private Select anadirLista;
+	@Id("botonMeGusta")
+	private Button botonMeGusta;
 	@Id("vaadinListBox")
 	private Element vaadinListBox;
 	@Id("vaadinItem")
 	private Element vaadinItem;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("vaadinItem1")
 	private Element vaadinItem1;
+	@Id("vaadinItem2")
+	private Element vaadinItem2;
+	@Id("botonVerCreditos")
+	private Button botonVerCreditos;
 
 	/**
      * Creates a new VistaVer_detalle_cancion.
@@ -63,108 +63,100 @@ public class VistaVer_detalle_cancion extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
 
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public HorizontalLayout getLayoutCancion() {
+		return layoutCancion;
 	}
 
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setLayoutCancion(HorizontalLayout layoutCancion) {
+		this.layoutCancion = layoutCancion;
 	}
 
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
+	public Element getLayout() {
+		return layout;
 	}
 
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	public void setLayout(Element layout) {
+		this.layout = layout;
 	}
 
-	public Image getImg() {
-		return img;
+	public Image getFotoCancion() {
+		return fotoCancion;
 	}
 
-	public void setImg(Image img) {
-		this.img = img;
+	public void setFotoCancion(Image fotoCancion) {
+		this.fotoCancion = fotoCancion;
 	}
 
-	public Element getVaadinVerticalLayout2() {
-		return vaadinVerticalLayout2;
+	public Button getBotonReproducir() {
+		return botonReproducir;
 	}
 
-	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
-		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	public void setBotonReproducir(Button botonReproducir) {
+		this.botonReproducir = botonReproducir;
 	}
 
-	public Button getVaadinButton() {
-		return vaadinButton;
+	public Element getLayoutInformacionBotones() {
+		return layoutInformacionBotones;
 	}
 
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
+	public void setLayoutInformacionBotones(Element layoutInformacionBotones) {
+		this.layoutInformacionBotones = layoutInformacionBotones;
 	}
 
-	public H4 getH4() {
-		return h4;
+	public H4 getH4NombreCancion() {
+		return h4NombreCancion;
 	}
 
-	public void setH4(H4 h4) {
-		this.h4 = h4;
+	public void setH4NombreCancion(H4 h4NombreCancion) {
+		this.h4NombreCancion = h4NombreCancion;
 	}
 
-	public H4 getH41() {
-		return h41;
+	public Button getBotonArtista() {
+		return botonArtista;
 	}
 
-	public void setH41(H4 h41) {
-		this.h41 = h41;
+	public void setBotonArtista(Button botonArtista) {
+		this.botonArtista = botonArtista;
 	}
 
-	public H4 getH42() {
-		return h42;
+	public Button getBotonAlbum() {
+		return botonAlbum;
 	}
 
-	public void setH42(H4 h42) {
-		this.h42 = h42;
+	public void setBotonAlbum(Button botonAlbum) {
+		this.botonAlbum = botonAlbum;
 	}
 
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
 	}
 
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
 	}
 
-	public Button getVaadinButton1() {
-		return vaadinButton1;
+	public Select getAnadirLista() {
+		return anadirLista;
 	}
 
-	public void setVaadinButton1(Button vaadinButton1) {
-		this.vaadinButton1 = vaadinButton1;
+	public void setAnadirLista(Select anadirLista) {
+		this.anadirLista = anadirLista;
 	}
 
-	public Select getVaadinSelect() {
-		return vaadinSelect;
+	public Button getBotonMeGusta() {
+		return botonMeGusta;
 	}
 
-	public void setVaadinSelect(Select vaadinSelect) {
-		this.vaadinSelect = vaadinSelect;
-	}
-
-	public Button getVaadinButton2() {
-		return vaadinButton2;
-	}
-
-	public void setVaadinButton2(Button vaadinButton2) {
-		this.vaadinButton2 = vaadinButton2;
+	public void setBotonMeGusta(Button botonMeGusta) {
+		this.botonMeGusta = botonMeGusta;
 	}
 
 	public Element getVaadinListBox() {
@@ -183,6 +175,14 @@ public class VistaVer_detalle_cancion extends LitTemplate {
 		this.vaadinItem = vaadinItem;
 	}
 
+	public Element getVaadinItem1() {
+		return vaadinItem1;
+	}
+
+	public void setVaadinItem1(Element vaadinItem1) {
+		this.vaadinItem1 = vaadinItem1;
+	}
+
 	public Element getVaadinItem2() {
 		return vaadinItem2;
 	}
@@ -191,12 +191,12 @@ public class VistaVer_detalle_cancion extends LitTemplate {
 		this.vaadinItem2 = vaadinItem2;
 	}
 
-	public Element getVaadinItem1() {
-		return vaadinItem1;
+	public Button getBotonVerCreditos() {
+		return botonVerCreditos;
 	}
 
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
+	public void setBotonVerCreditos(Button botonVerCreditos) {
+		this.botonVerCreditos = botonVerCreditos;
 	}
 
 }

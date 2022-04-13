@@ -73,4 +73,164 @@ public class VistaAlta_canciones extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H2 getH2Titulo() {
+		return h2Titulo;
+	}
+
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
+	}
+
+	public Element getLayoutCnacion() {
+		return layoutCnacion;
+	}
+
+	public void setLayoutCnacion(Element layoutCnacion) {
+		this.layoutCnacion = layoutCnacion;
+	}
+
+	public TextField getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(TextField titulo) {
+		this.titulo = titulo;
+	}
+
+	public TextField getTítuloÁlbum() {
+		return títuloÁlbum;
+	}
+
+	public void setTítuloÁlbum(TextField títuloÁlbum) {
+		this.títuloÁlbum = títuloÁlbum;
+	}
+
+	public TextField getProductores() {
+		return productores;
+	}
+
+	public void setProductores(TextField productores) {
+		this.productores = productores;
+	}
+
+	public TextField getCompositores() {
+		return compositores;
+	}
+
+	public void setCompositores(TextField compositores) {
+		this.compositores = compositores;
+	}
+
+	public TextField getInterpretes() {
+		return interpretes;
+	}
+
+	public void setInterpretes(TextField interpretes) {
+		this.interpretes = interpretes;
+	}
+
+	public Select getEstilo() {
+		return estilo;
+	}
+
+	public void setEstilo(Select estilo) {
+		this.estilo = estilo;
+	}
+
+	public Element getVaadinListBox() {
+		return vaadinListBox;
+	}
+
+	public void setVaadinListBox(Element vaadinListBox) {
+		this.vaadinListBox = vaadinListBox;
+	}
+
+	public Element getVaadinItem() {
+		return vaadinItem;
+	}
+
+	public void setVaadinItem(Element vaadinItem) {
+		this.vaadinItem = vaadinItem;
+	}
+
+	public Element getVaadinItem1() {
+		return vaadinItem1;
+	}
+
+	public void setVaadinItem1(Element vaadinItem1) {
+		this.vaadinItem1 = vaadinItem1;
+	}
+
+	public Element getVaadinItem2() {
+		return vaadinItem2;
+	}
+
+	public void setVaadinItem2(Element vaadinItem2) {
+		this.vaadinItem2 = vaadinItem2;
+	}
+
+	public HorizontalLayout getLayoutAnadirCnacion() {
+		return layoutAnadirCnacion;
+	}
+
+	public void setLayoutAnadirCnacion(HorizontalLayout layoutAnadirCnacion) {
+		this.layoutAnadirCnacion = layoutAnadirCnacion;
+	}
+
+	public H4 getH4Fichero() {
+		return h4Fichero;
+	}
+
+	public void setH4Fichero(H4 h4Fichero) {
+		this.h4Fichero = h4Fichero;
+	}
+
+	public Button getAnadirCancion() {
+		return anadirCancion;
+	}
+
+	public void setAnadirCancion(Button anadirCancion) {
+		this.anadirCancion = anadirCancion;
+	}
+
+	public H5 getH5Requisitos() {
+		return h5Requisitos;
+	}
+
+	public void setH5Requisitos(H5 h5Requisitos) {
+		this.h5Requisitos = h5Requisitos;
+	}
+
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
+
+	public Button getCancelar() {
+		return cancelar;
+	}
+
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
+	}
+
+	public Button getConfirmar() {
+		return confirmar;
+	}
+
+	public void setConfirmar(Button confirmar) {
+		this.confirmar = confirmar;
+	}
+
 }

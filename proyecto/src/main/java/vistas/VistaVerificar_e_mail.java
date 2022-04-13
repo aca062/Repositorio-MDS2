@@ -21,122 +21,83 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vistas/vista-verificar_e_mail.ts")
 public class VistaVerificar_e_mail extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
-	@Id("h2")
-	private H2 h2;
-	@Id("h4")
-	private H4 h4;
-	@Id("vaadinTextField")
-	private TextField vaadinTextField;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("vaadinButton1")
-	private Button vaadinButton1;
-	@Id("vaadinButton2")
-	private Button vaadinButton2;
-	@Id("vaadinVerticalLayout3")
-	private Element vaadinVerticalLayout3;
-
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutVerificacion")
+	private Element layoutVerificacion;
+	@Id("h2Titulo")
+	private H2 h2Titulo;
+	@Id("h4Instrucciones")
+	private H4 h4Instrucciones;
+	@Id("numeroAcceso")
+	private TextField numeroAcceso;
+	@Id("layoutBotones")
+	private HorizontalLayout layoutBotones;
+	@Id("botonCancelar")
+	private Button botonCancelar;
+	@Id("botonConfirmar")
+	private Button botonConfirmar;
+	@Id("botonEnviarOtraVez")
+	private Button botonEnviarOtraVez;
 	/**
      * Creates a new VistaVerificar_e_mail.
      */
     public VistaVerificar_e_mail() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
+	public Element getLayoutVerificacion() {
+		return layoutVerificacion;
 	}
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	public void setLayoutVerificacion(Element layoutVerificacion) {
+		this.layoutVerificacion = layoutVerificacion;
 	}
-
-	public Element getVaadinVerticalLayout2() {
-		return vaadinVerticalLayout2;
+	public H2 getH2Titulo() {
+		return h2Titulo;
 	}
-
-	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
-		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
 	}
-
-	public H2 getH2() {
-		return h2;
+	public H4 getH4Instrucciones() {
+		return h4Instrucciones;
 	}
-
-	public void setH2(H2 h2) {
-		this.h2 = h2;
+	public void setH4Instrucciones(H4 h4Instrucciones) {
+		this.h4Instrucciones = h4Instrucciones;
 	}
-
-	public H4 getH4() {
-		return h4;
+	public TextField getNumeroAcceso() {
+		return numeroAcceso;
 	}
-
-	public void setH4(H4 h4) {
-		this.h4 = h4;
+	public void setNumeroAcceso(TextField numeroAcceso) {
+		this.numeroAcceso = numeroAcceso;
 	}
-
-	public TextField getVaadinTextField() {
-		return vaadinTextField;
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
 	}
-
-	public void setVaadinTextField(TextField vaadinTextField) {
-		this.vaadinTextField = vaadinTextField;
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
 	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public Button getBotonCancelar() {
+		return botonCancelar;
 	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setBotonCancelar(Button botonCancelar) {
+		this.botonCancelar = botonCancelar;
 	}
-
-	public Button getVaadinButton() {
-		return vaadinButton;
+	public Button getBotonConfirmar() {
+		return botonConfirmar;
 	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
+	public void setBotonConfirmar(Button botonConfirmar) {
+		this.botonConfirmar = botonConfirmar;
 	}
-
-	public Button getVaadinButton1() {
-		return vaadinButton1;
+	public Button getBotonEnviarOtraVez() {
+		return botonEnviarOtraVez;
 	}
-
-	public void setVaadinButton1(Button vaadinButton1) {
-		this.vaadinButton1 = vaadinButton1;
-	}
-
-	public Button getVaadinButton2() {
-		return vaadinButton2;
-	}
-
-	public void setVaadinButton2(Button vaadinButton2) {
-		this.vaadinButton2 = vaadinButton2;
-	}
-
-	public Element getVaadinVerticalLayout3() {
-		return vaadinVerticalLayout3;
-	}
-
-	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
-		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
+	public void setBotonEnviarOtraVez(Button botonEnviarOtraVez) {
+		this.botonEnviarOtraVez = botonEnviarOtraVez;
 	}
 
 }

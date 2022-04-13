@@ -14,9 +14,9 @@ export class VistaUltimas_canciones_reproducidas extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Últimas canciones reproducidas</h1>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl);" id="layoutPrincipal">
+ <h1 id="h1TituloUltimasCanciones">Últimas canciones reproducidas</h1>
+ <vaadin-horizontal-layout theme="spacing" id="layoutCanciones" style="width: 100%;">
   <vista-cancion id="vistaCancion"></vista-cancion>
   <vista-cancion id="vistaCancion1"></vista-cancion>
   <vista-cancion id="vistaCancion2"></vista-cancion>

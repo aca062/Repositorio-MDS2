@@ -39,6 +39,46 @@ public class VistaListas_de_reproduccion_busqueda_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H1 getH1Titulo() {
+		return h1Titulo;
+	}
+
+	public void setH1Titulo(H1 h1Titulo) {
+		this.h1Titulo = h1Titulo;
+	}
+
+	public HorizontalLayout getLayoutListas() {
+		return layoutListas;
+	}
+
+	public void setLayoutListas(HorizontalLayout layoutListas) {
+		this.layoutListas = layoutListas;
+	}
+
+	public Element getVistaLista_de_reproduccion_admin() {
+		return vistaLista_de_reproduccion_admin;
+	}
+
+	public void setVistaLista_de_reproduccion_admin(Element vistaLista_de_reproduccion_admin) {
+		this.vistaLista_de_reproduccion_admin = vistaLista_de_reproduccion_admin;
+	}
+
+	public Element getVistaLista_de_reproduccion_admin1() {
+		return vistaLista_de_reproduccion_admin1;
+	}
+
+	public void setVistaLista_de_reproduccion_admin1(Element vistaLista_de_reproduccion_admin1) {
+		this.vistaLista_de_reproduccion_admin1 = vistaLista_de_reproduccion_admin1;
+	}
+
 	
 
 }

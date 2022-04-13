@@ -80,6 +80,198 @@ public class VistaEditar_album extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H2 getH2Titulo() {
+		return h2Titulo;
+	}
+
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
+	}
+
+	public Element getLayoutAlbumes() {
+		return layoutAlbumes;
+	}
+
+	public void setLayoutAlbumes(Element layoutAlbumes) {
+		this.layoutAlbumes = layoutAlbumes;
+	}
+
+	public HorizontalLayout getLayoutAlbum() {
+		return layoutAlbum;
+	}
+
+	public void setLayoutAlbum(HorizontalLayout layoutAlbum) {
+		this.layoutAlbum = layoutAlbum;
+	}
+
+	public Image getImgAlbum() {
+		return imgAlbum;
+	}
+
+	public void setImgAlbum(Image imgAlbum) {
+		this.imgAlbum = imgAlbum;
+	}
+
+	public Button getCambiarImagen() {
+		return cambiarImagen;
+	}
+
+	public void setCambiarImagen(Button cambiarImagen) {
+		this.cambiarImagen = cambiarImagen;
+	}
+
+	public TextField getNombreArtista() {
+		return nombreArtista;
+	}
+
+	public void setNombreArtista(TextField nombreArtista) {
+		this.nombreArtista = nombreArtista;
+	}
+
+	public TextField getFechaEdición() {
+		return fechaEdición;
+	}
+
+	public void setFechaEdición(TextField fechaEdición) {
+		this.fechaEdición = fechaEdición;
+	}
+
+	public TextField getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(TextField titulo) {
+		this.titulo = titulo;
+	}
+
+	public Select getBuscadorCanciones() {
+		return buscadorCanciones;
+	}
+
+	public void setBuscadorCanciones(Select buscadorCanciones) {
+		this.buscadorCanciones = buscadorCanciones;
+	}
+
+	public Element getVaadinListBox1() {
+		return vaadinListBox1;
+	}
+
+	public void setVaadinListBox1(Element vaadinListBox1) {
+		this.vaadinListBox1 = vaadinListBox1;
+	}
+
+	public Element getVaadinItem3() {
+		return vaadinItem3;
+	}
+
+	public void setVaadinItem3(Element vaadinItem3) {
+		this.vaadinItem3 = vaadinItem3;
+	}
+
+	public Element getVaadinItem4() {
+		return vaadinItem4;
+	}
+
+	public void setVaadinItem4(Element vaadinItem4) {
+		this.vaadinItem4 = vaadinItem4;
+	}
+
+	public Element getVaadinItem5() {
+		return vaadinItem5;
+	}
+
+	public void setVaadinItem5(Element vaadinItem5) {
+		this.vaadinItem5 = vaadinItem5;
+	}
+
+	public Element getListaCanciones() {
+		return listaCanciones;
+	}
+
+	public void setListaCanciones(Element listaCanciones) {
+		this.listaCanciones = listaCanciones;
+	}
+
+	public HorizontalLayout getLayoutCancion() {
+		return layoutCancion;
+	}
+
+	public void setLayoutCancion(HorizontalLayout layoutCancion) {
+		this.layoutCancion = layoutCancion;
+	}
+
+	public Element getNombreCancion() {
+		return nombreCancion;
+	}
+
+	public void setNombreCancion(Element nombreCancion) {
+		this.nombreCancion = nombreCancion;
+	}
+
+	public Button getEliminar() {
+		return eliminar;
+	}
+
+	public void setEliminar(Button eliminar) {
+		this.eliminar = eliminar;
+	}
+
+	public HorizontalLayout getLayoutCancion1() {
+		return layoutCancion1;
+	}
+
+	public void setLayoutCancion1(HorizontalLayout layoutCancion1) {
+		this.layoutCancion1 = layoutCancion1;
+	}
+
+	public Element getNombreCancion1() {
+		return nombreCancion1;
+	}
+
+	public void setNombreCancion1(Element nombreCancion1) {
+		this.nombreCancion1 = nombreCancion1;
+	}
+
+	public Button getEliminar1() {
+		return eliminar1;
+	}
+
+	public void setEliminar1(Button eliminar1) {
+		this.eliminar1 = eliminar1;
+	}
+
+	public HorizontalLayout getLayoutCancion2() {
+		return layoutCancion2;
+	}
+
+	public void setLayoutCancion2(HorizontalLayout layoutCancion2) {
+		this.layoutCancion2 = layoutCancion2;
+	}
+
+	public Element getNombreCancion2() {
+		return nombreCancion2;
+	}
+
+	public void setNombreCancion2(Element nombreCancion2) {
+		this.nombreCancion2 = nombreCancion2;
+	}
+
+	public Button getEliminar2() {
+		return eliminar2;
+	}
+
+	public void setEliminar2(Button eliminar2) {
+		this.eliminar2 = eliminar2;
+	}
+
 	
 
 }

@@ -37,6 +37,46 @@ public class VistaLista_de_canciones extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public Element getVistaCancion() {
+		return vistaCancion;
+	}
+
+	public void setVistaCancion(Element vistaCancion) {
+		this.vistaCancion = vistaCancion;
+	}
+
+	public Element getVistaCancion1() {
+		return vistaCancion1;
+	}
+
+	public void setVistaCancion1(Element vistaCancion1) {
+		this.vistaCancion1 = vistaCancion1;
+	}
+
+	public Element getVistaCancion2() {
+		return vistaCancion2;
+	}
+
+	public void setVistaCancion2(Element vistaCancion2) {
+		this.vistaCancion2 = vistaCancion2;
+	}
+
+	public Element getVistaCancion3() {
+		return vistaCancion3;
+	}
+
+	public void setVistaCancion3(Element vistaCancion3) {
+		this.vistaCancion3 = vistaCancion3;
+	}
+
 	
 
 }

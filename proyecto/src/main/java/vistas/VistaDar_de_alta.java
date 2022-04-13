@@ -46,6 +46,78 @@ public class VistaDar_de_alta extends LitTemplate {
     public VistaDar_de_alta() {
         // You can initialise any data required for the connected UI components here.
     }
+
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H1 getH1Titulo() {
+		return h1Titulo;
+	}
+
+	public void setH1Titulo(H1 h1Titulo) {
+		this.h1Titulo = h1Titulo;
+	}
+
+	public Element getLayoutAdministracion() {
+		return layoutAdministracion;
+	}
+
+	public void setLayoutAdministracion(Element layoutAdministracion) {
+		this.layoutAdministracion = layoutAdministracion;
+	}
+
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
+
+	public Button getBotonArtistas() {
+		return botonArtistas;
+	}
+
+	public void setBotonArtistas(Button botonArtistas) {
+		this.botonArtistas = botonArtistas;
+	}
+
+	public Button getBotonCanciones() {
+		return botonCanciones;
+	}
+
+	public void setBotonCanciones(Button botonCanciones) {
+		this.botonCanciones = botonCanciones;
+	}
+
+	public HorizontalLayout getLayoutBotones1() {
+		return layoutBotones1;
+	}
+
+	public void setLayoutBotones1(HorizontalLayout layoutBotones1) {
+		this.layoutBotones1 = layoutBotones1;
+	}
+
+	public Button getBotonAlbumes() {
+		return botonAlbumes;
+	}
+
+	public void setBotonAlbumes(Button botonAlbumes) {
+		this.botonAlbumes = botonAlbumes;
+	}
+
+	public Button getBotonEstilos() {
+		return botonEstilos;
+	}
+
+	public void setBotonEstilos(Button botonEstilos) {
+		this.botonEstilos = botonEstilos;
+	}
 	
 
 }

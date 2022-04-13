@@ -34,6 +34,30 @@ public class VistaCibernauta extends LitTemplate {
     public VistaCibernauta() {
         // You can initialise any data required for the connected UI components here.
     }
+
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public Element getCabecera() {
+		return cabecera;
+	}
+
+	public void setCabecera(Element cabecera) {
+		this.cabecera = cabecera;
+	}
+
+	public Element getVistaUltimos_exitos() {
+		return vistaUltimos_exitos;
+	}
+
+	public void setVistaUltimos_exitos(Element vistaUltimos_exitos) {
+		this.vistaUltimos_exitos = vistaUltimos_exitos;
+	}
 	
 
 }

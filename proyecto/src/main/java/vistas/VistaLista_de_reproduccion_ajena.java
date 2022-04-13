@@ -37,5 +37,37 @@ public class VistaLista_de_reproduccion_ajena extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutListaAjena() {
+		return layoutListaAjena;
+	}
+
+	public void setLayoutListaAjena(HorizontalLayout layoutListaAjena) {
+		this.layoutListaAjena = layoutListaAjena;
+	}
+
+	public Image getImgListaAjena() {
+		return imgListaAjena;
+	}
+
+	public void setImgListaAjena(Image imgListaAjena) {
+		this.imgListaAjena = imgListaAjena;
+	}
+
+	public Button getBotonNombre() {
+		return botonNombre;
+	}
+
+	public void setBotonNombre(Button botonNombre) {
+		this.botonNombre = botonNombre;
+	}
+
 	
 }

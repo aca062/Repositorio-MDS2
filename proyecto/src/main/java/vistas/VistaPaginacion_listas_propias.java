@@ -36,4 +36,44 @@ public class VistaPaginacion_listas_propias extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutListas() {
+		return layoutListas;
+	}
+
+	public void setLayoutListas(HorizontalLayout layoutListas) {
+		this.layoutListas = layoutListas;
+	}
+
+	public Element getLista1() {
+		return lista1;
+	}
+
+	public void setLista1(Element lista1) {
+		this.lista1 = lista1;
+	}
+
+	public Element getLista2() {
+		return lista2;
+	}
+
+	public void setLista2(Element lista2) {
+		this.lista2 = lista2;
+	}
+
+	public Element getLista3() {
+		return lista3;
+	}
+
+	public void setLista3(Element lista3) {
+		this.lista3 = lista3;
+	}
+
 }

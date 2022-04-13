@@ -21,14 +21,14 @@ import vistas.VistaLista_de_canciones;
 @JsModule("./src/vistas/vista-ver_detalle_de_lista_comun.ts")
 public class VistaVer_detalle_de_lista_comun extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("h2")
-	private H2 h2;
-	@Id("vaadinSelect")
-	private Select vaadinSelect;
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutTituloOpciones")
+	private HorizontalLayout layoutTituloOpciones;
+	@Id("h2Titulo")
+	private H2 h2Titulo;
+	@Id("opciones")
+	private Select opciones;
 	@Id("vaadinListBox")
 	private Element vaadinListBox;
 	@Id("vaadinItem")
@@ -37,135 +37,106 @@ public class VistaVer_detalle_de_lista_comun extends LitTemplate {
 	private Element vaadinItem1;
 	@Id("vaadinItem2")
 	private Element vaadinItem2;
-	@Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("h21")
-	private H2 h21;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
+	@Id("botonUsuario")
+	private Button botonUsuario;
+	@Id("layoutListaCanciones")
+	private Element layoutListaCanciones;
+	@Id("numeroCanciones")
+	private HorizontalLayout numeroCanciones;
+	@Id("h2NumCanciones")
+	private H2 h2NumCanciones;
+	@Id("layoutCanciones")
+	private Element layoutCanciones;
 	@Id("vistaLista_de_canciones")
-	private VistaLista_de_canciones vistaLista_de_canciones;
-
+	private Element vistaLista_de_canciones;
 	/**
      * Creates a new VistaVer_detalle_de_lista_comun.
      */
     public VistaVer_detalle_de_lista_comun() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public HorizontalLayout getLayoutTituloOpciones() {
+		return layoutTituloOpciones;
 	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setLayoutTituloOpciones(HorizontalLayout layoutTituloOpciones) {
+		this.layoutTituloOpciones = layoutTituloOpciones;
 	}
-
-	public H2 getH2() {
-		return h2;
+	public H2 getH2Titulo() {
+		return h2Titulo;
 	}
-
-	public void setH2(H2 h2) {
-		this.h2 = h2;
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
 	}
-
-	public Select getVaadinSelect() {
-		return vaadinSelect;
+	public Select getOpciones() {
+		return opciones;
 	}
-
-	public void setVaadinSelect(Select vaadinSelect) {
-		this.vaadinSelect = vaadinSelect;
+	public void setOpciones(Select opciones) {
+		this.opciones = opciones;
 	}
-
 	public Element getVaadinListBox() {
 		return vaadinListBox;
 	}
-
 	public void setVaadinListBox(Element vaadinListBox) {
 		this.vaadinListBox = vaadinListBox;
 	}
-
 	public Element getVaadinItem() {
 		return vaadinItem;
 	}
-
 	public void setVaadinItem(Element vaadinItem) {
 		this.vaadinItem = vaadinItem;
 	}
-
 	public Element getVaadinItem1() {
 		return vaadinItem1;
 	}
-
 	public void setVaadinItem1(Element vaadinItem1) {
 		this.vaadinItem1 = vaadinItem1;
 	}
-
 	public Element getVaadinItem2() {
 		return vaadinItem2;
 	}
-
 	public void setVaadinItem2(Element vaadinItem2) {
 		this.vaadinItem2 = vaadinItem2;
 	}
-
-	public Button getVaadinButton() {
-		return vaadinButton;
+	public Button getBotonUsuario() {
+		return botonUsuario;
 	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
+	public void setBotonUsuario(Button botonUsuario) {
+		this.botonUsuario = botonUsuario;
 	}
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
+	public Element getLayoutListaCanciones() {
+		return layoutListaCanciones;
 	}
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	public void setLayoutListaCanciones(Element layoutListaCanciones) {
+		this.layoutListaCanciones = layoutListaCanciones;
 	}
-
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
+	public HorizontalLayout getNumeroCanciones() {
+		return numeroCanciones;
 	}
-
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	public void setNumeroCanciones(HorizontalLayout numeroCanciones) {
+		this.numeroCanciones = numeroCanciones;
 	}
-
-	public H2 getH21() {
-		return h21;
+	public H2 getH2NumCanciones() {
+		return h2NumCanciones;
 	}
-
-	public void setH21(H2 h21) {
-		this.h21 = h21;
+	public void setH2NumCanciones(H2 h2NumCanciones) {
+		this.h2NumCanciones = h2NumCanciones;
 	}
-
-	public Element getVaadinVerticalLayout2() {
-		return vaadinVerticalLayout2;
+	public Element getLayoutCanciones() {
+		return layoutCanciones;
 	}
-
-	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
-		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	public void setLayoutCanciones(Element layoutCanciones) {
+		this.layoutCanciones = layoutCanciones;
 	}
-
-	public VistaLista_de_canciones getVistaLista_de_canciones() {
+	public Element getVistaLista_de_canciones() {
 		return vistaLista_de_canciones;
 	}
-
-	public void setVistaLista_de_canciones(VistaLista_de_canciones vistaLista_de_canciones) {
+	public void setVistaLista_de_canciones(Element vistaLista_de_canciones) {
 		this.vistaLista_de_canciones = vistaLista_de_canciones;
 	}
 

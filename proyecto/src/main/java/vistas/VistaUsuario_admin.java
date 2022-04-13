@@ -19,16 +19,16 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vistas/vista-usuario_admin.ts")
 public class VistaUsuario_admin extends LitTemplate {
 
-    @Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h4")
-	private H4 h4;
-	@Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("vaadinButton1")
-	private Button vaadinButton1;
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutUsuario")
+	private HorizontalLayout layoutUsuario;
+	@Id("h4NombrePerfil")
+	private H4 h4NombrePerfil;
+	@Id("botonEditar")
+	private Button botonEditar;
+	@Id("botonEliminar")
+	private Button botonEliminar;
 
 	/**
      * Creates a new VistaUsuario_admin.
@@ -37,44 +37,44 @@ public class VistaUsuario_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
 
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public HorizontalLayout getLayoutUsuario() {
+		return layoutUsuario;
 	}
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutUsuario(HorizontalLayout layoutUsuario) {
+		this.layoutUsuario = layoutUsuario;
 	}
 
-	public H4 getH4() {
-		return h4;
+	public H4 getH4NombrePerfil() {
+		return h4NombrePerfil;
 	}
 
-	public void setH4(H4 h4) {
-		this.h4 = h4;
+	public void setH4NombrePerfil(H4 h4NombrePerfil) {
+		this.h4NombrePerfil = h4NombrePerfil;
 	}
 
-	public Button getVaadinButton() {
-		return vaadinButton;
+	public Button getBotonEditar() {
+		return botonEditar;
 	}
 
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
+	public void setBotonEditar(Button botonEditar) {
+		this.botonEditar = botonEditar;
 	}
 
-	public Button getVaadinButton1() {
-		return vaadinButton1;
+	public Button getBotonEliminar() {
+		return botonEliminar;
 	}
 
-	public void setVaadinButton1(Button vaadinButton1) {
-		this.vaadinButton1 = vaadinButton1;
+	public void setBotonEliminar(Button botonEliminar) {
+		this.botonEliminar = botonEliminar;
 	}
 
 }

@@ -20,8 +20,6 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vistas/vista-listas_de_reproduccion_propias.ts")
 public class VistaListas_de_reproduccion_propias extends LitTemplate {
 
-    
-
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
 	@Id("h1Titulo")
@@ -49,6 +47,86 @@ public class VistaListas_de_reproduccion_propias extends LitTemplate {
     public VistaListas_de_reproduccion_propias() {
         // You can initialise any data required for the connected UI components here.
     }
+
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H1 getH1Titulo() {
+		return h1Titulo;
+	}
+
+	public void setH1Titulo(H1 h1Titulo) {
+		this.h1Titulo = h1Titulo;
+	}
+
+	public HorizontalLayout getLayoutListasPropias() {
+		return layoutListasPropias;
+	}
+
+	public void setLayoutListasPropias(HorizontalLayout layoutListasPropias) {
+		this.layoutListasPropias = layoutListasPropias;
+	}
+
+	public Element getVistaLista_de_reproduccion_propia() {
+		return vistaLista_de_reproduccion_propia;
+	}
+
+	public void setVistaLista_de_reproduccion_propia(Element vistaLista_de_reproduccion_propia) {
+		this.vistaLista_de_reproduccion_propia = vistaLista_de_reproduccion_propia;
+	}
+
+	public Element getVistaLista_de_reproduccion_propia1() {
+		return vistaLista_de_reproduccion_propia1;
+	}
+
+	public void setVistaLista_de_reproduccion_propia1(Element vistaLista_de_reproduccion_propia1) {
+		this.vistaLista_de_reproduccion_propia1 = vistaLista_de_reproduccion_propia1;
+	}
+
+	public Element getVistaLista_de_reproduccion_propia3() {
+		return vistaLista_de_reproduccion_propia3;
+	}
+
+	public void setVistaLista_de_reproduccion_propia3(Element vistaLista_de_reproduccion_propia3) {
+		this.vistaLista_de_reproduccion_propia3 = vistaLista_de_reproduccion_propia3;
+	}
+
+	public Element getVistaLista_de_reproduccion_propia2() {
+		return vistaLista_de_reproduccion_propia2;
+	}
+
+	public void setVistaLista_de_reproduccion_propia2(Element vistaLista_de_reproduccion_propia2) {
+		this.vistaLista_de_reproduccion_propia2 = vistaLista_de_reproduccion_propia2;
+	}
+
+	public Element getVistaLista_de_reproduccion_propia4() {
+		return vistaLista_de_reproduccion_propia4;
+	}
+
+	public void setVistaLista_de_reproduccion_propia4(Element vistaLista_de_reproduccion_propia4) {
+		this.vistaLista_de_reproduccion_propia4 = vistaLista_de_reproduccion_propia4;
+	}
+
+	public HorizontalLayout getLayoutBoton() {
+		return layoutBoton;
+	}
+
+	public void setLayoutBoton(HorizontalLayout layoutBoton) {
+		this.layoutBoton = layoutBoton;
+	}
+
+	public Button getVerTodas() {
+		return verTodas;
+	}
+
+	public void setVerTodas(Button verTodas) {
+		this.verTodas = verTodas;
+	}
 
 	
 

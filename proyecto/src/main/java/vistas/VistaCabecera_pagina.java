@@ -64,4 +64,140 @@ public class VistaCabecera_pagina extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutCabecera() {
+		return layoutCabecera;
+	}
+
+	public void setLayoutCabecera(HorizontalLayout layoutCabecera) {
+		this.layoutCabecera = layoutCabecera;
+	}
+
+	public Button getLogo() {
+		return logo;
+	}
+
+	public void setLogo(Button logo) {
+		this.logo = logo;
+	}
+
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
+
+	public Button getVerPerfil() {
+		return verPerfil;
+	}
+
+	public void setVerPerfil(Button verPerfil) {
+		this.verPerfil = verPerfil;
+	}
+
+	public Button getCerrarSesion() {
+		return cerrarSesion;
+	}
+
+	public void setCerrarSesion(Button cerrarSesion) {
+		this.cerrarSesion = cerrarSesion;
+	}
+
+	public Element getLayoutPrincipal1() {
+		return layoutPrincipal1;
+	}
+
+	public void setLayoutPrincipal1(Element layoutPrincipal1) {
+		this.layoutPrincipal1 = layoutPrincipal1;
+	}
+
+	public HorizontalLayout getLayoutBuscador() {
+		return layoutBuscador;
+	}
+
+	public void setLayoutBuscador(HorizontalLayout layoutBuscador) {
+		this.layoutBuscador = layoutBuscador;
+	}
+
+	public TextField getBuscador() {
+		return buscador;
+	}
+
+	public void setBuscador(TextField buscador) {
+		this.buscador = buscador;
+	}
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+	public HorizontalLayout getLayoutContacto() {
+		return layoutContacto;
+	}
+
+	public void setLayoutContacto(HorizontalLayout layoutContacto) {
+		this.layoutContacto = layoutContacto;
+	}
+
+	public Element getLayoutTitulo() {
+		return layoutTitulo;
+	}
+
+	public void setLayoutTitulo(Element layoutTitulo) {
+		this.layoutTitulo = layoutTitulo;
+	}
+
+	public H3 getH3() {
+		return h3;
+	}
+
+	public void setH3(H3 h3) {
+		this.h3 = h3;
+	}
+
+	public Element getLayoutInformacion() {
+		return layoutInformacion;
+	}
+
+	public void setLayoutInformacion(Element layoutInformacion) {
+		this.layoutInformacion = layoutInformacion;
+	}
+
+	public H4 getH4Telefono() {
+		return h4Telefono;
+	}
+
+	public void setH4Telefono(H4 h4Telefono) {
+		this.h4Telefono = h4Telefono;
+	}
+
+	public H4 getH41Correo() {
+		return h41Correo;
+	}
+
+	public void setH41Correo(H4 h41Correo) {
+		this.h41Correo = h41Correo;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
 }

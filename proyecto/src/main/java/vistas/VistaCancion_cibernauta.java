@@ -37,4 +37,36 @@ public class VistaCancion_cibernauta extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutCancionCibernauta() {
+		return layoutCancionCibernauta;
+	}
+
+	public void setLayoutCancionCibernauta(HorizontalLayout layoutCancionCibernauta) {
+		this.layoutCancionCibernauta = layoutCancionCibernauta;
+	}
+
+	public Image getImgCancionCIbernauta() {
+		return imgCancionCIbernauta;
+	}
+
+	public void setImgCancionCIbernauta(Image imgCancionCIbernauta) {
+		this.imgCancionCIbernauta = imgCancionCIbernauta;
+	}
+
+	public H5 getH5Titulo() {
+		return h5Titulo;
+	}
+
+	public void setH5Titulo(H5 h5Titulo) {
+		this.h5Titulo = h5Titulo;
+	}
+
 }

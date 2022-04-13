@@ -45,5 +45,61 @@ public class VistaRecuperar_contrasena extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public Element getLayoutRecuperarContrasena() {
+		return layoutRecuperarContrasena;
+	}
+
+	public void setLayoutRecuperarContrasena(Element layoutRecuperarContrasena) {
+		this.layoutRecuperarContrasena = layoutRecuperarContrasena;
+	}
+
+	public H3 getH3RecuperacionContrasena() {
+		return h3RecuperacionContrasena;
+	}
+
+	public void setH3RecuperacionContrasena(H3 h3RecuperacionContrasena) {
+		this.h3RecuperacionContrasena = h3RecuperacionContrasena;
+	}
+
+	public HorizontalLayout getLayoutCorreo() {
+		return layoutCorreo;
+	}
+
+	public void setLayoutCorreo(HorizontalLayout layoutCorreo) {
+		this.layoutCorreo = layoutCorreo;
+	}
+
+	public H4 getH4Instrucciones() {
+		return h4Instrucciones;
+	}
+
+	public void setH4Instrucciones(H4 h4Instrucciones) {
+		this.h4Instrucciones = h4Instrucciones;
+	}
+
+	public Button getBotonConfirmarCorreo() {
+		return botonConfirmarCorreo;
+	}
+
+	public void setBotonConfirmarCorreo(Button botonConfirmarCorreo) {
+		this.botonConfirmarCorreo = botonConfirmarCorreo;
+	}
+
+	public TextField getTextFieldCorreo() {
+		return textFieldCorreo;
+	}
+
+	public void setTextFieldCorreo(TextField textFieldCorreo) {
+		this.textFieldCorreo = textFieldCorreo;
+	}
+
 
 }

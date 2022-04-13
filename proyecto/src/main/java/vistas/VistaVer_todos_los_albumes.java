@@ -20,24 +20,24 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vistas/vista-ver_todos_los_albumes.ts")
 public class VistaVer_todos_los_albumes extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+    @Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("layoutAlbumes")
+	private HorizontalLayout layoutAlbumes;
 	@Id("vistaLista_albumes")
-	private VistaLista_albumes vistaLista_albumes;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("h5")
-	private H5 h5;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("h51")
-	private H5 h51;
-	@Id("vaadinButton1")
-	private Button vaadinButton1;
+	private Element vistaLista_albumes;
+	@Id("layoutNumeroPaginas")
+	private Element layoutNumeroPaginas;
+	@Id("h5Paginas")
+	private H5 h5Paginas;
+	@Id("layoutBotonesPaginas")
+	private HorizontalLayout layoutBotonesPaginas;
+	@Id("botonAtras")
+	private Button botonAtras;
+	@Id("h5NumeroPaginas")
+	private H5 h5NumeroPaginas;
+	@Id("botonAdelante")
+	private Button botonAdelante;
 
 	/**
      * Creates a new VistaVer_todos_los_albumes.
@@ -46,76 +46,76 @@ public class VistaVer_todos_los_albumes extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
 
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public HorizontalLayout getLayoutAlbumes() {
+		return layoutAlbumes;
 	}
 
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setLayoutAlbumes(HorizontalLayout layoutAlbumes) {
+		this.layoutAlbumes = layoutAlbumes;
 	}
 
-	public VistaLista_albumes getVistaLista_albumes() {
+	public Element getVistaLista_albumes() {
 		return vistaLista_albumes;
 	}
 
-	public void setVistaLista_albumes(VistaLista_albumes vistaLista_albumes) {
+	public void setVistaLista_albumes(Element vistaLista_albumes) {
 		this.vistaLista_albumes = vistaLista_albumes;
 	}
 
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
+	public Element getLayoutNumeroPaginas() {
+		return layoutNumeroPaginas;
 	}
 
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	public void setLayoutNumeroPaginas(Element layoutNumeroPaginas) {
+		this.layoutNumeroPaginas = layoutNumeroPaginas;
 	}
 
-	public H5 getH5() {
-		return h5;
+	public H5 getH5Paginas() {
+		return h5Paginas;
 	}
 
-	public void setH5(H5 h5) {
-		this.h5 = h5;
+	public void setH5Paginas(H5 h5Paginas) {
+		this.h5Paginas = h5Paginas;
 	}
 
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
+	public HorizontalLayout getLayoutBotonesPaginas() {
+		return layoutBotonesPaginas;
 	}
 
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	public void setLayoutBotonesPaginas(HorizontalLayout layoutBotonesPaginas) {
+		this.layoutBotonesPaginas = layoutBotonesPaginas;
 	}
 
-	public Button getVaadinButton() {
-		return vaadinButton;
+	public Button getBotonAtras() {
+		return botonAtras;
 	}
 
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
+	public void setBotonAtras(Button botonAtras) {
+		this.botonAtras = botonAtras;
 	}
 
-	public H5 getH51() {
-		return h51;
+	public H5 getH5NumeroPaginas() {
+		return h5NumeroPaginas;
 	}
 
-	public void setH51(H5 h51) {
-		this.h51 = h51;
+	public void setH5NumeroPaginas(H5 h5NumeroPaginas) {
+		this.h5NumeroPaginas = h5NumeroPaginas;
 	}
 
-	public Button getVaadinButton1() {
-		return vaadinButton1;
+	public Button getBotonAdelante() {
+		return botonAdelante;
 	}
 
-	public void setVaadinButton1(Button vaadinButton1) {
-		this.vaadinButton1 = vaadinButton1;
+	public void setBotonAdelante(Button botonAdelante) {
+		this.botonAdelante = botonAdelante;
 	}
 
 }

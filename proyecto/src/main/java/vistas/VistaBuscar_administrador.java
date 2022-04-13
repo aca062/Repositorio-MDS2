@@ -56,4 +56,108 @@ public class VistaBuscar_administrador extends LitTemplate {
     public VistaBuscar_administrador() {
         // You can initialise any data required for the connected UI components here.
     }
+
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutCanciones() {
+		return layoutCanciones;
+	}
+
+	public void setLayoutCanciones(HorizontalLayout layoutCanciones) {
+		this.layoutCanciones = layoutCanciones;
+	}
+
+	public Element getVistaCanciones_busqueda_admin() {
+		return vistaCanciones_busqueda_admin;
+	}
+
+	public void setVistaCanciones_busqueda_admin(Element vistaCanciones_busqueda_admin) {
+		this.vistaCanciones_busqueda_admin = vistaCanciones_busqueda_admin;
+	}
+
+	public HorizontalLayout getLayoutAlbumes() {
+		return layoutAlbumes;
+	}
+
+	public void setLayoutAlbumes(HorizontalLayout layoutAlbumes) {
+		this.layoutAlbumes = layoutAlbumes;
+	}
+
+	public Element getVistaAlbumes_busqueda_admin() {
+		return vistaAlbumes_busqueda_admin;
+	}
+
+	public void setVistaAlbumes_busqueda_admin(Element vistaAlbumes_busqueda_admin) {
+		this.vistaAlbumes_busqueda_admin = vistaAlbumes_busqueda_admin;
+	}
+
+	public HorizontalLayout getLayoutListas() {
+		return layoutListas;
+	}
+
+	public void setLayoutListas(HorizontalLayout layoutListas) {
+		this.layoutListas = layoutListas;
+	}
+
+	public Element getVistaListas_de_reproduccion_busqueda_admin() {
+		return vistaListas_de_reproduccion_busqueda_admin;
+	}
+
+	public void setVistaListas_de_reproduccion_busqueda_admin(Element vistaListas_de_reproduccion_busqueda_admin) {
+		this.vistaListas_de_reproduccion_busqueda_admin = vistaListas_de_reproduccion_busqueda_admin;
+	}
+
+	public HorizontalLayout getLayoutArtistas() {
+		return layoutArtistas;
+	}
+
+	public void setLayoutArtistas(HorizontalLayout layoutArtistas) {
+		this.layoutArtistas = layoutArtistas;
+	}
+
+	public Element getVistaArtistas_busqueda_admin() {
+		return vistaArtistas_busqueda_admin;
+	}
+
+	public void setVistaArtistas_busqueda_admin(Element vistaArtistas_busqueda_admin) {
+		this.vistaArtistas_busqueda_admin = vistaArtistas_busqueda_admin;
+	}
+
+	public HorizontalLayout getLayoutUsuarios() {
+		return layoutUsuarios;
+	}
+
+	public void setLayoutUsuarios(HorizontalLayout layoutUsuarios) {
+		this.layoutUsuarios = layoutUsuarios;
+	}
+
+	public Element getVistaUsuarios_busqueda_admin() {
+		return vistaUsuarios_busqueda_admin;
+	}
+
+	public void setVistaUsuarios_busqueda_admin(Element vistaUsuarios_busqueda_admin) {
+		this.vistaUsuarios_busqueda_admin = vistaUsuarios_busqueda_admin;
+	}
+
+	public HorizontalLayout getLayoutEstilos() {
+		return layoutEstilos;
+	}
+
+	public void setLayoutEstilos(HorizontalLayout layoutEstilos) {
+		this.layoutEstilos = layoutEstilos;
+	}
+
+	public Element getVistaEstilos_busqueda_admin() {
+		return vistaEstilos_busqueda_admin;
+	}
+
+	public void setVistaEstilos_busqueda_admin(Element vistaEstilos_busqueda_admin) {
+		this.vistaEstilos_busqueda_admin = vistaEstilos_busqueda_admin;
+	}
 }

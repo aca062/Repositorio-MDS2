@@ -38,6 +38,46 @@ public class VistaListas_de_reproduccion_recomendadas extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H1 getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(H1 titulo) {
+		this.titulo = titulo;
+	}
+
+	public Element getVistaLista_de_reproduccion_ajena() {
+		return vistaLista_de_reproduccion_ajena;
+	}
+
+	public void setVistaLista_de_reproduccion_ajena(Element vistaLista_de_reproduccion_ajena) {
+		this.vistaLista_de_reproduccion_ajena = vistaLista_de_reproduccion_ajena;
+	}
+
+	public Element getVistaLista_de_reproduccion_ajena1() {
+		return vistaLista_de_reproduccion_ajena1;
+	}
+
+	public void setVistaLista_de_reproduccion_ajena1(Element vistaLista_de_reproduccion_ajena1) {
+		this.vistaLista_de_reproduccion_ajena1 = vistaLista_de_reproduccion_ajena1;
+	}
+
+	public Element getVistaLista_de_reproduccion_ajena2() {
+		return vistaLista_de_reproduccion_ajena2;
+	}
+
+	public void setVistaLista_de_reproduccion_ajena2(Element vistaLista_de_reproduccion_ajena2) {
+		this.vistaLista_de_reproduccion_ajena2 = vistaLista_de_reproduccion_ajena2;
+	}
+
 	
 
 }

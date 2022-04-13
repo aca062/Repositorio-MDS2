@@ -15,7 +15,7 @@ export class VistaVer_mas_canciones_favoritas extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
  <vista-lista_de_reproduccion_favoritos style="width: 100%;" id="vistaLista_de_reproduccion_favoritos"></vista-lista_de_reproduccion_favoritos>
 </vaadin-vertical-layout>
 `;

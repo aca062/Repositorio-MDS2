@@ -42,4 +42,52 @@ public class VistaArtista_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutArtista() {
+		return layoutArtista;
+	}
+
+	public void setLayoutArtista(HorizontalLayout layoutArtista) {
+		this.layoutArtista = layoutArtista;
+	}
+
+	public H4 getH4Nombre() {
+		return h4Nombre;
+	}
+
+	public void setH4Nombre(H4 h4Nombre) {
+		this.h4Nombre = h4Nombre;
+	}
+
+	public Image getImgArtista() {
+		return imgArtista;
+	}
+
+	public void setImgArtista(Image imgArtista) {
+		this.imgArtista = imgArtista;
+	}
+
+	public Button getEditar() {
+		return editar;
+	}
+
+	public void setEditar(Button editar) {
+		this.editar = editar;
+	}
+
+	public Button getEliminar() {
+		return eliminar;
+	}
+
+	public void setEliminar(Button eliminar) {
+		this.eliminar = eliminar;
+	}
+
 }

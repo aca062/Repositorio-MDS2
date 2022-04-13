@@ -58,6 +58,110 @@ public class VistaEditar_usuario extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H2 getH2Titulo() {
+		return h2Titulo;
+	}
+
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
+	}
+
+	public Element getLayoutUsuarios() {
+		return layoutUsuarios;
+	}
+
+	public void setLayoutUsuarios(Element layoutUsuarios) {
+		this.layoutUsuarios = layoutUsuarios;
+	}
+
+	public HorizontalLayout getLayoutUsuario() {
+		return layoutUsuario;
+	}
+
+	public void setLayoutUsuario(HorizontalLayout layoutUsuario) {
+		this.layoutUsuario = layoutUsuario;
+	}
+
+	public Image getImgUsuario() {
+		return imgUsuario;
+	}
+
+	public void setImgUsuario(Image imgUsuario) {
+		this.imgUsuario = imgUsuario;
+	}
+
+	public Button getAnadirFoto() {
+		return anadirFoto;
+	}
+
+	public void setAnadirFoto(Button anadirFoto) {
+		this.anadirFoto = anadirFoto;
+	}
+
+	public TextField getNick() {
+		return nick;
+	}
+
+	public void setNick(TextField nick) {
+		this.nick = nick;
+	}
+
+	public PasswordField getContraseña() {
+		return contraseña;
+	}
+
+	public void setContraseña(PasswordField contraseña) {
+		this.contraseña = contraseña;
+	}
+
+	public PasswordField getConfirmarContraseña() {
+		return confirmarContraseña;
+	}
+
+	public void setConfirmarContraseña(PasswordField confirmarContraseña) {
+		this.confirmarContraseña = confirmarContraseña;
+	}
+
+	public TextField geteMail() {
+		return eMail;
+	}
+
+	public void seteMail(TextField eMail) {
+		this.eMail = eMail;
+	}
+
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
+
+	public Button getCancelar() {
+		return cancelar;
+	}
+
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
+	}
+
+	public Button getConfirmar() {
+		return confirmar;
+	}
+
+	public void setConfirmar(Button confirmar) {
+		this.confirmar = confirmar;
+	}
+
 	
 
 }

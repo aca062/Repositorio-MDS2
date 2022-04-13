@@ -41,4 +41,52 @@ public class VistaCancion extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public HorizontalLayout getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(HorizontalLayout layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public Button getBotonCancion() {
+		return botonCancion;
+	}
+
+	public void setBotonCancion(Button botonCancion) {
+		this.botonCancion = botonCancion;
+	}
+
+	public Element getLayoutCancion() {
+		return layoutCancion;
+	}
+
+	public void setLayoutCancion(Element layoutCancion) {
+		this.layoutCancion = layoutCancion;
+	}
+
+	public H6 getNumeroRep() {
+		return numeroRep;
+	}
+
+	public void setNumeroRep(H6 numeroRep) {
+		this.numeroRep = numeroRep;
+	}
+
+	public H5 getH5Titulo() {
+		return h5Titulo;
+	}
+
+	public void setH5Titulo(H5 h5Titulo) {
+		this.h5Titulo = h5Titulo;
+	}
+
+	public Button getMeGusta() {
+		return meGusta;
+	}
+
+	public void setMeGusta(Button meGusta) {
+		this.meGusta = meGusta;
+	}
+
 }

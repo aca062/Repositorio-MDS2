@@ -18,31 +18,31 @@ export class VistaVer_listas_comun extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout style="width: 100%; justify-content: space-between; align-items: center;" id="vaadinHorizontalLayout">
-  <h1 id="h1" style="margin-left: var(--lumo-space-xl);">Listas de reproducción</h1>
-  <h3 id="h3" style="margin-right: var(--lumo-space-xl);">Mostrando 4 listas por página</h3>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+ <vaadin-horizontal-layout style="width: 100%; justify-content: space-between; align-items: center;" id="layoutTitulo">
+  <h1 id="h1Titulo" style="margin-left: var(--lumo-space-xl);">Listas de reproducción</h1>
+  <h3 id="h3NumeroPagina" style="margin-right: var(--lumo-space-xl);">Mostrando 4 listas por página</h3>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="background-color: var(--lumo-contrast-10pct); width: 100%; padding: var(--lumo-space-l); align-self: center;" id="vaadinHorizontalLayout1">
+ <vaadin-horizontal-layout style="background-color: var(--lumo-contrast-10pct); width: 100%; padding: var(--lumo-space-l); align-self: center;" id="layoutlistas">
   <vista-paginacion_listas_ajenas id="vistaPaginacion_listas_ajenas" style="width: 100%; align-self: center; padding-bottom: 0;"></vista-paginacion_listas_ajenas>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="width: 100%; align-self: center;">
   <vista-paginacion_listas_propias style="background-color: var(--lumo-contrast-10pct); width: 100%; padding: var(--lumo-space-xl);" id="vistaPaginacion_listas_propias"></vista-paginacion_listas_propias>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="align-items: center; align-self: flex-end; margin-right: var(--lumo-space-xl);" id="vaadinHorizontalLayout3">
+ <vaadin-horizontal-layout theme="spacing" style="align-items: center; align-self: flex-end; margin-right: var(--lumo-space-xl);" id="layoutBotones">
   <vaadin-button style="background-image:url('https://cdn-icons-png.flaticon.com/512/545/545680.png');
         background-repeat:no-repeat;
         height:60px;
         width:70px;
         background-size: 50px 50px;
-        background-position:center;background-color: #FFFFFF" id="vaadinButton"></vaadin-button>
-  <h3 id="h31">Página 1 de 1</h3>
+        background-position:center;background-color: #FFFFFF" id="botonAtras"></vaadin-button>
+  <h3 id="h3NumeroPagina1">Página 1 de 4</h3>
   <vaadin-button style="background-image:url('https://cdn-icons-png.flaticon.com/512/545/545682.png');
         background-repeat:no-repeat;
         height:60px;
         width:70px;
         background-size: 50px 50px;
-        background-position:center;background-color: #FFFFFF" id="vaadinButton1"></vaadin-button>
+        background-position:center;background-color: #FFFFFF" id="botonAdelante"></vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `</h1>

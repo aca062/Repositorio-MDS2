@@ -44,4 +44,60 @@ public class VistaBuscar extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public HorizontalLayout getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(HorizontalLayout layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public Element getLayoutCanciones() {
+		return layoutCanciones;
+	}
+
+	public void setLayoutCanciones(Element layoutCanciones) {
+		this.layoutCanciones = layoutCanciones;
+	}
+
+	public Element getVistaCanciones_busqueda() {
+		return vistaCanciones_busqueda;
+	}
+
+	public void setVistaCanciones_busqueda(Element vistaCanciones_busqueda) {
+		this.vistaCanciones_busqueda = vistaCanciones_busqueda;
+	}
+
+	public Element getLayoutListas() {
+		return layoutListas;
+	}
+
+	public void setLayoutListas(Element layoutListas) {
+		this.layoutListas = layoutListas;
+	}
+
+	public Element getVistaListas_de_reproduccion_busqueda() {
+		return vistaListas_de_reproduccion_busqueda;
+	}
+
+	public void setVistaListas_de_reproduccion_busqueda(Element vistaListas_de_reproduccion_busqueda) {
+		this.vistaListas_de_reproduccion_busqueda = vistaListas_de_reproduccion_busqueda;
+	}
+
+	public Element getLayoutArtistas() {
+		return layoutArtistas;
+	}
+
+	public void setLayoutArtistas(Element layoutArtistas) {
+		this.layoutArtistas = layoutArtistas;
+	}
+
+	public Element getVistaArtistas_busqueda() {
+		return vistaArtistas_busqueda;
+	}
+
+	public void setVistaArtistas_busqueda(Element vistaArtistas_busqueda) {
+		this.vistaArtistas_busqueda = vistaArtistas_busqueda;
+	}
+
 }

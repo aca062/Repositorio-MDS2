@@ -14,9 +14,9 @@ export class VistaUsuarios_busqueda_admin extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <h1 id="h1">Usuarios</h1>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl); padding-top: 0; padding-bottom: 0;" id="layoutPrincipal">
+ <h1 id="h1Usuarios">Usuarios</h1>
+ <vaadin-horizontal-layout theme="spacing" id="layoutUsuarios">
   <vista-usuario_admin id="vistaUsuario_admin"></vista-usuario_admin>
   <vista-usuario_admin id="vistaUsuario_admin1"></vista-usuario_admin>
  </vaadin-horizontal-layout>

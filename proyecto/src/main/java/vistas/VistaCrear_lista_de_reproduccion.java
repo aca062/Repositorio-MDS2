@@ -68,6 +68,150 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H2 getH2Titulo() {
+		return h2Titulo;
+	}
+
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
+	}
+
+	public Element getLayoutLista() {
+		return layoutLista;
+	}
+
+	public void setLayoutLista(Element layoutLista) {
+		this.layoutLista = layoutLista;
+	}
+
+	public TextField getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(TextField nombre) {
+		this.nombre = nombre;
+	}
+
+	public Select getListaCanciones() {
+		return listaCanciones;
+	}
+
+	public void setListaCanciones(Select listaCanciones) {
+		this.listaCanciones = listaCanciones;
+	}
+
+	public Element getBuscadorCanciones() {
+		return buscadorCanciones;
+	}
+
+	public void setBuscadorCanciones(Element buscadorCanciones) {
+		this.buscadorCanciones = buscadorCanciones;
+	}
+
+	public Element getVaadinItem4() {
+		return vaadinItem4;
+	}
+
+	public void setVaadinItem4(Element vaadinItem4) {
+		this.vaadinItem4 = vaadinItem4;
+	}
+
+	public Element getVaadinItem5() {
+		return vaadinItem5;
+	}
+
+	public void setVaadinItem5(Element vaadinItem5) {
+		this.vaadinItem5 = vaadinItem5;
+	}
+
+	public Element getVaadinItem6() {
+		return vaadinItem6;
+	}
+
+	public void setVaadinItem6(Element vaadinItem6) {
+		this.vaadinItem6 = vaadinItem6;
+	}
+
+	public Element getListaCancion() {
+		return listaCancion;
+	}
+
+	public void setListaCancion(Element listaCancion) {
+		this.listaCancion = listaCancion;
+	}
+
+	public HorizontalLayout getLayoutCancion() {
+		return layoutCancion;
+	}
+
+	public void setLayoutCancion(HorizontalLayout layoutCancion) {
+		this.layoutCancion = layoutCancion;
+	}
+
+	public Element getNombreCancion() {
+		return nombreCancion;
+	}
+
+	public void setNombreCancion(Element nombreCancion) {
+		this.nombreCancion = nombreCancion;
+	}
+
+	public HorizontalLayout getLayoutCancion1() {
+		return layoutCancion1;
+	}
+
+	public void setLayoutCancion1(HorizontalLayout layoutCancion1) {
+		this.layoutCancion1 = layoutCancion1;
+	}
+
+	public Button getEliminar() {
+		return eliminar;
+	}
+
+	public void setEliminar(Button eliminar) {
+		this.eliminar = eliminar;
+	}
+
+	public Element getNombre1() {
+		return nombre1;
+	}
+
+	public void setNombre1(Element nombre1) {
+		this.nombre1 = nombre1;
+	}
+
+	public Button getEliminar1() {
+		return eliminar1;
+	}
+
+	public void setEliminar1(Button eliminar1) {
+		this.eliminar1 = eliminar1;
+	}
+
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
+
+	public Button getCancelar() {
+		return cancelar;
+	}
+
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
+	}
+
 	
 
 }

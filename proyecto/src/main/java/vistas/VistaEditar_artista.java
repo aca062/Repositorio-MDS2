@@ -65,6 +65,134 @@ public class VistaEditar_artista extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H2 getH2Titulo() {
+		return h2Titulo;
+	}
+
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
+	}
+
+	public Element getLayoutArtistas() {
+		return layoutArtistas;
+	}
+
+	public void setLayoutArtistas(Element layoutArtistas) {
+		this.layoutArtistas = layoutArtistas;
+	}
+
+	public HorizontalLayout getLayoutArtista() {
+		return layoutArtista;
+	}
+
+	public void setLayoutArtista(HorizontalLayout layoutArtista) {
+		this.layoutArtista = layoutArtista;
+	}
+
+	public Image getImgArtista() {
+		return imgArtista;
+	}
+
+	public void setImgArtista(Image imgArtista) {
+		this.imgArtista = imgArtista;
+	}
+
+	public Button getAnadirFoto() {
+		return anadirFoto;
+	}
+
+	public void setAnadirFoto(Button anadirFoto) {
+		this.anadirFoto = anadirFoto;
+	}
+
+	public TextField getNick() {
+		return nick;
+	}
+
+	public void setNick(TextField nick) {
+		this.nick = nick;
+	}
+
+	public PasswordField getContraseña() {
+		return contraseña;
+	}
+
+	public void setContraseña(PasswordField contraseña) {
+		this.contraseña = contraseña;
+	}
+
+	public PasswordField getConfirmarContraseña() {
+		return confirmarContraseña;
+	}
+
+	public void setConfirmarContraseña(PasswordField confirmarContraseña) {
+		this.confirmarContraseña = confirmarContraseña;
+	}
+
+	public TextField geteMail() {
+		return eMail;
+	}
+
+	public void seteMail(TextField eMail) {
+		this.eMail = eMail;
+	}
+
+	public Select getEstilo() {
+		return estilo;
+	}
+
+	public void setEstilo(Select estilo) {
+		this.estilo = estilo;
+	}
+
+	public Element getListaEstilos() {
+		return listaEstilos;
+	}
+
+	public void setListaEstilos(Element listaEstilos) {
+		this.listaEstilos = listaEstilos;
+	}
+
+	public Element getVaadinItem() {
+		return vaadinItem;
+	}
+
+	public void setVaadinItem(Element vaadinItem) {
+		this.vaadinItem = vaadinItem;
+	}
+
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
+
+	public Button getCancelar() {
+		return cancelar;
+	}
+
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
+	}
+
+	public Button getConfirmar() {
+		return confirmar;
+	}
+
+	public void setConfirmar(Button confirmar) {
+		this.confirmar = confirmar;
+	}
+
 	
 
 }

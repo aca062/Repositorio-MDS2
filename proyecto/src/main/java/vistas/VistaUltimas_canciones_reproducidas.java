@@ -19,72 +19,59 @@ import vistas.VistaCancion;
 @JsModule("./src/vistas/vista-ultimas_canciones_reproducidas.ts")
 public class VistaUltimas_canciones_reproducidas extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("h1")
-	private H1 h1;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
+	@Id("h1TituloUltimasCanciones")
+	private H1 h1TituloUltimasCanciones;
+	@Id("layoutCanciones")
+	private HorizontalLayout layoutCanciones;
 	@Id("vistaCancion")
-	private VistaCancion vistaCancion;
-	@Id("vistaCancion1")
-	private VistaCancion vistaCancion1;
+	private Element vistaCancion;
 	@Id("vistaCancion2")
-	private VistaCancion vistaCancion2;
-
+	private Element vistaCancion2;
+	@Id("vistaCancion1")
+	private Element vistaCancion1;
 	/**
      * Creates a new VistaUltimas_canciones_reproducidas.
      */
     public VistaUltimas_canciones_reproducidas() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
 	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
 	}
-
-	public H1 getH1() {
-		return h1;
+	public H1 getH1TituloUltimasCanciones() {
+		return h1TituloUltimasCanciones;
 	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
+	public void setH1TituloUltimasCanciones(H1 h1TituloUltimasCanciones) {
+		this.h1TituloUltimasCanciones = h1TituloUltimasCanciones;
 	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public HorizontalLayout getLayoutCanciones() {
+		return layoutCanciones;
 	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setLayoutCanciones(HorizontalLayout layoutCanciones) {
+		this.layoutCanciones = layoutCanciones;
 	}
-
-	public VistaCancion getVistaCancion() {
+	public Element getVistaCancion() {
 		return vistaCancion;
 	}
-
-	public void setVistaCancion(VistaCancion vistaCancion) {
+	public void setVistaCancion(Element vistaCancion) {
 		this.vistaCancion = vistaCancion;
 	}
-
-	public VistaCancion getVistaCancion1() {
-		return vistaCancion1;
-	}
-
-	public void setVistaCancion1(VistaCancion vistaCancion1) {
-		this.vistaCancion1 = vistaCancion1;
-	}
-
-	public VistaCancion getVistaCancion2() {
+	public Element getVistaCancion2() {
 		return vistaCancion2;
 	}
-
-	public void setVistaCancion2(VistaCancion vistaCancion2) {
+	public void setVistaCancion2(Element vistaCancion2) {
 		this.vistaCancion2 = vistaCancion2;
+	}
+	public Element getVistaCancion1() {
+		return vistaCancion1;
+	}
+	public void setVistaCancion1(Element vistaCancion1) {
+		this.vistaCancion1 = vistaCancion1;
 	}
 
 }

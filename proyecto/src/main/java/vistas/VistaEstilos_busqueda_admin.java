@@ -39,6 +39,46 @@ public class VistaEstilos_busqueda_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H1 getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(H1 titulo) {
+		this.titulo = titulo;
+	}
+
+	public HorizontalLayout getLayoutEstilo() {
+		return layoutEstilo;
+	}
+
+	public void setLayoutEstilo(HorizontalLayout layoutEstilo) {
+		this.layoutEstilo = layoutEstilo;
+	}
+
+	public Element getVistaEstilo_admin() {
+		return vistaEstilo_admin;
+	}
+
+	public void setVistaEstilo_admin(Element vistaEstilo_admin) {
+		this.vistaEstilo_admin = vistaEstilo_admin;
+	}
+
+	public Element getVistaEstilo_admin1() {
+		return vistaEstilo_admin1;
+	}
+
+	public void setVistaEstilo_admin1(Element vistaEstilo_admin1) {
+		this.vistaEstilo_admin1 = vistaEstilo_admin1;
+	}
+
 	
 
 }

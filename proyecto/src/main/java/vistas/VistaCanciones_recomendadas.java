@@ -36,6 +36,38 @@ public class VistaCanciones_recomendadas extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H1 getH1Titulo() {
+		return h1Titulo;
+	}
+
+	public void setH1Titulo(H1 h1Titulo) {
+		this.h1Titulo = h1Titulo;
+	}
+
+	public Element getVistaCancion() {
+		return vistaCancion;
+	}
+
+	public void setVistaCancion(Element vistaCancion) {
+		this.vistaCancion = vistaCancion;
+	}
+
+	public Element getVistaCancion1() {
+		return vistaCancion1;
+	}
+
+	public void setVistaCancion1(Element vistaCancion1) {
+		this.vistaCancion1 = vistaCancion1;
+	}
+
 	
 
 }

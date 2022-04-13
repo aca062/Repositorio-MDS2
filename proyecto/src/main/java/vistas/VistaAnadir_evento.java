@@ -55,5 +55,101 @@ public class VistaAnadir_evento extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H2 getH2Titulo() {
+		return h2Titulo;
+	}
+
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
+	}
+
+	public Element getLayoutEvento() {
+		return layoutEvento;
+	}
+
+	public void setLayoutEvento(Element layoutEvento) {
+		this.layoutEvento = layoutEvento;
+	}
+
+	public HorizontalLayout getLayoutEventoFoto() {
+		return layoutEventoFoto;
+	}
+
+	public void setLayoutEventoFoto(HorizontalLayout layoutEventoFoto) {
+		this.layoutEventoFoto = layoutEventoFoto;
+	}
+
+	public Image getImgFecha() {
+		return imgFecha;
+	}
+
+	public void setImgFecha(Image imgFecha) {
+		this.imgFecha = imgFecha;
+	}
+
+	public Button getAnadirFoto() {
+		return anadirFoto;
+	}
+
+	public void setAnadirFoto(Button anadirFoto) {
+		this.anadirFoto = anadirFoto;
+	}
+
+	public TextField getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(TextField fecha) {
+		this.fecha = fecha;
+	}
+
+	public TextField getLugar() {
+		return lugar;
+	}
+
+	public void setLugar(TextField lugar) {
+		this.lugar = lugar;
+	}
+
+	public TextField getHora() {
+		return hora;
+	}
+
+	public void setHora(TextField hora) {
+		this.hora = hora;
+	}
+
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
+
+	public Button getCancelar() {
+		return cancelar;
+	}
+
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
+	}
+
+	public Button getConfirmar() {
+		return confirmar;
+	}
+
+	public void setConfirmar(Button confirmar) {
+		this.confirmar = confirmar;
+	}
+
 	
 }

@@ -37,4 +37,44 @@ public class VistaCabecera_cibernauta extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public HorizontalLayout getLayoutCabecera() {
+		return layoutCabecera;
+	}
+
+	public void setLayoutCabecera(HorizontalLayout layoutCabecera) {
+		this.layoutCabecera = layoutCabecera;
+	}
+
+	public Button getLogo() {
+		return logo;
+	}
+
+	public void setLogo(Button logo) {
+		this.logo = logo;
+	}
+
+	public Button getIniciarSesion() {
+		return iniciarSesion;
+	}
+
+	public void setIniciarSesion(Button iniciarSesion) {
+		this.iniciarSesion = iniciarSesion;
+	}
+
+	public HorizontalLayout getContacto() {
+		return contacto;
+	}
+
+	public void setContacto(HorizontalLayout contacto) {
+		this.contacto = contacto;
+	}
+
 }

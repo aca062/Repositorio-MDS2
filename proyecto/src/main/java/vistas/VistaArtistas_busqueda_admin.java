@@ -39,4 +39,44 @@ public class VistaArtistas_busqueda_admin extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H1 getH1Titulo() {
+		return h1Titulo;
+	}
+
+	public void setH1Titulo(H1 h1Titulo) {
+		this.h1Titulo = h1Titulo;
+	}
+
+	public HorizontalLayout getLayoutArtistas() {
+		return layoutArtistas;
+	}
+
+	public void setLayoutArtistas(HorizontalLayout layoutArtistas) {
+		this.layoutArtistas = layoutArtistas;
+	}
+
+	public Element getVistaArtista_admin() {
+		return vistaArtista_admin;
+	}
+
+	public void setVistaArtista_admin(Element vistaArtista_admin) {
+		this.vistaArtista_admin = vistaArtista_admin;
+	}
+
+	public Element getVistaArtista_admin1() {
+		return vistaArtista_admin1;
+	}
+
+	public void setVistaArtista_admin1(Element vistaArtista_admin1) {
+		this.vistaArtista_admin1 = vistaArtista_admin1;
+	}
+
 }

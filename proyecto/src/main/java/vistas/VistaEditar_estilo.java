@@ -42,6 +42,62 @@ public class VistaEditar_estilo extends LitTemplate {
     public VistaEditar_estilo() {
         // You can initialise any data required for the connected UI components here.
     }
+
+	public Element getLayoutPrincipal() {
+		return layoutPrincipal;
+	}
+
+	public void setLayoutPrincipal(Element layoutPrincipal) {
+		this.layoutPrincipal = layoutPrincipal;
+	}
+
+	public H2 getH2Titulo() {
+		return h2Titulo;
+	}
+
+	public void setH2Titulo(H2 h2Titulo) {
+		this.h2Titulo = h2Titulo;
+	}
+
+	public Element getLayoutEstilo() {
+		return layoutEstilo;
+	}
+
+	public void setLayoutEstilo(Element layoutEstilo) {
+		this.layoutEstilo = layoutEstilo;
+	}
+
+	public TextField getNombreDelEstilo() {
+		return nombreDelEstilo;
+	}
+
+	public void setNombreDelEstilo(TextField nombreDelEstilo) {
+		this.nombreDelEstilo = nombreDelEstilo;
+	}
+
+	public Button getCancelar() {
+		return cancelar;
+	}
+
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
+	}
+
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
+
+	public Button getConfirmar() {
+		return confirmar;
+	}
+
+	public void setConfirmar(Button confirmar) {
+		this.confirmar = confirmar;
+	}
 	
 
 }
