@@ -14,8 +14,10 @@ public class Alta_estilos extends VistaAlta_estilos{
 		Inicializar();
 	}
 	
-	public void Inicializar() {
+	void Inicializar() {
 		this.getConfirmar().setVisible(true);
 		this.getCancelar().setVisible(true);
+		this.getH2Titulo().setVisible(true);
+		this.getNombreDelEstilo().setVisible(true);
 	}
 }

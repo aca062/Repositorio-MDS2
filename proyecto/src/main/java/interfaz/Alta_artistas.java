@@ -20,8 +20,23 @@ public class Alta_artistas extends VistaAlta_artistas{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Dar_de_alta _darDeAlta;
+	
+	public Alta_artistas() {
+		Inicializar();
+	}
 
 	public void Anadir_imagen() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
+		this.getAnadirFoto().setVisible(true);
+		this.getCancelar().setVisible(true);
+		this.getConfirmar().setVisible(true);
+		this.getContraseña().setVisible(true);
+		this.getConfirmarContraseña().setVisible(true);
+		this.geteMail().setVisible(true);
+		this.getH2Titulo().setVisible(true);
+		this.getImgArtista().setVisible(true);
+		this.getNick().setVisible(true);
 	}
 }

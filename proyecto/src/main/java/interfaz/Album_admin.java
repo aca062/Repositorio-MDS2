@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+
 import vistas.VistaAlbum_admin;
 
 public class Album_admin extends VistaAlbum_admin{
@@ -9,9 +12,28 @@ public class Album_admin extends VistaAlbum_admin{
 	private Button _editarB;
 	private Button _eliminarB;*/
 	public Albumes_busqueda_admin _albumesBusquedaAdmin;
-	public Editar_album _editarAlbum;
+	public Editar_album _editarAlbum = new Editar_album();
+	
+	public Album_admin() {
+		Inicializar();
+		this.getEditar().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				EditarAlbum();
+			}
+		});
+	}
 
 	public void Eliminar() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
+		this.getImgAlbum().setVisible(true);
+		this.getH4Titulo().setVisible(true);
+		this.getEliminar().setVisible(true);
+		this.getEditar().setVisible(true);
+	}
+	public void EditarAlbum() {
+		
 	}
 }

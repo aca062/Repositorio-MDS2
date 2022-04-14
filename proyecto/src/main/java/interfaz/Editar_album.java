@@ -19,8 +19,20 @@ public class Editar_album extends VistaEditar_album{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Album_admin _albumAdmin;
-
+	
+	public Editar_album() {
+		Inicializar();
+	}
+	
 	public void Anadir_imagen() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
+		this.getCambiarImagen().setVisible(true);
+		this.getImgAlbum().setVisible(true);
+		this.getTitulo().setVisible(true);
+		this.getH2Titulo().setVisible(true);
+		this.getNombreArtista().setVisible(true);
+		this.getFechaEdición().setVisible(true);
 	}
 }

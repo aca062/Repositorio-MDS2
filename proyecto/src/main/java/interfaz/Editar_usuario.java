@@ -18,8 +18,23 @@ public class Editar_usuario extends VistaEditar_usuario{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Usuario_admin _usuarioAdmin;
-
+	
+	public Editar_usuario() {
+		Inicializar();
+	}
+	
 	public void Anadir_imagen() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
+		this.getCancelar().setVisible(true);
+		this.getConfirmar().setVisible(true);
+		this.getNick().setVisible(true);
+		this.getContraseña().setVisible(true);
+		this.getConfirmarContraseña().setVisible(true);
+		this.geteMail().setVisible(true);
+		this.getAnadirFoto().setVisible(true);
+		this.getImgUsuario().setVisible(true);
+		this.getH2Titulo().setVisible(true);
 	}
 }

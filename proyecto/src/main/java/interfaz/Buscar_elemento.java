@@ -9,4 +9,13 @@ public class Buscar_elemento extends VistaBuscar_elemento{
 	private Image _imagen;*/
 	public Menu_administracion _menuAdministracion;
 	public Buscar_administrador _buscarAdministrador;
+	
+	public Buscar_elemento() {
+		Inicializar();
+	}
+	void Inicializar() {
+		this.getBuscador().setVisible(true);
+		this.getH1Titulo().setVisible(true);
+		this.getVistaBuscar_administrador().setVisible(false);
+	}
 }

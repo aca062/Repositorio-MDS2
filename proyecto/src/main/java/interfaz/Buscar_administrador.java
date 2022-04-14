@@ -18,4 +18,16 @@ public class Buscar_administrador extends VistaBuscar_administrador{
 	public Vector<Listas_de_reproduccion_busqueda_admin> _listasDeReproduccionBusquedaAdmin = new Vector<Listas_de_reproduccion_busqueda_admin>();
 	public Vector<Usuarios_busqueda_admin> _usuariosBusquedaAdmin = new Vector<Usuarios_busqueda_admin>();
 	public Vector<Artistas_busqueda_admin> _artistasBusquedaAdmin = new Vector<Artistas_busqueda_admin>();
+	
+	public Buscar_administrador() {
+		Inicializar();
+	}
+	void Inicializar() {
+		/*this.getLayoutCanciones().add(null);
+		this.getLayoutAlbumes().add(null);
+		this.getLayoutArtistas().add(null);
+		this.getLayoutEstilos().add(null);
+		this.getLayoutListas().add(null);
+		this.getLayoutUsuarios().add(null);*/
+	}
 }

@@ -17,4 +17,15 @@ public class Dar_de_alta extends VistaDar_de_alta{
 	public Alta_canciones _altaCanciones;
 	public Alta_artistas _altaArtistas;
 	public Alta_albumes _altaAlbumes;
+	
+	public Dar_de_alta() {
+		Inicializar();
+	}
+	void Inicializar() {
+		this.getBotonAlbumes().setVisible(true);
+		this.getBotonArtistas().setVisible(true);
+		this.getBotonCanciones().setVisible(true);
+		this.getBotonEstilos().setVisible(true);
+		this.getH1Titulo().setVisible(true);
+	}
 }

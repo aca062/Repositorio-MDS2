@@ -18,8 +18,22 @@ public class Alta_albumes extends VistaAlta_albumes{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Dar_de_alta _darDeAlta;
+	
+	public Alta_albumes() {
+		Inicializar();
+	}
 
 	public void Anadir_imagen() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
+		this.getConfirmar().setVisible(true);
+		this.getCancelar().setVisible(true);
+		this.getFechaEdicion().setVisible(true);
+		this.getH2Titulo().setVisible(true);
+		this.getTitulo().setVisible(true);
+		this.getImg().setVisible(true);
+		this.getNombreArtista().setVisible(true);
+		this.getAnadirImagen().setVisible(true);
 	}
 }

@@ -11,6 +11,10 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
 import interfaz.Alta_estilos;
+import interfaz.Artista_admin;
+import interfaz.Cancion_admin;
+import interfaz.Canciones_busqueda_admin;
+import interfaz.Editar_artista;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -45,11 +49,12 @@ public class MainView extends VerticalLayout {
      */
     public MainView(@Autowired GreetService service) {
 
-    	/*Alta_estilos alta = new Alta_estilos();
-    	add(alta);*/
+    	Cancion_admin cad = new Cancion_admin();
+    	add(cad);
+    	
     	
         // Use TextField for standard text input
-        TextField textField = new TextField("Your name");
+        /*TextField textField = new TextField("Your name");
         textField.addThemeName("bordered");
 
         // Button click listeners can be defined as lambda expressions
@@ -67,7 +72,7 @@ public class MainView extends VerticalLayout {
         // Use custom CSS classes to apply styling. This is defined in shared-styles.css.
         addClassName("centered-content");
 
-        add(textField, button);
+        add(textField, button);*/
     }
 
 }

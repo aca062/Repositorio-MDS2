@@ -22,6 +22,10 @@ public class Editar_cancion extends VistaEditar_cancion{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Cancion_admin _cancionAdmin;
+	
+	public Editar_cancion() {
+		Inicializar();
+	}
 
 	public void Anadir_archivo_multimedia() {
 		throw new UnsupportedOperationException();
@@ -29,5 +33,19 @@ public class Editar_cancion extends VistaEditar_cancion{
 
 	public void Comprobar_formato() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
+		this.getConfirmar().setVisible(true);
+		this.getCancelar().setVisible(true);
+		this.getH2Titulo().setVisible(true);
+		this.getTítulo().setVisible(true);
+		this.getTítuloÁlbum().setVisible(true);
+		this.getCompositores().setVisible(true);
+		this.getProductores().setVisible(true);
+		this.getInterpretes().setVisible(true);
+		this.getEstilo().setVisible(true);
+		this.getAnadirCancion().setVisible(true);
+		this.getH4Titulo().setVisible(true);
+		this.getH5Requisitos().setVisible(true);
 	}
 }
