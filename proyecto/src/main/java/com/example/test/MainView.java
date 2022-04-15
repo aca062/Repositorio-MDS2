@@ -10,11 +10,15 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
+import interfaz.Administrador;
 import interfaz.Alta_estilos;
 import interfaz.Artista_admin;
+import interfaz.Cabecera_cibernauta;
 import interfaz.Cancion_admin;
 import interfaz.Canciones_busqueda_admin;
+import interfaz.Cibernauta;
 import interfaz.Editar_artista;
+import interfaz.Ultimas_canciones_reproducidas;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -49,7 +53,9 @@ public class MainView extends VerticalLayout {
      */
     public MainView(@Autowired GreetService service) {
 
-    	Cancion_admin cad = new Cancion_admin();
+    	Cibernauta cad = new Cibernauta();
+    	cad.getStyle().set("width", "100%");   
+    	cad.getStyle().set("height", "100%");
     	add(cad);
     	
     	

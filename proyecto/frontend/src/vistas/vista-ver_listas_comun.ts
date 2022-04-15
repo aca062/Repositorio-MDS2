@@ -45,17 +45,7 @@ export class VistaVer_listas_comun extends LitElement {
         background-position:center;background-color: #FFFFFF" id="botonAdelante"></vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
-`</h1>
- </vaadin-horizontal-layout>
- <vista-paginacion_listas_ajenas></vista-paginacion_listas_ajenas>
- <vista-paginacion_listas_propias></vista-paginacion_listas_propias>
-</vaadin-vertical-layout>
-`p</h1>
- </vaadin-horizontal-layout>
- <vista-paginacion_listas_ajenas></vista-paginacion_listas_ajenas>
- <vista-paginacion_listas_propias></vista-paginacion_listas_propias>
-</vaadin-vertical-layout>
-`p</h1>
+p</h1>
  </vaadin-horizontal-layout>
  <vista-paginacion_listas_ajenas></vista-paginacion_listas_ajenas>
  <vista-paginacion_listas_propias></vista-paginacion_listas_propias>

@@ -13,7 +13,20 @@ public class Cancion extends VistaCancion{
 	public Lista_de_canciones _listaDeCanciones;
 	public Ver_detalle_cancion _verDetalleCancion;
 
+	public Cancion() {
+		Inicializar();
+	}
+	
 	public void Imagen_reproducir() {
 		throw new UnsupportedOperationException();
+	}
+	
+	void Inicializar() {
+		this.getBotonCancion().setVisible(true);
+		this.getH5Titulo().setVisible(true);
+		this.getLayoutCancion().setVisible(true);
+		this.getLayoutPrincipal().setVisible(true);
+		this.getMeGusta().setVisible(true);
+		this.getNumeroRep().setVisible(true);
 	}
 }

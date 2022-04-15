@@ -4,6 +4,9 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
+
+import interfaz.Cabecera_cibernauta;
+
 import com.vaadin.flow.component.template.Id;
 import vistas.VistaCabecera_cibernauta;
 import vistas.VistaUltimos_exitos;
@@ -24,7 +27,7 @@ public class VistaCibernauta extends LitTemplate {
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
 	@Id("cabecera")
-	private Element cabecera;
+	private Cabecera_cibernauta cabecera;
 	@Id("vistaUltimos_exitos")
 	private Element vistaUltimos_exitos;
 
@@ -43,11 +46,11 @@ public class VistaCibernauta extends LitTemplate {
 		this.layoutPrincipal = layoutPrincipal;
 	}
 
-	public Element getCabecera() {
+	public Cabecera_cibernauta getCabecera() {
 		return cabecera;
 	}
 
-	public void setCabecera(Element cabecera) {
+	public void setCabecera(Cabecera_cibernauta cabecera) {
 		this.cabecera = cabecera;
 	}
 

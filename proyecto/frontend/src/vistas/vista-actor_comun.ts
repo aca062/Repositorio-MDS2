@@ -50,9 +50,9 @@ export class VistaActor_comun extends LitElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;" id="layoutEstadisticas">
-  <vaadin-horizontal-layout theme="spacing" id="layoutTituloEstadisticas">
-   <h2 style="margin-left: var(--lumo-space-xl);" id="h21Titulo">Tus estadísticas de uso</h2>
-   <vaadin-button style="align-self: center;" id="botonVerMasEstadisticas">
+  <vaadin-horizontal-layout theme="spacing" id="layoutTituloEstadisticas" style="align-items: center; flex-shrink: 0;">
+   <h2 style="margin-left: var(--lumo-space-xl); align-self: center; flex-shrink: 0; margin-top: 0; margin-bottom: 0" id="h21Titulo">Tus estadísticas de uso</h2>
+   <vaadin-button style="align-self: center; flex-shrink: 0;" id="botonVerMasEstadisticas">
      Ver todas 
    </vaadin-button>
   </vaadin-horizontal-layout>
