@@ -13,9 +13,12 @@ import com.vaadin.flow.server.PWA;
 import interfaz.Administrador;
 import interfaz.Alta_estilos;
 import interfaz.Artista_admin;
+import interfaz.Artistas_recomendados;
 import interfaz.Cabecera_cibernauta;
 import interfaz.Cancion_admin;
 import interfaz.Canciones_busqueda_admin;
+import interfaz.Canciones_favoritas;
+import interfaz.Canciones_recomendadas;
 import interfaz.Cibernauta;
 import interfaz.Editar_artista;
 import interfaz.Ultimas_canciones_reproducidas;
@@ -54,7 +57,7 @@ public class MainView extends VerticalLayout {
      */
     public MainView(@Autowired GreetService service) {
 
-    	Ver_detalle_album cad = new Ver_detalle_album();
+    	Canciones_recomendadas cad = new Canciones_recomendadas();
     	cad.getStyle().set("width", "100%");   
     	cad.getStyle().set("height", "100%");
     	add(cad);

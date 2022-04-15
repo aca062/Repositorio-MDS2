@@ -20,6 +20,8 @@ public class Canciones_favoritas extends VistaCanciones_favoritas{
 		this.getH1Titulo().setVisible(true);
 		this.getVerMas().setVisible(true);
 		_cancion.add(new Cancion());
+		_cancion.add(new Cancion());
+		_cancion.add(new Cancion());
 		for(int i = 0;i<3;i++) {
 			this.getLayoutCanciones().add(_cancion.get(i));
 		}

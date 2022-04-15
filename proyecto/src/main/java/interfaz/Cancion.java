@@ -24,8 +24,6 @@ public class Cancion extends VistaCancion{
 	void Inicializar() {
 		this.getBotonCancion().setVisible(true);
 		this.getH5Titulo().setVisible(true);
-		this.getLayoutCancion().setVisible(true);
-		this.getLayoutPrincipal().setVisible(true);
 		this.getMeGusta().setVisible(true);
 		this.getNumeroRep().setVisible(true);
 	}
