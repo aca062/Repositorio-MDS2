@@ -14,4 +14,18 @@ public class Crear_lista_de_reproduccion extends VistaCrear_lista_de_reproduccio
 	private Button _confirmarB;*/
 	public Perfil _perfil;
 	public Perfil_artista_propio _perfilArtista;
+	
+	public Crear_lista_de_reproduccion() {
+		Inicializar();
+	}
+	void Inicializar() {
+		this.getCancelar().setVisible(true);
+		this.getEliminar().setVisible(true);
+		this.getH2Titulo().setVisible(true);
+		this.getConfirmar().setVisible(true);
+		this.getNombre().setVisible(true);
+		this.getListaCancion().setVisible(true);
+		this.getListaCanciones().setVisible(true);
+		this.getNombreCancion().setVisible(true);
+	}
 }

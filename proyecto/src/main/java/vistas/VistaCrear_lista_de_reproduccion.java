@@ -60,6 +60,8 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
 	private HorizontalLayout layoutBotones;
 	@Id("cancelar")
 	private Button cancelar;
+	@Id("confirmar")
+	private Button confirmar;
 
 	/**
      * Creates a new VistaCrear_lista_de_reproduccion.
@@ -212,6 +214,12 @@ public class VistaCrear_lista_de_reproduccion extends LitTemplate {
 		this.cancelar = cancelar;
 	}
 
+	public Button getConfirmar() {
+		return confirmar;
+	}
 	
+	public void setConfirmar(Button confirmar) {
+		this.confirmar = confirmar;
+	}
 
 }

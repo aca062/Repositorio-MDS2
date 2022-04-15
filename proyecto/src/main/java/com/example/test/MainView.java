@@ -19,6 +19,7 @@ import interfaz.Canciones_busqueda_admin;
 import interfaz.Cibernauta;
 import interfaz.Editar_artista;
 import interfaz.Ultimas_canciones_reproducidas;
+import interfaz.Ver_detalle_album;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -53,7 +54,7 @@ public class MainView extends VerticalLayout {
      */
     public MainView(@Autowired GreetService service) {
 
-    	Cibernauta cad = new Cibernauta();
+    	Ver_detalle_album cad = new Ver_detalle_album();
     	cad.getStyle().set("width", "100%");   
     	cad.getStyle().set("height", "100%");
     	add(cad);

@@ -9,8 +9,16 @@ public class Album extends VistaAlbum{
 	public Lista_album _listaAlbum;
 	public Lista_albumes _listaAlbumes;
 	public Ver_detalle_album _verDetalleAlbum;
-
+	
+	public Album() {
+		Inicializar();
+	}
+	
 	public void Imagen_reproducir() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
+		this.getImgAlbum().setVisible(true);
+		this.getTitulo().setVisible(true);
 	}
 }

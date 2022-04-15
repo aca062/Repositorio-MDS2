@@ -3,6 +3,7 @@ package vistas;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
@@ -20,7 +21,7 @@ public class VistaArtistas_recomendados extends LitTemplate {
 
    
 	@Id("layoutPrincipal")
-	private Element layoutPrincipal;
+	private VerticalLayout layoutPrincipal;
 	@Id("vistaArtista_elemento")
 	private Element vistaArtista_elemento;
 	@Id("h1Titulo")
@@ -37,11 +38,11 @@ public class VistaArtistas_recomendados extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getLayoutPrincipal() {
+	public VerticalLayout getLayoutPrincipal() {
 		return layoutPrincipal;
 	}
 
-	public void setLayoutPrincipal(Element layoutPrincipal) {
+	public void setLayoutPrincipal(VerticalLayout layoutPrincipal) {
 		this.layoutPrincipal = layoutPrincipal;
 	}
 

@@ -9,6 +9,8 @@ import vistas.VistaAlbum;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H5;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaCancion;
 import vistas.VistaLista_de_canciones;
 
@@ -25,7 +27,7 @@ public class VistaVer_detalle_album extends LitTemplate {
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
 	@Id("layoutAlbum")
-	private Element layoutAlbum;
+	private VerticalLayout layoutAlbum;
 	@Id("vistaAlbum")
 	private Element vistaAlbum;
 	@Id("botonArtista")
@@ -52,11 +54,11 @@ public class VistaVer_detalle_album extends LitTemplate {
 		this.layoutPrincipal = layoutPrincipal;
 	}
 
-	public Element getLayoutAlbum() {
+	public VerticalLayout getLayoutAlbum() {
 		return layoutAlbum;
 	}
 
-	public void setLayoutAlbum(Element layoutAlbum) {
+	public void setLayoutAlbum(VerticalLayout layoutAlbum) {
 		this.layoutAlbum = layoutAlbum;
 	}
 

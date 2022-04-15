@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.H2;
@@ -41,7 +42,7 @@ public class VistaLista_de_reproduccion_favoritos extends LitTemplate {
 	@Id("numCanciones")
 	private H2 numCanciones;
 	@Id("listaCanciones")
-	private Element listaCanciones;
+	private VerticalLayout listaCanciones;
 	@Id("vistaCancion")
 	private Element vistaCancion;
 	@Id("vistaCancion1")
@@ -120,11 +121,11 @@ public class VistaLista_de_reproduccion_favoritos extends LitTemplate {
 		this.numCanciones = numCanciones;
 	}
 
-	public Element getListaCanciones() {
+	public VerticalLayout getListaCanciones() {
 		return listaCanciones;
 	}
 
-	public void setListaCanciones(Element listaCanciones) {
+	public void setListaCanciones(VerticalLayout listaCanciones) {
 		this.listaCanciones = listaCanciones;
 	}
 

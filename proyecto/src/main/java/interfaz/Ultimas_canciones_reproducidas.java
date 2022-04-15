@@ -20,5 +20,9 @@ public class Ultimas_canciones_reproducidas extends VistaUltimas_canciones_repro
 		this.getVistaCancion().setVisible(true);
 		this.getVistaCancion1().setVisible(true);
 		this.getVistaCancion2().setVisible(true);
+		_cancion.add(new Cancion());
+		for(int i =0;i<3;i++) {
+			this.getLayoutCanciones().add(_cancion.get(i));
+		}
 	}
 }

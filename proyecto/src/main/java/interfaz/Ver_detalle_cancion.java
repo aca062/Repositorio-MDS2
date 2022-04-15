@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+
 import vistas.VistaVer_detalle_cancion;
 
 public class Ver_detalle_cancion extends VistaVer_detalle_cancion{
@@ -17,8 +20,18 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion{
 	private Button _reproducirB;*/
 	public Cancion _cancion;
 	public Reproductor _reproductor;
-	public Ver_creditos _verCreditos;
-
+	public Ver_creditos _verCreditos = new Ver_creditos();
+	
+	public Ver_detalle_cancion() {
+		Inicializar();
+		this.getBotonVerCreditos().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				VerCreditos();
+			}
+		});
+	}
+	
 	public void Reproducir() {
 		throw new UnsupportedOperationException();
 	}
@@ -33,5 +46,18 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion{
 
 	public void Anadir_a_lista_de_reproduccion() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
+		this.getBotonAlbum().setVisible(true);
+		this.getBotonArtista().setVisible(true);
+		this.getBotonMeGusta().setVisible(true);
+		this.getBotonReproducir().setVisible(true);
+		this.getBotonVerCreditos().setVisible(true);
+		this.getAnadirLista().setVisible(true);
+		this.getFotoCancion().setVisible(true);
+		this.getH4NombreCancion().setVisible(true);
+	}
+	public void VerCreditos() {
+		this.getLayoutCancion().add(_verCreditos);
 	}
 }

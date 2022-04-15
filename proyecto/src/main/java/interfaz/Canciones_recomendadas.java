@@ -10,6 +10,10 @@ public class Canciones_recomendadas extends VistaCanciones_recomendadas{
 	public Vector<Cancion> _cancion = new Vector<Cancion>();
 	
 	void Inicializar() {
+		_cancion.add(new Cancion());
+		for(int  i = 0;i<3;i++) {
+			this.getLayoutPrincipal().add(_cancion.get(i));
+		}
 		this.getH1Titulo().setVisible(true);
 		this.getLayoutPrincipal().setVisible(true);
 		this.getVistaCancion().setVisible(true);

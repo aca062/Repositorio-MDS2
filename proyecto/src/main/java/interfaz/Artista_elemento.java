@@ -9,4 +9,12 @@ public class Artista_elemento extends VistaArtista_elemento{
 	public Artistas_busqueda _artistasBusqueda;
 	public Artistas_recomendados _artistasRecomendados;
 	public Perfil_artista_ajeno _perfilArtistaAjeno;
+	
+	public Artista_elemento() {
+		Inicializar();
+	}
+	void Inicializar() {
+		this.getBotonNombre().setVisible(true);
+		this.getImgArtista().setVisible(true);
+	}
 }
