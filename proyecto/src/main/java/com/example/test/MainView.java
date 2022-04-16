@@ -21,6 +21,7 @@ import interfaz.Canciones_favoritas;
 import interfaz.Canciones_recomendadas;
 import interfaz.Cibernauta;
 import interfaz.Editar_artista;
+import interfaz.Menu_administracion;
 import interfaz.Ultimas_canciones_reproducidas;
 import interfaz.Ver_detalle_album;
 
@@ -57,7 +58,7 @@ public class MainView extends VerticalLayout {
      */
     public MainView(@Autowired GreetService service) {
 
-    	Canciones_recomendadas cad = new Canciones_recomendadas();
+    	Menu_administracion cad = new Menu_administracion();
     	cad.getStyle().set("width", "100%");   
     	cad.getStyle().set("height", "100%");
     	add(cad);

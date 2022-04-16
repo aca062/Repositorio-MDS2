@@ -38,7 +38,8 @@ public class Cancion_admin extends VistaCancion_admin{
 		this.getH4Titulo().setVisible(true);
 	}
 	public void EditarCancion() {
-		this.getLayoutCancion().removeAll();
-		this.getLayoutCancion().add(_editarCancion);
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_editarCancion);
 	}
 }

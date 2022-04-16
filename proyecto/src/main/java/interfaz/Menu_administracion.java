@@ -18,9 +18,9 @@ public class Menu_administracion extends VistaMenu_administracion{
 	private Button _editarCancionesB;
 	private Label _cancionesMostradasLista;*/
 	public Administrador _administrador;
-	public Editar_canciones_mostradas_al_cibernauta _editarCancionesMostradasAlCibernauta;
-	public Dar_de_alta _darDeAlta;
-	public Buscar_elemento _buscarElemento;
+	public Editar_canciones_mostradas_al_cibernauta _editarCancionesMostradasAlCibernauta = new Editar_canciones_mostradas_al_cibernauta();
+	public Dar_de_alta _darDeAlta = new Dar_de_alta();
+	public Buscar_elemento _buscarElemento = new Buscar_elemento();
 	
 	public Menu_administracion() {
 		Inicializar();

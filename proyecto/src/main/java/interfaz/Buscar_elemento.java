@@ -10,7 +10,7 @@ public class Buscar_elemento extends VistaBuscar_elemento{
 	private TextField _buscadorTF;
 	private Image _imagen;*/
 	public Menu_administracion _menuAdministracion;
-	public Buscar_administrador _buscarAdministrador;
+	public Buscar_administrador _buscarAdministrador = new Buscar_administrador();
 	
 	public Buscar_elemento() {
 		Inicializar();
