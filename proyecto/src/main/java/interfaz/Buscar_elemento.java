@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaBuscar_elemento;
 
 public class Buscar_elemento extends VistaBuscar_elemento{
@@ -16,6 +18,7 @@ public class Buscar_elemento extends VistaBuscar_elemento{
 	void Inicializar() {
 		this.getBuscador().setVisible(true);
 		this.getH1Titulo().setVisible(true);
-		this.getVistaBuscar_administrador().setVisible(false);
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.add(_buscarAdministrador);
 	}
 }

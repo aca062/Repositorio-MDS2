@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaUsuario_admin;
 
@@ -34,6 +35,8 @@ public class Usuario_admin extends VistaUsuario_admin{
 		throw new UnsupportedOperationException();
 	}
 	public void EditarUsuario() {
-		
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_editarUsuario);
 	}
 }

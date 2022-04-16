@@ -8,12 +8,18 @@ public class Estilos_busqueda_admin extends VistaEstilos_busqueda_admin{
 	//private Label _tituloL;
 	public Buscar_administrador _buscarAdministrador;
 	public Vector<Estilo_admin> _estiloAdmin = new Vector<Estilo_admin>();
-	Estilo_admin _esa = new Estilo_admin();
+
 	
 	public Estilos_busqueda_admin() {
 		Inicializar();
 	}
 	void Inicializar() {
-		this.getLayoutEstilo().add(_esa);
+		_estiloAdmin.add(new Estilo_admin());
+		_estiloAdmin.add(new Estilo_admin());
+		_estiloAdmin.add(new Estilo_admin());
+		this.getTitulo().setVisible(true);
+		for(int i=0;i<3;i++) {
+			this.getLayoutEstilo().add(_estiloAdmin.get(i));
+		}
 	}
 }

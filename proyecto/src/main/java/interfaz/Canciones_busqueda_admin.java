@@ -8,7 +8,6 @@ public class Canciones_busqueda_admin extends VistaCanciones_busqueda_admin{
 	//private Label _tituloL;
 	public Buscar_administrador _buscarAdministrador;
 	public Vector<Cancion_admin> _cancionAdmin = new Vector<Cancion_admin>();
-	//Cancion_admin _cad = new Cancion_admin();
 	
 	public Canciones_busqueda_admin() {
 		Inicializar();

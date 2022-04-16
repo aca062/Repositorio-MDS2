@@ -8,12 +8,17 @@ public class Listas_de_reproduccion_busqueda_admin extends VistaListas_de_reprod
 	//private Label _tituloL;
 	public Buscar_administrador _buscarAdministrador;
 	public Vector<Lista_de_reproduccion_admin> _listaDeReproduccionAdmin = new Vector<Lista_de_reproduccion_admin>();
-	Lista_de_reproduccion_admin _lra = new Lista_de_reproduccion_admin();
 	
 	public Listas_de_reproduccion_busqueda_admin() {
 		Inicializar();
 	}
 	void Inicializar() {
-		//this.getLayoutListas().add(_lra);
+		_listaDeReproduccionAdmin.add(new Lista_de_reproduccion_admin());
+		_listaDeReproduccionAdmin.add(new Lista_de_reproduccion_admin());
+		_listaDeReproduccionAdmin.add(new Lista_de_reproduccion_admin());
+		this.getH1Titulo().setVisible(true);
+		for(int i=0;i<3;i++) {
+			this.getLayoutListas().add(_listaDeReproduccionAdmin.get(i));
+		}
 	}
 }

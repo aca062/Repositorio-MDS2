@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaEstilo_admin;
 
@@ -32,6 +33,8 @@ public class Estilo_admin extends VistaEstilo_admin{
 		this.getEstilo().setVisible(true);
 	}
 	public void EditarEstilo() {
-		
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_editarEstilo);
 	}
 }

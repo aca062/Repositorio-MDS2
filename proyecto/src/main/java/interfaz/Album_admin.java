@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaAlbum_admin;
 
@@ -34,6 +35,8 @@ public class Album_admin extends VistaAlbum_admin{
 		this.getEditar().setVisible(true);
 	}
 	public void EditarAlbum() {
-		
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_editarAlbum);
 	}
 }

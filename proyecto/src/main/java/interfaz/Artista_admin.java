@@ -35,6 +35,8 @@ public class Artista_admin extends VistaArtista_admin{
 		this.getEditar().setVisible(true);
 	}
 	public void EditarArtista() {
-		
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_editarArtista);
 	}
 }

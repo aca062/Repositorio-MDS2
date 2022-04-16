@@ -10,4 +10,15 @@ public class Editar_canciones_mostradas_al_cibernauta extends VistaEditar_cancio
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Menu_administracion _menuAdministracion;
+	
+	public Editar_canciones_mostradas_al_cibernauta() {
+		Inicializar();
+	}
+	void Inicializar() {
+		this.getCancelar().setVisible(true);
+		this.getConfirmar().setVisible(true);
+		this.getH2Titulo().setVisible(true);
+		this.getBuscador().setVisible(true);
+		this.getListaCanciones().setVisible(true);
+	}
 }
