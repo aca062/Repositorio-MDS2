@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaVer_detalle_cancion;
 
@@ -58,6 +59,7 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion{
 		this.getH4NombreCancion().setVisible(true);
 	}
 	public void VerCreditos() {
-		this.getLayoutCancion().add(_verCreditos);
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.add(_verCreditos);
 	}
 }

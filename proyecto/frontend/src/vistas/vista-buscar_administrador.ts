@@ -25,7 +25,7 @@ export class VistaBuscar_administrador extends LitElement {
  <vaadin-horizontal-layout style="width: 100%;" id="layoutCanciones">
   <vista-canciones_busqueda_admin id="vistaCanciones_busqueda_admin" style="width: 100%;"></vista-canciones_busqueda_admin>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" id="layoutAlbumes" style="width: 100%;">
+ <vaadin-horizontal-layout id="layoutAlbumes" style="width: 100%;">
   <vista-albumes_busqueda_admin id="vistaAlbumes_busqueda_admin" style="width: 100%;"></vista-albumes_busqueda_admin>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%;" id="layoutListas">
@@ -37,7 +37,7 @@ export class VistaBuscar_administrador extends LitElement {
  <vaadin-horizontal-layout style="width: 100%;" id="layoutUsuarios">
   <vista-usuarios_busqueda_admin id="vistaUsuarios_busqueda_admin"></vista-usuarios_busqueda_admin>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" id="layoutEstilos" style="width: 100%;">
+ <vaadin-horizontal-layout id="layoutEstilos" style="width: 100%;">
   <vista-estilos_busqueda_admin id="vistaEstilos_busqueda_admin" style="width: 100%;"></vista-estilos_busqueda_admin>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

@@ -1,6 +1,9 @@
 package interfaz;
 
 import java.util.Vector;
+
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import interfaz.Album;
 import vistas.VistaLista_albumes;
 
@@ -10,15 +13,16 @@ public class Lista_albumes extends VistaLista_albumes{
 	public Vector<Album> _album = new Vector<Album>();
 
 	public Lista_albumes() {
-
+		Inicializar();
 	}
 	void Inicializar() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		_album.add(new Album());
 		_album.add(new Album());
 		_album.add(new Album());
 		this.getH1Titulo().setVisible(true);
 		for(int i=0;i<3;i++) {
-			this.getLayoutAlbumes().add(_album.get(i));
+			v1.add(_album.get(i));
 		}
 	}
 }

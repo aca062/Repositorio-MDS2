@@ -21,9 +21,11 @@ import interfaz.Canciones_favoritas;
 import interfaz.Canciones_recomendadas;
 import interfaz.Cibernauta;
 import interfaz.Editar_artista;
+import interfaz.Lista_albumes;
 import interfaz.Menu_administracion;
 import interfaz.Ultimas_canciones_reproducidas;
 import interfaz.Ver_detalle_album;
+import interfaz.Ver_todos_los_albumes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
