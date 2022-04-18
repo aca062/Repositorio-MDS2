@@ -60,7 +60,8 @@ public class MainView extends VerticalLayout {
      */
     public MainView(@Autowired GreetService service) {
 
-    	Menu_administracion cad = new Menu_administracion();
+    	//Menu_administracion cad = new Menu_administracion();
+    	Administrador cad = new Administrador();
     	cad.getStyle().set("width", "100%");   
     	cad.getStyle().set("height", "100%");
     	add(cad);

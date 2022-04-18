@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaCibernauta;
 
 public class Cibernauta extends VistaCibernauta{
@@ -13,10 +15,6 @@ public class Cibernauta extends VistaCibernauta{
 	
 	void Inicializar() {
 		_cabeceraCibernauta = new Cabecera_cibernauta();
-		this.setCabecera(_cabeceraCibernauta);
-		this.getCabecera().setVisible(true);
-		this.getCabecera().Inicializar();
-		this.getLayoutPrincipal().setVisible(true);
-		this.getVistaUltimos_exitos().setVisible(true);
-	}
+		this.getLayoutPrincipal().as(VerticalLayout.class).add(_cabeceraCibernauta);
+		this.getLayoutPrincipal().setVisible(true);	}
 }

@@ -1,16 +1,30 @@
 package interfaz;
 
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class Administrador extends Actor_comun {
 	//private Button _menuAdministracionB;
 	public Perfil_administrador _perfilAdministrador;
-	public Menu_administracion _unnamed_Menu_administracion_;
+	public Menu_administracion _menuAdministracion = new Menu_administracion();
 	
 	public Administrador() {
-		Inicializar();
+		super();
+		this.getBotonAdmin().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				MenuAdministracion();
+			}
+		});
 	}
 	
-	void Inicializar() {
-		this.getBotonAdmin().setVisible(true);
+	void InicializarAdmin() {
+		
+		/*VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_cabecera);
+		_cabecera.getStyle().set("width", "100%");*/
+		/*this.getBotonAdmin().setVisible(true);
 		this.getBotonVerMasEstadisticas().setVisible(true);
 		this.getH21Titulo().setVisible(true);
 		this.getH2Recomendaciones().setVisible(true);
@@ -39,6 +53,11 @@ public class Administrador extends Actor_comun {
 		this.getVistaCanciones_favoritas().setVisible(true);
 		this.getVistaCanciones_recomendadas().setVisible(true);
 		this.getVistaListas_de_reproduccion_recomendadas().setVisible(true);
-		this.getVistaUltimas_canciones_reproducidas().setVisible(true);
+		this.getVistaUltimas_canciones_reproducidas().setVisible(true);*/
+	}
+	public void MenuAdministracion() {
+		//VerticalLayout v1 = actor.getLayoutPrincipal().as(VerticalLayout.class);
+		//v1.removeAll();
+		//v1.add(_menuAdministracion);
 	}
 }
