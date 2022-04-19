@@ -56,8 +56,8 @@ public class Administrador extends Actor_comun {
 		this.getVistaUltimas_canciones_reproducidas().setVisible(true);*/
 	}
 	public void MenuAdministracion() {
-		//VerticalLayout v1 = actor.getLayoutPrincipal().as(VerticalLayout.class);
-		//v1.removeAll();
-		//v1.add(_menuAdministracion);
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_menuAdministracion);
 	}
 }

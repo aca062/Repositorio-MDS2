@@ -17,10 +17,10 @@ public class Dar_de_alta extends VistaDar_de_alta{
 	private Image _imagenEstilo;
 	private Button _estiloB;*/
 	public Menu_administracion _menuAdministracion;
-	public Alta_estilos _altaEstilos = new Alta_estilos();
-	public Alta_canciones _altaCanciones = new Alta_canciones();
-	public Alta_artistas _altaArtistas = new Alta_artistas();
-	public Alta_albumes _altaAlbumes = new Alta_albumes();
+	public Alta_estilos _altaEstilos;
+	public Alta_canciones _altaCanciones;
+	public Alta_artistas _altaArtistas;
+	public Alta_albumes _altaAlbumes;
 	
 	public Dar_de_alta() {
 		Inicializar();
@@ -55,21 +55,21 @@ public class Dar_de_alta extends VistaDar_de_alta{
 	public void DarAltaAlbum() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_altaAlbumes);
+		v1.add(_altaAlbumes = new Alta_albumes());
 	}
 	public void DarAltaArtista() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_altaArtistas);
+		v1.add(_altaArtistas = new Alta_artistas());
 	}
 	public void DarAltaCancion() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_altaCanciones);
+		v1.add(_altaCanciones = new Alta_canciones());
 	}
 	public void DarAltaEstilo() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_altaEstilos);
+		v1.add(_altaEstilos = new Alta_estilos());
 	}
 }

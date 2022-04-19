@@ -22,6 +22,7 @@ export class VistaActor_comun extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout id="layoutPrincipal">
+ <vaadin-vertical-layout theme="spacing" id="layoutCabecera" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="layoutAdministracion">
   <vaadin-button style="text-align: center; padding: var(--lumo-space-xl); padding-top: var(--lumo-space-m); padding-bottom: var(--lumo-space-xl);" id="botonAdmin">
     Administración 
@@ -70,6 +71,7 @@ export class VistaActor_comun extends LitElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
+<vaadin-vertical-layout theme="spacing" id="layoutPie" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 `;
   }
 

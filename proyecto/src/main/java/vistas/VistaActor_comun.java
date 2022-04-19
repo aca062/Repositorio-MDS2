@@ -26,8 +26,6 @@ import vistas.VistaListas_de_reproduccion_recomendadas;
 @JsModule("./src/vistas/vista-actor_comun.ts")
 public class VistaActor_comun extends LitTemplate {
 
-	@Id("layoutPrincipal")
-	private Element layoutPrincipal;
 	@Id("layoutAdministracion")
 	private HorizontalLayout layoutAdministracion;
 	@Id("botonAdmin")
@@ -86,6 +84,12 @@ public class VistaActor_comun extends LitTemplate {
 	private Image imgCancionMas;
 	@Id("h3NombreCancionMas")
 	private H3 h3NombreCancionMas;
+	@Id("layoutPie")
+	private Element layoutPie;
+	@Id("layoutCabecera")
+	private Element layoutCabecera;
+	@Id("layoutPrincipal")
+	private Element layoutPrincipal;
 
 	/**
      * Creates a new VistaActor_comun.
@@ -332,6 +336,22 @@ public class VistaActor_comun extends LitTemplate {
 
 	public void setH3NombreCancionMas(H3 h3NombreCancionMas) {
 		this.h3NombreCancionMas = h3NombreCancionMas;
+	}
+
+	public Element getLayoutPie() {
+		return layoutPie;
+	}
+
+	public void setLayoutPie(Element layoutPie) {
+		this.layoutPie = layoutPie;
+	}
+
+	public Element getLayoutCabecera() {
+		return layoutCabecera;
+	}
+
+	public void setLayoutCabecera(Element layoutCabecera) {
+		this.layoutCabecera = layoutCabecera;
 	}
 
 }

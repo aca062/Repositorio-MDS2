@@ -18,9 +18,9 @@ public class Menu_administracion extends VistaMenu_administracion{
 	private Button _editarCancionesB;
 	private Label _cancionesMostradasLista;*/
 	public Administrador _administrador;
-	public Editar_canciones_mostradas_al_cibernauta _editarCancionesMostradasAlCibernauta = new Editar_canciones_mostradas_al_cibernauta();
-	public Dar_de_alta _darDeAlta = new Dar_de_alta();
-	public Buscar_elemento _buscarElemento = new Buscar_elemento();
+	public Editar_canciones_mostradas_al_cibernauta _editarCancionesMostradasAlCibernauta;
+	public Dar_de_alta _darDeAlta;
+	public Buscar_elemento _buscarElemento;
 	
 	public Menu_administracion() {
 		Inicializar();
@@ -62,17 +62,17 @@ public class Menu_administracion extends VistaMenu_administracion{
 	public void BuscarElemento() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_buscarElemento);
+		v1.add(_buscarElemento = new Buscar_elemento());
 	}
 	public void DarAlta() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_darDeAlta);
+		v1.add(_darDeAlta = new Dar_de_alta());
 	}
 	public void EditarCanciones() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_editarCancionesMostradasAlCibernauta);
+		v1.add(_editarCancionesMostradasAlCibernauta = new Editar_canciones_mostradas_al_cibernauta());
 	}
 	/*public void EditarLimite() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);

@@ -11,6 +11,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
 import interfaz.Administrador;
+import interfaz.Alta_albumes;
 import interfaz.Alta_estilos;
 import interfaz.Artista_admin;
 import interfaz.Artistas_recomendados;
@@ -61,7 +62,7 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
 
     	//Menu_administracion cad = new Menu_administracion();
-    	Cancion_admin cad = new Cancion_admin();
+    	Menu_administracion cad = new Menu_administracion();
     	cad.getStyle().set("width", "100%");   
     	cad.getStyle().set("height", "100%");
     	add(cad);

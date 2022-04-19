@@ -1,5 +1,9 @@
 package interfaz;
 
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaAlta_canciones;
 
 public class Alta_canciones extends VistaAlta_canciones{
@@ -21,10 +25,33 @@ public class Alta_canciones extends VistaAlta_canciones{
 	private Button _anadirArchivoMultimediaB;
 	private Button _cancelarB;
 	private Button _confirmarB;*/
-	public Dar_de_alta _darDeAlta;
+	public Dar_de_alta _darDeAlta = new Dar_de_alta();
 	
 	public Alta_canciones() {
 		Inicializar();
+		this.getCancelar().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				Cancelar();
+			}
+		});
+		this.getConfirmar().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				Confirmar();
+			}
+		});
+	}
+
+	protected void Confirmar() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_darDeAlta);
+	}
+
+	protected void Cancelar() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_darDeAlta);
+		
 	}
 	
 	public void Anadir_archivo_multimedia() {

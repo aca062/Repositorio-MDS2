@@ -1,5 +1,9 @@
 package interfaz;
 
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaAlta_estilos;
 
 public class Alta_estilos extends VistaAlta_estilos{
@@ -12,6 +16,29 @@ public class Alta_estilos extends VistaAlta_estilos{
 	
 	public Alta_estilos() {
 		Inicializar();
+		this.getCancelar().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				Cancelar();
+			}
+		});
+		this.getConfirmar().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				Confirmar();
+			}
+		});
+	}
+
+	protected void Confirmar() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_darDeAlta = new Dar_de_alta());
+	}
+
+	protected void Cancelar() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_darDeAlta = new Dar_de_alta());
+		
 	}
 	
 	void Inicializar() {
