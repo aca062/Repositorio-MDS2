@@ -1,5 +1,10 @@
 package interfaz;
 
+import com.example.test.WindowController;
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaEditar_cancion;
 
 public class Editar_cancion extends VistaEditar_cancion{
@@ -25,6 +30,18 @@ public class Editar_cancion extends VistaEditar_cancion{
 	
 	public Editar_cancion() {
 		Inicializar();
+		
+		this.getCancelar().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				Cancelar();
+			}
+		});
+		
+		this.getConfirmar().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				Confirmar();
+			}
+		});
 	}
 
 	public void Anadir_archivo_multimedia() {
@@ -47,5 +64,11 @@ public class Editar_cancion extends VistaEditar_cancion{
 		this.getAnadirCancion().setVisible(true);
 		this.getH4Titulo().setVisible(true);
 		this.getH5Requisitos().setVisible(true);
+	}
+	public void Cancelar() {
+		
+	}
+	public void Confirmar() {
+		
 	}
 }

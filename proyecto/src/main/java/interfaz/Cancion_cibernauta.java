@@ -7,8 +7,15 @@ public class Cancion_cibernauta extends VistaCancion_cibernauta{
 	private Image _imagen;
 	private Label _nombreL;*/
 	public Ultimos_exitos _ultimosExitos;
+	
+	public Cancion_cibernauta() {
+		Inicializar();
+	}
 
 	public void Imagen_reproducir() {
 		throw new UnsupportedOperationException();
+	}
+	
+	void Inicializar() {
 	}
 }

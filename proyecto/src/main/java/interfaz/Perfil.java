@@ -16,8 +16,15 @@ public class Perfil extends VistaPerfil{
 	private Button _crearListaB;*/
 	public Listas_de_reproduccion_propias _listasDeReproduccionPropia;
 	public Crear_lista_de_reproduccion _crearListaDeReproduccion;
+	
+	public Perfil() {
+		Inicializar();
+	}
 
 	public void Recibir_notificacion() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
+		
 	}
 }

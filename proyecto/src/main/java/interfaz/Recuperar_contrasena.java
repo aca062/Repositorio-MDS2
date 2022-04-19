@@ -9,8 +9,14 @@ public class Recuperar_contrasena  extends VistaRecuperar_contrasena{
 	private Button _confirmarB;*/
 	public Login_cibernauta _loginCibernauta;
 	public Introducir_nueva_contrasena _introducirNuevaContrasena;
+	
+	public Recuperar_contrasena() {
+		Inicializar();
+	}
 
 	public void Enviar_link() {
 		throw new UnsupportedOperationException();
+	}
+	void Inicializar() {
 	}
 }

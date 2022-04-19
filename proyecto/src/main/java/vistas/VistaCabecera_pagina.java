@@ -54,8 +54,6 @@ public class VistaCabecera_pagina extends LitTemplate {
 	private H4 h4Telefono;
 	@Id("h41Correo")
 	private H4 h41Correo;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("layoutContenido")
 	private Element layoutContenido;
 
@@ -192,14 +190,6 @@ public class VistaCabecera_pagina extends LitTemplate {
 
 	public void setH41Correo(H4 h41Correo) {
 		this.h41Correo = h41Correo;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
-	}
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
 	}
 
 	public Element getLayoutContenido() {

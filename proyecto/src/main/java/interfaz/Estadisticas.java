@@ -30,4 +30,11 @@ public class Estadisticas extends VistaEstadisticas{
 	private Label _tituloMediaL;
 	private Label _mediaL;*/
 	public Actor_comun _actorComun;
+	
+	public Estadisticas() {
+		Inicializar();
+	}
+	
+	void Inicializar() {
+	}
 }

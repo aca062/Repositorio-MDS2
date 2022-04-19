@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-cabecera_pagina')
 export class VistaCabecera_pagina extends LitElement {
@@ -39,7 +39,7 @@ export class VistaCabecera_pagina extends LitElement {
    </vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-vertical-layout theme="spacing" id="layoutContenido" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
-  <vaadin-horizontal-layout id="layoutContacto" style="width: 100%; align-self: center; align-items: baseline; justify-content: center;background-color: var(--lumo-contrast-10pct);">
+  <vaadin-horizontal-layout id="layoutContacto" style="width: 100%; align-self: center; align-items: baseline; justify-content: center;background-color: var(--lumo-contrast-10pct);" class="footer">
    <vaadin-vertical-layout theme="spacing" id="layoutTitulo" style="width: 20%; justify-content: center; align-items: baseline; flex-grow: 1; flex-shrink: 0;">
     <h3 id="h3" style="align-self: center;">Contacto</h3>
    </vaadin-vertical-layout>
@@ -49,7 +49,6 @@ export class VistaCabecera_pagina extends LitElement {
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-horizontal-layout class="footer" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: var(--lumo-contrast-10pct);" id="vaadinHorizontalLayout2"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }
