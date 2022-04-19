@@ -3,8 +3,8 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-select/src/vaadin-select.js';
 import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-item/src/vaadin-item.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-editar_album')
@@ -73,6 +73,14 @@ export class VistaEditar_album extends LitElement {
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-list-box>
+  <vaadin-horizontal-layout theme="spacing" id="layoutBotones" style="align-self: flex-end; margin-top: var(--lumo-space-s);">
+   <vaadin-button id="confirmar">
+    Confirmar
+   </vaadin-button>
+   <vaadin-button id="cancelar">
+    Cancelar
+   </vaadin-button>
+  </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

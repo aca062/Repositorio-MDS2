@@ -12,6 +12,7 @@ public class Canciones_busqueda_admin extends VistaCanciones_busqueda_admin{
 	public Canciones_busqueda_admin() {
 		Inicializar();
 	}
+	
 	void Inicializar() {
 		_cancionAdmin.add(new Cancion_admin());
 		_cancionAdmin.add(new Cancion_admin());

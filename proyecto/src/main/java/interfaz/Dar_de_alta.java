@@ -45,6 +45,7 @@ public class Dar_de_alta extends VistaDar_de_alta{
 			}
 		});
 	}
+	
 	void Inicializar() {
 		this.getBotonAlbumes().setVisible(true);
 		this.getBotonArtistas().setVisible(true);
@@ -52,21 +53,25 @@ public class Dar_de_alta extends VistaDar_de_alta{
 		this.getBotonEstilos().setVisible(true);
 		this.getH1Titulo().setVisible(true);
 	}
+	
 	public void DarAltaAlbum() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
 		v1.add(_altaAlbumes = new Alta_albumes());
 	}
+	
 	public void DarAltaArtista() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
 		v1.add(_altaArtistas = new Alta_artistas());
 	}
+	
 	public void DarAltaCancion() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
 		v1.add(_altaCanciones = new Alta_canciones());
 	}
+	
 	public void DarAltaEstilo() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();

@@ -29,11 +29,10 @@ public class VistaCancion extends LitTemplate {
 	private Element layoutCancion;
 	@Id("numeroRep")
 	private H6 numeroRep;
-	@Id("h5Titulo")
-	private H5 h5Titulo;
 	@Id("meGusta")
 	private Button meGusta;
-
+	@Id("botonNombre")
+	private Button botonNombre;
 	/**
      * Creates a new VistaCancion.
      */
@@ -73,20 +72,20 @@ public class VistaCancion extends LitTemplate {
 		this.numeroRep = numeroRep;
 	}
 
-	public H5 getH5Titulo() {
-		return h5Titulo;
-	}
-
-	public void setH5Titulo(H5 h5Titulo) {
-		this.h5Titulo = h5Titulo;
-	}
-
 	public Button getMeGusta() {
 		return meGusta;
 	}
 
 	public void setMeGusta(Button meGusta) {
 		this.meGusta = meGusta;
+	}
+
+	public Button getBotonNombre() {
+		return botonNombre;
+	}
+
+	public void setBotonNombre(Button botonNombre) {
+		this.botonNombre = botonNombre;
 	}
 
 }

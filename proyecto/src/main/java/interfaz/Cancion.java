@@ -1,5 +1,10 @@
 package interfaz;
 
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaCancion;
 
 public class Cancion extends VistaCancion{
@@ -15,15 +20,26 @@ public class Cancion extends VistaCancion{
 
 	public Cancion() {
 		Inicializar();
+		this.getBotonNombre().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				DetalleCancion();
+			}
+		});
 	}
 	
+	protected void DetalleCancion() {
+		HorizontalLayout v1 = this.getLayoutPrincipal();
+		v1.removeAll();
+		v1.add(_verDetalleCancion = new Ver_detalle_cancion());
+	}
+
 	public void Imagen_reproducir() {
 		throw new UnsupportedOperationException();
 	}
 	
 	void Inicializar() {
 		this.getBotonCancion().setVisible(true);
-		this.getH5Titulo().setVisible(true);
 		this.getMeGusta().setVisible(true);
 		this.getNumeroRep().setVisible(true);
 	}

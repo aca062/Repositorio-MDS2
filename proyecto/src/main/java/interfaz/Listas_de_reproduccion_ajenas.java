@@ -2,6 +2,11 @@ package interfaz;
 
 import interfaz.Perfil_artista_ajeno;
 import java.util.Vector;
+
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import interfaz.Ver_listas_ajenas;
 import vistas.VistaListas_de_reproduccion_ajenas;
 
@@ -15,7 +20,19 @@ public class Listas_de_reproduccion_ajenas extends VistaListas_de_reproduccion_a
 	
 	public Listas_de_reproduccion_ajenas() {
 		Inicializar();
+		this.getVerMas().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				VerMas();
+			}
+		});
 	}
+
+	protected void VerMas() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Paginacion_listas_ajenas());
+	}
+	
 	void Inicializar() {
 		this.getH1Titulo().setVisible(true);
 		this.getVerMas().setVisible(true);

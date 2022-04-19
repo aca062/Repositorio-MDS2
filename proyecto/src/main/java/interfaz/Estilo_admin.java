@@ -12,7 +12,7 @@ public class Estilo_admin extends VistaEstilo_admin{
 	private Button _editarB;
 	private Button _eliminarB;*/
 	public Estilos_busqueda_admin _estilosBusquedaAdmin;
-	public Editar_estilo _editarEstilo = new Editar_estilo();
+	public Editar_estilo _editarEstilo;
 	
 	public Estilo_admin() {
 		Inicializar();
@@ -22,19 +22,29 @@ public class Estilo_admin extends VistaEstilo_admin{
 				EditarEstilo();
 			}
 		});
+		this.getEliminar().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				Eliminar();
+			}
+		});
 	}
 
 	public void Eliminar() {
-		throw new UnsupportedOperationException();
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Buscar_administrador());
 	}
+	
 	void Inicializar() {
 		this.getEliminar().setVisible(true);
 		this.getEditar().setVisible(true);
 		this.getEstilo().setVisible(true);
 	}
+	
 	public void EditarEstilo() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_editarEstilo);
+		v1.add(_editarEstilo = new Editar_estilo());
 	}
 }

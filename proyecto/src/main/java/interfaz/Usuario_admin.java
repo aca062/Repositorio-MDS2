@@ -12,7 +12,7 @@ public class Usuario_admin extends VistaUsuario_admin{
 	private Button _editarB;
 	private Button _eliminarB;*/
 	public Usuarios_busqueda_admin _usuariosBusquedaAdmin;
-	public Editar_usuario _editarUsuario = new Editar_usuario();
+	public Editar_usuario _editarUsuario;
 	
 	public Usuario_admin() {
 		Inicializar();
@@ -20,6 +20,12 @@ public class Usuario_admin extends VistaUsuario_admin{
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				EditarUsuario();
+			}
+		});
+		this.getBotonEliminar().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				Eliminar();
 			}
 		});
 	}
@@ -32,11 +38,14 @@ public class Usuario_admin extends VistaUsuario_admin{
 	}
 
 	public void Eliminar() {
-		throw new UnsupportedOperationException();
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Buscar_administrador());
 	}
+	
 	public void EditarUsuario() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_editarUsuario);
+		v1.add(_editarUsuario = new Editar_usuario());
 	}
 }

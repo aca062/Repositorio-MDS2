@@ -24,6 +24,7 @@ public class Lista_album extends VistaLista_album{
 			}
 		});
 	}
+	
 	void Inicializar() {
 		_album.add(new Album());
 		_album.add(new Album());
@@ -34,6 +35,7 @@ public class Lista_album extends VistaLista_album{
 			this.getLayoutPrincipal().as(VerticalLayout.class).add(_album.get(i));
 		}
 	}
+	
 	public void VerMas() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();

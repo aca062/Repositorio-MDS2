@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaModificar_lista;
 
@@ -41,9 +42,15 @@ public class Modificar_lista extends VistaModificar_lista{
 	void Inicializar() {
 	}
 	public void Cancelar() {
-		
+		//Depende de si es admin o no
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Buscar_administrador());
 	}
 	public void Confirmar() {
-		
+		//Depende de si es admin o no
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Buscar_administrador());
 	}
 }

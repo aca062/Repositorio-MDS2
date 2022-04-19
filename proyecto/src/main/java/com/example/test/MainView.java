@@ -13,6 +13,7 @@ import com.vaadin.flow.server.PWA;
 import interfaz.Administrador;
 import interfaz.Alta_albumes;
 import interfaz.Alta_estilos;
+import interfaz.Artista;
 import interfaz.Artista_admin;
 import interfaz.Artistas_recomendados;
 import interfaz.Cabecera_cibernauta;

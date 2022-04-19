@@ -30,8 +30,6 @@ public class VistaLogin_cibernauta extends LitTemplate {
 	private TextField textFieldCorreo;
 	@Id("textFieldContrasena")
 	private TextField textFieldContrasena;
-	@Id("hasOlvidadoContrasena")
-	private Element hasOlvidadoContrasena;
 	@Id("layoutBotones")
 	private HorizontalLayout layoutBotones;
 	@Id("botonRegistrarse")
@@ -50,6 +48,8 @@ public class VistaLogin_cibernauta extends LitTemplate {
 	private H5 textoGoogle;
 	@Id("botonGoogle")
 	private Button botonGoogle;
+	@Id("botonHasOlvidadoContrasena")
+	private Button botonHasOlvidadoContrasena;
 	/**
      * Creates a new VistaLogin_cibernauta.
      */
@@ -85,12 +85,6 @@ public class VistaLogin_cibernauta extends LitTemplate {
 	}
 	public void setTextFieldContrasena(TextField textFieldContrasena) {
 		this.textFieldContrasena = textFieldContrasena;
-	}
-	public Element getHasOlvidadoContrasena() {
-		return hasOlvidadoContrasena;
-	}
-	public void setHasOlvidadoContrasena(Element hasOlvidadoContrasena) {
-		this.hasOlvidadoContrasena = hasOlvidadoContrasena;
 	}
 	public HorizontalLayout getLayoutBotones() {
 		return layoutBotones;
@@ -145,5 +139,11 @@ public class VistaLogin_cibernauta extends LitTemplate {
 	}
 	public void setBotonGoogle(Button botonGoogle) {
 		this.botonGoogle = botonGoogle;
+	}
+	public Button getBotonHasOlvidadoContrasena() {
+		return botonHasOlvidadoContrasena;
+	}
+	public void setBotonHasOlvidadoContrasena(Button botonHasOlvidadoContrasena) {
+		this.botonHasOlvidadoContrasena = botonHasOlvidadoContrasena;
 	}
 }

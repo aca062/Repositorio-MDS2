@@ -11,8 +11,9 @@ public class Albumes_busqueda_admin extends VistaAlbumes_busqueda_admin{
 	public Vector<Album_admin> _albumAdmin = new Vector<Album_admin>();
 	
 	public Albumes_busqueda_admin() {
-		Inicializar();
+		Inicializar();	
 	}
+	
 	void Inicializar() {
 		_albumAdmin.add(new Album_admin());
 		_albumAdmin.add(new Album_admin());

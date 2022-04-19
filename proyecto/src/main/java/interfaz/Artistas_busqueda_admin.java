@@ -12,6 +12,7 @@ public class Artistas_busqueda_admin extends VistaArtistas_busqueda_admin{
 	public Artistas_busqueda_admin() {
 		Inicializar();
 	}
+	
 	void Inicializar() {
 		_artistaAdmin.add(new Artista_admin());
 		_artistaAdmin.add(new Artista_admin());

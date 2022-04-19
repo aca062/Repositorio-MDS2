@@ -30,18 +30,31 @@ public class Editar_cancion extends VistaEditar_cancion{
 	
 	public Editar_cancion() {
 		Inicializar();
-		
-		this.getCancelar().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
-				Cancelar();
-			}
-		});
-		
 		this.getConfirmar().addClickListener(new ComponentEventListener(){
+			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Confirmar();
 			}
 		});
+		this.getCancelar().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				Cancelar();
+			}
+		});
+	}
+
+	public void Confirmar() {
+		//Más cosas
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Buscar_administrador());
+	}
+	
+	public void Cancelar() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Buscar_administrador());
 	}
 
 	public void Anadir_archivo_multimedia() {
@@ -64,11 +77,5 @@ public class Editar_cancion extends VistaEditar_cancion{
 		this.getAnadirCancion().setVisible(true);
 		this.getH4Titulo().setVisible(true);
 		this.getH5Requisitos().setVisible(true);
-	}
-	public void Cancelar() {
-		
-	}
-	public void Confirmar() {
-		
 	}
 }

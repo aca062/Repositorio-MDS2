@@ -31,6 +31,8 @@ public class VistaLista_de_reproduccion_admin extends LitTemplate {
 	private H4 h4Nombre;
 	@Id("editar")
 	private Button editar;
+	@Id("eliminar")
+	private Button eliminar;
 
 	/**
      * Creates a new VistaLista_de_reproduccion_admin.
@@ -77,6 +79,14 @@ public class VistaLista_de_reproduccion_admin extends LitTemplate {
 
 	public void setEditar(Button editar) {
 		this.editar = editar;
+	}
+
+	public Button getEliminar() {
+		return eliminar;
+	}
+
+	public void setEliminar(Button eliminar) {
+		this.eliminar = eliminar;
 	}
 
 	

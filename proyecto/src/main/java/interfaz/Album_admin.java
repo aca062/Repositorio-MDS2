@@ -13,7 +13,7 @@ public class Album_admin extends VistaAlbum_admin{
 	private Button _editarB;
 	private Button _eliminarB;*/
 	public Albumes_busqueda_admin _albumesBusquedaAdmin;
-	public Editar_album _editarAlbum = new Editar_album();
+	public Editar_album _editarAlbum;
 	
 	public Album_admin() {
 		Inicializar();
@@ -23,20 +23,31 @@ public class Album_admin extends VistaAlbum_admin{
 				EditarAlbum();
 			}
 		});
+		this.getEliminar().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				Eliminar();
+			}
+		});
 	}
 
 	public void Eliminar() {
-		throw new UnsupportedOperationException();
+		//Más cosas
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_albumesBusquedaAdmin = new Albumes_busqueda_admin());
 	}
+	
+	public void EditarAlbum() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_editarAlbum = new Editar_album());
+	}
+	
 	void Inicializar() {
 		this.getImgAlbum().setVisible(true);
 		this.getH4Titulo().setVisible(true);
 		this.getEliminar().setVisible(true);
 		this.getEditar().setVisible(true);
-	}
-	public void EditarAlbum() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_editarAlbum);
 	}
 }

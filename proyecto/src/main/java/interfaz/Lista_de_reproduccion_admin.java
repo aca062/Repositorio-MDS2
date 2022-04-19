@@ -22,19 +22,28 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 				ModificarLista();
 			}
 		});
+		this.getEliminar().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				Eliminar();
+			}
+		});
 	}
 
 	public void Eliminar() {
-		throw new UnsupportedOperationException();
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Buscar_administrador());
 	}
-	void Inicializar() {
-		this.getEditar().setVisible(true);
-		this.getImgLista().setVisible(true);
-		this.getH4Nombre().setVisible(true);
-	}
+	
 	public void ModificarLista() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
 		v1.add(_modificarLista);
+	}
+	
+	void Inicializar() {
+		this.getEditar().setVisible(true);
+		this.getImgLista().setVisible(true);
+		this.getH4Nombre().setVisible(true);
 	}
 }

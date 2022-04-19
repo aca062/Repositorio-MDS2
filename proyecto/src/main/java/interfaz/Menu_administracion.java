@@ -34,21 +34,18 @@ public class Menu_administracion extends VistaMenu_administracion{
 				DarAlta();
 			}
 		});
-		this.getBotonEditarCanciones().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
-				EditarCanciones();
-			}
-		});
-		/*this.getBotonEditarLimite().addClickListener(new ComponentEventListener(){
+		this.getBotonEditarLimite().addClickListener(new ComponentEventListener(){
 			public void onComponentEvent(ComponentEvent event) {
 				EditarLimite();
 			}
-		});*/
+		});
+		this.getBotonEditarCanciones().addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				Editar_numero_canciones_mostradas_al_cibernauta();
+			}
+		});
 	}
-
-	public void Editar_numero_canciones_mostradas_al_cibernauta() {
-		throw new UnsupportedOperationException();
-	}
+	
 	void Inicializar() {
 		this.getBotonDarDeAlta().setVisible(true);
 		this.getBotonEditarCanciones().setVisible(true);
@@ -69,14 +66,10 @@ public class Menu_administracion extends VistaMenu_administracion{
 		v1.removeAll();
 		v1.add(_darDeAlta = new Dar_de_alta());
 	}
-	public void EditarCanciones() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_editarCancionesMostradasAlCibernauta = new Editar_canciones_mostradas_al_cibernauta());
+	public void Editar_numero_canciones_mostradas_al_cibernauta() {
+		//TODO: que funcione
 	}
-	/*public void EditarLimite() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_altaEstilos);
-	}*/
+	public void EditarLimite() {
+		//TODO: que funcione
+	}
 }

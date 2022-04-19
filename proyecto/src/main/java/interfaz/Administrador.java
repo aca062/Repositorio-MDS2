@@ -7,7 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class Administrador extends Actor_comun {
 	//private Button _menuAdministracionB;
 	public Perfil_administrador _perfilAdministrador;
-	public Menu_administracion _menuAdministracion = new Menu_administracion();
+	public Menu_administracion _menuAdministracion;
 	
 	public Administrador() {
 		super();
@@ -58,6 +58,6 @@ public class Administrador extends Actor_comun {
 	public void MenuAdministracion() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_menuAdministracion);
+		v1.add(_menuAdministracion = new Menu_administracion());
 	}
 }

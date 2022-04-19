@@ -24,7 +24,9 @@ export class VistaLogin_cibernauta extends LitElement {
   </vaadin-button>
   <vaadin-text-field label="Dirección de correo" id="textFieldCorreo" style="width: 40%;"></vaadin-text-field>
   <vaadin-text-field label="Contraseña" id="textFieldContrasena" style="width: 40%;"></vaadin-text-field>
-  <a href="https://vaadin.com" id="hasOlvidadoContrasena">¿Has olvidado la contraseña?</a>
+  <vaadin-button id="botonHasOlvidadoContrasena">
+   ¿Has olvidado la contraseña?
+  </vaadin-button>
   <vaadin-horizontal-layout theme="spacing" id="layoutBotones" style="width: 50%; flex-grow: 0; flex-shrink: 0; justify-content: center;">
    <vaadin-button id="botonRegistrarse">
      Registrarse 

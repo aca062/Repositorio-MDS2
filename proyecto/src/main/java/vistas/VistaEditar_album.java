@@ -72,6 +72,12 @@ public class VistaEditar_album extends LitTemplate {
 	private Element nombreCancion2;
 	@Id("eliminar2")
 	private Button eliminar2;
+	@Id("layoutBotones")
+	private HorizontalLayout layoutBotones;
+	@Id("confirmar")
+	private Button confirmar;
+	@Id("cancelar")
+	private Button cancelar;
 
 	/**
      * Creates a new VistaEditar_album.
@@ -270,6 +276,30 @@ public class VistaEditar_album extends LitTemplate {
 
 	public void setEliminar2(Button eliminar2) {
 		this.eliminar2 = eliminar2;
+	}
+
+	public HorizontalLayout getLayoutBotones() {
+		return layoutBotones;
+	}
+
+	public void setLayoutBotones(HorizontalLayout layoutBotones) {
+		this.layoutBotones = layoutBotones;
+	}
+
+	public Button getConfirmar() {
+		return confirmar;
+	}
+
+	public void setConfirmar(Button confirmar) {
+		this.confirmar = confirmar;
+	}
+
+	public Button getCancelar() {
+		return cancelar;
+	}
+
+	public void setCancelar(Button cancelar) {
+		this.cancelar = cancelar;
 	}
 
 	

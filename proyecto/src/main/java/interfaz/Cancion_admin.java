@@ -23,23 +23,34 @@ public class Cancion_admin extends VistaCancion_admin{
 		this.getEditar().addClickListener(new ComponentEventListener(){
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				EditarCancion();
+				EditarAlbum();
+			}
+		});
+		this.getEliminar().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				Eliminar();
 			}
 		});
 	}
-	
+
 	public void Eliminar() {
-		throw new UnsupportedOperationException();
+		//Más cosas
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_cancionesBusquedaAdmin = new Canciones_busqueda_admin());
 	}
+	
+	public void EditarAlbum() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(_editarCancion = new Editar_cancion());
+	}
+	
 	void Inicializar() {
 		this.getEditar().setVisible(true);
 		this.getEliminar().setVisible(true);
 		this.getImgCancion().setVisible(true);
 		this.getH4Titulo().setVisible(true);
-	}
-	public void EditarCancion() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_editarCancion);
 	}
 }

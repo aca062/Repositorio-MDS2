@@ -1,5 +1,9 @@
 package interfaz;
 
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaEditar_usuario;
 
 public class Editar_usuario extends VistaEditar_usuario{
@@ -21,6 +25,31 @@ public class Editar_usuario extends VistaEditar_usuario{
 	
 	public Editar_usuario() {
 		Inicializar();
+		this.getConfirmar().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				Confirmar();
+			}
+		});
+		this.getCancelar().addClickListener(new ComponentEventListener(){
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				Cancelar();
+			}
+		});
+	}
+
+	public void Confirmar() {
+		//Más cosas
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Buscar_administrador());
+	}
+	
+	public void Cancelar() {
+		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		v1.removeAll();
+		v1.add(new Buscar_administrador());
 	}
 	
 	public void Anadir_imagen() {
