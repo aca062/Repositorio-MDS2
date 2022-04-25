@@ -2,7 +2,9 @@ package interfaz;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.example.test.ControladorVistas;
 
 import vistas.VistaCabecera_cibernauta;
 
@@ -27,21 +29,22 @@ public class Cabecera_cibernauta extends VistaCabecera_cibernauta{
 	}
 
 	protected void Logo() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_cibernauta = new Cibernauta());
+		_cibernauta = new Cibernauta();
+		_cibernauta.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_cibernauta);
 	}
 
 	protected void IniciarSesion() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
+		/*HorizontalLayout v1 = this.getLayoutPrincipal().as(HorizontalLayout.class);
 		v1.removeAll();
-		v1.add(_loginCibernauta = new Login_cibernauta());
+		v1.add(_loginCibernauta = new Login_cibernauta());*/
+		_loginCibernauta = new Login_cibernauta();
+		_loginCibernauta.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_loginCibernauta);
 	}
 	
 	void Inicializar() {
-		this.getContacto().setVisible(true);
 		this.getIniciarSesion().setVisible(true);
-		this.getLayoutCabecera().setVisible(true);
 		this.getLayoutPrincipal().setVisible(true);
 		this.getLogo().setVisible(true);
 	}

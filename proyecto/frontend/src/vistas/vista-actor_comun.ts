@@ -1,12 +1,12 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import './vista-ultimas_canciones_reproducidas';
 import './vista-canciones_favoritas';
 import './vista-canciones_recomendadas';
 import './vista-artistas_recomendados';
 import './vista-listas_de_reproduccion_recomendadas';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-actor_comun')
 export class VistaActor_comun extends LitElement {
@@ -22,7 +22,6 @@ export class VistaActor_comun extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout id="layoutPrincipal">
- <vaadin-vertical-layout theme="spacing" id="layoutCabecera" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="layoutAdministracion">
   <vaadin-button style="text-align: center; padding: var(--lumo-space-xl); padding-top: var(--lumo-space-m); padding-bottom: var(--lumo-space-xl);" id="botonAdmin">
     Administración 
@@ -71,7 +70,6 @@ export class VistaActor_comun extends LitElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
-<vaadin-vertical-layout theme="spacing" id="layoutPie" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 `;
   }
 

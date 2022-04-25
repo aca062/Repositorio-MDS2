@@ -16,7 +16,7 @@ export class VistaUltimos_exitos extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl);" id="layoutPrincipal">
+<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl); padding-top: 0;" id="layoutPrincipal">
  <h1 id="h1TituloUltimosExitos">Últimos éxitos</h1>
  <vaadin-horizontal-layout theme="spacing-l" id="layoutCanciones" style="width: 100%;">
   <vista-cancion_cibernauta id="vistaCancion_cibernauta" style="width: 100%;"></vista-cancion_cibernauta>

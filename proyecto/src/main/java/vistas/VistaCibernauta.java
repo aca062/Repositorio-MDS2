@@ -26,8 +26,6 @@ public class VistaCibernauta extends LitTemplate {
     
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
-	@Id("cabecera")
-	private Cabecera_cibernauta cabecera;
 	@Id("vistaUltimos_exitos")
 	private Element vistaUltimos_exitos;
 
@@ -44,14 +42,6 @@ public class VistaCibernauta extends LitTemplate {
 
 	public void setLayoutPrincipal(Element layoutPrincipal) {
 		this.layoutPrincipal = layoutPrincipal;
-	}
-
-	public Cabecera_cibernauta getCabecera() {
-		return cabecera;
-	}
-
-	public void setCabecera(Cabecera_cibernauta cabecera) {
-		this.cabecera = cabecera;
 	}
 
 	public Element getVistaUltimos_exitos() {

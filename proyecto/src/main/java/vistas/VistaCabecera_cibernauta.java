@@ -14,22 +14,22 @@ import com.vaadin.flow.component.button.Button;
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
+
 @Tag("vista-cabecera_cibernauta")
 @JsModule("./src/vistas/vista-cabecera_cibernauta.ts")
+
 public class VistaCabecera_cibernauta extends LitTemplate {
 
 
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
-	@Id("layoutCabecera")
-	private HorizontalLayout layoutCabecera;
 	@Id("logo")
 	private Button logo;
 	@Id("iniciarSesion")
 	private Button iniciarSesion;
-	@Id("contacto")
-	private HorizontalLayout contacto;
-
+	@Id("layoutCabecera")
+	private HorizontalLayout layoutCabecera;
+	
 	/**
      * Creates a new VistaCabecera_cibernauta.
      */
@@ -43,14 +43,6 @@ public class VistaCabecera_cibernauta extends LitTemplate {
 
 	public void setLayoutPrincipal(Element layoutPrincipal) {
 		this.layoutPrincipal = layoutPrincipal;
-	}
-
-	public HorizontalLayout getLayoutCabecera() {
-		return layoutCabecera;
-	}
-
-	public void setLayoutCabecera(HorizontalLayout layoutCabecera) {
-		this.layoutCabecera = layoutCabecera;
 	}
 
 	public Button getLogo() {
@@ -69,12 +61,12 @@ public class VistaCabecera_cibernauta extends LitTemplate {
 		this.iniciarSesion = iniciarSesion;
 	}
 
-	public HorizontalLayout getContacto() {
-		return contacto;
+	public HorizontalLayout getLayoutCabecera() {
+		return layoutCabecera;
 	}
 
-	public void setContacto(HorizontalLayout contacto) {
-		this.contacto = contacto;
+	public void setLayoutCabecera(HorizontalLayout layoutCabecera) {
+		this.layoutCabecera = layoutCabecera;
 	}
 
 }

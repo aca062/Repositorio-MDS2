@@ -25,6 +25,7 @@ import interfaz.Cibernauta;
 import interfaz.Editar_artista;
 import interfaz.Lista_albumes;
 import interfaz.Menu_administracion;
+import interfaz.Pie_de_pagina;
 import interfaz.Ultimas_canciones_reproducidas;
 import interfaz.Ver_detalle_album;
 import interfaz.Ver_todos_los_albumes;
@@ -63,11 +64,21 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
 
     	//Menu_administracion cad = new Menu_administracion();
-    	Menu_administracion cad = new Menu_administracion();
-    	cad.getStyle().set("width", "100%");   
-    	cad.getStyle().set("height", "100%");
-    	add(cad);
-    	
+    	Cabecera_cibernauta cabecera = new Cabecera_cibernauta();
+    	Cibernauta contenido = new Cibernauta();
+    	Pie_de_pagina pie = new Pie_de_pagina();
+    	cabecera.getStyle().set("width", "100%");   
+    	cabecera.getStyle().set("height", "100%");
+    	contenido.getStyle().set("width", "100%");   
+    	contenido.getStyle().set("height", "100%");
+    	pie.getStyle().set("width", "100%");   
+    	pie.getStyle().set("height", "100%");
+    	add(cabecera);
+    	add(contenido);
+    	add(pie);
+    	ControladorVistas.SetCabecera(cabecera.getLayoutPrincipal().as(VerticalLayout.class));
+    	ControladorVistas.SetContenido(contenido.getLayoutPrincipal().as(VerticalLayout.class));
+    	ControladorVistas.SetPie(pie.getLayoutPrincipal().as(VerticalLayout.class));
     	
         // Use TextField for standard text input
         /*TextField textField = new TextField("Your name");
