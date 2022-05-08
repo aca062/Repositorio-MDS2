@@ -21,7 +21,7 @@ public class Ultimos_exitos extends VistaUltimos_exitos{
 		_cancionCibernauta.add(new Cancion_cibernauta());
 		_cancionCibernauta.add(new Cancion_cibernauta());
 		for(int i=0;i<3;i++) {
-			this.getLayoutPrincipal().as(VerticalLayout.class).add(_cancionCibernauta.get(i));
+			this.getLayoutCanciones().add(_cancionCibernauta.get(i));
 		}
 	}
 }

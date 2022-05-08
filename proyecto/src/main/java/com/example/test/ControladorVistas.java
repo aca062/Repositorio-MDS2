@@ -1,7 +1,12 @@
 package com.example.test;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 
 public class ControladorVistas {
 
@@ -37,5 +42,22 @@ public class ControladorVistas {
 	public static void CambiarPie(Component layout) {
 		layoutPie.removeAll();
 		layoutPie.add(layout);
+	}
+	
+	/*public static void PopUpError(Text mensaje) {
+		Dialog popupContent = new Dialog();
+		popupContent.add(mensaje);
+		Button aceptar = new Button("Aceptar");
+		popupContent.add(aceptar);
+		layoutContenido.add(popupContent);
+		popupContent.open();
+	}*/
+	
+	public static void PopUpError(String mensaje) {
+		ConfirmDialog popupContent = new ConfirmDialog();
+		popupContent.setHeader(mensaje);
+		popupContent.setConfirmText("Aceptar");
+		layoutContenido.add(popupContent);
+		popupContent.open();
 	}
 }

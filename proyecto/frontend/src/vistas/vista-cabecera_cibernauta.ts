@@ -16,12 +16,12 @@ export class VistaCabecera_cibernauta extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout theme="spacing" id="layoutPrincipal" style="width: 100%; height: 100%;">
+<vaadin-vertical-layout theme="spacing" id="layoutPrincipal" style="width: 100%; height: 100%; align-items: center;">
  <vaadin-horizontal-layout id="layoutCabecera" style="width: 100%; background-color: var(--lumo-contrast-10pct); align-items: center; justify-content: space-between;" background-color="">
   <vaadin-button id="logo" style="margin: var(--lumo-space-l);">
     Logo 
   </vaadin-button>
-  <vaadin-button id="iniciarSesion" style="margin: var(--lumo-space-l);">
+  <vaadin-button id="iniciarSesion" style="margin: var(--lumo-space-l); margin-left: var(--lumo-space-l);">
     Iniciar sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>

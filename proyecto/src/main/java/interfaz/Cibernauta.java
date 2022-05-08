@@ -15,6 +15,6 @@ public class Cibernauta extends VistaCibernauta{
 	void Inicializar() {
 		_ultimosExitos = new Ultimos_exitos();
 		this.getLayoutPrincipal().as(VerticalLayout.class).add(_ultimosExitos);
-		this.getLayoutPrincipal().setVisible(true);	
+		this.getLayoutPrincipal().setVisible(true);
 	}
 }

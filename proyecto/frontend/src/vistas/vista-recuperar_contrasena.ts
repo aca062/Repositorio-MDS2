@@ -22,8 +22,8 @@ export class VistaRecuperar_contrasena extends LitElement {
   <h3 style="margin: var(--lumo-space-xl);" id="h3RecuperacionContrasena">Recuperación de contraseña</h3>
   <h4 style="width: 50%;" id="h4Instrucciones">Introduzca su correo electrónico para proceder a la recuperación de su contraseña</h4>
   <vaadin-horizontal-layout theme="spacing" style="align-items: center; width: 60%; justify-content: center;" id="layoutCorreo">
-   <vaadin-text-field error-message="Por favor, introduzca su correo" required invalid="" style="width: 70%; margin-top: var(--lumo-space-xs);" id="textFieldCorreo"></vaadin-text-field>
-   <vaadin-button style="margin-bottom: var(--lumo-space-l);" id="botonConfirmarCorreo">
+   <vaadin-text-field error-message="Por favor, introduzca su correo" required invalid="" style="width: 70%; margin-top: var(--lumo-space-xs); align-self: flex-start;" id="textFieldCorreo"></vaadin-text-field>
+   <vaadin-button style="margin-bottom: var(--lumo-space-l); align-self: flex-start; margin-top: var(--lumo-space-s);" id="botonConfirmarCorreo">
      Confirmar 
    </vaadin-button>
   </vaadin-horizontal-layout>

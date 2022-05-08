@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -24,9 +25,9 @@ public class Recuperar_contrasena  extends VistaRecuperar_contrasena{
 	}
 
 	protected void Confirmar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_introducirNuevaContrasena = new Introducir_nueva_contrasena());
+		_introducirNuevaContrasena = new Introducir_nueva_contrasena();
+		_introducirNuevaContrasena.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_introducirNuevaContrasena);
 	}
 
 	public void Enviar_link() {

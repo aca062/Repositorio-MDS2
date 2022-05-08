@@ -3,7 +3,6 @@ import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import './vista-ultimas_canciones_reproducidas';
 import './vista-canciones_favoritas';
-import './vista-canciones_recomendadas';
 import './vista-artistas_recomendados';
 import './vista-listas_de_reproduccion_recomendadas';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
@@ -38,15 +37,14 @@ export class VistaActor_comun extends LitElement {
    <h2 style="margin-left: var(--lumo-space-xl);" id="h2Recomendaciones">Nuestras recomendaciones</h2>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="layoutListasRecomendaciones">
-   <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="layoutCanciones">
-    <vista-canciones_recomendadas style="align-self: center;" id="vistaCanciones_recomendadas"></vista-canciones_recomendadas>
-   </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="layoutArtistas">
     <vista-artistas_recomendados style="align-self: center;" id="vistaArtistas_recomendados"></vista-artistas_recomendados>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="layoutListas">
     <vista-listas_de_reproduccion_recomendadas style="align-self: center;" id="vistaListas_de_reproduccion_recomendadas"></vista-listas_de_reproduccion_recomendadas>
    </vaadin-vertical-layout>
+   <vaadin-vertical-layout theme="spacing" id="layoutPrueba"></vaadin-vertical-layout>
+   <vaadin-vertical-layout theme="spacing" id="layoutCanciones"></vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;" id="layoutEstadisticas">

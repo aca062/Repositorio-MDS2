@@ -26,12 +26,10 @@ public class Contacto extends VistaContacto{
 	}
 	
 	void Inicializar() {
+		
 	}
 	
 	public void Cancelar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		//Depende del tipo de usuario
-		v1.add(_actorComun = new Actor_comun());
+
 	}
 }

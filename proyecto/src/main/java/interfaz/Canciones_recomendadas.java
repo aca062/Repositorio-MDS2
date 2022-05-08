@@ -9,12 +9,19 @@ public class Canciones_recomendadas extends VistaCanciones_recomendadas{
 	public Actor_comun _actorComun;
 	public Vector<Cancion> _cancion = new Vector<Cancion>();
 	
+	public Canciones_recomendadas() {
+		Inicializar();
+	}
+	
 	void Inicializar() {
 		this.getH1Titulo().setVisible(true);
 		_cancion.add(new Cancion());
 		_cancion.add(new Cancion());
 		_cancion.add(new Cancion());
-		for(int i =0;i<3;i++) {
+		this.getVistaCancion().setVisible(false);
+		this.getVistaCancion1().setVisible(false);
+		
+		for(int i = 0 ; i < 3 ; i++) {
 			this.getLayoutPrincipal().add(_cancion.get(i));
 		}
 	}

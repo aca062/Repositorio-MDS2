@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -25,6 +26,7 @@ public class Registrarse  extends VistaRegistrarse{
 	
 	public Registrarse() {
 		Inicializar();
+		this.getBotonIniciarSesion().setVisible(false);
 		this.getBotonCancelar().addClickListener(new ComponentEventListener(){
 			public void onComponentEvent(ComponentEvent event) {
 				Cancelar();
@@ -35,17 +37,6 @@ public class Registrarse  extends VistaRegistrarse{
 				CrearCuenta();
 			}
 		});
-		this.getBotonIniciarSesion().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
-				IniciarSesion();
-			}
-		});
-	}
-
-	protected void IniciarSesion() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Login_cibernauta());
 	}
 
 	protected void CrearCuenta() {
@@ -55,9 +46,9 @@ public class Registrarse  extends VistaRegistrarse{
 	}
 
 	protected void Cancelar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_loginCibernauta = new Login_cibernauta());
+		_loginCibernauta = new Login_cibernauta();
+		_loginCibernauta.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_loginCibernauta);
 	}
 
 	private void Inicializar() {

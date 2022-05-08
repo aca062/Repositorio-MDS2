@@ -19,8 +19,6 @@ import vistas.VistaCancion;
 @JsModule("./src/vistas/vista-canciones_recomendadas.ts")
 public class VistaCanciones_recomendadas extends LitTemplate {
 
-    
-
 	@Id("layoutPrincipal")
 	private VerticalLayout layoutPrincipal;
 	@Id("h1Titulo")

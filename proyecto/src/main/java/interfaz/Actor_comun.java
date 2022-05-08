@@ -2,23 +2,21 @@ package interfaz;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import interfaz.Contacto;
 import vistas.VistaActor_comun;
 
 public class Actor_comun extends VistaActor_comun{
-	public Cabecera_pagina _cabecera = new Cabecera_pagina();
 	public Reproductor _reproductor;
-	public Canciones_favoritas _cancionesFavoritas = new Canciones_favoritas();
+	public Canciones_favoritas _cancionesFavoritas;
 	public Canciones_recomendadas _cancionesRecomendadas;
 	public Ultimas_canciones_reproducidas _ultimasCancionesReproducidas;
 	public Estadisticas _estadisticas;
 	public Artistas_recomendados _artistasRecomendados;
 	public Contacto _contacto;
 	public Listas_de_reproduccion_recomendadas _listasDeReproduccionRecomendadas;
-	
-	//VerticalLayout contenido = _cabecera.getLayoutContenido().as(VerticalLayout.class);
 	
 	/*private Button _cerrarSesionB;
 	private Button _verPerfilB;
@@ -35,15 +33,7 @@ public class Actor_comun extends VistaActor_comun{
 	private Label _contactoTituloL;
 	private Button _contactoCorreoB;
 	private Label _contactoTlfnL;
-	private Button _logoB;*/
-	
-	
-	//AAAAAAAAAAAAAAAA Actor_comun actor = new Actor_comun(true);
-	
-	
-	/*public Actor_comun(boolean as) {
-		
-	}*/
+	private Button _logoB;*/	
 	
 	public Actor_comun() {
 		Inicializar();
@@ -56,21 +46,34 @@ public class Actor_comun extends VistaActor_comun{
 	}
 	
 	protected void Estadisticas() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_estadisticas);
+
 	}
 
 	void Inicializar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_cabecera);
+		_ultimasCancionesReproducidas = new Ultimas_canciones_reproducidas();
+		HorizontalLayout ultimasCanciones = this.getLayoutUltimasCanciones();
+		ultimasCanciones.add(_ultimasCancionesReproducidas);
 		
-		//v1.add(_cabecera.getLayoutBuscador());
-		_cabecera.getStyle().set("width", "100%");   
-		_cabecera.getStyle().set("height", "100%");
-		_cabecera.getLayoutContenido().as(VerticalLayout.class).add(this.getBotonAdmin());
+		_cancionesFavoritas = new Canciones_favoritas();
+		HorizontalLayout layoutCancionesFav = this.getLayoutCancionesFav();
+		layoutCancionesFav.add(_cancionesFavoritas);
 		
+		_cancionesRecomendadas = new Canciones_recomendadas();
+		VerticalLayout layoutCanciones = this.getLayoutPrueba().as(VerticalLayout.class);
+		layoutCanciones.add(_cancionesRecomendadas);
+		
+		_artistasRecomendados = new Artistas_recomendados();
+		VerticalLayout layoutArtistas = this.getLayoutArtistas().as(VerticalLayout.class);
+		layoutArtistas.add(_artistasRecomendados);
+		
+		_listasDeReproduccionRecomendadas = new Listas_de_reproduccion_recomendadas();
+		VerticalLayout layoutListas = this.getLayoutListas().as(VerticalLayout.class);
+		layoutListas.add(_listasDeReproduccionRecomendadas);
+		
+		_reproductor = new Reproductor();
+		_estadisticas = new Estadisticas();
+		_contacto = new Contacto();
+
 		
 		/*contenido.add(this.getBotonVerMasEstadisticas());
 		contenido.add(this.getH21Titulo());
@@ -100,7 +103,7 @@ public class Actor_comun extends VistaActor_comun{
 		contenido.add(this.getVistaCanciones_favoritas().as(VerticalLayout.class));
 		contenido.add(this.getVistaCanciones_recomendadas().as(VerticalLayout.class));
 		contenido.add(this.getVistaListas_de_reproduccion_recomendadas().as(VerticalLayout.class));
-		contenido.add(this.getVistaUltimas_canciones_reproducidas().as(VerticalLayout.class));
+		contenido.add(this.getVistaUltimas_canciones_reproducidas().as(VerticalLayout.class));*/
 		
 		
 		/*actor.getStyle().set("width", "100%");   

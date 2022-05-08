@@ -15,8 +15,8 @@ public class Listas_de_reproduccion_recomendadas extends VistaListas_de_reproduc
 	void Inicializar() {
 		this.getTitulo().setVisible(true);
 		_listaDeReproduccionAjena.add(new Lista_de_reproduccion_ajena());
-		for(int  i = 0;i<3;i++) {
-			this.getLayoutPrincipal().add(_listaDeReproduccionAjena.get(i));
+		for(int i = 0 ; i < 3; i++) {
+			this.getLayoutPrincipal().add(_listaDeReproduccionAjena.get(0));
 		}
 	}
 }

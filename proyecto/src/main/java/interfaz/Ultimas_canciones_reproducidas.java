@@ -17,11 +17,13 @@ public class Ultimas_canciones_reproducidas extends VistaUltimas_canciones_repro
 		this.getH1TituloUltimasCanciones().setVisible(true);
 		this.getLayoutCanciones().setVisible(true);
 		this.getLayoutPrincipal().setVisible(true);
-		this.getVistaCancion().setVisible(true);
-		this.getVistaCancion1().setVisible(true);
-		this.getVistaCancion2().setVisible(true);
 		_cancion.add(new Cancion());
-		for(int i =0;i<3;i++) {
+		_cancion.add(new Cancion());
+		_cancion.add(new Cancion());
+		this.getVistaCancion().setVisible(false);
+		this.getVistaCancion1().setVisible(false);
+		this.getVistaCancion2().setVisible(false);
+		for(int i = 0; i < 3 ; i++) {
 			this.getLayoutCanciones().add(_cancion.get(i));
 		}
 	}

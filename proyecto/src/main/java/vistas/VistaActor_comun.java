@@ -46,10 +46,6 @@ public class VistaActor_comun extends LitTemplate {
 	private HorizontalLayout layoutListasRecomendaciones;
 	@Id("h2Recomendaciones")
 	private H2 h2Recomendaciones;
-	@Id("layoutCanciones")
-	private Element layoutCanciones;
-	@Id("vistaCanciones_recomendadas")
-	private Element vistaCanciones_recomendadas;
 	@Id("layoutArtistas")
 	private Element layoutArtistas;
 	@Id("vistaArtistas_recomendados")
@@ -84,12 +80,10 @@ public class VistaActor_comun extends LitTemplate {
 	private Image imgCancionMas;
 	@Id("h3NombreCancionMas")
 	private H3 h3NombreCancionMas;
-	@Id("layoutPie")
-	private Element layoutPie;
-	@Id("layoutCabecera")
-	private Element layoutCabecera;
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
+	@Id("layoutPrueba")
+	private Element layoutPrueba;
 
 	/**
      * Creates a new VistaActor_comun.
@@ -184,22 +178,6 @@ public class VistaActor_comun extends LitTemplate {
 
 	public void setH2Recomendaciones(H2 h2Recomendaciones) {
 		this.h2Recomendaciones = h2Recomendaciones;
-	}
-
-	public Element getLayoutCanciones() {
-		return layoutCanciones;
-	}
-
-	public void setLayoutCanciones(Element layoutCanciones) {
-		this.layoutCanciones = layoutCanciones;
-	}
-
-	public Element getVistaCanciones_recomendadas() {
-		return vistaCanciones_recomendadas;
-	}
-
-	public void setVistaCanciones_recomendadas(Element vistaCanciones_recomendadas) {
-		this.vistaCanciones_recomendadas = vistaCanciones_recomendadas;
 	}
 
 	public Element getLayoutArtistas() {
@@ -338,20 +316,12 @@ public class VistaActor_comun extends LitTemplate {
 		this.h3NombreCancionMas = h3NombreCancionMas;
 	}
 
-	public Element getLayoutPie() {
-		return layoutPie;
+	public Element getLayoutPrueba() {
+		return layoutPrueba;
 	}
 
-	public void setLayoutPie(Element layoutPie) {
-		this.layoutPie = layoutPie;
-	}
-
-	public Element getLayoutCabecera() {
-		return layoutCabecera;
-	}
-
-	public void setLayoutCabecera(Element layoutCabecera) {
-		this.layoutCabecera = layoutCabecera;
+	public void setLayoutPrueba(Element layoutPrueba) {
+		this.layoutPrueba = layoutPrueba;
 	}
 
 }

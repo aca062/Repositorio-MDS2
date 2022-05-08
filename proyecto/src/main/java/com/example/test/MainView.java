@@ -10,6 +10,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
+import interfaz.Actor_comun;
 import interfaz.Administrador;
 import interfaz.Alta_albumes;
 import interfaz.Alta_estilos;
@@ -66,6 +67,7 @@ public class MainView extends VerticalLayout {
     	//Menu_administracion cad = new Menu_administracion();
     	Cabecera_cibernauta cabecera = new Cabecera_cibernauta();
     	Cibernauta contenido = new Cibernauta();
+    	/*Actor_comun contenido = new Actor_comun();*/
     	Pie_de_pagina pie = new Pie_de_pagina();
     	cabecera.getStyle().set("width", "100%");   
     	cabecera.getStyle().set("height", "100%");
