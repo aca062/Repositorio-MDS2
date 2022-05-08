@@ -19,15 +19,15 @@ export class VistaCabecera_pagina extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
- <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: var(--lumo-contrast-10pct); justify-content: space-between;" id="layoutCabecera">
-  <vaadin-button id="logo">
-    logo 
+ <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: var(--lumo-contrast-10pct);" id="layoutCabecera">
+  <vaadin-button id="logo" style="margin: var(--lumo-space-l);">
+   Logo
   </vaadin-button>
-  <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end;" float="" margin-right="200px" id="layoutBotones" margin="">
-   <vaadin-button id="verPerfil">
+  <vaadin-horizontal-layout theme="spacing-l" style="justify-content: flex-end; width: 100%;" float="" margin-right="200px" id="layoutBotones" margin="">
+   <vaadin-button id="verPerfil" style="margin: var(--lumo-space-l);">
      Ver perfil 
    </vaadin-button>
-   <vaadin-button id="cerrarSesion">
+   <vaadin-button id="cerrarSesion" style="margin-right: var(--lumo-space-m); margin: var(--lumo-space-l);">
      Cerrar sesión 
    </vaadin-button>
   </vaadin-horizontal-layout>
@@ -37,16 +37,6 @@ export class VistaCabecera_pagina extends LitElement {
    <vaadin-text-field placeholder="Search" id="buscador" style="width: 50%;">
     <iron-icon icon="lumo:search" slot="prefix" id="ironIcon"></iron-icon>
    </vaadin-text-field>
-  </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" id="layoutContenido" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
-  <vaadin-horizontal-layout id="layoutContacto" style="width: 100%; align-self: center; align-items: baseline; justify-content: center;background-color: var(--lumo-contrast-10pct);" class="footer">
-   <vaadin-vertical-layout theme="spacing" id="layoutTitulo" style="width: 20%; justify-content: center; align-items: baseline; flex-grow: 1; flex-shrink: 0;">
-    <h3 id="h3" style="align-self: center;">Contacto</h3>
-   </vaadin-vertical-layout>
-   <vaadin-vertical-layout theme="spacing" id="layoutInformacion" style="width: 80%;">
-    <h4 id="h4Telefono">+34 914257860</h4>
-    <h4 id="h41Correo">Heading 4</h4>
-   </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>

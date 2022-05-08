@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -18,15 +19,13 @@ public class Listas_de_reproduccion_en_las_que_aparece extends Listas_de_reprodu
 	}
 
 	protected void VerMas() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Paginacion_listas_ajenas());
+		Paginacion_listas_ajenas paginacion = new Paginacion_listas_ajenas();
+		paginacion.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(paginacion);
 	}
 	
 	void Inicializar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Paginacion_listas_ajenas());
+		
 	}
 	
 	

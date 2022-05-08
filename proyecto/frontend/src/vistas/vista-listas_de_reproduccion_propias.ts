@@ -16,9 +16,9 @@ export class VistaListas_de_reproduccion_propias extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
- <h1 id="h1Titulo">Listas de reproducción donde aparece</h1>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="layoutListasPropias">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: flex-start; padding-bottom: var(--lumo-space-l); margin-left: var(--lumo-space-xl);" id="layoutPrincipal">
+ <h1 id="h1Titulo">Tus listas de reproducción</h1>
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center; align-items: center; align-self: center;" id="layoutListasPropias">
   <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia"></vista-lista_de_reproduccion_propia>
   <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia1"></vista-lista_de_reproduccion_propia>
   <vista-lista_de_reproduccion_propia id="vistaLista_de_reproduccion_propia2"></vista-lista_de_reproduccion_propia>

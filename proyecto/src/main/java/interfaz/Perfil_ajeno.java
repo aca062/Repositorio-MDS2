@@ -14,6 +14,14 @@ public class Perfil_ajeno extends VistaPerfil_ajeno{
 	private Label _nSeguidosL;*/
 	public Listas_de_reproduccion_ajenas _listasDeReproduccionAjenas;
 
+	public Perfil_ajeno() {
+		Inicializar();
+	}
+	
+	void Inicializar() {
+
+	}
+	
 	private void Seguir_Dejar_de_seguir() {
 		throw new UnsupportedOperationException();
 	}

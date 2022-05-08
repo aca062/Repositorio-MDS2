@@ -2,6 +2,7 @@ package interfaz;
 
 import java.util.Vector;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -29,9 +30,9 @@ public class Listas_de_reproduccion_propias extends VistaListas_de_reproduccion_
 	}
 
 	protected void VerTodas() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Paginacion_listas_propias());
+		Paginacion_listas_propias paginacion = new Paginacion_listas_propias();
+		paginacion.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(paginacion);
 	}
 	
 	private void Inicializar() {

@@ -14,8 +14,8 @@ export class VistaCanciones_mas_escuchadas extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
- <h1 id="h1Titulo">Canciones más escuchadas</h1>
+<vaadin-vertical-layout style="width: 100%; height: 100%; margin: 30px;" id="layoutPrincipal">
+ <h1 id="h1Titulo" style="margin: 0;">Canciones más escuchadas</h1>
  <vista-cancion id="vistaCancion"></vista-cancion>
  <vista-cancion id="vistaCancion1"></vista-cancion>
  <vista-cancion id="vistaCancion2"></vista-cancion>

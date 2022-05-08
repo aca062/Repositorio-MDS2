@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -40,15 +41,15 @@ public class Verificar_e_mail extends VistaVerificar_e_mail{
 
 	protected void Confirmar() {
 		//TODO: funcionalidad
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Cibernauta());
+		ControladorVistas.PopUpBasico("Cuenta creada con exito");
+		ControladorVistas.CambiarContenido(new Cibernauta());
+		
 	}
 
 	protected void Cancelar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_registrarse = new Registrarse());
+		_registrarse = new Registrarse();
+		_registrarse.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_registrarse);
 	}
 
 	private void Inicializar() {

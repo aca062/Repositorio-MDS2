@@ -42,8 +42,15 @@ public class Introducir_nueva_contrasena extends VistaIntroducir_nueva_contrasen
 	}
 	
 	public void Confirmar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Actor_comun());
+		if (!this.getNuevaContraseña().getValue().toString().isEmpty() && 
+			!this.getVuelvaAIntroducirLaContraseña().getValue().toString().isEmpty()) {
+			if (!this.getNuevaContraseña().getValue().toString().equals(this.getVuelvaAIntroducirLaContraseña().getValue().toString())) {
+				ControladorVistas.PopUpBasico("Las dos contraseñas no son iguales");
+			}else {
+				ControladorVistas.CambiarContenido(new Cibernauta());
+			}
+		}else {
+			ControladorVistas.PopUpBasico("Uno de los campos está vacío");
+		}
 	}
 }

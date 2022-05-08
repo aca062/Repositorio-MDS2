@@ -1,8 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 @customElement('vista-login_cibernauta')
 export class VistaLogin_cibernauta extends LitElement {
@@ -23,9 +24,9 @@ export class VistaLogin_cibernauta extends LitElement {
     Logo 
   </vaadin-button>
   <vaadin-text-field label="Dirección de correo" id="textFieldCorreo" style="width: 40%;"></vaadin-text-field>
-  <vaadin-text-field label="Contraseña" id="textFieldContrasena" style="width: 40%;"></vaadin-text-field>
+  <vaadin-password-field label="Contraseña" placeholder="Introduzca la contraseña" id="textFieldContrasena" style="width: 40%;" has-value></vaadin-password-field>
   <vaadin-button id="botonHasOlvidadoContrasena">
-   ¿Has olvidado la contraseña?
+    ¿Has olvidado la contraseña? 
   </vaadin-button>
   <vaadin-horizontal-layout theme="spacing" id="layoutBotones" style="width: 50%; flex-grow: 0; flex-shrink: 0; justify-content: center;">
    <vaadin-button id="botonRegistrarse">

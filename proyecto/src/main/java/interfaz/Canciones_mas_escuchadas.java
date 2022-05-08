@@ -15,6 +15,8 @@ public class Canciones_mas_escuchadas extends VistaCanciones_mas_escuchadas{
 	void Inicializar() {
 		this.getH1Titulo().setVisible(true);
 		_cancionMasEscuchada.add(new Cancion_mas_escuchada());
+		_cancionMasEscuchada.add(new Cancion_mas_escuchada());
+		_cancionMasEscuchada.add(new Cancion_mas_escuchada());
 		for(int i = 0;i<3;i++) {
 			this.getLayoutPrincipal().add(_cancionMasEscuchada.get(i));
 		}

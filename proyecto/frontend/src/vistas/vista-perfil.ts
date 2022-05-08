@@ -29,8 +29,8 @@ export class VistaPerfil extends LitElement {
    <vaadin-vertical-layout theme="spacing" style="align-self: center; width: 50%;" id="layoutDatos">
     <h5 style="margin-top: 40px;" id="h5Nombre">Paco12</h5>
     <vaadin-horizontal-layout theme="spacing" style="align-items: center;" id="layoutCorreo">
-     <h5 id="h5Correo">Pakito12@gmail.com</h5>
-     <vaadin-button id="botonEditarCorreo">
+     <h5 id="h5Correo" style="align-self: center;">Pakito12@gmail.com</h5>
+     <vaadin-button id="botonEditarCorreo" style="align-self: center;">
        Editar 
      </vaadin-button>
     </vaadin-horizontal-layout>
@@ -47,12 +47,12 @@ export class VistaPerfil extends LitElement {
   <vaadin-button style="align-self: flex-end; margin: var(--lumo-space-m);" id="botonRecibirNotificaciones">
     Recibir notificaciones 
   </vaadin-button>
- </vaadin-vertical-layout>
- <vaadin-horizontal-layout style="width: 100%; justify-content: space-between;" id="layoutTusListas">
-  <vista-listas_de_reproduccion_propias style="background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-l);" id="tusListas"></vista-listas_de_reproduccion_propias>
-  <vaadin-button style="margin: var(--lumo-space-m);" id="botonCrearLista">
+  <vaadin-button style="margin: var(--lumo-space-m); align-self: flex-end;" id="botonCrearLista">
     Crear una nueva lista 
   </vaadin-button>
+ </vaadin-vertical-layout>
+ <vaadin-horizontal-layout style="width: 100%; justify-content: flex-start; background-color: var(--lumo-contrast-10pct);" id="layoutTusListas">
+  <vista-listas_de_reproduccion_propias style="background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-l);" id="tusListas"></vista-listas_de_reproduccion_propias>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-end;" id="layoutDarseBaja">
   <vaadin-button style="margin: var(--lumo-space-m);" id="botonDarseBaja">

@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -24,9 +25,9 @@ public class Artista_elemento extends VistaArtista_elemento{
 	}
 	
 	protected void PerfilArtista() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_perfilArtistaAjeno = new Perfil_artista_ajeno());
+		_perfilArtistaAjeno = new Perfil_artista_ajeno();
+		_perfilArtistaAjeno.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_perfilArtistaAjeno);
 	}
 
 	void Inicializar() {

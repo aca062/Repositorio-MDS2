@@ -32,7 +32,7 @@ public class Lista_album extends VistaLista_album{
 		this.getVerMas().setVisible(true);
 		this.getH1Titulo().setVisible(true);
 		for(int i=0;i<3;i++) {
-			this.getLayoutPrincipal().as(VerticalLayout.class).add(_album.get(i));
+			this.getLayoutAlbumes().add(_album.get(i));
 		}
 	}
 	

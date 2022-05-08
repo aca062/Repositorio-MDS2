@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -24,9 +25,9 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 	}
 
 	protected void DetalleLista() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_verDetalleDeListaPropia = new Ver_detalle_de_lista_propia());
+		_verDetalleDeListaPropia = new Ver_detalle_de_lista_propia();
+		_verDetalleDeListaPropia.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_verDetalleDeListaPropia);
 	}
 	
 	public void Imagen_reproducir() {

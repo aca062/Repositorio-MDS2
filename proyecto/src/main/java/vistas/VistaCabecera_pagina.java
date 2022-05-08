@@ -21,7 +21,6 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vistas/vista-cabecera_pagina.ts")
 public class VistaCabecera_pagina extends LitTemplate {
 
-
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
 	@Id("layoutCabecera")
@@ -42,20 +41,6 @@ public class VistaCabecera_pagina extends LitTemplate {
 	private TextField buscador;
 	@Id("ironIcon")
 	private Element ironIcon;
-	@Id("layoutContacto")
-	private HorizontalLayout layoutContacto;
-	@Id("layoutTitulo")
-	private Element layoutTitulo;
-	@Id("h3")
-	private H3 h3;
-	@Id("layoutInformacion")
-	private Element layoutInformacion;
-	@Id("h4Telefono")
-	private H4 h4Telefono;
-	@Id("h41Correo")
-	private H4 h41Correo;
-	@Id("layoutContenido")
-	private Element layoutContenido;
 
 	/**
      * Creates a new VistaCabecera_pagina.
@@ -142,62 +127,6 @@ public class VistaCabecera_pagina extends LitTemplate {
 
 	public void setIronIcon(Element ironIcon) {
 		this.ironIcon = ironIcon;
-	}
-
-	public HorizontalLayout getLayoutContacto() {
-		return layoutContacto;
-	}
-
-	public void setLayoutContacto(HorizontalLayout layoutContacto) {
-		this.layoutContacto = layoutContacto;
-	}
-
-	public Element getLayoutTitulo() {
-		return layoutTitulo;
-	}
-
-	public void setLayoutTitulo(Element layoutTitulo) {
-		this.layoutTitulo = layoutTitulo;
-	}
-
-	public H3 getH3() {
-		return h3;
-	}
-
-	public void setH3(H3 h3) {
-		this.h3 = h3;
-	}
-
-	public Element getLayoutInformacion() {
-		return layoutInformacion;
-	}
-
-	public void setLayoutInformacion(Element layoutInformacion) {
-		this.layoutInformacion = layoutInformacion;
-	}
-
-	public H4 getH4Telefono() {
-		return h4Telefono;
-	}
-
-	public void setH4Telefono(H4 h4Telefono) {
-		this.h4Telefono = h4Telefono;
-	}
-
-	public H4 getH41Correo() {
-		return h41Correo;
-	}
-
-	public void setH41Correo(H4 h41Correo) {
-		this.h41Correo = h41Correo;
-	}
-
-	public Element getLayoutContenido() {
-		return layoutContenido;
-	}
-
-	public void setLayoutContenido(Element layoutContenido) {
-		this.layoutContenido = layoutContenido;
 	}
 
 }

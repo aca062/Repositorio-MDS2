@@ -60,14 +60,33 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 	protected void IniciarSesion() {
 		//Hay que comprobar el usuario
 		String correo = this.getTextFieldCorreo().getValue();
-		if (correo.toString().equals("admin")) {
+		String contrasena = this.getTextFieldContrasena().getValue();
+		if (correo.toString().equals("admin") && contrasena.equals("admin")) {
 			Administrador admin = new Administrador();
+			Cabecera_pagina cab = new Cabecera_pagina();
 			admin.getStyle().set("width", "100%");
-			//ControladorVistas.CambiarContenido(admin);
-			/*VerticalLayout popupContent = new VerticalLayout();
-			popupContent.addComponent(new TextField("Textfield"));
-			popupContent.addComponent(new Button("Button"));*/
-			ControladorVistas.PopUpError("Hola");
+			cab.getStyle().set("width", "100%");
+			ControladorVistas.CambiarUsuario(correo.toString());
+			ControladorVistas.CambiarContenido(admin);
+			ControladorVistas.CambiarCabecera(cab);
+		}else if(correo.toString().equals("usuario") && contrasena.equals("usuario")) {
+			Usuario_registrado user = new Usuario_registrado();
+			Cabecera_pagina cab = new Cabecera_pagina();
+			user.getStyle().set("width", "100%");
+			cab.getStyle().set("width", "100%");
+			ControladorVistas.CambiarUsuario(correo.toString());
+			ControladorVistas.CambiarContenido(user);
+			ControladorVistas.CambiarCabecera(cab);
+		}else if(correo.toString().equals("artista") && contrasena.equals("artista")) {
+			Artista artista = new Artista();
+			Cabecera_pagina cab = new Cabecera_pagina();
+			artista.getStyle().set("width", "100%");
+			cab.getStyle().set("width", "100%");
+			ControladorVistas.CambiarUsuario(correo.toString());
+			ControladorVistas.CambiarContenido(artista);
+			ControladorVistas.CambiarCabecera(cab);
+		}else {
+			ControladorVistas.PopUpBasico("El usuario o la contraseña son incorrectos");
 		}
 	}
 

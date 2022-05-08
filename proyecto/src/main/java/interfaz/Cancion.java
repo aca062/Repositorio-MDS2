@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -29,9 +30,9 @@ public class Cancion extends VistaCancion{
 	}
 	
 	protected void DetalleCancion() {
-		HorizontalLayout v1 = this.getLayoutPrincipal();
-		v1.removeAll();
-		v1.add(_verDetalleCancion = new Ver_detalle_cancion());
+		_verDetalleCancion = new Ver_detalle_cancion();
+		_verDetalleCancion.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_verDetalleCancion);
 	}
 
 	public void Imagen_reproducir() {

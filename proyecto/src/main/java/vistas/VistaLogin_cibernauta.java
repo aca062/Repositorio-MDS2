@@ -5,6 +5,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -29,7 +30,7 @@ public class VistaLogin_cibernauta extends LitTemplate {
 	@Id("textFieldCorreo")
 	private TextField textFieldCorreo;
 	@Id("textFieldContrasena")
-	private TextField textFieldContrasena;
+	private PasswordField textFieldContrasena;
 	@Id("layoutBotones")
 	private HorizontalLayout layoutBotones;
 	@Id("botonRegistrarse")
@@ -80,10 +81,10 @@ public class VistaLogin_cibernauta extends LitTemplate {
 	public void setTextFieldCorreo(TextField textFieldCorreo) {
 		this.textFieldCorreo = textFieldCorreo;
 	}
-	public TextField getTextFieldContrasena() {
+	public PasswordField getTextFieldContrasena() {
 		return textFieldContrasena;
 	}
-	public void setTextFieldContrasena(TextField textFieldContrasena) {
+	public void setTextFieldContrasena(PasswordField textFieldContrasena) {
 		this.textFieldContrasena = textFieldContrasena;
 	}
 	public HorizontalLayout getLayoutBotones() {

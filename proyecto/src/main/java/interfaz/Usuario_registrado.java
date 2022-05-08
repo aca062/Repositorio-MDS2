@@ -5,10 +5,11 @@ public class Usuario_registrado extends Actor_comun {
 	
 	public Usuario_registrado() {
 		super();
-		Inicializar();
+		InicializarUsuario();
 	}
 	
-	void Inicializar() {
+	void InicializarUsuario() {
+		this.getLayoutAdministracion().setVisible(false);
 		this.getBotonAdmin().setVisible(false);
 	}
 }

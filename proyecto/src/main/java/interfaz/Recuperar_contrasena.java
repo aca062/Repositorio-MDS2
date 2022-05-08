@@ -25,9 +25,13 @@ public class Recuperar_contrasena  extends VistaRecuperar_contrasena{
 	}
 
 	protected void Confirmar() {
-		_introducirNuevaContrasena = new Introducir_nueva_contrasena();
-		_introducirNuevaContrasena.getStyle().set("width", "100%");
-		ControladorVistas.CambiarContenido(_introducirNuevaContrasena);
+		if (this.getTextFieldCorreo().getValue().toString().isEmpty()) {
+			ControladorVistas.PopUpBasico("No se ha introducido ningún correo");
+		}else {
+			_introducirNuevaContrasena = new Introducir_nueva_contrasena();
+			_introducirNuevaContrasena.getStyle().set("width", "100%");
+			ControladorVistas.CambiarContenido(_introducirNuevaContrasena);
+		}
 	}
 
 	public void Enviar_link() {

@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -55,9 +56,10 @@ public class Administrador extends Actor_comun {
 		this.getVistaListas_de_reproduccion_recomendadas().setVisible(true);
 		this.getVistaUltimas_canciones_reproducidas().setVisible(true);*/
 	}
+	
 	public void MenuAdministracion() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_menuAdministracion = new Menu_administracion());
+		_menuAdministracion = new Menu_administracion();
+		_menuAdministracion.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_menuAdministracion);
 	}
 }

@@ -5,8 +5,8 @@ import './vista-canciones_mas_escuchadas';
 import './vista-artistas_similares';
 import './vista-lista_album';
 import './vista-listas_de_reproduccion_propias';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-perfil_artista_comun')
 export class VistaPerfil_artista_comun extends LitElement {
@@ -22,7 +22,7 @@ export class VistaPerfil_artista_comun extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
- <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="layoutPerfil">
+ <vaadin-vertical-layout style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="layoutPerfil">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center;" id="layoutDatosPerfil">
    <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; align-self: center; align-items: center; width: fit-content;" id="layoutFoto">
     <img style="width: 200px; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l);" src="https://i.scdn.co/image/ab6761610000e5eb6ad57a3cb26ae3ffd0f28f22" id="foto">
@@ -31,8 +31,8 @@ export class VistaPerfil_artista_comun extends LitElement {
     </vaadin-button>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="align-self: center; width: 50%;" id="layoutDatos">
-    <vaadin-horizontal-layout style="width: 100%; justify-content: space-between; align-items: center;" id="layoutNombreBoton">
-     <h5 style="margin-top: 40px;" id="h5Nombre">Bad Bunny</h5>
+    <vaadin-horizontal-layout style="width: 100%; justify-content: flex-start; align-items: center;" id="layoutNombreBoton" theme="spacing-xl">
+     <h5 id="h5Nombre">Bad Bunny</h5>
      <vaadin-button style="margin-right: 10%;" id="botonDejarSeguir">
        Dejar de seguir 
      </vaadin-button>
@@ -56,15 +56,15 @@ export class VistaPerfil_artista_comun extends LitElement {
   <vaadin-button style="align-self: flex-end; margin: var(--lumo-space-m);" id="botonRecibirNotificaciones">
     Recibir notificaciones 
   </vaadin-button>
+  <vaadin-button style="margin: var(--lumo-space-m); align-self: flex-end;" id="botonCrearNuevaLista">
+    Crear una nueva lista 
+  </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-start;background-color: var(--lumo-contrast-10pct);" id="layoutTusListas">
   <vista-listas_de_reproduccion_propias style="margin-left: var(--lumo-space-xl);" id="tusListas"></vista-listas_de_reproduccion_propias>
-  <vaadin-button style="margin: var(--lumo-space-m);" id="botonCrearNuevaLista">
-    Crear una nueva lista 
-  </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end; align-self: flex-start; width: 100%;background-color: var(--lumo-contrast-10pct);" id="layoutListasDondeAparece">
-  <vista-listas_de_reproduccion_ajenas style="width: 100%; margin-left: var(--lumo-space-xl);" id="listasDondeAparece"></vista-listas_de_reproduccion_ajenas>
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-start; background-color: var(--lumo-contrast-10pct); padding-left: var(--lumo-space-xl);" id="layoutListasDondeAparece">
+  <vista-listas_de_reproduccion_ajenas style="margin-left: var(--lumo-space-xl);" id="listasDondeAparece"></vista-listas_de_reproduccion_ajenas>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="layoutInformacionArtista">
   <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="layoutCancionesMasEscuchadas">

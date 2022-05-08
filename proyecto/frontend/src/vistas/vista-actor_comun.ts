@@ -27,7 +27,7 @@ export class VistaActor_comun extends LitElement {
   </vaadin-button>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="layoutUltimasCanciones">
-  <vista-ultimas_canciones_reproducidas id="vistaUltimas_canciones_reproducidas" style="padding: var(--lumo-space-m);"></vista-ultimas_canciones_reproducidas>
+  <vista-ultimas_canciones_reproducidas id="vistaUltimas_canciones_reproducidas" style="padding: var(--lumo-space-m); padding-top: 0;"></vista-ultimas_canciones_reproducidas>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 20%;background-color: var(--lumo-contrast-10pct);" id="layoutCancionesFav">
   <vista-canciones_favoritas id="vistaCanciones_favoritas" style="padding: var(--lumo-space-m);"></vista-canciones_favoritas>
@@ -47,7 +47,7 @@ export class VistaActor_comun extends LitElement {
    <vaadin-vertical-layout theme="spacing" id="layoutCanciones"></vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;" id="layoutEstadisticas">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; margin-top: var(--lumo-space-l);" id="layoutEstadisticas">
   <vaadin-horizontal-layout theme="spacing" id="layoutTituloEstadisticas" style="align-items: center; flex-shrink: 0;">
    <h2 style="margin-left: var(--lumo-space-xl); align-self: center; flex-shrink: 0; margin-top: 0; margin-bottom: 0" id="h21Titulo">Tus estadísticas de uso</h2>
    <vaadin-button style="align-self: center; flex-shrink: 0;" id="botonVerMasEstadisticas">

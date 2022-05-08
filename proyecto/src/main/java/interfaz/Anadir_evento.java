@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -37,20 +38,23 @@ public class Anadir_evento extends VistaAnadir_evento{
 
 	private void Inicializar() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	protected void Confirmar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_perfilArtista = new Perfil_artista_propio());
+		if (this.getFecha().isEmpty() || this.getHora().isEmpty() || this.getLugar().isEmpty()) {
+			ControladorVistas.PopUpBasico("No se pueden dejar campos en blanco");
+		}else {
+			//Se guarda el evento
+			_perfilArtista = new Perfil_artista_propio();
+			_perfilArtista.getStyle().set("width", "100%");
+			ControladorVistas.CambiarContenido(_perfilArtista);
+		}
 	}
 
 	protected void Cancelar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_perfilArtista = new Perfil_artista_propio());
-		
+		_perfilArtista = new Perfil_artista_propio();
+		_perfilArtista.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_perfilArtista);
 	}
 
 	public void Anadir_foto() {

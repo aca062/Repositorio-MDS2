@@ -16,7 +16,7 @@ export class VistaListas_de_reproduccion_en_las_que_aparece extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
+<vaadin-vertical-layout style="width: 100%; height: 100%; margin-left: var(--lumo-space-xl); padding-bottom: var(--lumo-space-l);" id="layoutPrincipal">
  <h1 id="h1Titulo">Listas de reproducción en las que aparece</h1>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="layoutListasPropias">
   <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena"></vista-lista_de_reproduccion_ajena>

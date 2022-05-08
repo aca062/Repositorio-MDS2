@@ -15,8 +15,8 @@ export class VistaListas_de_reproduccion_recomendadas extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
- <h1 id="Titulo">Listas de reproducción</h1>
- <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena"></vista-lista_de_reproduccion_ajena>
+ <h1 id="Titulo" style="flex-grow: 0; margin: 0">Listas de reproducción</h1>
+ <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena" style="margin: 0;"></vista-lista_de_reproduccion_ajena>
  <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena1"></vista-lista_de_reproduccion_ajena>
  <vista-lista_de_reproduccion_ajena id="vistaLista_de_reproduccion_ajena2"></vista-lista_de_reproduccion_ajena>
 </vaadin-vertical-layout>

@@ -40,9 +40,15 @@ public class Registrarse  extends VistaRegistrarse{
 	}
 
 	protected void CrearCuenta() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_verificarE_mail = new Verificar_e_mail());
+		if (this.getNick().getValue().isEmpty() || this.geteMail().getValue().isEmpty() || this.getContraseña().getValue().isEmpty() || this.getRepetirContraseña().getValue().isEmpty()) {
+			ControladorVistas.PopUpBasico("Alguno de los campos está vacío");
+		}else if (!this.getContraseña().getValue().equals(this.getRepetirContraseña().getValue())) {
+			ControladorVistas.PopUpBasico("Las dos contraseñas tienen que ser iguales");
+		}else {
+			_verificarE_mail = new Verificar_e_mail();
+			_verificarE_mail.getStyle().set("width", "100%");
+			ControladorVistas.CambiarContenido(_verificarE_mail);
+		}
 	}
 
 	protected void Cancelar() {

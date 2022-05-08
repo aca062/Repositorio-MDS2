@@ -10,21 +10,22 @@ import com.vaadin.flow.component.textfield.TextField;
 
 public class ControladorVistas {
 
-	public static VerticalLayout layoutContenido;
-	public static VerticalLayout layoutCabecera;
-	public static VerticalLayout layoutPie;
+	private static VerticalLayout layoutContenido;
+	private static VerticalLayout layoutCabecera;
+	private static VerticalLayout layoutPie;
+	private static String usuario;
 	
-	public static void SetCabecera(VerticalLayout layout) {
+	protected static void SetCabecera(VerticalLayout layout) {
 		layoutCabecera = layout;
 		layoutCabecera.getStyle().set("width", "100%");
 	}
 	
-	public static void SetContenido(VerticalLayout layout) {
+	protected static void SetContenido(VerticalLayout layout) {
 		layoutContenido = layout;
 		layoutContenido.getStyle().set("width", "100%");
 	}
 	
-	public static void SetPie(VerticalLayout layout) {
+	protected static void SetPie(VerticalLayout layout) {
 		layoutPie = layout;
 		layoutContenido.getStyle().set("width", "100%");
 	}
@@ -44,6 +45,14 @@ public class ControladorVistas {
 		layoutPie.add(layout);
 	}
 	
+	public static void CambiarUsuario(String user) {
+		usuario = user;
+	}
+	
+	public static String getUsuario() {
+		return usuario;
+	}
+	
 	/*public static void PopUpError(Text mensaje) {
 		Dialog popupContent = new Dialog();
 		popupContent.add(mensaje);
@@ -53,11 +62,16 @@ public class ControladorVistas {
 		popupContent.open();
 	}*/
 	
-	public static void PopUpError(String mensaje) {
-		ConfirmDialog popupContent = new ConfirmDialog();
-		popupContent.setHeader(mensaje);
-		popupContent.setConfirmText("Aceptar");
-		layoutContenido.add(popupContent);
-		popupContent.open();
+	public static void PopUpBasico(String mensaje) {
+		ConfirmDialog popup = new ConfirmDialog();
+		popup.setHeader(mensaje);
+		popup.setConfirmText("Aceptar");
+		layoutContenido.add(popup);
+		popup.open();
+	}
+	
+	public static void PopUpFormularioEditar(Dialog popup) {
+		layoutContenido.add(popup);
+		popup.open();
 	}
 }

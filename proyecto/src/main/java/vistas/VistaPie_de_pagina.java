@@ -6,6 +6,8 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H5;
+import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.H4;
 
 /**
  * A Designer generated component for the vista-pie_de_pagina template.
@@ -17,10 +19,16 @@ import com.vaadin.flow.component.html.H5;
 @JsModule("./src/vistas/vista-pie_de_pagina.ts")
 public class VistaPie_de_pagina extends LitTemplate {
 
-	@Id("h5")
-	private H5 h5;
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
+	@Id("h3")
+	private H3 h3;
+	@Id("layoutInformacion")
+	private Element layoutInformacion;
+	@Id("h4Telefono")
+	private H4 h4Telefono;
+	@Id("h41Correo")
+	private H4 h41Correo;
 
 	/**
      * Creates a new VistaPie_de_pagina.
@@ -28,14 +36,6 @@ public class VistaPie_de_pagina extends LitTemplate {
     public VistaPie_de_pagina() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public H5 getH5() {
-		return h5;
-	}
-
-	public void setH5(H5 h5) {
-		this.h5 = h5;
-	}
 
 	public Element getLayoutPrincipal() {
 		return layoutPrincipal;

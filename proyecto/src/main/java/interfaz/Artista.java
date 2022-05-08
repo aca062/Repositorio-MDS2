@@ -5,10 +5,11 @@ public class Artista extends Actor_comun {
 	
 	public Artista() {
 		super();
-		Inicializar();
+		InicializarArtista();
 	}
 	
-	void Inicializar() {
+	void InicializarArtista() {
+		this.getLayoutAdministracion().setVisible(false);
 		this.getBotonAdmin().setVisible(false);
 	}
 }

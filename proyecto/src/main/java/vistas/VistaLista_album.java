@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
 import vistas.VistaAlbum;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.button.Button;
 
 /**
@@ -28,14 +29,16 @@ public class VistaLista_album extends LitTemplate {
 	private H1 h1Titulo;
 	@Id("vistaAlbum")
 	private Element vistaAlbum;
-	@Id("vistaAlbum1")
-	private Element vistaAlbum1;
 	@Id("vistaAlbum2")
 	private Element vistaAlbum2;
 	@Id("layoutBoton")
 	private HorizontalLayout layoutBoton;
 	@Id("verMas")
 	private Button verMas;
+	@Id("layoutAlbumes")
+	private VerticalLayout layoutAlbumes;
+	@Id("vistaAlbum1")
+	private Element vistaAlbum1;
 
 	/**
      * Creates a new VistaLista_album.
@@ -98,6 +101,14 @@ public class VistaLista_album extends LitTemplate {
 
 	public void setVerMas(Button verMas) {
 		this.verMas = verMas;
+	}
+
+	public VerticalLayout getLayoutAlbumes() {
+		return layoutAlbumes;
+	}
+
+	public void setLayoutAlbumes(VerticalLayout layoutAlbumes) {
+		this.layoutAlbumes = layoutAlbumes;
 	}
 
 	
