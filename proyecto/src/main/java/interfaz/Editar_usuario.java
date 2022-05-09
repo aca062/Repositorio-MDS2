@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -41,15 +42,15 @@ public class Editar_usuario extends VistaEditar_usuario{
 
 	public void Confirmar() {
 		//Más cosas
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Buscar_administrador());
+		Buscar_elemento _buscarElemento = new Buscar_elemento();
+		_buscarElemento.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_buscarElemento);
 	}
 	
 	public void Cancelar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Buscar_administrador());
+		Buscar_elemento _buscarElemento = new Buscar_elemento();
+		_buscarElemento.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_buscarElemento);
 	}
 	
 	public void Anadir_imagen() {

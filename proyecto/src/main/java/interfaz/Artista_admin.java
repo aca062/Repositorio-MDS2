@@ -1,7 +1,11 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaArtista_admin;
@@ -32,9 +36,28 @@ public class Artista_admin extends VistaArtista_admin{
 	}
 	
 	public void Eliminar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_artistasBusquedaAdmin = new Artistas_busqueda_admin());
+		Dialog popup = new Dialog();
+		String nombreArtista = this.getH4Nombre().getText().toString();
+		Text advertencia = new Text("¿Seguro que desea eliminar este artista?");
+        VerticalLayout dialogLayout = new VerticalLayout(advertencia);
+        popup.add(dialogLayout);
+        Button confirmar = new Button("Confirmar");
+        Button cancelar = new Button("Cancelar");
+        popup.add(cancelar);
+        popup.add(confirmar);
+        popup.setWidth("40%");
+        cancelar.getStyle().set("margin-right", "20px");
+        confirmar.addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				ConfirmarEliminacion(nombreArtista, popup);
+			}
+		});
+        cancelar.addClickListener(new ComponentEventListener(){
+			public void onComponentEvent(ComponentEvent event) {
+				popup.close();
+			}
+		});
+        ControladorVistas.PopUpFormularioEditar(popup);
 	}
 	
 	void Inicializar() {
@@ -44,9 +67,14 @@ public class Artista_admin extends VistaArtista_admin{
 		this.getEditar().setVisible(true);
 	}
 	
+	void ConfirmarEliminacion(String nombre, Dialog popup) {
+		//Comprobar si hay canciones con ese estilo
+		popup.close();
+	}
+	
 	public void EditarArtista() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_editarArtista = new Editar_artista());
+		_editarArtista = new Editar_artista();
+		_editarArtista.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_editarArtista);
 	}
 }

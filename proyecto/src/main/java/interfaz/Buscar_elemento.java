@@ -15,6 +15,7 @@ public class Buscar_elemento extends VistaBuscar_elemento{
 	public Buscar_elemento() {
 		Inicializar();
 	}
+	
 	void Inicializar() {
 		this.getBuscador().setVisible(true);
 		this.getH1Titulo().setVisible(true);

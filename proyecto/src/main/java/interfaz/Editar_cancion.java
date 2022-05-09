@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 //import com.example.test.WindowController;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -46,15 +47,15 @@ public class Editar_cancion extends VistaEditar_cancion{
 
 	public void Confirmar() {
 		//Más cosas
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Buscar_administrador());
+		Buscar_elemento _buscarElemento = new Buscar_elemento();
+		_buscarElemento.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_buscarElemento);
 	}
 	
 	public void Cancelar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(new Buscar_administrador());
+		Buscar_elemento _buscarElemento = new Buscar_elemento();
+		_buscarElemento.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_buscarElemento);
 	}
 
 	public void Anadir_archivo_multimedia() {

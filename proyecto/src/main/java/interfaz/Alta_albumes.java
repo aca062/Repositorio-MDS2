@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -38,15 +39,15 @@ public class Alta_albumes extends VistaAlta_albumes{
 	}
 
 	protected void Confirmar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_darDeAlta = new Dar_de_alta());
+		_darDeAlta = new Dar_de_alta();
+		_darDeAlta.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_darDeAlta);
 	}
 
 	protected void Cancelar() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_darDeAlta = new Dar_de_alta());
+		_darDeAlta = new Dar_de_alta();
+		_darDeAlta.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_darDeAlta);
 		
 	}
 

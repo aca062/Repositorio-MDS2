@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -55,26 +56,26 @@ public class Dar_de_alta extends VistaDar_de_alta{
 	}
 	
 	public void DarAltaAlbum() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_altaAlbumes = new Alta_albumes());
+		_altaAlbumes = new Alta_albumes();
+		_altaAlbumes.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_altaAlbumes);
 	}
 	
 	public void DarAltaArtista() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_altaArtistas = new Alta_artistas());
+		_altaArtistas = new Alta_artistas();
+		_altaArtistas.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_altaArtistas);
 	}
 	
 	public void DarAltaCancion() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_altaCanciones = new Alta_canciones());
+		_altaCanciones = new Alta_canciones();
+		_altaCanciones.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_altaCanciones);
 	}
 	
 	public void DarAltaEstilo() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_altaEstilos = new Alta_estilos());
+		_altaEstilos = new Alta_estilos();
+		_altaEstilos.getStyle().set("width", "100%");
+		ControladorVistas.CambiarContenido(_altaEstilos);
 	}
 }
