@@ -69,6 +69,8 @@ public class MainView extends VerticalLayout {
     	Cibernauta contenido = new Cibernauta();
     	/*Actor_comun contenido = new Actor_comun();*/
     	Pie_de_pagina pie = new Pie_de_pagina();
+    	VerticalLayout reproductor = new VerticalLayout();
+    	reproductor.getStyle().set("width", "100%");   
     	cabecera.getStyle().set("width", "100%");   
     	cabecera.getStyle().set("height", "100%");
     	contenido.getStyle().set("width", "100%");   
@@ -77,9 +79,11 @@ public class MainView extends VerticalLayout {
     	pie.getStyle().set("height", "100%");
     	add(cabecera);
     	add(contenido);
+    	add(reproductor);
     	add(pie);
     	ControladorVistas.SetCabecera(cabecera.getLayoutPrincipal().as(VerticalLayout.class));
     	ControladorVistas.SetContenido(contenido.getLayoutPrincipal().as(VerticalLayout.class));
+    	ControladorVistas.SetReproductor(reproductor);
     	ControladorVistas.SetPie(pie.getLayoutPrincipal().as(VerticalLayout.class));
     	
         // Use TextField for standard text input

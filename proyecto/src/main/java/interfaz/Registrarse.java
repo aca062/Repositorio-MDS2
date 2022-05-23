@@ -5,6 +5,8 @@ import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iCibernauta;
 import vistas.VistaRegistrarse;
 
 public class Registrarse  extends VistaRegistrarse{
@@ -23,6 +25,7 @@ public class Registrarse  extends VistaRegistrarse{
 	private Button _anadirFotoB;*/
 	public Login_cibernauta _loginCibernauta;
 	public Verificar_e_mail _verificarE_mail;
+	iCibernauta cib = new BDPrincipal();
 	
 	public Registrarse() {
 		Inicializar();
@@ -40,14 +43,16 @@ public class Registrarse  extends VistaRegistrarse{
 	}
 
 	protected void CrearCuenta() {
-		if (this.getNick().getValue().isEmpty() || this.geteMail().getValue().isEmpty() || this.getContraseña().getValue().isEmpty() || this.getRepetirContraseña().getValue().isEmpty()) {
+		if (this.getNick().getValue().isEmpty() || this.geteMail().getValue().isEmpty() || this.getContrasena().getValue().isEmpty() || this.getRepetirContrasena().getValue().isEmpty()) {
 			ControladorVistas.PopUpBasico("Alguno de los campos está vacío");
-		}else if (!this.getContraseña().getValue().equals(this.getRepetirContraseña().getValue())) {
+		}else if (!this.getContrasena().getValue().equals(this.getRepetirContrasena().getValue())) {
 			ControladorVistas.PopUpBasico("Las dos contraseñas tienen que ser iguales");
 		}else {
+			cib.registro(this.geteMail().getValue(), this.getContrasena().getValue(), this.getNick().getValue(), null);
+			/*
 			_verificarE_mail = new Verificar_e_mail();
 			_verificarE_mail.getStyle().set("width", "100%");
-			ControladorVistas.CambiarContenido(_verificarE_mail);
+			ControladorVistas.CambiarContenido(_verificarE_mail);*/
 		}
 	}
 

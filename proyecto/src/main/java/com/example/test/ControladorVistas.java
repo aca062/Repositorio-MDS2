@@ -13,11 +13,19 @@ public class ControladorVistas {
 	private static VerticalLayout layoutContenido;
 	private static VerticalLayout layoutCabecera;
 	private static VerticalLayout layoutPie;
+	private static VerticalLayout layoutReproductor;
 	private static String usuario;
 	
 	protected static void SetCabecera(VerticalLayout layout) {
 		layoutCabecera = layout;
 		layoutCabecera.getStyle().set("width", "100%");
+	}
+	
+	protected static void SetReproductor(VerticalLayout layout) {
+		layoutReproductor = layout;
+		AudioPlayer reproductor = new AudioPlayer();
+		layout.add(reproductor);
+		layoutReproductor.getStyle().set("width", "100%");
 	}
 	
 	protected static void SetContenido(VerticalLayout layout) {

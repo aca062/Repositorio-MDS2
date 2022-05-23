@@ -4,6 +4,8 @@ import orm.bbdd.Album;
 
 import java.sql.Date;
 
+import org.orm.PersistentException;
+
 import interfaz.Artista_elemento;
 import interfaz.Estilo_admin;
 import interfaz.Cancion;
@@ -164,7 +166,12 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	}
 
 	public void registro(String aEmail, String aContrasena, String aNick, String aImagen) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_usuarios_registrados.registro(aEmail, aContrasena, aNick, aImagen);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void recuperarContrasena(String aEmail) {

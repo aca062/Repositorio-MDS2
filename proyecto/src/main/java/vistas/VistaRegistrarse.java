@@ -35,10 +35,6 @@ public class VistaRegistrarse extends LitTemplate {
 	private TextField eMail;
 	@Id("nick")
 	private TextField nick;
-	@Id("repetirContraseña")
-	private TextField repetirContraseña;
-	@Id("contraseña")
-	private TextField contraseña;
 	@Id("layoutBotones")
 	private HorizontalLayout layoutBotones;
 	@Id("botonIniciarSesion")
@@ -47,6 +43,10 @@ public class VistaRegistrarse extends LitTemplate {
 	private Button botonCrearCuenta;
 	@Id("botonCancelar")
 	private Button botonCancelar;
+	@Id("repetirContrasena")
+	private TextField repetirContrasena;
+	@Id("contrasena")
+	private TextField contrasena;
 
 	/**
      * Creates a new VistaRegistrarse.
@@ -111,22 +111,6 @@ public class VistaRegistrarse extends LitTemplate {
 		this.nick = nick;
 	}
 
-	public TextField getRepetirContraseña() {
-		return repetirContraseña;
-	}
-
-	public void setRepetirContraseña(TextField repetirContraseña) {
-		this.repetirContraseña = repetirContraseña;
-	}
-
-	public TextField getContraseña() {
-		return contraseña;
-	}
-
-	public void setContraseña(TextField contraseña) {
-		this.contraseña = contraseña;
-	}
-
 	public HorizontalLayout getLayoutBotones() {
 		return layoutBotones;
 	}
@@ -157,6 +141,22 @@ public class VistaRegistrarse extends LitTemplate {
 
 	public void setBotonCancelar(Button botonCancelar) {
 		this.botonCancelar = botonCancelar;
+	}
+
+	public TextField getRepetirContrasena() {
+		return repetirContrasena;
+	}
+
+	public void setRepetirContrasena(TextField repetirContrasena) {
+		this.repetirContrasena = repetirContrasena;
+	}
+
+	public TextField getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(TextField contrasena) {
+		this.contrasena = contrasena;
 	}
 
 
