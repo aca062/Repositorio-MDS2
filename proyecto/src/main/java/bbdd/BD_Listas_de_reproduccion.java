@@ -2,13 +2,12 @@ package bbdd;
 
 import java.util.Vector;
 import orm.bbdd.Lista_de_reproduccion;
-import interfaz.Lista_de_reproduccion_ajena;
 
 public class BD_Listas_de_reproduccion {
 	public BDPrincipal _bd_prin_listas_de_reproduccion;
 	public Vector<Lista_de_reproduccion> _contiene_listas_de_reproduccion = new Vector<Lista_de_reproduccion>();
 
-	public void editarLista(String aNombre) {
+	public void editarLista(String aNombre, int aIdLista) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -24,7 +23,7 @@ public class BD_Listas_de_reproduccion {
 		throw new UnsupportedOperationException();
 	}
 
-	public void cargarLista(Lista_de_reproduccion_ajena aLista) {
+	public Lista_de_reproduccion cargarLista(int aIdLista) {
 		throw new UnsupportedOperationException();
 	}
 }

@@ -3,11 +3,9 @@
  * License Type: Academic
  */
 package orm.ormsamples;
-
-import org.orm.*;
-
 import orm.bbdd.MDS2PersistentManager;
 
+import org.orm.*;
 public class CreateMDS2DatabaseSchema {
 	public static void main(String[] args) {
 		try {

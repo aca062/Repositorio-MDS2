@@ -19,7 +19,7 @@ import javax.persistence.*;
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Usuario_Registrado")
 @Inheritance(strategy=InheritanceType.JOINED)
-@PrimaryKeyJoinColumn(name="Actor_ComunEmail", referencedColumnName="Email")
+@PrimaryKeyJoinColumn(name="Actor_ComunId", referencedColumnName="Id")
 public class Usuario_Registrado extends Actor_Comun implements Serializable {
 	public Usuario_Registrado() {
 	}

@@ -33,10 +33,20 @@ public class Album implements Serializable {
 		return null;
 	}
 	
+	private void this_setOwner(Object owner, int key) {
+		if (key == ORMConstants.KEY_ALBUM_ARTISTA) {
+			this.artista = (Artista) owner;
+		}
+	}
+	
 	@Transient	
 	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
 		public java.util.Set getSet(int key) {
 			return this_getSet(key);
+		}
+		
+		public void setOwner(Object owner, int key) {
+			this_setOwner(owner, key);
 		}
 		
 	};
@@ -46,6 +56,12 @@ public class Album implements Serializable {
 	@GeneratedValue(generator="BBDD_ALBUM_IDALBUM_GENERATOR")	
 	@org.hibernate.annotations.GenericGenerator(name="BBDD_ALBUM_IDALBUM_GENERATOR", strategy="native")	
 	private int idAlbum;
+	
+	@ManyToOne(targetEntity=Artista.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
+	@JoinColumns(value={ @JoinColumn(name="ArtistaActor_ComunId", referencedColumnName="Actor_ComunId", nullable=false) }, foreignKey=@ForeignKey(name="FKAlbum383064"))	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
+	private Artista artista;
 	
 	@Column(name="Imagen", nullable=true, length=255)	
 	private String imagen;
@@ -126,6 +142,30 @@ public class Album implements Serializable {
 	
 	@Transient	
 	public final EstadisticaSetCollection estadisticas = new EstadisticaSetCollection(this, _ormAdapter, ORMConstants.KEY_ALBUM_ESTADISTICAS, ORMConstants.KEY_ESTADISTICA_ALBUMS, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	
+	public void setArtista(Artista value) {
+		if (artista != null) {
+			artista.albums.remove(this);
+		}
+		if (value != null) {
+			value.albums.add(this);
+		}
+	}
+	
+	public Artista getArtista() {
+		return artista;
+	}
+	
+	/**
+	 * This method is for internal use only.
+	 */
+	public void setORM_Artista(Artista value) {
+		this.artista = value;
+	}
+	
+	private Artista getORM_Artista() {
+		return artista;
+	}
 	
 	public String toString() {
 		return String.valueOf(getIdAlbum());

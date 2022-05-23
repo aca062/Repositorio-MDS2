@@ -24,7 +24,7 @@ public class Lista_de_reproduccionCriteria extends AbstractORMCriteria {
 	public final StringExpression nombre;
 	public final CollectionExpression canciones;
 	public final CollectionExpression estadisticas;
-	public final StringExpression creadorId;
+	public final IntegerExpression creadorId;
 	public final AssociationExpression creador;
 	
 	public Lista_de_reproduccionCriteria(Criteria criteria) {
@@ -34,7 +34,7 @@ public class Lista_de_reproduccionCriteria extends AbstractORMCriteria {
 		nombre = new StringExpression("nombre", this);
 		canciones = new CollectionExpression("ORM_canciones", this);
 		estadisticas = new CollectionExpression("ORM_estadisticas", this);
-		creadorId = new StringExpression("creador.email", this);
+		creadorId = new IntegerExpression("creador.id", this);
 		creador = new AssociationExpression("creador", this);
 	}
 	

@@ -13,6 +13,18 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <Column name="ArtistaActor_ComunId">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
     <Column name="Imagen">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
@@ -48,19 +60,8 @@
     </Column>
   </Entity>
   <Entity name="Acceso_Dato" Unlogged="false" PKClustered="0">
-    <Column name="Email">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
     <Column name="Id">
-      <PrimaryKey>false</PrimaryKey>
+      <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>9</Type>
       <Length>10</Length>
@@ -71,6 +72,17 @@
       <UserTypes/>
     </Column>
     <Column name="Contrasena">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Email">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>27</Type>
@@ -140,6 +152,18 @@
     </Column>
   </Entity>
   <Entity name="Estadistica_tiempoSemana" Unlogged="false" PKClustered="0">
+    <Column name="EstadisticaId">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>BBDD.Estadistica.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
     <Column name="EstadisticaIndex">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
@@ -158,18 +182,6 @@
       <Length>0</Length>
       <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="EstadisticaId">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Estadistica.Id</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
@@ -211,13 +223,13 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="ArtistaActor_ComunEmail">
+    <Column name="ArtistaActor_ComunId">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Artista.Actor_ComunEmail</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
+      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -280,13 +292,13 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Actor_ComunEmail">
+    <Column name="Actor_ComunId">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
+      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -308,6 +320,18 @@
     <Column name="IdCancion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="AdministradorActor_ComunId">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>BBDD.Administrador.Actor_ComunId</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -471,24 +495,24 @@
     </Column>
   </Entity>
   <Entity name="Actor_Comun" Unlogged="false" PKClustered="0">
-    <Column name="Email">
+    <Column name="Id">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>assigned</IDGenerator>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Acceso_DatoEmail">
+    <Column name="Acceso_DatoId">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Acceso_Dato.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
+      <ReferencedColumn>BBDD.Acceso_Dato.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -501,6 +525,17 @@
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Email">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -541,13 +576,24 @@
     </Column>
   </Entity>
   <Entity name="Administrador" Unlogged="false" PKClustered="0">
-    <Column name="Actor_ComunEmail">
+    <Column name="NumCanciones">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
+      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -555,13 +601,13 @@
     </Column>
   </Entity>
   <Entity name="Artista" Unlogged="false" PKClustered="0">
-    <Column name="Actor_ComunEmail">
+    <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
+      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -569,13 +615,13 @@
     </Column>
   </Entity>
   <Entity name="Usuario_Registrado" Unlogged="false" PKClustered="0">
-    <Column name="Actor_ComunEmail">
+    <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
+      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -583,12 +629,12 @@
     </Column>
   </Entity>
   <Entity name="Actor_Comun_Cancion" Unlogged="false" PKClustered="0">
-    <Column name="Actor_ComunEmail">
+    <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
@@ -661,12 +707,12 @@
     </Column>
   </Entity>
   <Entity name="Artista_Estilo" Unlogged="false" PKClustered="0">
-    <Column name="ArtistaActor_ComunEmail">
+    <Column name="ArtistaActor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Artista.Actor_ComunEmail</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
@@ -687,12 +733,12 @@
     </Column>
   </Entity>
   <Entity name="Actor_Comun_Lista de reproduccion" Unlogged="false" PKClustered="0">
-    <Column name="Actor_ComunEmail">
+    <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
@@ -725,12 +771,12 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="ArtistaActor_ComunEmail">
+    <Column name="ArtistaActor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Artista.Actor_ComunEmail</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
@@ -739,12 +785,12 @@
     </Column>
   </Entity>
   <Entity name="Actor_Comun_Evento" Unlogged="false" PKClustered="0">
-    <Column name="Actor_ComunEmail">
+    <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
@@ -777,12 +823,12 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="ArtistaActor_ComunEmail">
+    <Column name="ArtistaActor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Artista.Actor_ComunEmail</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
@@ -869,24 +915,24 @@
     </Column>
   </Entity>
   <Entity name="Actor_Comun_Actor_Comun" Unlogged="false" PKClustered="0">
-    <Column name="Actor_ComunEmail">
+    <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Actor_ComunEmail2">
+    <Column name="Actor_ComunId2">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Email</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
@@ -934,44 +980,44 @@
       <Column>IdCancion</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKAdministra799334">
+  <ForeignKey name="FKAdministra592735">
     <ReferenceTable>Administrador</ReferenceTable>
     <ReferencedTable>Actor_Comun</ReferencedTable>
     <Columns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKArtista223832">
+  <ForeignKey name="FKArtista982766">
     <ReferenceTable>Artista</ReferenceTable>
     <ReferencedTable>Actor_Comun</ReferencedTable>
     <Columns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKUsuario_Re837">
+  <ForeignKey name="FKUsuario_Re207436">
     <ReferenceTable>Usuario_Registrado</ReferenceTable>
     <ReferencedTable>Actor_Comun</ReferencedTable>
     <Columns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKActor_Comu22350">
+  <ForeignKey name="FKActor_Comu815750">
     <ReferenceTable>Actor_Comun_Cancion</ReferenceTable>
     <ReferencedTable>Actor_Comun</ReferencedTable>
     <Columns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKActor_Comu131305">
@@ -1024,14 +1070,14 @@
       <Column>IdAlbum</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKEvento792559">
+  <ForeignKey name="FKEvento779957">
     <ReferenceTable>Evento</ReferenceTable>
     <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>ArtistaActor_ComunEmail</Column>
+      <Column>ArtistaActor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKCancion161308">
@@ -1044,14 +1090,14 @@
       <Column>IdEstilo</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKArtista_Es658394">
+  <ForeignKey name="FKArtista_Es914122">
     <ReferenceTable>Artista_Estilo</ReferenceTable>
     <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>ArtistaActor_ComunEmail</Column>
+      <Column>ArtistaActor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKArtista_Es927345">
@@ -1064,14 +1110,14 @@
       <Column>IdEstilo</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKActor_Comu217316">
+  <ForeignKey name="FKActor_Comu547675">
     <ReferenceTable>Actor_Comun_Lista de reproduccion</ReferenceTable>
     <ReferencedTable>Actor_Comun</ReferencedTable>
     <Columns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKActor_Comu986476">
@@ -1084,14 +1130,14 @@
       <Column>IdLista</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKLista de r82512">
+  <ForeignKey name="FKLista de r289111">
     <ReferenceTable>Lista de reproduccion</ReferenceTable>
     <ReferencedTable>Actor_Comun</ReferencedTable>
     <Columns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKCancion_Ar68640">
@@ -1104,14 +1150,14 @@
       <Column>IdCancion</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKCancion_Ar102522">
+  <ForeignKey name="FKCancion_Ar296551">
     <ReferenceTable>Cancion_Artista</ReferenceTable>
     <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>ArtistaActor_ComunEmail</Column>
+      <Column>ArtistaActor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKActor_Comu455406">
@@ -1124,14 +1170,14 @@
       <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKActor_Comu624333">
+  <ForeignKey name="FKActor_Comu830932">
     <ReferenceTable>Actor_Comun_Evento</ReferenceTable>
     <ReferencedTable>Actor_Comun</ReferencedTable>
     <Columns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKActor_Comu999038">
@@ -1154,24 +1200,24 @@
       <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKEstadistic401889">
+  <ForeignKey name="FKEstadistic170628">
     <ReferenceTable>Estadistica_Artista</ReferenceTable>
     <ReferencedTable>Artista</ReferencedTable>
     <Columns>
-      <Column>ArtistaActor_ComunEmail</Column>
+      <Column>ArtistaActor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKActor_Comu201144">
+  <ForeignKey name="FKActor_Comu602152">
     <ReferenceTable>Actor_Comun</ReferenceTable>
     <ReferencedTable>Acceso_Dato</ReferencedTable>
     <Columns>
-      <Column>Acceso_DatoEmail</Column>
+      <Column>Acceso_DatoId</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKEstadistic679670">
@@ -1234,24 +1280,44 @@
       <Column>IdAlbum</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKActor_Comu36086">
+  <ForeignKey name="FKActor_Comu829486">
     <ReferenceTable>Actor_Comun_Actor_Comun</ReferenceTable>
     <ReferencedTable>Actor_Comun</ReferencedTable>
     <Columns>
-      <Column>Actor_ComunEmail</Column>
+      <Column>Actor_ComunId</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKActor_Comu855838">
+  <ForeignKey name="FKActor_Comu709570">
     <ReferenceTable>Actor_Comun_Actor_Comun</ReferenceTable>
     <ReferencedTable>Actor_Comun</ReferencedTable>
     <Columns>
-      <Column>Actor_ComunEmail2</Column>
+      <Column>Actor_ComunId2</Column>
     </Columns>
     <RefColumns>
-      <Column>Email</Column>
+      <Column>Id</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKAlbum383064">
+    <ReferenceTable>Album</ReferenceTable>
+    <ReferencedTable>Artista</ReferencedTable>
+    <Columns>
+      <Column>ArtistaActor_ComunId</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Actor_ComunId</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKCancion71053">
+    <ReferenceTable>Cancion</ReferenceTable>
+    <ReferencedTable>Administrador</ReferencedTable>
+    <Columns>
+      <Column>AdministradorActor_ComunId</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Actor_ComunId</Column>
     </RefColumns>
   </ForeignKey>
 </Model>

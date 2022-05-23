@@ -56,7 +56,7 @@ public class Evento implements Serializable {
 	
 	@ManyToOne(targetEntity=Artista.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="ArtistaActor_ComunEmail", referencedColumnName="Actor_ComunEmail") }, foreignKey=@ForeignKey(name="FKEvento792559"))	
+	@JoinColumns(value={ @JoinColumn(name="ArtistaActor_ComunId", referencedColumnName="Actor_ComunId", nullable=false) }, foreignKey=@ForeignKey(name="FKEvento779957"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private Artista artista;
 	
@@ -75,7 +75,7 @@ public class Evento implements Serializable {
 	
 	@ManyToMany(targetEntity=Actor_Comun.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Actor_Comun_Evento", joinColumns={ @JoinColumn(name="EventoIdEvento") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunEmail") })	
+	@JoinTable(name="Actor_Comun_Evento", joinColumns={ @JoinColumn(name="EventoIdEvento") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_usuario = new java.util.HashSet();
 	

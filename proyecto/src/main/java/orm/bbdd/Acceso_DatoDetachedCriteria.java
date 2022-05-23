@@ -19,36 +19,36 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class Acceso_DatoDetachedCriteria extends AbstractORMDetachedCriteria {
-	public final StringExpression email;
 	public final IntegerExpression id;
 	public final StringExpression contrasena;
+	public final StringExpression email;
 	public final StringExpression tipoUsuario;
 	public final IntegerExpression numIntentos;
 	public final StringExpression fechaBloqueo;
-	public final StringExpression usuarioId;
+	public final IntegerExpression usuarioId;
 	public final AssociationExpression usuario;
 	
 	public Acceso_DatoDetachedCriteria() {
 		super(Acceso_Dato.class, Acceso_DatoCriteria.class);
-		email = new StringExpression("email", this.getDetachedCriteria());
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
+		email = new StringExpression("email", this.getDetachedCriteria());
 		tipoUsuario = new StringExpression("tipoUsuario", this.getDetachedCriteria());
 		numIntentos = new IntegerExpression("numIntentos", this.getDetachedCriteria());
 		fechaBloqueo = new StringExpression("fechaBloqueo", this.getDetachedCriteria());
-		usuarioId = new StringExpression("usuario.email", this.getDetachedCriteria());
+		usuarioId = new IntegerExpression("usuario.id", this.getDetachedCriteria());
 		usuario = new AssociationExpression("usuario", this.getDetachedCriteria());
 	}
 	
 	public Acceso_DatoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, Acceso_DatoCriteria.class);
-		email = new StringExpression("email", this.getDetachedCriteria());
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
+		email = new StringExpression("email", this.getDetachedCriteria());
 		tipoUsuario = new StringExpression("tipoUsuario", this.getDetachedCriteria());
 		numIntentos = new IntegerExpression("numIntentos", this.getDetachedCriteria());
 		fechaBloqueo = new StringExpression("fechaBloqueo", this.getDetachedCriteria());
-		usuarioId = new StringExpression("usuario.email", this.getDetachedCriteria());
+		usuarioId = new IntegerExpression("usuario.id", this.getDetachedCriteria());
 		usuario = new AssociationExpression("usuario", this.getDetachedCriteria());
 	}
 	

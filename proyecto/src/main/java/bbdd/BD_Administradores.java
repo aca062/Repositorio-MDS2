@@ -7,11 +7,11 @@ public class BD_Administradores {
 	public BDPrincipal _bd_prin_administradores;
 	public Vector<Administrador> _contiene_administradores = new Vector<Administrador>();
 
-	public void editarFoto(String aFoto) {
+	public void editarFoto(String aFoto, int aIdUsuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editar_e_mail(String aEmail) {
+	public void editar_e_mail(String aEmail, int aIdUsuario) {
 		throw new UnsupportedOperationException();
 	}
 }

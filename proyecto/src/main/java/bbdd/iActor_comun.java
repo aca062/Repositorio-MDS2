@@ -1,42 +1,40 @@
 package bbdd;
 
 import orm.bbdd.Album;
-import interfaz.Artista_elemento;
-import interfaz.Estilo_admin;
-import interfaz.Cancion;
-import interfaz.Lista_de_reproduccion_ajena;
-import interfaz.Estadisticas;
-import interfaz.Usuario_registrado;
+import orm.bbdd.Artista;
+import orm.bbdd.Estilo;
+import orm.bbdd.Cancion;
+import orm.bbdd.Lista_de_reproduccion;
+import orm.bbdd.Estadistica;
+import orm.bbdd.Usuario_Registrado;
 
 public interface iActor_comun {
 
-	public void marcarFavorito(int aId);
+	public void marcarFavorito(int aIdCancion, int aIdUsuario);
 
 	public void anadir(String aNombre);
 
-	public void desmarcarFavorita(int aId);
+	public void desmarcarFavorita(int aIdCancion, int aIdUsuario);
 
 	public void crearLista(String aNombre);
 
 	public void seguirLista(int aIdLista);
 
-	public void seguir_dejarDeSeguirUsuario(String aNick);
+	public void seguir_dejarDeSeguirUsuario(String aNick, String aNickSeguido);
 
-	public void seguir_dejarDeSeguirArtista(String aNick);
+	public void seguir_dejarDeSeguirArtista(int aId, int aIdSeguido);
 
-	public void cargarAlbum(Album aAlbum);
+	public Album cargarAlbum(int aIdAlbum);
 
-	public void cargarArtista(Artista_elemento aArtista);
+	public Artista cargarArtista(int aIdArtista);
 
-	public void cargarEstilo(Estilo_admin aEstilo);
+	public Estilo cargarEstilo(int aIdEstilo);
 
-	public void cargarCancion(Cancion aCancion);
+	public Cancion cargarCancion(int aIdCancion);
 
-	public void verCreditos(String aTitulo, String[] aInterpretes, String[] aCompositores, String[] aProductores, String aTituloAlb);
+	public Lista_de_reproduccion cargarLista(int aIdLista);
 
-	public void cargarLista(Lista_de_reproduccion_ajena aLista);
+	public Estadistica cargarEstadisticas(int aIdEstadisticas);
 
-	public void cargarEstadisticas(Estadisticas aEstadisticas);
-
-	public void cargarUsuario(Usuario_registrado aUsuario);
+	public Usuario_Registrado cargarUsuario(int aIdUsuario);
 }

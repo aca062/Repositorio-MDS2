@@ -20,7 +20,7 @@ import org.orm.criteria.*;
 
 public class EventoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression idEvento;
-	public final StringExpression artistaId;
+	public final IntegerExpression artistaId;
 	public final AssociationExpression artista;
 	public final StringExpression foto;
 	public final DateExpression fecha;
@@ -31,7 +31,7 @@ public class EventoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public EventoDetachedCriteria() {
 		super(Evento.class, EventoCriteria.class);
 		idEvento = new IntegerExpression("idEvento", this.getDetachedCriteria());
-		artistaId = new StringExpression("artista.", this.getDetachedCriteria());
+		artistaId = new IntegerExpression("artista.", this.getDetachedCriteria());
 		artista = new AssociationExpression("artista", this.getDetachedCriteria());
 		foto = new StringExpression("foto", this.getDetachedCriteria());
 		fecha = new DateExpression("fecha", this.getDetachedCriteria());
@@ -43,7 +43,7 @@ public class EventoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public EventoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, EventoCriteria.class);
 		idEvento = new IntegerExpression("idEvento", this.getDetachedCriteria());
-		artistaId = new StringExpression("artista.", this.getDetachedCriteria());
+		artistaId = new IntegerExpression("artista.", this.getDetachedCriteria());
 		artista = new AssociationExpression("artista", this.getDetachedCriteria());
 		foto = new StringExpression("foto", this.getDetachedCriteria());
 		fecha = new DateExpression("fecha", this.getDetachedCriteria());

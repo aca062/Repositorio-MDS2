@@ -62,7 +62,7 @@ public class Lista_de_reproduccion implements Serializable {
 	
 	@ManyToMany(targetEntity=Actor_Comun.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="`Actor_Comun_Lista de reproduccion`", joinColumns={ @JoinColumn(name="`Lista de reproduccionIdLista`") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunEmail") })	
+	@JoinTable(name="`Actor_Comun_Lista de reproduccion`", joinColumns={ @JoinColumn(name="`Lista de reproduccionIdLista`") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_seguidor = new java.util.HashSet();
 	
@@ -83,7 +83,7 @@ public class Lista_de_reproduccion implements Serializable {
 	
 	@ManyToOne(targetEntity=Actor_Comun.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="Actor_ComunEmail", referencedColumnName="Email") }, foreignKey=@ForeignKey(name="FKLista de r82512"))	
+	@JoinColumns(value={ @JoinColumn(name="Actor_ComunId", referencedColumnName="Id", nullable=false) }, foreignKey=@ForeignKey(name="FKLista de r289111"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private Actor_Comun creador;
 	

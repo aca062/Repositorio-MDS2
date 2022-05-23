@@ -20,7 +20,7 @@ import org.orm.criteria.*;
 
 public class EventoCriteria extends AbstractORMCriteria {
 	public final IntegerExpression idEvento;
-	public final StringExpression artistaId;
+	public final IntegerExpression artistaId;
 	public final AssociationExpression artista;
 	public final StringExpression foto;
 	public final DateExpression fecha;
@@ -31,7 +31,7 @@ public class EventoCriteria extends AbstractORMCriteria {
 	public EventoCriteria(Criteria criteria) {
 		super(criteria);
 		idEvento = new IntegerExpression("idEvento", this);
-		artistaId = new StringExpression("artista.", this);
+		artistaId = new IntegerExpression("artista.", this);
 		artista = new AssociationExpression("artista", this);
 		foto = new StringExpression("foto", this);
 		fecha = new DateExpression("fecha", this);

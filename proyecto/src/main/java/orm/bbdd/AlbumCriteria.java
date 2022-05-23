@@ -20,6 +20,8 @@ import org.orm.criteria.*;
 
 public class AlbumCriteria extends AbstractORMCriteria {
 	public final IntegerExpression idAlbum;
+	public final IntegerExpression artistaId;
+	public final AssociationExpression artista;
 	public final StringExpression imagen;
 	public final StringExpression titulo;
 	public final DateExpression fechaEdicion;
@@ -29,6 +31,8 @@ public class AlbumCriteria extends AbstractORMCriteria {
 	public AlbumCriteria(Criteria criteria) {
 		super(criteria);
 		idAlbum = new IntegerExpression("idAlbum", this);
+		artistaId = new IntegerExpression("artista.", this);
+		artista = new AssociationExpression("artista", this);
 		imagen = new StringExpression("imagen", this);
 		titulo = new StringExpression("titulo", this);
 		fechaEdicion = new DateExpression("fechaEdicion", this);
@@ -42,6 +46,10 @@ public class AlbumCriteria extends AbstractORMCriteria {
 	
 	public AlbumCriteria() throws PersistentException {
 		this(MDS2PersistentManager.instance().getSession());
+	}
+	
+	public ArtistaCriteria createArtistaCriteria() {
+		return new ArtistaCriteria(createCriteria("artista"));
 	}
 	
 	public CancionCriteria createCancionesCriteria() {

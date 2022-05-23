@@ -97,6 +97,18 @@ public class Estadistica implements Serializable {
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_albums = new java.util.HashSet();
 	
+	private void setId(int value) {
+		this.id = value;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public int getORMID() {
+		return getId();
+	}
+	
 	public void setTiempoAnual(double value) {
 		this.tiempoAnual = value;
 	}
@@ -111,18 +123,6 @@ public class Estadistica implements Serializable {
 	
 	public double[] getTiempoSemana() {
 		return tiempoSemana;
-	}
-	
-	private void setId(int value) {
-		this.id = value;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	
-	public int getORMID() {
-		return getId();
 	}
 	
 	public void setUsuario(Actor_Comun value) {

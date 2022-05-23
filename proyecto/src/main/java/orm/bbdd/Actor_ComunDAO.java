@@ -19,10 +19,10 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class Actor_ComunDAO {
-	public static Actor_Comun loadActor_ComunByORMID(String email) throws PersistentException {
+	public static Actor_Comun loadActor_ComunByORMID(int id) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return loadActor_ComunByORMID(session, email);
+			return loadActor_ComunByORMID(session, id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,10 +30,10 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static Actor_Comun getActor_ComunByORMID(String email) throws PersistentException {
+	public static Actor_Comun getActor_ComunByORMID(int id) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return getActor_ComunByORMID(session, email);
+			return getActor_ComunByORMID(session, id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -41,10 +41,10 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static Actor_Comun loadActor_ComunByORMID(String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Actor_Comun loadActor_ComunByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return loadActor_ComunByORMID(session, email, lockMode);
+			return loadActor_ComunByORMID(session, id, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -52,10 +52,10 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static Actor_Comun getActor_ComunByORMID(String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Actor_Comun getActor_ComunByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return getActor_ComunByORMID(session, email, lockMode);
+			return getActor_ComunByORMID(session, id, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -63,9 +63,9 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static Actor_Comun loadActor_ComunByORMID(PersistentSession session, String email) throws PersistentException {
+	public static Actor_Comun loadActor_ComunByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Actor_Comun) session.load(Actor_Comun.class, email);
+			return (Actor_Comun) session.load(Actor_Comun.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static Actor_Comun getActor_ComunByORMID(PersistentSession session, String email) throws PersistentException {
+	public static Actor_Comun getActor_ComunByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Actor_Comun) session.get(Actor_Comun.class, email);
+			return (Actor_Comun) session.get(Actor_Comun.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static Actor_Comun loadActor_ComunByORMID(PersistentSession session, String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Actor_Comun loadActor_ComunByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Actor_Comun) session.load(Actor_Comun.class, email, lockMode);
+			return (Actor_Comun) session.load(Actor_Comun.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static Actor_Comun getActor_ComunByORMID(PersistentSession session, String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Actor_Comun getActor_ComunByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Actor_Comun) session.get(Actor_Comun.class, email, lockMode);
+			return (Actor_Comun) session.get(Actor_Comun.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class Actor_ComunDAO {
 	}
 	
 	public static List queryActor_Comun(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Actor_Comun as Actor_Comun");
+		StringBuffer sb = new StringBuffer("From Actor_Comun as Actor_Comun");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class Actor_ComunDAO {
 	}
 	
 	public static List queryActor_Comun(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Actor_Comun as Actor_Comun");
+		StringBuffer sb = new StringBuffer("From Actor_Comun as Actor_Comun");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class Actor_ComunDAO {
 	}
 	
 	public static java.util.Iterator iterateActor_ComunByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Actor_Comun as Actor_Comun");
+		StringBuffer sb = new StringBuffer("From Actor_Comun as Actor_Comun");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class Actor_ComunDAO {
 	}
 	
 	public static java.util.Iterator iterateActor_ComunByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Actor_Comun as Actor_Comun");
+		StringBuffer sb = new StringBuffer("From Actor_Comun as Actor_Comun");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)

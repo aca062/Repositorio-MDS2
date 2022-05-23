@@ -9,6 +9,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.PasswordField;
 
 /**
  * A Designer generated component for the vista-registrarse template.
@@ -44,9 +45,9 @@ public class VistaRegistrarse extends LitTemplate {
 	@Id("botonCancelar")
 	private Button botonCancelar;
 	@Id("repetirContrasena")
-	private TextField repetirContrasena;
+	private PasswordField repetirContrasena;
 	@Id("contrasena")
-	private TextField contrasena;
+	private PasswordField contrasena;
 
 	/**
      * Creates a new VistaRegistrarse.
@@ -143,19 +144,19 @@ public class VistaRegistrarse extends LitTemplate {
 		this.botonCancelar = botonCancelar;
 	}
 
-	public TextField getRepetirContrasena() {
+	public PasswordField getRepetirContrasena() {
 		return repetirContrasena;
 	}
 
-	public void setRepetirContrasena(TextField repetirContrasena) {
+	public void setRepetirContrasena(PasswordField repetirContrasena) {
 		this.repetirContrasena = repetirContrasena;
 	}
 
-	public TextField getContrasena() {
+	public PasswordField getContrasena() {
 		return contrasena;
 	}
 
-	public void setContrasena(TextField contrasena) {
+	public void setContrasena(PasswordField contrasena) {
 		this.contrasena = contrasena;
 	}
 

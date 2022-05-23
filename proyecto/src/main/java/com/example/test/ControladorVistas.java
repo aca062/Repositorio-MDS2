@@ -24,6 +24,7 @@ public class ControladorVistas {
 	protected static void SetReproductor(VerticalLayout layout) {
 		layoutReproductor = layout;
 		AudioPlayer reproductor = new AudioPlayer();
+		reproductor.getElement().getStyle().set("width", "100%");
 		layout.add(reproductor);
 		layoutReproductor.getStyle().set("width", "100%");
 	}

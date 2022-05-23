@@ -19,11 +19,12 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class Actor_ComunCriteria extends AbstractORMCriteria {
-	public final StringExpression email;
-	public final StringExpression acceso_DatoId;
+	public final IntegerExpression id;
+	public final IntegerExpression acceso_DatoId;
 	public final AssociationExpression acceso_Dato;
 	public final IntegerExpression estadisticaId;
 	public final AssociationExpression estadistica;
+	public final StringExpression email;
 	public final StringExpression contrasena;
 	public final StringExpression nick;
 	public final StringExpression foto;
@@ -36,11 +37,12 @@ public class Actor_ComunCriteria extends AbstractORMCriteria {
 	
 	public Actor_ComunCriteria(Criteria criteria) {
 		super(criteria);
-		email = new StringExpression("email", this);
-		acceso_DatoId = new StringExpression("acceso_Dato.email", this);
+		id = new IntegerExpression("id", this);
+		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this);
 		acceso_Dato = new AssociationExpression("acceso_Dato", this);
 		estadisticaId = new IntegerExpression("estadistica.id", this);
 		estadistica = new AssociationExpression("estadistica", this);
+		email = new StringExpression("email", this);
 		contrasena = new StringExpression("contrasena", this);
 		nick = new StringExpression("nick", this);
 		foto = new StringExpression("foto", this);

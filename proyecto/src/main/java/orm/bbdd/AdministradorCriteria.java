@@ -19,11 +19,12 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class AdministradorCriteria extends AbstractORMCriteria {
-	public final StringExpression email;
-	public final StringExpression acceso_DatoId;
+	public final IntegerExpression id;
+	public final IntegerExpression acceso_DatoId;
 	public final AssociationExpression acceso_Dato;
 	public final IntegerExpression estadisticaId;
 	public final AssociationExpression estadistica;
+	public final StringExpression email;
 	public final StringExpression contrasena;
 	public final StringExpression nick;
 	public final StringExpression foto;
@@ -33,14 +34,17 @@ public class AdministradorCriteria extends AbstractORMCriteria {
 	public final CollectionExpression listas_de_reproduccion_seguidas;
 	public final CollectionExpression notificaciones;
 	public final CollectionExpression seguidor;
+	public final IntegerExpression numCanciones;
+	public final CollectionExpression cancions;
 	
 	public AdministradorCriteria(Criteria criteria) {
 		super(criteria);
-		email = new StringExpression("email", this);
-		acceso_DatoId = new StringExpression("acceso_Dato.email", this);
+		id = new IntegerExpression("id", this);
+		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this);
 		acceso_Dato = new AssociationExpression("acceso_Dato", this);
 		estadisticaId = new IntegerExpression("estadistica.id", this);
 		estadistica = new AssociationExpression("estadistica", this);
+		email = new StringExpression("email", this);
 		contrasena = new StringExpression("contrasena", this);
 		nick = new StringExpression("nick", this);
 		foto = new StringExpression("foto", this);
@@ -50,6 +54,8 @@ public class AdministradorCriteria extends AbstractORMCriteria {
 		listas_de_reproduccion_seguidas = new CollectionExpression("ORM_listas_de_reproduccion_seguidas", this);
 		notificaciones = new CollectionExpression("ORM_notificaciones", this);
 		seguidor = new CollectionExpression("ORM_seguidor", this);
+		numCanciones = new IntegerExpression("numCanciones", this);
+		cancions = new CollectionExpression("ORM_cancions", this);
 	}
 	
 	public AdministradorCriteria(PersistentSession session) {
@@ -58,6 +64,10 @@ public class AdministradorCriteria extends AbstractORMCriteria {
 	
 	public AdministradorCriteria() throws PersistentException {
 		this(MDS2PersistentManager.instance().getSession());
+	}
+	
+	public CancionCriteria createCancionsCriteria() {
+		return new CancionCriteria(createCriteria("ORM_cancions"));
 	}
 	
 	public Acceso_DatoCriteria createAcceso_DatoCriteria() {

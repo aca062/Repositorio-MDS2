@@ -43,7 +43,11 @@ public class Cancion implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == ORMConstants.KEY_CANCION_ESTILO) {
+		if (key == ORMConstants.KEY_CANCION_ADMINISTRADOR) {
+			this.administrador = (Administrador) owner;
+		}
+		
+		else if (key == ORMConstants.KEY_CANCION_ESTILO) {
 			this.estilo = (Estilo) owner;
 		}
 	}
@@ -65,6 +69,12 @@ public class Cancion implements Serializable {
 	@GeneratedValue(generator="BBDD_CANCION_IDCANCION_GENERATOR")	
 	@org.hibernate.annotations.GenericGenerator(name="BBDD_CANCION_IDCANCION_GENERATOR", strategy="native")	
 	private int idCancion;
+	
+	@ManyToOne(targetEntity=Administrador.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
+	@JoinColumns(value={ @JoinColumn(name="AdministradorActor_ComunId", referencedColumnName="Actor_ComunId", nullable=false) }, foreignKey=@ForeignKey(name="FKCancion71053"))	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
+	private Administrador administrador;
 	
 	@ManyToOne(targetEntity=Estilo.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
@@ -101,7 +111,7 @@ public class Cancion implements Serializable {
 	
 	@ManyToMany(targetEntity=Actor_Comun.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Actor_Comun_Cancion", joinColumns={ @JoinColumn(name="CancionIdCancion") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunEmail") })	
+	@JoinTable(name="Actor_Comun_Cancion", joinColumns={ @JoinColumn(name="CancionIdCancion") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_usuario = new java.util.HashSet();
 	
@@ -207,6 +217,30 @@ public class Cancion implements Serializable {
 	
 	@Transient	
 	public final EstadisticaSetCollection estadisticas = new EstadisticaSetCollection(this, _ormAdapter, ORMConstants.KEY_CANCION_ESTADISTICAS, ORMConstants.KEY_ESTADISTICA_CANCIONS, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	
+	public void setAdministrador(Administrador value) {
+		if (administrador != null) {
+			administrador.cancions.remove(this);
+		}
+		if (value != null) {
+			value.cancions.add(this);
+		}
+	}
+	
+	public Administrador getAdministrador() {
+		return administrador;
+	}
+	
+	/**
+	 * This method is for internal use only.
+	 */
+	public void setORM_Administrador(Administrador value) {
+		this.administrador = value;
+	}
+	
+	private Administrador getORM_Administrador() {
+		return administrador;
+	}
 	
 	private void setORM_Listas_de_reproduccion(java.util.Set value) {
 		this.ORM_listas_de_reproduccion = value;

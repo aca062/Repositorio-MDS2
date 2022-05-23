@@ -49,10 +49,12 @@ public class Registrarse  extends VistaRegistrarse{
 			ControladorVistas.PopUpBasico("Las dos contraseñas tienen que ser iguales");
 		}else {
 			cib.registro(this.geteMail().getValue(), this.getContrasena().getValue(), this.getNick().getValue(), null);
-			/*
-			_verificarE_mail = new Verificar_e_mail();
-			_verificarE_mail.getStyle().set("width", "100%");
-			ControladorVistas.CambiarContenido(_verificarE_mail);*/
+			ControladorVistas.PopUpBasico("La cuenta se ha creado correctamente");
+			/*_verificarE_mail = new Verificar_e_mail();
+			_verificarE_mail.getStyle().set("width", "100%");*/
+			_loginCibernauta = new Login_cibernauta();
+			_loginCibernauta.getStyle().set("width", "100%");
+			ControladorVistas.CambiarContenido(_loginCibernauta);
 		}
 	}
 

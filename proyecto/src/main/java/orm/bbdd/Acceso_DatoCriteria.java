@@ -19,24 +19,24 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class Acceso_DatoCriteria extends AbstractORMCriteria {
-	public final StringExpression email;
 	public final IntegerExpression id;
 	public final StringExpression contrasena;
+	public final StringExpression email;
 	public final StringExpression tipoUsuario;
 	public final IntegerExpression numIntentos;
 	public final StringExpression fechaBloqueo;
-	public final StringExpression usuarioId;
+	public final IntegerExpression usuarioId;
 	public final AssociationExpression usuario;
 	
 	public Acceso_DatoCriteria(Criteria criteria) {
 		super(criteria);
-		email = new StringExpression("email", this);
 		id = new IntegerExpression("id", this);
 		contrasena = new StringExpression("contrasena", this);
+		email = new StringExpression("email", this);
 		tipoUsuario = new StringExpression("tipoUsuario", this);
 		numIntentos = new IntegerExpression("numIntentos", this);
 		fechaBloqueo = new StringExpression("fechaBloqueo", this);
-		usuarioId = new StringExpression("usuario.email", this);
+		usuarioId = new IntegerExpression("usuario.id", this);
 		usuario = new AssociationExpression("usuario", this);
 	}
 	

@@ -20,6 +20,8 @@ import org.orm.criteria.*;
 
 public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression idCancion;
+	public final IntegerExpression administradorId;
+	public final AssociationExpression administrador;
 	public final IntegerExpression estiloId;
 	public final AssociationExpression estilo;
 	public final StringExpression titulo;
@@ -34,6 +36,8 @@ public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public CancionDetachedCriteria() {
 		super(Cancion.class, CancionCriteria.class);
 		idCancion = new IntegerExpression("idCancion", this.getDetachedCriteria());
+		administradorId = new IntegerExpression("administrador.", this.getDetachedCriteria());
+		administrador = new AssociationExpression("administrador", this.getDetachedCriteria());
 		estiloId = new IntegerExpression("estilo.idEstilo", this.getDetachedCriteria());
 		estilo = new AssociationExpression("estilo", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
@@ -49,6 +53,8 @@ public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public CancionDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, CancionCriteria.class);
 		idCancion = new IntegerExpression("idCancion", this.getDetachedCriteria());
+		administradorId = new IntegerExpression("administrador.", this.getDetachedCriteria());
+		administrador = new AssociationExpression("administrador", this.getDetachedCriteria());
 		estiloId = new IntegerExpression("estilo.idEstilo", this.getDetachedCriteria());
 		estilo = new AssociationExpression("estilo", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
@@ -59,6 +65,10 @@ public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 		listas_de_reproduccion = new CollectionExpression("ORM_listas_de_reproduccion", this.getDetachedCriteria());
 		album = new CollectionExpression("ORM_album", this.getDetachedCriteria());
 		artistas = new CollectionExpression("ORM_artistas", this.getDetachedCriteria());
+	}
+	
+	public AdministradorDetachedCriteria createAdministradorCriteria() {
+		return new AdministradorDetachedCriteria(createCriteria("administrador"));
 	}
 	
 	public EstiloDetachedCriteria createEstiloCriteria() {

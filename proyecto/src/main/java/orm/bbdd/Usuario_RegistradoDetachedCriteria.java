@@ -19,11 +19,12 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class Usuario_RegistradoDetachedCriteria extends AbstractORMDetachedCriteria {
-	public final StringExpression email;
-	public final StringExpression acceso_DatoId;
+	public final IntegerExpression id;
+	public final IntegerExpression acceso_DatoId;
 	public final AssociationExpression acceso_Dato;
 	public final IntegerExpression estadisticaId;
 	public final AssociationExpression estadistica;
+	public final StringExpression email;
 	public final StringExpression contrasena;
 	public final StringExpression nick;
 	public final StringExpression foto;
@@ -36,11 +37,12 @@ public class Usuario_RegistradoDetachedCriteria extends AbstractORMDetachedCrite
 	
 	public Usuario_RegistradoDetachedCriteria() {
 		super(Usuario_Registrado.class, Usuario_RegistradoCriteria.class);
-		email = new StringExpression("email", this.getDetachedCriteria());
-		acceso_DatoId = new StringExpression("acceso_Dato.email", this.getDetachedCriteria());
+		id = new IntegerExpression("id", this.getDetachedCriteria());
+		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this.getDetachedCriteria());
 		acceso_Dato = new AssociationExpression("acceso_Dato", this.getDetachedCriteria());
 		estadisticaId = new IntegerExpression("estadistica.id", this.getDetachedCriteria());
 		estadistica = new AssociationExpression("estadistica", this.getDetachedCriteria());
+		email = new StringExpression("email", this.getDetachedCriteria());
 		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		nick = new StringExpression("nick", this.getDetachedCriteria());
 		foto = new StringExpression("foto", this.getDetachedCriteria());
@@ -54,11 +56,12 @@ public class Usuario_RegistradoDetachedCriteria extends AbstractORMDetachedCrite
 	
 	public Usuario_RegistradoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, Usuario_RegistradoCriteria.class);
-		email = new StringExpression("email", this.getDetachedCriteria());
-		acceso_DatoId = new StringExpression("acceso_Dato.email", this.getDetachedCriteria());
+		id = new IntegerExpression("id", this.getDetachedCriteria());
+		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this.getDetachedCriteria());
 		acceso_Dato = new AssociationExpression("acceso_Dato", this.getDetachedCriteria());
 		estadisticaId = new IntegerExpression("estadistica.id", this.getDetachedCriteria());
 		estadistica = new AssociationExpression("estadistica", this.getDetachedCriteria());
+		email = new StringExpression("email", this.getDetachedCriteria());
 		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		nick = new StringExpression("nick", this.getDetachedCriteria());
 		foto = new StringExpression("foto", this.getDetachedCriteria());

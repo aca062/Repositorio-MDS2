@@ -24,7 +24,7 @@ public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCr
 	public final StringExpression nombre;
 	public final CollectionExpression canciones;
 	public final CollectionExpression estadisticas;
-	public final StringExpression creadorId;
+	public final IntegerExpression creadorId;
 	public final AssociationExpression creador;
 	
 	public Lista_de_reproduccionDetachedCriteria() {
@@ -34,7 +34,7 @@ public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCr
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		canciones = new CollectionExpression("ORM_canciones", this.getDetachedCriteria());
 		estadisticas = new CollectionExpression("ORM_estadisticas", this.getDetachedCriteria());
-		creadorId = new StringExpression("creador.email", this.getDetachedCriteria());
+		creadorId = new IntegerExpression("creador.id", this.getDetachedCriteria());
 		creador = new AssociationExpression("creador", this.getDetachedCriteria());
 	}
 	
@@ -45,7 +45,7 @@ public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCr
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		canciones = new CollectionExpression("ORM_canciones", this.getDetachedCriteria());
 		estadisticas = new CollectionExpression("ORM_estadisticas", this.getDetachedCriteria());
-		creadorId = new StringExpression("creador.email", this.getDetachedCriteria());
+		creadorId = new IntegerExpression("creador.id", this.getDetachedCriteria());
 		creador = new AssociationExpression("creador", this.getDetachedCriteria());
 	}
 	

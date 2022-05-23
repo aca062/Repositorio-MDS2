@@ -12,7 +12,7 @@ public class BD_Estilos {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarEstilo(String aNombre) {
+	public void editarEstilo(String aNombre, Object aIdEstilo) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -20,7 +20,7 @@ public class BD_Estilos {
 		throw new UnsupportedOperationException();
 	}
 
-	public void cargarEstilo(Estilo_admin aEstilo) {
+	public Estilo cargarEstilo(int aIdEstilo) {
 		throw new UnsupportedOperationException();
 	}
 

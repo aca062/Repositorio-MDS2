@@ -3,11 +3,9 @@
  * License Type: Academic
  */
 package orm.ormsamples;
-
-import org.orm.*;
-
 import orm.bbdd.*;
 
+import org.orm.*;
 public class DeleteMDS2Data {
 	public void deleteTestData() throws PersistentException {
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();

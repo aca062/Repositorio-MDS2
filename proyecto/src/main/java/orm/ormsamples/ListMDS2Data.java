@@ -3,7 +3,6 @@
  * License Type: Academic
  */
 package orm.ormsamples;
-
 import orm.bbdd.*;
 
 import org.orm.*;
@@ -117,7 +116,7 @@ public class ListMDS2Data {
 		System.out.println("Listing Acceso_Dato by Criteria...");
 		Acceso_DatoCriteria bBDDAcceso_DatoCriteria = new Acceso_DatoCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//bBDDAcceso_DatoCriteria.email.eq();
+		//bBDDAcceso_DatoCriteria.id.eq();
 		bBDDAcceso_DatoCriteria.setMaxResults(ROW_COUNT);
 		Acceso_Dato[] bBDDAcceso_Datos = bBDDAcceso_DatoCriteria.listAcceso_Dato();
 		length =bBDDAcceso_Datos== null ? 0 : Math.min(bBDDAcceso_Datos.length, ROW_COUNT); 
@@ -189,7 +188,7 @@ public class ListMDS2Data {
 		System.out.println("Listing Actor_Comun by Criteria...");
 		Actor_ComunCriteria bBDDActor_ComunCriteria = new Actor_ComunCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//bBDDActor_ComunCriteria.email.eq();
+		//bBDDActor_ComunCriteria.id.eq();
 		bBDDActor_ComunCriteria.setMaxResults(ROW_COUNT);
 		Actor_Comun[] bBDDActor_Comuns = bBDDActor_ComunCriteria.listActor_Comun();
 		length =bBDDActor_Comuns== null ? 0 : Math.min(bBDDActor_Comuns.length, ROW_COUNT); 
@@ -201,7 +200,7 @@ public class ListMDS2Data {
 		System.out.println("Listing Administrador by Criteria...");
 		AdministradorCriteria bBDDAdministradorCriteria = new AdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//bBDDAdministradorCriteria.email.eq();
+		//bBDDAdministradorCriteria.id.eq();
 		bBDDAdministradorCriteria.setMaxResults(ROW_COUNT);
 		Administrador[] bBDDAdministradors = bBDDAdministradorCriteria.listAdministrador();
 		length =bBDDAdministradors== null ? 0 : Math.min(bBDDAdministradors.length, ROW_COUNT); 
@@ -213,7 +212,7 @@ public class ListMDS2Data {
 		System.out.println("Listing Artista by Criteria...");
 		ArtistaCriteria bBDDArtistaCriteria = new ArtistaCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//bBDDArtistaCriteria.email.eq();
+		//bBDDArtistaCriteria.id.eq();
 		bBDDArtistaCriteria.setMaxResults(ROW_COUNT);
 		Artista[] bBDDArtistas = bBDDArtistaCriteria.listArtista();
 		length =bBDDArtistas== null ? 0 : Math.min(bBDDArtistas.length, ROW_COUNT); 
@@ -225,7 +224,7 @@ public class ListMDS2Data {
 		System.out.println("Listing Usuario_Registrado by Criteria...");
 		Usuario_RegistradoCriteria bBDDUsuario_RegistradoCriteria = new Usuario_RegistradoCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//bBDDUsuario_RegistradoCriteria.email.eq();
+		//bBDDUsuario_RegistradoCriteria.id.eq();
 		bBDDUsuario_RegistradoCriteria.setMaxResults(ROW_COUNT);
 		Usuario_Registrado[] bBDDUsuario_Registrados = bBDDUsuario_RegistradoCriteria.listUsuario_Registrado();
 		length =bBDDUsuario_Registrados== null ? 0 : Math.min(bBDDUsuario_Registrados.length, ROW_COUNT); 

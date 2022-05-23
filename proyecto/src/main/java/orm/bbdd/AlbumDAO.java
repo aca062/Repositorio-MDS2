@@ -148,7 +148,7 @@ public class AlbumDAO {
 	}
 	
 	public static List queryAlbum(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Album as Album");
+		StringBuffer sb = new StringBuffer("From Album as Album");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class AlbumDAO {
 	}
 	
 	public static List queryAlbum(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Album as Album");
+		StringBuffer sb = new StringBuffer("From Album as Album");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class AlbumDAO {
 	}
 	
 	public static java.util.Iterator iterateAlbumByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Album as Album");
+		StringBuffer sb = new StringBuffer("From Album as Album");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class AlbumDAO {
 	}
 	
 	public static java.util.Iterator iterateAlbumByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Album as Album");
+		StringBuffer sb = new StringBuffer("From Album as Album");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -323,6 +323,10 @@ public class AlbumDAO {
 	
 	public static boolean deleteAndDissociate(Album album)throws PersistentException {
 		try {
+			if (album.getArtista() != null) {
+				album.getArtista().albums.remove(album);
+			}
+			
 			Cancion[] lCancioness = album.canciones.toArray();
 			for(int i = 0; i < lCancioness.length; i++) {
 				lCancioness[i].album.remove(album);
@@ -341,6 +345,10 @@ public class AlbumDAO {
 	
 	public static boolean deleteAndDissociate(Album album, org.orm.PersistentSession session)throws PersistentException {
 		try {
+			if (album.getArtista() != null) {
+				album.getArtista().albums.remove(album);
+			}
+			
 			Cancion[] lCancioness = album.canciones.toArray();
 			for(int i = 0; i < lCancioness.length; i++) {
 				lCancioness[i].album.remove(album);

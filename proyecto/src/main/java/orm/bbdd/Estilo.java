@@ -57,7 +57,7 @@ public class Estilo implements Serializable {
 	
 	@ManyToMany(targetEntity=Artista.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Artista_Estilo", joinColumns={ @JoinColumn(name="EstiloIdEstilo") }, inverseJoinColumns={ @JoinColumn(name="ArtistaActor_ComunEmail") })	
+	@JoinTable(name="Artista_Estilo", joinColumns={ @JoinColumn(name="EstiloIdEstilo") }, inverseJoinColumns={ @JoinColumn(name="ArtistaActor_ComunId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_artistas = new java.util.HashSet();
 	

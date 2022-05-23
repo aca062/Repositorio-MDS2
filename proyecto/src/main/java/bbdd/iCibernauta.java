@@ -2,7 +2,7 @@ package bbdd;
 
 public interface iCibernauta {
 
-	public void inicioDeSesion(String aEmail, String aContrasena);
+	public boolean inicioDeSesion(String aEmail, String aContrasena);
 
 	public void registro(String aEmail, String aContrasena, String aNick, String aImagen);
 

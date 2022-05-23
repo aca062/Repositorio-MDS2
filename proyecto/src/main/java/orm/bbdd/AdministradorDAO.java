@@ -19,10 +19,10 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class AdministradorDAO {
-	public static Administrador loadAdministradorByORMID(String email) throws PersistentException {
+	public static Administrador loadAdministradorByORMID(int id) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return loadAdministradorByORMID(session, email);
+			return loadAdministradorByORMID(session, id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,10 +30,10 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador getAdministradorByORMID(String email) throws PersistentException {
+	public static Administrador getAdministradorByORMID(int id) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return getAdministradorByORMID(session, email);
+			return getAdministradorByORMID(session, id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -41,10 +41,10 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador loadAdministradorByORMID(String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Administrador loadAdministradorByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return loadAdministradorByORMID(session, email, lockMode);
+			return loadAdministradorByORMID(session, id, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -52,10 +52,10 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador getAdministradorByORMID(String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Administrador getAdministradorByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return getAdministradorByORMID(session, email, lockMode);
+			return getAdministradorByORMID(session, id, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -63,9 +63,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador loadAdministradorByORMID(PersistentSession session, String email) throws PersistentException {
+	public static Administrador loadAdministradorByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Administrador) session.load(Administrador.class, email);
+			return (Administrador) session.load(Administrador.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador getAdministradorByORMID(PersistentSession session, String email) throws PersistentException {
+	public static Administrador getAdministradorByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Administrador) session.get(Administrador.class, email);
+			return (Administrador) session.get(Administrador.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador loadAdministradorByORMID(PersistentSession session, String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Administrador loadAdministradorByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Administrador) session.load(Administrador.class, email, lockMode);
+			return (Administrador) session.load(Administrador.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador getAdministradorByORMID(PersistentSession session, String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Administrador getAdministradorByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Administrador) session.get(Administrador.class, email, lockMode);
+			return (Administrador) session.get(Administrador.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class AdministradorDAO {
 	}
 	
 	public static List queryAdministrador(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Administrador as Administrador");
+		StringBuffer sb = new StringBuffer("From Administrador as Administrador");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class AdministradorDAO {
 	}
 	
 	public static List queryAdministrador(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Administrador as Administrador");
+		StringBuffer sb = new StringBuffer("From Administrador as Administrador");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class AdministradorDAO {
 	}
 	
 	public static java.util.Iterator iterateAdministradorByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Administrador as Administrador");
+		StringBuffer sb = new StringBuffer("From Administrador as Administrador");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class AdministradorDAO {
 	}
 	
 	public static java.util.Iterator iterateAdministradorByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Administrador as Administrador");
+		StringBuffer sb = new StringBuffer("From Administrador as Administrador");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -323,6 +323,10 @@ public class AdministradorDAO {
 	
 	public static boolean deleteAndDissociate(Administrador administrador)throws PersistentException {
 		try {
+			Cancion[] lCancionss = administrador.cancions.toArray();
+			for(int i = 0; i < lCancionss.length; i++) {
+				lCancionss[i].setAdministrador(null);
+			}
 			if (administrador.getAcceso_Dato() != null) {
 				administrador.getAcceso_Dato().setUsuario(null);
 			}
@@ -365,6 +369,10 @@ public class AdministradorDAO {
 	
 	public static boolean deleteAndDissociate(Administrador administrador, org.orm.PersistentSession session)throws PersistentException {
 		try {
+			Cancion[] lCancionss = administrador.cancions.toArray();
+			for(int i = 0; i < lCancionss.length; i++) {
+				lCancionss[i].setAdministrador(null);
+			}
 			if (administrador.getAcceso_Dato() != null) {
 				administrador.getAcceso_Dato().setUsuario(null);
 			}

@@ -13,7 +13,7 @@ public class BD_Albumes {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen) {
+	public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, int aIdAlbum) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -21,7 +21,7 @@ public class BD_Albumes {
 		throw new UnsupportedOperationException();
 	}
 
-	public void cargarAlbum(Album aAlbum) {
+	public Album cargarAlbum(int aIdAlbum) {
 		throw new UnsupportedOperationException();
 	}
 

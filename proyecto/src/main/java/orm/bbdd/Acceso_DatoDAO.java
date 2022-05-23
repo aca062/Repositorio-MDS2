@@ -19,10 +19,10 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class Acceso_DatoDAO {
-	public static Acceso_Dato loadAcceso_DatoByORMID(String email) throws PersistentException {
+	public static Acceso_Dato loadAcceso_DatoByORMID(int id) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return loadAcceso_DatoByORMID(session, email);
+			return loadAcceso_DatoByORMID(session, id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,10 +30,10 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static Acceso_Dato getAcceso_DatoByORMID(String email) throws PersistentException {
+	public static Acceso_Dato getAcceso_DatoByORMID(int id) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return getAcceso_DatoByORMID(session, email);
+			return getAcceso_DatoByORMID(session, id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -41,10 +41,10 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static Acceso_Dato loadAcceso_DatoByORMID(String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Acceso_Dato loadAcceso_DatoByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return loadAcceso_DatoByORMID(session, email, lockMode);
+			return loadAcceso_DatoByORMID(session, id, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -52,10 +52,10 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static Acceso_Dato getAcceso_DatoByORMID(String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Acceso_Dato getAcceso_DatoByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return getAcceso_DatoByORMID(session, email, lockMode);
+			return getAcceso_DatoByORMID(session, id, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -63,9 +63,9 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static Acceso_Dato loadAcceso_DatoByORMID(PersistentSession session, String email) throws PersistentException {
+	public static Acceso_Dato loadAcceso_DatoByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Acceso_Dato) session.load(Acceso_Dato.class, email);
+			return (Acceso_Dato) session.load(Acceso_Dato.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static Acceso_Dato getAcceso_DatoByORMID(PersistentSession session, String email) throws PersistentException {
+	public static Acceso_Dato getAcceso_DatoByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Acceso_Dato) session.get(Acceso_Dato.class, email);
+			return (Acceso_Dato) session.get(Acceso_Dato.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static Acceso_Dato loadAcceso_DatoByORMID(PersistentSession session, String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Acceso_Dato loadAcceso_DatoByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Acceso_Dato) session.load(Acceso_Dato.class, email, lockMode);
+			return (Acceso_Dato) session.load(Acceso_Dato.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static Acceso_Dato getAcceso_DatoByORMID(PersistentSession session, String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Acceso_Dato getAcceso_DatoByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Acceso_Dato) session.get(Acceso_Dato.class, email, lockMode);
+			return (Acceso_Dato) session.get(Acceso_Dato.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class Acceso_DatoDAO {
 	}
 	
 	public static List queryAcceso_Dato(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Acceso_Dato as Acceso_Dato");
+		StringBuffer sb = new StringBuffer("From Acceso_Dato as Acceso_Dato");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class Acceso_DatoDAO {
 	}
 	
 	public static List queryAcceso_Dato(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Acceso_Dato as Acceso_Dato");
+		StringBuffer sb = new StringBuffer("From Acceso_Dato as Acceso_Dato");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class Acceso_DatoDAO {
 	}
 	
 	public static java.util.Iterator iterateAcceso_DatoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Acceso_Dato as Acceso_Dato");
+		StringBuffer sb = new StringBuffer("From Acceso_Dato as Acceso_Dato");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class Acceso_DatoDAO {
 	}
 	
 	public static java.util.Iterator iterateAcceso_DatoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From bbdd.Acceso_Dato as Acceso_Dato");
+		StringBuffer sb = new StringBuffer("From Acceso_Dato as Acceso_Dato");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)

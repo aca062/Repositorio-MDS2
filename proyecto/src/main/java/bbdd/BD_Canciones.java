@@ -1,8 +1,8 @@
 package bbdd;
 
 import java.util.Vector;
+// import BBDD.Cancion;
 import orm.bbdd.Cancion;
-// import interfaz.Cancion;
 
 public class BD_Canciones {
 	public BDPrincipal _bd_prin_canciones;
@@ -12,11 +12,11 @@ public class BD_Canciones {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia) {
+	public void editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, int aIdCancion) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void marcarFavorito(int aId) {
+	public void marcarFavorito(int aIdCancion, int aIdUsuario) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -24,11 +24,11 @@ public class BD_Canciones {
 		throw new UnsupportedOperationException();
 	}
 
-	public void desmarcarFavorita(int aId) {
+	public void desmarcarFavorita(int aIdCancion, int aIdUsuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void cargarCancion(interfaz.Cancion aCancion) {
+	public Cancion cargarCancion(int aIdCancion) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -37,10 +37,6 @@ public class BD_Canciones {
 	}
 
 	public void editarCancionesMostradas(interfaz.Cancion[] aCanciones) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void verCreditos(String aTitulo, String[] aInterpretes, String[] aProductores, String[] aCompositores) {
 		throw new UnsupportedOperationException();
 	}
 

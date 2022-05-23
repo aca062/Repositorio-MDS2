@@ -19,10 +19,10 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class Usuario_RegistradoDAO {
-	public static Usuario_Registrado loadUsuario_RegistradoByORMID(String email) throws PersistentException {
+	public static Usuario_Registrado loadUsuario_RegistradoByORMID(int id) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return loadUsuario_RegistradoByORMID(session, email);
+			return loadUsuario_RegistradoByORMID(session, id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,10 +30,10 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static Usuario_Registrado getUsuario_RegistradoByORMID(String email) throws PersistentException {
+	public static Usuario_Registrado getUsuario_RegistradoByORMID(int id) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return getUsuario_RegistradoByORMID(session, email);
+			return getUsuario_RegistradoByORMID(session, id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -41,10 +41,10 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static Usuario_Registrado loadUsuario_RegistradoByORMID(String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Usuario_Registrado loadUsuario_RegistradoByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return loadUsuario_RegistradoByORMID(session, email, lockMode);
+			return loadUsuario_RegistradoByORMID(session, id, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -52,10 +52,10 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static Usuario_Registrado getUsuario_RegistradoByORMID(String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Usuario_Registrado getUsuario_RegistradoByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS2PersistentManager.instance().getSession();
-			return getUsuario_RegistradoByORMID(session, email, lockMode);
+			return getUsuario_RegistradoByORMID(session, id, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -63,9 +63,9 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static Usuario_Registrado loadUsuario_RegistradoByORMID(PersistentSession session, String email) throws PersistentException {
+	public static Usuario_Registrado loadUsuario_RegistradoByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Usuario_Registrado) session.load(Usuario_Registrado.class, email);
+			return (Usuario_Registrado) session.load(Usuario_Registrado.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static Usuario_Registrado getUsuario_RegistradoByORMID(PersistentSession session, String email) throws PersistentException {
+	public static Usuario_Registrado getUsuario_RegistradoByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Usuario_Registrado) session.get(Usuario_Registrado.class, email);
+			return (Usuario_Registrado) session.get(Usuario_Registrado.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static Usuario_Registrado loadUsuario_RegistradoByORMID(PersistentSession session, String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Usuario_Registrado loadUsuario_RegistradoByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Usuario_Registrado) session.load(Usuario_Registrado.class, email, lockMode);
+			return (Usuario_Registrado) session.load(Usuario_Registrado.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static Usuario_Registrado getUsuario_RegistradoByORMID(PersistentSession session, String email, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Usuario_Registrado getUsuario_RegistradoByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Usuario_Registrado) session.get(Usuario_Registrado.class, email, lockMode);
+			return (Usuario_Registrado) session.get(Usuario_Registrado.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

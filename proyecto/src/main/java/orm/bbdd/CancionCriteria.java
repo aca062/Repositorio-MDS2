@@ -20,6 +20,8 @@ import org.orm.criteria.*;
 
 public class CancionCriteria extends AbstractORMCriteria {
 	public final IntegerExpression idCancion;
+	public final IntegerExpression administradorId;
+	public final AssociationExpression administrador;
 	public final IntegerExpression estiloId;
 	public final AssociationExpression estilo;
 	public final StringExpression titulo;
@@ -34,6 +36,8 @@ public class CancionCriteria extends AbstractORMCriteria {
 	public CancionCriteria(Criteria criteria) {
 		super(criteria);
 		idCancion = new IntegerExpression("idCancion", this);
+		administradorId = new IntegerExpression("administrador.", this);
+		administrador = new AssociationExpression("administrador", this);
 		estiloId = new IntegerExpression("estilo.idEstilo", this);
 		estilo = new AssociationExpression("estilo", this);
 		titulo = new StringExpression("titulo", this);
@@ -52,6 +56,10 @@ public class CancionCriteria extends AbstractORMCriteria {
 	
 	public CancionCriteria() throws PersistentException {
 		this(MDS2PersistentManager.instance().getSession());
+	}
+	
+	public AdministradorCriteria createAdministradorCriteria() {
+		return new AdministradorCriteria(createCriteria("administrador"));
 	}
 	
 	public EstiloCriteria createEstiloCriteria() {

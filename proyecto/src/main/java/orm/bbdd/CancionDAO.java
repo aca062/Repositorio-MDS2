@@ -323,6 +323,10 @@ public class CancionDAO {
 	
 	public static boolean deleteAndDissociate(Cancion cancion)throws PersistentException {
 		try {
+			if (cancion.getAdministrador() != null) {
+				cancion.getAdministrador().cancions.remove(cancion);
+			}
+			
 			if (cancion.getEstilo() != null) {
 				cancion.getEstilo().canciones.remove(cancion);
 			}
@@ -357,6 +361,10 @@ public class CancionDAO {
 	
 	public static boolean deleteAndDissociate(Cancion cancion, org.orm.PersistentSession session)throws PersistentException {
 		try {
+			if (cancion.getAdministrador() != null) {
+				cancion.getAdministrador().cancions.remove(cancion);
+			}
+			
 			if (cancion.getEstilo() != null) {
 				cancion.getEstilo().canciones.remove(cancion);
 			}

@@ -19,11 +19,12 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class AdministradorDetachedCriteria extends AbstractORMDetachedCriteria {
-	public final StringExpression email;
-	public final StringExpression acceso_DatoId;
+	public final IntegerExpression id;
+	public final IntegerExpression acceso_DatoId;
 	public final AssociationExpression acceso_Dato;
 	public final IntegerExpression estadisticaId;
 	public final AssociationExpression estadistica;
+	public final StringExpression email;
 	public final StringExpression contrasena;
 	public final StringExpression nick;
 	public final StringExpression foto;
@@ -33,14 +34,17 @@ public class AdministradorDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression listas_de_reproduccion_seguidas;
 	public final CollectionExpression notificaciones;
 	public final CollectionExpression seguidor;
+	public final IntegerExpression numCanciones;
+	public final CollectionExpression cancions;
 	
 	public AdministradorDetachedCriteria() {
 		super(Administrador.class, AdministradorCriteria.class);
-		email = new StringExpression("email", this.getDetachedCriteria());
-		acceso_DatoId = new StringExpression("acceso_Dato.email", this.getDetachedCriteria());
+		id = new IntegerExpression("id", this.getDetachedCriteria());
+		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this.getDetachedCriteria());
 		acceso_Dato = new AssociationExpression("acceso_Dato", this.getDetachedCriteria());
 		estadisticaId = new IntegerExpression("estadistica.id", this.getDetachedCriteria());
 		estadistica = new AssociationExpression("estadistica", this.getDetachedCriteria());
+		email = new StringExpression("email", this.getDetachedCriteria());
 		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		nick = new StringExpression("nick", this.getDetachedCriteria());
 		foto = new StringExpression("foto", this.getDetachedCriteria());
@@ -50,15 +54,18 @@ public class AdministradorDetachedCriteria extends AbstractORMDetachedCriteria {
 		listas_de_reproduccion_seguidas = new CollectionExpression("ORM_listas_de_reproduccion_seguidas", this.getDetachedCriteria());
 		notificaciones = new CollectionExpression("ORM_notificaciones", this.getDetachedCriteria());
 		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
+		numCanciones = new IntegerExpression("numCanciones", this.getDetachedCriteria());
+		cancions = new CollectionExpression("ORM_cancions", this.getDetachedCriteria());
 	}
 	
 	public AdministradorDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, AdministradorCriteria.class);
-		email = new StringExpression("email", this.getDetachedCriteria());
-		acceso_DatoId = new StringExpression("acceso_Dato.email", this.getDetachedCriteria());
+		id = new IntegerExpression("id", this.getDetachedCriteria());
+		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this.getDetachedCriteria());
 		acceso_Dato = new AssociationExpression("acceso_Dato", this.getDetachedCriteria());
 		estadisticaId = new IntegerExpression("estadistica.id", this.getDetachedCriteria());
 		estadistica = new AssociationExpression("estadistica", this.getDetachedCriteria());
+		email = new StringExpression("email", this.getDetachedCriteria());
 		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		nick = new StringExpression("nick", this.getDetachedCriteria());
 		foto = new StringExpression("foto", this.getDetachedCriteria());
@@ -68,6 +75,12 @@ public class AdministradorDetachedCriteria extends AbstractORMDetachedCriteria {
 		listas_de_reproduccion_seguidas = new CollectionExpression("ORM_listas_de_reproduccion_seguidas", this.getDetachedCriteria());
 		notificaciones = new CollectionExpression("ORM_notificaciones", this.getDetachedCriteria());
 		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
+		numCanciones = new IntegerExpression("numCanciones", this.getDetachedCriteria());
+		cancions = new CollectionExpression("ORM_cancions", this.getDetachedCriteria());
+	}
+	
+	public CancionDetachedCriteria createCancionsCriteria() {
+		return new CancionDetachedCriteria(createCriteria("ORM_cancions"));
 	}
 	
 	public Acceso_DatoDetachedCriteria createAcceso_DatoCriteria() {

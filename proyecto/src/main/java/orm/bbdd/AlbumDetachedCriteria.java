@@ -20,6 +20,8 @@ import org.orm.criteria.*;
 
 public class AlbumDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression idAlbum;
+	public final IntegerExpression artistaId;
+	public final AssociationExpression artista;
 	public final StringExpression imagen;
 	public final StringExpression titulo;
 	public final DateExpression fechaEdicion;
@@ -29,6 +31,8 @@ public class AlbumDetachedCriteria extends AbstractORMDetachedCriteria {
 	public AlbumDetachedCriteria() {
 		super(Album.class, AlbumCriteria.class);
 		idAlbum = new IntegerExpression("idAlbum", this.getDetachedCriteria());
+		artistaId = new IntegerExpression("artista.", this.getDetachedCriteria());
+		artista = new AssociationExpression("artista", this.getDetachedCriteria());
 		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
 		fechaEdicion = new DateExpression("fechaEdicion", this.getDetachedCriteria());
@@ -39,11 +43,17 @@ public class AlbumDetachedCriteria extends AbstractORMDetachedCriteria {
 	public AlbumDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, AlbumCriteria.class);
 		idAlbum = new IntegerExpression("idAlbum", this.getDetachedCriteria());
+		artistaId = new IntegerExpression("artista.", this.getDetachedCriteria());
+		artista = new AssociationExpression("artista", this.getDetachedCriteria());
 		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
 		fechaEdicion = new DateExpression("fechaEdicion", this.getDetachedCriteria());
 		canciones = new CollectionExpression("ORM_canciones", this.getDetachedCriteria());
 		estadisticas = new CollectionExpression("ORM_estadisticas", this.getDetachedCriteria());
+	}
+	
+	public ArtistaDetachedCriteria createArtistaCriteria() {
+		return new ArtistaDetachedCriteria(createCriteria("artista"));
 	}
 	
 	public CancionDetachedCriteria createCancionesCriteria() {

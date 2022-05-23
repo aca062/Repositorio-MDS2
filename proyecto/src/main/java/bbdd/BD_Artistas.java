@@ -2,7 +2,6 @@ package bbdd;
 
 import java.util.Vector;
 import orm.bbdd.Artista;
-import interfaz.Artista_elemento;
 
 public class BD_Artistas {
 	public BDPrincipal _bd_prin_artistas;
@@ -12,11 +11,11 @@ public class BD_Artistas {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen) {
+	public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarFoto(String aFoto) {
+	public void editarFoto(String aFoto, int aIdArtista) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -28,15 +27,15 @@ public class BD_Artistas {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarE_mail(String aEmail) {
+	public void editarE_mail(String aEmail, int aIdArtista) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void cargarArtista(Artista_elemento aArtista) {
+	public Artista cargarArtista(int aIdArtista) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void seguir_dejarDeSeguirArtista(String aNick) {
+	public void seguir_dejarDeSeguirArtista(int aId, int aIdSeguido) {
 		throw new UnsupportedOperationException();
 	}
 

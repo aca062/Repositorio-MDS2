@@ -22,32 +22,17 @@ public class Acceso_Dato implements Serializable {
 	public Acceso_Dato() {
 	}
 	
-	public boolean equals(Object aObj) {
-		if (aObj == this)
-			return true;
-		if (!(aObj instanceof Acceso_Dato))
-			return false;
-		Acceso_Dato acceso_dato = (Acceso_Dato)aObj;
-		if ((getEmail() != null && !getEmail().equals(acceso_dato.getEmail())) || (getEmail() == null && acceso_dato.getEmail() != null))
-			return false;
-		return true;
-	}
-	
-	public int hashCode() {
-		int hashcode = 0;
-		hashcode = hashcode + (getEmail() == null ? 0 : getEmail().hashCode());
-		return hashcode;
-	}
-	
-	@Column(name="Email", nullable=false, length=255)	
-	@Id	
-	private String email;
-	
 	@Column(name="Id", nullable=false, length=10)	
+	@Id	
+	@GeneratedValue(generator="BBDD_ACCESO_DATO_ID_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="BBDD_ACCESO_DATO_ID_GENERATOR", strategy="native")	
 	private int id;
 	
 	@Column(name="Contrasena", nullable=true, length=255)	
 	private String contrasena;
+	
+	@Column(name="Email", nullable=true, length=255)	
+	private String email;
 	
 	@Column(name="TipoUsuario", nullable=true, length=255)	
 	private String tipoUsuario;
@@ -63,12 +48,16 @@ public class Acceso_Dato implements Serializable {
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private Actor_Comun usuario;
 	
-	public void setId(int value) {
+	private void setId(int value) {
 		this.id = value;
 	}
 	
 	public int getId() {
 		return id;
+	}
+	
+	public int getORMID() {
+		return getId();
 	}
 	
 	public void setContrasena(String value) {
@@ -85,10 +74,6 @@ public class Acceso_Dato implements Serializable {
 	
 	public String getEmail() {
 		return email;
-	}
-	
-	public String getORMID() {
-		return getEmail();
 	}
 	
 	public void setTipoUsuario(String value) {
@@ -133,7 +118,7 @@ public class Acceso_Dato implements Serializable {
 	}
 	
 	public String toString() {
-		return String.valueOf(getEmail());
+		return String.valueOf(getId());
 	}
 	
 }

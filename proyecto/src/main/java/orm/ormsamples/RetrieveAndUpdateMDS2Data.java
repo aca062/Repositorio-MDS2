@@ -3,7 +3,6 @@
  * License Type: Academic
  */
 package orm.ormsamples;
-
 import orm.bbdd.*;
 
 import org.orm.*;
@@ -62,7 +61,7 @@ public class RetrieveAndUpdateMDS2Data {
 		System.out.println("Retrieving Acceso_Dato by Acceso_DatoCriteria");
 		Acceso_DatoCriteria bBDDAcceso_DatoCriteria = new Acceso_DatoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bBDDAcceso_DatoCriteria.email.eq();
+		//bBDDAcceso_DatoCriteria.id.eq();
 		System.out.println(bBDDAcceso_DatoCriteria.uniqueAcceso_Dato());
 		
 		System.out.println("Retrieving Estadistica by EstadisticaCriteria");
@@ -98,25 +97,25 @@ public class RetrieveAndUpdateMDS2Data {
 		System.out.println("Retrieving Actor_Comun by Actor_ComunCriteria");
 		Actor_ComunCriteria bBDDActor_ComunCriteria = new Actor_ComunCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bBDDActor_ComunCriteria.email.eq();
+		//bBDDActor_ComunCriteria.id.eq();
 		System.out.println(bBDDActor_ComunCriteria.uniqueActor_Comun());
 		
 		System.out.println("Retrieving Administrador by AdministradorCriteria");
 		AdministradorCriteria bBDDAdministradorCriteria = new AdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bBDDAdministradorCriteria.email.eq();
+		//bBDDAdministradorCriteria.id.eq();
 		System.out.println(bBDDAdministradorCriteria.uniqueAdministrador());
 		
 		System.out.println("Retrieving Artista by ArtistaCriteria");
 		ArtistaCriteria bBDDArtistaCriteria = new ArtistaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bBDDArtistaCriteria.email.eq();
+		//bBDDArtistaCriteria.id.eq();
 		System.out.println(bBDDArtistaCriteria.uniqueArtista());
 		
 		System.out.println("Retrieving Usuario_Registrado by Usuario_RegistradoCriteria");
 		Usuario_RegistradoCriteria bBDDUsuario_RegistradoCriteria = new Usuario_RegistradoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bBDDUsuario_RegistradoCriteria.email.eq();
+		//bBDDUsuario_RegistradoCriteria.id.eq();
 		System.out.println(bBDDUsuario_RegistradoCriteria.uniqueUsuario_Registrado());
 		
 	}

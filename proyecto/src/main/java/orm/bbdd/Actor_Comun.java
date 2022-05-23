@@ -23,23 +23,6 @@ public class Actor_Comun implements Serializable {
 	public Actor_Comun() {
 	}
 	
-	public boolean equals(Object aObj) {
-		if (aObj == this)
-			return true;
-		if (!(aObj instanceof Actor_Comun))
-			return false;
-		Actor_Comun actor_comun = (Actor_Comun)aObj;
-		if ((getEmail() != null && !getEmail().equals(actor_comun.getEmail())) || (getEmail() == null && actor_comun.getEmail() != null))
-			return false;
-		return true;
-	}
-	
-	public int hashCode() {
-		int hashcode = 0;
-		hashcode = hashcode + (getEmail() == null ? 0 : getEmail().hashCode());
-		return hashcode;
-	}
-	
 	private java.util.Set this_getSet (int key) {
 		if (key == ORMConstants.KEY_ACTOR_COMUN_LISTAS_DE_REPRODUCCION_PROPIAS) {
 			return ORM_listas_de_reproduccion_propias;
@@ -85,13 +68,15 @@ public class Actor_Comun implements Serializable {
 		
 	};
 	
-	@Column(name="Email", nullable=false, length=255)	
+	@Column(name="Id", nullable=false, length=10)	
 	@Id	
-	private String email;
+	@GeneratedValue(generator="BBDD_ACTOR_COMUN_ID_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="BBDD_ACTOR_COMUN_ID_GENERATOR", strategy="native")	
+	private int id;
 	
 	@OneToOne(optional=false, targetEntity=Acceso_Dato.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="Acceso_DatoEmail", referencedColumnName="Email") }, foreignKey=@ForeignKey(name="FKActor_Comu201144"))	
+	@JoinColumns(value={ @JoinColumn(name="Acceso_DatoId", referencedColumnName="Id", nullable=false) }, foreignKey=@ForeignKey(name="FKActor_Comu602152"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private Acceso_Dato acceso_Dato;
 	
@@ -100,6 +85,9 @@ public class Actor_Comun implements Serializable {
 	@JoinColumns(value={ @JoinColumn(name="EstadisticaId", referencedColumnName="Id", nullable=false) }, foreignKey=@ForeignKey(name="FKActor_Comu455406"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private Estadistica estadistica;
+	
+	@Column(name="Email", nullable=true, length=255)	
+	private String email;
 	
 	@Column(name="Contrasena", nullable=true, length=255)	
 	private String contrasena;
@@ -117,7 +105,7 @@ public class Actor_Comun implements Serializable {
 	
 	@ManyToMany(targetEntity=Actor_Comun.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Actor_Comun_Actor_Comun", joinColumns={ @JoinColumn(name="Actor_ComunEmail2") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunEmail") })	
+	@JoinTable(name="Actor_Comun_Actor_Comun", joinColumns={ @JoinColumn(name="Actor_ComunId2") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_seguido = new java.util.HashSet();
 	
@@ -141,16 +129,24 @@ public class Actor_Comun implements Serializable {
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_seguidor = new java.util.HashSet();
 	
+	public void setId(int value) {
+		this.id = value;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public int getORMID() {
+		return getId();
+	}
+	
 	public void setEmail(String value) {
 		this.email = value;
 	}
 	
 	public String getEmail() {
 		return email;
-	}
-	
-	public String getORMID() {
-		return getEmail();
 	}
 	
 	public void setContrasena(String value) {
@@ -278,7 +274,7 @@ public class Actor_Comun implements Serializable {
 	public final Actor_ComunSetCollection seguidor = new Actor_ComunSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_SEGUIDOR, ORMConstants.KEY_ACTOR_COMUN_SEGUIDO, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
-		return String.valueOf(getEmail());
+		return String.valueOf(getId());
 	}
 	
 }

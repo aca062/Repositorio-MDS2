@@ -19,7 +19,7 @@ import javax.persistence.*;
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Artista")
 @Inheritance(strategy=InheritanceType.JOINED)
-@PrimaryKeyJoinColumn(name="Actor_ComunEmail", referencedColumnName="Email")
+@PrimaryKeyJoinColumn(name="Actor_ComunId", referencedColumnName="Id")
 public class Artista extends Actor_Comun implements Serializable {
 	public Artista() {
 	}
@@ -37,6 +37,9 @@ public class Artista extends Actor_Comun implements Serializable {
 		else if (key == ORMConstants.KEY_ARTISTA_ESTILOS) {
 			return ORM_estilos;
 		}
+		else if (key == ORMConstants.KEY_ARTISTA_ALBUMS) {
+			return ORM_albums;
+		}
 		
 		return null;
 	}
@@ -51,13 +54,13 @@ public class Artista extends Actor_Comun implements Serializable {
 	
 	@ManyToMany(targetEntity=Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Cancion_Artista", joinColumns={ @JoinColumn(name="ArtistaActor_ComunEmail") }, inverseJoinColumns={ @JoinColumn(name="CancionIdCancion") })	
+	@JoinTable(name="Cancion_Artista", joinColumns={ @JoinColumn(name="ArtistaActor_ComunId") }, inverseJoinColumns={ @JoinColumn(name="CancionIdCancion") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_cancions = new java.util.HashSet();
 	
 	@ManyToMany(targetEntity=Estadistica.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Estadistica_Artista", joinColumns={ @JoinColumn(name="ArtistaActor_ComunEmail") }, inverseJoinColumns={ @JoinColumn(name="EstadisticaId") })	
+	@JoinTable(name="Estadistica_Artista", joinColumns={ @JoinColumn(name="ArtistaActor_ComunId") }, inverseJoinColumns={ @JoinColumn(name="EstadisticaId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_estadisticas = new java.util.HashSet();
 	
@@ -70,6 +73,11 @@ public class Artista extends Actor_Comun implements Serializable {
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_estilos = new java.util.HashSet();
+	
+	@OneToMany(mappedBy="artista", targetEntity=Album.class)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	private java.util.Set ORM_albums = new java.util.HashSet();
 	
 	private void setORM_Cancions(java.util.Set value) {
 		this.ORM_cancions = value;
@@ -114,6 +122,17 @@ public class Artista extends Actor_Comun implements Serializable {
 	
 	@Transient	
 	public final EstiloSetCollection estilos = new EstiloSetCollection(this, _ormAdapter, ORMConstants.KEY_ARTISTA_ESTILOS, ORMConstants.KEY_ESTILO_ARTISTAS, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	
+	private void setORM_Albums(java.util.Set value) {
+		this.ORM_albums = value;
+	}
+	
+	private java.util.Set getORM_Albums() {
+		return ORM_albums;
+	}
+	
+	@Transient	
+	public final AlbumSetCollection albums = new AlbumSetCollection(this, _ormAdapter, ORMConstants.KEY_ARTISTA_ALBUMS, ORMConstants.KEY_ALBUM_ARTISTA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

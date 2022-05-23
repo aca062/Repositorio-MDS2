@@ -3,8 +3,7 @@
  * License Type: Academic
  */
 package orm.ormsamples;
-
-import orm.bbdd.*;
+import orm.bbdd.MDS2PersistentManager;
 
 import org.orm.*;
 public class DropMDS2DatabaseSchema {
