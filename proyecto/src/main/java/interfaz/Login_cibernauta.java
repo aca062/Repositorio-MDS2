@@ -8,6 +8,8 @@ import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 
+import bbdd.BDPrincipal;
+import bbdd.iCibernauta;
 import vistas.VistaLogin_cibernauta;
 
 public class Login_cibernauta extends VistaLogin_cibernauta{
@@ -21,6 +23,7 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 	public Cabecera_cibernauta _cabeceraCibernauta;
 	public Recuperar_contrasena _recuperarContrasena;
 	public Registrarse _registrarse;
+	iCibernauta cib = new BDPrincipal();
 	
 	public Login_cibernauta(){
 		super();
@@ -61,6 +64,37 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 		//Hay que comprobar el usuario
 		String correo = this.getTextFieldCorreo().getValue();
 		String contrasena = this.getTextFieldContrasena().getValue();
+		Cabecera_pagina cab = new Cabecera_pagina();
+		switch(cib.inicioDeSesion(correo, contrasena)){
+			case("admin"):
+				Administrador admin = new Administrador();
+				admin.getStyle().set("width", "100%");
+				cab.getStyle().set("width", "100%");
+				ControladorVistas.CambiarUsuario(correo.toString());
+				ControladorVistas.CambiarContenido(admin);
+				ControladorVistas.CambiarCabecera(cab);
+				break;
+			case("usuario"):
+				Usuario_registrado user = new Usuario_registrado();
+				user.getStyle().set("width", "100%");
+				cab.getStyle().set("width", "100%");
+				ControladorVistas.CambiarUsuario(correo.toString());
+				ControladorVistas.CambiarContenido(user);
+				ControladorVistas.CambiarCabecera(cab);
+				break;
+			case("artista"):
+				Artista artista = new Artista();
+				artista.getStyle().set("width", "100%");
+				cab.getStyle().set("width", "100%");
+				ControladorVistas.CambiarUsuario(correo.toString());
+				ControladorVistas.CambiarContenido(artista);
+				ControladorVistas.CambiarCabecera(cab);
+				break;
+			default:
+				ControladorVistas.PopUpBasico("El usuario o la contraseña son incorrectos");
+				break;
+		}
+		/*
 		if (correo.toString().equals("admin") && contrasena.equals("admin")) {
 			Administrador admin = new Administrador();
 			Cabecera_pagina cab = new Cabecera_pagina();
@@ -87,7 +121,7 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 			ControladorVistas.CambiarCabecera(cab);
 		}else {
 			ControladorVistas.PopUpBasico("El usuario o la contraseña son incorrectos");
-		}
+		}*/
 	}
 
 	protected void OlvidadoContrasena() {

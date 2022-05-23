@@ -189,13 +189,19 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean inicioDeSesion(String aEmail, String aContrasena) {
-		throw new UnsupportedOperationException();
+	public String inicioDeSesion(String aEmail, String aContrasena) {
+		_bd_acceso_datos = new BD_Acceso_Datos();
+		try {
+			return _bd_acceso_datos.inicioDeSesion(aEmail, aContrasena);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "que tal estamos";
 	}
 
 	public void registro(String aEmail, String aContrasena, String aNick, String aImagen) {
 		try {
-			_bd_administradores = new BD_Administradores();
 			_bd_usuarios_registrados = new BD_Usuarios_Registrados();
 			_bd_usuarios_registrados.registro(aEmail, aContrasena, aNick, aImagen);
 		} catch (PersistentException e) {
