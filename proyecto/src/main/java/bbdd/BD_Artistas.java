@@ -1,21 +1,24 @@
 package bbdd;
 
 import java.util.Vector;
+
+import org.orm.PersistentException;
+
 import orm.bbdd.Artista;
 
 public class BD_Artistas {
 	public BDPrincipal _bd_prin_artistas;
 	public Vector<Artista> _contiene_artistas = new Vector<Artista>();
 
-	public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen) {
+	public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) {
+	public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarFoto(String aFoto, int aIdArtista) {
+	public void editarFoto(String aFoto, int aIdArtista) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
@@ -27,7 +30,7 @@ public class BD_Artistas {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarE_mail(String aEmail, int aIdArtista) {
+	public void editarE_mail(String aEmail, int aIdArtista) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
@@ -35,7 +38,7 @@ public class BD_Artistas {
 		throw new UnsupportedOperationException();
 	}
 
-	public void seguir_dejarDeSeguirArtista(int aId, int aIdSeguido) {
+	public void seguir_dejarDeSeguirArtista(int aId, int aIdSeguido) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 

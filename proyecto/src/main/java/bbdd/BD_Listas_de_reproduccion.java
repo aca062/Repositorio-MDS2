@@ -1,17 +1,20 @@
 package bbdd;
 
 import java.util.Vector;
+
+import org.orm.PersistentException;
+
 import orm.bbdd.Lista_de_reproduccion;
 
 public class BD_Listas_de_reproduccion {
 	public BDPrincipal _bd_prin_listas_de_reproduccion;
 	public Vector<Lista_de_reproduccion> _contiene_listas_de_reproduccion = new Vector<Lista_de_reproduccion>();
 
-	public void editarLista(String aNombre, int aIdLista) {
+	public void editarLista(String aNombre, int aIdLista) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
-	public void anadir(String aNombre) {
+	public void anadir(String aNombre) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
@@ -19,7 +22,7 @@ public class BD_Listas_de_reproduccion {
 		throw new UnsupportedOperationException();
 	}
 
-	public void crearLista(String aNombre) {
+	public void crearLista(String aNombre) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 

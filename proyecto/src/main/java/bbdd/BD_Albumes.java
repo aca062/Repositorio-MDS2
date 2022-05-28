@@ -25,10 +25,6 @@ public class BD_Albumes {
 		throw new UnsupportedOperationException();
 	}
 
-	public void verCreditos(String aTitulo) {
-		throw new UnsupportedOperationException();
-	}
-
 	public void altaCancion(Estilo_admin[] aEstilos) {
 		throw new UnsupportedOperationException();
 	}

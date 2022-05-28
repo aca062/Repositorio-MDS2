@@ -9,9 +9,9 @@ public interface iAdministrador extends iActor_comun {
 
 	public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista, Cancion[] aCanciones);
 
-	public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen);
+	public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista);
 
-	public void altaEstilo(String aNombre);
+	public void altaEstilo(String aNombre, int aIdEstilo);
 
 	public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, Estilo_admin[] aEstilos, String aTituloAlbum);
 

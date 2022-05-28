@@ -29,7 +29,7 @@ public class BD_Acceso_Datos {
 		return "fallo";
 	}
 
-	public void recuperarContrasena(String aEmail) {
+	public void recuperarContrasena(String aEmail) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 }
