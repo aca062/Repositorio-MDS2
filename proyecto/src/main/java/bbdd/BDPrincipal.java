@@ -94,8 +94,17 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 		}
 	}
 
-	public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista, interfaz.Cancion[] aCanciones) {
-		throw new UnsupportedOperationException();
+	public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista, interfaz.Cancion[] aCanciones,int aIdAlbum) {
+		try {
+			_bd_albumes = new BD_Albumes();
+			_bd_canciones = new BD_Canciones();
+			_bd_artistas = new BD_Artistas();
+			_bd_albumes.AltaAlbum(aImagen, aTitulo, aFechaEdicion, aIdAlbum);
+			_bd_canciones.altaAlbum(aCanciones);
+			_bd_artistas.altaAlbum(aNombreArtista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void altaEstilo(String aNombre, int aIdEstilo) {
@@ -108,12 +117,30 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 		
 	}
 
-	public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, Estilo_admin[] aEstilos, String aTituloAlbum) {
-		throw new UnsupportedOperationException();
+	public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia,int aIdCancion, Estilo_admin[] aEstilos, String aTituloAlbum) {
+		try {
+			_bd_albumes = new BD_Albumes();
+			_bd_canciones = new BD_Canciones();
+			_bd_estilos = new BD_Estilos();
+			_bd_albumes.altaCancion(aTituloAlbum);
+			_bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aIdCancion);
+			_bd_estilos.altaCancion(aEstilos);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista, interfaz.Cancion[] aCanciones, int aIdAlbum) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_albumes = new BD_Albumes();
+			_bd_canciones = new BD_Canciones();
+			_bd_artistas = new BD_Artistas();
+			_bd_albumes.AltaAlbum(aImagen, aTitulo, aFechaEdicion, aIdAlbum);
+			_bd_canciones.altaAlbum(aCanciones);
+			_bd_artistas.altaAlbum(aNombreArtista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) {
@@ -126,7 +153,16 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	}
 
 	public void editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, Estilo_admin[] aEstilos, String aTituloAlbum, int aIdCancion) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_albumes = new BD_Albumes();
+			_bd_canciones = new BD_Canciones();
+			_bd_estilos = new BD_Estilos();
+			_bd_albumes.altaCancion(aTituloAlbum);
+			_bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aIdCancion);
+			_bd_estilos.altaCancion(aEstilos);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarEstilo(String aNombre, int aIdEstilo) {
@@ -139,7 +175,12 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	}
 
 	public void editarLista(String aNombre, int aIdLista) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_listas_de_reproduccion = new BD_Listas_de_reproduccion(); 
+			_bd_listas_de_reproduccion.editarLista(aNombre, aIdLista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarFoto(String aFoto, int aIdUsuario) {

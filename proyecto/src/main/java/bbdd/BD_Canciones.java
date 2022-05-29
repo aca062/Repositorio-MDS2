@@ -11,7 +11,7 @@ public class BD_Canciones {
 	public BDPrincipal _bd_prin_canciones;
 	public Vector<Cancion> _contiene_canciones = new Vector<Cancion>();
 
-	public void altaCancion(String aTitulo, String aCompositores, String aProductores, String aInterpretes, String aArcMultimedia) throws PersistentException{
+	public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, int aIdCancion) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 

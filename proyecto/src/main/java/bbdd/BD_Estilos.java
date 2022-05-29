@@ -27,7 +27,7 @@ public class BD_Estilos {
 		throw new UnsupportedOperationException();
 	}
 
-	public void altaCancion(String aTitulo) {
+	public void altaCancion(Estilo_admin[] aEstilos) {
 		throw new UnsupportedOperationException();
 	}
 
