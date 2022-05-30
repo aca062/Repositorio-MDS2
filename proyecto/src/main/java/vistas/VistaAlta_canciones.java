@@ -1,17 +1,18 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.component.select.Select;
-import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.html.H5;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-alta_canciones template.
@@ -23,7 +24,7 @@ import com.vaadin.flow.component.html.H5;
 @JsModule("./src/vistas/vista-alta_canciones.ts")
 public class VistaAlta_canciones extends LitTemplate {
 
-    
+
 
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
@@ -34,7 +35,7 @@ public class VistaAlta_canciones extends LitTemplate {
 	@Id("titulo")
 	private TextField titulo;
 	@Id("títuloÁlbum")
-	private TextField títuloÁlbum;
+	private TextField tituloAlbum;
 	@Id("productores")
 	private TextField productores;
 	@Id("compositores")
@@ -65,8 +66,11 @@ public class VistaAlta_canciones extends LitTemplate {
 	private Button cancelar;
 	@Id("confirmar")
 	private Button confirmar;
-
-	/**
+    @Id("vaadinUpload")
+    private Upload vaadinUpload;
+    @Id("botonEliminar")
+    private Button botonEliminar;
+    /**
      * Creates a new VistaAlta_canciones.
      */
     public VistaAlta_canciones() {
@@ -105,12 +109,12 @@ public class VistaAlta_canciones extends LitTemplate {
 		this.titulo = titulo;
 	}
 
-	public TextField getTítuloÁlbum() {
-		return títuloÁlbum;
+	public TextField getTituloAlbum() {
+		return tituloAlbum;
 	}
 
-	public void setTítuloÁlbum(TextField títuloÁlbum) {
-		this.títuloÁlbum = títuloÁlbum;
+	public void setTituloAlbum(TextField tituloAlbum) {
+		this.tituloAlbum = tituloAlbum;
 	}
 
 	public TextField getProductores() {
@@ -232,5 +236,21 @@ public class VistaAlta_canciones extends LitTemplate {
 	public void setConfirmar(Button confirmar) {
 		this.confirmar = confirmar;
 	}
+
+    public Upload getVaadinUpload() {
+        return vaadinUpload;
+    }
+
+    public void setVaadinUpload(Upload vaadinUpload) {
+        this.vaadinUpload = vaadinUpload;
+    }
+
+    public Button getBotonEliminar() {
+        return botonEliminar;
+    }
+
+    public void setBotonEliminar(Button botonEliminar) {
+        this.botonEliminar = botonEliminar;
+    }
 
 }

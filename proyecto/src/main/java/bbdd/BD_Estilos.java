@@ -3,16 +3,31 @@ package bbdd;
 import java.util.Vector;
 
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 import orm.bbdd.Estilo;
-import interfaz.Estilo_admin;
+import orm.bbdd.EstiloDAO;
+import orm.bbdd.MDS2PersistentManager;
 
 public class BD_Estilos {
 	public BDPrincipal _bd_prin_estilos;
 	public Vector<Estilo> _contiene_estilos = new Vector<Estilo>();
 
-	public void altaEstilo(String aNombre, int aIdEstilo) throws PersistentException{
-		throw new UnsupportedOperationException();
+	public int altaEstilo(String aNombre, int aIdEstilo) throws PersistentException{
+	    PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+	    try {
+            Estilo estilo = new Estilo();
+            estilo.setNombre(aNombre);
+            if (!EstiloDAO.save(estilo)) {
+                return -1;
+            }
+            t.commit();
+            return 1;
+        } catch (PersistentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return -1;
 	}
 
 	public void editarEstilo(String aNombre, int aIdEstilo) throws PersistentException{
@@ -27,11 +42,11 @@ public class BD_Estilos {
 		throw new UnsupportedOperationException();
 	}
 
-	public void altaCancion(Estilo_admin[] aEstilos) {
+	public void altaCancion(String aEstilos) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarCancion(Estilo_admin[] aEstilos) {
+	public void editarCancion(String aEstilos) {
 		throw new UnsupportedOperationException();
 	}
 }

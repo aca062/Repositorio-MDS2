@@ -6,23 +6,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import com.example.test.ControladorVistas;
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.ComponentEvent;
-import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.upload.Upload;
-import com.vaadin.flow.component.upload.GeneratedVaadinUpload.UploadAbortEvent;
-import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 import org.apache.commons.io.FilenameUtils;
 import org.orm.PersistentException;
 
+import com.example.test.ControladorVistas;
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
+
 import bbdd.BDPrincipal;
-import bbdd.BD_Usuarios_Registrados;
 import bbdd.iCibernauta;
-import bbdd.iUsuario_registrado;
 import orm.bbdd.Actor_ComunDAO;
 import vistas.VistaRegistrarse;
 
@@ -51,7 +46,8 @@ public class Registrarse extends VistaRegistrarse {
 		Image foto = this.getFotoPerfil();
 
 		this.getBotonCancelar().addClickListener(new ComponentEventListener() {
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				try {
 					Integer id = Actor_ComunDAO.listActor_ComunByQuery("true=true", "nick").length + 1;
 					String UrlCarpeta = "./src/main/webapp/img/";
@@ -74,15 +70,17 @@ public class Registrarse extends VistaRegistrarse {
 				Cancelar();
 			}
 		});
-		
+
 		this.getBotonCrearCuenta().addClickListener(new ComponentEventListener() {
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				CrearCuenta();
 			}
 		});
-		
+
 		this.getBotonFoto().addClickListener(new ComponentEventListener() {
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				String UrlCarpeta = "./src/main/webapp/img/";
 				File folder = new File(UrlCarpeta);
 				File[] listOfFiles = folder.listFiles();
@@ -100,7 +98,7 @@ public class Registrarse extends VistaRegistrarse {
 				pathFoto = null;
 			}
 		});
-		
+
 		upload.addFinishedListener(e -> {
 			try {
 				String UrlCarpeta = "./src/main/webapp/img/";
@@ -126,7 +124,7 @@ public class Registrarse extends VistaRegistrarse {
 		this.getSubidaDeFoto().interruptUpload();
 		this.getSubidaDeFoto().setVisible(true);
 		this.getBotonFoto().setVisible(false);
-		
+
 	}
 
 	protected void CrearCuenta() {

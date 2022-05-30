@@ -1,11 +1,12 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-upload/src/vaadin-upload.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-item/src/vaadin-item.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-select/src/vaadin-select.js';
 import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
-import '@vaadin/vaadin-item/src/vaadin-item.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-alta_canciones')
 export class VistaAlta_canciones extends LitElement {
@@ -45,8 +46,9 @@ export class VistaAlta_canciones extends LitElement {
   </vaadin-select>
   <vaadin-horizontal-layout id="layoutAnadirCnacion" style="align-self: flex-start; align-items: center; margin-left: var(--lumo-space-xl); width: 80%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-m);">
    <h4 id="h4Fichero">Fichero multimedia</h4>
-   <vaadin-button id="anadirCancion" style="margin-left: 1%;">
-     Añadir 
+   <vaadin-upload id="vaadinUpload"></vaadin-upload>
+   <vaadin-button id="botonEliminar" style="width: 120px; margin: var(--lumo-space-l); margin-right: 0;">
+     Eliminar 
    </vaadin-button>
    <h5 id="h5Requisitos" style="margin-left: 5%;">Solo son válidos los .mp3, .mp4, .ogg</h5>
   </vaadin-horizontal-layout>
