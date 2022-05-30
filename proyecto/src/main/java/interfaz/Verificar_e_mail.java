@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -47,7 +49,12 @@ public class Verificar_e_mail extends VistaVerificar_e_mail{
 	}
 
 	protected void Cancelar() {
-		_registrarse = new Registrarse();
+		try {
+			_registrarse = new Registrarse();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		_registrarse.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_registrarse);
 	}

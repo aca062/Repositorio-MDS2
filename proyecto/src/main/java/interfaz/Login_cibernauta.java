@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -40,7 +42,12 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 		});
 		this.getBotonRegistrarse().addClickListener(new ComponentEventListener(){
 			public void onComponentEvent(ComponentEvent event) {
-				Registrarse();
+				try {
+					Registrarse();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		this.getLogo().addClickListener(new ComponentEventListener(){
@@ -54,7 +61,7 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 		
 	}
 
-	protected void Registrarse() {
+	protected void Registrarse() throws PersistentException {
 		_registrarse = new Registrarse();
 		_registrarse.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_registrarse);

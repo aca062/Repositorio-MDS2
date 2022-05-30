@@ -1,9 +1,10 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-upload/src/vaadin-upload.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-registrarse')
 export class VistaRegistrarse extends LitElement {
@@ -21,8 +22,9 @@ export class VistaRegistrarse extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-xl); align-items: center;" id="layoutFoto">
   <img style="width: 30%;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" id="fotoPerfil">
-  <vaadin-button id="botonCambiarFoto">
-    Añadir foto de perfil 
+  <vaadin-upload id="subidaDeFoto" max-files="1"></vaadin-upload>
+  <vaadin-button id="botonFoto">
+   Eliminar foto
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; padding: var(--lumo-space-xl); padding-left: 10%; padding-right: 10%; padding-top: 0; padding-bottom: 0;" id="layoutFormulario">

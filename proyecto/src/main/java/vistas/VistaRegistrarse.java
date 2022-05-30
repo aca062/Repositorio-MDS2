@@ -10,6 +10,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.PasswordField;
+import com.vaadin.flow.component.upload.Upload;
 
 /**
  * A Designer generated component for the vista-registrarse template.
@@ -28,12 +29,8 @@ public class VistaRegistrarse extends LitTemplate {
 	private Element layoutFoto;
 	@Id("fotoPerfil")
 	private Image fotoPerfil;
-	@Id("botonCambiarFoto")
-	private Button botonCambiarFoto;
 	@Id("layoutFormulario")
 	private Element layoutFormulario;
-	@Id("eMail")
-	private TextField eMail;
 	@Id("nick")
 	private TextField nick;
 	@Id("layoutBotones")
@@ -48,6 +45,12 @@ public class VistaRegistrarse extends LitTemplate {
 	private PasswordField repetirContrasena;
 	@Id("contrasena")
 	private PasswordField contrasena;
+	@Id("subidaDeFoto")
+	private Upload subidaDeFoto;
+	@Id("eMail")
+	private TextField eMail;
+	@Id("botonFoto")
+	private Button botonFoto;
 
 	/**
      * Creates a new VistaRegistrarse.
@@ -78,14 +81,6 @@ public class VistaRegistrarse extends LitTemplate {
 
 	public void setFotoPerfil(Image fotoPerfil) {
 		this.fotoPerfil = fotoPerfil;
-	}
-
-	public Button getBotonCambiarFoto() {
-		return botonCambiarFoto;
-	}
-
-	public void setBotonCambiarFoto(Button botonCambiarFoto) {
-		this.botonCambiarFoto = botonCambiarFoto;
 	}
 
 	public Element getLayoutFormulario() {
@@ -158,6 +153,22 @@ public class VistaRegistrarse extends LitTemplate {
 
 	public void setContrasena(PasswordField contrasena) {
 		this.contrasena = contrasena;
+	}
+
+	public Upload getSubidaDeFoto() {
+		return subidaDeFoto;
+	}
+
+	public void setSubidaDeFoto(Upload subidaDeFoto) {
+		this.subidaDeFoto = subidaDeFoto;
+	}
+
+	public Button getBotonFoto() {
+		return botonFoto;
+	}
+
+	public void setBotonFoto(Button botonFoto) {
+		this.botonFoto = botonFoto;
 	}
 
 
