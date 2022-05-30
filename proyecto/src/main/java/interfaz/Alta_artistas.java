@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.List;
+import java.util.Vector;
 
 import org.apache.commons.io.FilenameUtils;
 import org.orm.PersistentException;
@@ -35,8 +37,10 @@ public class Alta_artistas extends VistaAlta_artistas {
     public Dar_de_alta _darDeAlta = new Dar_de_alta();
     iAdministrador adm = new BDPrincipal();
     String pathFoto = null;
+    private Estilo[] estilos;
 
-    public Alta_artistas() throws PersistentException {
+    @SuppressWarnings("unchecked")
+	public Alta_artistas() throws PersistentException {
         Inicializar();
         this.getBotonEliminar().setVisible(false);
         Integer id = Actor_ComunDAO.listActor_ComunByQuery("true=true", "nick").length + 1;
@@ -45,11 +49,21 @@ public class Alta_artistas extends VistaAlta_artistas {
         Upload upload = this.getSubirFoto();
         upload.setReceiver(memoryBuffer);
         Image foto = this.getImgArtista();
-
-        for (Estilo estilo : EstiloDAO.listEstiloByQuery("true=true", "Nombre")) {
+        
+        cargarEstilos();
+        
+        List<String> nombreEstilos = new Vector<String>(estilos.length);
+        
+        for(Estilo estilo : estilos) {
+        	nombreEstilos.add(estilo.getNombre());
+        }
+        this.getEstilo().setItems(nombreEstilos);
+        
+        /*for (Estilo estilo : EstiloDAO.listEstiloByQuery("true=true", "Nombre")) {
             System.out.println(estilo.getNombre());
             this.getEstilo().add(estilo.getNombre());
-        }
+            
+        }*/
 
         this.getCancelar().addClickListener(new ComponentEventListener() {
             @Override
@@ -168,4 +182,9 @@ public class Alta_artistas extends VistaAlta_artistas {
         this.getImgArtista().setVisible(true);
         this.getNick().setVisible(true);
     }
+    
+    public void cargarEstilos() {
+    	estilos = adm.cargarEstilo();
+    }
+    
 }

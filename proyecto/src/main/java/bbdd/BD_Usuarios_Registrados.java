@@ -1,5 +1,7 @@
 package bbdd;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -7,8 +9,12 @@ import org.orm.PersistentTransaction;
 
 import orm.bbdd.Acceso_Dato;
 import orm.bbdd.Acceso_DatoDAO;
+import orm.bbdd.Actor_Comun;
+import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.Estadistica;
 import orm.bbdd.EstadisticaDAO;
+import orm.bbdd.Lista_de_reproduccion;
+import orm.bbdd.Lista_de_reproduccionDAO;
 import orm.bbdd.MDS2PersistentManager;
 import orm.bbdd.Usuario_Registrado;
 import orm.bbdd.Usuario_RegistradoDAO;
@@ -79,5 +85,54 @@ public class BD_Usuarios_Registrados {
 
 	public Usuario_Registrado cargarUsuario(int aIdUsuario) {
 		throw new UnsupportedOperationException();
+	}
+	
+	public Usuario_Registrado[] cargarListaSeguidores(int aIdUsuario) throws PersistentException{
+		List<Usuario_Registrado> seguidores = new Vector<Usuario_Registrado>();
+		
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			
+			Actor_Comun usuario = Actor_ComunDAO.getActor_ComunByORMID(aIdUsuario);
+			Iterator<Actor_Comun> i = usuario.seguidor.getIterator();
+			
+			Actor_Comun ac;
+			
+			while(i.hasNext()) {
+				ac = i.next();
+				if(ac instanceof Actor_Comun) {
+					seguidores.add((Usuario_Registrado)ac);
+				}
+			}
+			
+			t.commit();
+		} catch(Exception e) {
+			t.rollback();
+		}
+		return seguidores.toArray(new Usuario_Registrado[seguidores.size()]);
+	}
+	public Usuario_Registrado[] cargarListaSeguidos(int aIdUsuario) throws PersistentException{
+		List<Usuario_Registrado> seguidos = new Vector<Usuario_Registrado>();
+		
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			
+			Actor_Comun usuario = Actor_ComunDAO.getActor_ComunByORMID(aIdUsuario);
+			Iterator<Actor_Comun> i = usuario.seguido.getIterator();
+			
+			Actor_Comun ac;
+			
+			while(i.hasNext()) {
+				ac = i.next();
+				if(ac instanceof Actor_Comun) {
+					seguidos.add((Usuario_Registrado)ac);
+				}
+			}
+			
+			t.commit();
+		} catch(Exception e) {
+			t.rollback();
+		}
+		return seguidos.toArray(new Usuario_Registrado[seguidos.size()]);
 	}
 }

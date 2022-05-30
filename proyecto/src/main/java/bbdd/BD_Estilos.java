@@ -38,8 +38,17 @@ public class BD_Estilos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Estilo cargarEstilo(int aIdEstilo) {
-		throw new UnsupportedOperationException();
+	public Estilo[] cargarEstilo() throws PersistentException {
+		Estilo[] estilos = null;
+		
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			estilos = EstiloDAO.listEstiloByQuery(null, null);
+			t.commit();
+		}catch (Exception e) {
+			t.rollback();
+		}
+		return estilos;
 	}
 
 	public void altaCancion(String aEstilos) {

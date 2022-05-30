@@ -322,6 +322,17 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     public Album cargarAlbum(int aIdAlbum) {
 		throw new UnsupportedOperationException();
 	}
+	@Override
+	public Album[] cargarAlbumRecomendado(int aIdUsuario) {
+		Album[] albumes = null;
+		
+		try {
+			albumes = _bd_albumes.cargarAlbumRecomendado(aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return albumes;
+	}
 
 	@Override
     public Artista cargarArtista(int aIdArtista) {
@@ -329,18 +340,60 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	}
 
 	@Override
-    public Estilo cargarEstilo(int aIdEstilo) {
-		throw new UnsupportedOperationException();
+    public Estilo[] cargarEstilo() {
+		Estilo[] estilos = null;
+		try {
+			estilos = _bd_estilos.cargarEstilo();
+		} catch (PersistentException e){
+			e.printStackTrace();
+		}
+		return estilos;
 	}
 
 	@Override
     public Cancion cargarCancion(int aIdCancion) {
 		throw new UnsupportedOperationException();
 	}
+	
+	@Override
+    public Cancion[] cargarCancionRecomendada(int aIdUsuario) {
+		Cancion[] canciones = null;
+		
+		try {
+			canciones = _bd_canciones.cargarCancionRecomendada(aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return canciones;
+	}
+	
+	@Override
+    public Cancion[] cargarUltimosExitos(int aNumCanciones) {
+		Cancion[] canciones = null;
+		
+		try {
+			canciones = _bd_canciones.cargarUltimosExitos(aNumCanciones);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return canciones;
+	}
 
 	@Override
     public Lista_de_reproduccion cargarLista(int aIdLista) {
 		throw new UnsupportedOperationException();
+	}
+	
+	@Override
+    public Lista_de_reproduccion[] cargarListaRecomendada(int aIdUsuario) {
+		Lista_de_reproduccion[] listas = null;
+		
+		try {
+			listas = _bd_listas_de_reproduccion.cargarListaRecomendada(aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return listas;
 	}
 
 	@Override
@@ -351,6 +404,30 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	@Override
     public Usuario_Registrado cargarUsuario(int aIdUsuario) {
 		throw new UnsupportedOperationException();
+	}
+	
+	@Override
+    public Usuario_Registrado[] cargarListaSeguidores(int aIdUsuario) {
+		Usuario_Registrado[] usuarios = null;
+		
+		try {
+			usuarios = _bd_usuarios_registrados.cargarListaSeguidores(aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return usuarios;
+	}
+	
+	@Override
+    public Usuario_Registrado[] cargarListaSeguidos(int aIdUsuario) {
+		Usuario_Registrado[] usuarios = null;
+		
+		try {
+			usuarios = _bd_usuarios_registrados.cargarListaSeguidos(aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return usuarios;
 	}
 
 	@Override

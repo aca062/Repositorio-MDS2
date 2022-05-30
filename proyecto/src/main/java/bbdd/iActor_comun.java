@@ -28,7 +28,7 @@ public interface iActor_comun {
 
 	public Artista cargarArtista(int aIdArtista);
 
-	public Estilo cargarEstilo(int aIdEstilo);
+	//public Estilo cargarEstilo(int aIdEstilo);
 
 	public Cancion cargarCancion(int aIdCancion);
 
@@ -37,4 +37,16 @@ public interface iActor_comun {
 	public Estadistica cargarEstadisticas(int aIdEstadisticas);
 
 	public Usuario_Registrado cargarUsuario(int aIdUsuario);
+
+	public Estilo[] cargarEstilo();
+
+	public Cancion[] cargarCancionRecomendada(int aIdUsuario);
+
+	public Album[] cargarAlbumRecomendado(int aIdUsuario);
+
+	public Lista_de_reproduccion[] cargarListaRecomendada(int aIdUsuario);
+
+	public Usuario_Registrado[] cargarListaSeguidores(int aIdUsuario);
+
+	public Usuario_Registrado[] cargarListaSeguidos(int aIdUsuario);
 }
