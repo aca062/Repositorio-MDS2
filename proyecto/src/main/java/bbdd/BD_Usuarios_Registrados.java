@@ -67,8 +67,15 @@ public class BD_Usuarios_Registrados {
 		}
 	}
 
-	public void eliminar(int aId) {
-		throw new UnsupportedOperationException();
+	public void eliminarUsuario(int aIdUsuario) throws PersistentException{
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			Usuario_Registrado usuario = Usuario_RegistradoDAO.getUsuario_RegistradoByORMID(aIdUsuario);
+			Usuario_RegistradoDAO.delete(usuario);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
 	}
 
 	public void darDeBaja(String aEmail) throws PersistentException{

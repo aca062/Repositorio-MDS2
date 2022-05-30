@@ -28,11 +28,21 @@ public interface iAdministrador extends iActor_comun {
 
 	public void editarFoto(String aFoto, int aIdUsuario);
 
-	public void eliminar(int aId);
-
 	public void editar_e_mail(String aEmail, int aIdUsuario);
 
 	public void editarCancionesMostradas(Cancion[] aCanciones);
 
 	public void editarNumCancionesCibernauta(int aNumCanciones);
+
+	public void eliminarAlbum(int aIdAlbum);
+
+	public void eliminarCancion(int aIdCancion);
+
+	public void eliminarArtista(int aIdArtista);
+
+	public void eliminarUsuario(int aIdUsuario);
+
+	public void eliminarEstilo(int aIdEstilo);
+
+	public void eliminarLista(int aIdListas);
 }

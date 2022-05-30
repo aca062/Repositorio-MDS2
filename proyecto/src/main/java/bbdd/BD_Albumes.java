@@ -25,8 +25,15 @@ public class BD_Albumes {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminar(int aId) {
-		throw new UnsupportedOperationException();
+	public void eliminarAlbum(int aIdAlbum) throws PersistentException{
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			Album album = AlbumDAO.getAlbumByORMID(aIdAlbum);
+			AlbumDAO.delete(album);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
 	}
 
 	public Album cargarAlbum(int aIdAlbum) {

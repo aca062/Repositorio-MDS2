@@ -210,10 +210,54 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	}
 
 	@Override
-    public void eliminar(int aId) {
-		throw new UnsupportedOperationException();
+    public void eliminarCancion(int aIdCancion) {
+		try {
+			_bd_canciones.eliminarCancion(aIdCancion);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
-
+	@Override
+    public void eliminarArtista(int aIdArtista) {
+		try {
+			_bd_artistas.eliminarArtista(aIdArtista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+	}
+	@Override
+    public void eliminarAlbum(int aIdAlbum) {
+		try {
+			_bd_albumes.eliminarAlbum(aIdAlbum);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+	}
+	@Override
+    public void eliminarUsuario(int aIdUsuario) {
+		try {
+			_bd_usuarios_registrados.eliminarUsuario(aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+    public void eliminarEstilo(int aIdEstilo) {
+		try {
+			_bd_estilos.eliminarEstilo(aIdEstilo);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+	}
+	@Override
+	public void eliminarLista(int aIdListas) {
+		try {
+			_bd_listas_de_reproduccion.eliminarLista(aIdListas);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+	}
 
 	@Override
     public void editarCancionesMostradas(interfaz.Cancion[] aCanciones) {

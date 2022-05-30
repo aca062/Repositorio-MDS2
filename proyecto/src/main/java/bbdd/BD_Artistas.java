@@ -12,6 +12,8 @@ import orm.bbdd.ArtistaDAO;
 import orm.bbdd.Estadistica;
 import orm.bbdd.EstadisticaDAO;
 import orm.bbdd.MDS2PersistentManager;
+import orm.bbdd.Usuario_Registrado;
+import orm.bbdd.Usuario_RegistradoDAO;
 
 public class BD_Artistas {
 	public BDPrincipal _bd_prin_artistas;
@@ -65,8 +67,15 @@ public class BD_Artistas {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminar(int aId) {
-		throw new UnsupportedOperationException();
+	public void eliminarArtista(int aIdArtista) throws PersistentException{
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			Artista artista = ArtistaDAO.getArtistaByORMID(aIdArtista);
+			ArtistaDAO.delete(artista);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
 	}
 
 	public void darDeBaja() {

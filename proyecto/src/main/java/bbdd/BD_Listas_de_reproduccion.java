@@ -7,6 +7,8 @@ import org.orm.PersistentTransaction;
 
 import orm.bbdd.Album;
 import orm.bbdd.AlbumDAO;
+import orm.bbdd.Artista;
+import orm.bbdd.ArtistaDAO;
 import orm.bbdd.Lista_de_reproduccion;
 import orm.bbdd.Lista_de_reproduccionDAO;
 import orm.bbdd.MDS2PersistentManager;
@@ -23,8 +25,15 @@ public class BD_Listas_de_reproduccion {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminar(int aId) {
-		throw new UnsupportedOperationException();
+	public void eliminarLista(int aIdListas) throws PersistentException{
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			Lista_de_reproduccion lista = Lista_de_reproduccionDAO.getLista_de_reproduccionByORMID(aIdListas);
+			Lista_de_reproduccionDAO.delete(lista);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
 	}
 
 	public void crearLista(String aNombre) throws PersistentException{

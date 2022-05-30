@@ -5,6 +5,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import orm.bbdd.Artista;
+import orm.bbdd.ArtistaDAO;
 import orm.bbdd.Estilo;
 import orm.bbdd.EstiloDAO;
 import orm.bbdd.MDS2PersistentManager;
@@ -34,8 +36,15 @@ public class BD_Estilos {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminar(int aId) {
-		throw new UnsupportedOperationException();
+	public void eliminarEstilo(int aIdEstilo) throws PersistentException{
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			Estilo estilo = EstiloDAO.getEstiloByORMID(aIdEstilo);
+			EstiloDAO.delete(estilo);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
 	}
 
 	public Estilo[] cargarEstilo() throws PersistentException {

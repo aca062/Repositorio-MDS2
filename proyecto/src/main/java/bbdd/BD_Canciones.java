@@ -10,6 +10,8 @@ import org.orm.PersistentTransaction;
 import orm.bbdd.Cancion;
 import orm.bbdd.CancionDAO;
 import orm.bbdd.MDS2PersistentManager;
+import orm.bbdd.Usuario_Registrado;
+import orm.bbdd.Usuario_RegistradoDAO;
 
 public class BD_Canciones {
 	public BDPrincipal _bd_prin_canciones;
@@ -27,8 +29,15 @@ public class BD_Canciones {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminar(int aId) throws PersistentException{
-		throw new UnsupportedOperationException();
+	public void eliminarCancion(int aIdCancion) throws PersistentException{
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			Cancion cancion = CancionDAO.getCancionByORMID(aIdCancion);
+			CancionDAO.delete(cancion);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
 	}
 
 	public void desmarcarFavorita(int aIdCancion, int aIdUsuario) throws PersistentException{
