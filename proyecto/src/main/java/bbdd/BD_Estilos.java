@@ -16,7 +16,7 @@ public class BD_Estilos {
 	public int altaEstilo(String aNombre, int aIdEstilo) throws PersistentException{
 	    PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 	    try {
-            Estilo estilo = new Estilo();
+            Estilo estilo = EstiloDAO.createEstilo();
             estilo.setNombre(aNombre);
             if (!EstiloDAO.save(estilo)) {
                 return -1;

@@ -1,17 +1,18 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.PasswordField;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-alta_artistas template.
@@ -31,10 +32,8 @@ public class VistaAlta_artistas extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("imgArtista")
 	private Image imgArtista;
-	@Id("anadirFoto")
-	private Button anadirFoto;
 	@Id("contraseña")
-	private PasswordField contraseña;
+	private PasswordField contrasena;
 	@Id("nick")
 	private TextField nick;
 	@Id("confirmarContraseña")
@@ -45,12 +44,6 @@ public class VistaAlta_artistas extends LitTemplate {
 	private Select estilo;
 	@Id("vaadinListBox")
 	private Element vaadinListBox;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("confirmar")
 	private Button confirmar;
 	@Id("layoutBotones")
@@ -59,6 +52,10 @@ public class VistaAlta_artistas extends LitTemplate {
 	private Button cancelar;
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
+    @Id("subirFoto")
+    private Upload subirFoto;
+    @Id("botonEliminar")
+    private Button botonEliminar;
 
 	/**
      * Creates a new VistaAlta_artistas.
@@ -99,20 +96,12 @@ public class VistaAlta_artistas extends LitTemplate {
 		this.imgArtista = imgArtista;
 	}
 
-	public Button getAnadirFoto() {
-		return anadirFoto;
+	public PasswordField getContrasena() {
+		return contrasena;
 	}
 
-	public void setAnadirFoto(Button anadirFoto) {
-		this.anadirFoto = anadirFoto;
-	}
-
-	public PasswordField getContraseña() {
-		return contraseña;
-	}
-
-	public void setContraseña(PasswordField contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(PasswordField contraseña) {
+		this.contrasena = contraseña;
 	}
 
 	public TextField getNick() {
@@ -155,30 +144,6 @@ public class VistaAlta_artistas extends LitTemplate {
 		this.vaadinListBox = vaadinListBox;
 	}
 
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
-	}
-
 	public Button getConfirmar() {
 		return confirmar;
 	}
@@ -210,4 +175,20 @@ public class VistaAlta_artistas extends LitTemplate {
 	public void setLayoutPrincipal(Element layoutPrincipal) {
 		this.layoutPrincipal = layoutPrincipal;
 	}
+
+    public Upload getSubirFoto() {
+        return subirFoto;
+    }
+
+    public void setSubirFoto(Upload subirFoto) {
+        this.subirFoto = subirFoto;
+    }
+
+    public Button getBotonEliminar() {
+        return botonEliminar;
+    }
+
+    public void setBotonEliminar(Button botonEliminar) {
+        this.botonEliminar = botonEliminar;
+    }
 }
