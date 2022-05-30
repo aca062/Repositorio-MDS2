@@ -53,141 +53,201 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	public BD_Estadisticas _bd_estadisticas;
 	public BD_Acceso_Datos _bd_acceso_datos;
 
-	public void marcarFavorito(int aId, String aNick) {
-		throw new UnsupportedOperationException();
-	}
-
 	public void anadir(String aNombre) {
 		throw new UnsupportedOperationException();
 	}
 
 	public void desmarcarFavorita(int aId, int aIdUsuario) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_canciones = new BD_Canciones();
+			_bd_canciones.desmarcarFavorita(aId, aIdUsuario);
+		} catch(PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void crearLista(String aNombre) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_listas_de_reproduccion = new BD_Listas_de_reproduccion(); 
+			_bd_listas_de_reproduccion.crearLista(aNombre);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public void seguirLista(int aIdLista) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_usuarios_registrados = new BD_Usuarios_Registrados();
+			_bd_usuarios_registrados.seguirLista(aIdLista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void seguir_dejarDeSeguirUsuario(String aNick, String aNickSeguido) {
-		throw new UnsupportedOperationException();
+	public void seguir_dejarDeSeguirUsuario(int aId, int aIdSeguido) {
+		try {
+			_bd_usuarios_registrados = new BD_Usuarios_Registrados();
+			_bd_usuarios_registrados.seguir_dejarDeSeguirUsuario(aId, aIdSeguido);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void seguir_dejarDeSeguirArtista(String aNick, String aNickSeguido) {
-		throw new UnsupportedOperationException();
+	public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista, interfaz.Cancion[] aCanciones,int aIdAlbum) {
+		try {
+			_bd_albumes = new BD_Albumes();
+			_bd_canciones = new BD_Canciones();
+			_bd_artistas = new BD_Artistas();
+			_bd_albumes.AltaAlbum(aImagen, aTitulo, aFechaEdicion, aIdAlbum);
+			_bd_canciones.altaAlbum(aCanciones);
+			_bd_artistas.altaAlbum(aNombreArtista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void cargarAlbum(Album aAlbum) {
-		throw new UnsupportedOperationException();
+	public void altaEstilo(String aNombre, int aIdEstilo) {
+		try {
+			_bd_estilos = new BD_Estilos();
+			_bd_estilos.altaEstilo(aNombre, aIdEstilo);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
-	public void cargarArtista(Artista_elemento aArtista) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void cargarEstilo(Estilo_admin aEstilo) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void cargarCancion(interfaz.Cancion aCancion) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void verCreditos(String aTitulo, String[] aInterpretes, String[] aCompositores, String[] aProductores, String aTituloAlb) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void cargarLista(Lista_de_reproduccion_ajena aLista) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void cargarEstadisticas(Estadisticas aEstadisticas) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void cargarUsuario(Usuario_registrado aUsuario) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista, interfaz.Cancion[] aCanciones) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void altaEstilo(String aNombre) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, Estilo_admin[] aEstilos, String aTituloAlbum) {
-		throw new UnsupportedOperationException();
+	public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia,int aIdCancion, Estilo_admin[] aEstilos, String aTituloAlbum) {
+		try {
+			_bd_albumes = new BD_Albumes();
+			_bd_canciones = new BD_Canciones();
+			_bd_estilos = new BD_Estilos();
+			_bd_albumes.altaCancion(aTituloAlbum);
+			_bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aIdCancion);
+			_bd_estilos.altaCancion(aEstilos);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista, interfaz.Cancion[] aCanciones, int aIdAlbum) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_albumes = new BD_Albumes();
+			_bd_canciones = new BD_Canciones();
+			_bd_artistas = new BD_Artistas();
+			_bd_albumes.AltaAlbum(aImagen, aTitulo, aFechaEdicion, aIdAlbum);
+			_bd_canciones.altaAlbum(aCanciones);
+			_bd_artistas.altaAlbum(aNombreArtista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_artistas = new BD_Artistas();
+			_bd_artistas.editarArtista(aEmail, aContrasena, aNick, aImagen, aIdArtista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, Estilo_admin[] aEstilos, String aTituloAlbum, int aIdCancion) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_albumes = new BD_Albumes();
+			_bd_canciones = new BD_Canciones();
+			_bd_estilos = new BD_Estilos();
+			_bd_albumes.altaCancion(aTituloAlbum);
+			_bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aIdCancion);
+			_bd_estilos.altaCancion(aEstilos);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarEstilo(String aNombre, int aIdEstilo) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_estilos = new BD_Estilos();
+			_bd_estilos.editarEstilo(aNombre, aIdEstilo);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarLista(String aNombre, int aIdLista) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void editarUsuario(String aEmail, String aContrasena, String aNick, String aImagen, int aIdUsuario) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_listas_de_reproduccion = new BD_Listas_de_reproduccion(); 
+			_bd_listas_de_reproduccion.editarLista(aNombre, aIdLista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarFoto(String aFoto, int aIdUsuario) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_administradores = new BD_Administradores();
+			_bd_administradores.editarFoto(aFoto, aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void editarFotoArtista(String aFoto, int aIdArtista) {
+		try {
+			_bd_artistas = new BD_Artistas();
+			_bd_artistas.editarFoto(aFoto, aIdArtista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminar(int aId) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editar_e_mail(String aEmail) {
-		throw new UnsupportedOperationException();
-	}
 
 	public void editarCancionesMostradas(interfaz.Cancion[] aCanciones) {
 		throw new UnsupportedOperationException();
 	}
 
 	public void editarNumCancionesCibernauta(int aNumCanciones) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_canciones = new BD_Canciones();
+			_bd_canciones.editarNumCancionesCibernauta(aNumCanciones);
+		} catch(PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void altaArtistas(String aEmail, String aContrasena, String aNick, int aIdArtista) {
-		throw new UnsupportedOperationException();
+	public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) {
+		try {
+			_bd_artistas = new BD_Artistas();
+			_bd_artistas.altaArtistas(aEmail, aContrasena, aNick, aImagen, aIdArtista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void anadirEvento(Date aFecha, String aHora, String aLugar, String aFoto) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_eventos = new BD_Eventos();
+			_bd_eventos.anadirEvento(aFecha, aHora, aLugar, aFoto);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public void darDeBaja(String aEmail) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_usuarios_registrados = new BD_Usuarios_Registrados();
+			_bd_usuarios_registrados.darDeBaja(aEmail);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
-	public void editarE_mail(String aEmail) {
-		throw new UnsupportedOperationException();
-	}
 
 	public String inicioDeSesion(String aEmail, String aContrasena) {
 		_bd_acceso_datos = new BD_Acceso_Datos();
@@ -211,15 +271,32 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	}
 
 	public void recuperarContrasena(String aEmail) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_acceso_datos = new BD_Acceso_Datos();
+			_bd_acceso_datos.recuperarContrasena(aEmail);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void marcarFavorito(int aIdCancion, int aIdUsuario) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_canciones = new BD_Canciones();
+			_bd_canciones.marcarFavorito(aIdCancion, aIdUsuario);
+		} catch(PersistentException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public void seguir_dejarDeSeguirArtista(int aId, int aIdSeguido) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_artistas = new BD_Artistas();
+			_bd_artistas.seguir_dejarDeSeguirArtista(aId, aIdSeguido);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public Album cargarAlbum(int aIdAlbum) {
@@ -251,14 +328,30 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	}
 
 	public void editarUsuario(int aIdUsuario, String aEmail, String aContrasena, String aNick, String aImagen) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_usuarios_registrados = new BD_Usuarios_Registrados();
+			_bd_usuarios_registrados.editarUsuario(aIdUsuario, aEmail, aContrasena, aNick, aImagen);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void editar_e_mail(String aEmail, int aIdUsuario) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_administradores = new BD_Administradores();
+			_bd_administradores.editar_e_mail(aEmail, aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void editarE_mail(String aEmail, int aIdArtista) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_artistas = new BD_Artistas();
+			_bd_artistas.editarE_mail(aEmail, aIdArtista);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 }

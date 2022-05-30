@@ -9,7 +9,7 @@ public class BD_Albumes {
 	public BDPrincipal _bd_prin_albumes;
 	public Vector<Album> _contiene_albumes = new Vector<Album>();
 
-	public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion) {
+	public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, int aIdAlbum) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -25,11 +25,7 @@ public class BD_Albumes {
 		throw new UnsupportedOperationException();
 	}
 
-	public void verCreditos(String aTitulo) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void altaCancion(Estilo_admin[] aEstilos) {
+	public void altaCancion(String aTituloAlbum) {
 		throw new UnsupportedOperationException();
 	}
 

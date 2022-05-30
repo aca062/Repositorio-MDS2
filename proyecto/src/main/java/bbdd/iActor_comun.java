@@ -20,7 +20,7 @@ public interface iActor_comun {
 
 	public void seguirLista(int aIdLista);
 
-	public void seguir_dejarDeSeguirUsuario(String aNick, String aNickSeguido);
+	public void seguir_dejarDeSeguirUsuario(int aId, int aIdSeguido);
 
 	public void seguir_dejarDeSeguirArtista(int aId, int aIdSeguido);
 

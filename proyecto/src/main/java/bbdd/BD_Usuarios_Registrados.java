@@ -17,7 +17,7 @@ public class BD_Usuarios_Registrados {
 	public BDPrincipal _bd_prin_usuarios_registrados;
 	public Vector<Usuario_Registrado> _contiene_usuario_registrados = new Vector<Usuario_Registrado>();
 
-	public void editarUsuario(int aIdUsuario, String aEmail, String aContrasena, String aNick, String aImagen) {
+	public void editarUsuario(int aIdUsuario, String aEmail, String aContrasena, String aNick, String aImagen) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
@@ -65,15 +65,15 @@ public class BD_Usuarios_Registrados {
 		throw new UnsupportedOperationException();
 	}
 
-	public void darDeBaja(String aEmail) {
+	public void darDeBaja(String aEmail) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
-	public void seguirLista(int aIdLista) {
+	public void seguirLista(int aIdLista) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
-	public void seguir_dejarDeSeguirUsuario(int aId, int aIdSeguido) {
+	public void seguir_dejarDeSeguirUsuario(int aId, int aIdSeguido) throws PersistentException{
 		throw new UnsupportedOperationException();
 	}
 
