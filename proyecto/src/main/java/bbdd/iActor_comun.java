@@ -49,4 +49,8 @@ public interface iActor_comun {
 	public Usuario_Registrado[] cargarListaSeguidores(int aIdUsuario);
 
 	public Usuario_Registrado[] cargarListaSeguidos(int aIdUsuario);
+
+	public Lista_de_reproduccion[] cargarCancionesFavoritas(int aIdUsuario);
+
+	public Cancion[] cargarUltimasCancionesReproducidas(int aIdUsuario);
 }

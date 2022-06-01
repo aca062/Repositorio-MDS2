@@ -405,6 +405,30 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 		}
 		return canciones;
 	}
+	
+	@Override
+    public Lista_de_reproduccion[] cargarCancionesFavoritas(int aIdUsuario) {
+		Lista_de_reproduccion[] listas = null;
+		
+		try {
+			listas = _bd_listas_de_reproduccion.cargarCancionesFavoritas(aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return listas;
+	}
+	
+	@Override
+    public Cancion[] cargarUltimasCancionesReproducidas(int aIdUsuario) {
+		Cancion[] canciones = null;
+		
+		try {
+			canciones = _bd_canciones.cargarUltimosExitos(aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return canciones;
+	}
 
 	@Override
     public Lista_de_reproduccion cargarLista(int aIdLista) {

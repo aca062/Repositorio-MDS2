@@ -5,6 +5,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import orm.bbdd.Actor_Comun;
+import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.Album;
 import orm.bbdd.AlbumDAO;
 import orm.bbdd.Artista;
@@ -56,6 +58,19 @@ public class BD_Listas_de_reproduccion {
 			t.rollback();
 		}
 		return listas;
+	}
+	
+	public Lista_de_reproduccion[] cargarCancionesFavoritas(int aIdUsuario) throws PersistentException{
+		Lista_de_reproduccion[] lista = null;
+		
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			 
+			t.commit();
+		} catch(Exception e) {
+			t.rollback();
+		}
+		return lista;
 	}
 	
 }

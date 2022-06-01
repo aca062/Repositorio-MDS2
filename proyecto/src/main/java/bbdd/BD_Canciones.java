@@ -9,6 +9,8 @@ import org.orm.PersistentTransaction;
 
 import orm.bbdd.Acceso_Dato;
 import orm.bbdd.Acceso_DatoDAO;
+import orm.bbdd.Actor_Comun;
+import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.AdministradorDAO;
 import orm.bbdd.Album;
 import orm.bbdd.AlbumCriteria;
@@ -117,6 +119,22 @@ public class BD_Canciones {
 		} catch(Exception e) {
 			t.rollback();
 		}
+		return canciones;
+	}
+	
+	public Cancion[] cargarUltimasCancionesReproducidas(int aIdUsuario) throws PersistentException{
+		Cancion[] canciones = new Cancion[0];
+		
+		/*PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			Actor_Comun usuario = Actor_ComunDAO.getActor_ComunByORMID(aIdUsuario);
+			
+			}
+			
+			t.commit();
+		} catch(Exception e) {
+			t.rollback();
+		}*/
 		return canciones;
 	}
 
