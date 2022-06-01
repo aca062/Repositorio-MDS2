@@ -43,19 +43,19 @@ public class Estilo implements Serializable {
 	
 	@Column(name="IdEstilo", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BBDD_ESTILO_IDESTILO_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BBDD_ESTILO_IDESTILO_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="ORM_BBDD_ESTILO_IDESTILO_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="ORM_BBDD_ESTILO_IDESTILO_GENERATOR", strategy="native")	
 	private int idEstilo;
 	
 	@Column(name="Nombre", nullable=true, length=255)	
 	private String nombre;
 	
-	@OneToMany(mappedBy="estilo", targetEntity=Cancion.class)	
+	@OneToMany(mappedBy="estilo", targetEntity=orm.bbdd.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_canciones = new java.util.HashSet();
 	
-	@ManyToMany(targetEntity=Artista.class)	
+	@ManyToMany(targetEntity=orm.bbdd.Artista.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Artista_Estilo", joinColumns={ @JoinColumn(name="EstiloIdEstilo") }, inverseJoinColumns={ @JoinColumn(name="ArtistaActor_ComunId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
@@ -90,7 +90,7 @@ public class Estilo implements Serializable {
 	}
 	
 	@Transient	
-	public final CancionSetCollection canciones = new CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTILO_CANCIONES, ORMConstants.KEY_CANCION_ESTILO, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.bbdd.CancionSetCollection canciones = new orm.bbdd.CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTILO_CANCIONES, ORMConstants.KEY_CANCION_ESTILO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM_Artistas(java.util.Set value) {
 		this.ORM_artistas = value;
@@ -101,7 +101,7 @@ public class Estilo implements Serializable {
 	}
 	
 	@Transient	
-	public final ArtistaSetCollection artistas = new ArtistaSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTILO_ARTISTAS, ORMConstants.KEY_ARTISTA_ESTILOS, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.ArtistaSetCollection artistas = new orm.bbdd.ArtistaSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTILO_ARTISTAS, ORMConstants.KEY_ARTISTA_ESTILOS, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdEstilo());

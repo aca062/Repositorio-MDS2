@@ -29,7 +29,7 @@ public class Acceso_DatoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final AssociationExpression usuario;
 	
 	public Acceso_DatoDetachedCriteria() {
-		super(Acceso_Dato.class, Acceso_DatoCriteria.class);
+		super(orm.bbdd.Acceso_Dato.class, orm.bbdd.Acceso_DatoCriteria.class);
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		email = new StringExpression("email", this.getDetachedCriteria());
@@ -41,7 +41,7 @@ public class Acceso_DatoDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public Acceso_DatoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, Acceso_DatoCriteria.class);
+		super(aDetachedCriteria, orm.bbdd.Acceso_DatoCriteria.class);
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		email = new StringExpression("email", this.getDetachedCriteria());

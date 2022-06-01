@@ -16,7 +16,7 @@
     <Column name="ArtistaActor_ComunId">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Artista.Actor_ComunId</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -155,7 +155,7 @@
     <Column name="EstadisticaId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Estadistica.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Estadistica.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -226,7 +226,7 @@
     <Column name="ArtistaActor_ComunId">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Artista.Actor_ComunId</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -295,7 +295,7 @@
     <Column name="Actor_ComunId">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -331,7 +331,7 @@
     <Column name="AdministradorActor_ComunId">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Administrador.Actor_ComunId</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Administrador.Actor_ComunId</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -343,7 +343,7 @@
     <Column name="EstiloIdEstilo">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Estilo.IdEstilo</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Estilo.IdEstilo</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -385,12 +385,23 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <Column name="RutaImagen">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
   </Entity>
   <Entity name="Cancion_compositores" Unlogged="false" PKClustered="0">
     <Column name="CancionIdCancion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Cancion.IdCancion</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Cancion.IdCancion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -426,7 +437,7 @@
     <Column name="CancionIdCancion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Cancion.IdCancion</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Cancion.IdCancion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -462,7 +473,7 @@
     <Column name="CancionIdCancion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Cancion.IdCancion</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Cancion.IdCancion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -509,7 +520,7 @@
     <Column name="Acceso_DatoId">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Acceso_Dato.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Acceso_Dato.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -521,7 +532,7 @@
     <Column name="EstadisticaId">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Estadistica.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Estadistica.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -590,7 +601,7 @@
     <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -604,7 +615,7 @@
     <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -618,7 +629,7 @@
     <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -632,7 +643,7 @@
     <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -644,7 +655,7 @@
     <Column name="CancionIdCancion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Cancion.IdCancion</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Cancion.IdCancion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -658,7 +669,7 @@
     <Column name="CancionIdCancion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Cancion.IdCancion</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Cancion.IdCancion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -670,7 +681,7 @@
     <Column name="Lista de reproduccionIdLista">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Lista de reproduccion.IdLista</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Lista de reproduccion.IdLista</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -684,7 +695,7 @@
     <Column name="CancionIdCancion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Cancion.IdCancion</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Cancion.IdCancion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -696,7 +707,7 @@
     <Column name="AlbumIdAlbum">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Album.IdAlbum</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Album.IdAlbum</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -710,7 +721,7 @@
     <Column name="ArtistaActor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Artista.Actor_ComunId</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -722,7 +733,7 @@
     <Column name="EstiloIdEstilo">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Estilo.IdEstilo</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Estilo.IdEstilo</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -736,7 +747,7 @@
     <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -748,7 +759,7 @@
     <Column name="Lista de reproduccionIdLista">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Lista de reproduccion.IdLista</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Lista de reproduccion.IdLista</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -762,7 +773,7 @@
     <Column name="CancionIdCancion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Cancion.IdCancion</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Cancion.IdCancion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -774,7 +785,7 @@
     <Column name="ArtistaActor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Artista.Actor_ComunId</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -788,7 +799,7 @@
     <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -800,7 +811,7 @@
     <Column name="EventoIdEvento">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Evento.IdEvento</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Evento.IdEvento</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -814,7 +825,7 @@
     <Column name="EstadisticaId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Estadistica.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Estadistica.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -826,7 +837,7 @@
     <Column name="ArtistaActor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Artista.Actor_ComunId</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Artista.Actor_ComunId</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -840,7 +851,7 @@
     <Column name="EstadisticaId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Estadistica.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Estadistica.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -852,7 +863,7 @@
     <Column name="CancionIdCancion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Cancion.IdCancion</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Cancion.IdCancion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -866,7 +877,7 @@
     <Column name="EstadisticaId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Estadistica.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Estadistica.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -878,7 +889,7 @@
     <Column name="Lista de reproduccionIdLista">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Lista de reproduccion.IdLista</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Lista de reproduccion.IdLista</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -892,7 +903,7 @@
     <Column name="EstadisticaId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Estadistica.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Estadistica.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -904,7 +915,7 @@
     <Column name="AlbumIdAlbum">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Album.IdAlbum</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Album.IdAlbum</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -918,7 +929,7 @@
     <Column name="Actor_ComunId">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -930,7 +941,33 @@
     <Column name="Actor_ComunId2">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BBDD.Actor_Comun.Id</ReferencedColumn>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Actor_Comun_Cancion2" Unlogged="false" PKClustered="0">
+    <Column name="Actor_ComunId">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>orm.bbdd.Actor_Comun.Id</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="CancionIdCancion">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>orm.bbdd.Cancion.IdCancion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -1318,6 +1355,26 @@
     </Columns>
     <RefColumns>
       <Column>Actor_ComunId</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKActor_Comu12246">
+    <ReferenceTable>Actor_Comun_Cancion2</ReferenceTable>
+    <ReferencedTable>Actor_Comun</ReferencedTable>
+    <Columns>
+      <Column>Actor_ComunId</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Id</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKActor_Comu934809">
+    <ReferenceTable>Actor_Comun_Cancion2</ReferenceTable>
+    <ReferencedTable>Cancion</ReferencedTable>
+    <Columns>
+      <Column>CancionIdCancion</Column>
+    </Columns>
+    <RefColumns>
+      <Column>IdCancion</Column>
     </RefColumns>
   </ForeignKey>
 </Model>

@@ -34,6 +34,7 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression listas_de_reproduccion_seguidas;
 	public final CollectionExpression notificaciones;
 	public final CollectionExpression seguidor;
+	public final CollectionExpression canciones_reproducidas;
 	public final CollectionExpression cancions;
 	public final CollectionExpression estadisticas;
 	public final CollectionExpression eventos;
@@ -41,7 +42,7 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression albums;
 	
 	public ArtistaDetachedCriteria() {
-		super(Artista.class, ArtistaCriteria.class);
+		super(orm.bbdd.Artista.class, orm.bbdd.ArtistaCriteria.class);
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this.getDetachedCriteria());
 		acceso_Dato = new AssociationExpression("acceso_Dato", this.getDetachedCriteria());
@@ -57,6 +58,7 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		listas_de_reproduccion_seguidas = new CollectionExpression("ORM_listas_de_reproduccion_seguidas", this.getDetachedCriteria());
 		notificaciones = new CollectionExpression("ORM_notificaciones", this.getDetachedCriteria());
 		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
+		canciones_reproducidas = new CollectionExpression("ORM_canciones_reproducidas", this.getDetachedCriteria());
 		cancions = new CollectionExpression("ORM_cancions", this.getDetachedCriteria());
 		estadisticas = new CollectionExpression("ORM_estadisticas", this.getDetachedCriteria());
 		eventos = new CollectionExpression("ORM_eventos", this.getDetachedCriteria());
@@ -65,7 +67,7 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public ArtistaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, ArtistaCriteria.class);
+		super(aDetachedCriteria, orm.bbdd.ArtistaCriteria.class);
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this.getDetachedCriteria());
 		acceso_Dato = new AssociationExpression("acceso_Dato", this.getDetachedCriteria());
@@ -81,6 +83,7 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		listas_de_reproduccion_seguidas = new CollectionExpression("ORM_listas_de_reproduccion_seguidas", this.getDetachedCriteria());
 		notificaciones = new CollectionExpression("ORM_notificaciones", this.getDetachedCriteria());
 		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
+		canciones_reproducidas = new CollectionExpression("ORM_canciones_reproducidas", this.getDetachedCriteria());
 		cancions = new CollectionExpression("ORM_cancions", this.getDetachedCriteria());
 		estadisticas = new CollectionExpression("ORM_estadisticas", this.getDetachedCriteria());
 		eventos = new CollectionExpression("ORM_eventos", this.getDetachedCriteria());
@@ -138,6 +141,10 @@ public class ArtistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	
 	public Actor_ComunDetachedCriteria createSeguidorCriteria() {
 		return new Actor_ComunDetachedCriteria(createCriteria("ORM_seguidor"));
+	}
+	
+	public CancionDetachedCriteria createCanciones_reproducidasCriteria() {
+		return new CancionDetachedCriteria(createCriteria("ORM_canciones_reproducidas"));
 	}
 	
 	public Artista uniqueArtista(PersistentSession session) {

@@ -65,7 +65,7 @@ public class Lista_de_reproduccionDAO {
 	
 	public static Lista_de_reproduccion loadLista_de_reproduccionByORMID(PersistentSession session, int idLista) throws PersistentException {
 		try {
-			return (Lista_de_reproduccion) session.load(Lista_de_reproduccion.class, Integer.valueOf(idLista));
+			return (Lista_de_reproduccion) session.load(orm.bbdd.Lista_de_reproduccion.class, Integer.valueOf(idLista));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class Lista_de_reproduccionDAO {
 	
 	public static Lista_de_reproduccion getLista_de_reproduccionByORMID(PersistentSession session, int idLista) throws PersistentException {
 		try {
-			return (Lista_de_reproduccion) session.get(Lista_de_reproduccion.class, Integer.valueOf(idLista));
+			return (Lista_de_reproduccion) session.get(orm.bbdd.Lista_de_reproduccion.class, Integer.valueOf(idLista));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class Lista_de_reproduccionDAO {
 	
 	public static Lista_de_reproduccion loadLista_de_reproduccionByORMID(PersistentSession session, int idLista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Lista_de_reproduccion) session.load(Lista_de_reproduccion.class, Integer.valueOf(idLista), lockMode);
+			return (Lista_de_reproduccion) session.load(orm.bbdd.Lista_de_reproduccion.class, Integer.valueOf(idLista), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class Lista_de_reproduccionDAO {
 	
 	public static Lista_de_reproduccion getLista_de_reproduccionByORMID(PersistentSession session, int idLista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Lista_de_reproduccion) session.get(Lista_de_reproduccion.class, Integer.valueOf(idLista), lockMode);
+			return (Lista_de_reproduccion) session.get(orm.bbdd.Lista_de_reproduccion.class, Integer.valueOf(idLista), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class Lista_de_reproduccionDAO {
 	}
 	
 	public static List queryLista_de_reproduccion(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Lista_de_reproduccion as Lista_de_reproduccion");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Lista_de_reproduccion as Lista_de_reproduccion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class Lista_de_reproduccionDAO {
 	}
 	
 	public static List queryLista_de_reproduccion(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Lista_de_reproduccion as Lista_de_reproduccion");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Lista_de_reproduccion as Lista_de_reproduccion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class Lista_de_reproduccionDAO {
 	}
 	
 	public static java.util.Iterator iterateLista_de_reproduccionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Lista_de_reproduccion as Lista_de_reproduccion");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Lista_de_reproduccion as Lista_de_reproduccion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class Lista_de_reproduccionDAO {
 	}
 	
 	public static java.util.Iterator iterateLista_de_reproduccionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Lista_de_reproduccion as Lista_de_reproduccion");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Lista_de_reproduccion as Lista_de_reproduccion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class Lista_de_reproduccionDAO {
 	}
 	
 	public static Lista_de_reproduccion createLista_de_reproduccion() {
-		return new Lista_de_reproduccion();
+		return new orm.bbdd.Lista_de_reproduccion();
 	}
 	
-	public static boolean save(Lista_de_reproduccion lista_de_reproduccion) throws PersistentException {
+	public static boolean save(orm.bbdd.Lista_de_reproduccion lista_de_reproduccion) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(lista_de_reproduccion);
 			return true;
@@ -310,7 +310,7 @@ public class Lista_de_reproduccionDAO {
 		}
 	}
 	
-	public static boolean delete(Lista_de_reproduccion lista_de_reproduccion) throws PersistentException {
+	public static boolean delete(orm.bbdd.Lista_de_reproduccion lista_de_reproduccion) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(lista_de_reproduccion);
 			return true;
@@ -321,17 +321,17 @@ public class Lista_de_reproduccionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Lista_de_reproduccion lista_de_reproduccion)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Lista_de_reproduccion lista_de_reproduccion)throws PersistentException {
 		try {
-			Actor_Comun[] lSeguidors = lista_de_reproduccion.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = lista_de_reproduccion.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].listas_de_reproduccion_seguidas.remove(lista_de_reproduccion);
 			}
-			Cancion[] lCancioness = lista_de_reproduccion.canciones.toArray();
+			orm.bbdd.Cancion[] lCancioness = lista_de_reproduccion.canciones.toArray();
 			for(int i = 0; i < lCancioness.length; i++) {
 				lCancioness[i].listas_de_reproduccion.remove(lista_de_reproduccion);
 			}
-			Estadistica[] lEstadisticass = lista_de_reproduccion.estadisticas.toArray();
+			orm.bbdd.Estadistica[] lEstadisticass = lista_de_reproduccion.estadisticas.toArray();
 			for(int i = 0; i < lEstadisticass.length; i++) {
 				lEstadisticass[i].lista_de_reproduccion.remove(lista_de_reproduccion);
 			}
@@ -347,17 +347,17 @@ public class Lista_de_reproduccionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Lista_de_reproduccion lista_de_reproduccion, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Lista_de_reproduccion lista_de_reproduccion, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			Actor_Comun[] lSeguidors = lista_de_reproduccion.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = lista_de_reproduccion.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].listas_de_reproduccion_seguidas.remove(lista_de_reproduccion);
 			}
-			Cancion[] lCancioness = lista_de_reproduccion.canciones.toArray();
+			orm.bbdd.Cancion[] lCancioness = lista_de_reproduccion.canciones.toArray();
 			for(int i = 0; i < lCancioness.length; i++) {
 				lCancioness[i].listas_de_reproduccion.remove(lista_de_reproduccion);
 			}
-			Estadistica[] lEstadisticass = lista_de_reproduccion.estadisticas.toArray();
+			orm.bbdd.Estadistica[] lEstadisticass = lista_de_reproduccion.estadisticas.toArray();
 			for(int i = 0; i < lEstadisticass.length; i++) {
 				lEstadisticass[i].lista_de_reproduccion.remove(lista_de_reproduccion);
 			}
@@ -378,7 +378,7 @@ public class Lista_de_reproduccionDAO {
 		}
 	}
 	
-	public static boolean refresh(Lista_de_reproduccion lista_de_reproduccion) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Lista_de_reproduccion lista_de_reproduccion) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(lista_de_reproduccion);
 			return true;
@@ -389,7 +389,7 @@ public class Lista_de_reproduccionDAO {
 		}
 	}
 	
-	public static boolean evict(Lista_de_reproduccion lista_de_reproduccion) throws PersistentException {
+	public static boolean evict(orm.bbdd.Lista_de_reproduccion lista_de_reproduccion) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(lista_de_reproduccion);
 			return true;

@@ -35,7 +35,7 @@ public class Album implements Serializable {
 	
 	private void this_setOwner(Object owner, int key) {
 		if (key == ORMConstants.KEY_ALBUM_ARTISTA) {
-			this.artista = (Artista) owner;
+			this.artista = (orm.bbdd.Artista) owner;
 		}
 	}
 	
@@ -53,15 +53,15 @@ public class Album implements Serializable {
 	
 	@Column(name="IdAlbum", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BBDD_ALBUM_IDALBUM_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BBDD_ALBUM_IDALBUM_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="ORM_BBDD_ALBUM_IDALBUM_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="ORM_BBDD_ALBUM_IDALBUM_GENERATOR", strategy="native")	
 	private int idAlbum;
 	
-	@ManyToOne(targetEntity=Artista.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=orm.bbdd.Artista.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="ArtistaActor_ComunId", referencedColumnName="Actor_ComunId", nullable=false) }, foreignKey=@ForeignKey(name="FKAlbum383064"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
-	private Artista artista;
+	private orm.bbdd.Artista artista;
 	
 	@Column(name="Imagen", nullable=true, length=255)	
 	private String imagen;
@@ -73,13 +73,13 @@ public class Album implements Serializable {
 	@Temporal(TemporalType.DATE)	
 	private java.util.Date fechaEdicion;
 	
-	@ManyToMany(targetEntity=Cancion.class)	
+	@ManyToMany(targetEntity=orm.bbdd.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Cancion_Album", joinColumns={ @JoinColumn(name="AlbumIdAlbum") }, inverseJoinColumns={ @JoinColumn(name="CancionIdCancion") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_canciones = new java.util.HashSet();
 	
-	@ManyToMany(targetEntity=Estadistica.class)	
+	@ManyToMany(targetEntity=orm.bbdd.Estadistica.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Estadistica_Album", joinColumns={ @JoinColumn(name="AlbumIdAlbum") }, inverseJoinColumns={ @JoinColumn(name="EstadisticaId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
@@ -130,7 +130,7 @@ public class Album implements Serializable {
 	}
 	
 	@Transient	
-	public final CancionSetCollection canciones = new CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ALBUM_CANCIONES, ORMConstants.KEY_CANCION_ALBUM, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.CancionSetCollection canciones = new orm.bbdd.CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ALBUM_CANCIONES, ORMConstants.KEY_CANCION_ALBUM, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Estadisticas(java.util.Set value) {
 		this.ORM_estadisticas = value;
@@ -141,9 +141,9 @@ public class Album implements Serializable {
 	}
 	
 	@Transient	
-	public final EstadisticaSetCollection estadisticas = new EstadisticaSetCollection(this, _ormAdapter, ORMConstants.KEY_ALBUM_ESTADISTICAS, ORMConstants.KEY_ESTADISTICA_ALBUMS, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.EstadisticaSetCollection estadisticas = new orm.bbdd.EstadisticaSetCollection(this, _ormAdapter, ORMConstants.KEY_ALBUM_ESTADISTICAS, ORMConstants.KEY_ESTADISTICA_ALBUMS, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	public void setArtista(Artista value) {
+	public void setArtista(orm.bbdd.Artista value) {
 		if (artista != null) {
 			artista.albums.remove(this);
 		}
@@ -152,18 +152,18 @@ public class Album implements Serializable {
 		}
 	}
 	
-	public Artista getArtista() {
+	public orm.bbdd.Artista getArtista() {
 		return artista;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_Artista(Artista value) {
+	public void setORM_Artista(orm.bbdd.Artista value) {
 		this.artista = value;
 	}
 	
-	private Artista getORM_Artista() {
+	private orm.bbdd.Artista getORM_Artista() {
 		return artista;
 	}
 	

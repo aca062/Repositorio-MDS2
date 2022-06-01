@@ -65,7 +65,7 @@ public class CancionDAO {
 	
 	public static Cancion loadCancionByORMID(PersistentSession session, int idCancion) throws PersistentException {
 		try {
-			return (Cancion) session.load(Cancion.class, Integer.valueOf(idCancion));
+			return (Cancion) session.load(orm.bbdd.Cancion.class, Integer.valueOf(idCancion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class CancionDAO {
 	
 	public static Cancion getCancionByORMID(PersistentSession session, int idCancion) throws PersistentException {
 		try {
-			return (Cancion) session.get(Cancion.class, Integer.valueOf(idCancion));
+			return (Cancion) session.get(orm.bbdd.Cancion.class, Integer.valueOf(idCancion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class CancionDAO {
 	
 	public static Cancion loadCancionByORMID(PersistentSession session, int idCancion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Cancion) session.load(Cancion.class, Integer.valueOf(idCancion), lockMode);
+			return (Cancion) session.load(orm.bbdd.Cancion.class, Integer.valueOf(idCancion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class CancionDAO {
 	
 	public static Cancion getCancionByORMID(PersistentSession session, int idCancion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Cancion) session.get(Cancion.class, Integer.valueOf(idCancion), lockMode);
+			return (Cancion) session.get(orm.bbdd.Cancion.class, Integer.valueOf(idCancion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class CancionDAO {
 	}
 	
 	public static List queryCancion(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Cancion as Cancion");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Cancion as Cancion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class CancionDAO {
 	}
 	
 	public static List queryCancion(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Cancion as Cancion");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Cancion as Cancion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class CancionDAO {
 	}
 	
 	public static java.util.Iterator iterateCancionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Cancion as Cancion");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Cancion as Cancion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class CancionDAO {
 	}
 	
 	public static java.util.Iterator iterateCancionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Cancion as Cancion");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Cancion as Cancion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class CancionDAO {
 	}
 	
 	public static Cancion createCancion() {
-		return new Cancion();
+		return new orm.bbdd.Cancion();
 	}
 	
-	public static boolean save(Cancion cancion) throws PersistentException {
+	public static boolean save(orm.bbdd.Cancion cancion) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(cancion);
 			return true;
@@ -310,7 +310,7 @@ public class CancionDAO {
 		}
 	}
 	
-	public static boolean delete(Cancion cancion) throws PersistentException {
+	public static boolean delete(orm.bbdd.Cancion cancion) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(cancion);
 			return true;
@@ -321,7 +321,7 @@ public class CancionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Cancion cancion)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Cancion cancion)throws PersistentException {
 		try {
 			if (cancion.getAdministrador() != null) {
 				cancion.getAdministrador().cancions.remove(cancion);
@@ -331,23 +331,27 @@ public class CancionDAO {
 				cancion.getEstilo().canciones.remove(cancion);
 			}
 			
-			Actor_Comun[] lUsuarios = cancion.usuario.toArray();
+			orm.bbdd.Actor_Comun[] lUsuarios = cancion.usuario.toArray();
 			for(int i = 0; i < lUsuarios.length; i++) {
 				lUsuarios[i].cancion_favorita.remove(cancion);
 			}
-			Estadistica[] lEstadisticass = cancion.estadisticas.toArray();
+			orm.bbdd.Estadistica[] lEstadisticass = cancion.estadisticas.toArray();
 			for(int i = 0; i < lEstadisticass.length; i++) {
 				lEstadisticass[i].cancions.remove(cancion);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccions = cancion.listas_de_reproduccion.toArray();
+			orm.bbdd.Actor_Comun[] l_usuarios = cancion._usuario.toArray();
+			for(int i = 0; i < l_usuarios.length; i++) {
+				l_usuarios[i].canciones_reproducidas.remove(cancion);
+			}
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccions = cancion.listas_de_reproduccion.toArray();
 			for(int i = 0; i < lListas_de_reproduccions.length; i++) {
 				lListas_de_reproduccions[i].canciones.remove(cancion);
 			}
-			Album[] lAlbums = cancion.album.toArray();
+			orm.bbdd.Album[] lAlbums = cancion.album.toArray();
 			for(int i = 0; i < lAlbums.length; i++) {
 				lAlbums[i].canciones.remove(cancion);
 			}
-			Artista[] lArtistass = cancion.artistas.toArray();
+			orm.bbdd.Artista[] lArtistass = cancion.artistas.toArray();
 			for(int i = 0; i < lArtistass.length; i++) {
 				lArtistass[i].cancions.remove(cancion);
 			}
@@ -359,7 +363,7 @@ public class CancionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Cancion cancion, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Cancion cancion, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (cancion.getAdministrador() != null) {
 				cancion.getAdministrador().cancions.remove(cancion);
@@ -369,23 +373,27 @@ public class CancionDAO {
 				cancion.getEstilo().canciones.remove(cancion);
 			}
 			
-			Actor_Comun[] lUsuarios = cancion.usuario.toArray();
+			orm.bbdd.Actor_Comun[] lUsuarios = cancion.usuario.toArray();
 			for(int i = 0; i < lUsuarios.length; i++) {
 				lUsuarios[i].cancion_favorita.remove(cancion);
 			}
-			Estadistica[] lEstadisticass = cancion.estadisticas.toArray();
+			orm.bbdd.Estadistica[] lEstadisticass = cancion.estadisticas.toArray();
 			for(int i = 0; i < lEstadisticass.length; i++) {
 				lEstadisticass[i].cancions.remove(cancion);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccions = cancion.listas_de_reproduccion.toArray();
+			orm.bbdd.Actor_Comun[] l_usuarios = cancion._usuario.toArray();
+			for(int i = 0; i < l_usuarios.length; i++) {
+				l_usuarios[i].canciones_reproducidas.remove(cancion);
+			}
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccions = cancion.listas_de_reproduccion.toArray();
 			for(int i = 0; i < lListas_de_reproduccions.length; i++) {
 				lListas_de_reproduccions[i].canciones.remove(cancion);
 			}
-			Album[] lAlbums = cancion.album.toArray();
+			orm.bbdd.Album[] lAlbums = cancion.album.toArray();
 			for(int i = 0; i < lAlbums.length; i++) {
 				lAlbums[i].canciones.remove(cancion);
 			}
-			Artista[] lArtistass = cancion.artistas.toArray();
+			orm.bbdd.Artista[] lArtistass = cancion.artistas.toArray();
 			for(int i = 0; i < lArtistass.length; i++) {
 				lArtistass[i].cancions.remove(cancion);
 			}
@@ -402,7 +410,7 @@ public class CancionDAO {
 		}
 	}
 	
-	public static boolean refresh(Cancion cancion) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Cancion cancion) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(cancion);
 			return true;
@@ -413,7 +421,7 @@ public class CancionDAO {
 		}
 	}
 	
-	public static boolean evict(Cancion cancion) throws PersistentException {
+	public static boolean evict(orm.bbdd.Cancion cancion) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(cancion);
 			return true;

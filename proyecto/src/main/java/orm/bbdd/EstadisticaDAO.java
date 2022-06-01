@@ -65,7 +65,7 @@ public class EstadisticaDAO {
 	
 	public static Estadistica loadEstadisticaByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Estadistica) session.load(Estadistica.class, Integer.valueOf(id));
+			return (Estadistica) session.load(orm.bbdd.Estadistica.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class EstadisticaDAO {
 	
 	public static Estadistica getEstadisticaByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Estadistica) session.get(Estadistica.class, Integer.valueOf(id));
+			return (Estadistica) session.get(orm.bbdd.Estadistica.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class EstadisticaDAO {
 	
 	public static Estadistica loadEstadisticaByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Estadistica) session.load(Estadistica.class, Integer.valueOf(id), lockMode);
+			return (Estadistica) session.load(orm.bbdd.Estadistica.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class EstadisticaDAO {
 	
 	public static Estadistica getEstadisticaByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Estadistica) session.get(Estadistica.class, Integer.valueOf(id), lockMode);
+			return (Estadistica) session.get(orm.bbdd.Estadistica.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class EstadisticaDAO {
 	}
 	
 	public static List queryEstadistica(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Estadistica as Estadistica");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Estadistica as Estadistica");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class EstadisticaDAO {
 	}
 	
 	public static List queryEstadistica(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Estadistica as Estadistica");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Estadistica as Estadistica");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class EstadisticaDAO {
 	}
 	
 	public static java.util.Iterator iterateEstadisticaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Estadistica as Estadistica");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Estadistica as Estadistica");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class EstadisticaDAO {
 	}
 	
 	public static java.util.Iterator iterateEstadisticaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Estadistica as Estadistica");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Estadistica as Estadistica");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class EstadisticaDAO {
 	}
 	
 	public static Estadistica createEstadistica() {
-		return new Estadistica();
+		return new orm.bbdd.Estadistica();
 	}
 	
-	public static boolean save(Estadistica estadistica) throws PersistentException {
+	public static boolean save(orm.bbdd.Estadistica estadistica) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(estadistica);
 			return true;
@@ -310,7 +310,7 @@ public class EstadisticaDAO {
 		}
 	}
 	
-	public static boolean delete(Estadistica estadistica) throws PersistentException {
+	public static boolean delete(orm.bbdd.Estadistica estadistica) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(estadistica);
 			return true;
@@ -321,25 +321,25 @@ public class EstadisticaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Estadistica estadistica)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Estadistica estadistica)throws PersistentException {
 		try {
 			if (estadistica.getUsuario() != null) {
 				estadistica.getUsuario().setEstadistica(null);
 			}
 			
-			Artista[] lArtistass = estadistica.artistas.toArray();
+			orm.bbdd.Artista[] lArtistass = estadistica.artistas.toArray();
 			for(int i = 0; i < lArtistass.length; i++) {
 				lArtistass[i].estadisticas.remove(estadistica);
 			}
-			Cancion[] lCancionss = estadistica.cancions.toArray();
+			orm.bbdd.Cancion[] lCancionss = estadistica.cancions.toArray();
 			for(int i = 0; i < lCancionss.length; i++) {
 				lCancionss[i].estadisticas.remove(estadistica);
 			}
-			Lista_de_reproduccion[] lLista_de_reproduccions = estadistica.lista_de_reproduccion.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lLista_de_reproduccions = estadistica.lista_de_reproduccion.toArray();
 			for(int i = 0; i < lLista_de_reproduccions.length; i++) {
 				lLista_de_reproduccions[i].estadisticas.remove(estadistica);
 			}
-			Album[] lAlbumss = estadistica.albums.toArray();
+			orm.bbdd.Album[] lAlbumss = estadistica.albums.toArray();
 			for(int i = 0; i < lAlbumss.length; i++) {
 				lAlbumss[i].estadisticas.remove(estadistica);
 			}
@@ -351,25 +351,25 @@ public class EstadisticaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Estadistica estadistica, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Estadistica estadistica, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (estadistica.getUsuario() != null) {
 				estadistica.getUsuario().setEstadistica(null);
 			}
 			
-			Artista[] lArtistass = estadistica.artistas.toArray();
+			orm.bbdd.Artista[] lArtistass = estadistica.artistas.toArray();
 			for(int i = 0; i < lArtistass.length; i++) {
 				lArtistass[i].estadisticas.remove(estadistica);
 			}
-			Cancion[] lCancionss = estadistica.cancions.toArray();
+			orm.bbdd.Cancion[] lCancionss = estadistica.cancions.toArray();
 			for(int i = 0; i < lCancionss.length; i++) {
 				lCancionss[i].estadisticas.remove(estadistica);
 			}
-			Lista_de_reproduccion[] lLista_de_reproduccions = estadistica.lista_de_reproduccion.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lLista_de_reproduccions = estadistica.lista_de_reproduccion.toArray();
 			for(int i = 0; i < lLista_de_reproduccions.length; i++) {
 				lLista_de_reproduccions[i].estadisticas.remove(estadistica);
 			}
-			Album[] lAlbumss = estadistica.albums.toArray();
+			orm.bbdd.Album[] lAlbumss = estadistica.albums.toArray();
 			for(int i = 0; i < lAlbumss.length; i++) {
 				lAlbumss[i].estadisticas.remove(estadistica);
 			}
@@ -386,7 +386,7 @@ public class EstadisticaDAO {
 		}
 	}
 	
-	public static boolean refresh(Estadistica estadistica) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Estadistica estadistica) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(estadistica);
 			return true;
@@ -397,7 +397,7 @@ public class EstadisticaDAO {
 		}
 	}
 	
-	public static boolean evict(Estadistica estadistica) throws PersistentException {
+	public static boolean evict(orm.bbdd.Estadistica estadistica) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(estadistica);
 			return true;

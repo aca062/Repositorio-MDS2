@@ -65,7 +65,7 @@ public class Actor_ComunDAO {
 	
 	public static Actor_Comun loadActor_ComunByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Actor_Comun) session.load(Actor_Comun.class, Integer.valueOf(id));
+			return (Actor_Comun) session.load(orm.bbdd.Actor_Comun.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class Actor_ComunDAO {
 	
 	public static Actor_Comun getActor_ComunByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Actor_Comun) session.get(Actor_Comun.class, Integer.valueOf(id));
+			return (Actor_Comun) session.get(orm.bbdd.Actor_Comun.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class Actor_ComunDAO {
 	
 	public static Actor_Comun loadActor_ComunByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Actor_Comun) session.load(Actor_Comun.class, Integer.valueOf(id), lockMode);
+			return (Actor_Comun) session.load(orm.bbdd.Actor_Comun.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class Actor_ComunDAO {
 	
 	public static Actor_Comun getActor_ComunByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Actor_Comun) session.get(Actor_Comun.class, Integer.valueOf(id), lockMode);
+			return (Actor_Comun) session.get(orm.bbdd.Actor_Comun.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class Actor_ComunDAO {
 	}
 	
 	public static List queryActor_Comun(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Actor_Comun as Actor_Comun");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Actor_Comun as Actor_Comun");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class Actor_ComunDAO {
 	}
 	
 	public static List queryActor_Comun(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Actor_Comun as Actor_Comun");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Actor_Comun as Actor_Comun");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class Actor_ComunDAO {
 	}
 	
 	public static java.util.Iterator iterateActor_ComunByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Actor_Comun as Actor_Comun");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Actor_Comun as Actor_Comun");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class Actor_ComunDAO {
 	}
 	
 	public static java.util.Iterator iterateActor_ComunByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Actor_Comun as Actor_Comun");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Actor_Comun as Actor_Comun");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class Actor_ComunDAO {
 	}
 	
 	public static Actor_Comun createActor_Comun() {
-		return new Actor_Comun();
+		return new orm.bbdd.Actor_Comun();
 	}
 	
-	public static boolean save(Actor_Comun actor_Comun) throws PersistentException {
+	public static boolean save(orm.bbdd.Actor_Comun actor_Comun) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(actor_Comun);
 			return true;
@@ -310,7 +310,7 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static boolean delete(Actor_Comun actor_Comun) throws PersistentException {
+	public static boolean delete(orm.bbdd.Actor_Comun actor_Comun) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(actor_Comun);
 			return true;
@@ -321,17 +321,17 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Actor_Comun actor_Comun)throws PersistentException {
-		if (actor_Comun instanceof Administrador) {
-			return AdministradorDAO.deleteAndDissociate((Administrador) actor_Comun);
+	public static boolean deleteAndDissociate(orm.bbdd.Actor_Comun actor_Comun)throws PersistentException {
+		if (actor_Comun instanceof orm.bbdd.Administrador) {
+			return orm.bbdd.AdministradorDAO.deleteAndDissociate((orm.bbdd.Administrador) actor_Comun);
 		}
 		
-		if (actor_Comun instanceof Artista) {
-			return ArtistaDAO.deleteAndDissociate((Artista) actor_Comun);
+		if (actor_Comun instanceof orm.bbdd.Artista) {
+			return orm.bbdd.ArtistaDAO.deleteAndDissociate((orm.bbdd.Artista) actor_Comun);
 		}
 		
-		if (actor_Comun instanceof Usuario_Registrado) {
-			return Usuario_RegistradoDAO.deleteAndDissociate((Usuario_Registrado) actor_Comun);
+		if (actor_Comun instanceof orm.bbdd.Usuario_Registrado) {
+			return orm.bbdd.Usuario_RegistradoDAO.deleteAndDissociate((orm.bbdd.Usuario_Registrado) actor_Comun);
 		}
 		
 		try {
@@ -343,29 +343,33 @@ public class Actor_ComunDAO {
 				actor_Comun.getEstadistica().setUsuario(null);
 			}
 			
-			Lista_de_reproduccion[] lListas_de_reproduccion_propiass = actor_Comun.listas_de_reproduccion_propias.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = actor_Comun.listas_de_reproduccion_propias.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
 				lListas_de_reproduccion_propiass[i].setCreador(null);
 			}
-			Actor_Comun[] lSeguidos = actor_Comun.seguido.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidos = actor_Comun.seguido.toArray();
 			for(int i = 0; i < lSeguidos.length; i++) {
 				lSeguidos[i].seguidor.remove(actor_Comun);
 			}
-			Cancion[] lCancion_favoritas = actor_Comun.cancion_favorita.toArray();
+			orm.bbdd.Cancion[] lCancion_favoritas = actor_Comun.cancion_favorita.toArray();
 			for(int i = 0; i < lCancion_favoritas.length; i++) {
 				lCancion_favoritas[i].usuario.remove(actor_Comun);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = actor_Comun.listas_de_reproduccion_seguidas.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = actor_Comun.listas_de_reproduccion_seguidas.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_seguidass.length; i++) {
 				lListas_de_reproduccion_seguidass[i].seguidor.remove(actor_Comun);
 			}
-			Evento[] lNotificacioness = actor_Comun.notificaciones.toArray();
+			orm.bbdd.Evento[] lNotificacioness = actor_Comun.notificaciones.toArray();
 			for(int i = 0; i < lNotificacioness.length; i++) {
 				lNotificacioness[i].usuario.remove(actor_Comun);
 			}
-			Actor_Comun[] lSeguidors = actor_Comun.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = actor_Comun.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].seguido.remove(actor_Comun);
+			}
+			orm.bbdd.Cancion[] lCanciones_reproducidass = actor_Comun.canciones_reproducidas.toArray();
+			for(int i = 0; i < lCanciones_reproducidass.length; i++) {
+				lCanciones_reproducidass[i]._usuario.remove(actor_Comun);
 			}
 			return delete(actor_Comun);
 		}
@@ -375,17 +379,17 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Actor_Comun actor_Comun, org.orm.PersistentSession session)throws PersistentException {
-		if (actor_Comun instanceof Administrador) {
-			return AdministradorDAO.deleteAndDissociate((Administrador) actor_Comun, session);
+	public static boolean deleteAndDissociate(orm.bbdd.Actor_Comun actor_Comun, org.orm.PersistentSession session)throws PersistentException {
+		if (actor_Comun instanceof orm.bbdd.Administrador) {
+			return orm.bbdd.AdministradorDAO.deleteAndDissociate((orm.bbdd.Administrador) actor_Comun, session);
 		}
 		
-		if (actor_Comun instanceof Artista) {
-			return ArtistaDAO.deleteAndDissociate((Artista) actor_Comun, session);
+		if (actor_Comun instanceof orm.bbdd.Artista) {
+			return orm.bbdd.ArtistaDAO.deleteAndDissociate((orm.bbdd.Artista) actor_Comun, session);
 		}
 		
-		if (actor_Comun instanceof Usuario_Registrado) {
-			return Usuario_RegistradoDAO.deleteAndDissociate((Usuario_Registrado) actor_Comun, session);
+		if (actor_Comun instanceof orm.bbdd.Usuario_Registrado) {
+			return orm.bbdd.Usuario_RegistradoDAO.deleteAndDissociate((orm.bbdd.Usuario_Registrado) actor_Comun, session);
 		}
 		
 		try {
@@ -397,29 +401,33 @@ public class Actor_ComunDAO {
 				actor_Comun.getEstadistica().setUsuario(null);
 			}
 			
-			Lista_de_reproduccion[] lListas_de_reproduccion_propiass = actor_Comun.listas_de_reproduccion_propias.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = actor_Comun.listas_de_reproduccion_propias.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
 				lListas_de_reproduccion_propiass[i].setCreador(null);
 			}
-			Actor_Comun[] lSeguidos = actor_Comun.seguido.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidos = actor_Comun.seguido.toArray();
 			for(int i = 0; i < lSeguidos.length; i++) {
 				lSeguidos[i].seguidor.remove(actor_Comun);
 			}
-			Cancion[] lCancion_favoritas = actor_Comun.cancion_favorita.toArray();
+			orm.bbdd.Cancion[] lCancion_favoritas = actor_Comun.cancion_favorita.toArray();
 			for(int i = 0; i < lCancion_favoritas.length; i++) {
 				lCancion_favoritas[i].usuario.remove(actor_Comun);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = actor_Comun.listas_de_reproduccion_seguidas.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = actor_Comun.listas_de_reproduccion_seguidas.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_seguidass.length; i++) {
 				lListas_de_reproduccion_seguidass[i].seguidor.remove(actor_Comun);
 			}
-			Evento[] lNotificacioness = actor_Comun.notificaciones.toArray();
+			orm.bbdd.Evento[] lNotificacioness = actor_Comun.notificaciones.toArray();
 			for(int i = 0; i < lNotificacioness.length; i++) {
 				lNotificacioness[i].usuario.remove(actor_Comun);
 			}
-			Actor_Comun[] lSeguidors = actor_Comun.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = actor_Comun.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].seguido.remove(actor_Comun);
+			}
+			orm.bbdd.Cancion[] lCanciones_reproducidass = actor_Comun.canciones_reproducidas.toArray();
+			for(int i = 0; i < lCanciones_reproducidass.length; i++) {
+				lCanciones_reproducidass[i]._usuario.remove(actor_Comun);
 			}
 			try {
 				session.delete(actor_Comun);
@@ -434,7 +442,7 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static boolean refresh(Actor_Comun actor_Comun) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Actor_Comun actor_Comun) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(actor_Comun);
 			return true;
@@ -445,7 +453,7 @@ public class Actor_ComunDAO {
 		}
 	}
 	
-	public static boolean evict(Actor_Comun actor_Comun) throws PersistentException {
+	public static boolean evict(orm.bbdd.Actor_Comun actor_Comun) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(actor_Comun);
 			return true;

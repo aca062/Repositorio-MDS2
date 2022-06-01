@@ -28,7 +28,7 @@ public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCr
 	public final AssociationExpression creador;
 	
 	public Lista_de_reproduccionDetachedCriteria() {
-		super(Lista_de_reproduccion.class, Lista_de_reproduccionCriteria.class);
+		super(orm.bbdd.Lista_de_reproduccion.class, orm.bbdd.Lista_de_reproduccionCriteria.class);
 		idLista = new IntegerExpression("idLista", this.getDetachedCriteria());
 		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
@@ -39,7 +39,7 @@ public class Lista_de_reproduccionDetachedCriteria extends AbstractORMDetachedCr
 	}
 	
 	public Lista_de_reproduccionDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, Lista_de_reproduccionCriteria.class);
+		super(aDetachedCriteria, orm.bbdd.Lista_de_reproduccionCriteria.class);
 		idLista = new IntegerExpression("idLista", this.getDetachedCriteria());
 		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());

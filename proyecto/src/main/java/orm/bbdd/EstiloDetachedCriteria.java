@@ -25,7 +25,7 @@ public class EstiloDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression artistas;
 	
 	public EstiloDetachedCriteria() {
-		super(Estilo.class, EstiloCriteria.class);
+		super(orm.bbdd.Estilo.class, orm.bbdd.EstiloCriteria.class);
 		idEstilo = new IntegerExpression("idEstilo", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		canciones = new CollectionExpression("ORM_canciones", this.getDetachedCriteria());
@@ -33,7 +33,7 @@ public class EstiloDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public EstiloDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, EstiloCriteria.class);
+		super(aDetachedCriteria, orm.bbdd.EstiloCriteria.class);
 		idEstilo = new IntegerExpression("idEstilo", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		canciones = new CollectionExpression("ORM_canciones", this.getDetachedCriteria());

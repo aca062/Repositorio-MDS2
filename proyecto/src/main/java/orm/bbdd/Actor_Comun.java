@@ -42,17 +42,20 @@ public class Actor_Comun implements Serializable {
 		else if (key == ORMConstants.KEY_ACTOR_COMUN_SEGUIDOR) {
 			return ORM_seguidor;
 		}
+		else if (key == ORMConstants.KEY_ACTOR_COMUN_CANCIONES_REPRODUCIDAS) {
+			return ORM_canciones_reproducidas;
+		}
 		
 		return null;
 	}
 	
 	private void this_setOwner(Object owner, int key) {
 		if (key == ORMConstants.KEY_ACTOR_COMUN_ESTADISTICA) {
-			this.estadistica = (Estadistica) owner;
+			this.estadistica = (orm.bbdd.Estadistica) owner;
 		}
 		
 		else if (key == ORMConstants.KEY_ACTOR_COMUN_ACCESO_DATO) {
-			this.acceso_Dato = (Acceso_Dato) owner;
+			this.acceso_Dato = (orm.bbdd.Acceso_Dato) owner;
 		}
 	}
 	
@@ -70,21 +73,21 @@ public class Actor_Comun implements Serializable {
 	
 	@Column(name="Id", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BBDD_ACTOR_COMUN_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BBDD_ACTOR_COMUN_ID_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="ORM_BBDD_ACTOR_COMUN_ID_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="ORM_BBDD_ACTOR_COMUN_ID_GENERATOR", strategy="native")	
 	private int id;
 	
-	@OneToOne(optional=false, targetEntity=Acceso_Dato.class, fetch=FetchType.LAZY)	
+	@OneToOne(optional=false, targetEntity=orm.bbdd.Acceso_Dato.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="Acceso_DatoId", referencedColumnName="Id", nullable=false) }, foreignKey=@ForeignKey(name="FKActor_Comu602152"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
-	private Acceso_Dato acceso_Dato;
+	private orm.bbdd.Acceso_Dato acceso_Dato;
 	
-	@OneToOne(optional=false, targetEntity=Estadistica.class, fetch=FetchType.LAZY)	
+	@OneToOne(optional=false, targetEntity=orm.bbdd.Estadistica.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="EstadisticaId", referencedColumnName="Id", nullable=false) }, foreignKey=@ForeignKey(name="FKActor_Comu455406"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
-	private Estadistica estadistica;
+	private orm.bbdd.Estadistica estadistica;
 	
 	@Column(name="Email", nullable=true, length=255)	
 	private String email;
@@ -98,38 +101,43 @@ public class Actor_Comun implements Serializable {
 	@Column(name="Foto", nullable=true, length=255)	
 	private String foto;
 	
-	@OneToMany(mappedBy="creador", targetEntity=Lista_de_reproduccion.class)	
+	@OneToMany(mappedBy="creador", targetEntity=orm.bbdd.Lista_de_reproduccion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_listas_de_reproduccion_propias = new java.util.HashSet();
 	
-	@ManyToMany(targetEntity=Actor_Comun.class)	
+	@ManyToMany(targetEntity=orm.bbdd.Actor_Comun.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Actor_Comun_Actor_Comun", joinColumns={ @JoinColumn(name="Actor_ComunId2") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_seguido = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM_usuario", targetEntity=Cancion.class)	
+	@ManyToMany(mappedBy="ORM_usuario", targetEntity=orm.bbdd.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_cancion_favorita = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM_seguidor", targetEntity=Lista_de_reproduccion.class)	
+	@ManyToMany(mappedBy="ORM_seguidor", targetEntity=orm.bbdd.Lista_de_reproduccion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_listas_de_reproduccion_seguidas = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM_usuario", targetEntity=Evento.class)	
+	@ManyToMany(mappedBy="ORM_usuario", targetEntity=orm.bbdd.Evento.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_notificaciones = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM_seguido", targetEntity=Actor_Comun.class)	
+	@ManyToMany(mappedBy="ORM_seguido", targetEntity=orm.bbdd.Actor_Comun.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_seguidor = new java.util.HashSet();
 	
-	public void setId(int value) {
+	@ManyToMany(mappedBy="ORM__usuario", targetEntity=orm.bbdd.Cancion.class)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	private java.util.Set ORM_canciones_reproducidas = new java.util.HashSet();
+	
+	private void setId(int value) {
 		this.id = value;
 	}
 	
@@ -182,11 +190,11 @@ public class Actor_Comun implements Serializable {
 	}
 	
 	@Transient	
-	public final Lista_de_reproduccionSetCollection listas_de_reproduccion_propias = new Lista_de_reproduccionSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_LISTAS_DE_REPRODUCCION_PROPIAS, ORMConstants.KEY_LISTA_DE_REPRODUCCION_CREADOR, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.bbdd.Lista_de_reproduccionSetCollection listas_de_reproduccion_propias = new orm.bbdd.Lista_de_reproduccionSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_LISTAS_DE_REPRODUCCION_PROPIAS, ORMConstants.KEY_LISTA_DE_REPRODUCCION_CREADOR, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	public void setEstadistica(Estadistica value) {
+	public void setEstadistica(orm.bbdd.Estadistica value) {
 		if (this.estadistica != value) {
-			Estadistica lestadistica = this.estadistica;
+			orm.bbdd.Estadistica lestadistica = this.estadistica;
 			this.estadistica = value;
 			if (value != null) {
 				estadistica.setUsuario(this);
@@ -197,13 +205,13 @@ public class Actor_Comun implements Serializable {
 		}
 	}
 	
-	public Estadistica getEstadistica() {
+	public orm.bbdd.Estadistica getEstadistica() {
 		return estadistica;
 	}
 	
-	public void setAcceso_Dato(Acceso_Dato value) {
+	public void setAcceso_Dato(orm.bbdd.Acceso_Dato value) {
 		if (this.acceso_Dato != value) {
-			Acceso_Dato lacceso_Dato = this.acceso_Dato;
+			orm.bbdd.Acceso_Dato lacceso_Dato = this.acceso_Dato;
 			this.acceso_Dato = value;
 			if (value != null) {
 				acceso_Dato.setUsuario(this);
@@ -214,7 +222,7 @@ public class Actor_Comun implements Serializable {
 		}
 	}
 	
-	public Acceso_Dato getAcceso_Dato() {
+	public orm.bbdd.Acceso_Dato getAcceso_Dato() {
 		return acceso_Dato;
 	}
 	
@@ -227,7 +235,7 @@ public class Actor_Comun implements Serializable {
 	}
 	
 	@Transient	
-	public final Actor_ComunSetCollection seguido = new Actor_ComunSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_SEGUIDO, ORMConstants.KEY_ACTOR_COMUN_SEGUIDOR, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.Actor_ComunSetCollection seguido = new orm.bbdd.Actor_ComunSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_SEGUIDO, ORMConstants.KEY_ACTOR_COMUN_SEGUIDOR, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Cancion_favorita(java.util.Set value) {
 		this.ORM_cancion_favorita = value;
@@ -238,7 +246,7 @@ public class Actor_Comun implements Serializable {
 	}
 	
 	@Transient	
-	public final CancionSetCollection cancion_favorita = new CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_CANCION_FAVORITA, ORMConstants.KEY_CANCION_USUARIO, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.CancionSetCollection cancion_favorita = new orm.bbdd.CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_CANCION_FAVORITA, ORMConstants.KEY_CANCION_USUARIO, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Listas_de_reproduccion_seguidas(java.util.Set value) {
 		this.ORM_listas_de_reproduccion_seguidas = value;
@@ -249,7 +257,7 @@ public class Actor_Comun implements Serializable {
 	}
 	
 	@Transient	
-	public final Lista_de_reproduccionSetCollection listas_de_reproduccion_seguidas = new Lista_de_reproduccionSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_LISTAS_DE_REPRODUCCION_SEGUIDAS, ORMConstants.KEY_LISTA_DE_REPRODUCCION_SEGUIDOR, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.Lista_de_reproduccionSetCollection listas_de_reproduccion_seguidas = new orm.bbdd.Lista_de_reproduccionSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_LISTAS_DE_REPRODUCCION_SEGUIDAS, ORMConstants.KEY_LISTA_DE_REPRODUCCION_SEGUIDOR, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Notificaciones(java.util.Set value) {
 		this.ORM_notificaciones = value;
@@ -260,7 +268,7 @@ public class Actor_Comun implements Serializable {
 	}
 	
 	@Transient	
-	public final EventoSetCollection notificaciones = new EventoSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_NOTIFICACIONES, ORMConstants.KEY_EVENTO_USUARIO, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.EventoSetCollection notificaciones = new orm.bbdd.EventoSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_NOTIFICACIONES, ORMConstants.KEY_EVENTO_USUARIO, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Seguidor(java.util.Set value) {
 		this.ORM_seguidor = value;
@@ -271,7 +279,18 @@ public class Actor_Comun implements Serializable {
 	}
 	
 	@Transient	
-	public final Actor_ComunSetCollection seguidor = new Actor_ComunSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_SEGUIDOR, ORMConstants.KEY_ACTOR_COMUN_SEGUIDO, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.Actor_ComunSetCollection seguidor = new orm.bbdd.Actor_ComunSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_SEGUIDOR, ORMConstants.KEY_ACTOR_COMUN_SEGUIDO, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	
+	private void setORM_Canciones_reproducidas(java.util.Set value) {
+		this.ORM_canciones_reproducidas = value;
+	}
+	
+	private java.util.Set getORM_Canciones_reproducidas() {
+		return ORM_canciones_reproducidas;
+	}
+	
+	@Transient	
+	public final orm.bbdd.CancionSetCollection canciones_reproducidas = new orm.bbdd.CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ACTOR_COMUN_CANCIONES_REPRODUCIDAS, ORMConstants.KEY_CANCION__USUARIO, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId());

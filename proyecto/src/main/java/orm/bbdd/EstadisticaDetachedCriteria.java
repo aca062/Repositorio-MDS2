@@ -29,7 +29,7 @@ public class EstadisticaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression albums;
 	
 	public EstadisticaDetachedCriteria() {
-		super(Estadistica.class, EstadisticaCriteria.class);
+		super(orm.bbdd.Estadistica.class, orm.bbdd.EstadisticaCriteria.class);
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		tiempoAnual = new DoubleExpression("tiempoAnual", this.getDetachedCriteria());
 		usuarioId = new IntegerExpression("usuario.id", this.getDetachedCriteria());
@@ -41,7 +41,7 @@ public class EstadisticaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public EstadisticaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, EstadisticaCriteria.class);
+		super(aDetachedCriteria, orm.bbdd.EstadisticaCriteria.class);
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		tiempoAnual = new DoubleExpression("tiempoAnual", this.getDetachedCriteria());
 		usuarioId = new IntegerExpression("usuario.id", this.getDetachedCriteria());

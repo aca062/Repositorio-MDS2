@@ -27,14 +27,16 @@ public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression titulo;
 	public final StringExpression archivoMultimedia;
 	public final IntegerExpression numReproducciones;
+	public final StringExpression rutaImagen;
 	public final CollectionExpression usuario;
 	public final CollectionExpression estadisticas;
+	public final CollectionExpression _usuario;
 	public final CollectionExpression listas_de_reproduccion;
 	public final CollectionExpression album;
 	public final CollectionExpression artistas;
 	
 	public CancionDetachedCriteria() {
-		super(Cancion.class, CancionCriteria.class);
+		super(orm.bbdd.Cancion.class, orm.bbdd.CancionCriteria.class);
 		idCancion = new IntegerExpression("idCancion", this.getDetachedCriteria());
 		administradorId = new IntegerExpression("administrador.", this.getDetachedCriteria());
 		administrador = new AssociationExpression("administrador", this.getDetachedCriteria());
@@ -43,15 +45,17 @@ public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
 		archivoMultimedia = new StringExpression("archivoMultimedia", this.getDetachedCriteria());
 		numReproducciones = new IntegerExpression("numReproducciones", this.getDetachedCriteria());
+		rutaImagen = new StringExpression("rutaImagen", this.getDetachedCriteria());
 		usuario = new CollectionExpression("ORM_usuario", this.getDetachedCriteria());
 		estadisticas = new CollectionExpression("ORM_estadisticas", this.getDetachedCriteria());
+		_usuario = new CollectionExpression("ORM__usuario", this.getDetachedCriteria());
 		listas_de_reproduccion = new CollectionExpression("ORM_listas_de_reproduccion", this.getDetachedCriteria());
 		album = new CollectionExpression("ORM_album", this.getDetachedCriteria());
 		artistas = new CollectionExpression("ORM_artistas", this.getDetachedCriteria());
 	}
 	
 	public CancionDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, CancionCriteria.class);
+		super(aDetachedCriteria, orm.bbdd.CancionCriteria.class);
 		idCancion = new IntegerExpression("idCancion", this.getDetachedCriteria());
 		administradorId = new IntegerExpression("administrador.", this.getDetachedCriteria());
 		administrador = new AssociationExpression("administrador", this.getDetachedCriteria());
@@ -60,8 +64,10 @@ public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
 		archivoMultimedia = new StringExpression("archivoMultimedia", this.getDetachedCriteria());
 		numReproducciones = new IntegerExpression("numReproducciones", this.getDetachedCriteria());
+		rutaImagen = new StringExpression("rutaImagen", this.getDetachedCriteria());
 		usuario = new CollectionExpression("ORM_usuario", this.getDetachedCriteria());
 		estadisticas = new CollectionExpression("ORM_estadisticas", this.getDetachedCriteria());
+		_usuario = new CollectionExpression("ORM__usuario", this.getDetachedCriteria());
 		listas_de_reproduccion = new CollectionExpression("ORM_listas_de_reproduccion", this.getDetachedCriteria());
 		album = new CollectionExpression("ORM_album", this.getDetachedCriteria());
 		artistas = new CollectionExpression("ORM_artistas", this.getDetachedCriteria());
@@ -81,6 +87,10 @@ public class CancionDetachedCriteria extends AbstractORMDetachedCriteria {
 	
 	public EstadisticaDetachedCriteria createEstadisticasCriteria() {
 		return new EstadisticaDetachedCriteria(createCriteria("ORM_estadisticas"));
+	}
+	
+	public Actor_ComunDetachedCriteria create_usuarioCriteria() {
+		return new Actor_ComunDetachedCriteria(createCriteria("ORM__usuario"));
 	}
 	
 	public Lista_de_reproduccionDetachedCriteria createListas_de_reproduccionCriteria() {

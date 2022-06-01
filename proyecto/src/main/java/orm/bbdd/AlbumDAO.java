@@ -65,7 +65,7 @@ public class AlbumDAO {
 	
 	public static Album loadAlbumByORMID(PersistentSession session, int idAlbum) throws PersistentException {
 		try {
-			return (Album) session.load(Album.class, Integer.valueOf(idAlbum));
+			return (Album) session.load(orm.bbdd.Album.class, Integer.valueOf(idAlbum));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class AlbumDAO {
 	
 	public static Album getAlbumByORMID(PersistentSession session, int idAlbum) throws PersistentException {
 		try {
-			return (Album) session.get(Album.class, Integer.valueOf(idAlbum));
+			return (Album) session.get(orm.bbdd.Album.class, Integer.valueOf(idAlbum));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class AlbumDAO {
 	
 	public static Album loadAlbumByORMID(PersistentSession session, int idAlbum, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Album) session.load(Album.class, Integer.valueOf(idAlbum), lockMode);
+			return (Album) session.load(orm.bbdd.Album.class, Integer.valueOf(idAlbum), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class AlbumDAO {
 	
 	public static Album getAlbumByORMID(PersistentSession session, int idAlbum, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Album) session.get(Album.class, Integer.valueOf(idAlbum), lockMode);
+			return (Album) session.get(orm.bbdd.Album.class, Integer.valueOf(idAlbum), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class AlbumDAO {
 	}
 	
 	public static List queryAlbum(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Album as Album");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Album as Album");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class AlbumDAO {
 	}
 	
 	public static List queryAlbum(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Album as Album");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Album as Album");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class AlbumDAO {
 	}
 	
 	public static java.util.Iterator iterateAlbumByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Album as Album");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Album as Album");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class AlbumDAO {
 	}
 	
 	public static java.util.Iterator iterateAlbumByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Album as Album");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Album as Album");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class AlbumDAO {
 	}
 	
 	public static Album createAlbum() {
-		return new Album();
+		return new orm.bbdd.Album();
 	}
 	
-	public static boolean save(Album album) throws PersistentException {
+	public static boolean save(orm.bbdd.Album album) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(album);
 			return true;
@@ -310,7 +310,7 @@ public class AlbumDAO {
 		}
 	}
 	
-	public static boolean delete(Album album) throws PersistentException {
+	public static boolean delete(orm.bbdd.Album album) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(album);
 			return true;
@@ -321,17 +321,17 @@ public class AlbumDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Album album)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Album album)throws PersistentException {
 		try {
 			if (album.getArtista() != null) {
 				album.getArtista().albums.remove(album);
 			}
 			
-			Cancion[] lCancioness = album.canciones.toArray();
+			orm.bbdd.Cancion[] lCancioness = album.canciones.toArray();
 			for(int i = 0; i < lCancioness.length; i++) {
 				lCancioness[i].album.remove(album);
 			}
-			Estadistica[] lEstadisticass = album.estadisticas.toArray();
+			orm.bbdd.Estadistica[] lEstadisticass = album.estadisticas.toArray();
 			for(int i = 0; i < lEstadisticass.length; i++) {
 				lEstadisticass[i].albums.remove(album);
 			}
@@ -343,17 +343,17 @@ public class AlbumDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Album album, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Album album, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (album.getArtista() != null) {
 				album.getArtista().albums.remove(album);
 			}
 			
-			Cancion[] lCancioness = album.canciones.toArray();
+			orm.bbdd.Cancion[] lCancioness = album.canciones.toArray();
 			for(int i = 0; i < lCancioness.length; i++) {
 				lCancioness[i].album.remove(album);
 			}
-			Estadistica[] lEstadisticass = album.estadisticas.toArray();
+			orm.bbdd.Estadistica[] lEstadisticass = album.estadisticas.toArray();
 			for(int i = 0; i < lEstadisticass.length; i++) {
 				lEstadisticass[i].albums.remove(album);
 			}
@@ -370,7 +370,7 @@ public class AlbumDAO {
 		}
 	}
 	
-	public static boolean refresh(Album album) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Album album) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(album);
 			return true;
@@ -381,7 +381,7 @@ public class AlbumDAO {
 		}
 	}
 	
-	public static boolean evict(Album album) throws PersistentException {
+	public static boolean evict(orm.bbdd.Album album) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(album);
 			return true;

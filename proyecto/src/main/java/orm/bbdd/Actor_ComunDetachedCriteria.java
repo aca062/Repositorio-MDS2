@@ -34,9 +34,10 @@ public class Actor_ComunDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression listas_de_reproduccion_seguidas;
 	public final CollectionExpression notificaciones;
 	public final CollectionExpression seguidor;
+	public final CollectionExpression canciones_reproducidas;
 	
 	public Actor_ComunDetachedCriteria() {
-		super(Actor_Comun.class, Actor_ComunCriteria.class);
+		super(orm.bbdd.Actor_Comun.class, orm.bbdd.Actor_ComunCriteria.class);
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this.getDetachedCriteria());
 		acceso_Dato = new AssociationExpression("acceso_Dato", this.getDetachedCriteria());
@@ -52,10 +53,11 @@ public class Actor_ComunDetachedCriteria extends AbstractORMDetachedCriteria {
 		listas_de_reproduccion_seguidas = new CollectionExpression("ORM_listas_de_reproduccion_seguidas", this.getDetachedCriteria());
 		notificaciones = new CollectionExpression("ORM_notificaciones", this.getDetachedCriteria());
 		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
+		canciones_reproducidas = new CollectionExpression("ORM_canciones_reproducidas", this.getDetachedCriteria());
 	}
 	
 	public Actor_ComunDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, Actor_ComunCriteria.class);
+		super(aDetachedCriteria, orm.bbdd.Actor_ComunCriteria.class);
 		id = new IntegerExpression("id", this.getDetachedCriteria());
 		acceso_DatoId = new IntegerExpression("acceso_Dato.id", this.getDetachedCriteria());
 		acceso_Dato = new AssociationExpression("acceso_Dato", this.getDetachedCriteria());
@@ -71,6 +73,7 @@ public class Actor_ComunDetachedCriteria extends AbstractORMDetachedCriteria {
 		listas_de_reproduccion_seguidas = new CollectionExpression("ORM_listas_de_reproduccion_seguidas", this.getDetachedCriteria());
 		notificaciones = new CollectionExpression("ORM_notificaciones", this.getDetachedCriteria());
 		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
+		canciones_reproducidas = new CollectionExpression("ORM_canciones_reproducidas", this.getDetachedCriteria());
 	}
 	
 	public Acceso_DatoDetachedCriteria createAcceso_DatoCriteria() {
@@ -103,6 +106,10 @@ public class Actor_ComunDetachedCriteria extends AbstractORMDetachedCriteria {
 	
 	public Actor_ComunDetachedCriteria createSeguidorCriteria() {
 		return new Actor_ComunDetachedCriteria(createCriteria("ORM_seguidor"));
+	}
+	
+	public CancionDetachedCriteria createCanciones_reproducidasCriteria() {
+		return new CancionDetachedCriteria(createCriteria("ORM_canciones_reproducidas"));
 	}
 	
 	public Actor_Comun uniqueActor_Comun(PersistentSession session) {

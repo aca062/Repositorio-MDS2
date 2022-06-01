@@ -27,8 +27,10 @@ public class CancionCriteria extends AbstractORMCriteria {
 	public final StringExpression titulo;
 	public final StringExpression archivoMultimedia;
 	public final IntegerExpression numReproducciones;
+	public final StringExpression rutaImagen;
 	public final CollectionExpression usuario;
 	public final CollectionExpression estadisticas;
+	public final CollectionExpression _usuario;
 	public final CollectionExpression listas_de_reproduccion;
 	public final CollectionExpression album;
 	public final CollectionExpression artistas;
@@ -43,8 +45,10 @@ public class CancionCriteria extends AbstractORMCriteria {
 		titulo = new StringExpression("titulo", this);
 		archivoMultimedia = new StringExpression("archivoMultimedia", this);
 		numReproducciones = new IntegerExpression("numReproducciones", this);
+		rutaImagen = new StringExpression("rutaImagen", this);
 		usuario = new CollectionExpression("ORM_usuario", this);
 		estadisticas = new CollectionExpression("ORM_estadisticas", this);
+		_usuario = new CollectionExpression("ORM__usuario", this);
 		listas_de_reproduccion = new CollectionExpression("ORM_listas_de_reproduccion", this);
 		album = new CollectionExpression("ORM_album", this);
 		artistas = new CollectionExpression("ORM_artistas", this);
@@ -72,6 +76,10 @@ public class CancionCriteria extends AbstractORMCriteria {
 	
 	public EstadisticaCriteria createEstadisticasCriteria() {
 		return new EstadisticaCriteria(createCriteria("ORM_estadisticas"));
+	}
+	
+	public Actor_ComunCriteria create_usuarioCriteria() {
+		return new Actor_ComunCriteria(createCriteria("ORM__usuario"));
 	}
 	
 	public Lista_de_reproduccionCriteria createListas_de_reproduccionCriteria() {

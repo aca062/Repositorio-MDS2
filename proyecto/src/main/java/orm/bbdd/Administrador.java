@@ -20,7 +20,7 @@ import javax.persistence.*;
 @Table(name="Administrador")
 @Inheritance(strategy=InheritanceType.JOINED)
 @PrimaryKeyJoinColumn(name="Actor_ComunId", referencedColumnName="Id")
-public class Administrador extends Actor_Comun implements Serializable {
+public class Administrador extends orm.bbdd.Actor_Comun implements Serializable {
 	public Administrador() {
 	}
 	
@@ -43,7 +43,7 @@ public class Administrador extends Actor_Comun implements Serializable {
 	@Column(name="NumCanciones", nullable=false, length=10)	
 	private int numCanciones;
 	
-	@OneToMany(mappedBy="administrador", targetEntity=Cancion.class)	
+	@OneToMany(mappedBy="administrador", targetEntity=orm.bbdd.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_cancions = new java.util.HashSet();
@@ -65,7 +65,7 @@ public class Administrador extends Actor_Comun implements Serializable {
 	}
 	
 	@Transient	
-	public final CancionSetCollection cancions = new CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ADMINISTRADOR_CANCIONS, ORMConstants.KEY_CANCION_ADMINISTRADOR, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.bbdd.CancionSetCollection cancions = new orm.bbdd.CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ADMINISTRADOR_CANCIONS, ORMConstants.KEY_CANCION_ADMINISTRADOR, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

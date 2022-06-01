@@ -65,7 +65,7 @@ public class EstiloDAO {
 	
 	public static Estilo loadEstiloByORMID(PersistentSession session, int idEstilo) throws PersistentException {
 		try {
-			return (Estilo) session.load(Estilo.class, Integer.valueOf(idEstilo));
+			return (Estilo) session.load(orm.bbdd.Estilo.class, Integer.valueOf(idEstilo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class EstiloDAO {
 	
 	public static Estilo getEstiloByORMID(PersistentSession session, int idEstilo) throws PersistentException {
 		try {
-			return (Estilo) session.get(Estilo.class, Integer.valueOf(idEstilo));
+			return (Estilo) session.get(orm.bbdd.Estilo.class, Integer.valueOf(idEstilo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class EstiloDAO {
 	
 	public static Estilo loadEstiloByORMID(PersistentSession session, int idEstilo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Estilo) session.load(Estilo.class, Integer.valueOf(idEstilo), lockMode);
+			return (Estilo) session.load(orm.bbdd.Estilo.class, Integer.valueOf(idEstilo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class EstiloDAO {
 	
 	public static Estilo getEstiloByORMID(PersistentSession session, int idEstilo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Estilo) session.get(Estilo.class, Integer.valueOf(idEstilo), lockMode);
+			return (Estilo) session.get(orm.bbdd.Estilo.class, Integer.valueOf(idEstilo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class EstiloDAO {
 	}
 	
 	public static List queryEstilo(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Estilo as Estilo");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Estilo as Estilo");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class EstiloDAO {
 	}
 	
 	public static List queryEstilo(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Estilo as Estilo");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Estilo as Estilo");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class EstiloDAO {
 	}
 	
 	public static java.util.Iterator iterateEstiloByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Estilo as Estilo");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Estilo as Estilo");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class EstiloDAO {
 	}
 	
 	public static java.util.Iterator iterateEstiloByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Estilo as Estilo");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Estilo as Estilo");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class EstiloDAO {
 	}
 	
 	public static Estilo createEstilo() {
-		return new Estilo();
+		return new orm.bbdd.Estilo();
 	}
 	
-	public static boolean save(Estilo estilo) throws PersistentException {
+	public static boolean save(orm.bbdd.Estilo estilo) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(estilo);
 			return true;
@@ -310,7 +310,7 @@ public class EstiloDAO {
 		}
 	}
 	
-	public static boolean delete(Estilo estilo) throws PersistentException {
+	public static boolean delete(orm.bbdd.Estilo estilo) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(estilo);
 			return true;
@@ -321,13 +321,13 @@ public class EstiloDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Estilo estilo)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Estilo estilo)throws PersistentException {
 		try {
-			Cancion[] lCancioness = estilo.canciones.toArray();
+			orm.bbdd.Cancion[] lCancioness = estilo.canciones.toArray();
 			for(int i = 0; i < lCancioness.length; i++) {
 				lCancioness[i].setEstilo(null);
 			}
-			Artista[] lArtistass = estilo.artistas.toArray();
+			orm.bbdd.Artista[] lArtistass = estilo.artistas.toArray();
 			for(int i = 0; i < lArtistass.length; i++) {
 				lArtistass[i].estilos.remove(estilo);
 			}
@@ -339,13 +339,13 @@ public class EstiloDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Estilo estilo, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Estilo estilo, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			Cancion[] lCancioness = estilo.canciones.toArray();
+			orm.bbdd.Cancion[] lCancioness = estilo.canciones.toArray();
 			for(int i = 0; i < lCancioness.length; i++) {
 				lCancioness[i].setEstilo(null);
 			}
-			Artista[] lArtistass = estilo.artistas.toArray();
+			orm.bbdd.Artista[] lArtistass = estilo.artistas.toArray();
 			for(int i = 0; i < lArtistass.length; i++) {
 				lArtistass[i].estilos.remove(estilo);
 			}
@@ -362,7 +362,7 @@ public class EstiloDAO {
 		}
 	}
 	
-	public static boolean refresh(Estilo estilo) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Estilo estilo) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(estilo);
 			return true;
@@ -373,7 +373,7 @@ public class EstiloDAO {
 		}
 	}
 	
-	public static boolean evict(Estilo estilo) throws PersistentException {
+	public static boolean evict(orm.bbdd.Estilo estilo) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(estilo);
 			return true;

@@ -65,7 +65,7 @@ public class Acceso_DatoDAO {
 	
 	public static Acceso_Dato loadAcceso_DatoByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Acceso_Dato) session.load(Acceso_Dato.class, Integer.valueOf(id));
+			return (Acceso_Dato) session.load(orm.bbdd.Acceso_Dato.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class Acceso_DatoDAO {
 	
 	public static Acceso_Dato getAcceso_DatoByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Acceso_Dato) session.get(Acceso_Dato.class, Integer.valueOf(id));
+			return (Acceso_Dato) session.get(orm.bbdd.Acceso_Dato.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class Acceso_DatoDAO {
 	
 	public static Acceso_Dato loadAcceso_DatoByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Acceso_Dato) session.load(Acceso_Dato.class, Integer.valueOf(id), lockMode);
+			return (Acceso_Dato) session.load(orm.bbdd.Acceso_Dato.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class Acceso_DatoDAO {
 	
 	public static Acceso_Dato getAcceso_DatoByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Acceso_Dato) session.get(Acceso_Dato.class, Integer.valueOf(id), lockMode);
+			return (Acceso_Dato) session.get(orm.bbdd.Acceso_Dato.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class Acceso_DatoDAO {
 	}
 	
 	public static List queryAcceso_Dato(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Acceso_Dato as Acceso_Dato");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Acceso_Dato as Acceso_Dato");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class Acceso_DatoDAO {
 	}
 	
 	public static List queryAcceso_Dato(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Acceso_Dato as Acceso_Dato");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Acceso_Dato as Acceso_Dato");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class Acceso_DatoDAO {
 	}
 	
 	public static java.util.Iterator iterateAcceso_DatoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Acceso_Dato as Acceso_Dato");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Acceso_Dato as Acceso_Dato");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class Acceso_DatoDAO {
 	}
 	
 	public static java.util.Iterator iterateAcceso_DatoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Acceso_Dato as Acceso_Dato");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Acceso_Dato as Acceso_Dato");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class Acceso_DatoDAO {
 	}
 	
 	public static Acceso_Dato createAcceso_Dato() {
-		return new Acceso_Dato();
+		return new orm.bbdd.Acceso_Dato();
 	}
 	
-	public static boolean save(Acceso_Dato acceso_Dato) throws PersistentException {
+	public static boolean save(orm.bbdd.Acceso_Dato acceso_Dato) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(acceso_Dato);
 			return true;
@@ -310,7 +310,7 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static boolean delete(Acceso_Dato acceso_Dato) throws PersistentException {
+	public static boolean delete(orm.bbdd.Acceso_Dato acceso_Dato) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(acceso_Dato);
 			return true;
@@ -321,7 +321,7 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Acceso_Dato acceso_Dato)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Acceso_Dato acceso_Dato)throws PersistentException {
 		try {
 			if (acceso_Dato.getUsuario() != null) {
 				acceso_Dato.getUsuario().setAcceso_Dato(null);
@@ -335,7 +335,7 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Acceso_Dato acceso_Dato, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Acceso_Dato acceso_Dato, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (acceso_Dato.getUsuario() != null) {
 				acceso_Dato.getUsuario().setAcceso_Dato(null);
@@ -354,7 +354,7 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static boolean refresh(Acceso_Dato acceso_Dato) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Acceso_Dato acceso_Dato) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(acceso_Dato);
 			return true;
@@ -365,7 +365,7 @@ public class Acceso_DatoDAO {
 		}
 	}
 	
-	public static boolean evict(Acceso_Dato acceso_Dato) throws PersistentException {
+	public static boolean evict(orm.bbdd.Acceso_Dato acceso_Dato) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(acceso_Dato);
 			return true;

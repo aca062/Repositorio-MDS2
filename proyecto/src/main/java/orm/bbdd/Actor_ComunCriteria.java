@@ -34,6 +34,7 @@ public class Actor_ComunCriteria extends AbstractORMCriteria {
 	public final CollectionExpression listas_de_reproduccion_seguidas;
 	public final CollectionExpression notificaciones;
 	public final CollectionExpression seguidor;
+	public final CollectionExpression canciones_reproducidas;
 	
 	public Actor_ComunCriteria(Criteria criteria) {
 		super(criteria);
@@ -52,6 +53,7 @@ public class Actor_ComunCriteria extends AbstractORMCriteria {
 		listas_de_reproduccion_seguidas = new CollectionExpression("ORM_listas_de_reproduccion_seguidas", this);
 		notificaciones = new CollectionExpression("ORM_notificaciones", this);
 		seguidor = new CollectionExpression("ORM_seguidor", this);
+		canciones_reproducidas = new CollectionExpression("ORM_canciones_reproducidas", this);
 	}
 	
 	public Actor_ComunCriteria(PersistentSession session) {
@@ -92,6 +94,10 @@ public class Actor_ComunCriteria extends AbstractORMCriteria {
 	
 	public Actor_ComunCriteria createSeguidorCriteria() {
 		return new Actor_ComunCriteria(createCriteria("ORM_seguidor"));
+	}
+	
+	public CancionCriteria createCanciones_reproducidasCriteria() {
+		return new CancionCriteria(createCriteria("ORM_canciones_reproducidas"));
 	}
 	
 	public Actor_Comun uniqueActor_Comun() {

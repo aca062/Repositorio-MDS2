@@ -65,7 +65,7 @@ public class ArtistaDAO {
 	
 	public static Artista loadArtistaByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Artista) session.load(Artista.class, Integer.valueOf(id));
+			return (Artista) session.load(orm.bbdd.Artista.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class ArtistaDAO {
 	
 	public static Artista getArtistaByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Artista) session.get(Artista.class, Integer.valueOf(id));
+			return (Artista) session.get(orm.bbdd.Artista.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class ArtistaDAO {
 	
 	public static Artista loadArtistaByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Artista) session.load(Artista.class, Integer.valueOf(id), lockMode);
+			return (Artista) session.load(orm.bbdd.Artista.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class ArtistaDAO {
 	
 	public static Artista getArtistaByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Artista) session.get(Artista.class, Integer.valueOf(id), lockMode);
+			return (Artista) session.get(orm.bbdd.Artista.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class ArtistaDAO {
 	}
 	
 	public static List queryArtista(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Artista as Artista");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Artista as Artista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class ArtistaDAO {
 	}
 	
 	public static List queryArtista(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Artista as Artista");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Artista as Artista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class ArtistaDAO {
 	}
 	
 	public static java.util.Iterator iterateArtistaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Artista as Artista");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Artista as Artista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class ArtistaDAO {
 	}
 	
 	public static java.util.Iterator iterateArtistaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Artista as Artista");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Artista as Artista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class ArtistaDAO {
 	}
 	
 	public static Artista createArtista() {
-		return new Artista();
+		return new orm.bbdd.Artista();
 	}
 	
-	public static boolean save(Artista artista) throws PersistentException {
+	public static boolean save(orm.bbdd.Artista artista) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(artista);
 			return true;
@@ -310,7 +310,7 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean delete(Artista artista) throws PersistentException {
+	public static boolean delete(orm.bbdd.Artista artista) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(artista);
 			return true;
@@ -321,25 +321,25 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Artista artista)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Artista artista)throws PersistentException {
 		try {
-			Cancion[] lCancionss = artista.cancions.toArray();
+			orm.bbdd.Cancion[] lCancionss = artista.cancions.toArray();
 			for(int i = 0; i < lCancionss.length; i++) {
 				lCancionss[i].artistas.remove(artista);
 			}
-			Estadistica[] lEstadisticass = artista.estadisticas.toArray();
+			orm.bbdd.Estadistica[] lEstadisticass = artista.estadisticas.toArray();
 			for(int i = 0; i < lEstadisticass.length; i++) {
 				lEstadisticass[i].artistas.remove(artista);
 			}
-			Evento[] lEventoss = artista.eventos.toArray();
+			orm.bbdd.Evento[] lEventoss = artista.eventos.toArray();
 			for(int i = 0; i < lEventoss.length; i++) {
 				lEventoss[i].setArtista(null);
 			}
-			Estilo[] lEstiloss = artista.estilos.toArray();
+			orm.bbdd.Estilo[] lEstiloss = artista.estilos.toArray();
 			for(int i = 0; i < lEstiloss.length; i++) {
 				lEstiloss[i].artistas.remove(artista);
 			}
-			Album[] lAlbumss = artista.albums.toArray();
+			orm.bbdd.Album[] lAlbumss = artista.albums.toArray();
 			for(int i = 0; i < lAlbumss.length; i++) {
 				lAlbumss[i].setArtista(null);
 			}
@@ -351,29 +351,33 @@ public class ArtistaDAO {
 				artista.getEstadistica().setUsuario(null);
 			}
 			
-			Lista_de_reproduccion[] lListas_de_reproduccion_propiass = artista.listas_de_reproduccion_propias.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = artista.listas_de_reproduccion_propias.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
 				lListas_de_reproduccion_propiass[i].setCreador(null);
 			}
-			Actor_Comun[] lSeguidos = artista.seguido.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidos = artista.seguido.toArray();
 			for(int i = 0; i < lSeguidos.length; i++) {
 				lSeguidos[i].seguidor.remove(artista);
 			}
-			Cancion[] lCancion_favoritas = artista.cancion_favorita.toArray();
+			orm.bbdd.Cancion[] lCancion_favoritas = artista.cancion_favorita.toArray();
 			for(int i = 0; i < lCancion_favoritas.length; i++) {
 				lCancion_favoritas[i].usuario.remove(artista);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = artista.listas_de_reproduccion_seguidas.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = artista.listas_de_reproduccion_seguidas.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_seguidass.length; i++) {
 				lListas_de_reproduccion_seguidass[i].seguidor.remove(artista);
 			}
-			Evento[] lNotificacioness = artista.notificaciones.toArray();
+			orm.bbdd.Evento[] lNotificacioness = artista.notificaciones.toArray();
 			for(int i = 0; i < lNotificacioness.length; i++) {
 				lNotificacioness[i].usuario.remove(artista);
 			}
-			Actor_Comun[] lSeguidors = artista.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = artista.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].seguido.remove(artista);
+			}
+			orm.bbdd.Cancion[] lCanciones_reproducidass = artista.canciones_reproducidas.toArray();
+			for(int i = 0; i < lCanciones_reproducidass.length; i++) {
+				lCanciones_reproducidass[i]._usuario.remove(artista);
 			}
 			return delete(artista);
 		}
@@ -383,25 +387,25 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Artista artista, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Artista artista, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			Cancion[] lCancionss = artista.cancions.toArray();
+			orm.bbdd.Cancion[] lCancionss = artista.cancions.toArray();
 			for(int i = 0; i < lCancionss.length; i++) {
 				lCancionss[i].artistas.remove(artista);
 			}
-			Estadistica[] lEstadisticass = artista.estadisticas.toArray();
+			orm.bbdd.Estadistica[] lEstadisticass = artista.estadisticas.toArray();
 			for(int i = 0; i < lEstadisticass.length; i++) {
 				lEstadisticass[i].artistas.remove(artista);
 			}
-			Evento[] lEventoss = artista.eventos.toArray();
+			orm.bbdd.Evento[] lEventoss = artista.eventos.toArray();
 			for(int i = 0; i < lEventoss.length; i++) {
 				lEventoss[i].setArtista(null);
 			}
-			Estilo[] lEstiloss = artista.estilos.toArray();
+			orm.bbdd.Estilo[] lEstiloss = artista.estilos.toArray();
 			for(int i = 0; i < lEstiloss.length; i++) {
 				lEstiloss[i].artistas.remove(artista);
 			}
-			Album[] lAlbumss = artista.albums.toArray();
+			orm.bbdd.Album[] lAlbumss = artista.albums.toArray();
 			for(int i = 0; i < lAlbumss.length; i++) {
 				lAlbumss[i].setArtista(null);
 			}
@@ -413,29 +417,33 @@ public class ArtistaDAO {
 				artista.getEstadistica().setUsuario(null);
 			}
 			
-			Lista_de_reproduccion[] lListas_de_reproduccion_propiass = artista.listas_de_reproduccion_propias.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = artista.listas_de_reproduccion_propias.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
 				lListas_de_reproduccion_propiass[i].setCreador(null);
 			}
-			Actor_Comun[] lSeguidos = artista.seguido.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidos = artista.seguido.toArray();
 			for(int i = 0; i < lSeguidos.length; i++) {
 				lSeguidos[i].seguidor.remove(artista);
 			}
-			Cancion[] lCancion_favoritas = artista.cancion_favorita.toArray();
+			orm.bbdd.Cancion[] lCancion_favoritas = artista.cancion_favorita.toArray();
 			for(int i = 0; i < lCancion_favoritas.length; i++) {
 				lCancion_favoritas[i].usuario.remove(artista);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = artista.listas_de_reproduccion_seguidas.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = artista.listas_de_reproduccion_seguidas.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_seguidass.length; i++) {
 				lListas_de_reproduccion_seguidass[i].seguidor.remove(artista);
 			}
-			Evento[] lNotificacioness = artista.notificaciones.toArray();
+			orm.bbdd.Evento[] lNotificacioness = artista.notificaciones.toArray();
 			for(int i = 0; i < lNotificacioness.length; i++) {
 				lNotificacioness[i].usuario.remove(artista);
 			}
-			Actor_Comun[] lSeguidors = artista.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = artista.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].seguido.remove(artista);
+			}
+			orm.bbdd.Cancion[] lCanciones_reproducidass = artista.canciones_reproducidas.toArray();
+			for(int i = 0; i < lCanciones_reproducidass.length; i++) {
+				lCanciones_reproducidass[i]._usuario.remove(artista);
 			}
 			try {
 				session.delete(artista);
@@ -450,7 +458,7 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean refresh(Artista artista) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Artista artista) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(artista);
 			return true;
@@ -461,7 +469,7 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean evict(Artista artista) throws PersistentException {
+	public static boolean evict(orm.bbdd.Artista artista) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(artista);
 			return true;

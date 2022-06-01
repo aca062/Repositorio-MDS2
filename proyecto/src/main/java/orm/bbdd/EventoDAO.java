@@ -65,7 +65,7 @@ public class EventoDAO {
 	
 	public static Evento loadEventoByORMID(PersistentSession session, int idEvento) throws PersistentException {
 		try {
-			return (Evento) session.load(Evento.class, Integer.valueOf(idEvento));
+			return (Evento) session.load(orm.bbdd.Evento.class, Integer.valueOf(idEvento));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class EventoDAO {
 	
 	public static Evento getEventoByORMID(PersistentSession session, int idEvento) throws PersistentException {
 		try {
-			return (Evento) session.get(Evento.class, Integer.valueOf(idEvento));
+			return (Evento) session.get(orm.bbdd.Evento.class, Integer.valueOf(idEvento));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class EventoDAO {
 	
 	public static Evento loadEventoByORMID(PersistentSession session, int idEvento, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Evento) session.load(Evento.class, Integer.valueOf(idEvento), lockMode);
+			return (Evento) session.load(orm.bbdd.Evento.class, Integer.valueOf(idEvento), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class EventoDAO {
 	
 	public static Evento getEventoByORMID(PersistentSession session, int idEvento, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Evento) session.get(Evento.class, Integer.valueOf(idEvento), lockMode);
+			return (Evento) session.get(orm.bbdd.Evento.class, Integer.valueOf(idEvento), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class EventoDAO {
 	}
 	
 	public static List queryEvento(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Evento as Evento");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Evento as Evento");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class EventoDAO {
 	}
 	
 	public static List queryEvento(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Evento as Evento");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Evento as Evento");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class EventoDAO {
 	}
 	
 	public static java.util.Iterator iterateEventoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Evento as Evento");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Evento as Evento");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class EventoDAO {
 	}
 	
 	public static java.util.Iterator iterateEventoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Evento as Evento");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Evento as Evento");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class EventoDAO {
 	}
 	
 	public static Evento createEvento() {
-		return new Evento();
+		return new orm.bbdd.Evento();
 	}
 	
-	public static boolean save(Evento evento) throws PersistentException {
+	public static boolean save(orm.bbdd.Evento evento) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(evento);
 			return true;
@@ -310,7 +310,7 @@ public class EventoDAO {
 		}
 	}
 	
-	public static boolean delete(Evento evento) throws PersistentException {
+	public static boolean delete(orm.bbdd.Evento evento) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(evento);
 			return true;
@@ -321,13 +321,13 @@ public class EventoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Evento evento)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Evento evento)throws PersistentException {
 		try {
 			if (evento.getArtista() != null) {
 				evento.getArtista().eventos.remove(evento);
 			}
 			
-			Actor_Comun[] lUsuarios = evento.usuario.toArray();
+			orm.bbdd.Actor_Comun[] lUsuarios = evento.usuario.toArray();
 			for(int i = 0; i < lUsuarios.length; i++) {
 				lUsuarios[i].notificaciones.remove(evento);
 			}
@@ -339,13 +339,13 @@ public class EventoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Evento evento, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Evento evento, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (evento.getArtista() != null) {
 				evento.getArtista().eventos.remove(evento);
 			}
 			
-			Actor_Comun[] lUsuarios = evento.usuario.toArray();
+			orm.bbdd.Actor_Comun[] lUsuarios = evento.usuario.toArray();
 			for(int i = 0; i < lUsuarios.length; i++) {
 				lUsuarios[i].notificaciones.remove(evento);
 			}
@@ -362,7 +362,7 @@ public class EventoDAO {
 		}
 	}
 	
-	public static boolean refresh(Evento evento) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Evento evento) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(evento);
 			return true;
@@ -373,7 +373,7 @@ public class EventoDAO {
 		}
 	}
 	
-	public static boolean evict(Evento evento) throws PersistentException {
+	public static boolean evict(orm.bbdd.Evento evento) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(evento);
 			return true;

@@ -29,7 +29,7 @@ public class AlbumDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression estadisticas;
 	
 	public AlbumDetachedCriteria() {
-		super(Album.class, AlbumCriteria.class);
+		super(orm.bbdd.Album.class, orm.bbdd.AlbumCriteria.class);
 		idAlbum = new IntegerExpression("idAlbum", this.getDetachedCriteria());
 		artistaId = new IntegerExpression("artista.", this.getDetachedCriteria());
 		artista = new AssociationExpression("artista", this.getDetachedCriteria());
@@ -41,7 +41,7 @@ public class AlbumDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public AlbumDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, AlbumCriteria.class);
+		super(aDetachedCriteria, orm.bbdd.AlbumCriteria.class);
 		idAlbum = new IntegerExpression("idAlbum", this.getDetachedCriteria());
 		artistaId = new IntegerExpression("artista.", this.getDetachedCriteria());
 		artista = new AssociationExpression("artista", this.getDetachedCriteria());

@@ -20,7 +20,7 @@ import javax.persistence.*;
 @Table(name="Usuario_Registrado")
 @Inheritance(strategy=InheritanceType.JOINED)
 @PrimaryKeyJoinColumn(name="Actor_ComunId", referencedColumnName="Id")
-public class Usuario_Registrado extends Actor_Comun implements Serializable {
+public class Usuario_Registrado extends orm.bbdd.Actor_Comun implements Serializable {
 	public Usuario_Registrado() {
 	}
 	

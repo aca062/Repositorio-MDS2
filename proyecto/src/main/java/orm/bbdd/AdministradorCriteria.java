@@ -34,6 +34,7 @@ public class AdministradorCriteria extends AbstractORMCriteria {
 	public final CollectionExpression listas_de_reproduccion_seguidas;
 	public final CollectionExpression notificaciones;
 	public final CollectionExpression seguidor;
+	public final CollectionExpression canciones_reproducidas;
 	public final IntegerExpression numCanciones;
 	public final CollectionExpression cancions;
 	
@@ -54,6 +55,7 @@ public class AdministradorCriteria extends AbstractORMCriteria {
 		listas_de_reproduccion_seguidas = new CollectionExpression("ORM_listas_de_reproduccion_seguidas", this);
 		notificaciones = new CollectionExpression("ORM_notificaciones", this);
 		seguidor = new CollectionExpression("ORM_seguidor", this);
+		canciones_reproducidas = new CollectionExpression("ORM_canciones_reproducidas", this);
 		numCanciones = new IntegerExpression("numCanciones", this);
 		cancions = new CollectionExpression("ORM_cancions", this);
 	}
@@ -100,6 +102,10 @@ public class AdministradorCriteria extends AbstractORMCriteria {
 	
 	public Actor_ComunCriteria createSeguidorCriteria() {
 		return new Actor_ComunCriteria(createCriteria("ORM_seguidor"));
+	}
+	
+	public CancionCriteria createCanciones_reproducidasCriteria() {
+		return new CancionCriteria(createCriteria("ORM_canciones_reproducidas"));
 	}
 	
 	public Administrador uniqueAdministrador() {

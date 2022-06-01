@@ -20,6 +20,8 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_ACTOR_COMUN_CANCION_FAVORITA = 1810026897;
 	
+	final int KEY_ACTOR_COMUN_CANCIONES_REPRODUCIDAS = -532485712;
+	
 	final int KEY_ACTOR_COMUN_ESTADISTICA = -1313401289;
 	
 	final int KEY_ACTOR_COMUN_LISTAS_DE_REPRODUCCION_PROPIAS = -858098924;
@@ -49,6 +51,8 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_ARTISTA_ESTILOS = -1730313368;
 	
 	final int KEY_ARTISTA_EVENTOS = -1658122087;
+	
+	final int KEY_CANCION__USUARIO = -1746454919;
 	
 	final int KEY_CANCION_ADMINISTRADOR = -1633996685;
 	

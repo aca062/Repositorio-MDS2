@@ -41,7 +41,7 @@ public class Estadistica implements Serializable {
 	
 	private void this_setOwner(Object owner, int key) {
 		if (key == ORMConstants.KEY_ESTADISTICA_USUARIO) {
-			this.usuario = (Actor_Comun) owner;
+			this.usuario = (orm.bbdd.Actor_Comun) owner;
 		}
 	}
 	
@@ -59,8 +59,8 @@ public class Estadistica implements Serializable {
 	
 	@Column(name="Id", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BBDD_ESTADISTICA_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BBDD_ESTADISTICA_ID_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="ORM_BBDD_ESTADISTICA_ID_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="ORM_BBDD_ESTADISTICA_ID_GENERATOR", strategy="native")	
 	private int id;
 	
 	@Column(name="TiempoAnual", nullable=false)	
@@ -72,27 +72,27 @@ public class Estadistica implements Serializable {
 	@Column(name="TiempoSemana", nullable=false)	
 	private double[] tiempoSemana;
 	
-	@OneToOne(mappedBy="estadistica", targetEntity=Actor_Comun.class, fetch=FetchType.LAZY)	
+	@OneToOne(mappedBy="estadistica", targetEntity=orm.bbdd.Actor_Comun.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
-	private Actor_Comun usuario;
+	private orm.bbdd.Actor_Comun usuario;
 	
-	@ManyToMany(mappedBy="ORM_estadisticas", targetEntity=Artista.class)	
+	@ManyToMany(mappedBy="ORM_estadisticas", targetEntity=orm.bbdd.Artista.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_artistas = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM_estadisticas", targetEntity=Cancion.class)	
+	@ManyToMany(mappedBy="ORM_estadisticas", targetEntity=orm.bbdd.Cancion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_cancions = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM_estadisticas", targetEntity=Lista_de_reproduccion.class)	
+	@ManyToMany(mappedBy="ORM_estadisticas", targetEntity=orm.bbdd.Lista_de_reproduccion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_lista_de_reproduccion = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM_estadisticas", targetEntity=Album.class)	
+	@ManyToMany(mappedBy="ORM_estadisticas", targetEntity=orm.bbdd.Album.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_albums = new java.util.HashSet();
@@ -125,9 +125,9 @@ public class Estadistica implements Serializable {
 		return tiempoSemana;
 	}
 	
-	public void setUsuario(Actor_Comun value) {
+	public void setUsuario(orm.bbdd.Actor_Comun value) {
 		if (this.usuario != value) {
-			Actor_Comun lusuario = this.usuario;
+			orm.bbdd.Actor_Comun lusuario = this.usuario;
 			this.usuario = value;
 			if (value != null) {
 				usuario.setEstadistica(this);
@@ -138,7 +138,7 @@ public class Estadistica implements Serializable {
 		}
 	}
 	
-	public Actor_Comun getUsuario() {
+	public orm.bbdd.Actor_Comun getUsuario() {
 		return usuario;
 	}
 	
@@ -151,7 +151,7 @@ public class Estadistica implements Serializable {
 	}
 	
 	@Transient	
-	public final ArtistaSetCollection artistas = new ArtistaSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTADISTICA_ARTISTAS, ORMConstants.KEY_ARTISTA_ESTADISTICAS, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.ArtistaSetCollection artistas = new orm.bbdd.ArtistaSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTADISTICA_ARTISTAS, ORMConstants.KEY_ARTISTA_ESTADISTICAS, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Cancions(java.util.Set value) {
 		this.ORM_cancions = value;
@@ -162,7 +162,7 @@ public class Estadistica implements Serializable {
 	}
 	
 	@Transient	
-	public final CancionSetCollection cancions = new CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTADISTICA_CANCIONS, ORMConstants.KEY_CANCION_ESTADISTICAS, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.CancionSetCollection cancions = new orm.bbdd.CancionSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTADISTICA_CANCIONS, ORMConstants.KEY_CANCION_ESTADISTICAS, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Lista_de_reproduccion(java.util.Set value) {
 		this.ORM_lista_de_reproduccion = value;
@@ -173,7 +173,7 @@ public class Estadistica implements Serializable {
 	}
 	
 	@Transient	
-	public final Lista_de_reproduccionSetCollection lista_de_reproduccion = new Lista_de_reproduccionSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTADISTICA_LISTA_DE_REPRODUCCION, ORMConstants.KEY_LISTA_DE_REPRODUCCION_ESTADISTICAS, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.Lista_de_reproduccionSetCollection lista_de_reproduccion = new orm.bbdd.Lista_de_reproduccionSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTADISTICA_LISTA_DE_REPRODUCCION, ORMConstants.KEY_LISTA_DE_REPRODUCCION_ESTADISTICAS, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Albums(java.util.Set value) {
 		this.ORM_albums = value;
@@ -184,7 +184,7 @@ public class Estadistica implements Serializable {
 	}
 	
 	@Transient	
-	public final AlbumSetCollection albums = new AlbumSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTADISTICA_ALBUMS, ORMConstants.KEY_ALBUM_ESTADISTICAS, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.AlbumSetCollection albums = new orm.bbdd.AlbumSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTADISTICA_ALBUMS, ORMConstants.KEY_ALBUM_ESTADISTICAS, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId());

@@ -65,7 +65,7 @@ public class Usuario_RegistradoDAO {
 	
 	public static Usuario_Registrado loadUsuario_RegistradoByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Usuario_Registrado) session.load(Usuario_Registrado.class, Integer.valueOf(id));
+			return (Usuario_Registrado) session.load(orm.bbdd.Usuario_Registrado.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class Usuario_RegistradoDAO {
 	
 	public static Usuario_Registrado getUsuario_RegistradoByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Usuario_Registrado) session.get(Usuario_Registrado.class, Integer.valueOf(id));
+			return (Usuario_Registrado) session.get(orm.bbdd.Usuario_Registrado.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class Usuario_RegistradoDAO {
 	
 	public static Usuario_Registrado loadUsuario_RegistradoByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Usuario_Registrado) session.load(Usuario_Registrado.class, Integer.valueOf(id), lockMode);
+			return (Usuario_Registrado) session.load(orm.bbdd.Usuario_Registrado.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class Usuario_RegistradoDAO {
 	
 	public static Usuario_Registrado getUsuario_RegistradoByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Usuario_Registrado) session.get(Usuario_Registrado.class, Integer.valueOf(id), lockMode);
+			return (Usuario_Registrado) session.get(orm.bbdd.Usuario_Registrado.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class Usuario_RegistradoDAO {
 	}
 	
 	public static List queryUsuario_Registrado(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Usuario_Registrado as Usuario_Registrado");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Usuario_Registrado as Usuario_Registrado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class Usuario_RegistradoDAO {
 	}
 	
 	public static List queryUsuario_Registrado(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Usuario_Registrado as Usuario_Registrado");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Usuario_Registrado as Usuario_Registrado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class Usuario_RegistradoDAO {
 	}
 	
 	public static java.util.Iterator iterateUsuario_RegistradoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Usuario_Registrado as Usuario_Registrado");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Usuario_Registrado as Usuario_Registrado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class Usuario_RegistradoDAO {
 	}
 	
 	public static java.util.Iterator iterateUsuario_RegistradoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Usuario_Registrado as Usuario_Registrado");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Usuario_Registrado as Usuario_Registrado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class Usuario_RegistradoDAO {
 	}
 	
 	public static Usuario_Registrado createUsuario_Registrado() {
-		return new Usuario_Registrado();
+		return new orm.bbdd.Usuario_Registrado();
 	}
 	
-	public static boolean save(Usuario_Registrado usuario_Registrado) throws PersistentException {
+	public static boolean save(orm.bbdd.Usuario_Registrado usuario_Registrado) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(usuario_Registrado);
 			return true;
@@ -310,7 +310,7 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static boolean delete(Usuario_Registrado usuario_Registrado) throws PersistentException {
+	public static boolean delete(orm.bbdd.Usuario_Registrado usuario_Registrado) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(usuario_Registrado);
 			return true;
@@ -321,7 +321,7 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Usuario_Registrado usuario_Registrado)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Usuario_Registrado usuario_Registrado)throws PersistentException {
 		try {
 			if (usuario_Registrado.getAcceso_Dato() != null) {
 				usuario_Registrado.getAcceso_Dato().setUsuario(null);
@@ -331,29 +331,33 @@ public class Usuario_RegistradoDAO {
 				usuario_Registrado.getEstadistica().setUsuario(null);
 			}
 			
-			Lista_de_reproduccion[] lListas_de_reproduccion_propiass = usuario_Registrado.listas_de_reproduccion_propias.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = usuario_Registrado.listas_de_reproduccion_propias.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
 				lListas_de_reproduccion_propiass[i].setCreador(null);
 			}
-			Actor_Comun[] lSeguidos = usuario_Registrado.seguido.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidos = usuario_Registrado.seguido.toArray();
 			for(int i = 0; i < lSeguidos.length; i++) {
 				lSeguidos[i].seguidor.remove(usuario_Registrado);
 			}
-			Cancion[] lCancion_favoritas = usuario_Registrado.cancion_favorita.toArray();
+			orm.bbdd.Cancion[] lCancion_favoritas = usuario_Registrado.cancion_favorita.toArray();
 			for(int i = 0; i < lCancion_favoritas.length; i++) {
 				lCancion_favoritas[i].usuario.remove(usuario_Registrado);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = usuario_Registrado.listas_de_reproduccion_seguidas.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = usuario_Registrado.listas_de_reproduccion_seguidas.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_seguidass.length; i++) {
 				lListas_de_reproduccion_seguidass[i].seguidor.remove(usuario_Registrado);
 			}
-			Evento[] lNotificacioness = usuario_Registrado.notificaciones.toArray();
+			orm.bbdd.Evento[] lNotificacioness = usuario_Registrado.notificaciones.toArray();
 			for(int i = 0; i < lNotificacioness.length; i++) {
 				lNotificacioness[i].usuario.remove(usuario_Registrado);
 			}
-			Actor_Comun[] lSeguidors = usuario_Registrado.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = usuario_Registrado.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].seguido.remove(usuario_Registrado);
+			}
+			orm.bbdd.Cancion[] lCanciones_reproducidass = usuario_Registrado.canciones_reproducidas.toArray();
+			for(int i = 0; i < lCanciones_reproducidass.length; i++) {
+				lCanciones_reproducidass[i]._usuario.remove(usuario_Registrado);
 			}
 			return delete(usuario_Registrado);
 		}
@@ -363,7 +367,7 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Usuario_Registrado usuario_Registrado, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Usuario_Registrado usuario_Registrado, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (usuario_Registrado.getAcceso_Dato() != null) {
 				usuario_Registrado.getAcceso_Dato().setUsuario(null);
@@ -373,29 +377,33 @@ public class Usuario_RegistradoDAO {
 				usuario_Registrado.getEstadistica().setUsuario(null);
 			}
 			
-			Lista_de_reproduccion[] lListas_de_reproduccion_propiass = usuario_Registrado.listas_de_reproduccion_propias.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = usuario_Registrado.listas_de_reproduccion_propias.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
 				lListas_de_reproduccion_propiass[i].setCreador(null);
 			}
-			Actor_Comun[] lSeguidos = usuario_Registrado.seguido.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidos = usuario_Registrado.seguido.toArray();
 			for(int i = 0; i < lSeguidos.length; i++) {
 				lSeguidos[i].seguidor.remove(usuario_Registrado);
 			}
-			Cancion[] lCancion_favoritas = usuario_Registrado.cancion_favorita.toArray();
+			orm.bbdd.Cancion[] lCancion_favoritas = usuario_Registrado.cancion_favorita.toArray();
 			for(int i = 0; i < lCancion_favoritas.length; i++) {
 				lCancion_favoritas[i].usuario.remove(usuario_Registrado);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = usuario_Registrado.listas_de_reproduccion_seguidas.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = usuario_Registrado.listas_de_reproduccion_seguidas.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_seguidass.length; i++) {
 				lListas_de_reproduccion_seguidass[i].seguidor.remove(usuario_Registrado);
 			}
-			Evento[] lNotificacioness = usuario_Registrado.notificaciones.toArray();
+			orm.bbdd.Evento[] lNotificacioness = usuario_Registrado.notificaciones.toArray();
 			for(int i = 0; i < lNotificacioness.length; i++) {
 				lNotificacioness[i].usuario.remove(usuario_Registrado);
 			}
-			Actor_Comun[] lSeguidors = usuario_Registrado.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = usuario_Registrado.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].seguido.remove(usuario_Registrado);
+			}
+			orm.bbdd.Cancion[] lCanciones_reproducidass = usuario_Registrado.canciones_reproducidas.toArray();
+			for(int i = 0; i < lCanciones_reproducidass.length; i++) {
+				lCanciones_reproducidass[i]._usuario.remove(usuario_Registrado);
 			}
 			try {
 				session.delete(usuario_Registrado);
@@ -410,7 +418,7 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static boolean refresh(Usuario_Registrado usuario_Registrado) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Usuario_Registrado usuario_Registrado) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(usuario_Registrado);
 			return true;
@@ -421,7 +429,7 @@ public class Usuario_RegistradoDAO {
 		}
 	}
 	
-	public static boolean evict(Usuario_Registrado usuario_Registrado) throws PersistentException {
+	public static boolean evict(orm.bbdd.Usuario_Registrado usuario_Registrado) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(usuario_Registrado);
 			return true;

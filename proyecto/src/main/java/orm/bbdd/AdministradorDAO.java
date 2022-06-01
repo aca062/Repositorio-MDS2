@@ -65,7 +65,7 @@ public class AdministradorDAO {
 	
 	public static Administrador loadAdministradorByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Administrador) session.load(Administrador.class, Integer.valueOf(id));
+			return (Administrador) session.load(orm.bbdd.Administrador.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class AdministradorDAO {
 	
 	public static Administrador getAdministradorByORMID(PersistentSession session, int id) throws PersistentException {
 		try {
-			return (Administrador) session.get(Administrador.class, Integer.valueOf(id));
+			return (Administrador) session.get(orm.bbdd.Administrador.class, Integer.valueOf(id));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class AdministradorDAO {
 	
 	public static Administrador loadAdministradorByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Administrador) session.load(Administrador.class, Integer.valueOf(id), lockMode);
+			return (Administrador) session.load(orm.bbdd.Administrador.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class AdministradorDAO {
 	
 	public static Administrador getAdministradorByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Administrador) session.get(Administrador.class, Integer.valueOf(id), lockMode);
+			return (Administrador) session.get(orm.bbdd.Administrador.class, Integer.valueOf(id), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class AdministradorDAO {
 	}
 	
 	public static List queryAdministrador(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Administrador as Administrador");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Administrador as Administrador");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class AdministradorDAO {
 	}
 	
 	public static List queryAdministrador(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Administrador as Administrador");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Administrador as Administrador");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -263,7 +263,7 @@ public class AdministradorDAO {
 	}
 	
 	public static java.util.Iterator iterateAdministradorByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Administrador as Administrador");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Administrador as Administrador");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class AdministradorDAO {
 	}
 	
 	public static java.util.Iterator iterateAdministradorByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From Administrador as Administrador");
+		StringBuffer sb = new StringBuffer("From orm.bbdd.Administrador as Administrador");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,10 +296,10 @@ public class AdministradorDAO {
 	}
 	
 	public static Administrador createAdministrador() {
-		return new Administrador();
+		return new orm.bbdd.Administrador();
 	}
 	
-	public static boolean save(Administrador administrador) throws PersistentException {
+	public static boolean save(orm.bbdd.Administrador administrador) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().saveObject(administrador);
 			return true;
@@ -310,7 +310,7 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static boolean delete(Administrador administrador) throws PersistentException {
+	public static boolean delete(orm.bbdd.Administrador administrador) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().deleteObject(administrador);
 			return true;
@@ -321,9 +321,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Administrador administrador)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Administrador administrador)throws PersistentException {
 		try {
-			Cancion[] lCancionss = administrador.cancions.toArray();
+			orm.bbdd.Cancion[] lCancionss = administrador.cancions.toArray();
 			for(int i = 0; i < lCancionss.length; i++) {
 				lCancionss[i].setAdministrador(null);
 			}
@@ -335,29 +335,33 @@ public class AdministradorDAO {
 				administrador.getEstadistica().setUsuario(null);
 			}
 			
-			Lista_de_reproduccion[] lListas_de_reproduccion_propiass = administrador.listas_de_reproduccion_propias.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = administrador.listas_de_reproduccion_propias.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
 				lListas_de_reproduccion_propiass[i].setCreador(null);
 			}
-			Actor_Comun[] lSeguidos = administrador.seguido.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidos = administrador.seguido.toArray();
 			for(int i = 0; i < lSeguidos.length; i++) {
 				lSeguidos[i].seguidor.remove(administrador);
 			}
-			Cancion[] lCancion_favoritas = administrador.cancion_favorita.toArray();
+			orm.bbdd.Cancion[] lCancion_favoritas = administrador.cancion_favorita.toArray();
 			for(int i = 0; i < lCancion_favoritas.length; i++) {
 				lCancion_favoritas[i].usuario.remove(administrador);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = administrador.listas_de_reproduccion_seguidas.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = administrador.listas_de_reproduccion_seguidas.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_seguidass.length; i++) {
 				lListas_de_reproduccion_seguidass[i].seguidor.remove(administrador);
 			}
-			Evento[] lNotificacioness = administrador.notificaciones.toArray();
+			orm.bbdd.Evento[] lNotificacioness = administrador.notificaciones.toArray();
 			for(int i = 0; i < lNotificacioness.length; i++) {
 				lNotificacioness[i].usuario.remove(administrador);
 			}
-			Actor_Comun[] lSeguidors = administrador.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = administrador.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].seguido.remove(administrador);
+			}
+			orm.bbdd.Cancion[] lCanciones_reproducidass = administrador.canciones_reproducidas.toArray();
+			for(int i = 0; i < lCanciones_reproducidass.length; i++) {
+				lCanciones_reproducidass[i]._usuario.remove(administrador);
 			}
 			return delete(administrador);
 		}
@@ -367,9 +371,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(Administrador administrador, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.bbdd.Administrador administrador, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			Cancion[] lCancionss = administrador.cancions.toArray();
+			orm.bbdd.Cancion[] lCancionss = administrador.cancions.toArray();
 			for(int i = 0; i < lCancionss.length; i++) {
 				lCancionss[i].setAdministrador(null);
 			}
@@ -381,29 +385,33 @@ public class AdministradorDAO {
 				administrador.getEstadistica().setUsuario(null);
 			}
 			
-			Lista_de_reproduccion[] lListas_de_reproduccion_propiass = administrador.listas_de_reproduccion_propias.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = administrador.listas_de_reproduccion_propias.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
 				lListas_de_reproduccion_propiass[i].setCreador(null);
 			}
-			Actor_Comun[] lSeguidos = administrador.seguido.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidos = administrador.seguido.toArray();
 			for(int i = 0; i < lSeguidos.length; i++) {
 				lSeguidos[i].seguidor.remove(administrador);
 			}
-			Cancion[] lCancion_favoritas = administrador.cancion_favorita.toArray();
+			orm.bbdd.Cancion[] lCancion_favoritas = administrador.cancion_favorita.toArray();
 			for(int i = 0; i < lCancion_favoritas.length; i++) {
 				lCancion_favoritas[i].usuario.remove(administrador);
 			}
-			Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = administrador.listas_de_reproduccion_seguidas.toArray();
+			orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = administrador.listas_de_reproduccion_seguidas.toArray();
 			for(int i = 0; i < lListas_de_reproduccion_seguidass.length; i++) {
 				lListas_de_reproduccion_seguidass[i].seguidor.remove(administrador);
 			}
-			Evento[] lNotificacioness = administrador.notificaciones.toArray();
+			orm.bbdd.Evento[] lNotificacioness = administrador.notificaciones.toArray();
 			for(int i = 0; i < lNotificacioness.length; i++) {
 				lNotificacioness[i].usuario.remove(administrador);
 			}
-			Actor_Comun[] lSeguidors = administrador.seguidor.toArray();
+			orm.bbdd.Actor_Comun[] lSeguidors = administrador.seguidor.toArray();
 			for(int i = 0; i < lSeguidors.length; i++) {
 				lSeguidors[i].seguido.remove(administrador);
+			}
+			orm.bbdd.Cancion[] lCanciones_reproducidass = administrador.canciones_reproducidas.toArray();
+			for(int i = 0; i < lCanciones_reproducidass.length; i++) {
+				lCanciones_reproducidass[i]._usuario.remove(administrador);
 			}
 			try {
 				session.delete(administrador);
@@ -418,7 +426,7 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static boolean refresh(Administrador administrador) throws PersistentException {
+	public static boolean refresh(orm.bbdd.Administrador administrador) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().refresh(administrador);
 			return true;
@@ -429,7 +437,7 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static boolean evict(Administrador administrador) throws PersistentException {
+	public static boolean evict(orm.bbdd.Administrador administrador) throws PersistentException {
 		try {
 			MDS2PersistentManager.instance().getSession().evict(administrador);
 			return true;

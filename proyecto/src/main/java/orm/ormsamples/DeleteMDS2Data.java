@@ -3,54 +3,54 @@
  * License Type: Academic
  */
 package orm.ormsamples;
-import orm.bbdd.*;
 
-import org.orm.*;
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 public class DeleteMDS2Data {
 	public void deleteTestData() throws PersistentException {
-		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = orm.bbdd.MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
-			Album bBDDAlbum = AlbumDAO.loadAlbumByQuery(null, null);
+			orm.bbdd.Album lormbbddAlbum = orm.bbdd.AlbumDAO.loadAlbumByQuery(null, null);
 			// Delete the persistent object
-			AlbumDAO.delete(bBDDAlbum);
-			Acceso_Dato bBDDAcceso_Dato = Acceso_DatoDAO.loadAcceso_DatoByQuery(null, null);
+			orm.bbdd.AlbumDAO.delete(lormbbddAlbum);
+			orm.bbdd.Acceso_Dato lormbbddAcceso_Dato = orm.bbdd.Acceso_DatoDAO.loadAcceso_DatoByQuery(null, null);
 			// Delete the persistent object
-			Acceso_DatoDAO.delete(bBDDAcceso_Dato);
-			Estadistica bBDDEstadistica = EstadisticaDAO.loadEstadisticaByQuery(null, null);
+			orm.bbdd.Acceso_DatoDAO.delete(lormbbddAcceso_Dato);
+			orm.bbdd.Estadistica lormbbddEstadistica = orm.bbdd.EstadisticaDAO.loadEstadisticaByQuery(null, null);
 			// Delete the persistent object
-			EstadisticaDAO.delete(bBDDEstadistica);
-			Estilo bBDDEstilo = EstiloDAO.loadEstiloByQuery(null, null);
+			orm.bbdd.EstadisticaDAO.delete(lormbbddEstadistica);
+			orm.bbdd.Estilo lormbbddEstilo = orm.bbdd.EstiloDAO.loadEstiloByQuery(null, null);
 			// Delete the persistent object
-			EstiloDAO.delete(bBDDEstilo);
-			Evento bBDDEvento = EventoDAO.loadEventoByQuery(null, null);
+			orm.bbdd.EstiloDAO.delete(lormbbddEstilo);
+			orm.bbdd.Evento lormbbddEvento = orm.bbdd.EventoDAO.loadEventoByQuery(null, null);
 			// Delete the persistent object
-			EventoDAO.delete(bBDDEvento);
-			Lista_de_reproduccion bBDDLista_de_reproduccion = Lista_de_reproduccionDAO.loadLista_de_reproduccionByQuery(null, null);
+			orm.bbdd.EventoDAO.delete(lormbbddEvento);
+			orm.bbdd.Lista_de_reproduccion lormbbddLista_de_reproduccion = orm.bbdd.Lista_de_reproduccionDAO.loadLista_de_reproduccionByQuery(null, null);
 			// Delete the persistent object
-			Lista_de_reproduccionDAO.delete(bBDDLista_de_reproduccion);
-			Cancion bBDDCancion = CancionDAO.loadCancionByQuery(null, null);
+			orm.bbdd.Lista_de_reproduccionDAO.delete(lormbbddLista_de_reproduccion);
+			orm.bbdd.Cancion lormbbddCancion = orm.bbdd.CancionDAO.loadCancionByQuery(null, null);
 			// Delete the persistent object
-			CancionDAO.delete(bBDDCancion);
-			Actor_Comun bBDDActor_Comun = Actor_ComunDAO.loadActor_ComunByQuery(null, null);
+			orm.bbdd.CancionDAO.delete(lormbbddCancion);
+			orm.bbdd.Actor_Comun lormbbddActor_Comun = orm.bbdd.Actor_ComunDAO.loadActor_ComunByQuery(null, null);
 			// Delete the persistent object
-			Actor_ComunDAO.delete(bBDDActor_Comun);
-			Administrador bBDDAdministrador = AdministradorDAO.loadAdministradorByQuery(null, null);
+			orm.bbdd.Actor_ComunDAO.delete(lormbbddActor_Comun);
+			orm.bbdd.Administrador lormbbddAdministrador = orm.bbdd.AdministradorDAO.loadAdministradorByQuery(null, null);
 			// Delete the persistent object
-			AdministradorDAO.delete(bBDDAdministrador);
-			Artista bBDDArtista = ArtistaDAO.loadArtistaByQuery(null, null);
+			orm.bbdd.AdministradorDAO.delete(lormbbddAdministrador);
+			orm.bbdd.Artista lormbbddArtista = orm.bbdd.ArtistaDAO.loadArtistaByQuery(null, null);
 			// Delete the persistent object
-			ArtistaDAO.delete(bBDDArtista);
-			Usuario_Registrado bBDDUsuario_Registrado = Usuario_RegistradoDAO.loadUsuario_RegistradoByQuery(null, null);
+			orm.bbdd.ArtistaDAO.delete(lormbbddArtista);
+			orm.bbdd.Usuario_Registrado lormbbddUsuario_Registrado = orm.bbdd.Usuario_RegistradoDAO.loadUsuario_RegistradoByQuery(null, null);
 			// Delete the persistent object
-			Usuario_RegistradoDAO.delete(bBDDUsuario_Registrado);
+			orm.bbdd.Usuario_RegistradoDAO.delete(lormbbddUsuario_Registrado);
 			t.commit();
 		}
 		catch (Exception e) {
 			t.rollback();
 		}
-		
+
 	}
-	
+
 	public static void main(String[] args) {
 		try {
 			DeleteMDS2Data deleteMDS2Data = new DeleteMDS2Data();
@@ -58,7 +58,7 @@ public class DeleteMDS2Data {
 				deleteMDS2Data.deleteTestData();
 			}
 			finally {
-				MDS2PersistentManager.instance().disposePersistentManager();
+				orm.bbdd.MDS2PersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {

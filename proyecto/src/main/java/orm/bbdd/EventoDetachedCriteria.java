@@ -29,7 +29,7 @@ public class EventoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression usuario;
 	
 	public EventoDetachedCriteria() {
-		super(Evento.class, EventoCriteria.class);
+		super(orm.bbdd.Evento.class, orm.bbdd.EventoCriteria.class);
 		idEvento = new IntegerExpression("idEvento", this.getDetachedCriteria());
 		artistaId = new IntegerExpression("artista.", this.getDetachedCriteria());
 		artista = new AssociationExpression("artista", this.getDetachedCriteria());
@@ -41,7 +41,7 @@ public class EventoDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public EventoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, EventoCriteria.class);
+		super(aDetachedCriteria, orm.bbdd.EventoCriteria.class);
 		idEvento = new IntegerExpression("idEvento", this.getDetachedCriteria());
 		artistaId = new IntegerExpression("artista.", this.getDetachedCriteria());
 		artista = new AssociationExpression("artista", this.getDetachedCriteria());

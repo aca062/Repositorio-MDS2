@@ -24,8 +24,8 @@ public class Acceso_Dato implements Serializable {
 	
 	@Column(name="Id", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BBDD_ACCESO_DATO_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BBDD_ACCESO_DATO_ID_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="ORM_BBDD_ACCESO_DATO_ID_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="ORM_BBDD_ACCESO_DATO_ID_GENERATOR", strategy="native")	
 	private int id;
 	
 	@Column(name="Contrasena", nullable=true, length=255)	
@@ -43,10 +43,10 @@ public class Acceso_Dato implements Serializable {
 	@Column(name="FechaBloqueo", nullable=true, length=255)	
 	private String fechaBloqueo;
 	
-	@OneToOne(mappedBy="acceso_Dato", targetEntity=Actor_Comun.class, fetch=FetchType.LAZY)	
+	@OneToOne(mappedBy="acceso_Dato", targetEntity=orm.bbdd.Actor_Comun.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
-	private Actor_Comun usuario;
+	private orm.bbdd.Actor_Comun usuario;
 	
 	private void setId(int value) {
 		this.id = value;
@@ -100,9 +100,9 @@ public class Acceso_Dato implements Serializable {
 		return fechaBloqueo;
 	}
 	
-	public void setUsuario(Actor_Comun value) {
+	public void setUsuario(orm.bbdd.Actor_Comun value) {
 		if (this.usuario != value) {
-			Actor_Comun lusuario = this.usuario;
+			orm.bbdd.Actor_Comun lusuario = this.usuario;
 			this.usuario = value;
 			if (value != null) {
 				usuario.setAcceso_Dato(this);
@@ -113,7 +113,7 @@ public class Acceso_Dato implements Serializable {
 		}
 	}
 	
-	public Actor_Comun getUsuario() {
+	public orm.bbdd.Actor_Comun getUsuario() {
 		return usuario;
 	}
 	

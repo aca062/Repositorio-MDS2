@@ -37,17 +37,17 @@ public class MDS2PersistentManager extends PersistentManager {
 	@Override
 	protected void configureMetadataSources(MetadataSources aMetadataSources) {
 		super.configureMetadataSources(aMetadataSources);
-		aMetadataSources.addAnnotatedClass(Album.class);
-		aMetadataSources.addAnnotatedClass(Acceso_Dato.class);
-		aMetadataSources.addAnnotatedClass(Estadistica.class);
-		aMetadataSources.addAnnotatedClass(Estilo.class);
-		aMetadataSources.addAnnotatedClass(Evento.class);
-		aMetadataSources.addAnnotatedClass(Lista_de_reproduccion.class);
-		aMetadataSources.addAnnotatedClass(Cancion.class);
-		aMetadataSources.addAnnotatedClass(Actor_Comun.class);
-		aMetadataSources.addAnnotatedClass(Administrador.class);
-		aMetadataSources.addAnnotatedClass(Artista.class);
-		aMetadataSources.addAnnotatedClass(Usuario_Registrado.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Album.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Acceso_Dato.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Estadistica.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Estilo.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Evento.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Lista_de_reproduccion.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Cancion.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Actor_Comun.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Administrador.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Artista.class);
+		aMetadataSources.addAnnotatedClass(orm.bbdd.Usuario_Registrado.class);
 	}
 	
 	public String getProjectName() {

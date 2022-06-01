@@ -32,7 +32,7 @@ public class Evento implements Serializable {
 	
 	private void this_setOwner(Object owner, int key) {
 		if (key == ORMConstants.KEY_EVENTO_ARTISTA) {
-			this.artista = (Artista) owner;
+			this.artista = (orm.bbdd.Artista) owner;
 		}
 	}
 	
@@ -50,15 +50,15 @@ public class Evento implements Serializable {
 	
 	@Column(name="IdEvento", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BBDD_EVENTO_IDEVENTO_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BBDD_EVENTO_IDEVENTO_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="ORM_BBDD_EVENTO_IDEVENTO_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="ORM_BBDD_EVENTO_IDEVENTO_GENERATOR", strategy="native")	
 	private int idEvento;
 	
-	@ManyToOne(targetEntity=Artista.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=orm.bbdd.Artista.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="ArtistaActor_ComunId", referencedColumnName="Actor_ComunId", nullable=false) }, foreignKey=@ForeignKey(name="FKEvento779957"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
-	private Artista artista;
+	private orm.bbdd.Artista artista;
 	
 	@Column(name="Foto", nullable=true, length=255)	
 	private String foto;
@@ -73,7 +73,7 @@ public class Evento implements Serializable {
 	@Column(name="Lugar", nullable=true, length=255)	
 	private String lugar;
 	
-	@ManyToMany(targetEntity=Actor_Comun.class)	
+	@ManyToMany(targetEntity=orm.bbdd.Actor_Comun.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Actor_Comun_Evento", joinColumns={ @JoinColumn(name="EventoIdEvento") }, inverseJoinColumns={ @JoinColumn(name="Actor_ComunId") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
@@ -123,7 +123,7 @@ public class Evento implements Serializable {
 		return lugar;
 	}
 	
-	public void setArtista(Artista value) {
+	public void setArtista(orm.bbdd.Artista value) {
 		if (artista != null) {
 			artista.eventos.remove(this);
 		}
@@ -132,18 +132,18 @@ public class Evento implements Serializable {
 		}
 	}
 	
-	public Artista getArtista() {
+	public orm.bbdd.Artista getArtista() {
 		return artista;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_Artista(Artista value) {
+	public void setORM_Artista(orm.bbdd.Artista value) {
 		this.artista = value;
 	}
 	
-	private Artista getORM_Artista() {
+	private orm.bbdd.Artista getORM_Artista() {
 		return artista;
 	}
 	
@@ -156,7 +156,7 @@ public class Evento implements Serializable {
 	}
 	
 	@Transient	
-	public final Actor_ComunSetCollection usuario = new Actor_ComunSetCollection(this, _ormAdapter, ORMConstants.KEY_EVENTO_USUARIO, ORMConstants.KEY_ACTOR_COMUN_NOTIFICACIONES, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.bbdd.Actor_ComunSetCollection usuario = new orm.bbdd.Actor_ComunSetCollection(this, _ormAdapter, ORMConstants.KEY_EVENTO_USUARIO, ORMConstants.KEY_ACTOR_COMUN_NOTIFICACIONES, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdEvento());
