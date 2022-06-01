@@ -43,7 +43,7 @@ public class BD_Artistas {
 	            EstadisticaDAO.save(estadistica);
 	            
 	            Estilo estilo = EstiloDAO.getEstiloByORMID(aIdEstilo);
-	            
+	            artista.estilos.add(estilo);
 	            /*BD_Acceso_Datos accesosDato = new BD_Acceso_Datos();
 	            Acceso_Dato idAcceso = accesosDato._contiene_acceso_datos.lastElement();
 	            BD_Estadisticas estadisticas = new BD_Estadisticas();

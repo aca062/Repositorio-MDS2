@@ -13,6 +13,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.combobox.ComboBox;
 
 /**
  * A Designer generated component for the vista-alta_canciones template.
@@ -42,22 +43,10 @@ public class VistaAlta_canciones extends LitTemplate {
 	private TextField compositores;
 	@Id("interpretes")
 	private TextField interpretes;
-	@Id("estilo")
-	private Select estilo;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("layoutAnadirCnacion")
 	private HorizontalLayout layoutAnadirCnacion;
 	@Id("h4Fichero")
 	private H4 h4Fichero;
-	@Id("anadirCancion")
-	private Button anadirCancion;
 	@Id("h5Requisitos")
 	private H5 h5Requisitos;
 	@Id("layoutBotones")
@@ -70,7 +59,9 @@ public class VistaAlta_canciones extends LitTemplate {
     private Upload vaadinUpload;
     @Id("botonEliminar")
     private Button botonEliminar;
-    /**
+	@Id("dropdown")
+	private ComboBox<String> dropdown;
+	/**
      * Creates a new VistaAlta_canciones.
      */
     public VistaAlta_canciones() {
@@ -141,46 +132,6 @@ public class VistaAlta_canciones extends LitTemplate {
 		this.interpretes = interpretes;
 	}
 
-	public Select getEstilo() {
-		return estilo;
-	}
-
-	public void setEstilo(Select estilo) {
-		this.estilo = estilo;
-	}
-
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
-	}
-
 	public HorizontalLayout getLayoutAnadirCnacion() {
 		return layoutAnadirCnacion;
 	}
@@ -195,14 +146,6 @@ public class VistaAlta_canciones extends LitTemplate {
 
 	public void setH4Fichero(H4 h4Fichero) {
 		this.h4Fichero = h4Fichero;
-	}
-
-	public Button getAnadirCancion() {
-		return anadirCancion;
-	}
-
-	public void setAnadirCancion(Button anadirCancion) {
-		this.anadirCancion = anadirCancion;
 	}
 
 	public H5 getH5Requisitos() {
@@ -252,5 +195,13 @@ public class VistaAlta_canciones extends LitTemplate {
     public void setBotonEliminar(Button botonEliminar) {
         this.botonEliminar = botonEliminar;
     }
+
+	public ComboBox<String> getDropdown() {
+		return dropdown;
+	}
+
+	public void setDropdown(ComboBox<String> dropdown) {
+		this.dropdown = dropdown;
+	}
 
 }

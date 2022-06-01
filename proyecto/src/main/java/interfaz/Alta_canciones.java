@@ -43,6 +43,7 @@ public class Alta_canciones extends VistaAlta_canciones{
 	private Button _confirmarB;*/
 	public Dar_de_alta _darDeAlta = new Dar_de_alta();
 	private iAdministrador adm = new BDPrincipal();
+	private Estilo[] estilos;
 
 	private String pathSong = null;
 
@@ -53,10 +54,8 @@ public class Alta_canciones extends VistaAlta_canciones{
 	    Upload upload = this.getVaadinUpload();
         upload.setReceiver(memoryBuffer);
         
-        Estilo[] estilos = null;
-        estilos = EstiloDAO.listEstiloByQuery(null, null);
         
-        //cargarEstilos();
+        cargarEstilos();
         
         List<String> nombreEstilos = new Vector<String>(estilos.length);
         
@@ -64,7 +63,7 @@ public class Alta_canciones extends VistaAlta_canciones{
         	nombreEstilos.add(estilo.getNombre());
         }
         
-        this.getEstilo().setItems(nombreEstilos);
+        this.getDropdown().setItems(nombreEstilos);
         
         
 		this.getCancelar().addClickListener(new ComponentEventListener(){
@@ -95,8 +94,19 @@ public class Alta_canciones extends VistaAlta_canciones{
         });
 	}
 
+	private void cargarEstilos() {
+		estilos = adm.cargarEstilo();		
+	}
+
 	protected void Confirmar() {
-	    adm.altaCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","), this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","), pathSong ,0, this.getTituloAlbum().getValue());
+		orm.bbdd.Estilo estiloSeleccionado = null;
+    	for(orm.bbdd.Estilo estilo : estilos) {
+    		if(estilo.getNombre().equals(getDropdown().getValue())) {
+    			estiloSeleccionado = estilo;
+    			break;
+    		}
+    	}
+	    adm.altaCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","), this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","), pathSong ,estiloSeleccionado.getIdEstilo(), this.getTituloAlbum().getValue());
 		_darDeAlta = new Dar_de_alta();
 		_darDeAlta.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_darDeAlta);
@@ -135,7 +145,6 @@ public class Alta_canciones extends VistaAlta_canciones{
 	}
 
 	void Inicializar() {
-		this.getAnadirCancion().setVisible(true);
 		this.getCancelar().setVisible(true);
 		this.getConfirmar().setVisible(true);
 		this.getCompositores().setVisible(true);

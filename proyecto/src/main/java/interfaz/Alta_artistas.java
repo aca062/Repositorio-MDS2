@@ -40,8 +40,6 @@ public class Alta_artistas extends VistaAlta_artistas {
     iAdministrador adm = new BDPrincipal();
     String pathFoto = null;
     private Estilo[] estilos;
-    //private Estilo[] estilos1;
-    private Estilo _estiloSeleccionado;
 
     @SuppressWarnings("unchecked")
 	public Alta_artistas() throws PersistentException {
@@ -81,13 +79,6 @@ public class Alta_artistas extends VistaAlta_artistas {
         this.getConfirmar().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-            	_estiloSeleccionado = null;
-            	for(orm.bbdd.Estilo estilo : estilos) {
-            		if(estilo.getNombre().equals(getDropdown().getValue())) {
-            			_estiloSeleccionado = estilo;
-            			break;
-            		}
-            	}
                 Confirmar();
             }
         });
@@ -143,8 +134,14 @@ public class Alta_artistas extends VistaAlta_artistas {
     }
 
     protected void Confirmar() {
-        
-    	adm.altaArtistas(this.geteMail().getValue(), this.getContrasena().getValue(), this.getNick().getValue(), pathFoto,_estiloSeleccionado.getORMID());
+    	orm.bbdd.Estilo estiloSeleccionado = null;
+    	for(orm.bbdd.Estilo estilo : estilos) {
+    		if(estilo.getNombre().equals(getDropdown().getValue())) {
+    			estiloSeleccionado = estilo;
+    			break;
+    		}
+    	}
+    	adm.altaArtistas(this.geteMail().getValue(), this.getContrasena().getValue(), this.getNick().getValue(), pathFoto,estiloSeleccionado.getIdEstilo());
         _darDeAlta.getStyle().set("width", "100%");
         ControladorVistas.CambiarContenido(_darDeAlta);
     }

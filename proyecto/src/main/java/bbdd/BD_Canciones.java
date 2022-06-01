@@ -9,6 +9,7 @@ import org.orm.PersistentTransaction;
 
 import orm.bbdd.Acceso_Dato;
 import orm.bbdd.Acceso_DatoDAO;
+import orm.bbdd.AdministradorDAO;
 import orm.bbdd.Album;
 import orm.bbdd.AlbumCriteria;
 import orm.bbdd.AlbumDAO;
@@ -39,6 +40,7 @@ public class BD_Canciones {
             cancion.setInterpretes(aInterpretes);
             cancion.setCompositores(aCompositores);
             cancion.setArchivoMultimedia(aArcMultimedia);
+            cancion.setNumReproducciones(0);
             Estilo estilo = EstiloDAO.getEstiloByORMID(aIdEstilos);
             cancion.setEstilo(estilo);
             AlbumCriteria albC = new AlbumCriteria();
