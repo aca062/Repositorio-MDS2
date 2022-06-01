@@ -11,6 +11,8 @@ import orm.bbdd.Artista;
 import orm.bbdd.ArtistaDAO;
 import orm.bbdd.Estadistica;
 import orm.bbdd.EstadisticaDAO;
+import orm.bbdd.Estilo;
+import orm.bbdd.EstiloDAO;
 import orm.bbdd.MDS2PersistentManager;
 import orm.bbdd.Usuario_Registrado;
 import orm.bbdd.Usuario_RegistradoDAO;
@@ -19,7 +21,7 @@ public class BD_Artistas {
 	public BDPrincipal _bd_prin_artistas;
 	public Vector<Artista> _contiene_artistas = new Vector<Artista>();
 
-	public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) throws PersistentException{
+	public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen, int aIdEstilo) throws PersistentException{
 	      PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 	        try {
 	            Artista artista = ArtistaDAO.createArtista();
@@ -39,6 +41,9 @@ public class BD_Artistas {
 	            estadistica.setTiempoSemana(tiempoSemana);
 	            //estadistica.setUsuario(usuario);
 	            EstadisticaDAO.save(estadistica);
+	            
+	            Estilo estilo = EstiloDAO.getEstiloByORMID(aIdEstilo);
+	            
 	            /*BD_Acceso_Datos accesosDato = new BD_Acceso_Datos();
 	            Acceso_Dato idAcceso = accesosDato._contiene_acceso_datos.lastElement();
 	            BD_Estadisticas estadisticas = new BD_Estadisticas();

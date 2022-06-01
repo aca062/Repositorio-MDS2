@@ -13,6 +13,7 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.combobox.ComboBox;
 
 /**
  * A Designer generated component for the vista-alta_artistas template.
@@ -40,10 +41,6 @@ public class VistaAlta_artistas extends LitTemplate {
 	private PasswordField confirmarContraseña;
 	@Id("eMail")
 	private TextField eMail;
-	@Id("estilo")
-	private Select estilo;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
 	@Id("confirmar")
 	private Button confirmar;
 	@Id("layoutBotones")
@@ -56,6 +53,8 @@ public class VistaAlta_artistas extends LitTemplate {
     private Upload subirFoto;
     @Id("botonEliminar")
     private Button botonEliminar;
+	@Id("dropdown")
+	private ComboBox<String> dropdown;
 
 	/**
      * Creates a new VistaAlta_artistas.
@@ -128,22 +127,6 @@ public class VistaAlta_artistas extends LitTemplate {
 		this.eMail = eMail;
 	}
 
-	public Select getEstilo() {
-		return estilo;
-	}
-
-	public void setEstilo(Select estilo) {
-		this.estilo = estilo;
-	}
-
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-
 	public Button getConfirmar() {
 		return confirmar;
 	}
@@ -191,4 +174,12 @@ public class VistaAlta_artistas extends LitTemplate {
     public void setBotonEliminar(Button botonEliminar) {
         this.botonEliminar = botonEliminar;
     }
+
+	public ComboBox<String> getDropdown() {
+		return dropdown;
+	}
+
+	public void setDropdown(ComboBox<String> dropdown) {
+		this.dropdown = dropdown;
+	}
 }

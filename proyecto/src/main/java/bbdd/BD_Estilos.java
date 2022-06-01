@@ -32,8 +32,22 @@ public class BD_Estilos {
         return -1;
 	}
 
-	public void editarEstilo(String aNombre, int aIdEstilo) throws PersistentException{
-		throw new UnsupportedOperationException();
+	public int editarEstilo(String aNombre, int aIdEstilo) throws PersistentException{
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+	    try {
+            Estilo estilo = EstiloDAO.loadEstiloByORMID(aIdEstilo);
+            estilo.setNombre(aNombre);
+            estilo.getIdEstilo();
+            if (!EstiloDAO.save(estilo)) {
+                return -1;
+            }
+            t.commit();
+            return 1;
+        } catch (PersistentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return -1;
 	}
 
 	public void eliminarEstilo(int aIdEstilo) throws PersistentException{
@@ -49,14 +63,17 @@ public class BD_Estilos {
 
 	public Estilo[] cargarEstilo() throws PersistentException {
 		Estilo[] estilos = null;
-		
+
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
-			estilos = EstiloDAO.listEstiloByQuery(null, null);
+
+			estilos = EstiloDAO.listEstiloByQuery("true=true", "Nombre");
+
 			t.commit();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			t.rollback();
 		}
+
 		return estilos;
 	}
 

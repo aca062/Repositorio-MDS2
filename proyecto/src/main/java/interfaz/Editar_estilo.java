@@ -5,6 +5,9 @@ import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iAdministrador;
+import orm.bbdd.Estilo;
 import vistas.VistaEditar_estilo;
 
 public class Editar_estilo extends VistaEditar_estilo{
@@ -14,7 +17,8 @@ public class Editar_estilo extends VistaEditar_estilo{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Estilo_admin _estiloAdmin;
-	
+	private iAdministrador adm = new BDPrincipal();
+	private Estilo estilos;
 	public Editar_estilo() {
 		Inicializar();
 		this.getConfirmar().addClickListener(new ComponentEventListener(){
@@ -33,6 +37,7 @@ public class Editar_estilo extends VistaEditar_estilo{
 
 	public void Confirmar() {
 		//Más cosas
+		adm.editarEstilo(this.getNombreDelEstilo().getValue(),0);
 		Buscar_elemento _buscarElemento = new Buscar_elemento();
 		_buscarElemento.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_buscarElemento);

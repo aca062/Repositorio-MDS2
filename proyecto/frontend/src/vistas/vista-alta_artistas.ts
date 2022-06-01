@@ -2,11 +2,10 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@vaadin/vaadin-select/src/vaadin-select.js';
-import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-upload/src/vaadin-upload.js';
+import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 
 @customElement('vista-alta_artistas')
 export class VistaAlta_artistas extends LitElement {
@@ -36,11 +35,7 @@ export class VistaAlta_artistas extends LitElement {
   <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" style="color: #000000; width: 60%;" has-value id="contraseña"></vaadin-password-field>
   <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value style="color: #000000; width: 60%;" id="confirmarContraseña"></vaadin-password-field>
   <vaadin-text-field label="E-mail" id="eMail" style="color: #000000; width: 60%;" value="bbunny@gmail.com" has-value></vaadin-text-field>
-  <vaadin-select value="Elija el estilo" id="estilo" name="estilo">
-   <template>
-    <vaadin-list-box id="vaadinListBox" selected="0"></vaadin-list-box>
-   </template>
-  </vaadin-select>
+  <vaadin-combo-box id="dropdown"></vaadin-combo-box>
   <vaadin-horizontal-layout id="layoutBotones" style="margin-left: 10%; width: 90%; justify-content: flex-end;">
    <vaadin-button id="cancelar" style="margin-right: 5%;">
      Cancelar 

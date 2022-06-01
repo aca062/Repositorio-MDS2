@@ -5,6 +5,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.List;
+import java.util.Vector;
+
+import org.orm.PersistentException;
 
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
@@ -14,6 +18,8 @@ import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 
 import bbdd.BDPrincipal;
 import bbdd.iAdministrador;
+import orm.bbdd.Estilo;
+import orm.bbdd.EstiloDAO;
 import vistas.VistaAlta_canciones;
 
 public class Alta_canciones extends VistaAlta_canciones{
@@ -40,13 +46,27 @@ public class Alta_canciones extends VistaAlta_canciones{
 
 	private String pathSong = null;
 
-	public Alta_canciones() {
+	public Alta_canciones() throws PersistentException {
 		Inicializar();
 
 	    MemoryBuffer memoryBuffer = new MemoryBuffer();
 	    Upload upload = this.getVaadinUpload();
         upload.setReceiver(memoryBuffer);
-
+        
+        Estilo[] estilos = null;
+        estilos = EstiloDAO.listEstiloByQuery(null, null);
+        
+        //cargarEstilos();
+        
+        List<String> nombreEstilos = new Vector<String>(estilos.length);
+        
+        for(Estilo estilo : estilos) {
+        	nombreEstilos.add(estilo.getNombre());
+        }
+        
+        this.getEstilo().setItems(nombreEstilos);
+        
+        
 		this.getCancelar().addClickListener(new ComponentEventListener(){
 			@Override
             public void onComponentEvent(ComponentEvent event) {
@@ -76,7 +96,7 @@ public class Alta_canciones extends VistaAlta_canciones{
 	}
 
 	protected void Confirmar() {
-	    adm.altaCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","), this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","), pathSong , 0, this.getEstilo().getValue().toString(), this.getTituloAlbum().getValue());
+	    adm.altaCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","), this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","), pathSong ,0, this.getTituloAlbum().getValue());
 		_darDeAlta = new Dar_de_alta();
 		_darDeAlta.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_darDeAlta);

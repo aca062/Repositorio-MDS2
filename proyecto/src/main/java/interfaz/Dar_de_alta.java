@@ -29,7 +29,12 @@ public class Dar_de_alta extends VistaDar_de_alta{
 		this.getBotonAlbumes().addClickListener(new ComponentEventListener(){
 			@Override
             public void onComponentEvent(ComponentEvent event) {
-				DarAltaAlbum();
+				try {
+					DarAltaAlbum();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		this.getBotonArtistas().addClickListener(new ComponentEventListener(){
@@ -46,7 +51,12 @@ public class Dar_de_alta extends VistaDar_de_alta{
 		this.getBotonCanciones().addClickListener(new ComponentEventListener(){
 			@Override
             public void onComponentEvent(ComponentEvent event) {
-				DarAltaCancion();
+				try {
+					DarAltaCancion();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		this.getBotonEstilos().addClickListener(new ComponentEventListener(){
@@ -65,7 +75,7 @@ public class Dar_de_alta extends VistaDar_de_alta{
 		this.getH1Titulo().setVisible(true);
 	}
 
-	public void DarAltaAlbum() {
+	public void DarAltaAlbum() throws PersistentException {
 		_altaAlbumes = new Alta_albumes();
 		_altaAlbumes.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_altaAlbumes);
@@ -77,7 +87,7 @@ public class Dar_de_alta extends VistaDar_de_alta{
 		ControladorVistas.CambiarContenido(_altaArtistas);
 	}
 
-	public void DarAltaCancion() {
+	public void DarAltaCancion() throws PersistentException {
 		_altaCanciones = new Alta_canciones();
 		_altaCanciones.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_altaCanciones);

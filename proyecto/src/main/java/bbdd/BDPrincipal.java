@@ -37,16 +37,16 @@ import BBDD.Estadistica;
 import BBDD.Usuario_Registrado;*/
 
 public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCibernauta, iUsuario_registrado {
-	public BD_Usuarios_Registrados _bd_usuarios_registrados;
-	public BD_Artistas _bd_artistas;
-	public BD_Administradores _bd_administradores;
-	public BD_Canciones _bd_canciones;
-	public BD_Listas_de_reproduccion _bd_listas_de_reproduccion;
-	public BD_Albumes _bd_albumes;
-	public BD_Eventos _bd_eventos;
-	public BD_Estilos _bd_estilos;
-	public BD_Estadisticas _bd_estadisticas;
-	public BD_Acceso_Datos _bd_acceso_datos;
+	public BD_Usuarios_Registrados _bd_usuarios_registrados = new BD_Usuarios_Registrados();
+	public BD_Artistas _bd_artistas = new BD_Artistas();
+	public BD_Administradores _bd_administradores = new BD_Administradores();
+	public BD_Canciones _bd_canciones = new BD_Canciones();
+	public BD_Listas_de_reproduccion _bd_listas_de_reproduccion = new BD_Listas_de_reproduccion();
+	public BD_Albumes _bd_albumes = new BD_Albumes();
+	public BD_Eventos _bd_eventos = new BD_Eventos();
+	public BD_Estilos _bd_estilos = new BD_Estilos();
+	public BD_Estadisticas _bd_estadisticas = new BD_Estadisticas();
+	public BD_Acceso_Datos _bd_acceso_datos = new BD_Acceso_Datos();
 
 	@Override
     public void anadir(String aNombre) {
@@ -71,7 +71,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
@@ -95,15 +94,11 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	}
 
 	@Override
-    public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista, interfaz.Cancion[] aCanciones,int aIdAlbum) {
+    public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista, Cancion[] aCanciones) {
 		try {
 			_bd_albumes = new BD_Albumes();
-			_bd_canciones = new BD_Canciones();
-			_bd_artistas = new BD_Artistas();
-			_bd_albumes.AltaAlbum(aImagen, aTitulo, aFechaEdicion, aIdAlbum);
-			_bd_canciones.altaAlbum(aCanciones);
-			_bd_artistas.altaAlbum(aNombreArtista);
-		} catch (PersistentException e) {
+			_bd_albumes.AltaAlbum(aImagen, aTitulo, aFechaEdicion, aNombreArtista, aCanciones);
+		}catch (PersistentException e) {
 			e.printStackTrace();
 		}
 	}
@@ -118,15 +113,11 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 		}
 
 	}
-
-	public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia,int aIdCancion, String aEstilos, String aTituloAlbum) {
+	@Override
+	public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, int aIdEstilos, String aTituloAlbum) {
 		try {
-			_bd_albumes = new BD_Albumes();
 			_bd_canciones = new BD_Canciones();
-			_bd_estilos = new BD_Estilos();
-			_bd_albumes.altaCancion(aTituloAlbum);
-			_bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aIdCancion);
-			_bd_estilos.altaCancion(aEstilos);
+			_bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia,aIdEstilos, aTituloAlbum);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
@@ -135,12 +126,8 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	@Override
     public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista, interfaz.Cancion[] aCanciones, int aIdAlbum) {
 		try {
-			_bd_albumes = new BD_Albumes();
-			_bd_canciones = new BD_Canciones();
-			_bd_artistas = new BD_Artistas();
-			_bd_albumes.AltaAlbum(aImagen, aTitulo, aFechaEdicion, aIdAlbum);
-			_bd_canciones.altaAlbum(aCanciones);
-			_bd_artistas.altaAlbum(aNombreArtista);
+			_bd_albumes = new BD_Albumes();			
+			_bd_albumes.editarAlbum(aTitulo, aFechaEdicion, aImagen, aIdAlbum);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
@@ -159,12 +146,8 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	@Override
     public void editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, String aEstilos, String aTituloAlbum, int aIdCancion) {
 		try {
-			_bd_albumes = new BD_Albumes();
 			_bd_canciones = new BD_Canciones();
-			_bd_estilos = new BD_Estilos();
-			_bd_albumes.altaCancion(aTituloAlbum);
-			_bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aIdCancion);
-			_bd_estilos.altaCancion(aEstilos);
+			_bd_canciones.editarCancion(aTituloAlbum, aCompositores, aProductores, aInterpretes, aArcMultimedia, aIdCancion);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
@@ -275,10 +258,10 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 	}
 
 	@Override
-    public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) {
+    public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen, int aIdEstilo) {
 		try {
 			_bd_artistas = new BD_Artistas();
-			_bd_artistas.altaArtistas(aEmail, aContrasena, aNick, aImagen, aIdArtista);
+			_bd_artistas.altaArtistas(aEmail, aContrasena, aNick, aImagen, aIdEstilo);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}

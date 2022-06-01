@@ -19,6 +19,7 @@ import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 
 import bbdd.BDPrincipal;
+import bbdd.iActor_comun;
 import bbdd.iAdministrador;
 import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.Estilo;
@@ -35,9 +36,12 @@ public class Alta_artistas extends VistaAlta_artistas {
      * Dropdown _estilosD; private Button _cancelarB; private Button _confirmarB;
      */
     public Dar_de_alta _darDeAlta = new Dar_de_alta();
+    private orm.bbdd.Artista artista;
     iAdministrador adm = new BDPrincipal();
     String pathFoto = null;
     private Estilo[] estilos;
+    //private Estilo[] estilos1;
+    private Estilo _estiloSeleccionado;
 
     @SuppressWarnings("unchecked")
 	public Alta_artistas() throws PersistentException {
@@ -50,6 +54,9 @@ public class Alta_artistas extends VistaAlta_artistas {
         upload.setReceiver(memoryBuffer);
         Image foto = this.getImgArtista();
         
+        /*Estilo[] estilos = null;
+        estilos = EstiloDAO.listEstiloByQuery(null, null);
+        estilos1 = EstiloDAO.listEstiloByQuery(null, null);*/
         cargarEstilos();
         
         List<String> nombreEstilos = new Vector<String>(estilos.length);
@@ -57,7 +64,7 @@ public class Alta_artistas extends VistaAlta_artistas {
         for(Estilo estilo : estilos) {
         	nombreEstilos.add(estilo.getNombre());
         }
-        this.getEstilo().setItems(nombreEstilos);
+        this.getDropdown().setItems(nombreEstilos);
         
         /*for (Estilo estilo : EstiloDAO.listEstiloByQuery("true=true", "Nombre")) {
             System.out.println(estilo.getNombre());
@@ -74,6 +81,13 @@ public class Alta_artistas extends VistaAlta_artistas {
         this.getConfirmar().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
+            	_estiloSeleccionado = null;
+            	for(orm.bbdd.Estilo estilo : estilos) {
+            		if(estilo.getNombre().equals(getDropdown().getValue())) {
+            			_estiloSeleccionado = estilo;
+            			break;
+            		}
+            	}
                 Confirmar();
             }
         });
@@ -129,7 +143,8 @@ public class Alta_artistas extends VistaAlta_artistas {
     }
 
     protected void Confirmar() {
-        adm.altaArtistas(this.geteMail().getValue(), this.getContrasena().getValue(), this.getNick().getValue(), pathFoto, 0);
+        
+    	adm.altaArtistas(this.geteMail().getValue(), this.getContrasena().getValue(), this.getNick().getValue(), pathFoto,_estiloSeleccionado.getORMID());
         _darDeAlta.getStyle().set("width", "100%");
         ControladorVistas.CambiarContenido(_darDeAlta);
     }
