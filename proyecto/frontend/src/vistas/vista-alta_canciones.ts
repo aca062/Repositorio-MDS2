@@ -21,7 +21,12 @@ export class VistaAlta_canciones extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
  <h2 id="h2Titulo" style="margin-left: var(--lumo-space-xl);">Dar de alta canción</h2>
- <vaadin-vertical-layout theme="spacing" style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); height: 760px;" id="layoutCnacion">
+ <vaadin-vertical-layout theme="spacing" style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); height: 100%;" id="layoutCnacion">
+  <img id="img" style="width: 300px; src: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png; height: 100%;">
+  <vaadin-upload id="vaadinUpload1" style="height: 100%;"></vaadin-upload>
+  <vaadin-button id="vaadinButton">
+   Eliminar la foto
+  </vaadin-button>
   <vaadin-text-field label="Titulo" id="titulo" style="color: #000000; width: 60%;" value="120" has-value></vaadin-text-field>
   <vaadin-text-field label="Título álbum" id="títuloÁlbum" style="color: #000000; width: 60%;" value="El ultimo tour del mundo" has-value></vaadin-text-field>
   <vaadin-text-field label="Compositores" id="compositores" style="color: #000000; width: 60%;" value="Tainy" has-value></vaadin-text-field>

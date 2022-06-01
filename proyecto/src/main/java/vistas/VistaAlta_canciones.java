@@ -2,18 +2,18 @@ package vistas;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.html.H5;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.combobox.ComboBox;
 
 /**
  * A Designer generated component for the vista-alta_canciones template.
@@ -61,6 +61,12 @@ public class VistaAlta_canciones extends LitTemplate {
     private Button botonEliminar;
 	@Id("dropdown")
 	private ComboBox<String> dropdown;
+    @Id("img")
+    private Image img;
+    @Id("vaadinUpload1")
+    private Upload vaadinUpload1;
+    @Id("vaadinButton")
+    private Button vaadinButton;
 	/**
      * Creates a new VistaAlta_canciones.
      */
@@ -203,5 +209,29 @@ public class VistaAlta_canciones extends LitTemplate {
 	public void setDropdown(ComboBox<String> dropdown) {
 		this.dropdown = dropdown;
 	}
+
+    public Image getImg() {
+        return img;
+    }
+
+    public void setImg(Image img) {
+        this.img = img;
+    }
+
+    public Upload getVaadinUpload1() {
+        return vaadinUpload1;
+    }
+
+    public void setVaadinUpload1(Upload vaadinUpload1) {
+        this.vaadinUpload1 = vaadinUpload1;
+    }
+
+    public Button getVaadinButton() {
+        return vaadinButton;
+    }
+
+    public void setVaadinButton(Button vaadinButton) {
+        this.vaadinButton = vaadinButton;
+    }
 
 }
