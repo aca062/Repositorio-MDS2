@@ -2,10 +2,9 @@
  * Licensee: Antonio Jesús Cano Andreu(University of Almeria)
  * License Type: Academic
  */
-package orm.ormsamples;
+package ormsamples;
 
-import org.orm.PersistentException;
-import org.orm.PersistentTransaction;
+import org.orm.*;
 public class DeleteMDS2Data {
 	public void deleteTestData() throws PersistentException {
 		PersistentTransaction t = orm.bbdd.MDS2PersistentManager.instance().getSession().beginTransaction();
@@ -48,9 +47,9 @@ public class DeleteMDS2Data {
 		catch (Exception e) {
 			t.rollback();
 		}
-
+		
 	}
-
+	
 	public static void main(String[] args) {
 		try {
 			DeleteMDS2Data deleteMDS2Data = new DeleteMDS2Data();

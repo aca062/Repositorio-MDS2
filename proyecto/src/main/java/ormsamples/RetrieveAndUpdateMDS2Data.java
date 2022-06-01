@@ -2,10 +2,9 @@
  * Licensee: Antonio Jesús Cano Andreu(University of Almeria)
  * License Type: Academic
  */
-package orm.ormsamples;
+package ormsamples;
 
-import org.orm.PersistentException;
-import org.orm.PersistentTransaction;
+import org.orm.*;
 public class RetrieveAndUpdateMDS2Data {
 	public void retrieveAndUpdateTestData() throws PersistentException {
 		PersistentTransaction t = orm.bbdd.MDS2PersistentManager.instance().getSession().beginTransaction();
@@ -48,79 +47,79 @@ public class RetrieveAndUpdateMDS2Data {
 		catch (Exception e) {
 			t.rollback();
 		}
-
+		
 	}
-
+	
 	public void retrieveByCriteria() throws PersistentException {
 		System.out.println("Retrieving Album by AlbumCriteria");
 		orm.bbdd.AlbumCriteria lormbbddAlbumCriteria = new orm.bbdd.AlbumCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddAlbumCriteria.idAlbum.eq();
 		System.out.println(lormbbddAlbumCriteria.uniqueAlbum());
-
+		
 		System.out.println("Retrieving Acceso_Dato by Acceso_DatoCriteria");
 		orm.bbdd.Acceso_DatoCriteria lormbbddAcceso_DatoCriteria = new orm.bbdd.Acceso_DatoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddAcceso_DatoCriteria.id.eq();
 		System.out.println(lormbbddAcceso_DatoCriteria.uniqueAcceso_Dato());
-
+		
 		System.out.println("Retrieving Estadistica by EstadisticaCriteria");
 		orm.bbdd.EstadisticaCriteria lormbbddEstadisticaCriteria = new orm.bbdd.EstadisticaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddEstadisticaCriteria.id.eq();
 		System.out.println(lormbbddEstadisticaCriteria.uniqueEstadistica());
-
+		
 		System.out.println("Retrieving Estilo by EstiloCriteria");
 		orm.bbdd.EstiloCriteria lormbbddEstiloCriteria = new orm.bbdd.EstiloCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddEstiloCriteria.idEstilo.eq();
 		System.out.println(lormbbddEstiloCriteria.uniqueEstilo());
-
+		
 		System.out.println("Retrieving Evento by EventoCriteria");
 		orm.bbdd.EventoCriteria lormbbddEventoCriteria = new orm.bbdd.EventoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddEventoCriteria.idEvento.eq();
 		System.out.println(lormbbddEventoCriteria.uniqueEvento());
-
+		
 		System.out.println("Retrieving Lista_de_reproduccion by Lista_de_reproduccionCriteria");
 		orm.bbdd.Lista_de_reproduccionCriteria lormbbddLista_de_reproduccionCriteria = new orm.bbdd.Lista_de_reproduccionCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddLista_de_reproduccionCriteria.idLista.eq();
 		System.out.println(lormbbddLista_de_reproduccionCriteria.uniqueLista_de_reproduccion());
-
+		
 		System.out.println("Retrieving Cancion by CancionCriteria");
 		orm.bbdd.CancionCriteria lormbbddCancionCriteria = new orm.bbdd.CancionCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddCancionCriteria.idCancion.eq();
 		System.out.println(lormbbddCancionCriteria.uniqueCancion());
-
+		
 		System.out.println("Retrieving Actor_Comun by Actor_ComunCriteria");
 		orm.bbdd.Actor_ComunCriteria lormbbddActor_ComunCriteria = new orm.bbdd.Actor_ComunCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddActor_ComunCriteria.id.eq();
 		System.out.println(lormbbddActor_ComunCriteria.uniqueActor_Comun());
-
+		
 		System.out.println("Retrieving Administrador by AdministradorCriteria");
 		orm.bbdd.AdministradorCriteria lormbbddAdministradorCriteria = new orm.bbdd.AdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddAdministradorCriteria.id.eq();
 		System.out.println(lormbbddAdministradorCriteria.uniqueAdministrador());
-
+		
 		System.out.println("Retrieving Artista by ArtistaCriteria");
 		orm.bbdd.ArtistaCriteria lormbbddArtistaCriteria = new orm.bbdd.ArtistaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddArtistaCriteria.id.eq();
 		System.out.println(lormbbddArtistaCriteria.uniqueArtista());
-
+		
 		System.out.println("Retrieving Usuario_Registrado by Usuario_RegistradoCriteria");
 		orm.bbdd.Usuario_RegistradoCriteria lormbbddUsuario_RegistradoCriteria = new orm.bbdd.Usuario_RegistradoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormbbddUsuario_RegistradoCriteria.id.eq();
 		System.out.println(lormbbddUsuario_RegistradoCriteria.uniqueUsuario_Registrado());
-
+		
 	}
-
-
+	
+	
 	public static void main(String[] args) {
 		try {
 			RetrieveAndUpdateMDS2Data retrieveAndUpdateMDS2Data = new RetrieveAndUpdateMDS2Data();

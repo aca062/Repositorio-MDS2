@@ -2,10 +2,9 @@
  * Licensee: Antonio Jesús Cano Andreu(University of Almeria)
  * License Type: Academic
  */
-package orm.ormsamples;
+package ormsamples;
 
-import org.orm.PersistentException;
-import org.orm.PersistentTransaction;
+import org.orm.*;
 public class CreateMDS2Data {
 	public void createTestData() throws PersistentException {
 		PersistentTransaction t = orm.bbdd.MDS2PersistentManager.instance().getSession().beginTransaction();
@@ -29,13 +28,13 @@ public class CreateMDS2Data {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : creador, estadisticas, canciones, seguidor
 			orm.bbdd.Lista_de_reproduccionDAO.save(lormbbddLista_de_reproduccion);
 			orm.bbdd.Cancion lormbbddCancion = orm.bbdd.CancionDAO.createCancion();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : artistas, album, listas_de_reproduccion, _usuario, estadisticas, usuario, numReproducciones, estilo, administrador
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : artistas, album, listas_de_reproduccion, _usuario, estadisticas, usuario, numReproducciones, estilo
 			orm.bbdd.CancionDAO.save(lormbbddCancion);
 			orm.bbdd.Actor_Comun lormbbddActor_Comun = orm.bbdd.Actor_ComunDAO.createActor_Comun();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : canciones_reproducidas, seguidor, notificaciones, listas_de_reproduccion_seguidas, cancion_favorita, seguido, listas_de_reproduccion_propias, estadistica, acceso_Dato
 			orm.bbdd.Actor_ComunDAO.save(lormbbddActor_Comun);
 			orm.bbdd.Administrador lormbbddAdministrador = orm.bbdd.AdministradorDAO.createAdministrador();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : cancions, numCanciones
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : numCanciones
 			orm.bbdd.AdministradorDAO.save(lormbbddAdministrador);
 			orm.bbdd.Artista lormbbddArtista = orm.bbdd.ArtistaDAO.createArtista();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : albums, estilos, eventos, estadisticas, cancions
@@ -48,9 +47,9 @@ public class CreateMDS2Data {
 		catch (Exception e) {
 			t.rollback();
 		}
-
+		
 	}
-
+	
 	public static void main(String[] args) {
 		try {
 			CreateMDS2Data createMDS2Data = new CreateMDS2Data();

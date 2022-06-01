@@ -2,9 +2,9 @@
  * Licensee: Antonio Jesús Cano Andreu(University of Almeria)
  * License Type: Academic
  */
-package orm.ormsamples;
+package ormsamples;
 
-import org.orm.ORMDatabaseInitiator;
+import org.orm.*;
 public class CreateMDS2DatabaseSchema {
 	public static void main(String[] args) {
 		try {

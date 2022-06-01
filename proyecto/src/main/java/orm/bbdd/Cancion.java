@@ -75,7 +75,7 @@ public class Cancion implements Serializable {
 	
 	@ManyToOne(targetEntity=orm.bbdd.Administrador.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="AdministradorActor_ComunId", referencedColumnName="Actor_ComunId", nullable=false) }, foreignKey=@ForeignKey(name="FKCancion71053"))	
+	@JoinColumns(value={ @JoinColumn(name="AdministradorActor_ComunId", referencedColumnName="Actor_ComunId") }, foreignKey=@ForeignKey(name="FKCancion71053"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private orm.bbdd.Administrador administrador;
 	

@@ -2,9 +2,9 @@
  * Licensee: Antonio Jesús Cano Andreu(University of Almeria)
  * License Type: Academic
  */
-package orm.ormsamples;
+package ormsamples;
 
-import org.orm.ORMDatabaseInitiator;
+import org.orm.*;
 public class DropMDS2DatabaseSchema {
 	public static void main(String[] args) {
 		try {
@@ -14,7 +14,7 @@ public class DropMDS2DatabaseSchema {
 				ORMDatabaseInitiator.dropSchema(orm.bbdd.MDS2PersistentManager.instance());
 				orm.bbdd.MDS2PersistentManager.instance().disposePersistentManager();
 			}
-
+			
 		}
 		catch (Exception e) {
 			e.printStackTrace();
