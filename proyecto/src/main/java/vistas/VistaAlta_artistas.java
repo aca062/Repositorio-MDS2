@@ -111,7 +111,7 @@ public class VistaAlta_artistas extends LitTemplate {
 		this.nick = nick;
 	}
 
-	public PasswordField getConfirmarContraseña() {
+	public PasswordField getConfirmarContrasena() {
 		return confirmarContraseña;
 	}
 

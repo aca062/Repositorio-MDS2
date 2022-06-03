@@ -6,11 +6,11 @@ import interfaz.Cancion;
 
 public interface iAdministrador extends iActor_comun {
 
-	public void altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen, int aIdEstilo);
+	public int altaArtistas(String aEmail, String aContrasena, String aNick, String aImagen, int aIdEstilo);
 
 	public void altaEstilo(String aNombre, int aIdEstilo);
 
-	public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia,int aIdEstilos, String aTituloAlbum);
+	public int altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia,int aIdEstilos, String aTituloAlbum);
 
 	public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista, Cancion[] aCanciones, int aIdAlbum);
 
@@ -47,7 +47,7 @@ public interface iAdministrador extends iActor_comun {
 	public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista,
 			orm.bbdd.Cancion[] aCanciones);
 
-	
 
-	
+
+
 }

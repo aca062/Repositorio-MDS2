@@ -19,11 +19,9 @@ import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 
 import bbdd.BDPrincipal;
-import bbdd.iActor_comun;
 import bbdd.iAdministrador;
 import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.Estilo;
-import orm.bbdd.EstiloDAO;
 import vistas.VistaAlta_artistas;
 
 public class Alta_artistas extends VistaAlta_artistas {
@@ -51,23 +49,23 @@ public class Alta_artistas extends VistaAlta_artistas {
         Upload upload = this.getSubirFoto();
         upload.setReceiver(memoryBuffer);
         Image foto = this.getImgArtista();
-        
+
         /*Estilo[] estilos = null;
         estilos = EstiloDAO.listEstiloByQuery(null, null);
         estilos1 = EstiloDAO.listEstiloByQuery(null, null);*/
         cargarEstilos();
-        
+
         List<String> nombreEstilos = new Vector<String>(estilos.length);
-        
+
         for(Estilo estilo : estilos) {
         	nombreEstilos.add(estilo.getNombre());
         }
         this.getDropdown().setItems(nombreEstilos);
-        
+
         /*for (Estilo estilo : EstiloDAO.listEstiloByQuery("true=true", "Nombre")) {
             System.out.println(estilo.getNombre());
             this.getEstilo().add(estilo.getNombre());
-            
+
         }*/
 
         this.getCancelar().addClickListener(new ComponentEventListener() {
@@ -141,9 +139,25 @@ public class Alta_artistas extends VistaAlta_artistas {
     			break;
     		}
     	}
-    	adm.altaArtistas(this.geteMail().getValue(), this.getContrasena().getValue(), this.getNick().getValue(), pathFoto,estiloSeleccionado.getIdEstilo());
-        _darDeAlta.getStyle().set("width", "100%");
-        ControladorVistas.CambiarContenido(_darDeAlta);
+    	if (this.getNick().getValue().isEmpty() || this.geteMail().getValue().isEmpty()
+                || this.getContrasena().getValue().isEmpty() || this.getConfirmarContrasena().getValue().isEmpty()) {
+            ControladorVistas.PopUpBasico("Alguno de los campos está vacío");
+        } else if (!this.getContrasena().getValue().equals(this.getConfirmarContrasena().getValue())) {
+            ControladorVistas.PopUpBasico("Las dos contraseñas tienen que ser iguales");
+        } else if (estiloSeleccionado == null) {
+            ControladorVistas.PopUpBasico("No se ha seleccionado un estilo");
+        } else {
+            int comprobacion = adm.altaArtistas(this.geteMail().getValue(), this.getContrasena().getValue(), this.getNick().getValue(), pathFoto,estiloSeleccionado.getIdEstilo());
+            if (comprobacion == -1) {
+                ControladorVistas.PopUpBasico("El nick introducido ya existe");
+            } else if (comprobacion == -2) {
+                ControladorVistas.PopUpBasico("El correo introducido ya existe");
+            } else {
+                ControladorVistas.PopUpBasico("La cuenta se ha creado correctamente");
+                _darDeAlta.getStyle().set("width", "100%");
+                ControladorVistas.CambiarContenido(_darDeAlta);
+            }
+        }
     }
 
     protected void Cancelar() {
@@ -188,15 +202,15 @@ public class Alta_artistas extends VistaAlta_artistas {
         this.getCancelar().setVisible(true);
         this.getConfirmar().setVisible(true);
         this.getContrasena().setVisible(true);
-        this.getConfirmarContraseña().setVisible(true);
+        this.getConfirmarContrasena().setVisible(true);
         this.geteMail().setVisible(true);
         this.getH2Titulo().setVisible(true);
         this.getImgArtista().setVisible(true);
         this.getNick().setVisible(true);
     }
-    
+
     public void cargarEstilos() {
     	estilos = adm.cargarEstilo();
     }
-    
+
 }

@@ -60,7 +60,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         uploadFoto.setReceiver(memoryBufferFoto);
         Image foto = this.getImg();
         foto.setMaxWidth("300px");
-        foto.setSrc("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png");
+        foto.setSrc("https://w7.pngwing.com/pngs/585/475/png-transparent-music-musical-note-computer-icons-musical-note-angle-text-rectangle.png");
 
         cargarEstilos();
 
@@ -144,7 +144,7 @@ public class Alta_canciones extends VistaAlta_canciones {
                 }
                 CambiarUploadFoto();
                 foto.setMaxWidth("300px");
-                foto.setSrc("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png");
+                foto.setSrc("https://w7.pngwing.com/pngs/585/475/png-transparent-music-musical-note-computer-icons-musical-note-angle-text-rectangle.png");
                 pathFoto = null;
             }
         });
@@ -194,12 +194,29 @@ public class Alta_canciones extends VistaAlta_canciones {
                 break;
             }
         }
-        adm.altaCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","),
-                this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","),
-                pathSong, estiloSeleccionado.getIdEstilo(), this.getTituloAlbum().getValue());
-        _darDeAlta = new Dar_de_alta();
-        _darDeAlta.getStyle().set("width", "100%");
-        ControladorVistas.CambiarContenido(_darDeAlta);
+        if (this.getTitulo().getValue().isEmpty()) {
+            ControladorVistas.PopUpBasico("No se ha introducido título de la canción");
+        }else if (this.getInterpretes().getValue().isEmpty()) {
+            ControladorVistas.PopUpBasico("No se ha introducido ningún artista");
+        }else if (estiloSeleccionado == null) {
+            ControladorVistas.PopUpBasico("No se ha introducido ningún estilo");
+        }else if (pathSong == null || pathSong.equals("")) {
+            ControladorVistas.PopUpBasico("No se ha añadido ninguna canción");
+        }else {
+            int comprobacion = adm.altaCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","),
+                    this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","),
+                    pathSong, estiloSeleccionado.getIdEstilo(), this.getTituloAlbum().getValue());
+            if (comprobacion == 1) {
+                ControladorVistas.PopUpBasico("Canción añadida con éxito");
+                _darDeAlta = new Dar_de_alta();
+                _darDeAlta.getStyle().set("width", "100%");
+                ControladorVistas.CambiarContenido(_darDeAlta);
+            }else if (comprobacion == -1) {
+                ControladorVistas.PopUpBasico("El artista no existe");
+            }else {
+                ControladorVistas.PopUpBasico("El álbum no existe");
+            }
+        }
     }
 
     protected void Cancelar() {
