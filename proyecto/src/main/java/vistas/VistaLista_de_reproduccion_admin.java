@@ -1,13 +1,13 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.html.H4;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.H4;
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.dom.Element;
 
 /**
@@ -20,7 +20,7 @@ import com.vaadin.flow.dom.Element;
 @JsModule("./src/vistas/vista-lista_de_reproduccion_admin.ts")
 public class VistaLista_de_reproduccion_admin extends LitTemplate {
 
-    
+
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
 	@Id("layoutLista")
@@ -33,6 +33,8 @@ public class VistaLista_de_reproduccion_admin extends LitTemplate {
 	private Button editar;
 	@Id("eliminar")
 	private Button eliminar;
+
+	private int idLista;
 
 	/**
      * Creates a new VistaLista_de_reproduccion_admin.
@@ -89,6 +91,11 @@ public class VistaLista_de_reproduccion_admin extends LitTemplate {
 		this.eliminar = eliminar;
 	}
 
-	
+    public int getIdLista() {
+        return idLista;
+    }
 
+    public void setIdLista(int idLista) {
+        this.idLista = idLista;
+    }
 }

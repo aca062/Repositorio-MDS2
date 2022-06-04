@@ -97,7 +97,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista,
+    public int AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista,
             Cancion[] aCanciones) {
         try {
             _bd_albumes = new BD_Albumes();
@@ -105,6 +105,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return 1;
     }
 
     @Override
@@ -125,24 +126,30 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             _bd_canciones = new BD_Canciones();
 
             for (int i = 0; i < aInterpretes.length; i++) {
-                if (Actor_ComunDAO.listActor_ComunByQuery("nick='" + aInterpretes[i].trim() + "'", "nick").length == 0) {
-                    return -1;
-                } else {
+                try {
                     Actor_Comun actor = Actor_ComunDAO.listActor_ComunByQuery("nick='" + aInterpretes[i].trim() + "'",
                             "nick")[0];
-                    if (!actor.getAcceso_Dato().getTipoUsuario().equals("artista")) {
+                    if (Actor_ComunDAO.listActor_ComunByQuery("nick='" + aInterpretes[i].trim() + "'",
+                            "nick").length == 0) {
                         return -1;
+                    } else {
+                        if (!actor.getAcceso_Dato().getTipoUsuario().equals("artista")) {
+                            return -1;
+                        }
                     }
-                }
-
-                if (!aTituloAlbum.equals("") && aTituloAlbum != null) {
-                    if (AlbumDAO.listAlbumByQuery("titulo='" + aTituloAlbum + "'", "titulo").length == 0) {
-                        return -2;
+                    if (aTituloAlbum != null && !aTituloAlbum.equals("")) {
+                        if (AlbumDAO.listAlbumByQuery(
+                                "titulo='" + aTituloAlbum + "' AND ArtistaActor_ComunId='" + actor.getId() + "'",
+                                "titulo").length == 0) {
+                            return -2;
+                        }
                     }
+                } catch (IndexOutOfBoundsException e) {
+                    return -1;
                 }
             }
-            _bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia,
-                    aIdEstilos, aTituloAlbum);
+            _bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aIdEstilos,
+                    aTituloAlbum);
         } catch (PersistentException e) {
             e.printStackTrace();
         }

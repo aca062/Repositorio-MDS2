@@ -44,7 +44,7 @@ public interface iAdministrador extends iActor_comun {
 
 	public void eliminarLista(int aIdListas);
 
-	public void AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista,
+	public int AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista,
 			orm.bbdd.Cancion[] aCanciones);
 
 

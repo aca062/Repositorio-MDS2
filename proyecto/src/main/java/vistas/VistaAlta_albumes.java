@@ -1,16 +1,17 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-alta_albumes template.
@@ -30,32 +31,26 @@ public class VistaAlta_albumes extends LitTemplate {
 	private H2 h2Titulo;
 	@Id("layoutAlbum")
 	private HorizontalLayout layoutAlbum;
-	@Id("img")
-	private Image img;
-	@Id("anadirImagen")
-	private Button anadirImagen;
-	@Id("nombreArtista")
-	private TextField nombreArtista;
 	@Id("titulo")
 	private TextField titulo;
 	@Id("fechaEdicion")
 	private TextField fechaEdicion;
-	@Id("estilo")
-	private Select estilo;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("cancelar")
 	private Button cancelar;
 	@Id("confirmar")
 	private Button confirmar;
 	@Id("layoutBotones")
 	private HorizontalLayout layoutBotones;
+    @Id("imagen")
+    private Image imagen;
+    @Id("vaadinUpload")
+    private Upload vaadinUpload;
+    @Id("eliminarFoto")
+    private Button eliminarFoto;
+    @Id("canciones")
+    private TextArea canciones;
+    @Id("nombreArtista")
+    private TextField nombreArtista;
 	/**
      * Creates a new VistaAlta_albumes.
      */
@@ -86,18 +81,6 @@ public class VistaAlta_albumes extends LitTemplate {
 	public void setLayoutAlbum(HorizontalLayout layoutAlbum) {
 		this.layoutAlbum = layoutAlbum;
 	}
-	public Image getImg() {
-		return img;
-	}
-	public void setImg(Image img) {
-		this.img = img;
-	}
-	public Button getAnadirImagen() {
-		return anadirImagen;
-	}
-	public void setAnadirImagen(Button anadirImagen) {
-		this.anadirImagen = anadirImagen;
-	}
 	public TextField getNombreArtista() {
 		return nombreArtista;
 	}
@@ -115,36 +98,6 @@ public class VistaAlta_albumes extends LitTemplate {
 	}
 	public void setFechaEdicion(TextField fechaEdicion) {
 		this.fechaEdicion = fechaEdicion;
-	}
-	public Select getEstilo() {
-		return estilo;
-	}
-	public void setEstilo(Select estilo) {
-		this.estilo = estilo;
-	}
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
 	}
 	public Button getCancelar() {
 		return cancelar;
@@ -164,5 +117,29 @@ public class VistaAlta_albumes extends LitTemplate {
 	public void setLayoutBotones(HorizontalLayout layoutBotones) {
 		this.layoutBotones = layoutBotones;
 	}
+    public Image getImagen() {
+        return imagen;
+    }
+    public void setImagen(Image imagen) {
+        this.imagen = imagen;
+    }
+    public Upload getVaadinUpload() {
+        return vaadinUpload;
+    }
+    public void setVaadinUpload(Upload vaadinUpload) {
+        this.vaadinUpload = vaadinUpload;
+    }
+    public Button getEliminarFoto() {
+        return eliminarFoto;
+    }
+    public void setEliminarFoto(Button eliminarFoto) {
+        this.eliminarFoto = eliminarFoto;
+    }
+    public TextArea getCanciones() {
+        return canciones;
+    }
+    public void setCanciones(TextArea canciones) {
+        this.canciones = canciones;
+    }
 
 }

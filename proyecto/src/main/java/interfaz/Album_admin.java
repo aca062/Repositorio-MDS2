@@ -6,8 +6,10 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import orm.bbdd.Album;
 import vistas.VistaAlbum_admin;
 
 public class Album_admin extends VistaAlbum_admin{
@@ -18,9 +20,11 @@ public class Album_admin extends VistaAlbum_admin{
 	private Button _eliminarB;*/
 	public Albumes_busqueda_admin _albumesBusquedaAdmin;
 	public Editar_album _editarAlbum;
-	
-	public Album_admin() {
+
+	public Album_admin(Album album) {
 		Inicializar();
+		this.setH4Titulo(new H4(album.getTitulo()));
+		this.getImgAlbum().setSrc(album.getImagen());
 		this.getEditar().addClickListener(new ComponentEventListener(){
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -49,29 +53,31 @@ public class Album_admin extends VistaAlbum_admin{
         popup.setWidth("40%");
         cancelar.getStyle().set("margin-right", "20px");
         confirmar.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				ConfirmarEliminacion(nombreAlbum, popup);
 			}
 		});
         cancelar.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				popup.close();
 			}
 		});
         ControladorVistas.PopUpFormularioEditar(popup);
 	}
-	
+
 	public void EditarAlbum() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
 		v1.add(_editarAlbum = new Editar_album());
 	}
-	
+
 	void ConfirmarEliminacion(String nombre, Dialog popup) {
 		//Comprobar si hay canciones con ese estilo
 		popup.close();
 	}
-	
+
 	void Inicializar() {
 		this.getImgAlbum().setVisible(true);
 		this.getH4Titulo().setVisible(true);

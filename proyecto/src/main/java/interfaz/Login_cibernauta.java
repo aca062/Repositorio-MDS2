@@ -5,13 +5,10 @@ import org.orm.PersistentException;
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.Text;
-import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
 
 import bbdd.BDPrincipal;
 import bbdd.iCibernauta;
+import orm.bbdd.Actor_ComunDAO;
 import vistas.VistaLogin_cibernauta;
 
 public class Login_cibernauta extends VistaLogin_cibernauta{
@@ -26,22 +23,30 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 	public Recuperar_contrasena _recuperarContrasena;
 	public Registrarse _registrarse;
 	iCibernauta cib = new BDPrincipal();
-	
+
 	public Login_cibernauta(){
 		super();
 		Inicializar();
 		this.getBotonHasOlvidadoContrasena().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				OlvidadoContrasena();
 			}
 		});
 		this.getBotonIniciarSesion().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
-				IniciarSesion();
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
+				try {
+                    IniciarSesion();
+                } catch (PersistentException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
 			}
 		});
 		this.getBotonRegistrarse().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				try {
 					Registrarse();
 				} catch (PersistentException e) {
@@ -51,14 +56,15 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 			}
 		});
 		this.getLogo().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				Logo();
 			}
 		});
 	}
-	
+
 	private void Inicializar() {
-		
+
 	}
 
 	protected void Registrarse() throws PersistentException {
@@ -67,17 +73,19 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 		ControladorVistas.CambiarContenido(_registrarse);
 	}
 
-	protected void IniciarSesion() {
+	protected void IniciarSesion() throws PersistentException {
 		//Hay que comprobar el usuario
 		String correo = this.getTextFieldCorreo().getValue();
 		String contrasena = this.getTextFieldContrasena().getValue();
 		Cabecera_pagina cab = new Cabecera_pagina();
+		int id = Actor_ComunDAO.listActor_ComunByQuery("email='" + correo + "'", "email")[0].getId();
 		switch(cib.inicioDeSesion(correo, contrasena)){
 			case("admin"):
 				Administrador admin = new Administrador();
 				admin.getStyle().set("width", "100%");
 				cab.getStyle().set("width", "100%");
-				ControladorVistas.CambiarUsuario(correo.toString());
+				ControladorVistas.CambiarUsuario(id);
+				ControladorVistas.CambiarTipoUsuario("admin");
 				ControladorVistas.CambiarContenido(admin);
 				ControladorVistas.CambiarCabecera(cab);
 				break;
@@ -85,7 +93,8 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 				Usuario_registrado user = new Usuario_registrado();
 				user.getStyle().set("width", "100%");
 				cab.getStyle().set("width", "100%");
-				ControladorVistas.CambiarUsuario(correo.toString());
+				ControladorVistas.CambiarUsuario(id);
+				ControladorVistas.CambiarTipoUsuario("usuario");
 				ControladorVistas.CambiarContenido(user);
 				ControladorVistas.CambiarCabecera(cab);
 				break;
@@ -93,7 +102,8 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 				Artista artista = new Artista();
 				artista.getStyle().set("width", "100%");
 				cab.getStyle().set("width", "100%");
-				ControladorVistas.CambiarUsuario(correo.toString());
+				ControladorVistas.CambiarUsuario(id);
+				ControladorVistas.CambiarTipoUsuario("artista");
 				ControladorVistas.CambiarContenido(artista);
 				ControladorVistas.CambiarCabecera(cab);
 				break;
@@ -136,7 +146,7 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 		_recuperarContrasena.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_recuperarContrasena);
 	}
-	
+
 	private void Logo() {
 		Cibernauta _cibernauta = new Cibernauta();
 		_cibernauta.getStyle().set("width", "100%");

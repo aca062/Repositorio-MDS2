@@ -6,8 +6,10 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import orm.bbdd.Lista_de_reproduccion;
 import vistas.VistaLista_de_reproduccion_admin;
 
 public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admin{
@@ -18,16 +20,32 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 	private Button _eliminarB;*/
 	public Listas_de_reproduccion_busqueda_admin _listasDeReproduccionBusquedaAdmin;
 	public Modificar_lista _modificarLista;
-	
+
 	public Lista_de_reproduccion_admin() {
+        Inicializar();
+        this.getEliminar().addClickListener(new ComponentEventListener(){
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                Eliminar();
+            }
+        });
+    }
+
+	public Lista_de_reproduccion_admin(Lista_de_reproduccion lista) {
 		Inicializar();
+		this.setH4Nombre(new H4(lista.getNombre()));
+		this.getImgLista().setSrc("https://media.tarkett-image.com/large/TH_25094225_25187225_001.jpg");
+		this.setIdLista(lista.getIdLista());
+
 		this.getEditar().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
-				ModificarLista();
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
+				ModificarLista(lista.getIdLista());
 			}
 		});
 		this.getEliminar().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				Eliminar();
 			}
 		});
@@ -46,29 +64,31 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
         popup.setWidth("40%");
         cancelar.getStyle().set("margin-right", "20px");
         confirmar.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				ConfirmarEliminacion(nombreLista, popup);
 			}
 		});
         cancelar.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				popup.close();
 			}
 		});
         ControladorVistas.PopUpFormularioEditar(popup);
 	}
-	
-	public void ModificarLista() {
+
+	public void ModificarLista(int i) {
 		_modificarLista = new Modificar_lista();
 		_modificarLista.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_modificarLista);
 	}
-	
+
 	void ConfirmarEliminacion(String nombre, Dialog popup) {
 		//Comprobar si hay canciones con ese estilo
 		popup.close();
 	}
-	
+
 	void Inicializar() {
 		this.getEditar().setVisible(true);
 		this.getImgLista().setVisible(true);

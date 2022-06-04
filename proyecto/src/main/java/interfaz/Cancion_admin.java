@@ -6,10 +6,9 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.dom.Element;
 
+import orm.bbdd.Cancion;
 import vistas.VistaCancion_admin;
 
 public class Cancion_admin extends VistaCancion_admin{
@@ -20,9 +19,9 @@ public class Cancion_admin extends VistaCancion_admin{
 	private Button _eliminarB;*/
 	public Canciones_busqueda_admin _cancionesBusquedaAdmin;
 	public Editar_cancion _editarCancion = new Editar_cancion();
-	
-	
-	public Cancion_admin() {
+
+
+	public Cancion_admin(Cancion cancion) {
 		Inicializar();
 		this.getEditar().addClickListener(new ComponentEventListener(){
 			@Override
@@ -52,29 +51,31 @@ public class Cancion_admin extends VistaCancion_admin{
         popup.setWidth("40%");
         cancelar.getStyle().set("margin-right", "20px");
         confirmar.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				ConfirmarEliminacion(nombreCancion, popup);
 			}
 		});
         cancelar.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				popup.close();
 			}
 		});
         ControladorVistas.PopUpFormularioEditar(popup);
 	}
-	
+
 	public void EditarAlbum() {
 		_editarCancion = new Editar_cancion();
 		_editarCancion.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_editarCancion);
 	}
-	
+
 	void ConfirmarEliminacion(String nombre, Dialog popup) {
 		//Comprobar si hay canciones con ese estilo
 		popup.close();
 	}
-	
+
 	void Inicializar() {
 		this.getEditar().setVisible(true);
 		this.getEliminar().setVisible(true);

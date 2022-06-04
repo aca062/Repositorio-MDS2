@@ -214,7 +214,7 @@ public class Alta_canciones extends VistaAlta_canciones {
             }else if (comprobacion == -1) {
                 ControladorVistas.PopUpBasico("El artista no existe");
             }else {
-                ControladorVistas.PopUpBasico("El álbum no existe");
+                ControladorVistas.PopUpBasico("El álbum no existe para el artista introducido");
             }
         }
     }

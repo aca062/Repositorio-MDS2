@@ -6,14 +6,13 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import orm.bbdd.Actor_Comun;
+import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.Album;
 import orm.bbdd.AlbumDAO;
-import orm.bbdd.Artista;
 import orm.bbdd.ArtistaDAO;
 import orm.bbdd.Cancion;
-import orm.bbdd.CancionDAO;
 import orm.bbdd.MDS2PersistentManager;
-import interfaz.Estilo_admin;
 
 public class BD_Albumes {
 	public BDPrincipal _bd_prin_albumes;
@@ -27,11 +26,8 @@ public class BD_Albumes {
 			alb.setTitulo(aTitulo);
 			alb.setFechaEdicion(aFechaEdicion);
 			alb.setImagen(aImagen);
-			Artista artista = ArtistaDAO.createArtista();
-			artista.setNick(aNombreArtista);
-			ArtistaDAO.save(artista);
-			alb.setArtista(artista);
-			
+            Actor_Comun actor = Actor_ComunDAO.listActor_ComunByQuery("nick='" + aNombreArtista + "'", "nick")[0];
+			alb.setArtista(ArtistaDAO.getArtistaByORMID(actor.getId()));
 			for(Cancion cancion : aCanciones) {
 				alb.canciones.add(cancion);
 			}
@@ -62,14 +58,14 @@ public class BD_Albumes {
 	public Album cargarAlbum(int aIdAlbum) {
 		throw new UnsupportedOperationException();
 	}
-	
+
 	public Album[] cargarAlbumRecomendado(int aIdUsuario) throws PersistentException{
 		Album[] albumes = new Album[0];
-		
+
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 			albumes = AlbumDAO.listAlbumByQuery(null, null);
-			//TODO Decidir forma de elegir albumes recomendados 
+			//TODO Decidir forma de elegir albumes recomendados
 			t.commit();
 		} catch(Exception e) {
 			t.rollback();

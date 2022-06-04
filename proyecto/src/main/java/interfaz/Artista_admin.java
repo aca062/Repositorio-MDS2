@@ -8,6 +8,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import orm.bbdd.Actor_Comun;
 import vistas.VistaArtista_admin;
 
 public class Artista_admin extends VistaArtista_admin{
@@ -18,8 +19,8 @@ public class Artista_admin extends VistaArtista_admin{
 	private Button _eliminarB;*/
 	public Artistas_busqueda_admin _artistasBusquedaAdmin;
 	public Editar_artista _editarArtista;
-	
-	public Artista_admin() {
+
+	public Artista_admin(Actor_Comun actor) {
 		Inicializar();
 		this.getEditar().addClickListener(new ComponentEventListener(){
 			@Override
@@ -34,7 +35,7 @@ public class Artista_admin extends VistaArtista_admin{
 			}
 		});
 	}
-	
+
 	public void Eliminar() {
 		Dialog popup = new Dialog();
 		String nombreArtista = this.getH4Nombre().getText().toString();
@@ -48,30 +49,32 @@ public class Artista_admin extends VistaArtista_admin{
         popup.setWidth("40%");
         cancelar.getStyle().set("margin-right", "20px");
         confirmar.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				ConfirmarEliminacion(nombreArtista, popup);
 			}
 		});
         cancelar.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				popup.close();
 			}
 		});
         ControladorVistas.PopUpFormularioEditar(popup);
 	}
-	
+
 	void Inicializar() {
 		this.getH4Nombre().setVisible(true);
 		this.getImgArtista().setVisible(true);
 		this.getEliminar().setVisible(true);
 		this.getEditar().setVisible(true);
 	}
-	
+
 	void ConfirmarEliminacion(String nombre, Dialog popup) {
 		//Comprobar si hay canciones con ese estilo
 		popup.close();
 	}
-	
+
 	public void EditarArtista() {
 		_editarArtista = new Editar_artista();
 		_editarArtista.getStyle().set("width", "100%");
