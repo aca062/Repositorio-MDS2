@@ -4,6 +4,10 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.html.Div;
+
+import bbdd.BDPrincipal;
+import bbdd.iAdministrador;
 import orm.bbdd.Actor_Comun;
 import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.AlbumDAO;
@@ -16,16 +20,19 @@ import orm.bbdd.Lista_de_reproduccionDAO;
 import orm.bbdd.Usuario_RegistradoDAO;
 import vistas.VistaBuscar_administrador;
 
+
 public class Buscar_administrador extends VistaBuscar_administrador {
     // private Label _tituloL;
     public Buscar_elemento _buscarElemento;
     public Vector<Albumes_busqueda_admin> _albumesBusquedaAdmin = new Vector<Albumes_busqueda_admin>();
     public Vector<Canciones_busqueda_admin> _cancionesBusquedaAdmin = new Vector<Canciones_busqueda_admin>();
+    public Vector<Cancion_admin> _cancionAdmin = new Vector<Cancion_admin>();
     public Vector<Estilos_busqueda_admin> _estilosBusquedaAdmin = new Vector<Estilos_busqueda_admin>();
     public Vector<Listas_de_reproduccion_busqueda_admin> _listasDeReproduccionBusquedaAdmin = new Vector<Listas_de_reproduccion_busqueda_admin>();
     public Vector<Usuarios_busqueda_admin> _usuariosBusquedaAdmin = new Vector<Usuarios_busqueda_admin>();
     public Vector<Artistas_busqueda_admin> _artistasBusquedaAdmin = new Vector<Artistas_busqueda_admin>();
-
+    private String paramBusqueda;
+    private iAdministrador adm = new BDPrincipal();
     public Buscar_administrador() {
         Inicializar("");
     }
@@ -35,7 +42,18 @@ public class Buscar_administrador extends VistaBuscar_administrador {
     }
 
     void Inicializar(String buscado) {
-        int numero = 0;
+    	
+    	paramBusqueda = buscado;
+    	
+    	CargarCancionesBusqueda();
+    	
+    	Div div = new Div();
+    	
+    	for(Cancion_admin cancion :_cancionAdmin) {
+    		div.add(cancion);
+    	}
+    	
+        /*int numero = 0;
         int i = 0;
         _listasDeReproduccionBusquedaAdmin.add(new Listas_de_reproduccion_busqueda_admin());
         this.getLayoutListas().add(_listasDeReproduccionBusquedaAdmin.get(i));
@@ -134,7 +152,7 @@ public class Buscar_administrador extends VistaBuscar_administrador {
             }
         } catch (PersistentException e) {
 
-        }
+        }*/
 
         /*_albumesBusquedaAdmin.add(new Albumes_busqueda_admin());
         _cancionesBusquedaAdmin.add(new Canciones_busqueda_admin());
@@ -150,4 +168,22 @@ public class Buscar_administrador extends VistaBuscar_administrador {
             this.getLayoutUsuarios().add(_usuariosBusquedaAdmin.get(i));
         }*/
     }
+
+	private void CargarCancionesBusqueda() {
+		orm.bbdd.Cancion[] canciones = adm.busquedaCancion(paramBusqueda);
+		if (canciones == null) {
+			return;
+		}
+		
+		Cancion_admin temp;
+		
+		for(int i = 0; i < 3 && i<canciones.length;i++) {
+			temp = new Cancion_admin(canciones[i]);
+			temp.setClassName("cancionAdmin");
+			
+			//_cancionesBusquedaAdmin.add(temp);
+			_cancionAdmin.add(temp);
+		}
+		
+	}
 }

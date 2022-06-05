@@ -21,11 +21,11 @@
     <DriverFiles>&lt;&lt;MySQL Connector/J 8.0.27&gt;&gt;</DriverFiles>
     <Dialect>org.hibernate.dialect.MySQL5InnoDBDialect</Dialect>
     <DriverClass>com.mysql.cj.jdbc.Driver</DriverClass>
-    <URL>jdbc:mysql://localhost:3306/Spotify</URL>
+    <URL>jdbc:mysql://localhost:3307/Spotify</URL>
     <UserName>root</UserName>
     <EncryptedPassword>32F3ACE632ECEBAFB24DCAF99A8C6CDC</EncryptedPassword>
     <HostName>localhost</HostName>
-    <PortNO>3306</PortNO>
+    <PortNO>3307</PortNO>
     <DBName>Spotify</DBName>
     <ServiceName></ServiceName>
     <ServerName></ServerName>

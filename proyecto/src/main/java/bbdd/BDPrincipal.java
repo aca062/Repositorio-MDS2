@@ -565,4 +565,15 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             e.printStackTrace();
         }
     }
+    @Override
+    public Cancion[] busquedaCancion(String aParametrosBusqueda) {
+    	Cancion[] canciones = null;
+    	try {
+    		canciones = _bd_canciones.busquedaCancion(aParametrosBusqueda);
+    	}catch (PersistentException e) {
+    		e.printStackTrace();
+    	}
+    	return canciones;
+    }
+    
 }

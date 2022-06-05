@@ -16,6 +16,7 @@ import orm.bbdd.ArtistaCriteria;
 import orm.bbdd.ArtistaDAO;
 // import BBDD.Cancion;
 import orm.bbdd.Cancion;
+import orm.bbdd.CancionCriteria;
 import orm.bbdd.CancionDAO;
 import orm.bbdd.Estilo;
 import orm.bbdd.EstiloDAO;
@@ -90,6 +91,22 @@ public class BD_Canciones {
 
     public Cancion cargarCancion(int aIdCancion) throws PersistentException {
         throw new UnsupportedOperationException();
+    }
+    
+    public Cancion[] busquedaCancion(String aParametrosBusqueda) throws PersistentException{
+    	Cancion[] canciones = new Cancion[0];
+    	
+    	CancionCriteria criteria = new CancionCriteria();
+    	criteria.titulo.like("%"+ aParametrosBusqueda.trim().toLowerCase() + "%");
+    	
+    	PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+    	try {
+    		canciones = CancionDAO.listCancionByCriteria(criteria);
+    		t.commit();
+    	} catch (Exception e) {
+    		t.rollback();
+    	}
+    	return canciones;
     }
 
     public Cancion[] cargarUltimosExitos(int aNumCanciones) throws PersistentException {

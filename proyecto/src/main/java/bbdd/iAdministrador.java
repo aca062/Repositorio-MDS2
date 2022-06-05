@@ -47,6 +47,8 @@ public interface iAdministrador extends iActor_comun {
 	public int AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista,
 			orm.bbdd.Cancion[] aCanciones);
 
+	public orm.bbdd.Cancion[] busquedaCancion(String aParametrosBusqueda);
+
 
 
 
