@@ -2,12 +2,11 @@ package vistas;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import vistas.VistaCancion_admin;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-canciones_busqueda_admin template.
@@ -19,7 +18,7 @@ import vistas.VistaCancion_admin;
 @JsModule("./src/vistas/vista-canciones_busqueda_admin.ts")
 public class VistaCanciones_busqueda_admin extends LitTemplate {
 
-    
+
 
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
@@ -27,10 +26,6 @@ public class VistaCanciones_busqueda_admin extends LitTemplate {
 	private H1 h1Titulo;
 	@Id("layoutCanciones")
 	private HorizontalLayout layoutCanciones;
-	@Id("vistaCancion_admin")
-	private Element vistaCancion_admin;
-	@Id("vistaCancion_admin1")
-	private Element vistaCancion_admin1;
 
 	/**
      * Creates a new VistaCanciones_busqueda_admin.
@@ -63,21 +58,5 @@ public class VistaCanciones_busqueda_admin extends LitTemplate {
 		this.layoutCanciones = layoutCanciones;
 	}
 
-	public Element getVistaCancion_admin() {
-		return vistaCancion_admin;
-	}
 
-	public void setVistaCancion_admin(Element vistaCancion_admin) {
-		this.vistaCancion_admin = vistaCancion_admin;
-	}
-
-	public Element getVistaCancion_admin1() {
-		return vistaCancion_admin1;
-	}
-
-	public void setVistaCancion_admin1(Element vistaCancion_admin1) {
-		this.vistaCancion_admin1 = vistaCancion_admin1;
-	}
-
-	
 }

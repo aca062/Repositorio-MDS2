@@ -2,6 +2,7 @@ package interfaz;
 
 import java.util.Vector;
 
+import orm.bbdd.Estilo;
 import vistas.VistaEstilos_busqueda_admin;
 
 public class Estilos_busqueda_admin extends VistaEstilos_busqueda_admin{
@@ -22,4 +23,13 @@ public class Estilos_busqueda_admin extends VistaEstilos_busqueda_admin{
 			this.getLayoutEstilo().add(_estiloAdmin.get(i));
 		}*/
 	}
+    public void anadirEstilo(Estilo estilo) {
+
+        _estiloAdmin.add(new Estilo_admin());
+
+        _estiloAdmin.lastElement().setEstilo(estilo);
+
+        this.getLayoutEstilo().add(_estiloAdmin.lastElement());
+
+    }
 }

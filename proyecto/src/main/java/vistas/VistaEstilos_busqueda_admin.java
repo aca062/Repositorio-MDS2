@@ -2,12 +2,11 @@ package vistas;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import vistas.VistaEstilo_admin;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-estilos_busqueda_admin template.
@@ -19,7 +18,7 @@ import vistas.VistaEstilo_admin;
 @JsModule("./src/vistas/vista-estilos_busqueda_admin.ts")
 public class VistaEstilos_busqueda_admin extends LitTemplate {
 
-    
+
 
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
@@ -27,10 +26,6 @@ public class VistaEstilos_busqueda_admin extends LitTemplate {
 	private H1 titulo;
 	@Id("layoutEstilo")
 	private HorizontalLayout layoutEstilo;
-	@Id("vistaEstilo_admin")
-	private Element vistaEstilo_admin;
-	@Id("vistaEstilo_admin1")
-	private Element vistaEstilo_admin1;
 
 	/**
      * Creates a new VistaEstilos_busqueda_admin.
@@ -62,23 +57,4 @@ public class VistaEstilos_busqueda_admin extends LitTemplate {
 	public void setLayoutEstilo(HorizontalLayout layoutEstilo) {
 		this.layoutEstilo = layoutEstilo;
 	}
-
-	public Element getVistaEstilo_admin() {
-		return vistaEstilo_admin;
-	}
-
-	public void setVistaEstilo_admin(Element vistaEstilo_admin) {
-		this.vistaEstilo_admin = vistaEstilo_admin;
-	}
-
-	public Element getVistaEstilo_admin1() {
-		return vistaEstilo_admin1;
-	}
-
-	public void setVistaEstilo_admin1(Element vistaEstilo_admin1) {
-		this.vistaEstilo_admin1 = vistaEstilo_admin1;
-	}
-
-	
-
 }

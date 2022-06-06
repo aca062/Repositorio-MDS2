@@ -35,6 +35,7 @@ public class Alta_estilos extends VistaAlta_estilos{
 
 	protected void Confirmar() {
 	    adm.altaEstilo(getNombreDelEstilo().getValue(), 0);
+	    ControladorVistas.PopUpBasico("Estilo añadido con éxito");
 		_darDeAlta = new Dar_de_alta();
 		_darDeAlta.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_darDeAlta);

@@ -2,6 +2,7 @@ package interfaz;
 
 import java.util.Vector;
 
+import orm.bbdd.Usuario_Registrado;
 import vistas.VistaUsuarios_busqueda_admin;
 
 public class Usuarios_busqueda_admin extends VistaUsuarios_busqueda_admin{
@@ -21,4 +22,12 @@ public class Usuarios_busqueda_admin extends VistaUsuarios_busqueda_admin{
 			this.getLayoutUsuarios().add(_usuarioAdmin.get(i));
 		}*/
 	}
+    public void anadirUsuario(Usuario_Registrado usuario_Registrado) {
+
+        _usuarioAdmin.add(new Usuario_admin());
+
+        _usuarioAdmin.lastElement().setUsuario(usuario_Registrado);
+
+        this.getLayoutUsuarios().add(_usuarioAdmin.lastElement());
+    }
 }

@@ -2,12 +2,11 @@ package vistas;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import vistas.VistaArtista_admin;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-artistas_busqueda_admin template.
@@ -19,7 +18,7 @@ import vistas.VistaArtista_admin;
 @JsModule("./src/vistas/vista-artistas_busqueda_admin.ts")
 public class VistaArtistas_busqueda_admin extends LitTemplate {
 
-    
+
 
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
@@ -27,10 +26,6 @@ public class VistaArtistas_busqueda_admin extends LitTemplate {
 	private H1 h1Titulo;
 	@Id("layoutArtistas")
 	private HorizontalLayout layoutArtistas;
-	@Id("vistaArtista_admin")
-	private Element vistaArtista_admin;
-	@Id("vistaArtista_admin1")
-	private Element vistaArtista_admin1;
 
 	/**
      * Creates a new VistaArtistas_busqueda_admin.
@@ -61,22 +56,6 @@ public class VistaArtistas_busqueda_admin extends LitTemplate {
 
 	public void setLayoutArtistas(HorizontalLayout layoutArtistas) {
 		this.layoutArtistas = layoutArtistas;
-	}
-
-	public Element getVistaArtista_admin() {
-		return vistaArtista_admin;
-	}
-
-	public void setVistaArtista_admin(Element vistaArtista_admin) {
-		this.vistaArtista_admin = vistaArtista_admin;
-	}
-
-	public Element getVistaArtista_admin1() {
-		return vistaArtista_admin1;
-	}
-
-	public void setVistaArtista_admin1(Element vistaArtista_admin1) {
-		this.vistaArtista_admin1 = vistaArtista_admin1;
 	}
 
 }

@@ -2,12 +2,11 @@ package vistas;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextField;
-import vistas.VistaBuscar_administrador;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-buscar_elemento template.
@@ -28,8 +27,8 @@ public class VistaBuscar_elemento extends LitTemplate {
 	private TextField buscador;
 	@Id("ironIcon")
 	private Element ironIcon;
-	@Id("vistaBuscar_administrador")
-	private Element vistaBuscar_administrador;
+    @Id("layoutBusqueda")
+    private Element layoutBusqueda;
 
 	/**
      * Creates a new VistaBuscar_elemento.
@@ -70,12 +69,12 @@ public class VistaBuscar_elemento extends LitTemplate {
 		this.ironIcon = ironIcon;
 	}
 
-	public Element getVistaBuscar_administrador() {
-		return vistaBuscar_administrador;
-	}
+    public Element getLayoutBusqueda() {
+        return layoutBusqueda;
+    }
 
-	public void setVistaBuscar_administrador(Element vistaBuscar_administrador) {
-		this.vistaBuscar_administrador = vistaBuscar_administrador;
-	}
+    public void setLayoutBusqueda(Element layoutBusqueda) {
+        this.layoutBusqueda = layoutBusqueda;
+    }
 
 }

@@ -6,7 +6,6 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import orm.bbdd.Album;
@@ -21,10 +20,8 @@ public class Album_admin extends VistaAlbum_admin{
 	public Albumes_busqueda_admin _albumesBusquedaAdmin;
 	public Editar_album _editarAlbum;
 
-	public Album_admin(Album album) {
+	public Album_admin() {
 		Inicializar();
-		this.setH4Titulo(new H4(album.getTitulo()));
-		this.getImgAlbum().setSrc(album.getImagen());
 		this.getEditar().addClickListener(new ComponentEventListener(){
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -39,7 +36,7 @@ public class Album_admin extends VistaAlbum_admin{
 		});
 	}
 
-	public void Eliminar() {
+    public void Eliminar() {
 		//Más cosas
 		Dialog popup = new Dialog();
 		String nombreAlbum = this.getH4Titulo().getText().toString();
@@ -84,4 +81,14 @@ public class Album_admin extends VistaAlbum_admin{
 		this.getEliminar().setVisible(true);
 		this.getEditar().setVisible(true);
 	}
+
+    public void setAlbum(Album album) {
+        this.getH4Titulo().setText(album.getTitulo());
+        this.setId(Integer.toString(album.getIdAlbum()));
+        if (album.getImagen() == null || album.getImagen().equals("")) {
+            this.setImgAlbum("https://www.grupoalvic.com/wp-content/plugins/productos-alvic/productos/muestras/ZMD-Gris-nube-con-efecto.jpg");
+        } else {
+            this.setImgAlbum(album.getImagen());
+        }
+    }
 }

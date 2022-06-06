@@ -1,14 +1,14 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.html.H4;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-cancion_admin template.
@@ -19,8 +19,6 @@ import com.vaadin.flow.component.button.Button;
 @Tag("vista-cancion_admin")
 @JsModule("./src/vistas/vista-cancion_admin.ts")
 public class VistaCancion_admin extends LitTemplate {
-
-    
 
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
@@ -62,8 +60,8 @@ public class VistaCancion_admin extends LitTemplate {
 		return imgCancion;
 	}
 
-	public void setImgCancion(Image imgCancion) {
-		this.imgCancion = imgCancion;
+	public void setImgCancion(String imgCancion) {
+	    this.imgCancion = new Image(imgCancion, "Imagen canción");
 	}
 
 	public H4 getH4Titulo() {
@@ -90,5 +88,5 @@ public class VistaCancion_admin extends LitTemplate {
 		this.eliminar = eliminar;
 	}
 
-	
+
 }

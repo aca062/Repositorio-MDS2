@@ -8,7 +8,6 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-import orm.bbdd.Actor_Comun;
 import vistas.VistaArtista_admin;
 
 public class Artista_admin extends VistaArtista_admin{
@@ -20,7 +19,7 @@ public class Artista_admin extends VistaArtista_admin{
 	public Artistas_busqueda_admin _artistasBusquedaAdmin;
 	public Editar_artista _editarArtista;
 
-	public Artista_admin(Actor_Comun actor) {
+	public Artista_admin() {
 		Inicializar();
 		this.getEditar().addClickListener(new ComponentEventListener(){
 			@Override
@@ -36,7 +35,7 @@ public class Artista_admin extends VistaArtista_admin{
 		});
 	}
 
-	public void Eliminar() {
+    public void Eliminar() {
 		Dialog popup = new Dialog();
 		String nombreArtista = this.getH4Nombre().getText().toString();
 		Text advertencia = new Text("¿Seguro que desea eliminar este artista?");
@@ -80,4 +79,15 @@ public class Artista_admin extends VistaArtista_admin{
 		_editarArtista.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_editarArtista);
 	}
+
+    public void setArtista(orm.bbdd.Artista artista) {
+        this.getH4Nombre().setText(artista.getNick());
+        this.setId(Integer.toString(artista.getId()));
+        if (artista.getFoto() == null || artista.getFoto().equals("")) {
+            this.setImgArtista("https://www.grupoalvic.com/wp-content/plugins/productos-alvic/productos/muestras/ZMD-Gris-nube-con-efecto.jpg");
+        } else {
+            this.setImgArtista(artista.getFoto());
+        }
+
+    }
 }

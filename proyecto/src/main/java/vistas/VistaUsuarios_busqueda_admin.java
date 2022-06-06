@@ -2,12 +2,11 @@ package vistas;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import vistas.VistaUsuario_admin;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-usuarios_busqueda_admin template.
@@ -25,10 +24,6 @@ public class VistaUsuarios_busqueda_admin extends LitTemplate {
 	private H1 h1Usuarios;
 	@Id("layoutUsuarios")
 	private HorizontalLayout layoutUsuarios;
-	@Id("vistaUsuario_admin")
-	private Element vistaUsuario_admin;
-	@Id("vistaUsuario_admin1")
-	private Element vistaUsuario_admin1;
 
 	/**
      * Creates a new VistaUsuarios_busqueda_admin.
@@ -60,21 +55,4 @@ public class VistaUsuarios_busqueda_admin extends LitTemplate {
 	public void setLayoutUsuarios(HorizontalLayout layoutUsuarios) {
 		this.layoutUsuarios = layoutUsuarios;
 	}
-
-	public Element getVistaUsuario_admin() {
-		return vistaUsuario_admin;
-	}
-
-	public void setVistaUsuario_admin(Element vistaUsuario_admin) {
-		this.vistaUsuario_admin = vistaUsuario_admin;
-	}
-
-	public Element getVistaUsuario_admin1() {
-		return vistaUsuario_admin1;
-	}
-
-	public void setVistaUsuario_admin1(Element vistaUsuario_admin1) {
-		this.vistaUsuario_admin1 = vistaUsuario_admin1;
-	}
-
 }

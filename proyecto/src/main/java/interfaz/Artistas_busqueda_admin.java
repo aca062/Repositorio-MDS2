@@ -22,4 +22,14 @@ public class Artistas_busqueda_admin extends VistaArtistas_busqueda_admin{
 			this.getLayoutArtistas().add(_artistaAdmin.get(i));
 		}*/
 	}
+
+    public void anadirArtista(orm.bbdd.Artista artista) {
+
+        _artistaAdmin.add(new Artista_admin());
+
+        _artistaAdmin.lastElement().setArtista(artista);
+
+        this.getLayoutArtistas().add(_artistaAdmin.lastElement());
+
+    }
 }

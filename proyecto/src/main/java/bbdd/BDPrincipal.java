@@ -575,5 +575,60 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     	}
     	return canciones;
     }
-    
+
+    @Override
+    public Album[] busquedaAlbum(String paramBusqueda) {
+        Album[] albumes = null;
+        try {
+            albumes = _bd_albumes.busquedaAlbum(paramBusqueda);
+        }catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return albumes;
+    }
+
+    @Override
+    public Artista[] busquedaArtista(String paramBusqueda) {
+        Artista[] artistas = null;
+        try {
+            artistas = _bd_artistas.busquedaArtistas(paramBusqueda);
+        }catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return artistas;
+    }
+
+    @Override
+    public Usuario_Registrado[] busquedaUsuarios(String paramBusqueda) {
+        Usuario_Registrado[] usuarios = null;
+        try {
+            usuarios = _bd_usuarios_registrados.busquedaUsuarios(paramBusqueda);
+        }catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return usuarios;
+    }
+
+    @Override
+    public Estilo[] busquedaEstilos(String paramBusqueda) {
+        Estilo[] estilo = null;
+        try {
+            estilo = _bd_estilos.busquedaEstilos(paramBusqueda);
+        }catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return estilo;
+    }
+
+    @Override
+    public Lista_de_reproduccion[] busquedaListas(String paramBusqueda) {
+        Lista_de_reproduccion[] lista = null;
+        try {
+            lista = _bd_listas_de_reproduccion.busquedaLista(paramBusqueda);
+        }catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return lista;
+    }
+
 }

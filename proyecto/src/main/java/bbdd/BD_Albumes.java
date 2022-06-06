@@ -9,6 +9,7 @@ import org.orm.PersistentTransaction;
 import orm.bbdd.Actor_Comun;
 import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.Album;
+import orm.bbdd.AlbumCriteria;
 import orm.bbdd.AlbumDAO;
 import orm.bbdd.ArtistaDAO;
 import orm.bbdd.Cancion;
@@ -80,4 +81,20 @@ public class BD_Albumes {
 	public void editarCancion(String aTitulo) {
 		throw new UnsupportedOperationException();
 	}
+
+    public Album[] busquedaAlbum(String paramBusqueda) throws PersistentException {
+        Album[] albumes = new Album[0];
+
+        AlbumCriteria criteria = new AlbumCriteria();
+        String criterio = ("%" + paramBusqueda.trim().toLowerCase() + "%");
+        criteria.titulo.like(criterio);
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            albumes = AlbumDAO.listAlbumByCriteria(criteria);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
+        return albumes;
+    }
 }

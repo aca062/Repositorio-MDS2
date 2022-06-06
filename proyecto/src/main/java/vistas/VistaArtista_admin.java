@@ -1,14 +1,14 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H4;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-artista_admin template.
@@ -20,7 +20,7 @@ import com.vaadin.flow.component.html.H4;
 @JsModule("./src/vistas/vista-artista_admin.ts")
 public class VistaArtista_admin extends LitTemplate {
 
-    
+
 
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
@@ -70,8 +70,8 @@ public class VistaArtista_admin extends LitTemplate {
 		return imgArtista;
 	}
 
-	public void setImgArtista(Image imgArtista) {
-		this.imgArtista = imgArtista;
+	public void setImgArtista(String string) {
+	    this.imgArtista = new Image(string, "Imagen artista");
 	}
 
 	public Button getEditar() {

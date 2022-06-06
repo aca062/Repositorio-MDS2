@@ -16,7 +16,7 @@ export class VistaUsuario_admin extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-l);" id="layoutPrincipal">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
  <vaadin-horizontal-layout theme="spacing" id="layoutUsuario" style="align-items: center;">
   <h4 id="h4NombrePerfil">Paco12</h4>
   <vaadin-button id="botonEditar">

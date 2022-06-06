@@ -8,14 +8,13 @@ import org.orm.PersistentTransaction;
 import orm.bbdd.Acceso_Dato;
 import orm.bbdd.Acceso_DatoDAO;
 import orm.bbdd.Artista;
+import orm.bbdd.ArtistaCriteria;
 import orm.bbdd.ArtistaDAO;
 import orm.bbdd.Estadistica;
 import orm.bbdd.EstadisticaDAO;
 import orm.bbdd.Estilo;
 import orm.bbdd.EstiloDAO;
 import orm.bbdd.MDS2PersistentManager;
-import orm.bbdd.Usuario_Registrado;
-import orm.bbdd.Usuario_RegistradoDAO;
 
 public class BD_Artistas {
 	public BDPrincipal _bd_prin_artistas;
@@ -41,7 +40,7 @@ public class BD_Artistas {
 	            estadistica.setTiempoSemana(tiempoSemana);
 	            //estadistica.setUsuario(usuario);
 	            EstadisticaDAO.save(estadistica);
-	            
+
 	            Estilo estilo = EstiloDAO.getEstiloByORMID(aIdEstilo);
 	            artista.estilos.add(estilo);
 	            /*BD_Acceso_Datos accesosDato = new BD_Acceso_Datos();
@@ -106,4 +105,20 @@ public class BD_Artistas {
 	public void editarAlbum(String aNombreArtista) {
 		throw new UnsupportedOperationException();
 	}
+
+    public Artista[] busquedaArtistas(String paramBusqueda) throws PersistentException {
+        Artista[] artistas = new Artista[0];
+
+        ArtistaCriteria criteria = new ArtistaCriteria();
+        String criterio = ("%" + paramBusqueda.trim().toLowerCase() + "%");
+        criteria.nick.like(criterio);
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            artistas = ArtistaDAO.listArtistaByCriteria(criteria);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
+        return artistas;
+    }
 }

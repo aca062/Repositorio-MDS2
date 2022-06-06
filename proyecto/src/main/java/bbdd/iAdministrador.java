@@ -3,6 +3,11 @@ package bbdd;
 import java.sql.Date;
 
 import interfaz.Cancion;
+import orm.bbdd.Album;
+import orm.bbdd.Artista;
+import orm.bbdd.Estilo;
+import orm.bbdd.Lista_de_reproduccion;
+import orm.bbdd.Usuario_Registrado;
 
 public interface iAdministrador extends iActor_comun {
 
@@ -48,6 +53,16 @@ public interface iAdministrador extends iActor_comun {
 			orm.bbdd.Cancion[] aCanciones);
 
 	public orm.bbdd.Cancion[] busquedaCancion(String aParametrosBusqueda);
+
+    public Album[] busquedaAlbum(String paramBusqueda);
+
+    public Artista[] busquedaArtista(String paramBusqueda);
+
+    public Usuario_Registrado[] busquedaUsuarios(String paramBusqueda);
+
+    public Estilo[] busquedaEstilos(String paramBusqueda);
+
+    public Lista_de_reproduccion[] busquedaListas(String paramBusqueda);
 
 
 

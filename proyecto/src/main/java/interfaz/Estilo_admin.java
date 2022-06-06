@@ -19,7 +19,7 @@ public class Estilo_admin extends VistaEstilo_admin{
 	public Estilos_busqueda_admin _estilosBusquedaAdmin;
 	public Editar_estilo _editarEstilo;
 
-	public Estilo_admin(Estilo estilo) {
+	public Estilo_admin() {
 		Inicializar();
 		this.getEditar().addClickListener(new ComponentEventListener(){
 			@Override
@@ -78,4 +78,9 @@ public class Estilo_admin extends VistaEstilo_admin{
 		_editarEstilo.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_editarEstilo);
 	}
+
+    public void setEstilo(Estilo estilo) {
+        this.getEstilo().setText(estilo.getNombre());
+        this.setId(Integer.toString(estilo.getIdEstilo()));
+    }
 }

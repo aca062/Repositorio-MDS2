@@ -8,7 +8,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-import orm.bbdd.Actor_Comun;
+import orm.bbdd.Usuario_Registrado;
 import vistas.VistaUsuario_admin;
 
 public class Usuario_admin extends VistaUsuario_admin{
@@ -19,7 +19,7 @@ public class Usuario_admin extends VistaUsuario_admin{
 	public Usuarios_busqueda_admin _usuariosBusquedaAdmin;
 	public Editar_usuario _editarUsuario;
 
-	public Usuario_admin(Actor_Comun actor) {
+	public Usuario_admin() {
 		Inicializar();
 		this.getBotonEditar().addClickListener(new ComponentEventListener(){
 			@Override
@@ -35,7 +35,7 @@ public class Usuario_admin extends VistaUsuario_admin{
 		});
 	}
 
-	void Inicializar() {
+    void Inicializar() {
 		this.getH4NombrePerfil().setVisible(true);
 		this.getBotonEliminar().setVisible(true);
 		this.getBotonEditar().setVisible(true);
@@ -79,4 +79,9 @@ public class Usuario_admin extends VistaUsuario_admin{
 		v1.removeAll();
 		v1.add(_editarUsuario = new Editar_usuario());
 	}
+
+    public void setUsuario(Usuario_Registrado usuario_Registrado) {
+        this.getH4NombrePerfil().setText(usuario_Registrado.getNick());
+        this.setId(Integer.toString(usuario_Registrado.getId()));
+    }
 }

@@ -23,6 +23,12 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 
 	public Lista_de_reproduccion_admin() {
         Inicializar();
+        this.getEditar().addClickListener(new ComponentEventListener(){
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                EditarLista();
+            }
+        });
         this.getEliminar().addClickListener(new ComponentEventListener(){
             @Override
             public void onComponentEvent(ComponentEvent event) {
@@ -31,7 +37,12 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
         });
     }
 
-	public Lista_de_reproduccion_admin(Lista_de_reproduccion lista) {
+	protected void EditarLista() {
+        // TODO Auto-generated method stub
+
+    }
+
+    public Lista_de_reproduccion_admin(Lista_de_reproduccion lista) {
 		Inicializar();
 		this.setH4Nombre(new H4(lista.getNombre()));
 		this.getImgLista().setSrc("https://media.tarkett-image.com/large/TH_25094225_25187225_001.jpg");
@@ -94,4 +105,10 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 		this.getImgLista().setVisible(true);
 		this.getH4Nombre().setVisible(true);
 	}
+
+    public void setLista(Lista_de_reproduccion lista_de_reproduccion) {
+        this.getH4Nombre().setText(lista_de_reproduccion.getNombre());
+        this.setId(Integer.toString(lista_de_reproduccion.getIdLista()));
+        this.getImgLista().setVisible(false);
+    }
 }

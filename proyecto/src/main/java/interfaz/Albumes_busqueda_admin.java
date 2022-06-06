@@ -2,6 +2,7 @@ package interfaz;
 
 import java.util.Vector;
 
+import orm.bbdd.Album;
 import vistas.VistaAlbumes_busqueda_admin;
 
 public class Albumes_busqueda_admin extends VistaAlbumes_busqueda_admin{
@@ -22,4 +23,14 @@ public class Albumes_busqueda_admin extends VistaAlbumes_busqueda_admin{
 			this.getLayoutLista().add(_albumAdmin.get(i));
 		}*/
 	}
+
+    public void anadirAlbum(Album album) {
+
+        _albumAdmin.add(new Album_admin());
+
+        _albumAdmin.lastElement().setAlbum(album);
+
+        this.getLayoutLista().add(_albumAdmin.lastElement());
+
+    }
 }
