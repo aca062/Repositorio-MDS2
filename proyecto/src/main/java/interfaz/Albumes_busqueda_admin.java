@@ -4,7 +4,6 @@ import java.util.Vector;
 
 import vistas.VistaAlbumes_busqueda_admin;
 
-
 public class Albumes_busqueda_admin extends VistaAlbumes_busqueda_admin{
 	//private Label _tituloL;
 	public Buscar_administrador _buscarAdministrador;
