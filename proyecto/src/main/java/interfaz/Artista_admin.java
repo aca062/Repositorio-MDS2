@@ -18,6 +18,7 @@ public class Artista_admin extends VistaArtista_admin{
 	private Button _eliminarB;*/
 	public Artistas_busqueda_admin _artistasBusquedaAdmin;
 	public Editar_artista _editarArtista;
+	orm.bbdd.Artista artista;
 
 	public Artista_admin() {
 		Inicializar();
@@ -75,12 +76,13 @@ public class Artista_admin extends VistaArtista_admin{
 	}
 
 	public void EditarArtista() {
-		_editarArtista = new Editar_artista();
+		_editarArtista = new Editar_artista(artista);
 		_editarArtista.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_editarArtista);
 	}
 
     public void setArtista(orm.bbdd.Artista artista) {
+        this.artista = artista;
         this.getH4Nombre().setText(artista.getNick());
         this.setId(Integer.toString(artista.getId()));
         if (artista.getFoto() == null || artista.getFoto().equals("")) {

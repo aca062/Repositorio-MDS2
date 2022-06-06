@@ -18,6 +18,7 @@ public class Usuario_admin extends VistaUsuario_admin{
 	private Button _eliminarB;*/
 	public Usuarios_busqueda_admin _usuariosBusquedaAdmin;
 	public Editar_usuario _editarUsuario;
+	orm.bbdd.Usuario_Registrado usuario;
 
 	public Usuario_admin() {
 		Inicializar();
@@ -77,10 +78,11 @@ public class Usuario_admin extends VistaUsuario_admin{
 	public void EditarUsuario() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_editarUsuario = new Editar_usuario());
+		v1.add(_editarUsuario = new Editar_usuario(usuario));
 	}
 
     public void setUsuario(Usuario_Registrado usuario_Registrado) {
+        this.usuario = usuario_Registrado;
         this.getH4NombrePerfil().setText(usuario_Registrado.getNick());
         this.setId(Integer.toString(usuario_Registrado.getId()));
     }

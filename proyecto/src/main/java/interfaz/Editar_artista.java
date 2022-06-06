@@ -1,9 +1,10 @@
 package interfaz;
 
-import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+
+import orm.bbdd.Artista;
 import vistas.VistaEditar_artista;
 
 public class Editar_artista extends VistaEditar_artista{
@@ -24,16 +25,18 @@ public class Editar_artista extends VistaEditar_artista{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Artista_admin _artistaAdmin;
-	
-	public Editar_artista() {
-		Inicializar();
-		
+
+	public Editar_artista(Artista artista) {
+
+		Inicializar(artista);
+
 		this.getConfirmar().addClickListener(new ComponentEventListener(){
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Confirmar();
 			}
 		});
+
 		this.getCancelar().addClickListener(new ComponentEventListener(){
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -48,7 +51,7 @@ public class Editar_artista extends VistaEditar_artista{
 		_buscarElemento.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_buscarElemento);
 	}
-	
+
 	public void Cancelar() {
 		Buscar_elemento _buscarElemento = new Buscar_elemento();
 		_buscarElemento.getStyle().set("width", "100%");
@@ -58,8 +61,8 @@ public class Editar_artista extends VistaEditar_artista{
 	public void Anadir_imagen() {
 		throw new UnsupportedOperationException();
 	}
-	
-	void Inicializar() {
+
+	void Inicializar(Artista artista) {
 		this.getCancelar().setVisible(true);
 		this.getConfirmar().setVisible(true);
 		this.getEstilo().setVisible(true);

@@ -8,6 +8,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iAdministrador;
 import orm.bbdd.Album;
 import vistas.VistaAlbum_admin;
 
@@ -19,6 +21,8 @@ public class Album_admin extends VistaAlbum_admin{
 	private Button _eliminarB;*/
 	public Albumes_busqueda_admin _albumesBusquedaAdmin;
 	public Editar_album _editarAlbum;
+    private iAdministrador adm = new BDPrincipal();
+	orm.bbdd.Album album;
 
 	public Album_admin() {
 		Inicializar();
@@ -40,7 +44,7 @@ public class Album_admin extends VistaAlbum_admin{
 		//Más cosas
 		Dialog popup = new Dialog();
 		String nombreAlbum = this.getH4Titulo().getText().toString();
-		Text advertencia = new Text("¿Seguro que desea eliminar esta lista de reproducción?");
+		Text advertencia = new Text("¿Seguro que desea eliminar este álbum?");
         VerticalLayout dialogLayout = new VerticalLayout(advertencia);
         popup.add(dialogLayout);
         Button confirmar = new Button("Confirmar");
@@ -67,12 +71,14 @@ public class Album_admin extends VistaAlbum_admin{
 	public void EditarAlbum() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
 		v1.removeAll();
-		v1.add(_editarAlbum = new Editar_album());
+		v1.add(_editarAlbum = new Editar_album(album));
 	}
 
 	void ConfirmarEliminacion(String nombre, Dialog popup) {
-		//Comprobar si hay canciones con ese estilo
+	    adm.eliminarAlbum(album.getIdAlbum());
 		popup.close();
+		ControladorVistas.PopUpBasico("Album eliminado con éxito");
+		ControladorVistas.CambiarContenido(new Buscar_administrador());
 	}
 
 	void Inicializar() {
@@ -83,6 +89,7 @@ public class Album_admin extends VistaAlbum_admin{
 	}
 
     public void setAlbum(Album album) {
+        this.album = album;
         this.getH4Titulo().setText(album.getTitulo());
         this.setId(Integer.toString(album.getIdAlbum()));
         if (album.getImagen() == null || album.getImagen().equals("")) {

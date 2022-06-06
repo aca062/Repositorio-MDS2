@@ -65,7 +65,7 @@ public class BD_Canciones {
         }
     }
 
-    public void editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes,
+    public int editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes,
             String aArcMultimedia, int aIdCancion) throws PersistentException {
         throw new UnsupportedOperationException();
     }

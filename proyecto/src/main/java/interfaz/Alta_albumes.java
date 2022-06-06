@@ -152,7 +152,6 @@ public class Alta_albumes extends VistaAlta_albumes {
                         if (actor.getNick().equals(artista.trim())) {
                             correcto = true;
                             canciones[index] = i;
-                            break;
                         }
                     }
                     if (!correcto) {
@@ -160,7 +159,7 @@ public class Alta_albumes extends VistaAlta_albumes {
                     }
                     index++;
                 }
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 dateFormat.setLenient(false);
                 Date fechaUtil = dateFormat.parse(this.getFechaEdicion().getValue());
                 java.sql.Date fecha = new java.sql.Date(fechaUtil.getTime());
@@ -175,7 +174,7 @@ public class Alta_albumes extends VistaAlta_albumes {
                     ControladorVistas.PopUpBasico("Error al añadir el álbum");
                 }
             } catch (ParseException pe) {
-                ControladorVistas.PopUpBasico("La fecha introducida no tiene el formato de dd-MM-yyyy");
+                ControladorVistas.PopUpBasico("La fecha introducida no tiene el formato de dd/MM/yyyy");
             } catch (PersistentException exc) {
                 ControladorVistas.PopUpBasico("El artista introducido no existe");
             }catch (Exception exc) {

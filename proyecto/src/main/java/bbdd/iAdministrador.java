@@ -21,7 +21,7 @@ public interface iAdministrador extends iActor_comun {
 
 	public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista);
 
-	public void editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, String aEstilos, String aTituloAlbum, int aIdCancion);
+	public int editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, int aEstilos, String aTituloAlbum, int aIdCancion);
 
 	public void editarEstilo(String aNombre, int aIdEstilo);
 

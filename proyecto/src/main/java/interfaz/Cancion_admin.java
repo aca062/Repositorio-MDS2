@@ -18,6 +18,7 @@ public class Cancion_admin extends VistaCancion_admin {
      */
     public Canciones_busqueda_admin _cancionesBusquedaAdmin;
     public Editar_cancion _editarCancion;
+    orm.bbdd.Cancion cancion;
 
     public Cancion_admin() {
         Inicializar();
@@ -64,7 +65,7 @@ public class Cancion_admin extends VistaCancion_admin {
     }
 
     public void EditarAlbum() {
-        _editarCancion = new Editar_cancion();
+        _editarCancion = new Editar_cancion(cancion);
         _editarCancion.getStyle().set("width", "100%");
         ControladorVistas.CambiarContenido(_editarCancion);
     }
@@ -75,6 +76,7 @@ public class Cancion_admin extends VistaCancion_admin {
     }
 
     void setCancion(Cancion cancion) {
+        this.cancion = cancion;
         this.getH4Titulo().setText(cancion.getTitulo());
         this.setId(Integer.toString(cancion.getIdCancion()));
         if (cancion.getRutaImagen() == null || cancion.getRutaImagen().equals("")) {
@@ -85,7 +87,6 @@ public class Cancion_admin extends VistaCancion_admin {
     }
 
     void Inicializar() {
-        _editarCancion = new Editar_cancion();
         this.getEditar().setVisible(true);
         this.getEliminar().setVisible(true);
         this.getImgCancion().setVisible(true);

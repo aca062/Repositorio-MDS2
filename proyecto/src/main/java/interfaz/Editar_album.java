@@ -3,8 +3,8 @@ package interfaz;
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import orm.bbdd.Album;
 import vistas.VistaEditar_album;
 
 public class Editar_album extends VistaEditar_album{
@@ -24,15 +24,18 @@ public class Editar_album extends VistaEditar_album{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Album_admin _albumAdmin;
-	
-	public Editar_album() {
-		Inicializar();
+
+	public Editar_album(Album album) {
+
+		Inicializar(album);
+
 		this.getConfirmar().addClickListener(new ComponentEventListener(){
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Confirmar();
 			}
 		});
+
 		this.getCancelar().addClickListener(new ComponentEventListener(){
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -41,23 +44,23 @@ public class Editar_album extends VistaEditar_album{
 		});
 	}
 
-	public void Confirmar() {
+    public void Confirmar() {
 		//Más cosas
 		Buscar_elemento _buscarElemento = new Buscar_elemento();
 		_buscarElemento.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_buscarElemento);
 	}
-	
+
 	public void Cancelar() {
 		Buscar_elemento _buscarElemento = new Buscar_elemento();
 		_buscarElemento.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_buscarElemento);
 	}
-	
+
 	public void Anadir_imagen() {
 		throw new UnsupportedOperationException();
 	}
-	void Inicializar() {
+	void Inicializar(Album album) {
 		this.getCambiarImagen().setVisible(true);
 		this.getImgAlbum().setVisible(true);
 		this.getTitulo().setVisible(true);

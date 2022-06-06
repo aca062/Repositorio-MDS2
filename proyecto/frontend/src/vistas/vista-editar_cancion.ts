@@ -1,11 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@vaadin/vaadin-select/src/vaadin-select.js';
-import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-item/src/vaadin-item.js';
+import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 
 @customElement('vista-editar_cancion')
 export class VistaEditar_cancion extends LitElement {
@@ -28,18 +26,8 @@ export class VistaEditar_cancion extends LitElement {
   <vaadin-text-field label="Compositores" value="Tainy" id="compositores" has-value style="width: 60%;"></vaadin-text-field>
   <vaadin-text-field label="Productores" id="productores" value="Tainy" style="width: 60%;" has-value></vaadin-text-field>
   <vaadin-text-field label="Interpretes" id="interpretes" value="Bad bunny" style="width: 60%;" has-value></vaadin-text-field>
-  <vaadin-select value="Regueton" id="estilo">
-   <template>
-    <vaadin-list-box id="listaEstilos" selected="0">
-     <vaadin-item id="vaadinItem" selected>
-       Regueton 
-     </vaadin-item>
-     <vaadin-item id="vaadinItem1">
-       Item three 
-     </vaadin-item>
-    </vaadin-list-box>
-   </template>
-  </vaadin-select>
+  <h5 style="margin-bottom: 0; margin-top: 10px;">Estilo</h5>
+  <vaadin-combo-box id="estilo"></vaadin-combo-box>
   <vaadin-horizontal-layout style="width: 100%; align-self: flex-start; justify-content: flex-start; align-items: center;" id="layoutFichero">
    <h4 id="h4Titulo" style="align-self: center;">Fichero multimedia</h4>
    <vaadin-button id="anadirCancion" style="margin-left: 1%;">

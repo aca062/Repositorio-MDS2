@@ -1,17 +1,17 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.html.H5;
-import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-editar_cancion template.
@@ -23,7 +23,7 @@ import com.vaadin.flow.component.select.Select;
 @JsModule("./src/vistas/vista-editar_cancion.ts")
 public class VistaEditar_cancion extends LitTemplate {
 
-    
+
 
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
@@ -42,13 +42,7 @@ public class VistaEditar_cancion extends LitTemplate {
 	@Id("interpretes")
 	private TextField interpretes;
 	@Id("estilo")
-	private Select estilo;
-	@Id("listaEstilos")
-	private Element listaEstilos;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
+	private ComboBox estilo;
 	@Id("layoutFichero")
 	private HorizontalLayout layoutFichero;
 	@Id("h4Titulo")
@@ -95,7 +89,7 @@ public class VistaEditar_cancion extends LitTemplate {
 		this.layoutCancion = layoutCancion;
 	}
 
-	public TextField getTítulo() {
+	public TextField getTitulo() {
 		return título;
 	}
 
@@ -103,7 +97,7 @@ public class VistaEditar_cancion extends LitTemplate {
 		this.título = título;
 	}
 
-	public TextField getTítuloÁlbum() {
+	public TextField getTituloAlbum() {
 		return títuloÁlbum;
 	}
 
@@ -135,36 +129,12 @@ public class VistaEditar_cancion extends LitTemplate {
 		this.interpretes = interpretes;
 	}
 
-	public Select getEstilo() {
+	public ComboBox getEstilo() {
 		return estilo;
 	}
 
-	public void setEstilo(Select estilo) {
+	public void setEstilo(ComboBox estilo) {
 		this.estilo = estilo;
-	}
-
-	public Element getListaEstilos() {
-		return listaEstilos;
-	}
-
-	public void setListaEstilos(Element listaEstilos) {
-		this.listaEstilos = listaEstilos;
-	}
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
 	}
 
 	public HorizontalLayout getLayoutFichero() {

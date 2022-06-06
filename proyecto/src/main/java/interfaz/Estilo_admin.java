@@ -18,6 +18,7 @@ public class Estilo_admin extends VistaEstilo_admin{
 	private Button _eliminarB;*/
 	public Estilos_busqueda_admin _estilosBusquedaAdmin;
 	public Editar_estilo _editarEstilo;
+	orm.bbdd.Estilo estilo;
 
 	public Estilo_admin() {
 		Inicializar();
@@ -74,12 +75,13 @@ public class Estilo_admin extends VistaEstilo_admin{
 	}
 
 	public void EditarEstilo() {
-		_editarEstilo = new Editar_estilo();
+		_editarEstilo = new Editar_estilo(estilo);
 		_editarEstilo.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_editarEstilo);
 	}
 
     public void setEstilo(Estilo estilo) {
+        this.estilo = estilo;
         this.getEstilo().setText(estilo.getNombre());
         this.setId(Integer.toString(estilo.getIdEstilo()));
     }

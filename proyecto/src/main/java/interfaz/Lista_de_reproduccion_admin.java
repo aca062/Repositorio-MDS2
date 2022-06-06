@@ -20,6 +20,7 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 	private Button _eliminarB;*/
 	public Listas_de_reproduccion_busqueda_admin _listasDeReproduccionBusquedaAdmin;
 	public Modificar_lista _modificarLista;
+	orm.bbdd.Lista_de_reproduccion lista;
 
 	public Lista_de_reproduccion_admin() {
         Inicializar();
@@ -90,7 +91,7 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 	}
 
 	public void ModificarLista(int i) {
-		_modificarLista = new Modificar_lista();
+		_modificarLista = new Modificar_lista(lista);
 		_modificarLista.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_modificarLista);
 	}
@@ -107,6 +108,7 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 	}
 
     public void setLista(Lista_de_reproduccion lista_de_reproduccion) {
+        this.lista = lista_de_reproduccion;
         this.getH4Nombre().setText(lista_de_reproduccion.getNombre());
         this.setId(Integer.toString(lista_de_reproduccion.getIdLista()));
         this.getImgLista().setVisible(false);
