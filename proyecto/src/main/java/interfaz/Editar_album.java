@@ -85,11 +85,11 @@ public class Editar_album extends VistaEditar_album{
                     }
                     index++;
                 }
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
                 dateFormat.setLenient(false);
                 Date fechaUtil = dateFormat.parse(this.getFechaEdición().getValue());
                 java.sql.Date fecha = new java.sql.Date(fechaUtil.getTime());
-                int comprobacion = adm.editarAlbum(pathFoto, fecha, this.getTitulo().getValue(), this.getNombreArtista().getValue(), canciones, id);
+                int comprobacion = adm.editarAlbum(this.getTitulo().getValue(), fecha, pathFoto, this.getNombreArtista().getValue(), canciones, id);
                 if (comprobacion == 1) {
                     ControladorVistas.PopUpBasico("Album añadido con éxito");
                     busqueda = new Buscar_administrador();
@@ -100,7 +100,7 @@ public class Editar_album extends VistaEditar_album{
                     ControladorVistas.PopUpBasico("Error al añadir el álbum");
                 }
             } catch (ParseException pe) {
-                ControladorVistas.PopUpBasico("La fecha introducida no tiene el formato de dd/MM/yyyy");
+                ControladorVistas.PopUpBasico("La fecha introducida no tiene el formato de yyyy-mm-dd");
             } catch (PersistentException exc) {
                 ControladorVistas.PopUpBasico("El artista introducido no existe");
             }catch (Exception exc) {
@@ -122,14 +122,15 @@ public class Editar_album extends VistaEditar_album{
 	    this.getNombreArtista().setValue(album.getArtista().getNick());
 	    this.getTitulo().setValue(album.getTitulo());
 	    this.getFechaEdición().setValue(album.getFechaEdicion().toString());
-        String canciones = "";
-        for (int i = 0; i < album.canciones.size(); i++) {
-            canciones += album.canciones.toArray()[i];
-            if (i != album.canciones.size() - 1) {
-                canciones += ", ";
-            }
+        
+        String cancion = "";
+        for(int i=0;i < album.canciones.toArray().length;i++) {
+        	cancion += album.canciones.toArray()[i].getTitulo();
+        	if(i != album.canciones.toArray().length-1) {
+        		cancion += ", ";
+        	}
         }
-        this.getListaCanciones().setValue(canciones);
+        this.getListaCanciones().setValue(cancion);
 		this.id = album.getIdAlbum();
 		this.pathFoto = album.getImagen();
 		this.getCambiarImagen().setVisible(true);

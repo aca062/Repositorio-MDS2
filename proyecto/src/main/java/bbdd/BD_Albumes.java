@@ -41,8 +41,27 @@ public class BD_Albumes {
 		return idAlbum;
 	}
 
-	public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, int aIdAlbum) throws PersistentException{
-		throw new UnsupportedOperationException();
+	public int editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista,Cancion[] aCanciones,int aIdAlbum) throws PersistentException{
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		int idAlbum = -1;
+		try {
+			Album alb = AlbumDAO.loadAlbumByORMID(aIdAlbum);
+			alb.setTitulo(aTitulo);
+			alb.setFechaEdicion(aFechaEdicion);
+			alb.setImagen(aImagen);
+            Actor_Comun actor = Actor_ComunDAO.listActor_ComunByQuery("nick='" + aNombreArtista + "'", "nick")[0];
+			alb.setArtista(ArtistaDAO.getArtistaByORMID(actor.getId()));
+			alb.canciones.clear();
+			for(Cancion cancion : aCanciones) {
+				alb.canciones.add(cancion);
+			}
+			AlbumDAO.save(alb);
+			idAlbum = alb.getORMID();
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return idAlbum;
 	}
 
 	public boolean eliminarAlbum(int aIdAlbum) throws PersistentException{
