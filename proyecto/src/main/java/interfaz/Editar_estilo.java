@@ -18,6 +18,7 @@ public class Editar_estilo extends VistaEditar_estilo{
 	public Estilo_admin _estiloAdmin;
 	private iAdministrador adm = new BDPrincipal();
 	private Estilo estilos;
+	int id;
 
 	public Editar_estilo(Estilo estilo) {
 
@@ -40,7 +41,7 @@ public class Editar_estilo extends VistaEditar_estilo{
 
 	public void Confirmar() {
 		//Más cosas
-		adm.editarEstilo(this.getNombreDelEstilo().getValue(),0);
+		adm.editarEstilo(this.getNombreDelEstilo().getValue(),id);
 		Buscar_elemento _buscarElemento = new Buscar_elemento();
 		_buscarElemento.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_buscarElemento);
@@ -53,6 +54,7 @@ public class Editar_estilo extends VistaEditar_estilo{
 	}
 
 	void Inicializar(Estilo estilo) {
+		this.id = estilo.getIdEstilo();
 		this.getConfirmar().setVisible(true);
 		this.getCancelar().setVisible(true);
 		this.getNombreDelEstilo().setVisible(true);
