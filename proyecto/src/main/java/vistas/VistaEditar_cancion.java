@@ -12,6 +12,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.upload.Upload;
 
 /**
  * A Designer generated component for the vista-editar_cancion template.
@@ -47,8 +48,6 @@ public class VistaEditar_cancion extends LitTemplate {
 	private HorizontalLayout layoutFichero;
 	@Id("h4Titulo")
 	private H4 h4Titulo;
-	@Id("anadirCancion")
-	private Button anadirCancion;
 	@Id("h5Requisitos")
 	private H5 h5Requisitos;
 	@Id("layoutBotones")
@@ -57,6 +56,10 @@ public class VistaEditar_cancion extends LitTemplate {
 	private Button cancelar;
 	@Id("confirmar")
 	private Button confirmar;
+	@Id("upload")
+	private Upload upload;
+	@Id("botonEliminar")
+	private Button botonEliminar;
 
 	/**
      * Creates a new VistaEditar_cancion.
@@ -153,14 +156,6 @@ public class VistaEditar_cancion extends LitTemplate {
 		this.h4Titulo = h4Titulo;
 	}
 
-	public Button getAnadirCancion() {
-		return anadirCancion;
-	}
-
-	public void setAnadirCancion(Button anadirCancion) {
-		this.anadirCancion = anadirCancion;
-	}
-
 	public H5 getH5Requisitos() {
 		return h5Requisitos;
 	}
@@ -191,6 +186,22 @@ public class VistaEditar_cancion extends LitTemplate {
 
 	public void setConfirmar(Button confirmar) {
 		this.confirmar = confirmar;
+	}
+
+	public Upload getUpload() {
+		return upload;
+	}
+
+	public void setUpload(Upload upload) {
+		this.upload = upload;
+	}
+
+	public Button getBotonEliminar() {
+		return botonEliminar;
+	}
+
+	public void setBotonEliminar(Button botonEliminar) {
+		this.botonEliminar = botonEliminar;
 	}
 
 

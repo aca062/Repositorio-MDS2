@@ -2,8 +2,9 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
+import '@vaadin/vaadin-upload/src/vaadin-upload.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-editar_cancion')
 export class VistaEditar_cancion extends LitElement {
@@ -30,8 +31,9 @@ export class VistaEditar_cancion extends LitElement {
   <vaadin-combo-box id="estilo"></vaadin-combo-box>
   <vaadin-horizontal-layout style="width: 100%; align-self: flex-start; justify-content: flex-start; align-items: center;" id="layoutFichero">
    <h4 id="h4Titulo" style="align-self: center;">Fichero multimedia</h4>
-   <vaadin-button id="anadirCancion" style="margin-left: 1%;">
-     Añadir 
+   <vaadin-upload id="upload"></vaadin-upload>
+   <vaadin-button id="botonEliminar">
+    Eliminar
    </vaadin-button>
    <h5 id="h5Requisitos" style="flex-grow: 0; margin-left: 10%;">Solo son válidos los .mp3, .mp4, .ogg</h5>
   </vaadin-horizontal-layout>

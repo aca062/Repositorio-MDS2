@@ -206,7 +206,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         }else {
             int comprobacion = adm.altaCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","),
                     this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","),
-                    this.getVaadinTextField().getValue(), estiloSeleccionado.getIdEstilo(), this.getTituloAlbum().getValue());
+                    pathSong, estiloSeleccionado.getIdEstilo(), this.getTituloAlbum().getValue());
             if (comprobacion == 1) {
                 ControladorVistas.PopUpBasico("Canción añadida con éxito");
                 _darDeAlta = new Dar_de_alta();

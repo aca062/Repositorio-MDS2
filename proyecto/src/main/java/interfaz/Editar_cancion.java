@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Vector;
 
 import org.apache.commons.io.FilenameUtils;
+import org.orm.PersistentException;
 
 import com.example.test.ControladorVistas;
 //import com.example.test.WindowController;
@@ -44,9 +46,10 @@ public class Editar_cancion extends VistaEditar_cancion {
 
         Inicializar(cancion);
         
+        this.getBotonEliminar().setVisible(false);
         MemoryBuffer memoryBufferCancion = new MemoryBuffer();
-        //Upload uploadCancion = this.getVaadinUpload();
-        //uploadCancion.setReceiver(memoryBufferCancion);
+        Upload uploadCancion = this.getUpload();
+        uploadCancion.setReceiver(memoryBufferCancion);
         
         cargarEstilos();
 
@@ -69,6 +72,25 @@ public class Editar_cancion extends VistaEditar_cancion {
             @Override
             public void onComponentEvent(ComponentEvent event) {
                 Cancelar();
+            }
+        });
+        uploadCancion.addFinishedListener(e -> {
+            String UrlCarpeta = "./src/main/resources/META-INF/resources/songs/";
+            File folder = new File(UrlCarpeta);
+            File[] listOfFiles = folder.listFiles();
+            for (File file : listOfFiles) {
+                if (file.isFile()) {
+                    String[] filename = file.getName().split("\\.(?=[^\\.]+$)"); // split filename from it's extension
+                    if (filename[0].equalsIgnoreCase(file.getName())) {
+                        file.delete();
+                    }
+                }
+            }
+            try {
+                pathSong = Anadir_archivo_multimedia(memoryBufferCancion);
+            } catch (PersistentException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
             }
         });
     }
@@ -116,7 +138,7 @@ public class Editar_cancion extends VistaEditar_cancion {
         ControladorVistas.CambiarContenido(_buscarElemento);
     }
 
-    /*public void Anadir_archivo_multimedia() {
+    public String Anadir_archivo_multimedia(MemoryBuffer memoryBuffer) throws PersistentException {
     	int id = CancionDAO.listCancionByQuery("true=true", "titulo").length + 1;
         InputStream is = memoryBuffer.getInputStream();
         String nameCancion = id + "." + FilenameUtils.getExtension(memoryBuffer.getFileName());
@@ -136,10 +158,10 @@ public class Editar_cancion extends VistaEditar_cancion {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.getVaadinUpload().setVisible(false);
+        this.getUpload().setVisible(false);
         this.getBotonEliminar().setVisible(true);
         return UrlCancion;
-    }*/
+    }
 
     public void Comprobar_formato() {
         throw new UnsupportedOperationException();
