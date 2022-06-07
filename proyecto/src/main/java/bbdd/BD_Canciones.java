@@ -103,18 +103,22 @@ public class BD_Canciones {
         }
     }
 
-    public void marcarFavorito(Cancion cancion, Actor_Comun usuario) throws PersistentException {
+    public void marcarFavorito(int idCancion, int idUsuario) throws PersistentException {
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+
         try {
-            cancion.usuario.add(usuario);
+            Cancion cancion = CancionDAO.loadCancionByORMID(idCancion);
+            Actor_Comun usuario = Actor_ComunDAO.loadActor_ComunByORMID(idUsuario);
             usuario.cancion_favorita.add(cancion);
+            cancion.usuario.add(usuario);
+
             CancionDAO.save(cancion);
             Actor_ComunDAO.save(usuario);
+
             t.commit();
         } catch (Exception e) {
             t.rollback();
         }
-        MDS2PersistentManager.instance().disposePersistentManager();
     }
 
     public boolean eliminarCancion(int aIdCancion) throws PersistentException {
@@ -131,13 +135,18 @@ public class BD_Canciones {
         return correcto;
     }
 
-    public void desmarcarFavorita(Cancion cancion, Actor_Comun usuario) throws PersistentException {
+    public void desmarcarFavorita(int idCancion, int idUsuario) throws PersistentException {
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+
         try {
-            cancion.usuario.remove(usuario);
+            Cancion cancion = CancionDAO.loadCancionByORMID(idCancion);
+            Actor_Comun usuario = Actor_ComunDAO.loadActor_ComunByORMID(idUsuario);
             usuario.cancion_favorita.remove(cancion);
+            cancion.usuario.remove(usuario);
+
             CancionDAO.save(cancion);
             Actor_ComunDAO.save(usuario);
+
             t.commit();
         } catch (Exception e) {
             t.rollback();
@@ -204,17 +213,16 @@ public class BD_Canciones {
     }
 
     public Cancion[] cargarUltimasCancionesReproducidas(int aIdUsuario) throws PersistentException {
-        Cancion[] canciones = new Cancion[0];
+        Cancion[] canciones = new Cancion[3];
 
-        /*
-         * PersistentTransaction t =
-         * MDS2PersistentManager.instance().getSession().beginTransaction(); try {
-         * Actor_Comun usuario = Actor_ComunDAO.getActor_ComunByORMID(aIdUsuario);
-         *
-         * }
-         *
-         * t.commit(); } catch(Exception e) { t.rollback(); }
-         */
+        Actor_Comun usuario = Actor_ComunDAO.getActor_ComunByORMID(aIdUsuario);
+
+        for (int i = 0; i < 3; i++) {
+            if (usuario.canciones_reproducidas.toArray()[i] != null) {
+                canciones[i] = usuario.canciones_reproducidas.toArray()[i];
+            }
+        }
+
         return canciones;
     }
 
@@ -263,5 +271,20 @@ public class BD_Canciones {
             e.printStackTrace();
         }
         return numeroAnterior;
+    }
+
+    public void setUltimaCancionReproducida(int aIdUsuario, int aIdCancion) throws PersistentException {
+        Actor_Comun actor = Actor_ComunDAO.getActor_ComunByORMID(aIdUsuario);
+        try {
+            PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+            if (actor.canciones_reproducidas.size() == 3) {
+                Cancion cancion = actor.canciones_reproducidas.toArray()[2];
+                actor.canciones_reproducidas.remove(cancion);
+            }
+            actor.canciones_reproducidas.add(CancionDAO.getCancionByORMID(aIdCancion));
+            t.commit();
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
     }
 }

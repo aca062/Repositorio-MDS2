@@ -4,6 +4,7 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H6;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
@@ -22,8 +23,6 @@ public class VistaCancion extends LitTemplate {
 
 	@Id("layoutPrincipal")
 	private HorizontalLayout layoutPrincipal;
-	@Id("botonCancion")
-	private Button botonCancion;
 	@Id("layoutCancion")
 	private Element layoutCancion;
 	@Id("numeroRep")
@@ -32,6 +31,8 @@ public class VistaCancion extends LitTemplate {
 	private Button meGusta;
 	@Id("botonNombre")
 	private Button botonNombre;
+    @Id("botonCancion")
+    private Image botonCancion;
 	/**
      * Creates a new VistaCancion.
      */
@@ -47,11 +48,11 @@ public class VistaCancion extends LitTemplate {
 		this.layoutPrincipal = layoutPrincipal;
 	}
 
-	public Button getBotonCancion() {
+	public Image getBotonCancion() {
 		return botonCancion;
 	}
 
-	public void setBotonCancion(Button botonCancion) {
+	public void setBotonCancion(Image botonCancion) {
 		this.botonCancion = botonCancion;
 	}
 

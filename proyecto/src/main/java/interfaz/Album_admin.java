@@ -96,10 +96,10 @@ public class Album_admin extends VistaAlbum_admin {
         this.getH4Titulo().setText(album.getTitulo());
         this.setId(Integer.toString(album.getIdAlbum()));
         if (album.getImagen() == null || album.getImagen().equals("")) {
-            this.setImgAlbum(
+            this.getImgAlbum().setSrc(
                     "https://www.grupoalvic.com/wp-content/plugins/productos-alvic/productos/muestras/ZMD-Gris-nube-con-efecto.jpg");
         } else {
-            this.setImgAlbum(album.getImagen());
+            this.getImgAlbum().setSrc(album.getImagen());
         }
     }
 }

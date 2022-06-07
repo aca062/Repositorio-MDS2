@@ -47,6 +47,7 @@ public class Cancion extends VistaCancion {
                 ControladorVistas.GetReproductor().setSource(cancion.getArchivoMultimedia());
                 try {
                     numRep.setText(Integer.toString(bdCanciones.aumentarRep(cancion.getIdCancion())));
+                    bd.setUltimaCancionReproducida(ControladorVistas.getUsuario().getId(), cancion.getIdCancion());
                 } catch (PersistentException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -58,10 +59,10 @@ public class Cancion extends VistaCancion {
             @Override
             public void onComponentEvent(ComponentEvent event) {
                 if (favorita) {
-                    bd.desmarcarFavorita(cancion, ControladorVistas.getUsuario());
+                    bd.desmarcarFavorita(cancion.getIdCancion(), ControladorVistas.getUsuario().getId());
                     meGusta.getStyle().set("background-image", "url('https://e7.pngegg.com/pngimages/507/757/png-clipart-computer-icons-heart-like-button-like-share-comment-love-logo.png')");
                 }else {
-                    bd.marcarFavorito(cancion, ControladorVistas.getUsuario());
+                    bd.marcarFavorito(cancion.getIdCancion(), ControladorVistas.getUsuario().getId());
                     meGusta.getStyle().set("background-image", "url('https://img.freepik.com/vector-gratis/me-gusta-icono-corazon-estilo-contorno-plano-transmision-video-vivo-chat-me-gusta-redes-sociales-como-botones-web-corazon-rojo-aisladas-sobre-fondo-blanco-dia-san-valentin-illustaration-vector_175838-2893.jpg?w=360')");
                 }
             }
@@ -90,11 +91,11 @@ public class Cancion extends VistaCancion {
         this.getBotonNombre().setText(cancion.getTitulo());
         this.setId(Integer.toString(cancion.getIdCancion()));
         this.getNumeroRep().setText(Integer.toString(cancion.getNumReproducciones()));
+        this.getBotonCancion().getStyle().set("width", "100%");
         if (cancion.getRutaImagen() != null && !cancion.getRutaImagen().equals("")) {
-            this.getBotonCancion().getStyle().set("background-image", cancion.getRutaImagen());
+            this.getBotonCancion().setSrc(cancion.getRutaImagen());
         } else {
-            this.getBotonCancion().getStyle().set("background-image",
-                    "url('https://m.media-amazon.com/images/I/214zIZyXvVL._AC_SY450_.jpg')");
+            this.getBotonCancion().setSrc("https://m.media-amazon.com/images/I/214zIZyXvVL._AC_SY450_.jpg");
         }
     }
 

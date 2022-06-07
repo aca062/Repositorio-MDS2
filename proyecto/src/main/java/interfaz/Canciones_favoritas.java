@@ -3,6 +3,8 @@ package interfaz;
 import java.util.Vector;
 
 import com.example.test.ControladorVistas;
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
 
 import bbdd.BDPrincipal;
 import bbdd.iActor_comun;
@@ -18,9 +20,20 @@ public class Canciones_favoritas extends VistaCanciones_favoritas{
 
 	public Canciones_favoritas() {
 		Inicializar();
+        this.getVerMas().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                VerMas();
+            }
+        });
 	}
 
-	void Inicializar() {
+	protected void VerMas() {
+        // TODO Auto-generated method stub
+
+    }
+
+    void Inicializar() {
 	    int i = 0;
 
         for (orm.bbdd.Cancion cancion : bd.cargarCancionesFavoritas(ControladorVistas.getUsuario().getId())) {

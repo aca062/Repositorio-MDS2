@@ -17,20 +17,10 @@ public class Actor_comun extends VistaActor_comun {
     public Contacto _contacto;
     public Listas_de_reproduccion_recomendadas _listasDeReproduccionRecomendadas;
 
-    /*
-     * private Button _cerrarSesionB; private Button _verPerfilB; private TextField
-     * _buscadorTF; private Button _buscadorB; private Label _estadisticasL; private
-     * Button _estadisticasVerTodosB; private Label _estadisticasArtistaNombreL;
-     * private Label _estadisticasArtistaTituloL; private Image
-     * _estadisticasArtistaImagen; private Label _estadisticasCancionNombreL;
-     * private Label _estadisticasCancionTituloL; private Image
-     * _estadisticasCancionImagen; private Label _contactoTituloL; private Button
-     * _contactoCorreoB; private Label _contactoTlfnL; private Button _logoB;
-     */
-
     public Actor_comun() {
         Inicializar();
         HorizontalLayout layoutCancionesFav = this.getLayoutCancionesFav();
+        VerticalLayout layoutCancionesRecomendadas = this.getLayoutPrueba().as(VerticalLayout.class);
         this.getBotonVerMasEstadisticas().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
@@ -38,21 +28,32 @@ public class Actor_comun extends VistaActor_comun {
             }
         });
 
-        /*this.getLayoutPrincipal().as(VerticalLayout.class).addClickListener(new ComponentEventListener() {
+        layoutCancionesFav.addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                if (ControladorVistas.getUsuario().cancion_favorita.size() > layoutCancionesFav.getChildren().toArray().length) {
-                    layoutCancionesFav.removeAll();
-                    _cancionesFavoritas = new Canciones_favoritas();
-                    layoutCancionesFav.add(_cancionesFavoritas);
-                    System.out.println("Cambia");
-                }else {
-                    System.out.println("no cambia");
-                }
+                _cancionesFavoritas = new Canciones_favoritas();
+                layoutCancionesFav.removeAll();
+                layoutCancionesFav.add(_cancionesFavoritas);
+            }
+        });
 
+        /*layoutCancionesRecomendadas.addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                layoutCancionesFav.removeAll();
+                _cancionesFavoritas = new Canciones_favoritas();
+                layoutCancionesFav.add(_cancionesFavoritas);
             }
         });*/
 
+        /*layoutCancionesFav.addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                layoutCancionesFav.removeAll();
+                _cancionesFavoritas = new Canciones_favoritas();
+                layoutCancionesFav.add(_cancionesFavoritas);
+            }
+        });*/
     }
 
     protected void Estadisticas() {

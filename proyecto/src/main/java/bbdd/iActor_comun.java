@@ -1,6 +1,5 @@
 package bbdd;
 
-import orm.bbdd.Actor_Comun;
 import orm.bbdd.Album;
 import orm.bbdd.Artista;
 import orm.bbdd.Cancion;
@@ -11,11 +10,11 @@ import orm.bbdd.Usuario_Registrado;
 
 public interface iActor_comun {
 
-	public void marcarFavorito(Cancion cancion, Actor_Comun actor_Comun);
+	public void marcarFavorito(int cancion, int actor_Comun);
 
 	public void anadir(String aNombre);
 
-	public void desmarcarFavorita(Cancion cancion, Actor_Comun actor_Comun);
+	public void desmarcarFavorita(int cancion, int actor_Comun);
 
 	public void crearLista(String aNombre);
 
@@ -54,4 +53,6 @@ public interface iActor_comun {
 	public Cancion[] cargarCancionesFavoritas(int aIdUsuario);
 
 	public Cancion[] cargarUltimasCancionesReproducidas(int aIdUsuario);
+
+    void setUltimaCancionReproducida(int aIdUsuario, int aIdCancion);
 }
