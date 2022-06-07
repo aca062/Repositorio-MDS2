@@ -4,6 +4,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-upload/src/vaadin-upload.js';
 
 @customElement('vista-editar_album')
 export class VistaEditar_album extends LitElement {
@@ -23,8 +24,9 @@ export class VistaEditar_album extends LitElement {
  <vaadin-vertical-layout style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); height: 630px;" id="layoutAlbumes">
   <vaadin-horizontal-layout theme="spacing" id="layoutAlbum" style="width: 100%; height: 20%; justify-content: flex-start; align-self: center;">
    <img id="imgAlbum" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
-   <vaadin-button id="cambiarImagen" style="flex-grow: 0; align-self: center;">
-     Cambiar imagen 
+   <vaadin-upload id="upload"></vaadin-upload>
+   <vaadin-button id="cambiarImagen" style="flex-grow: 0; align-self: center;" dir="eliminarFoto">
+    Eliminar foto
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field label="Nombre artista " style="width: 80%; align-self: flex-start;" id="nombreArtista" value="Bad bunny" has-value></vaadin-text-field>

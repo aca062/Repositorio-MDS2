@@ -11,6 +11,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.upload.Upload;
 
 /**
  * A Designer generated component for the vista-editar_album template.
@@ -50,6 +51,8 @@ public class VistaEditar_album extends LitTemplate {
 	private Button cancelar;
     @Id("listaCanciones")
     private TextArea listaCanciones;
+	@Id("upload")
+	private Upload upload;
 
 	/**
      * Creates a new VistaEditar_album.

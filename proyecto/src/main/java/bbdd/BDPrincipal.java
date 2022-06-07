@@ -137,7 +137,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             orm.bbdd.Cancion[] aCanciones, int aIdAlbum) {
         try {
             _bd_albumes = new BD_Albumes();
-            _bd_albumes.editarAlbum(aTitulo, aFechaEdicion, aImagen, aIdAlbum);
+            _bd_albumes.editarAlbum(aTitulo, aFechaEdicion, aImagen, aNombreArtista, aCanciones, aIdAlbum);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
