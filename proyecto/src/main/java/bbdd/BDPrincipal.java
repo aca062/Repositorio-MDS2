@@ -156,15 +156,14 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     @Override
     public int editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes,
             String aArcMultimedia, int aEstilos, String aTituloAlbum, int aIdCancion) {
-        int comprobacion = -1;
+    	_bd_canciones = new BD_Canciones();
+    	int comprobacion = -1;
         try {
-            _bd_canciones = new BD_Canciones();
-            comprobacion = _bd_canciones.editarCancion(aTitulo, aCompositores, aProductores, aInterpretes,
-                    aArcMultimedia, aIdCancion);
+            _bd_canciones.editarCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aEstilos, aTituloAlbum, aIdCancion);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
-        return comprobacion;
+        return 1;
     }
 
     @Override

@@ -1,16 +1,25 @@
 package interfaz;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Vector;
+
+import org.apache.commons.io.FilenameUtils;
 
 import com.example.test.ControladorVistas;
 //import com.example.test.WindowController;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 
 import bbdd.BDPrincipal;
 import bbdd.iAdministrador;
 import orm.bbdd.Cancion;
+import orm.bbdd.CancionDAO;
 import orm.bbdd.Estilo;
 import vistas.VistaEditar_cancion;
 
@@ -34,7 +43,11 @@ public class Editar_cancion extends VistaEditar_cancion {
     public Editar_cancion(Cancion cancion) {
 
         Inicializar(cancion);
-
+        
+        MemoryBuffer memoryBufferCancion = new MemoryBuffer();
+        //Upload uploadCancion = this.getVaadinUpload();
+        //uploadCancion.setReceiver(memoryBufferCancion);
+        
         cargarEstilos();
 
         List<String> nombreEstilos = new Vector<String>(estilos.length);
@@ -74,8 +87,8 @@ public class Editar_cancion extends VistaEditar_cancion {
             ControladorVistas.PopUpBasico("No se ha introducido ningún artista");
         }else if (estiloSeleccionado == null) {
             ControladorVistas.PopUpBasico("No se ha introducido ningún estilo");
-        }else if (pathSong == null || pathSong.equals("")) {
-            ControladorVistas.PopUpBasico("No se ha añadido ninguna canción");
+            /*}else if (pathSong == null || pathSong.equals("")) {
+            ControladorVistas.PopUpBasico("No se ha añadido ninguna canción");*/
         }else {
             int comprobacion = adm.editarCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","),
                     this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","),
@@ -103,9 +116,30 @@ public class Editar_cancion extends VistaEditar_cancion {
         ControladorVistas.CambiarContenido(_buscarElemento);
     }
 
-    public void Anadir_archivo_multimedia() {
-        throw new UnsupportedOperationException();
-    }
+    /*public void Anadir_archivo_multimedia() {
+    	int id = CancionDAO.listCancionByQuery("true=true", "titulo").length + 1;
+        InputStream is = memoryBuffer.getInputStream();
+        String nameCancion = id + "." + FilenameUtils.getExtension(memoryBuffer.getFileName());
+        String UrlCancion = "./src/main/resources/META-INF/resources/songs/" + nameCancion;
+        try {
+            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/songs/" + nameCancion);
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            // read from is to buffer
+            while ((bytesRead = is.read(buffer)) != -1) {
+                os.write(buffer, 0, bytesRead);
+            }
+            is.close();
+            os.flush();
+            os.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        this.getVaadinUpload().setVisible(false);
+        this.getBotonEliminar().setVisible(true);
+        return UrlCancion;
+    }*/
 
     public void Comprobar_formato() {
         throw new UnsupportedOperationException();

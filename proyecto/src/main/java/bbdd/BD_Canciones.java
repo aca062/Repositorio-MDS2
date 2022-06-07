@@ -67,9 +67,39 @@ public class BD_Canciones {
         }
     }
 
-    public int editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes,
-            String aArcMultimedia, int aIdCancion) throws PersistentException {
-        throw new UnsupportedOperationException();
+    public void editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes,
+            String aArcMultimedia, int aEstilos, String aTituloAlbum, int aIdCancion) throws PersistentException {
+    	PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+    	try {
+    		Set<String> artistas = new TreeSet<String>();
+            for (String artista : artistas) {
+                artistas.add(artista);
+            }
+    		Cancion cancion = CancionDAO.loadCancionByORMID(aIdCancion);
+    		cancion.setTitulo(aTitulo);
+            cancion.setProductores(aProductores);
+            cancion.setInterpretes(aInterpretes);
+            cancion.setCompositores(aCompositores);
+            cancion.setArchivoMultimedia(aArcMultimedia);
+            Estilo estilo = EstiloDAO.getEstiloByORMID(aEstilos);
+            cancion.setEstilo(estilo);
+            if (!aTituloAlbum.equals("") || aTituloAlbum != null) {
+                AlbumCriteria albC = new AlbumCriteria();
+                albC.titulo.like(aTituloAlbum);
+                Album alb = AlbumDAO.loadAlbumByCriteria(albC);
+                cancion.album.add(alb);
+            }
+            for (String artista : aInterpretes) {
+                ArtistaCriteria artC = new ArtistaCriteria();
+                artC.nick.like(artista.trim());
+                Artista art = ArtistaDAO.loadArtistaByCriteria(artC);
+                cancion.artistas.add(art);
+            }
+    		CancionDAO.save(cancion);
+    		t.commit();
+    	} catch (PersistentException e) {
+    		e.printStackTrace();
+    	}
     }
 
     public void marcarFavorito(Cancion cancion, Actor_Comun usuario) throws PersistentException {
