@@ -18,7 +18,7 @@ export class VistaLista_de_reproduccion_admin extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
  <vaadin-horizontal-layout theme="spacing" id="layoutLista" style="align-items: center; height: 200px;">
-  <img id="imgLista" style="width: 150px; height: 150px; object-fit:contain" src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_es_large.jpg">
+  <img id="imgLista" style="width: 150px; height: 150px; object-fit:contain">
   <h4 id="h4Nombre">Top 50 España</h4>
   <vaadin-button id="editar">
     Editar 

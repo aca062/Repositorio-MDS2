@@ -89,10 +89,9 @@ public class Cancion_admin extends VistaCancion_admin {
         this.getH4Titulo().setText(cancion.getTitulo());
         this.setId(Integer.toString(cancion.getIdCancion()));
         if (cancion.getRutaImagen() == null || cancion.getRutaImagen().equals("")) {
-            this.setImgCancion("https://www.grupoalvic.com/wp-content/plugins/productos-alvic/productos/muestras/ZMD-Gris-nube-con-efecto.jpg");
+            this.getImgCancion().setSrc("https://www.grupoalvic.com/wp-content/plugins/productos-alvic/productos/muestras/ZMD-Gris-nube-con-efecto.jpg");
         } else {
-            String foto = "img/canciones/" + cancion.getRutaImagen().split("/")[cancion.getRutaImagen().split("/").length - 1];
-            this.setImgCancion(foto);
+            this.getImgCancion().setSrc(cancion.getRutaImagen());
         }
     }
 

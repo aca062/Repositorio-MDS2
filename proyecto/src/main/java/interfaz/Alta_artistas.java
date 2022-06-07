@@ -170,7 +170,7 @@ public class Alta_artistas extends VistaAlta_artistas {
     public String Anadir_imagen(MemoryBuffer memoryBuffer) throws PersistentException {
         int id = Actor_ComunDAO.listActor_ComunByQuery("true=true", "nick").length + 1;
         String nameImagen = id + "." + FilenameUtils.getExtension(memoryBuffer.getFileName());
-        String UrlImagen = "img/" + nameImagen;
+        String UrlImagen = "img/users/" + nameImagen;
         /*
          * File file = new File(UrlImagen); if (file.exists()) { file.delete(); }
          */

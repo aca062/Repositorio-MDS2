@@ -76,14 +76,15 @@ public class BD_Artistas {
              * BD_Usuarios_Registrados usuarios = new BD_Usuarios_Registrados(); int id =
              * usuarios._contiene_usuario_registrados.size() + 1; usuario.setId(id);
              */
-            Acceso_Dato accesoD = new Acceso_Dato();
+            Acceso_Dato accesoD = artista.getAcceso_Dato();
             accesoD.setContrasena(aContrasena);
             accesoD.setEmail(aEmail);
             accesoD.setNumIntentos(0);
             accesoD.setTipoUsuario("artista");
             accesoD.setFechaBloqueo("");
             Acceso_DatoDAO.save(accesoD);
-            Estadistica estadistica = new Estadistica();
+
+            Estadistica estadistica = artista.getEstadistica();
             estadistica.setTiempoAnual(0);
             double[] tiempoSemana = new double[7];
             estadistica.setTiempoSemana(tiempoSemana);

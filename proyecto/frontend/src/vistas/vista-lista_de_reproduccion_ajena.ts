@@ -18,7 +18,7 @@ export class VistaLista_de_reproduccion_ajena extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 200px; justify-content: center;" id="layoutPrincipal">
  <vaadin-horizontal-layout theme="spacing" id="layoutListaAjena">
-  <img id="imgListaAjena" style="width: 150px; height: 150px;" src="https://i.scdn.co/image/ab67706f0000000362a2b2b0d95d902b307837d2">
+  <img id="imgListaAjena" style="width: 150px; height: 150px;">
   <vaadin-button id="botonNombre" style="align-self: center;">
     This is Juice WRLD 
   </vaadin-button>

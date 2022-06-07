@@ -97,7 +97,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 
     @Override
     public int altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes,
-            String aArcMultimedia, int aIdEstilos, String aTituloAlbum) {
+            String aArcMultimedia, int aIdEstilos, String aTituloAlbum, String imagen) {
         try {
             _bd_canciones = new BD_Canciones();
 
@@ -125,7 +125,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
                 }
             }
             _bd_canciones.altaCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aIdEstilos,
-                    aTituloAlbum);
+                    aTituloAlbum, imagen);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
@@ -133,14 +133,15 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista,
-            interfaz.Cancion[] aCanciones, int aIdAlbum) {
+    public int editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista,
+            orm.bbdd.Cancion[] aCanciones, int aIdAlbum) {
         try {
             _bd_albumes = new BD_Albumes();
             _bd_albumes.editarAlbum(aTitulo, aFechaEdicion, aImagen, aIdAlbum);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return 1;
     }
 
     @Override

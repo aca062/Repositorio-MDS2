@@ -206,7 +206,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         }else {
             int comprobacion = adm.altaCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","),
                     this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","),
-                    pathSong, estiloSeleccionado.getIdEstilo(), this.getTituloAlbum().getValue());
+                    pathSong, estiloSeleccionado.getIdEstilo(), this.getTituloAlbum().getValue(), pathFoto);
             if (comprobacion == 1) {
                 ControladorVistas.PopUpBasico("Canción añadida con éxito");
                 _darDeAlta = new Dar_de_alta();
@@ -237,7 +237,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         InputStream is = memoryBuffer.getInputStream();
         try {
 
-            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/img/canciones/" + nameImagen);
+            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/" + UrlImagen);
             byte[] buffer = new byte[1024];
             int bytesRead;
             // read from is to buffer
@@ -249,13 +249,19 @@ public class Alta_canciones extends VistaAlta_canciones {
             os.flush();
             os.close();
             this.getImg().setMaxWidth("300px");
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
             this.getImg().setSrc(UrlImagen);
             this.getVaadinUpload1().setVisible(false);
             this.getVaadinButton().setVisible(true);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "./src/main/resources/META-INF/resources/" + UrlImagen;
+        return UrlImagen;
     }
 
     public String Anadir_archivo_multimedia(MemoryBuffer memoryBuffer) throws PersistentException {
@@ -264,7 +270,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         String nameCancion = id + "." + FilenameUtils.getExtension(memoryBuffer.getFileName());
         String UrlCancion = "./src/main/resources/META-INF/resources/songs/" + nameCancion;
         try {
-            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/songs/" + nameCancion);
+            OutputStream os = new FileOutputStream(UrlCancion);
             byte[] buffer = new byte[1024];
             int bytesRead;
             // read from is to buffer
@@ -280,7 +286,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         }
         this.getVaadinUpload().setVisible(false);
         this.getBotonEliminar().setVisible(true);
-        return UrlCancion;
+        return "songs/" + nameCancion;
     }
 
     public void Comprobar_formato() {

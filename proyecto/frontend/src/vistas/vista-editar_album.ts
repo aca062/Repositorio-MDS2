@@ -1,11 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@vaadin/vaadin-select/src/vaadin-select.js';
-import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
-import '@vaadin/vaadin-item/src/vaadin-item.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 @customElement('vista-editar_album')
 export class VistaEditar_album extends LitElement {
@@ -32,53 +30,13 @@ export class VistaEditar_album extends LitElement {
   <vaadin-text-field label="Nombre artista " style="width: 80%; align-self: flex-start;" id="nombreArtista" value="Bad bunny" has-value></vaadin-text-field>
   <vaadin-text-field label="Fecha edición" style="width: 80%; align-self: flex-start;" id="fechaEdición" value="27/11/2020" has-value></vaadin-text-field>
   <vaadin-text-field label="Titulo" id="titulo" style="width: 80%; align-self: flex-start;" value="El último tour del mundo" has-value></vaadin-text-field>
-  <vaadin-select value="Item one" id="buscadorCanciones" style="width: 80%;">
-   <template>
-    <vaadin-list-box id="vaadinListBox1" selected="0">
-     <vaadin-item selected id="vaadinItem3">
-       ListaCanciones 
-     </vaadin-item>
-     <vaadin-item id="vaadinItem4">
-       Item two 
-     </vaadin-item>
-     <vaadin-item id="vaadinItem5">
-       Item three 
-     </vaadin-item>
-    </vaadin-list-box>
-   </template>
-  </vaadin-select>
-  <vaadin-list-box id="listaCanciones" style="width: 80%;">
-   <vaadin-horizontal-layout style="justify-content: space-between;" id="layoutCancion">
-    <vaadin-item id="nombreCancion">
-      120 
-    </vaadin-item>
-    <vaadin-button id="eliminar">
-      Eliminar 
-    </vaadin-button>
-   </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="justify-content: space-between;" id="layoutCancion1">
-    <vaadin-item id="nombreCancion1">
-      Dakiti 
-    </vaadin-item>
-    <vaadin-button id="eliminar1">
-      Eliminar 
-    </vaadin-button>
-   </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="justify-content: space-between;" id="layoutCancion2">
-    <vaadin-item id="nombreCancion2">
-      Booker T 
-    </vaadin-item>
-    <vaadin-button id="eliminar2">
-      Eliminar 
-    </vaadin-button>
-   </vaadin-horizontal-layout>
-  </vaadin-list-box>
+  <vaadin-text-area id="listaCanciones" style="width: 80%;" label="Canciones"></vaadin-text-area>
   <vaadin-horizontal-layout theme="spacing" id="layoutBotones" style="align-self: flex-end; margin-top: var(--lumo-space-s);">
    <vaadin-button id="confirmar">
-    Confirmar
+     Confirmar 
    </vaadin-button>
    <vaadin-button id="cancelar">
-    Cancelar
+     Cancelar 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

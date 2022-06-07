@@ -29,7 +29,7 @@ public class BD_Canciones {
     public Vector<Cancion> _contiene_canciones = new Vector<Cancion>();
 
     public void altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes,
-            String aArcMultimedia, int aIdEstilos, String aTituloAlbum) throws PersistentException {
+            String aArcMultimedia, int aIdEstilos, String aTituloAlbum, String imagen) throws PersistentException {
 
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         try {
@@ -44,6 +44,7 @@ public class BD_Canciones {
             cancion.setCompositores(aCompositores);
             cancion.setArchivoMultimedia(aArcMultimedia);
             cancion.setNumReproducciones(0);
+            cancion.setRutaImagen(imagen);
             Estilo estilo = EstiloDAO.getEstiloByORMID(aIdEstilos);
             cancion.setEstilo(estilo);
             if (!aTituloAlbum.equals("") || aTituloAlbum != null) {
@@ -69,14 +70,14 @@ public class BD_Canciones {
 
     public void editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes,
             String aArcMultimedia, int aEstilos, String aTituloAlbum, int aIdCancion) throws PersistentException {
-    	PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
-    	try {
-    		Set<String> artistas = new TreeSet<String>();
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            Set<String> artistas = new TreeSet<String>();
             for (String artista : artistas) {
                 artistas.add(artista);
             }
-    		Cancion cancion = CancionDAO.loadCancionByORMID(aIdCancion);
-    		cancion.setTitulo(aTitulo);
+            Cancion cancion = CancionDAO.loadCancionByORMID(aIdCancion);
+            cancion.setTitulo(aTitulo);
             cancion.setProductores(aProductores);
             cancion.setInterpretes(aInterpretes);
             cancion.setCompositores(aCompositores);
@@ -95,11 +96,11 @@ public class BD_Canciones {
                 Artista art = ArtistaDAO.loadArtistaByCriteria(artC);
                 cancion.artistas.add(art);
             }
-    		CancionDAO.save(cancion);
-    		t.commit();
-    	} catch (PersistentException e) {
-    		e.printStackTrace();
-    	}
+            CancionDAO.save(cancion);
+            t.commit();
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
     }
 
     public void marcarFavorito(Cancion cancion, Actor_Comun usuario) throws PersistentException {
@@ -249,5 +250,18 @@ public class BD_Canciones {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int aumentarRep(int idCancion) throws PersistentException {
+        int numeroAnterior = CancionDAO.getCancionByORMID(idCancion).getNumReproducciones();
+        try {
+            PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+            CancionDAO.getCancionByORMID(idCancion).setNumReproducciones(numeroAnterior + 1);
+            t.commit();
+            return numeroAnterior + 1;
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return numeroAnterior;
     }
 }

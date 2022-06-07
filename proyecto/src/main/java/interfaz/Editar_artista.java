@@ -50,14 +50,14 @@ public class Editar_artista extends VistaEditar_artista{
 	public Editar_artista(Artista artista) throws PersistentException{
 
 		Inicializar(artista);
-		
+
 		Integer id = Actor_ComunDAO.listActor_ComunByQuery("true=true", "nick").length + 1;
 		this.getEliminarFoto().setVisible(false);
 		MemoryBuffer memoryBuffer = new MemoryBuffer();
         Upload upload = this.getUpload();
         upload.setReceiver(memoryBuffer);
         Image foto = this.getImgArtista();
-        
+
         cargarEstilos();
 
         List<String> nombreEstilos = new Vector<String>(estilos.length);
@@ -66,7 +66,7 @@ public class Editar_artista extends VistaEditar_artista{
         	nombreEstilos.add(estilo.getNombre());
         }
         this.getDropdown().setItems(nombreEstilos);
-        
+
 		this.getConfirmar().addClickListener(new ComponentEventListener(){
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -80,7 +80,7 @@ public class Editar_artista extends VistaEditar_artista{
 				Cancelar();
 			}
 		});
-		
+
 		this.getEliminarFoto().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
@@ -102,7 +102,7 @@ public class Editar_artista extends VistaEditar_artista{
                 pathFoto = null;
             }
         });
-		
+
 		upload.addFinishedListener(e -> {
             try {
                 String UrlCarpeta = "./src/main/webapp/img/";
@@ -197,11 +197,11 @@ public class Editar_artista extends VistaEditar_artista{
         }
         return "./src/main/webapp/" + UrlImagen;
     }
-	
+
 	public void cargarEstilos() {
     	estilos = adm.cargarEstilo();
     }
-	
+
 	void Inicializar(Artista artista) {
 		this.id = artista.getId();
 		this.getContraseña().setValue(artista.getContrasena());

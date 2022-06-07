@@ -1,11 +1,15 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.H6;
 
 import bbdd.BDPrincipal;
+import bbdd.BD_Canciones;
 import bbdd.iActor_comun;
 import vistas.VistaCancion;
 
@@ -23,10 +27,13 @@ public class Cancion extends VistaCancion {
     orm.bbdd.Cancion cancion;
     iActor_comun bd = new BDPrincipal();
     boolean favorita = false;
+    BD_Canciones bdCanciones = new BD_Canciones();
 
     public Cancion() {
         Inicializar();
         Button meGusta = this.getMeGusta();
+        H6 numRep = this.getNumeroRep();
+
         this.getBotonNombre().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
@@ -37,9 +44,13 @@ public class Cancion extends VistaCancion {
         this.getBotonCancion().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                String nombreArchivo = cancion.getArchivoMultimedia().split("/")[cancion.getArchivoMultimedia().split("/").length - 1];
-                String url = "songs/" + nombreArchivo;
-                ControladorVistas.GetReproductor().setSource(url);
+                ControladorVistas.GetReproductor().setSource(cancion.getArchivoMultimedia());
+                try {
+                    numRep.setText(Integer.toString(bdCanciones.aumentarRep(cancion.getIdCancion())));
+                } catch (PersistentException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -78,9 +89,9 @@ public class Cancion extends VistaCancion {
         }
         this.getBotonNombre().setText(cancion.getTitulo());
         this.setId(Integer.toString(cancion.getIdCancion()));
+        this.getNumeroRep().setText(Integer.toString(cancion.getNumReproducciones()));
         if (cancion.getRutaImagen() != null && !cancion.getRutaImagen().equals("")) {
-            String foto = "img/canciones/" + cancion.getRutaImagen().split("/")[cancion.getRutaImagen().split("/").length - 1];
-            this.getBotonCancion().getStyle().set("background-image", foto);
+            this.getBotonCancion().getStyle().set("background-image", cancion.getRutaImagen());
         } else {
             this.getBotonCancion().getStyle().set("background-image",
                     "url('https://m.media-amazon.com/images/I/214zIZyXvVL._AC_SY450_.jpg')");

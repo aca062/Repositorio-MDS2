@@ -68,9 +68,9 @@ public class Album_admin extends VistaAlbum_admin {
     }
 
     public void EditarAlbum() {
-        VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-        v1.removeAll();
-        v1.add(_editarAlbum = new Editar_album(album));
+        _editarAlbum = new Editar_album(album);
+        _editarAlbum.getStyle().set("width", "100%");
+        ControladorVistas.CambiarContenido(_editarAlbum);
     }
 
     void ConfirmarEliminacion(String nombre, Dialog popup) {
@@ -99,8 +99,7 @@ public class Album_admin extends VistaAlbum_admin {
             this.setImgAlbum(
                     "https://www.grupoalvic.com/wp-content/plugins/productos-alvic/productos/muestras/ZMD-Gris-nube-con-efecto.jpg");
         } else {
-            String foto = "img/albumes/" + album.getImagen().split("/")[album.getImagen().split("/").length - 1];
-            this.setImgAlbum(foto);
+            this.setImgAlbum(album.getImagen());
         }
     }
 }

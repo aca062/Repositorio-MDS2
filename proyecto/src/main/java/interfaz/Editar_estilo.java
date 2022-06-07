@@ -55,6 +55,7 @@ public class Editar_estilo extends VistaEditar_estilo{
 
 	void Inicializar(Estilo estilo) {
 		this.id = estilo.getIdEstilo();
+		this.getNombreDelEstilo().setValue(estilo.getNombre());
 		this.getConfirmar().setVisible(true);
 		this.getCancelar().setVisible(true);
 		this.getNombreDelEstilo().setVisible(true);

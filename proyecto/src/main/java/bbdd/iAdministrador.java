@@ -15,9 +15,9 @@ public interface iAdministrador extends iActor_comun {
 
 	public void altaEstilo(String aNombre, int aIdEstilo);
 
-	public int altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia,int aIdEstilos, String aTituloAlbum);
+	public int altaCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia,int aIdEstilos, String aTituloAlbum, String imagen);
 
-	public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista, Cancion[] aCanciones, int aIdAlbum);
+	public int editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista, orm.bbdd.Cancion[] aCanciones, int aIdAlbum);
 
 	public int editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista, int aIdEstilo);
 
