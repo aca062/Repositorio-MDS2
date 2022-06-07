@@ -67,6 +67,10 @@ public class VistaAlta_canciones extends LitTemplate {
     private Upload vaadinUpload1;
     @Id("vaadinButton")
     private Button vaadinButton;
+    @Id("h5")
+    private H5 h5;
+    @Id("vaadinTextField")
+    private TextField vaadinTextField;
 	/**
      * Creates a new VistaAlta_canciones.
      */
@@ -232,6 +236,14 @@ public class VistaAlta_canciones extends LitTemplate {
 
     public void setVaadinButton(Button vaadinButton) {
         this.vaadinButton = vaadinButton;
+    }
+
+    public TextField getVaadinTextField() {
+        return vaadinTextField;
+    }
+
+    public void setVaadinTextField(TextField vaadinTextField) {
+        this.vaadinTextField = vaadinTextField;
     }
 
 }

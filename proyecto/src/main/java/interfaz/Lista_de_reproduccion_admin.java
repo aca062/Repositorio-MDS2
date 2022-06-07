@@ -6,9 +6,10 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iAdministrador;
 import orm.bbdd.Lista_de_reproduccion;
 import vistas.VistaLista_de_reproduccion_admin;
 
@@ -21,9 +22,11 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 	public Listas_de_reproduccion_busqueda_admin _listasDeReproduccionBusquedaAdmin;
 	public Modificar_lista _modificarLista;
 	orm.bbdd.Lista_de_reproduccion lista;
+    private iAdministrador adm = new BDPrincipal();
 
 	public Lista_de_reproduccion_admin() {
         Inicializar();
+        this.getImgLista().setSrc("https://media.tarkett-image.com/large/TH_25094225_25187225_001.jpg");
         this.getEditar().addClickListener(new ComponentEventListener(){
             @Override
             public void onComponentEvent(ComponentEvent event) {
@@ -43,26 +46,6 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 
     }
 
-    public Lista_de_reproduccion_admin(Lista_de_reproduccion lista) {
-		Inicializar();
-		this.setH4Nombre(new H4(lista.getNombre()));
-		this.getImgLista().setSrc("https://media.tarkett-image.com/large/TH_25094225_25187225_001.jpg");
-		this.setIdLista(lista.getIdLista());
-
-		this.getEditar().addClickListener(new ComponentEventListener(){
-			@Override
-            public void onComponentEvent(ComponentEvent event) {
-				ModificarLista(lista.getIdLista());
-			}
-		});
-		this.getEliminar().addClickListener(new ComponentEventListener(){
-			@Override
-            public void onComponentEvent(ComponentEvent event) {
-				Eliminar();
-			}
-		});
-	}
-
 	public void Eliminar() {
 		Dialog popup = new Dialog();
 		String nombreLista = this.getH4Nombre().getText().toString();
@@ -78,7 +61,7 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
         confirmar.addClickListener(new ComponentEventListener(){
 			@Override
             public void onComponentEvent(ComponentEvent event) {
-				ConfirmarEliminacion(nombreLista, popup);
+				ConfirmarEliminacion(popup);
 			}
 		});
         cancelar.addClickListener(new ComponentEventListener(){
@@ -96,9 +79,15 @@ public class Lista_de_reproduccion_admin extends VistaLista_de_reproduccion_admi
 		ControladorVistas.CambiarContenido(_modificarLista);
 	}
 
-	void ConfirmarEliminacion(String nombre, Dialog popup) {
-		//Comprobar si hay canciones con ese estilo
-		popup.close();
+	void ConfirmarEliminacion(Dialog popup) {
+        boolean correcto = adm.eliminarLista(lista.getIdLista());
+        popup.close();
+        if (correcto) {
+            ControladorVistas.PopUpBasico("Lista de reproducción eliminada con éxito");
+        } else {
+            ControladorVistas.PopUpBasico("Error al eliminar la lista de reproducción");
+        }
+        ControladorVistas.CambiarContenido(new Buscar_administrador());
 	}
 
 	void Inicializar() {

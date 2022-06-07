@@ -8,6 +8,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iAdministrador;
 import orm.bbdd.Usuario_Registrado;
 import vistas.VistaUsuario_admin;
 
@@ -18,6 +20,7 @@ public class Usuario_admin extends VistaUsuario_admin{
 	private Button _eliminarB;*/
 	public Usuarios_busqueda_admin _usuariosBusquedaAdmin;
 	public Editar_usuario _editarUsuario;
+    private iAdministrador adm = new BDPrincipal();
 	orm.bbdd.Usuario_Registrado usuario;
 
 	public Usuario_admin() {
@@ -58,7 +61,7 @@ public class Usuario_admin extends VistaUsuario_admin{
         confirmar.addClickListener(new ComponentEventListener(){
 			@Override
             public void onComponentEvent(ComponentEvent event) {
-				ConfirmarEliminacion(nombreUsuario, popup);
+				ConfirmarEliminacion(popup);
 			}
 		});
         cancelar.addClickListener(new ComponentEventListener(){
@@ -70,9 +73,15 @@ public class Usuario_admin extends VistaUsuario_admin{
         ControladorVistas.PopUpFormularioEditar(popup);
 	}
 
-	void ConfirmarEliminacion(String nombre, Dialog popup) {
-		//Comprobar si hay canciones con ese estilo
-		popup.close();
+	void ConfirmarEliminacion(Dialog popup) {
+        boolean correcto = adm.eliminarUsuario(usuario.getId());
+        popup.close();
+        if (correcto) {
+            ControladorVistas.PopUpBasico("Usuario eliminado con éxito");
+        } else {
+            ControladorVistas.PopUpBasico("Error al eliminar el usuario");
+        }
+        ControladorVistas.CambiarContenido(new Buscar_administrador());
 	}
 
 	public void EditarUsuario() {

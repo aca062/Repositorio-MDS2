@@ -22,15 +22,18 @@ public class BD_Listas_de_reproduccion {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminarLista(int aIdListas) throws PersistentException{
+	public boolean eliminarLista(int aIdListas) throws PersistentException{
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        boolean correcto = false;
 		try {
 			Lista_de_reproduccion lista = Lista_de_reproduccionDAO.getLista_de_reproduccionByORMID(aIdListas);
-			Lista_de_reproduccionDAO.delete(lista);
+			correcto = Lista_de_reproduccionDAO.deleteAndDissociate(lista);
 			t.commit();
 		} catch (Exception e) {
+		    correcto = false;
 			t.rollback();
 		}
+		return correcto;
 	}
 
 	public void crearLista(String aNombre) throws PersistentException{
@@ -53,19 +56,6 @@ public class BD_Listas_de_reproduccion {
 			t.rollback();
 		}
 		return listas;
-	}
-
-	public Lista_de_reproduccion[] cargarCancionesFavoritas(int aIdUsuario) throws PersistentException{
-		Lista_de_reproduccion[] lista = null;
-
-		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
-		try {
-
-			t.commit();
-		} catch(Exception e) {
-			t.rollback();
-		}
-		return lista;
 	}
 
     public Lista_de_reproduccion[] busquedaLista(String paramBusqueda) throws PersistentException {

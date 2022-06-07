@@ -8,6 +8,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iAdministrador;
 import orm.bbdd.Cancion;
 import vistas.VistaCancion_admin;
 
@@ -18,6 +20,7 @@ public class Cancion_admin extends VistaCancion_admin {
      */
     public Canciones_busqueda_admin _cancionesBusquedaAdmin;
     public Editar_cancion _editarCancion;
+    private iAdministrador adm = new BDPrincipal();
     orm.bbdd.Cancion cancion;
 
     public Cancion_admin() {
@@ -71,8 +74,14 @@ public class Cancion_admin extends VistaCancion_admin {
     }
 
     void ConfirmarEliminacion(String nombre, Dialog popup) {
-        // Comprobar si hay canciones con ese estilo
+        boolean correcto = adm.eliminarCancion(cancion.getIdCancion());
         popup.close();
+        if (correcto) {
+            ControladorVistas.PopUpBasico("Canción eliminada con éxito");
+        } else {
+            ControladorVistas.PopUpBasico("Error al eliminar la canción");
+        }
+        ControladorVistas.CambiarContenido(new Buscar_administrador());
     }
 
     void setCancion(Cancion cancion) {
@@ -82,7 +91,8 @@ public class Cancion_admin extends VistaCancion_admin {
         if (cancion.getRutaImagen() == null || cancion.getRutaImagen().equals("")) {
             this.setImgCancion("https://www.grupoalvic.com/wp-content/plugins/productos-alvic/productos/muestras/ZMD-Gris-nube-con-efecto.jpg");
         } else {
-            this.setImgCancion(cancion.getRutaImagen());
+            String foto = "img/canciones/" + cancion.getRutaImagen().split("/")[cancion.getRutaImagen().split("/").length - 1];
+            this.setImgCancion(foto);
         }
     }
 

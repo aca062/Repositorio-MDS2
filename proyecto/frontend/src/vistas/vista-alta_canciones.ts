@@ -25,7 +25,7 @@ export class VistaAlta_canciones extends LitElement {
   <img id="img" style="width: 300px; src: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png; height: 100%;">
   <vaadin-upload id="vaadinUpload1" style="height: 100%;"></vaadin-upload>
   <vaadin-button id="vaadinButton">
-   Eliminar la foto
+    Eliminar la foto 
   </vaadin-button>
   <vaadin-text-field label="Titulo" id="titulo" style="color: #000000; width: 60%;" value="120" has-value></vaadin-text-field>
   <vaadin-text-field label="Título álbum" id="títuloÁlbum" style="color: #000000; width: 60%;" value="El ultimo tour del mundo" has-value></vaadin-text-field>
@@ -33,6 +33,8 @@ export class VistaAlta_canciones extends LitElement {
   <vaadin-text-field label="Productores" id="productores" style="color: #000000; width: 60%;" value="Tainy" has-value></vaadin-text-field>
   <vaadin-text-field label="Interpretes" id="interpretes" style="color: #000000; width: 60%;" value="Bad Bunny" has-value></vaadin-text-field>
   <vaadin-combo-box id="dropdown"></vaadin-combo-box>
+  <h5 id="h5" style="margin-bottom: 0;">URL</h5>
+  <vaadin-text-field id="vaadinTextField" style="width: 100%;"></vaadin-text-field>
   <vaadin-horizontal-layout id="layoutAnadirCnacion" style="align-self: flex-start; align-items: center; margin-left: var(--lumo-space-xl); width: 80%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-m);">
    <h4 id="h4Fichero">Fichero multimedia</h4>
    <vaadin-upload id="vaadinUpload"></vaadin-upload>

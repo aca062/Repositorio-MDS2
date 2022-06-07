@@ -71,7 +71,7 @@ public class Alta_albumes extends VistaAlta_albumes {
 
         uploadFoto.addFinishedListener(e -> {
             try {
-                String UrlCarpeta = "./src/main/webapp/img/albumes";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/albumes";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -93,7 +93,7 @@ public class Alta_albumes extends VistaAlta_albumes {
         this.getEliminarFoto().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                String UrlCarpeta = "./src/main/webapp/img/albumes/";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/albumes/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -144,7 +144,7 @@ public class Alta_albumes extends VistaAlta_albumes {
                 }
                 for (String cancion : cancionesString) {
                     boolean correcto = false;
-                    Cancion i = CancionDAO.listCancionByQuery("titulo='" + cancion + "'", "titulo")[0];
+                    Cancion i = CancionDAO.listCancionByQuery("titulo='" + cancion.trim() + "'", "titulo")[0];
                     if (i == null) {
                         throw new Exception();
                     }
@@ -200,7 +200,7 @@ public class Alta_albumes extends VistaAlta_albumes {
         InputStream is = memoryBufferFoto.getInputStream();
         try {
 
-            OutputStream os = new FileOutputStream("./src/main/webapp/img/albumes/" + nameImagen);
+            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/img/albumes/" + nameImagen);
             byte[] buffer = new byte[1024];
             int bytesRead;
             // read from is to buffer
@@ -218,7 +218,7 @@ public class Alta_albumes extends VistaAlta_albumes {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "./src/main/webapp/" + UrlImagen;
+        return "./src/main/resources/META-INF/resources/" + UrlImagen;
     }
 
     void Inicializar() {

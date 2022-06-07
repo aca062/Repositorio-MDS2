@@ -5,13 +5,16 @@ import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import orm.bbdd.Actor_Comun;
+
 public class ControladorVistas {
 
 	private static VerticalLayout layoutContenido;
 	private static VerticalLayout layoutCabecera;
 	private static VerticalLayout layoutPie;
 	private static VerticalLayout layoutReproductor;
-	private static int usuario;
+	private static AudioPlayer reproductor;
+	private static Actor_Comun usuario;
 	private static String tipoUsuario;
 
 	protected static void SetCabecera(VerticalLayout layout) {
@@ -21,10 +24,15 @@ public class ControladorVistas {
 
 	protected static void SetReproductor(VerticalLayout layout) {
 		layoutReproductor = layout;
-		AudioPlayer reproductor = new AudioPlayer();
-		reproductor.getElement().getStyle().set("width", "100%");
-		layout.add(reproductor);
+		AudioPlayer rep = new AudioPlayer();
+		rep.getElement().getStyle().set("width", "100%");
+		reproductor = rep;
+		layout.add(rep);
 		layoutReproductor.getStyle().set("width", "100%");
+	}
+
+	public static AudioPlayer GetReproductor() {
+	    return reproductor;
 	}
 
 	protected static void SetContenido(VerticalLayout layout) {
@@ -52,7 +60,7 @@ public class ControladorVistas {
 		layoutPie.add(layout);
 	}
 
-	public static void CambiarUsuario(int user) {
+	public static void CambiarUsuario(Actor_Comun user) {
 		usuario = user;
 	}
 
@@ -60,7 +68,7 @@ public class ControladorVistas {
 	        tipoUsuario = user;
 	    }
 
-	public static int getUsuario() {
+	public static Actor_Comun getUsuario() {
 		return usuario;
 	}
 

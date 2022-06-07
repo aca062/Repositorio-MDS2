@@ -66,15 +66,18 @@ public class BD_Usuarios_Registrados {
 		}
 	}
 
-	public void eliminarUsuario(int aIdUsuario) throws PersistentException{
+	public boolean eliminarUsuario(int aIdUsuario) throws PersistentException{
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        boolean correcto = false;
 		try {
 			Usuario_Registrado usuario = Usuario_RegistradoDAO.getUsuario_RegistradoByORMID(aIdUsuario);
-			Usuario_RegistradoDAO.delete(usuario);
+			correcto = Usuario_RegistradoDAO.delete(usuario);
 			t.commit();
 		} catch (Exception e) {
+		    correcto = false;
 			t.rollback();
 		}
+		return correcto;
 	}
 
 	public void darDeBaja(String aEmail) throws PersistentException{

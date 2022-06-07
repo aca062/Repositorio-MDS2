@@ -37,17 +37,17 @@ public interface iAdministrador extends iActor_comun {
 
 	public void editarNumCancionesCibernauta(int aNumCanciones);
 
-	public void eliminarAlbum(int aIdAlbum);
+	public boolean eliminarAlbum(int aIdAlbum);
 
-	public void eliminarCancion(int aIdCancion);
+	public boolean eliminarCancion(int aIdCancion);
 
-	public void eliminarArtista(int aIdArtista);
+	public boolean eliminarArtista(int aIdArtista);
 
-	public void eliminarUsuario(int aIdUsuario);
+	public boolean eliminarUsuario(int aIdUsuario);
 
-	public void eliminarEstilo(int aIdEstilo);
+	public boolean eliminarEstilo(int aIdEstilo);
 
-	public void eliminarLista(int aIdListas);
+	public boolean eliminarLista(int aIdListas);
 
 	public int AltaAlbum(String aImagen, String aTitulo, Date aFechaEdicion, String aNombreArtista,
 			orm.bbdd.Cancion[] aCanciones);

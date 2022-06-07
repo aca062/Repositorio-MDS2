@@ -11,12 +11,12 @@ import orm.bbdd.EstiloDAO;
 import orm.bbdd.MDS2PersistentManager;
 
 public class BD_Estilos {
-	public BDPrincipal _bd_prin_estilos;
-	public Vector<Estilo> _contiene_estilos = new Vector<Estilo>();
+    public BDPrincipal _bd_prin_estilos;
+    public Vector<Estilo> _contiene_estilos = new Vector<Estilo>();
 
-	public int altaEstilo(String aNombre, int aIdEstilo) throws PersistentException{
-	    PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
-	    try {
+    public int altaEstilo(String aNombre, int aIdEstilo) throws PersistentException {
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
             Estilo estilo = EstiloDAO.createEstilo();
             estilo.setNombre(aNombre);
             if (!EstiloDAO.save(estilo)) {
@@ -29,11 +29,11 @@ public class BD_Estilos {
             e.printStackTrace();
         }
         return -1;
-	}
+    }
 
-	public int editarEstilo(String aNombre, int aIdEstilo) throws PersistentException{
-		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
-	    try {
+    public int editarEstilo(String aNombre, int aIdEstilo) throws PersistentException {
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
             Estilo estilo = EstiloDAO.loadEstiloByORMID(aIdEstilo);
             estilo.setNombre(aNombre);
             estilo.getIdEstilo();
@@ -47,42 +47,47 @@ public class BD_Estilos {
             e.printStackTrace();
         }
         return -1;
-	}
+    }
 
-	public void eliminarEstilo(int aIdEstilo) throws PersistentException{
-		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
-		try {
-			Estilo estilo = EstiloDAO.getEstiloByORMID(aIdEstilo);
-			EstiloDAO.delete(estilo);
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-		}
-	}
+    public boolean eliminarEstilo(int aIdEstilo) throws PersistentException {
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        boolean correcto = false;
+        try {
+            Estilo estilo = EstiloDAO.getEstiloByORMID(aIdEstilo);
+            if (estilo.artistas.size() == 0 && estilo.canciones.size() == 0) {
+                correcto = EstiloDAO.delete(estilo);
+                t.commit();
+            }
+        } catch (Exception e) {
+            correcto = false;
+            t.rollback();
+        }
+        return correcto;
+    }
 
-	public Estilo[] cargarEstilo() throws PersistentException {
-		Estilo[] estilos = null;
+    public Estilo[] cargarEstilo() throws PersistentException {
+        Estilo[] estilos = null;
 
-		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
-		try {
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
 
-			estilos = EstiloDAO.listEstiloByQuery("true=true", "Nombre");
+            estilos = EstiloDAO.listEstiloByQuery("true=true", "Nombre");
 
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-		}
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
 
-		return estilos;
-	}
+        return estilos;
+    }
 
-	public void altaCancion(String aEstilos) {
-		throw new UnsupportedOperationException();
-	}
+    public void altaCancion(String aEstilos) {
+        throw new UnsupportedOperationException();
+    }
 
-	public void editarCancion(String aEstilos) {
-		throw new UnsupportedOperationException();
-	}
+    public void editarCancion(String aEstilos) {
+        throw new UnsupportedOperationException();
+    }
 
     public Estilo[] busquedaEstilos(String paramBusqueda) throws PersistentException {
         Estilo[] estilos = new Estilo[0];

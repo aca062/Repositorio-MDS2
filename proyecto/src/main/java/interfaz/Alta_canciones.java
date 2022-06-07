@@ -87,7 +87,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         });
 
         uploadCancion.addFinishedListener(e -> {
-            String UrlCarpeta = "./src/main/webapp/songs/";
+            String UrlCarpeta = "./src/main/resources/META-INF/resources/songs/";
             File folder = new File(UrlCarpeta);
             File[] listOfFiles = folder.listFiles();
             for (File file : listOfFiles) {
@@ -108,7 +108,7 @@ public class Alta_canciones extends VistaAlta_canciones {
 
         uploadFoto.addFinishedListener(e -> {
             try {
-                String UrlCarpeta = "./src/main/webapp/img/canciones";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/canciones/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -130,7 +130,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         this.getVaadinButton().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                String UrlCarpeta = "./src/main/webapp/img/canciones/";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/canciones/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -152,7 +152,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         this.getBotonEliminar().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                String UrlCarpeta = "./src/main/webapp/songs/";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/songs/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -200,12 +200,13 @@ public class Alta_canciones extends VistaAlta_canciones {
             ControladorVistas.PopUpBasico("No se ha introducido ningún artista");
         }else if (estiloSeleccionado == null) {
             ControladorVistas.PopUpBasico("No se ha introducido ningún estilo");
+        //}else if (pathSong == null || pathSong.equals("")) {
         }else if (pathSong == null || pathSong.equals("")) {
             ControladorVistas.PopUpBasico("No se ha añadido ninguna canción");
         }else {
             int comprobacion = adm.altaCancion(this.getTitulo().getValue(), this.getCompositores().getValue().split(","),
                     this.getProductores().getValue().split(","), this.getInterpretes().getValue().toString().split(","),
-                    pathSong, estiloSeleccionado.getIdEstilo(), this.getTituloAlbum().getValue());
+                    this.getVaadinTextField().getValue(), estiloSeleccionado.getIdEstilo(), this.getTituloAlbum().getValue());
             if (comprobacion == 1) {
                 ControladorVistas.PopUpBasico("Canción añadida con éxito");
                 _darDeAlta = new Dar_de_alta();
@@ -236,7 +237,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         InputStream is = memoryBuffer.getInputStream();
         try {
 
-            OutputStream os = new FileOutputStream("./src/main/webapp/img/canciones/" + nameImagen);
+            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/" + nameImagen);
             byte[] buffer = new byte[1024];
             int bytesRead;
             // read from is to buffer
@@ -254,16 +255,16 @@ public class Alta_canciones extends VistaAlta_canciones {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "./src/main/webapp/" + UrlImagen;
+        return "./src/main/resources/META-INF/resources/" + UrlImagen;
     }
 
     public String Anadir_archivo_multimedia(MemoryBuffer memoryBuffer) throws PersistentException {
         int id = CancionDAO.listCancionByQuery("true=true", "titulo").length + 1;
         InputStream is = memoryBuffer.getInputStream();
         String nameCancion = id + "." + FilenameUtils.getExtension(memoryBuffer.getFileName());
-        String UrlCancion = "./src/main/webapp/songs/" + nameCancion;
+        String UrlCancion = "./src/main/resources/META-INF/resources/songs/" + nameCancion;
         try {
-            OutputStream os = new FileOutputStream("./src/main/webapp/songs/" + nameCancion);
+            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/songs/" + nameCancion);
             byte[] buffer = new byte[1024];
             int bytesRead;
             // read from is to buffer
@@ -287,6 +288,7 @@ public class Alta_canciones extends VistaAlta_canciones {
     }
 
     void Inicializar() {
+        this.getVaadinTextField().setVisible(false);
         this.getCancelar().setVisible(true);
         this.getConfirmar().setVisible(true);
         this.getCompositores().setVisible(true);

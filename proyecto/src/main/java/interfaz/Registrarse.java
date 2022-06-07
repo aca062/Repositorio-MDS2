@@ -50,7 +50,7 @@ public class Registrarse extends VistaRegistrarse {
             public void onComponentEvent(ComponentEvent event) {
                 try {
                     Integer id = Actor_ComunDAO.listActor_ComunByQuery("true=true", "nick").length + 1;
-                    String UrlCarpeta = "./src/main/webapp/img/users/";
+                    String UrlCarpeta = "./src/main/resources/META-INF/resources/img/users/";
                     File folder = new File(UrlCarpeta);
                     File[] listOfFiles = folder.listFiles();
                     for (File file : listOfFiles) {
@@ -82,7 +82,7 @@ public class Registrarse extends VistaRegistrarse {
         this.getBotonFoto().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                String UrlCarpeta = "./src/main/webapp/img/users/";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/users/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -103,7 +103,7 @@ public class Registrarse extends VistaRegistrarse {
 
         upload.addFinishedListener(e -> {
             try {
-                String UrlCarpeta = "./src/main/webapp/img/users/";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/users/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -189,7 +189,7 @@ public class Registrarse extends VistaRegistrarse {
         InputStream is = memoryBuffer.getInputStream();
         try {
 
-            OutputStream os = new FileOutputStream("./src/main/webapp/img/users/" + nameImagen);
+            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/img/users/" + nameImagen);
             byte[] buffer = new byte[1024];
             int bytesRead;
             // read from is to buffer
@@ -208,6 +208,6 @@ public class Registrarse extends VistaRegistrarse {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "./src/main/webapp/" + UrlImagen;
+        return "./src/main/resources/META-INF/resources/" + UrlImagen;
     }
 }

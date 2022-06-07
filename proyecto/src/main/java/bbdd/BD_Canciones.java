@@ -8,6 +8,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import orm.bbdd.Actor_Comun;
+import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.Album;
 import orm.bbdd.AlbumCriteria;
 import orm.bbdd.AlbumDAO;
@@ -70,23 +72,46 @@ public class BD_Canciones {
         throw new UnsupportedOperationException();
     }
 
-    public void marcarFavorito(int aIdCancion, int aIdUsuario) throws PersistentException {
-        throw new UnsupportedOperationException();
-    }
-
-    public void eliminarCancion(int aIdCancion) throws PersistentException {
+    public void marcarFavorito(Cancion cancion, Actor_Comun usuario) throws PersistentException {
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         try {
-            Cancion cancion = CancionDAO.getCancionByORMID(aIdCancion);
-            CancionDAO.delete(cancion);
+            cancion.usuario.add(usuario);
+            usuario.cancion_favorita.add(cancion);
+            CancionDAO.save(cancion);
+            Actor_ComunDAO.save(usuario);
             t.commit();
         } catch (Exception e) {
             t.rollback();
         }
+        MDS2PersistentManager.instance().disposePersistentManager();
     }
 
-    public void desmarcarFavorita(int aIdCancion, int aIdUsuario) throws PersistentException {
-        throw new UnsupportedOperationException();
+    public boolean eliminarCancion(int aIdCancion) throws PersistentException {
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        boolean correcto = false;
+        try {
+            Cancion cancion = CancionDAO.getCancionByORMID(aIdCancion);
+            correcto = CancionDAO.deleteAndDissociate(cancion);
+            t.commit();
+        } catch (Exception e) {
+            correcto = false;
+            t.rollback();
+        }
+        return correcto;
+    }
+
+    public void desmarcarFavorita(Cancion cancion, Actor_Comun usuario) throws PersistentException {
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            cancion.usuario.remove(usuario);
+            usuario.cancion_favorita.remove(cancion);
+            CancionDAO.save(cancion);
+            Actor_ComunDAO.save(usuario);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
+        MDS2PersistentManager.instance().disposePersistentManager();
     }
 
     public Cancion cargarCancion(int aIdCancion) throws PersistentException {
@@ -132,12 +157,14 @@ public class BD_Canciones {
     }
 
     public Cancion[] cargarCancionRecomendada(int aIdUsuario) throws PersistentException {
-        Cancion[] canciones = new Cancion[0];
+        Cancion[] canciones = new Cancion[3];
 
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         try {
-            canciones = CancionDAO.listCancionByQuery(null, null);
-            // TODO Decidir forma de elegir canciones recomendadas
+            canciones = CancionDAO.listCancionByQuery("true=true", "IdCancion DESC");
+            for (int i = 0; i < 3; i++) {
+                canciones[i] = canciones[i];
+            }
             t.commit();
         } catch (Exception e) {
             t.rollback();
@@ -174,5 +201,23 @@ public class BD_Canciones {
 
     public void editarAlbum(interfaz.Cancion[] aCanciones) throws PersistentException {
         throw new UnsupportedOperationException();
+    }
+
+    public Cancion[] cargarCancionesFavoritas(int aIdUsuario) {
+        Cancion[] cancionesFav;
+        try {
+            Actor_Comun usuario = Actor_ComunDAO.getActor_ComunByORMID(aIdUsuario);
+            cancionesFav = new Cancion[usuario.cancion_favorita.size()];
+            int j = 0;
+            for (Cancion cancion : usuario.cancion_favorita.toArray()) {
+                cancionesFav[j] = cancion;
+                j++;
+            }
+            return cancionesFav;
+        } catch (PersistentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
     }
 }

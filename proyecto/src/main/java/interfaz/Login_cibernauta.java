@@ -8,7 +8,7 @@ import com.vaadin.flow.component.ComponentEventListener;
 
 import bbdd.BDPrincipal;
 import bbdd.iCibernauta;
-import orm.bbdd.Actor_ComunDAO;
+import orm.bbdd.Actor_Comun;
 import vistas.VistaLogin_cibernauta;
 
 public class Login_cibernauta extends VistaLogin_cibernauta{
@@ -78,31 +78,31 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 		String correo = this.getTextFieldCorreo().getValue();
 		String contrasena = this.getTextFieldContrasena().getValue();
 		Cabecera_pagina cab = new Cabecera_pagina();
-		int id = Actor_ComunDAO.listActor_ComunByQuery("email='" + correo + "'", "email")[0].getId();
+		Actor_Comun usuario = cib.getUsuario(correo);
 		switch(cib.inicioDeSesion(correo, contrasena)){
 			case("admin"):
+			    ControladorVistas.CambiarUsuario(usuario);
 				Administrador admin = new Administrador();
 				admin.getStyle().set("width", "100%");
 				cab.getStyle().set("width", "100%");
-				ControladorVistas.CambiarUsuario(id);
 				ControladorVistas.CambiarTipoUsuario("admin");
 				ControladorVistas.CambiarContenido(admin);
 				ControladorVistas.CambiarCabecera(cab);
 				break;
 			case("usuario"):
+			    ControladorVistas.CambiarUsuario(usuario);
 				Usuario_registrado user = new Usuario_registrado();
 				user.getStyle().set("width", "100%");
 				cab.getStyle().set("width", "100%");
-				ControladorVistas.CambiarUsuario(id);
 				ControladorVistas.CambiarTipoUsuario("usuario");
 				ControladorVistas.CambiarContenido(user);
 				ControladorVistas.CambiarCabecera(cab);
 				break;
 			case("artista"):
+			    ControladorVistas.CambiarUsuario(usuario);
 				Artista artista = new Artista();
 				artista.getStyle().set("width", "100%");
 				cab.getStyle().set("width", "100%");
-				ControladorVistas.CambiarUsuario(id);
 				ControladorVistas.CambiarTipoUsuario("artista");
 				ControladorVistas.CambiarContenido(artista);
 				ControladorVistas.CambiarCabecera(cab);
@@ -111,34 +111,6 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 				ControladorVistas.PopUpBasico("El usuario o la contraseña son incorrectos");
 				break;
 		}
-		/*
-		if (correo.toString().equals("admin") && contrasena.equals("admin")) {
-			Administrador admin = new Administrador();
-			Cabecera_pagina cab = new Cabecera_pagina();
-			admin.getStyle().set("width", "100%");
-			cab.getStyle().set("width", "100%");
-			ControladorVistas.CambiarUsuario(correo.toString());
-			ControladorVistas.CambiarContenido(admin);
-			ControladorVistas.CambiarCabecera(cab);
-		}else if(correo.toString().equals("usuario") && contrasena.equals("usuario")) {
-			Usuario_registrado user = new Usuario_registrado();
-			Cabecera_pagina cab = new Cabecera_pagina();
-			user.getStyle().set("width", "100%");
-			cab.getStyle().set("width", "100%");
-			ControladorVistas.CambiarUsuario(correo.toString());
-			ControladorVistas.CambiarContenido(user);
-			ControladorVistas.CambiarCabecera(cab);
-		}else if(correo.toString().equals("artista") && contrasena.equals("artista")) {
-			Artista artista = new Artista();
-			Cabecera_pagina cab = new Cabecera_pagina();
-			artista.getStyle().set("width", "100%");
-			cab.getStyle().set("width", "100%");
-			ControladorVistas.CambiarUsuario(correo.toString());
-			ControladorVistas.CambiarContenido(artista);
-			ControladorVistas.CambiarCabecera(cab);
-		}else {
-			ControladorVistas.PopUpBasico("El usuario o la contraseña son incorrectos");
-		}*/
 	}
 
 	protected void OlvidadoContrasena() {

@@ -15,30 +15,6 @@ import orm.bbdd.Estilo;
 import orm.bbdd.Lista_de_reproduccion;
 import orm.bbdd.Usuario_Registrado;
 
-/*import bbdd.BD_Usuarios_Registrados;
-import BBDD.BD_Artistas;
-import BBDD.BD_Administradores;
-import BBDD.BD_Canciones;
-import BBDD.BD_Listas_de_reproduccion;
-import BBDD.BD_Albumes;
-import BBDD.BD_Eventos;
-import BBDD.BD_Estilos;
-import BBDD.BD_Estadisticas;
-import BBDD.BD_Acceso_Datos;
-import BBDD.Album;
-import interfaz.Artista_elemento;
-import interfaz.Estilo_admin;
-// import interfaz.Cancion;
-import interfaz.Lista_de_reproduccion_ajena;
-import interfaz.Estadisticas;
-import interfaz.Usuario_registrado;
-import BBDD.Artista;
-import BBDD.Estilo;
-// import BBDD.Cancion;
-import BBDD.Lista_de_reproduccion;
-import BBDD.Estadistica;
-import BBDD.Usuario_Registrado;*/
-
 public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCibernauta, iUsuario_registrado {
     public BD_Usuarios_Registrados _bd_usuarios_registrados = new BD_Usuarios_Registrados();
     public BD_Artistas _bd_artistas = new BD_Artistas();
@@ -57,10 +33,10 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void desmarcarFavorita(int aId, int aIdUsuario) {
+    public void desmarcarFavorita(Cancion cancion, Actor_Comun usuario) {
         try {
             _bd_canciones = new BD_Canciones();
-            _bd_canciones.desmarcarFavorita(aId, aIdUsuario);
+            _bd_canciones.desmarcarFavorita(cancion, usuario);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
@@ -183,8 +159,8 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         int comprobacion = -1;
         try {
             _bd_canciones = new BD_Canciones();
-            comprobacion = _bd_canciones.editarCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia,
-                    aIdCancion);
+            comprobacion = _bd_canciones.editarCancion(aTitulo, aCompositores, aProductores, aInterpretes,
+                    aArcMultimedia, aIdCancion);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
@@ -231,57 +207,69 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void eliminarCancion(int aIdCancion) {
+    public boolean eliminarCancion(int aIdCancion) {
+        boolean correcto = false;
         try {
-            _bd_canciones.eliminarCancion(aIdCancion);
+            correcto = _bd_canciones.eliminarCancion(aIdCancion);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return correcto;
     }
 
     @Override
-    public void eliminarArtista(int aIdArtista) {
+    public boolean eliminarArtista(int aIdArtista) {
+        boolean correcto = false;
         try {
-            _bd_artistas.eliminarArtista(aIdArtista);
+            correcto = _bd_artistas.eliminarArtista(aIdArtista);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return correcto;
     }
 
     @Override
-    public void eliminarAlbum(int aIdAlbum) {
+    public boolean eliminarAlbum(int aIdAlbum) {
+        boolean correcto = false;
         try {
-            _bd_albumes.eliminarAlbum(aIdAlbum);
+            correcto = _bd_albumes.eliminarAlbum(aIdAlbum);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return correcto;
     }
 
     @Override
-    public void eliminarUsuario(int aIdUsuario) {
+    public boolean eliminarUsuario(int aIdUsuario) {
+        boolean correcto = false;
         try {
-            _bd_usuarios_registrados.eliminarUsuario(aIdUsuario);
+            correcto = _bd_usuarios_registrados.eliminarUsuario(aIdUsuario);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return correcto;
     }
 
     @Override
-    public void eliminarEstilo(int aIdEstilo) {
+    public boolean eliminarEstilo(int aIdEstilo) {
+        boolean correcto = false;
         try {
-            _bd_estilos.eliminarEstilo(aIdEstilo);
+            correcto = _bd_estilos.eliminarEstilo(aIdEstilo);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return correcto;
     }
 
     @Override
-    public void eliminarLista(int aIdListas) {
+    public boolean eliminarLista(int aIdListas) {
+        boolean correcto = false;
         try {
-            _bd_listas_de_reproduccion.eliminarLista(aIdListas);
+            correcto = _bd_listas_de_reproduccion.eliminarLista(aIdListas);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return correcto;
     }
 
     @Override
@@ -380,10 +368,10 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void marcarFavorito(int aIdCancion, int aIdUsuario) {
+    public void marcarFavorito(Cancion cancion, Actor_Comun usuario) {
         try {
             _bd_canciones = new BD_Canciones();
-            _bd_canciones.marcarFavorito(aIdCancion, aIdUsuario);
+            _bd_canciones.marcarFavorito(cancion, usuario);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
@@ -463,14 +451,9 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public Lista_de_reproduccion[] cargarCancionesFavoritas(int aIdUsuario) {
-        Lista_de_reproduccion[] listas = null;
-
-        try {
-            listas = _bd_listas_de_reproduccion.cargarCancionesFavoritas(aIdUsuario);
-        } catch (PersistentException e) {
-            e.printStackTrace();
-        }
+    public Cancion[] cargarCancionesFavoritas(int aIdUsuario) {
+        Cancion[] listas = null;
+        listas = _bd_canciones.cargarCancionesFavoritas(aIdUsuario);
         return listas;
     }
 
@@ -567,15 +550,16 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             e.printStackTrace();
         }
     }
+
     @Override
     public Cancion[] busquedaCancion(String aParametrosBusqueda) {
-    	Cancion[] canciones = null;
-    	try {
-    		canciones = _bd_canciones.busquedaCancion(aParametrosBusqueda);
-    	}catch (PersistentException e) {
-    		e.printStackTrace();
-    	}
-    	return canciones;
+        Cancion[] canciones = null;
+        try {
+            canciones = _bd_canciones.busquedaCancion(aParametrosBusqueda);
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return canciones;
     }
 
     @Override
@@ -583,7 +567,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         Album[] albumes = null;
         try {
             albumes = _bd_albumes.busquedaAlbum(paramBusqueda);
-        }catch (PersistentException e) {
+        } catch (PersistentException e) {
             e.printStackTrace();
         }
         return albumes;
@@ -594,7 +578,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         Artista[] artistas = null;
         try {
             artistas = _bd_artistas.busquedaArtistas(paramBusqueda);
-        }catch (PersistentException e) {
+        } catch (PersistentException e) {
             e.printStackTrace();
         }
         return artistas;
@@ -605,7 +589,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         Usuario_Registrado[] usuarios = null;
         try {
             usuarios = _bd_usuarios_registrados.busquedaUsuarios(paramBusqueda);
-        }catch (PersistentException e) {
+        } catch (PersistentException e) {
             e.printStackTrace();
         }
         return usuarios;
@@ -616,7 +600,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         Estilo[] estilo = null;
         try {
             estilo = _bd_estilos.busquedaEstilos(paramBusqueda);
-        }catch (PersistentException e) {
+        } catch (PersistentException e) {
             e.printStackTrace();
         }
         return estilo;
@@ -627,10 +611,20 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         Lista_de_reproduccion[] lista = null;
         try {
             lista = _bd_listas_de_reproduccion.busquedaLista(paramBusqueda);
-        }catch (PersistentException e) {
+        } catch (PersistentException e) {
             e.printStackTrace();
         }
         return lista;
     }
 
+    @Override
+    public Actor_Comun getUsuario(String correo) {
+        Actor_Comun usuario = null;
+        try {
+            usuario = Actor_ComunDAO.listActor_ComunByQuery("email='" + correo + "'", "email")[0];
+        } catch (PersistentException e) {
+            return null;
+        }
+        return usuario;
+    }
 }

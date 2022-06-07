@@ -8,6 +8,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iAdministrador;
 import orm.bbdd.Estilo;
 import vistas.VistaEstilo_admin;
 
@@ -18,6 +20,7 @@ public class Estilo_admin extends VistaEstilo_admin{
 	private Button _eliminarB;*/
 	public Estilos_busqueda_admin _estilosBusquedaAdmin;
 	public Editar_estilo _editarEstilo;
+    private iAdministrador adm = new BDPrincipal();
 	orm.bbdd.Estilo estilo;
 
 	public Estilo_admin() {
@@ -70,8 +73,14 @@ public class Estilo_admin extends VistaEstilo_admin{
 	}
 
 	void ConfirmarEliminacion(String nombre, Dialog popup) {
-		//Comprobar si hay canciones con ese estilo
-		popup.close();
+        boolean correcto = adm.eliminarEstilo(estilo.getIdEstilo());
+        popup.close();
+        if (correcto) {
+            ControladorVistas.PopUpBasico("Estilo eliminado con éxito");
+        } else {
+            ControladorVistas.PopUpBasico("Alguna canción o artista aún tiene el estilo, por lo que no se ha podido eliminar");
+        }
+        ControladorVistas.CambiarContenido(new Buscar_administrador());
 	}
 
 	public void EditarEstilo() {
