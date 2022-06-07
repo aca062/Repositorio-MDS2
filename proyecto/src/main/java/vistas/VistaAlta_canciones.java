@@ -246,4 +246,12 @@ public class VistaAlta_canciones extends LitTemplate {
         this.vaadinTextField = vaadinTextField;
     }
 
+    public H5 getH5() {
+        return h5;
+    }
+
+    public void setH5(H5 h5) {
+        this.h5 = h5;
+    }
+
 }

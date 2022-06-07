@@ -237,7 +237,7 @@ public class Alta_canciones extends VistaAlta_canciones {
         InputStream is = memoryBuffer.getInputStream();
         try {
 
-            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/" + nameImagen);
+            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/img/canciones/" + nameImagen);
             byte[] buffer = new byte[1024];
             int bytesRead;
             // read from is to buffer
@@ -288,6 +288,7 @@ public class Alta_canciones extends VistaAlta_canciones {
     }
 
     void Inicializar() {
+        this.getH5().setVisible(false);
         this.getVaadinTextField().setVisible(false);
         this.getCancelar().setVisible(true);
         this.getConfirmar().setVisible(true);
