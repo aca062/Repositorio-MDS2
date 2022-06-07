@@ -4,8 +4,8 @@ import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-upload/src/vaadin-upload.js';
 import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
+import '@vaadin/vaadin-upload/src/vaadin-upload.js';
 
 @customElement('vista-alta_artistas')
 export class VistaAlta_artistas extends LitElement {

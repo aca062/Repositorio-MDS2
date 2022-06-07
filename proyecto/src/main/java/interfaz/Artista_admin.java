@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -27,7 +29,12 @@ public class Artista_admin extends VistaArtista_admin {
         this.getEditar().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                EditarArtista();
+                try {
+					EditarArtista();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
         this.getEliminar().addClickListener(new ComponentEventListener() {
@@ -85,7 +92,7 @@ public class Artista_admin extends VistaArtista_admin {
         ControladorVistas.CambiarContenido(new Buscar_administrador());
     }
 
-    public void EditarArtista() {
+    public void EditarArtista() throws PersistentException {
         _editarArtista = new Editar_artista(artista);
         _editarArtista.getStyle().set("width", "100%");
         ControladorVistas.CambiarContenido(_editarArtista);

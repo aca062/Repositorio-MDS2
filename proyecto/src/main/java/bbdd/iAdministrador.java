@@ -19,7 +19,7 @@ public interface iAdministrador extends iActor_comun {
 
 	public void editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista, Cancion[] aCanciones, int aIdAlbum);
 
-	public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista);
+	public int editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista, int aIdEstilo);
 
 	public int editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes, String aArcMultimedia, int aEstilos, String aTituloAlbum, int aIdCancion);
 

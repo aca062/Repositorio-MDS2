@@ -144,13 +144,14 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista) {
+    public int editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista, int aIdEstilo) {
         try {
             _bd_artistas = new BD_Artistas();
-            _bd_artistas.editarArtista(aEmail, aContrasena, aNick, aImagen, aIdArtista);
+            _bd_artistas.editarArtista(aEmail, aContrasena, aNick, aImagen, aIdArtista, aIdEstilo);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return 1;
     }
 
     @Override

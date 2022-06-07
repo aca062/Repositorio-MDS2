@@ -24,6 +24,7 @@ public class Editar_album extends VistaEditar_album{
 	private Button _cancelarB;
 	private Button _confirmarB;*/
 	public Album_admin _albumAdmin;
+	int id;
 
 	public Editar_album(Album album) {
 
@@ -61,6 +62,7 @@ public class Editar_album extends VistaEditar_album{
 		throw new UnsupportedOperationException();
 	}
 	void Inicializar(Album album) {
+		this.id = album.getIdAlbum();
 		this.getCambiarImagen().setVisible(true);
 		this.getImgAlbum().setVisible(true);
 		this.getTitulo().setVisible(true);

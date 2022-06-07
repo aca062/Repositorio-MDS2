@@ -12,6 +12,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.textfield.PasswordField;
+import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.upload.Upload;
 
 /**
  * A Designer generated component for the vista-editar_artista template.
@@ -35,8 +37,6 @@ public class VistaEditar_artista extends LitTemplate {
 	private HorizontalLayout layoutArtista;
 	@Id("imgArtista")
 	private Image imgArtista;
-	@Id("anadirFoto")
-	private Button anadirFoto;
 	@Id("nick")
 	private TextField nick;
 	@Id("contraseña")
@@ -45,18 +45,18 @@ public class VistaEditar_artista extends LitTemplate {
 	private PasswordField confirmarContraseña;
 	@Id("eMail")
 	private TextField eMail;
-	@Id("estilo")
-	private Select estilo;
-	@Id("listaEstilos")
-	private Element listaEstilos;
-	@Id("vaadinItem")
-	private Element vaadinItem;
 	@Id("layoutBotones")
 	private HorizontalLayout layoutBotones;
 	@Id("cancelar")
 	private Button cancelar;
 	@Id("confirmar")
 	private Button confirmar;
+	@Id("dropdown")
+	private ComboBox<String> dropdown;
+	@Id("eliminarFoto")
+	private Button eliminarFoto;
+	@Id("upload")
+	private Upload upload;
 
 	/**
      * Creates a new VistaEditar_artista.
@@ -105,14 +105,6 @@ public class VistaEditar_artista extends LitTemplate {
 		this.imgArtista = imgArtista;
 	}
 
-	public Button getAnadirFoto() {
-		return anadirFoto;
-	}
-
-	public void setAnadirFoto(Button anadirFoto) {
-		this.anadirFoto = anadirFoto;
-	}
-
 	public TextField getNick() {
 		return nick;
 	}
@@ -145,30 +137,6 @@ public class VistaEditar_artista extends LitTemplate {
 		this.eMail = eMail;
 	}
 
-	public Select getEstilo() {
-		return estilo;
-	}
-
-	public void setEstilo(Select estilo) {
-		this.estilo = estilo;
-	}
-
-	public Element getListaEstilos() {
-		return listaEstilos;
-	}
-
-	public void setListaEstilos(Element listaEstilos) {
-		this.listaEstilos = listaEstilos;
-	}
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
 	public HorizontalLayout getLayoutBotones() {
 		return layoutBotones;
 	}
@@ -191,6 +159,30 @@ public class VistaEditar_artista extends LitTemplate {
 
 	public void setConfirmar(Button confirmar) {
 		this.confirmar = confirmar;
+	}
+
+	public ComboBox<String> getDropdown() {
+		return dropdown;
+	}
+
+	public void setDropdown(ComboBox<String> dropdown) {
+		this.dropdown = dropdown;
+	}
+
+	public Button getEliminarFoto() {
+		return eliminarFoto;
+	}
+
+	public void setEliminarFoto(Button eliminarFoto) {
+		this.eliminarFoto = eliminarFoto;
+	}
+
+	public Upload getUpload() {
+		return upload;
+	}
+
+	public void setUpload(Upload upload) {
+		this.upload = upload;
 	}
 
 	
