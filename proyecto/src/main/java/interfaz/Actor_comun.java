@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -28,25 +29,16 @@ public class Actor_comun extends VistaActor_comun {
             }
         });
 
-        layoutCancionesFav.addClickListener(new ComponentEventListener() {
+        /*layoutCancionesFav.addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
                 _cancionesFavoritas = new Canciones_favoritas();
                 layoutCancionesFav.removeAll();
-                layoutCancionesFav.add(_cancionesFavoritas);
-            }
-        });
-
-        /*layoutCancionesRecomendadas.addClickListener(new ComponentEventListener() {
-            @Override
-            public void onComponentEvent(ComponentEvent event) {
-                layoutCancionesFav.removeAll();
-                _cancionesFavoritas = new Canciones_favoritas();
                 layoutCancionesFav.add(_cancionesFavoritas);
             }
         });*/
 
-        /*layoutCancionesFav.addClickListener(new ComponentEventListener() {
+        /*layoutCancionesRecomendadas.addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
                 layoutCancionesFav.removeAll();
@@ -68,6 +60,9 @@ public class Actor_comun extends VistaActor_comun {
         _cancionesFavoritas = new Canciones_favoritas();
         HorizontalLayout layoutCancionesFav = this.getLayoutCancionesFav();
         layoutCancionesFav.add(_cancionesFavoritas);
+        if (_cancionesFavoritas._cancion.size() == 0) {
+            layoutCancionesFav.add(new H3("No tiene ninguna canción favorita aún"));
+        }
 
         _cancionesRecomendadas = new Canciones_recomendadas();
         VerticalLayout layoutCanciones = this.getLayoutPrueba().as(VerticalLayout.class);

@@ -1,29 +1,37 @@
 package interfaz;
 
 import java.util.Vector;
-import interfaz.Artista_elemento;
+
+import bbdd.BDPrincipal;
+import bbdd.iActor_comun;
 import vistas.VistaArtistas_recomendados;
 
 public class Artistas_recomendados extends VistaArtistas_recomendados{
 	//private Label _tituloL;
 	public Actor_comun _actorComun;
 	public Vector<Artista_elemento> _artistaElemento = new Vector<Artista_elemento>();
-	
+    iActor_comun bd = new BDPrincipal();
+
 	public Artistas_recomendados() {
 		Inicializar();
 	}
-	
+
 	void Inicializar() {
 		this.getH1Titulo().setVisible(true);
-		_artistaElemento.add(new Artista_elemento());
-		_artistaElemento.add(new Artista_elemento());
-		_artistaElemento.add(new Artista_elemento());
 		this.getVistaArtista_elemento().setVisible(false);
 		this.getVistaArtista_elemento1().setVisible(false);
 		this.getVistaArtista_elemento2().setVisible(false);
-		
-		for(int i = 0 ; i < 3 ; i++) {
-			this.getLayoutPrincipal().add(_artistaElemento.get(i));
-		}
+
+        int i = 0;
+
+        for (orm.bbdd.Artista artista : bd.cargarArtistaRecomendado()) {
+            i++;
+            _artistaElemento.add(new Artista_elemento());
+            _artistaElemento.lastElement().setCancion(artista);
+            this.getLayoutPrincipal().add(_artistaElemento.lastElement());
+            if (i == 3) {
+                break;
+            }
+        }
 	}
 }

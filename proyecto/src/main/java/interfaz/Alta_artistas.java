@@ -83,7 +83,7 @@ public class Alta_artistas extends VistaAlta_artistas {
         this.getBotonEliminar().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                String UrlCarpeta = "./src/main/webapp/img/";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/users/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -104,7 +104,7 @@ public class Alta_artistas extends VistaAlta_artistas {
 
         upload.addFinishedListener(e -> {
             try {
-                String UrlCarpeta = "./src/main/webapp/img/";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/users/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -171,13 +171,11 @@ public class Alta_artistas extends VistaAlta_artistas {
         int id = Actor_ComunDAO.listActor_ComunByQuery("true=true", "nick").length + 1;
         String nameImagen = id + "." + FilenameUtils.getExtension(memoryBuffer.getFileName());
         String UrlImagen = "img/users/" + nameImagen;
-        /*
-         * File file = new File(UrlImagen); if (file.exists()) { file.delete(); }
-         */
+
         InputStream is = memoryBuffer.getInputStream();
         try {
 
-            OutputStream os = new FileOutputStream("./src/main/webapp/img/" + nameImagen);
+            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/" + UrlImagen);
             byte[] buffer = new byte[1024];
             int bytesRead;
             // read from is to buffer
@@ -195,7 +193,7 @@ public class Alta_artistas extends VistaAlta_artistas {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "./src/main/webapp/" + UrlImagen;
+        return UrlImagen;
     }
 
     void Inicializar() {

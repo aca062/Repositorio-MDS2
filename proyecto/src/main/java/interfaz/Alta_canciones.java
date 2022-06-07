@@ -249,12 +249,6 @@ public class Alta_canciones extends VistaAlta_canciones {
             os.flush();
             os.close();
             this.getImg().setMaxWidth("300px");
-            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
             this.getImg().setSrc(UrlImagen);
             this.getVaadinUpload1().setVisible(false);
             this.getVaadinButton().setVisible(true);

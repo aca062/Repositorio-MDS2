@@ -44,13 +44,12 @@ public class BD_Listas_de_reproduccion {
 		throw new UnsupportedOperationException();
 	}
 
-	public Lista_de_reproduccion[] cargarListaRecomendada(int aIdUsuario) throws PersistentException{
-		Lista_de_reproduccion[] listas = new Lista_de_reproduccion[0];
+	public Lista_de_reproduccion[] cargarListaRecomendada() throws PersistentException{
+		Lista_de_reproduccion[] listas = new Lista_de_reproduccion[3];
 
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
-			listas = Lista_de_reproduccionDAO.listLista_de_reproduccionByQuery(null, null);
-			//TODO Decidir forma de elegir albumes recomendados
+			listas = Lista_de_reproduccionDAO.listLista_de_reproduccionByQuery("true=true", "IdLista DESC");
 			t.commit();
 		} catch(Exception e) {
 			t.rollback();

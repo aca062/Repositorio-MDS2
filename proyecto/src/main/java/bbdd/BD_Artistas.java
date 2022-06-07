@@ -7,7 +7,6 @@ import org.orm.PersistentTransaction;
 
 import orm.bbdd.Acceso_Dato;
 import orm.bbdd.Acceso_DatoDAO;
-import orm.bbdd.Album;
 import orm.bbdd.AlbumDAO;
 import orm.bbdd.Artista;
 import orm.bbdd.ArtistaCriteria;
@@ -71,9 +70,9 @@ public class BD_Artistas {
         }
     }
 
-    public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista, int aIdEstilo)
-            throws PersistentException {
-    	PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+    public void editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista,
+            int aIdEstilo) throws PersistentException {
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         try {
             Artista artista = ArtistaDAO.loadArtistaByORMID(aIdArtista);
             /*
@@ -130,7 +129,7 @@ public class BD_Artistas {
         try {
 
             Artista artista = ArtistaDAO.loadArtistaByORMID(aIdArtista);
-            //Album album = AlbumDAO.loadAlbumByORMID(1);
+            // Album album = AlbumDAO.loadAlbumByORMID(1);
 
             orm.bbdd.Cancion[] lCancionss = artista.cancions.toArray();
             for (int i = 0; i < lCancionss.length; i++) {
@@ -144,8 +143,8 @@ public class BD_Artistas {
             BD_Eventos bdeventos = new BD_Eventos();
             orm.bbdd.Evento[] lEventoss = artista.eventos.toArray();
             for (int i = 0; i < lEventoss.length; i++) {
-            	//artista.eventos.remove(lEventoss[i]);
-            	EventoDAO.delete(lEventoss[i]);
+                // artista.eventos.remove(lEventoss[i]);
+                EventoDAO.delete(lEventoss[i]);
             }
             orm.bbdd.Estilo[] lEstiloss = artista.estilos.toArray();
             for (int i = 0; i < lEstiloss.length; i++) {
@@ -154,7 +153,7 @@ public class BD_Artistas {
             BD_Albumes bdalbumes = new BD_Albumes();
             orm.bbdd.Album[] lAlbumss = artista.albums.toArray();
             for (int i = 0; i < lAlbumss.length; i++) {
-            	AlbumDAO.delete(lAlbumss[i]);
+                AlbumDAO.delete(lAlbumss[i]);
             }
             BD_Listas_de_reproduccion bdlistas = new BD_Listas_de_reproduccion();
             orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = artista.listas_de_reproduccion_propias
@@ -193,12 +192,13 @@ public class BD_Artistas {
             if (artista.getAcceso_Dato() != null) {
                 bdacceso.eliminarAcceso(artista.getAcceso_Dato().getId());
             }
-            /*BD_Estadisticas bdestadisticas = new BD_Estadisticas();
-            orm.bbdd.Estadistica[] lEstadisticass = artista.estadisticas.toArray();
-            if (artista.getEstadistica() != null) {
-                bdestadisticas.eliminarEstadistica(artista.getEstadistica().getId());
-                EstadisticaDAO.delete(null)
-            }*/
+            /*
+             * BD_Estadisticas bdestadisticas = new BD_Estadisticas();
+             * orm.bbdd.Estadistica[] lEstadisticass = artista.estadisticas.toArray(); if
+             * (artista.getEstadistica() != null) {
+             * bdestadisticas.eliminarEstadistica(artista.getEstadistica().getId());
+             * EstadisticaDAO.delete(null) }
+             */
 
             t.commit();
 
@@ -250,5 +250,19 @@ public class BD_Artistas {
             t.rollback();
         }
         return artistas;
+    }
+
+    public Artista[] cargarArtistasRecomendados() throws PersistentException {
+        Artista[] albumes = new Artista[0];
+
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            albumes = ArtistaDAO.listArtistaByQuery("true=true", "Actor_ComunId DESC");
+            // TODO Decidir forma de elegir albumes recomendados
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
+        return albumes;
     }
 }

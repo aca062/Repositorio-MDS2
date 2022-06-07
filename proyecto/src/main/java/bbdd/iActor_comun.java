@@ -44,7 +44,7 @@ public interface iActor_comun {
 
 	public Album[] cargarAlbumRecomendado(int aIdUsuario);
 
-	public Lista_de_reproduccion[] cargarListaRecomendada(int aIdUsuario);
+	public Lista_de_reproduccion[] cargarListaRecomendada();
 
 	public Usuario_Registrado[] cargarListaSeguidores(int aIdUsuario);
 
@@ -55,4 +55,6 @@ public interface iActor_comun {
 	public Cancion[] cargarUltimasCancionesReproducidas(int aIdUsuario);
 
     void setUltimaCancionReproducida(int aIdUsuario, int aIdCancion);
+
+    public Artista[] cargarArtistaRecomendado();
 }

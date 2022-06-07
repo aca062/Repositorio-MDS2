@@ -217,10 +217,8 @@ public class BD_Canciones {
 
         Actor_Comun usuario = Actor_ComunDAO.getActor_ComunByORMID(aIdUsuario);
 
-        for (int i = 0; i < 3; i++) {
-            if (usuario.canciones_reproducidas.toArray()[i] != null) {
-                canciones[i] = usuario.canciones_reproducidas.toArray()[i];
-            }
+        for (int i = 0; i < usuario.canciones_reproducidas.size(); i++) {
+            canciones[i] = usuario.canciones_reproducidas.toArray()[i];
         }
 
         return canciones;

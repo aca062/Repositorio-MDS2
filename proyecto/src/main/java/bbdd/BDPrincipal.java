@@ -463,7 +463,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         Cancion[] canciones = null;
 
         try {
-            canciones = _bd_canciones.cargarUltimosExitos(aIdUsuario);
+            canciones = _bd_canciones.cargarUltimasCancionesReproducidas(aIdUsuario);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
@@ -485,11 +485,11 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public Lista_de_reproduccion[] cargarListaRecomendada(int aIdUsuario) {
+    public Lista_de_reproduccion[] cargarListaRecomendada() {
         Lista_de_reproduccion[] listas = null;
 
         try {
-            listas = _bd_listas_de_reproduccion.cargarListaRecomendada(aIdUsuario);
+            listas = _bd_listas_de_reproduccion.cargarListaRecomendada();
         } catch (PersistentException e) {
             e.printStackTrace();
         }
@@ -636,5 +636,17 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             return null;
         }
         return usuario;
+    }
+
+    @Override
+    public Artista[] cargarArtistaRecomendado() {
+        Artista[] artistas = null;
+
+        try {
+            artistas = _bd_artistas.cargarArtistasRecomendados();
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return artistas;
     }
 }
