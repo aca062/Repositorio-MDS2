@@ -13,6 +13,9 @@ public interface iCibernauta {
 
 	public void recuperarContrasena(String aEmail);
 
+
+    public Actor_Comun getUsuario(String correo);
+
 	//public Cancion[] cargarUltimosExitos(int aNumCanciones);
 
     public Actor_Comun getUsuario(int i);

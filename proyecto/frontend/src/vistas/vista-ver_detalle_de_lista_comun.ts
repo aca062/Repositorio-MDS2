@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-lista_de_canciones';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-ver_detalle_de_lista_comun')
 export class VistaVer_detalle_de_lista_comun extends LitElement {
@@ -21,12 +21,10 @@ export class VistaVer_detalle_de_lista_comun extends LitElement {
  <vaadin-horizontal-layout theme="spacing" id="layoutTituloOpciones">
   <h2 id="h2Titulo">Lista de reproducción nº 21</h2>
   <vaadin-button id="eliminar" style="align-self: center;">
-   Eliminar
+    Eliminar 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-button id="botonUsuario" style="margin-bottom: var(--lumo-space-xl);">
-   Paco12 
- </vaadin-button>
+ <h3 id="idCreador">Paco12</h3>
  <vaadin-vertical-layout style="width: 90%; height: 100%; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl); margin-bottom: var(--lumo-space-xl);" id="layoutListaCanciones">
   <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="layoutCanciones">
    <vista-lista_de_canciones style="width: 100%;" id="vistaLista_de_canciones"></vista-lista_de_canciones>

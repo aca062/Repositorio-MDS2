@@ -173,6 +173,8 @@ public class BD_Canciones {
         return canciones;
     }
 
+
+
     /*public Cancion[] cargarUltimosExitos(int aNumCanciones) throws PersistentException {
         Cancion[] cancionesRandom = new Cancion[aNumCanciones];
 
@@ -194,6 +196,7 @@ public class BD_Canciones {
         }
         return cancionesRandom;
     }*/
+
 
     public Cancion[] cargarCancionRecomendada(int aIdUsuario) throws PersistentException {
         Cancion[] canciones = new Cancion[3];

@@ -10,6 +10,4 @@ public interface iArtista extends iActor_comun {
 
 	public void editarFoto(String aFoto, int aIdArtista);
 
-	public void darDeBaja(String aEmail);
-
 }
