@@ -3,8 +3,8 @@ package interfaz;
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import orm.bbdd.Lista_de_reproduccion;
 import vistas.VistaLista_de_reproduccion_propia;
 
 public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_propia{
@@ -14,11 +14,13 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 	public Listas_de_reproduccion_propias _listasDeReproduccionPropia;
 	public Paginacion_listas_propias _paginacionListasPropias;
 	public Ver_detalle_de_lista_propia _verDetalleDeListaPropia;
+	orm.bbdd.Lista_de_reproduccion lista;
 
 	public Lista_de_reproduccion_propia() {
 		Inicializar();
 		this.getBotonNombre().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				DetalleLista();
 			}
 		});
@@ -29,13 +31,22 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 		_verDetalleDeListaPropia.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_verDetalleDeListaPropia);
 	}
-	
+
 	public void Imagen_reproducir() {
 		throw new UnsupportedOperationException();
 	}
-	
+
 	private void Inicializar() {
 		// TODO Auto-generated method stub
-		
+
 	}
+
+    public void setLista(Lista_de_reproduccion lista) {
+        this.lista = lista;
+
+        this.getBotonNombre().setText(lista.getNombre());
+        this.setId(Integer.toString(lista.getIdLista()));
+        this.getBotonNombre().getStyle().set("width", "100%");
+        this.getImgListaPropia().setSrc("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Solid_orange.svg/800px-Solid_orange.svg.png");
+    }
 }

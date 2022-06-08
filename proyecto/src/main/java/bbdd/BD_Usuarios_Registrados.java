@@ -160,4 +160,19 @@ public class BD_Usuarios_Registrados {
         }
         return usuarios;
     }
+
+    public void editar_e_mail(String correo, int id) throws PersistentException {
+
+        Usuario_Registrado user = Usuario_RegistradoDAO.getUsuario_RegistradoByORMID(id);
+
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            user.setEmail(correo);
+            Usuario_RegistradoDAO.save(user);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
+
+    }
 }

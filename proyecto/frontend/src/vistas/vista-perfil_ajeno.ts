@@ -21,7 +21,7 @@ export class VistaPerfil_ajeno extends LitElement {
  <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="layoutPerfil">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center; padding: var(--lumo-space-xl);" id="layoutDatosPerfil">
    <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; align-self: center; align-items: center; width: fit-content;" id="layoutFoto">
-    <img style="width: 200px; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l);" src="https://www.runneruprecords.com/wp-content/uploads/2019/12/Juice-Wrld-promesa-del-rap-muere.jpg" id="foto">
+    <img id="foto" style="width: 200px; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l);">
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="align-self: center; width: 50%;" id="layoutDatos">
     <vaadin-horizontal-layout style="width: 100%; justify-content: space-between;" id="layoutNombreBoton">

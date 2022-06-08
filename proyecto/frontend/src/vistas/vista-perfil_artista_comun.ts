@@ -25,7 +25,7 @@ export class VistaPerfil_artista_comun extends LitElement {
  <vaadin-vertical-layout style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="layoutPerfil">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center;" id="layoutDatosPerfil">
    <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; align-self: center; align-items: center; width: fit-content;" id="layoutFoto">
-    <img style="width: 200px; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l);" src="https://i.scdn.co/image/ab6761610000e5eb6ad57a3cb26ae3ffd0f28f22" id="foto">
+    <img id="foto" style="width: 200px; padding-top: var(--lumo-space-l); padding-right: var(--lumo-space-l); padding-left: var(--lumo-space-l);">
     <vaadin-button id="botonEditarFoto">
       Editar 
     </vaadin-button>

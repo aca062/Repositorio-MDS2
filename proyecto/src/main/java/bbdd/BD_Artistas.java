@@ -136,69 +136,79 @@ public class BD_Artistas {
                 lCancionss[i].artistas.remove(artista);
                 CancionDAO.delete(lCancionss[i]);
             }
+
             orm.bbdd.Estadistica[] lEstadisticass = artista.estadisticas.toArray();
             for (int i = 0; i < lEstadisticass.length; i++) {
                 lEstadisticass[i].artistas.remove(artista);
             }
+
             BD_Eventos bdeventos = new BD_Eventos();
             orm.bbdd.Evento[] lEventoss = artista.eventos.toArray();
             for (int i = 0; i < lEventoss.length; i++) {
                 // artista.eventos.remove(lEventoss[i]);
                 EventoDAO.delete(lEventoss[i]);
             }
+
             orm.bbdd.Estilo[] lEstiloss = artista.estilos.toArray();
             for (int i = 0; i < lEstiloss.length; i++) {
                 lEstiloss[i].artistas.remove(artista);
             }
+
             BD_Albumes bdalbumes = new BD_Albumes();
             orm.bbdd.Album[] lAlbumss = artista.albums.toArray();
             for (int i = 0; i < lAlbumss.length; i++) {
                 AlbumDAO.delete(lAlbumss[i]);
             }
+
             BD_Listas_de_reproduccion bdlistas = new BD_Listas_de_reproduccion();
             orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = artista.listas_de_reproduccion_propias
                     .toArray();
             for (int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
                 bdlistas.eliminarLista(lListas_de_reproduccion_propiass[i].getIdLista());
             }
+
             orm.bbdd.Actor_Comun[] lSeguidos = artista.seguido.toArray();
             for (int i = 0; i < lSeguidos.length; i++) {
                 lSeguidos[i].seguidor.remove(artista);
             }
+
             orm.bbdd.Cancion[] lCancion_favoritas = artista.cancion_favorita.toArray();
             for (int i = 0; i < lCancion_favoritas.length; i++) {
                 lCancion_favoritas[i].usuario.remove(artista);
             }
+
             orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_seguidass = artista.listas_de_reproduccion_seguidas
                     .toArray();
             for (int i = 0; i < lListas_de_reproduccion_seguidass.length; i++) {
                 lListas_de_reproduccion_seguidass[i].seguidor.remove(artista);
             }
+
             orm.bbdd.Evento[] lNotificacioness = artista.notificaciones.toArray();
             for (int i = 0; i < lNotificacioness.length; i++) {
                 lNotificacioness[i].usuario.remove(artista);
             }
+
             orm.bbdd.Actor_Comun[] lSeguidors = artista.seguidor.toArray();
             for (int i = 0; i < lSeguidors.length; i++) {
                 lSeguidors[i].seguido.remove(artista);
             }
+
             orm.bbdd.Cancion[] lCanciones_reproducidass = artista.canciones_reproducidas.toArray();
             for (int i = 0; i < lCanciones_reproducidass.length; i++) {
                 lCanciones_reproducidass[i]._usuario.remove(artista);
             }
+
             correcto = ArtistaDAO.delete(artista);
 
             BD_Acceso_Datos bdacceso = new BD_Acceso_Datos();
             if (artista.getAcceso_Dato() != null) {
                 bdacceso.eliminarAcceso(artista.getAcceso_Dato().getId());
             }
-            /*
-             * BD_Estadisticas bdestadisticas = new BD_Estadisticas();
-             * orm.bbdd.Estadistica[] lEstadisticass = artista.estadisticas.toArray(); if
-             * (artista.getEstadistica() != null) {
-             * bdestadisticas.eliminarEstadistica(artista.getEstadistica().getId());
-             * EstadisticaDAO.delete(null) }
-             */
+
+            BD_Estadisticas bdestadisticas = new BD_Estadisticas();
+            if (artista.getEstadistica() != null) {
+                bdestadisticas.eliminarEstadistica(artista.getEstadistica().getId());
+            }
 
             t.commit();
 
@@ -217,7 +227,16 @@ public class BD_Artistas {
     }
 
     public void editarE_mail(String aEmail, int aIdArtista) throws PersistentException {
-        throw new UnsupportedOperationException();
+        Artista artista = ArtistaDAO.getArtistaByORMID(aIdArtista);
+
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            artista.setEmail(aEmail);
+            ArtistaDAO.save(artista);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
     }
 
     public Artista cargarArtista(int aIdArtista) {

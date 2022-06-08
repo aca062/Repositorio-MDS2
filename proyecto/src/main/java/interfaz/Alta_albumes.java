@@ -218,7 +218,7 @@ public class Alta_albumes extends VistaAlta_albumes {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "./src/main/resources/META-INF/resources/" + UrlImagen;
+        return UrlImagen;
     }
 
     void Inicializar() {

@@ -33,8 +33,8 @@ public class BD_Acceso_Datos {
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         boolean correcto = false;
         try {
-            Acceso_Dato estilo = Acceso_DatoDAO.getAcceso_DatoByORMID(aIdAcceso);
-            correcto = Acceso_DatoDAO.delete(estilo);
+            Acceso_Dato acceso = Acceso_DatoDAO.getAcceso_DatoByORMID(aIdAcceso);
+            correcto = Acceso_DatoDAO.delete(acceso);
             t.commit();
         } catch (Exception e) {
             correcto = false;

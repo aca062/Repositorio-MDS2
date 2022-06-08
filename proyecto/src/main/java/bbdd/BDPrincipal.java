@@ -542,26 +542,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void editar_e_mail(String aEmail, int aIdUsuario) {
-        try {
-            _bd_administradores = new BD_Administradores();
-            _bd_administradores.editar_e_mail(aEmail, aIdUsuario);
-        } catch (PersistentException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void editarE_mail(String aEmail, int aIdArtista) {
-        try {
-            _bd_artistas = new BD_Artistas();
-            _bd_artistas.editarE_mail(aEmail, aIdArtista);
-        } catch (PersistentException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public Cancion[] busquedaCancion(String aParametrosBusqueda) {
         Cancion[] canciones = null;
         try {
@@ -648,5 +628,39 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             e.printStackTrace();
         }
         return artistas;
+    }
+
+    @Override
+    public Lista_de_reproduccion[] cargarListasPropias(int id) {
+        Lista_de_reproduccion[] listas = null;
+        listas = _bd_listas_de_reproduccion.cargarListasPropias(id);
+        return listas;
+    }
+
+    @Override
+    public boolean cambiarCorreo(String correo, int id) throws PersistentException {
+        Actor_Comun[] comprobar = Actor_ComunDAO.listActor_ComunByQuery("email='" + correo + "'", "email");
+
+        if (comprobar.length >= 1) {
+            return false;
+        }
+
+        Actor_Comun[] usuario = Actor_ComunDAO.listActor_ComunByQuery("id='" + id + "'", "email");
+
+        switch(usuario[0].getAcceso_Dato().getTipoUsuario())
+        {
+        case "admin":
+            _bd_administradores.editar_e_mail(correo, id);
+            break;
+        case "usuario":
+            _bd_usuarios_registrados.editar_e_mail(correo, id);
+            break;
+        case "artista":
+            _bd_artistas.editarE_mail(correo, id);
+            break;
+        }
+
+        return true;
+
     }
 }

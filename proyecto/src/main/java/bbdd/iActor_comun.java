@@ -1,5 +1,7 @@
 package bbdd;
 
+import org.orm.PersistentException;
+
 import orm.bbdd.Album;
 import orm.bbdd.Artista;
 import orm.bbdd.Cancion;
@@ -57,4 +59,8 @@ public interface iActor_comun {
     void setUltimaCancionReproducida(int aIdUsuario, int aIdCancion);
 
     public Artista[] cargarArtistaRecomendado();
+
+    public Lista_de_reproduccion[] cargarListasPropias(int id);
+
+    public boolean cambiarCorreo(String correo, int id) throws PersistentException;
 }

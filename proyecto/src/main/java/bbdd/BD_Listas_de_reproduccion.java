@@ -5,6 +5,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import orm.bbdd.Actor_Comun;
+import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.Lista_de_reproduccion;
 import orm.bbdd.Lista_de_reproduccionCriteria;
 import orm.bbdd.Lista_de_reproduccionDAO;
@@ -71,6 +73,24 @@ public class BD_Listas_de_reproduccion {
             t.rollback();
         }
         return listas;
+    }
+
+    public Lista_de_reproduccion[] cargarListasPropias(int id) {
+        Lista_de_reproduccion[] listasPropias;
+        try {
+            Actor_Comun usuario = Actor_ComunDAO.getActor_ComunByORMID(id);
+            listasPropias = new Lista_de_reproduccion[usuario.listas_de_reproduccion_propias.size()];
+            int j = 0;
+            for (Lista_de_reproduccion lista : usuario.listas_de_reproduccion_propias.toArray()) {
+                listasPropias[j] = lista;
+                j++;
+            }
+            return listasPropias;
+        } catch (PersistentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

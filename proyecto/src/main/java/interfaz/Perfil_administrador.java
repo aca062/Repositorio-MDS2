@@ -5,6 +5,10 @@ public class Perfil_administrador extends Perfil {
 	private event _editar_e_mail;*/
 	public Administrador _administrador;
 
+	public Perfil_administrador() {
+	    this.getBotonDarseBaja().setVisible(false);
+	}
+
 	public void Editar_foto_perfil() {
 		throw new UnsupportedOperationException();
 	}

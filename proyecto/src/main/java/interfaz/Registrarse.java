@@ -208,6 +208,6 @@ public class Registrarse extends VistaRegistrarse {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "./src/main/resources/META-INF/resources/" + UrlImagen;
+        return UrlImagen;
     }
 }
