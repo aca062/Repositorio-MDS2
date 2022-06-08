@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -14,6 +15,7 @@ public class Ver_detalle_album extends VistaVer_detalle_album{
 	private Image _imagenAlbum;*/
 	public Perfil_artista_ajeno _artistaAjeno;
 	public Album _album = new Album();
+	orm.bbdd.Album album;
 	public Lista_de_canciones _listaDeCanciones = new Lista_de_canciones();
 
 	public Ver_detalle_album() {
@@ -24,12 +26,20 @@ public class Ver_detalle_album extends VistaVer_detalle_album{
 				IrArtista();
 			}
 		});
+		
+		this.getBotonArtista().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                IrArtista();
+            }
+        });
 	}
 
 	public void Imagen_reproducir() {
 		throw new UnsupportedOperationException();
 	}
 	void Inicializar() {
+		
 		this.getLayoutAlbum().add(_album);
 		this.getBotonArtista().setVisible(true);
 		this.getH5FechaAlbum().setVisible(true);
@@ -37,8 +47,8 @@ public class Ver_detalle_album extends VistaVer_detalle_album{
 	}
 	public void IrArtista() {
 	    //DFOAIJFOQIERJFQERPFO
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_artistaAjeno);
+        _artistaAjeno = new Perfil_artista_ajeno();
+        _artistaAjeno.getStyle().set("width", "100%");
+        ControladorVistas.CambiarContenido(_artistaAjeno);
 	}
 }

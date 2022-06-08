@@ -78,6 +78,7 @@ public class BD_Listas_de_reproduccion {
         throw new UnsupportedOperationException();
     }
 
+<<<<<<< HEAD
     public Lista_de_reproduccion[] cargarListaRecomendada() throws PersistentException {
         Lista_de_reproduccion[] listas = new Lista_de_reproduccion[3];
 
@@ -90,6 +91,29 @@ public class BD_Listas_de_reproduccion {
         }
         return listas;
     }
+=======
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			listas = Lista_de_reproduccionDAO.listLista_de_reproduccionByQuery("true=true", "IdLista DESC");
+			t.commit();
+		} catch(Exception e) {
+			t.rollback();
+		}
+		return listas;
+	}
+	public Lista_de_reproduccion[] cargarListaFavorita() throws PersistentException{
+		Lista_de_reproduccion[] listas = new Lista_de_reproduccion[3];
+
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			listas = Lista_de_reproduccionDAO.listLista_de_reproduccionByQuery("true=true", "IdLista DESC");
+			t.commit();
+		} catch(Exception e) {
+			t.rollback();
+		}
+		return listas;
+	}
+>>>>>>> branch 'master' of https://github.com/aca062/Repositorio-MDS2.git
 
     public Lista_de_reproduccion[] busquedaLista(String paramBusqueda) throws PersistentException {
         Lista_de_reproduccion[] listas = new Lista_de_reproduccion[0];

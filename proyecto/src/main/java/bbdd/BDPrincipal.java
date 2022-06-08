@@ -496,6 +496,17 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         }
         return listas;
     }
+    @Override
+    public Lista_de_reproduccion[] cargarListaFavorita() {
+        Lista_de_reproduccion[] listas = null;
+
+        try {
+            listas = _bd_listas_de_reproduccion.cargarListaFavorita();
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return listas;
+    }
 
     @Override
     public Estadistica cargarEstadisticas(int aIdEstadisticas) {
