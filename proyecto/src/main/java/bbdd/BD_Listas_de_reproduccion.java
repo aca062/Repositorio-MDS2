@@ -18,14 +18,6 @@ public class BD_Listas_de_reproduccion {
     public BDPrincipal _bd_prin_listas_de_reproduccion;
     public Vector<Lista_de_reproduccion> _contiene_listas_de_reproduccion = new Vector<Lista_de_reproduccion>();
 
-    public void editarLista(String aNombre, int aIdLista) throws PersistentException {
-        throw new UnsupportedOperationException();
-    }
-
-    public void anadir(String aNombre) throws PersistentException {
-        throw new UnsupportedOperationException();
-    }
-
     public boolean eliminarLista(int aIdListas) throws PersistentException {
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         boolean correcto = false;
@@ -73,10 +65,6 @@ public class BD_Listas_de_reproduccion {
             return -3;
         }
         return 1;
-    }
-
-    public Lista_de_reproduccion cargarLista(int aIdLista) {
-        throw new UnsupportedOperationException();
     }
 
     public Lista_de_reproduccion[] cargarListaRecomendada() throws PersistentException {
@@ -148,6 +136,11 @@ public class BD_Listas_de_reproduccion {
             i++;
         }
         return canciones;
+    }
+
+    public void editarLista(String aNombre, String canciones, int aIdLista) {
+        // TODO Auto-generated method stub
+
     }
 
 }

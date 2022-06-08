@@ -37,7 +37,7 @@ public class BD_Usuarios_Registrados {
 			accesoD.setTipoUsuario("usuario");
 			accesoD.setFechaBloqueo("");
 			Acceso_DatoDAO.save(accesoD);
-			
+
 			Estadistica estadistica = usuario.getEstadistica();
 			estadistica.setTiempoAnual(0);
 			double[] tiempoSemana = new double[7];
@@ -109,16 +109,16 @@ public class BD_Usuarios_Registrados {
         boolean correcto = false;
 		try {
 			Usuario_Registrado usuario = Usuario_RegistradoDAO.loadUsuario_RegistradoByORMID(aIdUsuario);
-			
+
 			correcto = Usuario_RegistradoDAO.delete(usuario);
-			
+
 			BD_Listas_de_reproduccion bdlistas = new BD_Listas_de_reproduccion();
             orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = usuario.listas_de_reproduccion_propias
                     .toArray();
             for (int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
             	Lista_de_reproduccionDAO.delete(lListas_de_reproduccion_propiass[i]);
             }
-			
+
 			BD_Acceso_Datos bdacceso = new BD_Acceso_Datos();
 			if(usuario.getAcceso_Dato() != null) {
 				bdacceso.eliminarAcceso(usuario.getAcceso_Dato().getId());
@@ -137,18 +137,6 @@ public class BD_Usuarios_Registrados {
         }
         return correcto;
     }
-
-	public void seguirLista(int aIdLista) throws PersistentException{
-		throw new UnsupportedOperationException();
-	}
-
-	public void seguir_dejarDeSeguirUsuario(int aId, int aIdSeguido) throws PersistentException{
-		throw new UnsupportedOperationException();
-	}
-
-	public Usuario_Registrado cargarUsuario(int aIdUsuario) {
-		throw new UnsupportedOperationException();
-	}
 
 	public Usuario_Registrado[] cargarListaSeguidores(int aIdUsuario) throws PersistentException{
 		List<Usuario_Registrado> seguidores = new Vector<Usuario_Registrado>();

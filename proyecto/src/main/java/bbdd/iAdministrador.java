@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import org.orm.PersistentException;
 
-import interfaz.Cancion;
 import orm.bbdd.Album;
 import orm.bbdd.Artista;
 import orm.bbdd.Estilo;
@@ -27,13 +26,11 @@ public interface iAdministrador extends iActor_comun {
 
 	public void editarEstilo(String aNombre, int aIdEstilo);
 
-	public void editarLista(String aNombre, int aIdLista);
+	public void editarLista(String aNombre, String canciones, int aIdLista) throws PersistentException;
 
 	public int editarUsuario(int aIdUsuario, String aEmail, String aContrasena, String aNick, String aImagen);
 
 	public void editarFoto(String aFoto, int aIdUsuario);
-
-	public void editarCancionesMostradas(Cancion[] aCanciones);
 
 	public void editarNumCancionesCibernauta(int aNumCanciones);
 

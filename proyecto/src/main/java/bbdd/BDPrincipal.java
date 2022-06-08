@@ -10,7 +10,6 @@ import orm.bbdd.Album;
 import orm.bbdd.AlbumDAO;
 import orm.bbdd.Artista;
 import orm.bbdd.Cancion;
-import orm.bbdd.Estadistica;
 import orm.bbdd.Estilo;
 import orm.bbdd.Evento;
 import orm.bbdd.Lista_de_reproduccion;
@@ -27,11 +26,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     public BD_Estilos _bd_estilos = new BD_Estilos();
     public BD_Estadisticas _bd_estadisticas = new BD_Estadisticas();
     public BD_Acceso_Datos _bd_acceso_datos = new BD_Acceso_Datos();
-
-    @Override
-    public void anadir(String aNombre) {
-        throw new UnsupportedOperationException();
-    }
 
     @Override
     public void desmarcarFavorita(int idCancion, int idUsuario) {
@@ -52,26 +46,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             e.printStackTrace();
         }
         return -3;
-    }
-
-    @Override
-    public void seguirLista(int aIdLista) {
-        try {
-            _bd_usuarios_registrados = new BD_Usuarios_Registrados();
-            _bd_usuarios_registrados.seguirLista(aIdLista);
-        } catch (PersistentException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void seguir_dejarDeSeguirUsuario(int aId, int aIdSeguido) {
-        try {
-            _bd_usuarios_registrados = new BD_Usuarios_Registrados();
-            _bd_usuarios_registrados.seguir_dejarDeSeguirUsuario(aId, aIdSeguido);
-        } catch (PersistentException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -183,13 +157,9 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void editarLista(String aNombre, int aIdLista) {
-        try {
-            _bd_listas_de_reproduccion = new BD_Listas_de_reproduccion();
-            _bd_listas_de_reproduccion.editarLista(aNombre, aIdLista);
-        } catch (PersistentException e) {
-            e.printStackTrace();
-        }
+    public void editarLista(String aNombre, String canciones, int aIdLista) throws PersistentException {
+        _bd_listas_de_reproduccion = new BD_Listas_de_reproduccion();
+        _bd_listas_de_reproduccion.editarLista(aNombre, canciones, aIdLista);
     }
 
     @Override
@@ -275,11 +245,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             e.printStackTrace();
         }
         return correcto;
-    }
-
-    @Override
-    public void editarCancionesMostradas(interfaz.Cancion[] aCanciones) {
-        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -384,11 +349,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public Album cargarAlbum(int aIdAlbum) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public Album[] cargarAlbumRecomendado(int aIdUsuario) {
         Album[] albumes = null;
 
@@ -401,11 +361,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public Artista cargarArtista(int aIdArtista) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public Estilo[] cargarEstilo() {
         Estilo[] estilos = null;
         try {
@@ -414,11 +369,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             e.printStackTrace();
         }
         return estilos;
-    }
-
-    @Override
-    public Cancion cargarCancion(int aIdCancion) {
-        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -470,11 +420,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public Lista_de_reproduccion cargarLista(int aIdLista) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public Lista_de_reproduccion[] cargarListaRecomendada() {
         Lista_de_reproduccion[] listas = null;
 
@@ -496,16 +441,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             e.printStackTrace();
         }
         return listas;
-    }
-
-    @Override
-    public Estadistica cargarEstadisticas(int aIdEstadisticas) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public Usuario_Registrado cargarUsuario(int aIdUsuario) {
-        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -729,11 +664,4 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     public Evento[] cargarEventos(int id) throws PersistentException {
         return _bd_eventos.cargarEventos(id);
     }
-
-    @Override
-    public Actor_Comun getUsuario(String correo) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
 }
