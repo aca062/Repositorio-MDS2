@@ -15,6 +15,7 @@ public class Canciones_favoritas extends VistaCanciones_favoritas{
 	private Button _verMasB;*/
 	public Actor_comun _actorComun;
 	public Vector<Cancion> _cancion = new Vector<Cancion>();
+	public Ver_mas_canciones_favoritas _verMasCanciones;
 	public Vector<Ver_mas_canciones_favoritas> _verMasCancionesFavoritas = new Vector<Ver_mas_canciones_favoritas>();
     iActor_comun bd = new BDPrincipal();
 
@@ -30,7 +31,9 @@ public class Canciones_favoritas extends VistaCanciones_favoritas{
 
 	protected void VerMas() {
         // TODO Auto-generated method stub
-
+		_verMasCanciones = new Ver_mas_canciones_favoritas();
+		_verMasCanciones.getStyle().set("Width", "100%");
+    	ControladorVistas.CambiarContenido(_verMasCanciones);
     }
 
     void Inicializar() {
