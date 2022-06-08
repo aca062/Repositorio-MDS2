@@ -106,12 +106,12 @@ public class Editar_usuario extends VistaEditar_usuario{
 	protected void Confirmar() {
 		//Más cosas
     	if (this.getNick().getValue().isEmpty() || this.geteMail().getValue().isEmpty()
-                || this.getContraseña().getValue().isEmpty() || this.getConfirmarContraseña().getValue().isEmpty()) {
+                || this.getContrasena().getValue().isEmpty() || this.getConfirmarContrasena().getValue().isEmpty()) {
             ControladorVistas.PopUpBasico("Alguno de los campos está vacío");
-        } else if (!this.getContraseña().getValue().equals(this.getConfirmarContraseña().getValue())) {
+        } else if (!this.getContrasena().getValue().equals(this.getConfirmarContrasena().getValue())) {
             ControladorVistas.PopUpBasico("Las dos contraseñas tienen que ser iguales");
         } else {
-            int comprobacion = adm.editarUsuario(id, this.geteMail().getValue(), this.getContraseña().getValue(), this.getNick().getValue(), pathFoto);
+            int comprobacion = adm.editarUsuario(id, this.geteMail().getValue(), this.getContrasena().getValue(), this.getNick().getValue(), pathFoto);
             if (comprobacion == -1) {
                 ControladorVistas.PopUpBasico("El nick introducido ya existe");
             } else if (comprobacion == -2) {
@@ -164,14 +164,14 @@ public class Editar_usuario extends VistaEditar_usuario{
 	void Inicializar(Usuario_Registrado usuario) {
 		this.id = usuario.getId();
 		this.pathFoto = usuario.getFoto();
-		this.getContraseña().setValue(usuario.getContrasena());
+		this.getContrasena().setValue(usuario.getContrasena());
 		this.geteMail().setValue(usuario.getEmail());
 		this.getNick().setValue(usuario.getNick());
 		this.getCancelar().setVisible(true);
 		this.getConfirmar().setVisible(true);
 		this.getNick().setVisible(true);
-		this.getContraseña().setVisible(true);
-		this.getConfirmarContraseña().setVisible(true);
+		this.getContrasena().setVisible(true);
+		this.getConfirmarContrasena().setVisible(true);
 		this.geteMail().setVisible(true);
 		this.getH2Titulo().setVisible(true);
 	}

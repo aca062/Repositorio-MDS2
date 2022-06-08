@@ -53,7 +53,7 @@ public class Editar_album extends VistaEditar_album{
             ControladorVistas.PopUpBasico("No se ha introducido título del álbum");
         } else if (this.getNombreArtista().getValue().isEmpty()) {
             ControladorVistas.PopUpBasico("No se ha introducido ningún artista");
-        } else if (this.getFechaEdición().isEmpty()) {
+        } else if (this.getFechaEdicion().isEmpty()) {
             ControladorVistas.PopUpBasico("No se ha añadido una fecha de edición");
         } else {
             try {
@@ -87,7 +87,7 @@ public class Editar_album extends VistaEditar_album{
                 }
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
                 dateFormat.setLenient(false);
-                Date fechaUtil = dateFormat.parse(this.getFechaEdición().getValue());
+                Date fechaUtil = dateFormat.parse(this.getFechaEdicion().getValue());
                 java.sql.Date fecha = new java.sql.Date(fechaUtil.getTime());
                 int comprobacion = adm.editarAlbum(this.getTitulo().getValue(), fecha, pathFoto, this.getNombreArtista().getValue(), canciones, id);
                 if (comprobacion == 1) {
@@ -121,7 +121,7 @@ public class Editar_album extends VistaEditar_album{
 	void Inicializar(Album album) {
 	    this.getNombreArtista().setValue(album.getArtista().getNick());
 	    this.getTitulo().setValue(album.getTitulo());
-	    this.getFechaEdición().setValue(album.getFechaEdicion().toString());
+	    this.getFechaEdicion().setValue(album.getFechaEdicion().toString());
         
         String cancion = "";
         for(int i=0;i < album.canciones.toArray().length;i++) {
@@ -138,6 +138,6 @@ public class Editar_album extends VistaEditar_album{
 		this.getTitulo().setVisible(true);
 		this.getH2Titulo().setVisible(true);
 		this.getNombreArtista().setVisible(true);
-		this.getFechaEdición().setVisible(true);
+		this.getFechaEdicion().setVisible(true);
 	}
 }

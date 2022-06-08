@@ -11,8 +11,8 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-editar_cancion template.
@@ -32,10 +32,10 @@ public class VistaEditar_cancion extends LitTemplate {
 	private H2 h2Titulo;
 	@Id("layoutCancion")
 	private Element layoutCancion;
-	@Id("título")
-	private TextField título;
-	@Id("títuloÁlbum")
-	private TextField títuloÁlbum;
+	@Id("titulo")
+	private TextField titulo;
+	@Id("tituloAlbum")
+	private TextField tituloAlbum;
 	@Id("compositores")
 	private TextField compositores;
 	@Id("productores")
@@ -93,19 +93,19 @@ public class VistaEditar_cancion extends LitTemplate {
 	}
 
 	public TextField getTitulo() {
-		return título;
+		return titulo;
 	}
 
-	public void setTítulo(TextField título) {
-		this.título = título;
+	public void setTitulo(TextField titulo) {
+		this.titulo = titulo;
 	}
 
 	public TextField getTituloAlbum() {
-		return títuloÁlbum;
+		return tituloAlbum;
 	}
 
-	public void setTítuloÁlbum(TextField títuloÁlbum) {
-		this.títuloÁlbum = títuloÁlbum;
+	public void setTituloAlbum(TextField tituloAlbum) {
+		this.tituloAlbum = tituloAlbum;
 	}
 
 	public TextField getCompositores() {

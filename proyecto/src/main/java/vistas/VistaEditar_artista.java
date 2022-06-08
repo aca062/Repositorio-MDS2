@@ -1,19 +1,18 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.component.select.Select;
-import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.textfield.PasswordField;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-editar_artista template.
@@ -25,7 +24,7 @@ import com.vaadin.flow.component.upload.Upload;
 @JsModule("./src/vistas/vista-editar_artista.ts")
 public class VistaEditar_artista extends LitTemplate {
 
-    
+
 
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
@@ -39,10 +38,10 @@ public class VistaEditar_artista extends LitTemplate {
 	private Image imgArtista;
 	@Id("nick")
 	private TextField nick;
-	@Id("contraseña")
-	private PasswordField contraseña;
-	@Id("confirmarContraseña")
-	private PasswordField confirmarContraseña;
+	@Id("contrasena")
+	private PasswordField contrasena;
+	@Id("confirmarContrasena")
+	private PasswordField confirmarContrasena;
 	@Id("eMail")
 	private TextField eMail;
 	@Id("layoutBotones")
@@ -113,20 +112,20 @@ public class VistaEditar_artista extends LitTemplate {
 		this.nick = nick;
 	}
 
-	public PasswordField getContraseña() {
-		return contraseña;
+	public PasswordField getContrasena() {
+		return contrasena;
 	}
 
-	public void setContraseña(PasswordField contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(PasswordField contrasena) {
+		this.contrasena = contrasena;
 	}
 
-	public PasswordField getConfirmarContraseña() {
-		return confirmarContraseña;
+	public PasswordField getConfirmarContrasena() {
+		return confirmarContrasena;
 	}
 
-	public void setConfirmarContraseña(PasswordField confirmarContraseña) {
-		this.confirmarContraseña = confirmarContraseña;
+	public void setConfirmarContrasena(PasswordField confirmarContrasena) {
+		this.confirmarContrasena = confirmarContrasena;
 	}
 
 	public TextField geteMail() {
@@ -185,6 +184,6 @@ public class VistaEditar_artista extends LitTemplate {
 		this.upload = upload;
 	}
 
-	
+
 
 }

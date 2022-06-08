@@ -10,8 +10,8 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-editar_album template.
@@ -39,8 +39,8 @@ public class VistaEditar_album extends LitTemplate {
 	private Button cambiarImagen;
 	@Id("nombreArtista")
 	private TextField nombreArtista;
-	@Id("fechaEdición")
-	private TextField fechaEdición;
+	@Id("fechaEdicion")
+	private TextField fechaEdicion;
 	@Id("titulo")
 	private TextField titulo;
 	@Id("layoutBotones")
@@ -117,12 +117,12 @@ public class VistaEditar_album extends LitTemplate {
 		this.nombreArtista = nombreArtista;
 	}
 
-	public TextField getFechaEdición() {
-		return fechaEdición;
+	public TextField getFechaEdicion() {
+		return fechaEdicion;
 	}
 
-	public void setFechaEdición(TextField fechaEdición) {
-		this.fechaEdición = fechaEdición;
+	public void setFechaEdicion(TextField fechaEdicion) {
+		this.fechaEdicion = fechaEdicion;
 	}
 
 	public TextField getTitulo() {

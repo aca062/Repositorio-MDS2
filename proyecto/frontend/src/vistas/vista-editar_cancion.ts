@@ -22,8 +22,8 @@ export class VistaEditar_cancion extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPrincipal">
  <h2 id="h2Titulo" style="margin-left: var(--lumo-space-xl);">Editar cancion</h2>
  <vaadin-vertical-layout style="width: 90%; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="layoutCancion">
-  <vaadin-text-field label="Título" id="título" value="120" style="width: 60%;" has-value></vaadin-text-field>
-  <vaadin-text-field label="Título álbum" value="El último tour del mundo" id="títuloÁlbum" has-value style="width: 60%;"></vaadin-text-field>
+  <vaadin-text-field label="Título" id="titulo" value="120" style="width: 60%;" has-value></vaadin-text-field>
+  <vaadin-text-field label="Título álbum" value="El último tour del mundo" id="tituloAlbum" has-value style="width: 60%;"></vaadin-text-field>
   <vaadin-text-field label="Compositores" value="Tainy" id="compositores" has-value style="width: 60%;"></vaadin-text-field>
   <vaadin-text-field label="Productores" id="productores" value="Tainy" style="width: 60%;" has-value></vaadin-text-field>
   <vaadin-text-field label="Interpretes" id="interpretes" value="Bad bunny" style="width: 60%;" has-value></vaadin-text-field>
@@ -33,7 +33,7 @@ export class VistaEditar_cancion extends LitElement {
    <h4 id="h4Titulo" style="align-self: center;">Fichero multimedia</h4>
    <vaadin-upload id="upload"></vaadin-upload>
    <vaadin-button id="botonEliminar">
-    Eliminar
+     Eliminar 
    </vaadin-button>
    <h5 id="h5Requisitos" style="flex-grow: 0; margin-left: 10%;">Solo son válidos los .mp3, .mp4, .ogg</h5>
   </vaadin-horizontal-layout>

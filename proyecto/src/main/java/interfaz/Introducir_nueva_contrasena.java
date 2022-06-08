@@ -3,7 +3,6 @@ package interfaz;
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaIntroducir_nueva_contrasena;
 
@@ -15,36 +14,38 @@ public class Introducir_nueva_contrasena extends VistaIntroducir_nueva_contrasen
 	private Button _confirmarB;
 	private Button _cancelarB;*/
 	public Recuperar_contrasena _recuperarContrasena;
-	
+
 	public Introducir_nueva_contrasena() {
 		Inicializar();
 		this.getCancelar().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				Cancelar();
 			}
 		});
-		
+
 		this.getConfirmar().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				Confirmar();
 			}
 		});
 	}
 
 	void Inicializar() {
-		
+
 	}
-	
+
 	public void Cancelar() {
 		_recuperarContrasena = new Recuperar_contrasena();
 		_recuperarContrasena.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_recuperarContrasena);
 	}
-	
+
 	public void Confirmar() {
-		if (!this.getNuevaContraseña().getValue().toString().isEmpty() && 
-			!this.getVuelvaAIntroducirLaContraseña().getValue().toString().isEmpty()) {
-			if (!this.getNuevaContraseña().getValue().toString().equals(this.getVuelvaAIntroducirLaContraseña().getValue().toString())) {
+		if (!this.getNuevaContrasena().getValue().toString().isEmpty() &&
+			!this.getVuelvaAIntroducirLaContrasena().getValue().toString().isEmpty()) {
+			if (!this.getNuevaContrasena().getValue().toString().equals(this.getVuelvaAIntroducirLaContrasena().getValue().toString())) {
 				ControladorVistas.PopUpBasico("Las dos contraseñas no son iguales");
 			}else {
 				ControladorVistas.CambiarContenido(new Cibernauta());

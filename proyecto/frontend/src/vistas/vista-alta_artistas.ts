@@ -32,8 +32,8 @@ export class VistaAlta_artistas extends LitElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field label="Nick" id="nick" style="color: #000000; width: 60%;" value="Bad Bunny" has-value></vaadin-text-field>
-  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" style="color: #000000; width: 60%;" has-value id="contraseña"></vaadin-password-field>
-  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value style="color: #000000; width: 60%;" id="confirmarContraseña"></vaadin-password-field>
+  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" style="color: #000000; width: 60%;" has-value id="contrasena"></vaadin-password-field>
+  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value style="color: #000000; width: 60%;" id="confirmarContrasena"></vaadin-password-field>
   <vaadin-text-field label="E-mail" id="eMail" style="color: #000000; width: 60%;" value="bbunny@gmail.com" has-value></vaadin-text-field>
   <vaadin-combo-box id="dropdown"></vaadin-combo-box>
   <vaadin-horizontal-layout id="layoutBotones" style="margin-left: 10%; width: 90%; justify-content: flex-end;">

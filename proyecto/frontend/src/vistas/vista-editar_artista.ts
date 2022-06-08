@@ -27,12 +27,12 @@ export class VistaEditar_artista extends LitElement {
    <img id="imgArtista" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
    <vaadin-upload id="upload"></vaadin-upload>
    <vaadin-button id="eliminarFoto" style="align-self: center;">
-    Eliminar foto
+     Eliminar foto 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field label="Nick" id="nick" value="Bad bunny" style="width: 60%;" has-value></vaadin-text-field>
-  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" has-value id="contraseña" style="width: 60%;"></vaadin-password-field>
-  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value id="confirmarContraseña" style="width: 60%;"></vaadin-password-field>
+  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" has-value id="contrasena" style="width: 60%;"></vaadin-password-field>
+  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value id="confirmarContrasena" style="width: 60%;"></vaadin-password-field>
   <vaadin-text-field label="E-mail" id="eMail" value="bbunny@gmail..com" style="width: 60%;" has-value></vaadin-text-field>
   <vaadin-combo-box id="dropdown"></vaadin-combo-box>
   <vaadin-horizontal-layout id="layoutBotones" style="margin-left: 10%; width: 90%; justify-content: flex-end;">

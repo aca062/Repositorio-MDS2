@@ -140,14 +140,14 @@ public class Editar_artista extends VistaEditar_artista{
     		}
     	}
     	if (this.getNick().getValue().isEmpty() || this.geteMail().getValue().isEmpty()
-                || this.getContraseña().getValue().isEmpty() || this.getConfirmarContraseña().getValue().isEmpty()) {
+                || this.getContrasena().getValue().isEmpty() || this.getConfirmarContrasena().getValue().isEmpty()) {
             ControladorVistas.PopUpBasico("Alguno de los campos está vacío");
-        } else if (!this.getContraseña().getValue().equals(this.getConfirmarContraseña().getValue())) {
+        } else if (!this.getContrasena().getValue().equals(this.getConfirmarContrasena().getValue())) {
             ControladorVistas.PopUpBasico("Las dos contraseñas tienen que ser iguales");
         } else if (estiloSeleccionado == null) {
             ControladorVistas.PopUpBasico("No se ha seleccionado un estilo");
         } else {
-            int comprobacion = adm.editarArtista(this.geteMail().getValue(),this.getContraseña().getValue() , this.getNick().getValue(), pathFoto, id,estiloSeleccionado.getIdEstilo());
+            int comprobacion = adm.editarArtista(this.geteMail().getValue(),this.getContrasena().getValue() , this.getNick().getValue(), pathFoto, id,estiloSeleccionado.getIdEstilo());
             if (comprobacion == -1) {
                 ControladorVistas.PopUpBasico("El nick introducido ya existe");
             } else if (comprobacion == -2) {
@@ -204,14 +204,14 @@ public class Editar_artista extends VistaEditar_artista{
 
 	void Inicializar(Artista artista) {
 		this.id = artista.getId();
-		this.getContraseña().setValue(artista.getContrasena());
+		this.getContrasena().setValue(artista.getContrasena());
 		this.pathFoto = artista.getFoto();
 		this.geteMail().setValue(artista.getEmail());
 		this.getCancelar().setVisible(true);
 		this.getConfirmar().setVisible(true);
 		this.getNick().setVisible(true);
-		this.getContraseña().setVisible(true);
-		this.getConfirmarContraseña().setVisible(true);
+		this.getContrasena().setVisible(true);
+		this.getConfirmarContrasena().setVisible(true);
 		this.geteMail().setVisible(true);
 		this.getImgArtista().setVisible(true);
 		this.getH2Titulo().setVisible(true);

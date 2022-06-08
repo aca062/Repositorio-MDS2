@@ -26,11 +26,11 @@ export class VistaEditar_album extends LitElement {
    <img id="imgAlbum" src="https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab">
    <vaadin-upload id="upload"></vaadin-upload>
    <vaadin-button id="cambiarImagen" style="flex-grow: 0; align-self: center;" dir="eliminarFoto">
-    Eliminar foto
+     Eliminar foto 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field label="Nombre artista " style="width: 80%; align-self: flex-start;" id="nombreArtista" value="Bad bunny" has-value></vaadin-text-field>
-  <vaadin-text-field label="Fecha edición" style="width: 80%; align-self: flex-start;" id="fechaEdición" value="27/11/2020" has-value></vaadin-text-field>
+  <vaadin-text-field label="Fecha edición" style="width: 80%; align-self: flex-start;" id="fechaEdicion" value="27/11/2020" has-value></vaadin-text-field>
   <vaadin-text-field label="Titulo" id="titulo" style="width: 80%; align-self: flex-start;" value="El último tour del mundo" has-value></vaadin-text-field>
   <vaadin-text-area id="listaCanciones" style="width: 80%;" label="Canciones"></vaadin-text-area>
   <vaadin-horizontal-layout theme="spacing" id="layoutBotones" style="align-self: flex-end; margin-top: var(--lumo-space-s);">

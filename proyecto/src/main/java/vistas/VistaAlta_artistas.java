@@ -2,18 +2,17 @@ package vistas;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.combobox.ComboBox;
 
 /**
  * A Designer generated component for the vista-alta_artistas template.
@@ -33,12 +32,12 @@ public class VistaAlta_artistas extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("imgArtista")
 	private Image imgArtista;
-	@Id("contraseña")
+	@Id("contrasena")
 	private PasswordField contrasena;
 	@Id("nick")
 	private TextField nick;
-	@Id("confirmarContraseña")
-	private PasswordField confirmarContraseña;
+	@Id("confirmarContrasena")
+	private PasswordField confirmarContrasena;
 	@Id("eMail")
 	private TextField eMail;
 	@Id("confirmar")
@@ -112,11 +111,11 @@ public class VistaAlta_artistas extends LitTemplate {
 	}
 
 	public PasswordField getConfirmarContrasena() {
-		return confirmarContraseña;
+		return confirmarContrasena;
 	}
 
 	public void setConfirmarContraseña(PasswordField confirmarContraseña) {
-		this.confirmarContraseña = confirmarContraseña;
+		this.confirmarContrasena = confirmarContraseña;
 	}
 
 	public TextField geteMail() {

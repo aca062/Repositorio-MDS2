@@ -26,12 +26,12 @@ export class VistaEditar_usuario extends LitElement {
    <img id="img">
    <vaadin-upload id="upload"></vaadin-upload>
    <vaadin-button id="eliminarFoto" style="align-self: center; margin-left: 5%;">
-    Eliminar foto
+     Eliminar foto 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field label="Nick" id="nick" value="Paco12" style="width: 60%;" has-value></vaadin-text-field>
-  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" has-value id="contraseña" style="width: 60%;"></vaadin-password-field>
-  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value id="confirmarContraseña" style="width: 60%;"></vaadin-password-field>
+  <vaadin-password-field label="Contraseña" placeholder="Enter password" value="secret1" has-value id="contrasena" style="width: 60%;"></vaadin-password-field>
+  <vaadin-password-field label="Confirmar contraseña" placeholder="Enter password" value="secret1" has-value id="confirmarContrasena" style="width: 60%;"></vaadin-password-field>
   <vaadin-text-field label="E-mail" id="eMail" value="paco12@gmail.com" style="width: 60%;" has-value></vaadin-text-field>
   <vaadin-horizontal-layout id="layoutBotones" style="margin-left: 10%; width: 80%; justify-content: flex-end; margin-top: var(--lumo-space-xl);">
    <vaadin-button id="cancelar" style="margin-right: 5%;">
