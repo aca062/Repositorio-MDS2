@@ -32,7 +32,7 @@ public class BD_Listas_de_reproduccion {
         try {
             Lista_de_reproduccion lista = Lista_de_reproduccionDAO.getLista_de_reproduccionByORMID(aIdListas);
             correcto = Lista_de_reproduccionDAO.deleteAndDissociate(lista);
-            
+
             t.commit();
         } catch (Exception e) {
             correcto = false;
@@ -49,11 +49,11 @@ public class BD_Listas_de_reproduccion {
         Cancion[] cancions = new Cancion[canciones.length];
         int i = 0;
         for (String cancion : canciones) {
-            Cancion j = CancionDAO.listCancionByQuery("titulo='" + cancion.trim() + "'", "titulo")[0];
-            cancions[i] = j;
-            if (j == null) {
+            Cancion[] j = CancionDAO.listCancionByQuery("titulo='" + cancion.trim() + "'", "titulo");
+            if (j == null || j.length == 0) {
                 return -1;
             }
+            cancions[i] = j[0];
             i++;
         }
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
@@ -91,7 +91,7 @@ public class BD_Listas_de_reproduccion {
         }
         return listas;
     }
-    
+
     public Lista_de_reproduccion[] cargarListaFavorita() throws PersistentException{
         Lista_de_reproduccion[] listas = new Lista_de_reproduccion[3];
 
@@ -104,7 +104,7 @@ public class BD_Listas_de_reproduccion {
         }
         return listas;
     }
-    
+
     public Lista_de_reproduccion[] busquedaLista(String paramBusqueda) throws PersistentException {
         Lista_de_reproduccion[] listas = new Lista_de_reproduccion[0];
 

@@ -1,5 +1,7 @@
 package bbdd;
 
+import org.orm.PersistentException;
+
 import orm.bbdd.Actor_Comun;
 import orm.bbdd.Cancion;
 
@@ -14,4 +16,6 @@ public interface iCibernauta {
 	public Cancion[] cargarUltimosExitos(int aNumCanciones);
 
     public Actor_Comun getUsuario(String correo);
+
+    public Cancion[] cargarCancionesAdmin() throws PersistentException;
 }

@@ -25,31 +25,35 @@ public class Menu_administracion extends VistaMenu_administracion{
 	public Editar_canciones_mostradas_al_cibernauta _editarCancionesMostradasAlCibernauta;
 	public Dar_de_alta _darDeAlta;
 	public Buscar_elemento _buscarElemento;
-	
+
 	public Menu_administracion() {
 		Inicializar();
 		this.getBotonBuscarElemento().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				BuscarElemento();
 			}
 		});
 		this.getBotonDarDeAlta().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				DarAlta();
 			}
 		});
 		this.getBotonEditarCanciones().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				EditarCanciones();
 			}
 		});
 		this.getBotonEditarLimite().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				Editar_numero_canciones_mostradas_al_cibernauta();
 			}
 		});
 	}
-	
+
 	void Inicializar() {
 		this.getBotonDarDeAlta().setVisible(true);
 		this.getBotonEditarCanciones().setVisible(true);
@@ -82,18 +86,20 @@ public class Menu_administracion extends VistaMenu_administracion{
         numeroMaximo.setWidth("100%");
         cancelar.getStyle().set("margin-right", "20px");
         guardarCambios.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				ConfirmarNumeroCanciones(numeroMaximo.getValue().toString(), popup);
 			}
 		});
         cancelar.addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
+			@Override
+            public void onComponentEvent(ComponentEvent event) {
 				popup.close();
 			}
 		});
         ControladorVistas.PopUpFormularioEditar(popup);
 	}
-	
+
 	void ConfirmarNumeroCanciones(String numero, Dialog popup) {
 		//Acceso a la BBDD para cambiar el numero
 	    try {
@@ -104,7 +110,7 @@ public class Menu_administracion extends VistaMenu_administracion{
 	        ControladorVistas.PopUpBasico("No se ha introducido un número entero válido");
 	    }
 	}
-	
+
 	public void EditarCanciones() {
 		_editarCancionesMostradasAlCibernauta = new Editar_canciones_mostradas_al_cibernauta();
 		_editarCancionesMostradasAlCibernauta.getStyle().set("width", "100%");

@@ -2,6 +2,8 @@ package bbdd;
 
 import java.sql.Date;
 
+import org.orm.PersistentException;
+
 import interfaz.Cancion;
 import orm.bbdd.Album;
 import orm.bbdd.Artista;
@@ -61,6 +63,10 @@ public interface iAdministrador extends iActor_comun {
     public Estilo[] busquedaEstilos(String paramBusqueda);
 
     public Lista_de_reproduccion[] busquedaListas(String paramBusqueda);
+
+    public int editarCancionesCibernauta(String[] strings, int i) throws PersistentException;
+
+    public orm.bbdd.Cancion[] cargarCancionesCibernauta(int id) throws PersistentException;
 
 
 

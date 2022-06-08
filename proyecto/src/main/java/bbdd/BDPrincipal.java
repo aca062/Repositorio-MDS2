@@ -706,4 +706,19 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         canciones = _bd_listas_de_reproduccion.cargarCancionesLista(idLista);
         return canciones;
     }
+
+    @Override
+    public int editarCancionesCibernauta(String[] strings, int i) throws PersistentException {
+        return _bd_administradores.editarCancionesCibernauta(strings, i);
+    }
+
+    @Override
+    public orm.bbdd.Cancion[] cargarCancionesCibernauta(int id) throws PersistentException {
+        return _bd_administradores.cargarCancionesCibernauta(id);
+    }
+
+    @Override
+    public Cancion[] cargarCancionesAdmin() throws PersistentException {
+        return _bd_administradores.cargarCancionesCibernauta(1);
+    }
 }

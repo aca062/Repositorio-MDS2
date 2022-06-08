@@ -43,7 +43,6 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 
     public void setLista(Lista_de_reproduccion lista) {
         this.lista = lista;
-
         this.getBotonNombre().setText(lista.getNombre());
         this.setId(Integer.toString(lista.getIdLista()));
         this.getBotonNombre().getStyle().set("width", "100%");

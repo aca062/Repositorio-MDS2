@@ -13,7 +13,7 @@ public class Lista_de_reproduccion_favoritos extends VistaLista_de_reproduccion_
 	public Ver_mas_canciones_favoritas _verMasCancionesFavoritas;
 	public Vector<Cancion_favorita> _cancionFavorita = new Vector<Cancion_favorita>();
 	iActor_comun bd = new BDPrincipal();
-	
+
 	public Lista_de_reproduccion_favoritos() {
 		Inicializar();
 	}
@@ -23,10 +23,11 @@ public class Lista_de_reproduccion_favoritos extends VistaLista_de_reproduccion_
 			_cancionFavorita.lastElement().setCancion(cancion);
 			this.getListaCanciones().add(_cancionFavorita.lastElement());
 		}
+
 		this.getH3Creador().setText(ControladorVistas.getUsuario().getNick());
 		this.getH1Titulo().setVisible(true);
 		this.getH3Creador().setVisible(true);
 		this.getNumCanciones().setVisible(true);
-		
+
 	}
 }
