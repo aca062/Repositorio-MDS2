@@ -17,6 +17,7 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
     public Cancion _cancion;
     public Reproductor _reproductor;
     public Ver_creditos _verCreditos;
+    public Ver_detalle_album _verDetalleAlbum;
     orm.bbdd.Cancion cancion;
     boolean favorita;
     BD_Canciones bdCanciones = new BD_Canciones();
@@ -47,7 +48,9 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
             }
         });
         this.getBotonMeGusta().addClickListener(new ComponentEventListener() {
-            @Override
+            
+        	
+        	@Override
             public void onComponentEvent(ComponentEvent event) {
                 if (favorita) {
                     bd.desmarcarFavorita(cancion.getIdCancion(), ControladorVistas.getUsuario().getId());
@@ -58,6 +61,12 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
                     meGusta.getStyle().set("background-image", "url('https://img.freepik.com/vector-gratis/me-gusta-icono-corazon-estilo-contorno-plano-transmision-video-vivo-chat-me-gusta-redes-sociales-como-botones-web-corazon-rojo-aisladas-sobre-fondo-blanco-dia-san-valentin-illustaration-vector_175838-2893.jpg?w=360')");
                     favorita = true;
                 }
+            }
+        });
+        this.getBotonAlbum().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                IrAlbum();
             }
         });
     }
@@ -118,4 +127,11 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
         this.getLayoutPrincipal().as(VerticalLayout.class).add(popup);
         popup.open();
     }
+    
+    public void IrAlbum() {
+    	_verDetalleAlbum = new Ver_detalle_album();
+    	_verDetalleAlbum.getStyle().set("Width", "100%");
+    	ControladorVistas.CambiarContenido(_verDetalleAlbum);
+    }
+    
 }
