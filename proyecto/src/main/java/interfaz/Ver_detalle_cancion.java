@@ -51,11 +51,13 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
             public void onComponentEvent(ComponentEvent event) {
                 if (favorita) {
                     bd.desmarcarFavorita(cancion.getIdCancion(), ControladorVistas.getUsuario().getId());
-                    meGusta.getStyle().set("background-image", "url('https://e7.pngegg.com/pngimages/507/757/png-clipart-computer-icons-heart-like-button-like-share-comment-love-logo.png')");
+                    meGusta.getStyle().set("background-image",
+                            "url('https://e7.pngegg.com/pngimages/507/757/png-clipart-computer-icons-heart-like-button-like-share-comment-love-logo.png')");
                     favorita = false;
-                }else {
+                } else {
                     bd.marcarFavorito(cancion.getIdCancion(), ControladorVistas.getUsuario().getId());
-                    meGusta.getStyle().set("background-image", "url('https://img.freepik.com/vector-gratis/me-gusta-icono-corazon-estilo-contorno-plano-transmision-video-vivo-chat-me-gusta-redes-sociales-como-botones-web-corazon-rojo-aisladas-sobre-fondo-blanco-dia-san-valentin-illustaration-vector_175838-2893.jpg?w=360')");
+                    meGusta.getStyle().set("background-image",
+                            "url('https://img.freepik.com/vector-gratis/me-gusta-icono-corazon-estilo-contorno-plano-transmision-video-vivo-chat-me-gusta-redes-sociales-como-botones-web-corazon-rojo-aisladas-sobre-fondo-blanco-dia-san-valentin-illustaration-vector_175838-2893.jpg?w=360')");
                     favorita = true;
                 }
             }
@@ -81,23 +83,25 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
     void Inicializar() {
         if (favorita) {
             this.getBotonMeGusta().getStyle().set("background-image",
-                    "url('https://img.freepik.com/vector-gratis/me-gusta-icono-corazon-estilo-contorno-plano-transmision-video-vivo-chat-me-gusta-redes-sociales-como-botones-web-corazon-rojo-aisladas-sobre-fondo-blanco-dia-san-valentin-illustaration-vector_175838-2893.jpg?w=360')");        }
+                    "url('https://img.freepik.com/vector-gratis/me-gusta-icono-corazon-estilo-contorno-plano-transmision-video-vivo-chat-me-gusta-redes-sociales-como-botones-web-corazon-rojo-aisladas-sobre-fondo-blanco-dia-san-valentin-illustaration-vector_175838-2893.jpg?w=360')");
+        }
         this.getH4NombreCancion().setText(cancion.getTitulo());
         if (cancion.album.size() == 1) {
             this.getBotonAlbum().setText(cancion.album.toArray()[0].getTitulo());
-        }else {
+        } else {
             this.getBotonAlbum().setVisible(false);
         }
         this.getBotonArtista().setText(cancion.artistas.toArray()[0].getNick());
         if (cancion.getRutaImagen() != null) {
             this.getFotoCancion().setSrc(cancion.getRutaImagen());
-        }else {
-            this.getFotoCancion().setSrc("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png");
+        } else {
+            this.getFotoCancion().setSrc("https://m.media-amazon.com/images/I/214zIZyXvVL._AC_SY450_.jpg");
         }
 
-        /*for (int i = 1; i < cancion.artistas.size(); i++) {
-            this.getLayoutBotones().addComponentAsFirst(_cancion)
-        }*/
+        /*
+         * for (int i = 1; i < cancion.artistas.size(); i++) {
+         * this.getLayoutBotones().addComponentAsFirst(_cancion) }
+         */
 
         this.getBotonAlbum().setVisible(true);
         this.getBotonArtista().setVisible(true);

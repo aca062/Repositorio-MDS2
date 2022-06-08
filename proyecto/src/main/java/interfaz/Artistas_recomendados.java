@@ -27,7 +27,7 @@ public class Artistas_recomendados extends VistaArtistas_recomendados{
         for (orm.bbdd.Artista artista : bd.cargarArtistaRecomendado()) {
             i++;
             _artistaElemento.add(new Artista_elemento());
-            _artistaElemento.lastElement().setCancion(artista);
+            _artistaElemento.lastElement().setArtista(artista);
             this.getLayoutPrincipal().add(_artistaElemento.lastElement());
             if (i == 3) {
                 break;
