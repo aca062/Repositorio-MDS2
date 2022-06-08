@@ -89,7 +89,11 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
             this.getBotonAlbum().setVisible(false);
         }
         this.getBotonArtista().setText(cancion.artistas.toArray()[0].getNick());
-        this.getFotoCancion().setSrc(cancion.getRutaImagen());
+        if (cancion.getRutaImagen() != null) {
+            this.getFotoCancion().setSrc(cancion.getRutaImagen());
+        }else {
+            this.getFotoCancion().setSrc("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png");
+        }
 
         /*for (int i = 1; i < cancion.artistas.size(); i++) {
             this.getLayoutBotones().addComponentAsFirst(_cancion)
