@@ -31,7 +31,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     public void anadir(String aNombre) {
         throw new UnsupportedOperationException();
     }
-
+    
     @Override
     public void desmarcarFavorita(int idCancion, int idUsuario) {
         try {

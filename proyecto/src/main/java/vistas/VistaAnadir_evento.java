@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.upload.Upload;
 
 /**
  * A Designer generated component for the vista-anadir_evento template.
@@ -31,10 +32,6 @@ public class VistaAnadir_evento extends LitTemplate {
 	private Element layoutEvento;
 	@Id("layoutEventoFoto")
 	private HorizontalLayout layoutEventoFoto;
-	@Id("imgFecha")
-	private Image imgFecha;
-	@Id("anadirFoto")
-	private Button anadirFoto;
 	@Id("fecha")
 	private TextField fecha;
 	@Id("lugar")
@@ -47,6 +44,12 @@ public class VistaAnadir_evento extends LitTemplate {
 	private Button cancelar;
 	@Id("confirmar")
 	private Button confirmar;
+	@Id("img")
+	private Image img;
+	@Id("upload")
+	private Upload upload;
+	@Id("eliminarFoto")
+	private Button eliminarFoto;
 
 	/**
      * Creates a new VistaAnadir_evento.
@@ -85,22 +88,6 @@ public class VistaAnadir_evento extends LitTemplate {
 
 	public void setLayoutEventoFoto(HorizontalLayout layoutEventoFoto) {
 		this.layoutEventoFoto = layoutEventoFoto;
-	}
-
-	public Image getImgFecha() {
-		return imgFecha;
-	}
-
-	public void setImgFecha(Image imgFecha) {
-		this.imgFecha = imgFecha;
-	}
-
-	public Button getAnadirFoto() {
-		return anadirFoto;
-	}
-
-	public void setAnadirFoto(Button anadirFoto) {
-		this.anadirFoto = anadirFoto;
 	}
 
 	public TextField getFecha() {
@@ -149,6 +136,30 @@ public class VistaAnadir_evento extends LitTemplate {
 
 	public void setConfirmar(Button confirmar) {
 		this.confirmar = confirmar;
+	}
+
+	public Image getImg() {
+		return img;
+	}
+
+	public void setImg(Image img) {
+		this.img = img;
+	}
+
+	public Upload getUpload() {
+		return upload;
+	}
+
+	public void setUpload(Upload upload) {
+		this.upload = upload;
+	}
+
+	public Button getEliminarFoto() {
+		return eliminarFoto;
+	}
+
+	public void setEliminarFoto(Button eliminarFoto) {
+		this.eliminarFoto = eliminarFoto;
 	}
 
 	

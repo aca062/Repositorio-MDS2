@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEvent;
@@ -38,6 +40,17 @@ public class Perfil_artista_propio extends Perfil_artista_comun {
                 DarDeBaja();
             }
         });
+	    this.getBotonAnadirFestivalConcierto().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                try {
+					AnadirFestival();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
 		
 	}
 	
@@ -50,6 +63,12 @@ public class Perfil_artista_propio extends Perfil_artista_comun {
         ControladorVistas.CambiarContenido(_cibernauta);
         
     }
+	
+	public void AnadirFestival() throws PersistentException {
+		_anadirEvento = new Anadir_evento();
+		_anadirEvento.getStyle().set("width", "100%");
+        ControladorVistas.CambiarContenido(_anadirEvento);
+	}
 	
 	public void DarDeBaja() {
 		 Dialog popup = new Dialog();
