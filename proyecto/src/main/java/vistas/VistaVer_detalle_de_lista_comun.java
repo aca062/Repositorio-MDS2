@@ -8,6 +8,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.html.H3;
 
 /**
  * A Designer generated component for the vista-ver_detalle_de_lista_comun template.
@@ -25,8 +26,6 @@ public class VistaVer_detalle_de_lista_comun extends LitTemplate {
 	private HorizontalLayout layoutTituloOpciones;
 	@Id("h2Titulo")
 	private H2 h2Titulo;
-	@Id("botonUsuario")
-	private Button botonUsuario;
 	@Id("layoutListaCanciones")
 	private Element layoutListaCanciones;
 	@Id("layoutCanciones")
@@ -35,6 +34,8 @@ public class VistaVer_detalle_de_lista_comun extends LitTemplate {
 	private Element vistaLista_de_canciones;
     @Id("eliminar")
     private Button eliminar;
+	@Id("idCreador")
+	private H3 idCreador;
 	/**
      * Creates a new VistaVer_detalle_de_lista_comun.
      */
@@ -58,12 +59,6 @@ public class VistaVer_detalle_de_lista_comun extends LitTemplate {
 	}
 	public void setH2Titulo(H2 h2Titulo) {
 		this.h2Titulo = h2Titulo;
-	}
-	public Button getBotonUsuario() {
-		return botonUsuario;
-	}
-	public void setBotonUsuario(Button botonUsuario) {
-		this.botonUsuario = botonUsuario;
 	}
 	public Element getLayoutListaCanciones() {
 		return layoutListaCanciones;
@@ -89,5 +84,11 @@ public class VistaVer_detalle_de_lista_comun extends LitTemplate {
     public void setEliminar(Button eliminar) {
         this.eliminar = eliminar;
     }
+	public H3 getIdCreador() {
+		return idCreador;
+	}
+	public void setIdCreador(H3 idCreador) {
+		this.idCreador = idCreador;
+	}
 
 }

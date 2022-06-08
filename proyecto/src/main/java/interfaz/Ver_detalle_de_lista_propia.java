@@ -41,7 +41,7 @@ public class Ver_detalle_de_lista_propia extends Ver_detalle_de_lista_comun {
 
 	void Inicializar() throws PersistentException {
 	    this.getH2Titulo().setText(lista.getNombre());
-	    this.getBotonUsuario().setVisible(false);
+	    this.getIdCreador().setVisible(false);
 		VerticalLayout layoutCanciones = this.getLayoutListaCanciones().as(VerticalLayout.class);
 		orm.bbdd.Cancion[] canciones = bd.cargarCancionesLista(lista.getIdLista());
 		for (orm.bbdd.Cancion cancion : canciones) {
