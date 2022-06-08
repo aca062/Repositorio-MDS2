@@ -33,10 +33,10 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void desmarcarFavorita(int cancion, int usuario) {
+    public void desmarcarFavorita(int idCancion, int idUsuario) {
         try {
             _bd_canciones = new BD_Canciones();
-            _bd_canciones.desmarcarFavorita(cancion, usuario);
+            _bd_canciones.desmarcarFavorita(idCancion, idUsuario);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
@@ -369,10 +369,10 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void marcarFavorito(int cancion, int usuario) {
+    public void marcarFavorito(int idCancion, int idUsuario) {
         try {
             _bd_canciones = new BD_Canciones();
-            _bd_canciones.marcarFavorito(cancion, usuario);
+            _bd_canciones.marcarFavorito(idCancion, idUsuario);
         } catch (PersistentException e) {
             e.printStackTrace();
         }

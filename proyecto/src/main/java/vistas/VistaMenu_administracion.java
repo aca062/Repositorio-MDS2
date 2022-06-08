@@ -45,18 +45,6 @@ public class VistaMenu_administracion extends LitTemplate {
 	private H4 h4TextoCancionesMostradas;
 	@Id("botonEditarCanciones")
 	private Button botonEditarCanciones;
-	@Id("listaCanciones")
-	private Element listaCanciones;
-	@Id("cancion1")
-	private Element cancion1;
-	@Id("cancion2")
-	private Element cancion2;
-	@Id("separador")
-	private Hr separador;
-	@Id("cancion3")
-	private Element cancion3;
-	@Id("cancion4")
-	private Element cancion4;
 	@Id("iconoEditarLimite")
 	private Element iconoEditarLimite;
 	@Id("iconoEditarCanciones")
@@ -138,42 +126,6 @@ public class VistaMenu_administracion extends LitTemplate {
 	}
 	public void setBotonEditarCanciones(Button botonEditarCanciones) {
 		this.botonEditarCanciones = botonEditarCanciones;
-	}
-	public Element getListaCanciones() {
-		return listaCanciones;
-	}
-	public void setListaCanciones(Element listaCanciones) {
-		this.listaCanciones = listaCanciones;
-	}
-	public Element getCancion1() {
-		return cancion1;
-	}
-	public void setCancion1(Element cancion1) {
-		this.cancion1 = cancion1;
-	}
-	public Element getCancion2() {
-		return cancion2;
-	}
-	public void setCancion2(Element cancion2) {
-		this.cancion2 = cancion2;
-	}
-	public Hr getSeparador() {
-		return separador;
-	}
-	public void setSeparador(Hr separador) {
-		this.separador = separador;
-	}
-	public Element getCancion3() {
-		return cancion3;
-	}
-	public void setCancion3(Element cancion3) {
-		this.cancion3 = cancion3;
-	}
-	public Element getCancion4() {
-		return cancion4;
-	}
-	public void setCancion4(Element cancion4) {
-		this.cancion4 = cancion4;
 	}
 	public Element getIconoEditarLimite() {
 		return iconoEditarLimite;
