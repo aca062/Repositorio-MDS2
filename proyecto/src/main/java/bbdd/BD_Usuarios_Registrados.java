@@ -13,6 +13,7 @@ import orm.bbdd.Actor_Comun;
 import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.Estadistica;
 import orm.bbdd.EstadisticaDAO;
+import orm.bbdd.Lista_de_reproduccionDAO;
 import orm.bbdd.MDS2PersistentManager;
 import orm.bbdd.Usuario_Registrado;
 import orm.bbdd.Usuario_RegistradoCriteria;
@@ -111,6 +112,13 @@ public class BD_Usuarios_Registrados {
 			
 			correcto = Usuario_RegistradoDAO.delete(usuario);
 			
+			BD_Listas_de_reproduccion bdlistas = new BD_Listas_de_reproduccion();
+            orm.bbdd.Lista_de_reproduccion[] lListas_de_reproduccion_propiass = usuario.listas_de_reproduccion_propias
+                    .toArray();
+            for (int i = 0; i < lListas_de_reproduccion_propiass.length; i++) {
+            	Lista_de_reproduccionDAO.delete(lListas_de_reproduccion_propiass[i]);
+            }
+			
 			BD_Acceso_Datos bdacceso = new BD_Acceso_Datos();
 			if(usuario.getAcceso_Dato() != null) {
 				bdacceso.eliminarAcceso(usuario.getAcceso_Dato().getId());
@@ -129,10 +137,6 @@ public class BD_Usuarios_Registrados {
         }
         return correcto;
     }
-
-	public void darDeBaja(String aEmail) throws PersistentException{
-		throw new UnsupportedOperationException();
-	}
 
 	public void seguirLista(int aIdLista) throws PersistentException{
 		throw new UnsupportedOperationException();

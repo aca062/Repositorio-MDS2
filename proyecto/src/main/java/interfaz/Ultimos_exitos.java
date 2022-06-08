@@ -24,11 +24,11 @@ public class Ultimos_exitos extends VistaUltimos_exitos {
     }
 
     void Inicializar() throws PersistentException {
-        orm.bbdd.Cancion[] canciones = cb.cargarCancionesAdmin();
+        /*orm.bbdd.Cancion[] canciones = cb.cargarCancionesAdmin();
         for (orm.bbdd.Cancion cancion : canciones) {
             _cancionCibernauta.add(new Cancion_cibernauta());
             _cancionCibernauta.lastElement().setCancion(cancion);
             this.getLayoutCanciones().add(_cancionCibernauta.lastElement());
-        }
+        }*/
     }
 }

@@ -318,17 +318,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void darDeBaja(String aEmail) {
-        try {
-            _bd_usuarios_registrados = new BD_Usuarios_Registrados();
-            _bd_usuarios_registrados.darDeBaja(aEmail);
-        } catch (PersistentException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @Override
     public String inicioDeSesion(String aEmail, String aContrasena) {
         _bd_acceso_datos = new BD_Acceso_Datos();
         try {
@@ -434,18 +423,6 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 
         try {
             canciones = _bd_canciones.cargarCancionRecomendada(aIdUsuario);
-        } catch (PersistentException e) {
-            e.printStackTrace();
-        }
-        return canciones;
-    }
-
-    @Override
-    public Cancion[] cargarUltimosExitos(int aNumCanciones) {
-        Cancion[] canciones = null;
-
-        try {
-            canciones = _bd_canciones.cargarUltimosExitos(aNumCanciones);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
