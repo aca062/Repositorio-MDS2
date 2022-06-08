@@ -11,6 +11,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.PasswordField;
+import com.vaadin.flow.component.upload.Upload;
 
 /**
  * A Designer generated component for the vista-editar_usuario template.
@@ -32,10 +33,6 @@ public class VistaEditar_usuario extends LitTemplate {
 	private Element layoutUsuarios;
 	@Id("layoutUsuario")
 	private HorizontalLayout layoutUsuario;
-	@Id("imgUsuario")
-	private Image imgUsuario;
-	@Id("anadirFoto")
-	private Button anadirFoto;
 	@Id("nick")
 	private TextField nick;
 	@Id("contraseña")
@@ -50,6 +47,12 @@ public class VistaEditar_usuario extends LitTemplate {
 	private Button cancelar;
 	@Id("confirmar")
 	private Button confirmar;
+	@Id("img")
+	private Image img;
+	@Id("upload")
+	private Upload upload;
+	@Id("eliminarFoto")
+	private Button eliminarFoto;
 
 	/**
      * Creates a new VistaEditar_usuario.
@@ -88,22 +91,6 @@ public class VistaEditar_usuario extends LitTemplate {
 
 	public void setLayoutUsuario(HorizontalLayout layoutUsuario) {
 		this.layoutUsuario = layoutUsuario;
-	}
-
-	public Image getImgUsuario() {
-		return imgUsuario;
-	}
-
-	public void setImgUsuario(Image imgUsuario) {
-		this.imgUsuario = imgUsuario;
-	}
-
-	public Button getAnadirFoto() {
-		return anadirFoto;
-	}
-
-	public void setAnadirFoto(Button anadirFoto) {
-		this.anadirFoto = anadirFoto;
 	}
 
 	public TextField getNick() {
@@ -160,6 +147,30 @@ public class VistaEditar_usuario extends LitTemplate {
 
 	public void setConfirmar(Button confirmar) {
 		this.confirmar = confirmar;
+	}
+
+	public Image getImg() {
+		return img;
+	}
+
+	public void setImg(Image img) {
+		this.img = img;
+	}
+
+	public Upload getUpload() {
+		return upload;
+	}
+
+	public void setUpload(Upload upload) {
+		this.upload = upload;
+	}
+
+	public Button getEliminarFoto() {
+		return eliminarFoto;
+	}
+
+	public void setEliminarFoto(Button eliminarFoto) {
+		this.eliminarFoto = eliminarFoto;
 	}
 
 	

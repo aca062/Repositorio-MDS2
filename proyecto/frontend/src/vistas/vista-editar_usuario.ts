@@ -4,6 +4,7 @@ import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-upload/src/vaadin-upload.js';
 
 @customElement('vista-editar_usuario')
 export class VistaEditar_usuario extends LitElement {
@@ -22,9 +23,10 @@ export class VistaEditar_usuario extends LitElement {
  <h2 id="h2Titulo" style="margin-left: 10%;">Editar usuario</h2>
  <vaadin-vertical-layout theme="spacing" style="width: 90%; height: 700px; margin-left: var(--lumo-space-xl); background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);" id="layoutUsuarios">
   <vaadin-horizontal-layout id="layoutUsuario" style="width: 80%;">
-   <img id="imgUsuario" src="https://i.pinimg.com/736x/cb/5d/64/cb5d64be736ab84602ee1bcd20303d4e.jpg" style="width: 150px; height: 150px; object-fit:contain">
-   <vaadin-button id="anadirFoto" style="align-self: center; margin-left: 5%;">
-     Añadir foto 
+   <img id="img">
+   <vaadin-upload id="upload"></vaadin-upload>
+   <vaadin-button id="eliminarFoto" style="align-self: center; margin-left: 5%;">
+    Eliminar foto
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field label="Nick" id="nick" value="Paco12" style="width: 60%;" has-value></vaadin-text-field>

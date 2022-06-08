@@ -27,7 +27,7 @@ public interface iAdministrador extends iActor_comun {
 
 	public void editarLista(String aNombre, int aIdLista);
 
-	public void editarUsuario(int aIdUsuario, String aEmail, String aContrasena, String aNick, String aImagen);
+	public int editarUsuario(int aIdUsuario, String aEmail, String aContrasena, String aNick, String aImagen);
 
 	public void editarFoto(String aFoto, int aIdUsuario);
 
