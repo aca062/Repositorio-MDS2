@@ -1,15 +1,14 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H4;
-import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-ver_detalle_cancion template.
@@ -42,17 +41,9 @@ public class VistaVer_detalle_cancion extends LitTemplate {
 	@Id("layoutBotones")
 	private HorizontalLayout layoutBotones;
 	@Id("anadirLista")
-	private Select anadirLista;
+	private Button anadirLista;
 	@Id("botonMeGusta")
 	private Button botonMeGusta;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("botonVerCreditos")
 	private Button botonVerCreditos;
 
@@ -143,52 +134,12 @@ public class VistaVer_detalle_cancion extends LitTemplate {
 		this.layoutBotones = layoutBotones;
 	}
 
-	public Select getAnadirLista() {
-		return anadirLista;
-	}
-
-	public void setAnadirLista(Select anadirLista) {
-		this.anadirLista = anadirLista;
-	}
-
 	public Button getBotonMeGusta() {
 		return botonMeGusta;
 	}
 
 	public void setBotonMeGusta(Button botonMeGusta) {
 		this.botonMeGusta = botonMeGusta;
-	}
-
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
 	}
 
 	public Button getBotonVerCreditos() {
@@ -198,5 +149,13 @@ public class VistaVer_detalle_cancion extends LitTemplate {
 	public void setBotonVerCreditos(Button botonVerCreditos) {
 		this.botonVerCreditos = botonVerCreditos;
 	}
+
+    public Button getAnadirLista() {
+        return anadirLista;
+    }
+
+    public void setAnadirLista(Button anadirLista) {
+        this.anadirLista = anadirLista;
+    }
 
 }

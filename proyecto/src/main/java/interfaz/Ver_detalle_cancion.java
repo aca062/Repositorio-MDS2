@@ -22,8 +22,9 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion{
 	public Cancion _cancion;
 	public Reproductor _reproductor;
 	public Ver_creditos _verCreditos = new Ver_creditos();
-	
-	public Ver_detalle_cancion() {
+	orm.bbdd.Cancion cancion;
+
+	public Ver_detalle_cancion(orm.bbdd.Cancion cancion) {
 		Inicializar();
 		this.getBotonVerCreditos().addClickListener(new ComponentEventListener(){
 			@Override
@@ -32,7 +33,7 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion{
 			}
 		});
 	}
-	
+
 	public void Reproducir() {
 		throw new UnsupportedOperationException();
 	}

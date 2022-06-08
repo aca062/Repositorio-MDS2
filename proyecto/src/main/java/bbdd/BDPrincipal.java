@@ -611,9 +611,13 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     public Actor_Comun getUsuario(String correo) {
         Actor_Comun usuario = null;
         try {
-            usuario = Actor_ComunDAO.listActor_ComunByQuery("email='" + correo + "'", "email")[0];
+            Actor_Comun[] usuarios = Actor_ComunDAO.listActor_ComunByQuery("email='" + correo + "'", "email");
+            if (usuarios.length == 0) {
+                return usuario;
+            }
+            usuario = usuarios[0];
         } catch (PersistentException e) {
-            return null;
+            return usuario;
         }
         return usuario;
     }
@@ -661,6 +665,25 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         }
 
         return true;
+
+    }
+
+    @Override
+    public void cambiarFoto(int id, String nombre) throws PersistentException {
+        Actor_Comun[] usuario = Actor_ComunDAO.listActor_ComunByQuery("id='" + id + "'", "email");
+
+        switch(usuario[0].getAcceso_Dato().getTipoUsuario())
+        {
+        case "admin":
+            _bd_administradores.editarFoto(id, nombre);
+            break;
+        case "usuario":
+            _bd_usuarios_registrados.editarFoto(id, nombre);
+            break;
+        case "artista":
+            _bd_artistas.editarFoto(id, nombre);
+            break;
+        }
 
     }
 }

@@ -165,14 +165,31 @@ public class BD_Usuarios_Registrados {
 
         Usuario_Registrado user = Usuario_RegistradoDAO.getUsuario_RegistradoByORMID(id);
 
+        Acceso_Dato acceso = Acceso_DatoDAO.getAcceso_DatoByORMID(id);
+
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         try {
             user.setEmail(correo);
+            acceso.setEmail(correo);
             Usuario_RegistradoDAO.save(user);
+            Acceso_DatoDAO.save(acceso);
             t.commit();
         } catch (Exception e) {
             t.rollback();
         }
 
+    }
+
+    public void editarFoto(int id, String nombre) throws PersistentException {
+        Usuario_Registrado user = Usuario_RegistradoDAO.getUsuario_RegistradoByORMID(id);
+
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            user.setFoto(nombre);
+            Usuario_RegistradoDAO.save(user);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
     }
 }

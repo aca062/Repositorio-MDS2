@@ -229,10 +229,14 @@ public class BD_Artistas {
     public void editarE_mail(String aEmail, int aIdArtista) throws PersistentException {
         Artista artista = ArtistaDAO.getArtistaByORMID(aIdArtista);
 
+        Acceso_Dato acceso = Acceso_DatoDAO.getAcceso_DatoByORMID(aIdArtista);
+
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         try {
             artista.setEmail(aEmail);
+            acceso.setEmail(aEmail);
             ArtistaDAO.save(artista);
+            Acceso_DatoDAO.save(acceso);
             t.commit();
         } catch (Exception e) {
             t.rollback();
@@ -283,5 +287,18 @@ public class BD_Artistas {
             t.rollback();
         }
         return albumes;
+    }
+
+    public void editarFoto(int id, String nombre) throws PersistentException {
+        Artista user = ArtistaDAO.getArtistaByORMID(id);
+
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            user.setFoto(nombre);
+            ArtistaDAO.save(user);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
     }
 }
