@@ -9,6 +9,7 @@ import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 
 import bbdd.BDPrincipal;
 import bbdd.iCibernauta;
@@ -22,6 +23,7 @@ public class Cabecera_pagina extends VistaCabecera_pagina {
 
     public Cabecera_pagina() {
         Inicializar();
+        TextField buscador = this.getBuscador();
         this.getLogo().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
@@ -43,7 +45,8 @@ public class Cabecera_pagina extends VistaCabecera_pagina {
         this.getBuscador().addKeyDownListener(Key.ENTER, new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                _buscar = new Buscar();
+                String buscado = buscador.getValue();
+                _buscar = new Buscar(buscado);
                 ControladorVistas.CambiarContenido(_buscar);
             }
         }, KeyModifier.SHIFT);

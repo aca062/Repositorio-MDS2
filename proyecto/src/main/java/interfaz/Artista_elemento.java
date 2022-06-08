@@ -37,7 +37,7 @@ public class Artista_elemento extends VistaArtista_elemento{
 		this.getImgArtista().setVisible(true);
 	}
 
-    public void setCancion(Artista artista) {
+    public void setArtista(Artista artista) {
         this.artista = artista;
         this.getBotonNombre().setText(artista.getNick());
         this.setId(Integer.toString(artista.getId()));
