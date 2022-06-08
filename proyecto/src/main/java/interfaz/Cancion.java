@@ -70,7 +70,7 @@ public class Cancion extends VistaCancion {
     }
 
     protected void DetalleCancion() {
-        _verDetalleCancion = new Ver_detalle_cancion(cancion);
+        _verDetalleCancion = new Ver_detalle_cancion(cancion, favorita);
         _verDetalleCancion.getStyle().set("width", "100%");
         ControladorVistas.CambiarContenido(_verDetalleCancion);
     }

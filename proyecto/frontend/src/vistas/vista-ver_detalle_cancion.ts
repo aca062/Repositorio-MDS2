@@ -33,13 +33,14 @@ export class VistaVer_detalle_cancion extends LitElement {
      El último tour del mundo 
    </vaadin-button>
    <vaadin-horizontal-layout theme="spacing" id="layoutBotones" style="width: 120%; align-items: center;">
-    <vaadin-button id="botonMeGusta" style="background-image:url('http://assets.stickpng.com/images/5a02bfca18e87004f1ca4395.png'); background-repeat:no-repeat;
+    <vaadin-button id="botonMeGusta" style="background-image:url('https://e7.pngegg.com/pngimages/507/757/png-clipart-computer-icons-heart-like-button-like-share-comment-love-logo.png'); background-repeat:no-repeat;
         height:60px;
-        width:70px;
+        width:30px;
         background-size: 60px 50px;
-        background-position:center;background-color:#FFFFFF"></vaadin-button>
+        background-position:center;
+background-color: white;" src=""></vaadin-button>
     <vaadin-button id="anadirLista">
-     Añadir a una lista
+      Añadir a una lista 
     </vaadin-button>
     <vaadin-button id="botonVerCreditos">
       Ver creditos 
