@@ -65,4 +65,6 @@ public interface iActor_comun {
     public boolean cambiarCorreo(String correo, int id) throws PersistentException;
 
     public void cambiarFoto(int id, String nameImagen) throws PersistentException;
+
+	public Lista_de_reproduccion[] cargarListaFavorita();
 }
