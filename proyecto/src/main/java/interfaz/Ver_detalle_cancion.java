@@ -70,6 +70,18 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
                 IrAlbum();
             }
         });
+        this.getBotonArtista().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                IrArtista();
+            }
+        });
+    }
+
+    protected void IrArtista() {
+        _perfilArtistaAjeno = new Perfil_artista_ajeno(cancion.artistas.toArray()[0]);
+        _perfilArtistaAjeno.getStyle().set("width", "100%");
+        ControladorVistas.CambiarContenido(_perfilArtistaAjeno);
     }
 
     public void Reproducir() {
