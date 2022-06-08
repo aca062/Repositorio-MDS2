@@ -3,7 +3,6 @@ package interfaz;
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaVer_detalle_album;
 
@@ -26,7 +25,7 @@ public class Ver_detalle_album extends VistaVer_detalle_album{
 				IrArtista();
 			}
 		});
-		
+
 		this.getBotonArtista().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
@@ -39,7 +38,7 @@ public class Ver_detalle_album extends VistaVer_detalle_album{
 		throw new UnsupportedOperationException();
 	}
 	void Inicializar() {
-		
+
 		this.getLayoutAlbum().add(_album);
 		this.getBotonArtista().setVisible(true);
 		this.getH5FechaAlbum().setVisible(true);
@@ -47,7 +46,7 @@ public class Ver_detalle_album extends VistaVer_detalle_album{
 	}
 	public void IrArtista() {
 	    //DFOAIJFOQIERJFQERPFO
-        _artistaAjeno = new Perfil_artista_ajeno();
+        //_artistaAjeno = new Perfil_artista_ajeno();
         _artistaAjeno.getStyle().set("width", "100%");
         ControladorVistas.CambiarContenido(_artistaAjeno);
 	}

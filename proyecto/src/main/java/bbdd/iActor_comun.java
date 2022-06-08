@@ -66,9 +66,7 @@ public interface iActor_comun {
 
     public void cambiarFoto(int id, String nameImagen) throws PersistentException;
 
-<<<<<<< HEAD
     public Cancion[] cargarCancionesLista(int idLista) throws PersistentException;
-=======
-	public Lista_de_reproduccion[] cargarListaFavorita();
->>>>>>> branch 'master' of https://github.com/aca062/Repositorio-MDS2.git
+
+    public Lista_de_reproduccion[] cargarListaFavorita();
 }
