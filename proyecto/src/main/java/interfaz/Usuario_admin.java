@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -28,7 +30,12 @@ public class Usuario_admin extends VistaUsuario_admin{
 		this.getBotonEditar().addClickListener(new ComponentEventListener(){
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				EditarUsuario();
+				try {
+					EditarUsuario();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		this.getBotonEliminar().addClickListener(new ComponentEventListener(){
@@ -84,10 +91,10 @@ public class Usuario_admin extends VistaUsuario_admin{
         ControladorVistas.CambiarContenido(new Buscar_administrador());
 	}
 
-	public void EditarUsuario() {
-		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		v1.removeAll();
-		v1.add(_editarUsuario = new Editar_usuario(usuario));
+	public void EditarUsuario() throws PersistentException {
+		_editarUsuario = new Editar_usuario(usuario);
+		_editarUsuario.getStyle().set("width", "100%");
+        ControladorVistas.CambiarContenido(_editarUsuario);
 	}
 
     public void setUsuario(Usuario_Registrado usuario_Registrado) {

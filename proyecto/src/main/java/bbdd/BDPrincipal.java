@@ -531,7 +531,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void editarUsuario(int aIdUsuario, String aEmail, String aContrasena, String aNick, String aImagen) {
+    public int editarUsuario(int aIdUsuario, String aEmail, String aContrasena, String aNick, String aImagen) {
         try {
             _bd_usuarios_registrados = new BD_Usuarios_Registrados();
             _bd_usuarios_registrados.editarUsuario(aIdUsuario, aEmail, aContrasena, aNick, aImagen);
@@ -539,6 +539,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+		return 1;
     }
 
     @Override

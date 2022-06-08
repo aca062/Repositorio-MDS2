@@ -23,7 +23,44 @@ public class BD_Usuarios_Registrados {
 	public Vector<Usuario_Registrado> _contiene_usuario_registrados = new Vector<Usuario_Registrado>();
 
 	public void editarUsuario(int aIdUsuario, String aEmail, String aContrasena, String aNick, String aImagen) throws PersistentException{
-		throw new UnsupportedOperationException();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			Usuario_Registrado usuario = Usuario_RegistradoDAO.loadUsuario_RegistradoByORMID(aIdUsuario);
+			/*BD_Usuarios_Registrados usuarios = new BD_Usuarios_Registrados();
+			int id = usuarios._contiene_usuario_registrados.size() + 1;
+			usuario.setId(id);*/
+			Acceso_Dato accesoD = usuario.getAcceso_Dato();
+			accesoD.setContrasena(aContrasena);
+			accesoD.setEmail(aEmail);
+			accesoD.setNumIntentos(0);
+			accesoD.setTipoUsuario("usuario");
+			accesoD.setFechaBloqueo("");
+			Acceso_DatoDAO.save(accesoD);
+			
+			Estadistica estadistica = usuario.getEstadistica();
+			estadistica.setTiempoAnual(0);
+			double[] tiempoSemana = new double[7];
+			estadistica.setTiempoSemana(tiempoSemana);
+			//estadistica.setUsuario(usuario);
+			EstadisticaDAO.save(estadistica);
+			/*BD_Acceso_Datos accesosDato = new BD_Acceso_Datos();
+			Acceso_Dato idAcceso = accesosDato._contiene_acceso_datos.lastElement();
+			BD_Estadisticas estadisticas = new BD_Estadisticas();
+			Estadistica idEstadistica = estadisticas._contiene_estadisticas.lastElement();*/
+
+			usuario.setEmail(aEmail);
+			usuario.setContrasena(aContrasena);
+			usuario.setNick(aNick);
+			usuario.setAcceso_Dato(accesoD);
+			usuario.setEstadistica(estadistica);
+			usuario.setFoto(aImagen);
+			Usuario_RegistradoDAO.save(usuario);
+			t.commit();
+
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void registro(String aEmail, String aContrasena, String aNick, String aImagen) throws PersistentException {
@@ -70,15 +107,28 @@ public class BD_Usuarios_Registrados {
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         boolean correcto = false;
 		try {
-			Usuario_Registrado usuario = Usuario_RegistradoDAO.getUsuario_RegistradoByORMID(aIdUsuario);
+			Usuario_Registrado usuario = Usuario_RegistradoDAO.loadUsuario_RegistradoByORMID(aIdUsuario);
+			
 			correcto = Usuario_RegistradoDAO.delete(usuario);
+			
+			BD_Acceso_Datos bdacceso = new BD_Acceso_Datos();
+			if(usuario.getAcceso_Dato() != null) {
+				bdacceso.eliminarAcceso(usuario.getAcceso_Dato().getId());
+			}
+			BD_Estadisticas bdestadisticas = new BD_Estadisticas();
+			if(usuario.getEstadistica() != null) {
+				bdestadisticas.eliminarEstadistica(usuario.getEstadistica().getId());
+			}
 			t.commit();
-		} catch (Exception e) {
-		    correcto = false;
-			t.rollback();
-		}
-		return correcto;
-	}
+		} catch (PersistentException e) {
+            correcto = true;
+            e.printStackTrace();
+        } catch (Exception e) {
+            correcto = false;
+            e.printStackTrace();
+        }
+        return correcto;
+    }
 
 	public void darDeBaja(String aEmail) throws PersistentException{
 		throw new UnsupportedOperationException();

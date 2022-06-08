@@ -136,7 +136,6 @@ public class BD_Artistas {
                 lCancionss[i].artistas.remove(artista);
                 CancionDAO.delete(lCancionss[i]);
             }
-
             orm.bbdd.Estadistica[] lEstadisticass = artista.estadisticas.toArray();
             for (int i = 0; i < lEstadisticass.length; i++) {
                 lEstadisticass[i].artistas.remove(artista);
