@@ -18,6 +18,7 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
     public Reproductor _reproductor;
     public Ver_creditos _verCreditos;
     public Ver_detalle_album _verDetalleAlbum;
+    public Perfil_artista_ajeno _perfilArtistaAjeno;
     orm.bbdd.Cancion cancion;
     boolean favorita;
     BD_Canciones bdCanciones = new BD_Canciones();

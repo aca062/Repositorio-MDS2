@@ -1,9 +1,19 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
+
+import bbdd.BDPrincipal;
+import bbdd.iAdministrador;
 
 public class Perfil_artista_propio extends Perfil_artista_comun {
 	/*
@@ -15,16 +25,83 @@ public class Perfil_artista_propio extends Perfil_artista_comun {
 	 * private Button _darBajaB; private Button _recibirNotificacionesB;
 	 */
 	public Artista _artista;
+	public Cibernauta _cibernauta;
 	public Anadir_evento _anadirEvento;
+	iAdministrador bd = new BDPrincipal();
 	public Crear_lista_de_reproduccion _crearListaDeReproduccion;
 	public Listas_de_reproduccion_propias _listasDeReproduccionPropia;
 
 	public Perfil_artista_propio() {
 
-		//TODO: Rellenar con el event listener de editar foto
+		super();
+	    this.getBotonDarseBaja().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                DarDeBaja();
+            }
+        });
+	    this.getBotonAnadirFestivalConcierto().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                try {
+					AnadirFestival();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
 		
 	}
-
+	
+	protected void Cibernauta() {
+		Cabecera_cibernauta cab = new Cabecera_cibernauta();
+        _cibernauta = new Cibernauta();
+        _cibernauta.getStyle().set("width", "100%");
+        cab.getStyle().set("width", "100%");
+        ControladorVistas.CambiarCabecera(cab);
+        ControladorVistas.CambiarContenido(_cibernauta);
+        
+    }
+	
+	public void AnadirFestival() throws PersistentException {
+		_anadirEvento = new Anadir_evento();
+		_anadirEvento.getStyle().set("width", "100%");
+        ControladorVistas.CambiarContenido(_anadirEvento);
+	}
+	
+	public void DarDeBaja() {
+		 Dialog popup = new Dialog();
+	        Text advertencia = new Text("¿Seguro que desea darse de baja?");
+	        VerticalLayout dialogLayout = new VerticalLayout(advertencia);
+	        popup.add(dialogLayout);
+	        Button confirmar = new Button("Confirmar");
+	        Button cancelar = new Button("Cancelar");
+	        popup.add(cancelar);
+	        popup.add(confirmar);
+	        popup.setWidth("40%");
+	        cancelar.getStyle().set("margin-right", "20px");
+	        confirmar.addClickListener(new ComponentEventListener() {
+	            @Override
+	            public void onComponentEvent(ComponentEvent event) {
+	                Confirmar_Eliminar(popup);
+	            }
+	        });
+	        cancelar.addClickListener(new ComponentEventListener() {
+	            @Override
+	            public void onComponentEvent(ComponentEvent event) {
+	                popup.close();
+	            }
+	        });
+	        ControladorVistas.PopUpFormularioEditar(popup);
+	    }
+	public void Confirmar_Eliminar(Dialog popup) {
+		popup.close();
+		ControladorVistas.PopUpBasico("El usuario se ha dado de baja correctamente");
+		bd.eliminarArtista(ControladorVistas.getUsuario().getId());
+		Cibernauta();
+	}
+	
 	public void Editar_foto_perfil() {
 		throw new UnsupportedOperationException();
 	}

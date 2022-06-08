@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-upload/src/vaadin-upload.js';
 
 @customElement('vista-anadir_evento')
 export class VistaAnadir_evento extends LitElement {
@@ -21,9 +22,10 @@ export class VistaAnadir_evento extends LitElement {
  <h2 id="h2Titulo" style="align-self: flex-start; padding-left: 50px">Añadir evento</h2>
  <vaadin-vertical-layout id="layoutEvento" style="width: 90%; height: 590px; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-xl);">
   <vaadin-horizontal-layout theme="spacing" id="layoutEventoFoto" style="align-items: center; width: 50%;">
-   <img id="imgFecha" style="width: 200px;" src="https://cdn-icons-png.flaticon.com/512/42/42956.png">
-   <vaadin-button id="anadirFoto" style="margin-left: var(--lumo-space-xl); width: 100%;">
-     Añadir foto 
+   <img id="img">
+   <vaadin-upload id="upload"></vaadin-upload>
+   <vaadin-button id="eliminarFoto" style="margin-left: var(--lumo-space-xl);">
+    Eliminar foto
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field label="Fecha" id="fecha" style="width: 70%;" value="14/04/2022" has-value></vaadin-text-field>

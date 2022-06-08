@@ -27,7 +27,13 @@ public class Lista_de_reproduccion_favoritos extends VistaLista_de_reproduccion_
 		this.getH3Creador().setText(ControladorVistas.getUsuario().getNick());
 		this.getH1Titulo().setVisible(true);
 		this.getH3Creador().setVisible(true);
+<<<<<<< HEAD
 		this.getNumCanciones().setVisible(true);
 
+=======
+		this.getNumCanciones().setVisible(false);
+		this.getComboBox().setVisible(false);
+		
+>>>>>>> refs/remotes/origin/master
 	}
 }
