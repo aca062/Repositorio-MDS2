@@ -4,7 +4,6 @@ import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-import interfaz.Album;
 import vistas.VistaLista_albumes;
 
 public class Lista_albumes extends VistaLista_albumes{
@@ -17,9 +16,6 @@ public class Lista_albumes extends VistaLista_albumes{
 	}
 	void Inicializar() {
 		VerticalLayout v1 = this.getLayoutPrincipal().as(VerticalLayout.class);
-		_album.add(new Album());
-		_album.add(new Album());
-		_album.add(new Album());
 		this.getH1Titulo().setVisible(true);
 		for(int i=0;i<3;i++) {
 			v1.add(_album.get(i));

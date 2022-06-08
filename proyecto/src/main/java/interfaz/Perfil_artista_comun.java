@@ -5,7 +5,6 @@ import org.orm.PersistentException;
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaPerfil_artista_comun;
 
@@ -66,7 +65,7 @@ public class Perfil_artista_comun extends VistaPerfil_artista_comun {
         this.getNumeroSeguidos1().setText(Integer.toString(artista.seguido.size()));
         this.getNumeroSeguidos().setText(Integer.toString(artista.seguidor.size()));
 
-        Listas_de_reproduccion_propias _listasDeReproduccionPropia = new Listas_de_reproduccion_propias();
+        /*Listas_de_reproduccion_propias _listasDeReproduccionPropia = new Listas_de_reproduccion_propias();
         _listasDeReproduccionPropia.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());
         _listasDeReproduccionPropia.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());
         _listasDeReproduccionPropia.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());
@@ -90,6 +89,6 @@ public class Perfil_artista_comun extends VistaPerfil_artista_comun {
         _listaAlbum.getLayoutAlbumes().add(new Album());
         _listaAlbum.getLayoutAlbumes().add(new Album());
         _listaAlbum.getLayoutAlbumes().add(new Album());
-        this.getLayoutAlbumes().as(VerticalLayout.class).add(_listaAlbum);
+        this.getLayoutAlbumes().as(VerticalLayout.class).add(_listaAlbum);*/
     }
 }

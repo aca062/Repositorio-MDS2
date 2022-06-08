@@ -31,7 +31,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     public void anadir(String aNombre) {
         throw new UnsupportedOperationException();
     }
-    
+
     @Override
     public void desmarcarFavorita(int idCancion, int idUsuario) {
         try {
@@ -429,6 +429,19 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         return canciones;
     }
 
+    /*@Override
+    public Cancion[] cargarUltimosExitos(int aNumCanciones) {
+        Cancion[] canciones = null;
+
+        try {
+            canciones = _bd_canciones.cargarUltimosExitos(aNumCanciones);
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return canciones;
+    }*/
+
+
     @Override
     public Cancion[] cargarCancionesFavoritas(int aIdUsuario) {
         Cancion[] listas = null;
@@ -598,10 +611,10 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public Actor_Comun getUsuario(String correo) {
+    public Actor_Comun getUsuario(int id) {
         Actor_Comun usuario = null;
         try {
-            Actor_Comun[] usuarios = Actor_ComunDAO.listActor_ComunByQuery("email='" + correo + "'", "email");
+            Actor_Comun[] usuarios = Actor_ComunDAO.listActor_ComunByQuery("Id='" + id + "'", "email");
             if (usuarios.length == 0) {
                 return usuario;
             }
@@ -698,4 +711,25 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     public Cancion[] cargarCancionesAdmin() throws PersistentException {
         return _bd_administradores.cargarCancionesCibernauta(1);
     }
+
+    @Override
+    public Actor_Comun getUsuarioCorreo(String correo) {
+        Actor_Comun usuario = null;
+        try {
+            Actor_Comun[] usuarios = Actor_ComunDAO.listActor_ComunByQuery("email='" + correo + "'", "email");
+            if (usuarios.length == 0) {
+                return usuario;
+            }
+            usuario = usuarios[0];
+        } catch (PersistentException e) {
+            return usuario;
+        }
+        return usuario;
+    }
+
+	@Override
+	public Actor_Comun getUsuario(String correo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -54,17 +54,17 @@ public class Cabecera_pagina extends VistaCabecera_pagina {
 
     protected void Logo() {
 		if (ControladorVistas.getTipoUsuario().equals("admin")) {
-            ControladorVistas.CambiarUsuario(cib.getUsuario(ControladorVistas.getUsuario().getEmail()));
+            ControladorVistas.CambiarUsuario(cib.getUsuario(ControladorVistas.getUsuario().getId()));
             Administrador admin = new Administrador();
             admin.getStyle().set("width", "100%");
             ControladorVistas.CambiarContenido(admin);
 		}else if (ControladorVistas.getTipoUsuario().equals("artista")) {
-            ControladorVistas.CambiarUsuario(cib.getUsuario(ControladorVistas.getUsuario().getEmail()));
+            ControladorVistas.CambiarUsuario(cib.getUsuario(ControladorVistas.getUsuario().getId()));
 			Artista _artista = new Artista();
 			_artista.getStyle().set("width", "100%");
 			ControladorVistas.CambiarContenido(_artista);
 		}else {
-            ControladorVistas.CambiarUsuario(cib.getUsuario(ControladorVistas.getUsuario().getEmail()));
+            ControladorVistas.CambiarUsuario(cib.getUsuario(ControladorVistas.getUsuario().getId()));
 			Usuario_registrado _usuario = new Usuario_registrado();
 			_usuario.getStyle().set("width", "100%");
 			ControladorVistas.CambiarContenido(_usuario);
