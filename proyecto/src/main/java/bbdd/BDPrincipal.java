@@ -43,13 +43,14 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void crearLista(String aNombre) {
+    public int crearLista(String aNombre, String[] canciones, int id) {
         try {
             _bd_listas_de_reproduccion = new BD_Listas_de_reproduccion();
-            _bd_listas_de_reproduccion.crearLista(aNombre);
+            return _bd_listas_de_reproduccion.crearLista(aNombre, canciones, id);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return -3;
     }
 
     @Override
@@ -686,5 +687,12 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             break;
         }
 
+    }
+
+    @Override
+    public orm.bbdd.Cancion[] cargarCancionesLista(int idLista) throws PersistentException {
+        orm.bbdd.Cancion[] canciones = null;
+        canciones = _bd_listas_de_reproduccion.cargarCancionesLista(idLista);
+        return canciones;
     }
 }

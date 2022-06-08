@@ -6,6 +6,7 @@ public class Perfil_administrador extends Perfil {
 	public Administrador _administrador;
 
 	public Perfil_administrador() {
+	    super();
 	    this.getBotonDarseBaja().setVisible(false);
 	}
 

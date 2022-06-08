@@ -5,7 +5,6 @@ import java.util.Vector;
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bbdd.BDPrincipal;
 import bbdd.iActor_comun;
@@ -39,9 +38,8 @@ public class Listas_de_reproduccion_propias extends VistaListas_de_reproduccion_
     }
 
     private void Inicializar() {
-        this.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());
-        this.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());
-        this.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());
+
+        this.getVerTodas().setVisible(false);
 
         int i = 0;
 
@@ -49,7 +47,7 @@ public class Listas_de_reproduccion_propias extends VistaListas_de_reproduccion_
             i++;
             _listaDeReproduccionPropia.add(new Lista_de_reproduccion_propia());
             _listaDeReproduccionPropia.lastElement().setLista(lista);
-            this.getLayoutPrincipal().as(VerticalLayout.class).add(_listaDeReproduccionPropia.lastElement());
+            this.getLayoutListasPropias().add(_listaDeReproduccionPropia.lastElement());
             if (i == 3) {
                 break;
             }

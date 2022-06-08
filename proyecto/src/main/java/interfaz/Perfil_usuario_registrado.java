@@ -8,6 +8,10 @@ public class Perfil_usuario_registrado extends Perfil {
 	private Button _darBajaB;*/
 	public Usuario_registrado _usuarioRegistrado;
 
+	public Perfil_usuario_registrado() {
+	    super();
+	}
+
 	public void Dar_de_baja() {
 		throw new UnsupportedOperationException();
 	}

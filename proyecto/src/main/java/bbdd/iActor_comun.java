@@ -18,7 +18,7 @@ public interface iActor_comun {
 
 	public void desmarcarFavorita(int idCancion, int idUsuario);
 
-	public void crearLista(String aNombre);
+	public int crearLista(String aNombre, String[] strings, int i);
 
 	public void seguirLista(int aIdLista);
 
@@ -65,4 +65,6 @@ public interface iActor_comun {
     public boolean cambiarCorreo(String correo, int id) throws PersistentException;
 
     public void cambiarFoto(int id, String nameImagen) throws PersistentException;
+
+    public Cancion[] cargarCancionesLista(int idLista) throws PersistentException;
 }

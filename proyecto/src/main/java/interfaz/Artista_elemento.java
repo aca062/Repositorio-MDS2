@@ -27,7 +27,7 @@ public class Artista_elemento extends VistaArtista_elemento{
 	}
 
 	protected void PerfilArtista() {
-		_perfilArtistaAjeno = new Perfil_artista_ajeno();
+		_perfilArtistaAjeno = new Perfil_artista_ajeno(artista);
 		_perfilArtistaAjeno.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_perfilArtistaAjeno);
 	}

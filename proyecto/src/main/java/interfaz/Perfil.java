@@ -57,6 +57,13 @@ public class Perfil extends VistaPerfil {
                 EditarFoto();
             }
         });
+
+        this.getBotonCrearLista().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                CrearLista();
+            }
+        });
         foto.addFinishedListener(e -> {
 
             String nameImagen = ControladorVistas.getUsuario().getId() + "."
@@ -91,6 +98,13 @@ public class Perfil extends VistaPerfil {
                 e1.printStackTrace();
             }
         });
+    }
+
+    protected void CrearLista() {
+        _crearListaDeReproduccion = new Crear_lista_de_reproduccion();
+        _crearListaDeReproduccion.getStyle().set("width", "100%");
+        ControladorVistas.CambiarContenido(_crearListaDeReproduccion);
+
     }
 
     private void Cambiar_Imagen(MemoryBuffer memoryBuffer2) throws PersistentException {

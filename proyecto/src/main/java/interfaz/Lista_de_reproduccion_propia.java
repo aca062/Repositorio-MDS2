@@ -27,7 +27,7 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 	}
 
 	protected void DetalleLista() {
-		_verDetalleDeListaPropia = new Ver_detalle_de_lista_propia();
+		_verDetalleDeListaPropia = new Ver_detalle_de_lista_propia(lista);
 		_verDetalleDeListaPropia.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_verDetalleDeListaPropia);
 	}
@@ -37,7 +37,7 @@ public class Lista_de_reproduccion_propia extends VistaLista_de_reproduccion_pro
 	}
 
 	private void Inicializar() {
-		// TODO Auto-generated method stub
+
 
 	}
 
