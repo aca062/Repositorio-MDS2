@@ -58,7 +58,6 @@ public class Menu_administracion extends VistaMenu_administracion{
 		this.getH2Administracion().setVisible(true);
 		this.getH4TextoCancionesMostradas().setVisible(true);
 		this.getH4TextoLimite().setVisible(true);
-		this.getListaCanciones().setVisible(true);
 	}
 	public void BuscarElemento() {
 		_buscarElemento = new Buscar_elemento();

@@ -12,11 +12,11 @@ import orm.bbdd.Usuario_Registrado;
 
 public interface iActor_comun {
 
-	public void marcarFavorito(int cancion, int actor_Comun);
+	public void marcarFavorito(int idCancion, int idUsuario);
 
 	public void anadir(String aNombre);
 
-	public void desmarcarFavorita(int cancion, int actor_Comun);
+	public void desmarcarFavorita(int idCancion, int idUsuario);
 
 	public void crearLista(String aNombre);
 

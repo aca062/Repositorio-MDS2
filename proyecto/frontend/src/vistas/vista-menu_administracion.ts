@@ -3,8 +3,6 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
-import '@vaadin/vaadin-item/src/vaadin-item.js';
 
 @customElement('vista-menu_administracion')
 export class VistaMenu_administracion extends LitElement {
@@ -42,21 +40,6 @@ export class VistaMenu_administracion extends LitElement {
     <iron-icon icon="lumo:edit" slot="prefix" id="iconoEditarCanciones"></iron-icon>Editar 
    </vaadin-button>
   </vaadin-horizontal-layout>
-  <vaadin-list-box id="listaCanciones" style="width: 95%; height: 100%; align-self: flex-start; margin-right: var(--lumo-space-l); margin-bottom: var(--lumo-space-l); margin-left: var(--lumo-space-l); margin-top: var(--lumo-space-l); flex-grow: 0;">
-   <vaadin-item id="cancion1" style="align-self: flex-start; width: 100%;">
-     Whising Well 
-   </vaadin-item>
-   <vaadin-item id="cancion2" style="width: 100%;">
-     Plan A 
-   </vaadin-item>
-   <hr id="separador">
-   <vaadin-item id="cancion3" style="width: 100%;">
-     Lifes a Mess 
-   </vaadin-item>
-   <vaadin-item id="cancion4" style="width: 100%;">
-     Still Lost 
-   </vaadin-item>
-  </vaadin-list-box>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
