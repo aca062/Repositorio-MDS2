@@ -147,7 +147,8 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public int editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista, int aIdEstilo) {
+    public int editarArtista(String aEmail, String aContrasena, String aNick, String aImagen, int aIdArtista,
+            int aIdEstilo) {
         try {
             _bd_artistas = new BD_Artistas();
             _bd_artistas.editarArtista(aEmail, aContrasena, aNick, aImagen, aIdArtista, aIdEstilo);
@@ -160,10 +161,11 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     @Override
     public int editarCancion(String aTitulo, String[] aCompositores, String[] aProductores, String[] aInterpretes,
             String aArcMultimedia, int aEstilos, String aTituloAlbum, int aIdCancion) {
-    	_bd_canciones = new BD_Canciones();
-    	int comprobacion = -1;
+        _bd_canciones = new BD_Canciones();
+        int comprobacion = -1;
         try {
-            _bd_canciones.editarCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aEstilos, aTituloAlbum, aIdCancion);
+            _bd_canciones.editarCancion(aTitulo, aCompositores, aProductores, aInterpretes, aArcMultimedia, aEstilos,
+                    aTituloAlbum, aIdCancion);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
@@ -430,18 +432,13 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         return canciones;
     }
 
-    /*@Override
-    public Cancion[] cargarUltimosExitos(int aNumCanciones) {
-        Cancion[] canciones = null;
-
-        try {
-            canciones = _bd_canciones.cargarUltimosExitos(aNumCanciones);
-        } catch (PersistentException e) {
-            e.printStackTrace();
-        }
-        return canciones;
-    }*/
-
+    /*
+     * @Override public Cancion[] cargarUltimosExitos(int aNumCanciones) { Cancion[]
+     * canciones = null;
+     *
+     * try { canciones = _bd_canciones.cargarUltimosExitos(aNumCanciones); } catch
+     * (PersistentException e) { e.printStackTrace(); } return canciones; }
+     */
 
     @Override
     public Cancion[] cargarCancionesFavoritas(int aIdUsuario) {
@@ -487,6 +484,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         }
         return listas;
     }
+
     @Override
     public Lista_de_reproduccion[] cargarListaFavorita() {
         Lista_de_reproduccion[] listas = null;
@@ -542,7 +540,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-		return 1;
+        return 1;
     }
 
     @Override
@@ -655,8 +653,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
 
         Actor_Comun[] usuario = Actor_ComunDAO.listActor_ComunByQuery("id='" + id + "'", "email");
 
-        switch(usuario[0].getAcceso_Dato().getTipoUsuario())
-        {
+        switch (usuario[0].getAcceso_Dato().getTipoUsuario()) {
         case "admin":
             _bd_administradores.editar_e_mail(correo, id);
             break;
@@ -676,8 +673,7 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     public void cambiarFoto(int id, String nombre) throws PersistentException {
         Actor_Comun[] usuario = Actor_ComunDAO.listActor_ComunByQuery("id='" + id + "'", "email");
 
-        switch(usuario[0].getAcceso_Dato().getTipoUsuario())
-        {
+        switch (usuario[0].getAcceso_Dato().getTipoUsuario()) {
         case "admin":
             _bd_administradores.editarFoto(id, nombre);
             break;
@@ -728,16 +724,15 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
         return usuario;
     }
 
-<<<<<<< HEAD
     @Override
     public Evento[] cargarEventos(int id) throws PersistentException {
         return _bd_eventos.cargarEventos(id);
     }
-=======
-	@Override
-	public Actor_Comun getUsuario(String correo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
->>>>>>> refs/remotes/origin/master
+
+    @Override
+    public Actor_Comun getUsuario(String correo) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }

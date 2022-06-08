@@ -2,8 +2,6 @@ package interfaz;
 
 import org.orm.PersistentException;
 
-import com.vaadin.flow.component.ComponentEvent;
-import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bbdd.BDPrincipal;
@@ -24,12 +22,6 @@ public class Ver_detalle_de_lista_ajena extends Ver_detalle_de_lista_comun {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        this.getBotonUsuario().addClickListener(new ComponentEventListener() {
-            @Override
-            public void onComponentEvent(ComponentEvent event) {
-                PerfilUsuario();
-            }
-        });
     }
 
     protected void PerfilUsuario() {
@@ -43,9 +35,7 @@ public class Ver_detalle_de_lista_ajena extends Ver_detalle_de_lista_comun {
 
     void Inicializar() throws PersistentException {
         this.getH2Titulo().setText(lista.getNombre());
-        this.getBotonUsuario().setVisible(true);
         this.getEliminar().setVisible(false);
-        this.getBotonUsuario().setText(lista.getCreador().getNick());
         VerticalLayout layoutCanciones = this.getLayoutListaCanciones().as(VerticalLayout.class);
         orm.bbdd.Cancion[] canciones = bd.cargarCancionesLista(lista.getIdLista());
         for (orm.bbdd.Cancion cancion : canciones) {
