@@ -34,7 +34,7 @@ public class Lista_de_reproduccion_ajena extends VistaLista_de_reproduccion_ajen
 	}
 
 	protected void DetalleLista() {
-		_verDetalleDeListaAjena = new Ver_detalle_de_lista_ajena();
+		_verDetalleDeListaAjena = new Ver_detalle_de_lista_ajena(lista);
 		_verDetalleDeListaAjena.getStyle().set("width", "100%");
 		ControladorVistas.CambiarContenido(_verDetalleDeListaAjena);
 	}

@@ -7,6 +7,7 @@ import orm.bbdd.Artista;
 import orm.bbdd.Cancion;
 import orm.bbdd.Estadistica;
 import orm.bbdd.Estilo;
+import orm.bbdd.Evento;
 import orm.bbdd.Lista_de_reproduccion;
 import orm.bbdd.Usuario_Registrado;
 
@@ -69,4 +70,7 @@ public interface iActor_comun {
     public Cancion[] cargarCancionesLista(int idLista) throws PersistentException;
 
     public Lista_de_reproduccion[] cargarListaFavorita();
+
+    public Evento[] cargarEventos(int id) throws PersistentException;
+
 }

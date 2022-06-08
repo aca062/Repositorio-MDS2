@@ -12,6 +12,7 @@ import orm.bbdd.Artista;
 import orm.bbdd.Cancion;
 import orm.bbdd.Estadistica;
 import orm.bbdd.Estilo;
+import orm.bbdd.Evento;
 import orm.bbdd.Lista_de_reproduccion;
 import orm.bbdd.Usuario_Registrado;
 
@@ -735,5 +736,10 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
             return usuario;
         }
         return usuario;
+    }
+
+    @Override
+    public Evento[] cargarEventos(int id) throws PersistentException {
+        return _bd_eventos.cargarEventos(id);
     }
 }

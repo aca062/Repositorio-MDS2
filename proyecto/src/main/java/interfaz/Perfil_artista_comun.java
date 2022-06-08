@@ -5,7 +5,14 @@ import org.orm.PersistentException;
 import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.html.H5;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iActor_comun;
+import orm.bbdd.Evento;
 import vistas.VistaPerfil_artista_comun;
 
 public class Perfil_artista_comun extends VistaPerfil_artista_comun {
@@ -19,6 +26,7 @@ public class Perfil_artista_comun extends VistaPerfil_artista_comun {
     public Canciones_mas_escuchadas _cancionesMasEscuchadas;
     public Listas_de_reproduccion_en_las_que_aparece _listasDeReproduccionEnLasQueAparece;
     public Artistas_similares _artistasSimilares;
+    iActor_comun bd = new BDPrincipal();
 
     public Perfil_artista_comun() {
         InicializarPropio();
@@ -40,8 +48,44 @@ public class Perfil_artista_comun extends VistaPerfil_artista_comun {
     }
 
     private void InicializarPropio() {
-        // TODO Auto-generated method stub
 
+        this.getH5Nombre().setText(ControladorVistas.getUsuario().getNick());
+        if (ControladorVistas.getUsuario().getFoto() != null) {
+            this.getFoto().setSrc(ControladorVistas.getUsuario().getFoto());
+        } else {
+            this.getFoto()
+                    .setSrc("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png");
+        }
+        this.getH5Nombre().setText(ControladorVistas.getUsuario().getNick());
+        this.getH5Correo().setText(ControladorVistas.getUsuario().getEmail());
+        this.getNumeroSeguidos1().setText(Integer.toString(ControladorVistas.getUsuario().seguido.size()));
+        this.getNumeroSeguidos().setText(Integer.toString(ControladorVistas.getUsuario().seguidor.size()));
+
+
+        try {
+            Evento[] eventos = bd.cargarEventos(ControladorVistas.getUsuario().getId());
+            int i = 1;
+            for (Evento evento : eventos) {
+                HorizontalLayout levento = new HorizontalLayout();
+                levento.getStyle().set("align-self", "center");
+                Image imagen = new Image();
+                if (evento.getFoto() != null) {
+                    imagen.setSrc(evento.getFoto());
+                }
+                levento.add(imagen);
+                String event = evento.getLugar() + " | " + evento.getFecha() + " | " + evento.getHora();
+                levento.add(new H5(event));
+                if (i % 2 == 0) {
+                    this.getLayoutFestivalesIzq().as(VerticalLayout.class).add(levento);
+                }else {
+                    this.getLayoutFestivalesDer().as(VerticalLayout.class).add(levento);
+                }
+                i++;
+            }
+        } catch (PersistentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     protected void AnadirEvento() throws PersistentException {
@@ -64,6 +108,25 @@ public class Perfil_artista_comun extends VistaPerfil_artista_comun {
         this.getH5Correo().setText(artista.getEmail());
         this.getNumeroSeguidos1().setText(Integer.toString(artista.seguido.size()));
         this.getNumeroSeguidos().setText(Integer.toString(artista.seguidor.size()));
+
+        Evento[] eventos;
+        try {
+            eventos = bd.cargarEventos(artista.getId());
+            for (Evento evento : eventos) {
+                HorizontalLayout levento = new HorizontalLayout();
+                levento.getStyle().set("align-self", "center");
+                Image imagen = new Image();
+                if (evento.getFoto() != null) {
+                    imagen.setSrc(evento.getFoto());
+                }
+                levento.add(imagen);
+                String event = evento.getLugar() + " | " + evento.getFecha() + " | " + evento.getHora();
+                levento.add(new H5(event));
+            }
+        } catch (PersistentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         /*Listas_de_reproduccion_propias _listasDeReproduccionPropia = new Listas_de_reproduccion_propias();
         _listasDeReproduccionPropia.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());

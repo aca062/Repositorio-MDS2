@@ -1,12 +1,12 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-listas_de_reproduccion_ajenas';
 import './vista-canciones_mas_escuchadas';
 import './vista-artistas_similares';
 import './vista-lista_album';
 import './vista-listas_de_reproduccion_propias';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-perfil_artista_comun')
 export class VistaPerfil_artista_comun extends LitElement {
@@ -85,39 +85,9 @@ export class VistaPerfil_artista_comun extends LitElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="layoutFestivales">
-   <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="layoutFestivalesIzq">
-    <vaadin-horizontal-layout style="object-fit: cover; margin: var(--lumo-space-l); align-self: center;" id="festivalConcierto1">
-     <img style="width: 150px;" src="https://cdn-icons-png.flaticon.com/512/42/42956.png" id="fechaFestivalConcierto1">
-     <vaadin-vertical-layout style="justify-content: space-around; margin-left: var(--lumo-space-l); align-self: center;" id="datosFestivalConcierto1">
-      <h5 id="horaFestivalConcierto1">1.00</h5>
-      <h5 id="lugarFestivalConcierto1">Capital One Arena</h5>
-     </vaadin-vertical-layout>
-    </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout style="object-fit: cover; margin: var(--lumo-space-l); align-self: center;" id="festivalConcierto11">
-     <img style="width: 150px;" src="https://cdn-icons-png.flaticon.com/512/42/42956.png" id="fechaFestivalConcierto11">
-     <vaadin-vertical-layout style="justify-content: space-around; margin-left: var(--lumo-space-l);" id="datosFestivalConcierto11">
-      <h5 id="horaFestivalConcierto11">1.00</h5>
-      <h5 id="lugarFestivalConcierto11">State Farm Arena</h5>
-     </vaadin-vertical-layout>
-    </vaadin-horizontal-layout>
-   </vaadin-vertical-layout>
+   <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="layoutFestivalesIzq"></vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="layoutFestivalesDer">
-    <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout14">
-     <vaadin-horizontal-layout style="object-fit: cover; margin: var(--lumo-space-l); align-self: center;" id="festivalConcierto3">
-      <img style="width: 150px;" src="https://cdn-icons-png.flaticon.com/512/42/42956.png" id="fechaFestivalConcierto3">
-      <vaadin-vertical-layout style="justify-content: space-around; margin-left: var(--lumo-space-l);" id="datosFestivalConcierto3">
-       <h5 id="horaFestivalConcierto3">1.00</h5>
-       <h5 id="lugarFestivalConcierto3">Spectrum Center</h5>
-      </vaadin-vertical-layout>
-     </vaadin-horizontal-layout>
-     <vaadin-horizontal-layout style="object-fit: cover; margin: var(--lumo-space-l); align-self: center;" id="festivalConcierto4">
-      <img style="width: 150px;" src="https://cdn-icons-png.flaticon.com/512/42/42956.png" id="fechaFestivalConcierto4">
-      <vaadin-vertical-layout style="justify-content: space-around; margin-left: var(--lumo-space-l);" id="datosFestivalConcierto4">
-       <h5 id="horaFestivalConcierto4">2.00</h5>
-       <h5 id="lugarFestivalConcierto4">Amway Center</h5>
-      </vaadin-vertical-layout>
-     </vaadin-horizontal-layout>
-    </vaadin-vertical-layout>
+    <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout14"></vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

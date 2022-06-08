@@ -1,20 +1,15 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.H5;
-import vistas.VistaListas_de_reproduccion_propias;
-import vistas.VistaListas_de_reproduccion_ajenas;
-import vistas.VistaCanciones_mas_escuchadas;
-import vistas.VistaArtistas_similares;
-import vistas.VistaLista_album;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.H5;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-perfil_artista_comun template.
@@ -104,50 +99,10 @@ public class VistaPerfil_artista_comun extends LitTemplate {
 	private HorizontalLayout layoutFestivales;
 	@Id("layoutFestivalesIzq")
 	private Element layoutFestivalesIzq;
-	@Id("festivalConcierto1")
-	private HorizontalLayout festivalConcierto1;
-	@Id("fechaFestivalConcierto1")
-	private Image fechaFestivalConcierto1;
-	@Id("datosFestivalConcierto1")
-	private Element datosFestivalConcierto1;
-	@Id("horaFestivalConcierto1")
-	private H5 horaFestivalConcierto1;
-	@Id("lugarFestivalConcierto1")
-	private H5 lugarFestivalConcierto1;
-	@Id("festivalConcierto11")
-	private HorizontalLayout festivalConcierto11;
-	@Id("fechaFestivalConcierto11")
-	private Image fechaFestivalConcierto11;
-	@Id("datosFestivalConcierto11")
-	private Element datosFestivalConcierto11;
-	@Id("lugarFestivalConcierto11")
-	private H5 lugarFestivalConcierto11;
-	@Id("horaFestivalConcierto11")
-	private H5 horaFestivalConcierto11;
 	@Id("layoutFestivalesDer")
 	private Element layoutFestivalesDer;
 	@Id("vaadinVerticalLayout14")
 	private Element vaadinVerticalLayout14;
-	@Id("festivalConcierto3")
-	private HorizontalLayout festivalConcierto3;
-	@Id("fechaFestivalConcierto3")
-	private Image fechaFestivalConcierto3;
-	@Id("datosFestivalConcierto3")
-	private Element datosFestivalConcierto3;
-	@Id("horaFestivalConcierto3")
-	private H5 horaFestivalConcierto3;
-	@Id("lugarFestivalConcierto3")
-	private H5 lugarFestivalConcierto3;
-	@Id("festivalConcierto4")
-	private HorizontalLayout festivalConcierto4;
-	@Id("fechaFestivalConcierto4")
-	private Image fechaFestivalConcierto4;
-	@Id("datosFestivalConcierto4")
-	private Element datosFestivalConcierto4;
-	@Id("horaFestivalConcierto4")
-	private H5 horaFestivalConcierto4;
-	@Id("lugarFestivalConcierto4")
-	private H5 lugarFestivalConcierto4;
 	@Id("layoutDarseBaja")
 	private HorizontalLayout layoutDarseBaja;
 	@Id("botonDarseBaja")
@@ -464,86 +419,6 @@ public class VistaPerfil_artista_comun extends LitTemplate {
 		this.layoutFestivalesIzq = layoutFestivalesIzq;
 	}
 
-	public HorizontalLayout getFestivalConcierto1() {
-		return festivalConcierto1;
-	}
-
-	public void setFestivalConcierto1(HorizontalLayout festivalConcierto1) {
-		this.festivalConcierto1 = festivalConcierto1;
-	}
-
-	public Image getFechaFestivalConcierto1() {
-		return fechaFestivalConcierto1;
-	}
-
-	public void setFechaFestivalConcierto1(Image fechaFestivalConcierto1) {
-		this.fechaFestivalConcierto1 = fechaFestivalConcierto1;
-	}
-
-	public Element getDatosFestivalConcierto1() {
-		return datosFestivalConcierto1;
-	}
-
-	public void setDatosFestivalConcierto1(Element datosFestivalConcierto1) {
-		this.datosFestivalConcierto1 = datosFestivalConcierto1;
-	}
-
-	public H5 getHoraFestivalConcierto1() {
-		return horaFestivalConcierto1;
-	}
-
-	public void setHoraFestivalConcierto1(H5 horaFestivalConcierto1) {
-		this.horaFestivalConcierto1 = horaFestivalConcierto1;
-	}
-
-	public H5 getLugarFestivalConcierto1() {
-		return lugarFestivalConcierto1;
-	}
-
-	public void setLugarFestivalConcierto1(H5 lugarFestivalConcierto1) {
-		this.lugarFestivalConcierto1 = lugarFestivalConcierto1;
-	}
-
-	public HorizontalLayout getFestivalConcierto11() {
-		return festivalConcierto11;
-	}
-
-	public void setFestivalConcierto11(HorizontalLayout festivalConcierto11) {
-		this.festivalConcierto11 = festivalConcierto11;
-	}
-
-	public Image getFechaFestivalConcierto11() {
-		return fechaFestivalConcierto11;
-	}
-
-	public void setFechaFestivalConcierto11(Image fechaFestivalConcierto11) {
-		this.fechaFestivalConcierto11 = fechaFestivalConcierto11;
-	}
-
-	public Element getDatosFestivalConcierto11() {
-		return datosFestivalConcierto11;
-	}
-
-	public void setDatosFestivalConcierto11(Element datosFestivalConcierto11) {
-		this.datosFestivalConcierto11 = datosFestivalConcierto11;
-	}
-
-	public H5 getLugarFestivalConcierto11() {
-		return lugarFestivalConcierto11;
-	}
-
-	public void setLugarFestivalConcierto11(H5 lugarFestivalConcierto11) {
-		this.lugarFestivalConcierto11 = lugarFestivalConcierto11;
-	}
-
-	public H5 getHoraFestivalConcierto11() {
-		return horaFestivalConcierto11;
-	}
-
-	public void setHoraFestivalConcierto11(H5 horaFestivalConcierto11) {
-		this.horaFestivalConcierto11 = horaFestivalConcierto11;
-	}
-
 	public Element getLayoutFestivalesDer() {
 		return layoutFestivalesDer;
 	}
@@ -558,86 +433,6 @@ public class VistaPerfil_artista_comun extends LitTemplate {
 
 	public void setVaadinVerticalLayout14(Element vaadinVerticalLayout14) {
 		this.vaadinVerticalLayout14 = vaadinVerticalLayout14;
-	}
-
-	public HorizontalLayout getFestivalConcierto3() {
-		return festivalConcierto3;
-	}
-
-	public void setFestivalConcierto3(HorizontalLayout festivalConcierto3) {
-		this.festivalConcierto3 = festivalConcierto3;
-	}
-
-	public Image getFechaFestivalConcierto3() {
-		return fechaFestivalConcierto3;
-	}
-
-	public void setFechaFestivalConcierto3(Image fechaFestivalConcierto3) {
-		this.fechaFestivalConcierto3 = fechaFestivalConcierto3;
-	}
-
-	public Element getDatosFestivalConcierto3() {
-		return datosFestivalConcierto3;
-	}
-
-	public void setDatosFestivalConcierto3(Element datosFestivalConcierto3) {
-		this.datosFestivalConcierto3 = datosFestivalConcierto3;
-	}
-
-	public H5 getHoraFestivalConcierto3() {
-		return horaFestivalConcierto3;
-	}
-
-	public void setHoraFestivalConcierto3(H5 horaFestivalConcierto3) {
-		this.horaFestivalConcierto3 = horaFestivalConcierto3;
-	}
-
-	public H5 getLugarFestivalConcierto3() {
-		return lugarFestivalConcierto3;
-	}
-
-	public void setLugarFestivalConcierto3(H5 lugarFestivalConcierto3) {
-		this.lugarFestivalConcierto3 = lugarFestivalConcierto3;
-	}
-
-	public HorizontalLayout getFestivalConcierto4() {
-		return festivalConcierto4;
-	}
-
-	public void setFestivalConcierto4(HorizontalLayout festivalConcierto4) {
-		this.festivalConcierto4 = festivalConcierto4;
-	}
-
-	public Image getFechaFestivalConcierto4() {
-		return fechaFestivalConcierto4;
-	}
-
-	public void setFechaFestivalConcierto4(Image fechaFestivalConcierto4) {
-		this.fechaFestivalConcierto4 = fechaFestivalConcierto4;
-	}
-
-	public Element getDatosFestivalConcierto4() {
-		return datosFestivalConcierto4;
-	}
-
-	public void setDatosFestivalConcierto4(Element datosFestivalConcierto4) {
-		this.datosFestivalConcierto4 = datosFestivalConcierto4;
-	}
-
-	public H5 getHoraFestivalConcierto4() {
-		return horaFestivalConcierto4;
-	}
-
-	public void setHoraFestivalConcierto4(H5 horaFestivalConcierto4) {
-		this.horaFestivalConcierto4 = horaFestivalConcierto4;
-	}
-
-	public H5 getLugarFestivalConcierto4() {
-		return lugarFestivalConcierto4;
-	}
-
-	public void setLugarFestivalConcierto4(H5 lugarFestivalConcierto4) {
-		this.lugarFestivalConcierto4 = lugarFestivalConcierto4;
 	}
 
 	public HorizontalLayout getLayoutDarseBaja() {

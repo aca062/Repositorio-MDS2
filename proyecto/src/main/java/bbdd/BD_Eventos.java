@@ -48,4 +48,8 @@ public class BD_Eventos {
     		e.printStackTrace();
     	}
     }
+
+    public Evento[] cargarEventos(int id) throws PersistentException {
+        return EventoDAO.listEventoByQuery("ArtistaActor_ComunId = '" + id + "'", "IdEvento");
+    }
 }

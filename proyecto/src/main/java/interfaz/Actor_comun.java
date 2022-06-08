@@ -61,7 +61,9 @@ public class Actor_comun extends VistaActor_comun {
         HorizontalLayout layoutCancionesFav = this.getLayoutCancionesFav();
         layoutCancionesFav.add(_cancionesFavoritas);
         if (_cancionesFavoritas._cancion.size() == 0) {
-            layoutCancionesFav.add(new H3("No tiene ninguna canción favorita aún"));
+            H3 string = new H3("No tiene ninguna canción favorita aún");
+            string.getStyle().set("align-self", "center");
+            layoutCancionesFav.add(string);
         }
 
         _cancionesRecomendadas = new Canciones_recomendadas();
