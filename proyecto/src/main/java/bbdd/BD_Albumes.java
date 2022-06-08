@@ -42,7 +42,8 @@ public class BD_Albumes {
         return idAlbum;
     }
 
-    public int editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista,Cancion[] aCanciones,int aIdAlbum) throws PersistentException{
+    public int editarAlbum(String aTitulo, Date aFechaEdicion, String aImagen, String aNombreArtista,
+            Cancion[] aCanciones, int aIdAlbum) throws PersistentException {
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
         int idAlbum = -1;
         try {
@@ -53,7 +54,7 @@ public class BD_Albumes {
             Actor_Comun actor = Actor_ComunDAO.listActor_ComunByQuery("nick='" + aNombreArtista + "'", "nick")[0];
             alb.setArtista(ArtistaDAO.getArtistaByORMID(actor.getId()));
             alb.canciones.clear();
-            for(Cancion cancion : aCanciones) {
+            for (Cancion cancion : aCanciones) {
                 alb.canciones.add(cancion);
             }
             AlbumDAO.save(alb);
@@ -118,5 +119,16 @@ public class BD_Albumes {
             t.rollback();
         }
         return albumes;
+    }
+
+    public Cancion[] cargarCancionesAlbum(int idAlbum) throws PersistentException {
+        Album album = AlbumDAO.getAlbumByORMID(idAlbum);
+        Cancion[] canciones = new Cancion[album.canciones.size()];
+        int i = 0;
+        for (Cancion cancion : album.canciones.toArray()) {
+            canciones[i] = cancion;
+            i++;
+        }
+        return canciones;
     }
 }

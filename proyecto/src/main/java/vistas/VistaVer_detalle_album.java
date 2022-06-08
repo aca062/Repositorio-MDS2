@@ -1,18 +1,15 @@
 package vistas;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.template.Id;
-import vistas.VistaAlbum;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H5;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
-import vistas.VistaCancion;
-import vistas.VistaLista_de_canciones;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-ver_detalle_album template.
@@ -28,8 +25,6 @@ public class VistaVer_detalle_album extends LitTemplate {
 	private Element layoutPrincipal;
 	@Id("layoutAlbum")
 	private VerticalLayout layoutAlbum;
-	@Id("vistaAlbum")
-	private Element vistaAlbum;
 	@Id("botonArtista")
 	private Button botonArtista;
 	@Id("h5FechaAlbum")
@@ -38,6 +33,12 @@ public class VistaVer_detalle_album extends LitTemplate {
 	private HorizontalLayout layoutCancionesAlbum;
 	@Id("vistaLista_de_canciones")
 	private Element vistaLista_de_canciones;
+    @Id("vaadinHorizontalLayout")
+    private HorizontalLayout vaadinHorizontalLayout;
+    @Id("titulo")
+    private H5 titulo;
+    @Id("img")
+    private Image img;
 
 	/**
      * Creates a new VistaVer_detalle_album.
@@ -60,14 +61,6 @@ public class VistaVer_detalle_album extends LitTemplate {
 
 	public void setLayoutAlbum(VerticalLayout layoutAlbum) {
 		this.layoutAlbum = layoutAlbum;
-	}
-
-	public Element getVistaAlbum() {
-		return vistaAlbum;
-	}
-
-	public void setVistaAlbum(Element vistaAlbum) {
-		this.vistaAlbum = vistaAlbum;
 	}
 
 	public Button getBotonArtista() {
@@ -101,5 +94,21 @@ public class VistaVer_detalle_album extends LitTemplate {
 	public void setVistaLista_de_canciones(Element vistaLista_de_canciones) {
 		this.vistaLista_de_canciones = vistaLista_de_canciones;
 	}
+
+    public H5 getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(H5 titulo) {
+        this.titulo = titulo;
+    }
+
+    public Image getImg() {
+        return img;
+    }
+
+    public void setImg(Image img) {
+        this.img = img;
+    }
 
 }

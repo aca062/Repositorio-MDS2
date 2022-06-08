@@ -1,6 +1,5 @@
 package bbdd;
 
-import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.Vector;
@@ -174,7 +173,7 @@ public class BD_Canciones {
         return canciones;
     }
 
-    public Cancion[] cargarUltimosExitos(int aNumCanciones) throws PersistentException {
+    /*public Cancion[] cargarUltimosExitos(int aNumCanciones) throws PersistentException {
         Cancion[] cancionesRandom = new Cancion[aNumCanciones];
 
         PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
@@ -194,7 +193,7 @@ public class BD_Canciones {
             t.rollback();
         }
         return cancionesRandom;
-    }
+    }*/
 
     public Cancion[] cargarCancionRecomendada(int aIdUsuario) throws PersistentException {
         Cancion[] canciones = new Cancion[3];

@@ -14,14 +14,14 @@ import orm.bbdd.CancionDAO;
 import orm.bbdd.MDS2PersistentManager;
 
 public class BD_Administradores {
-	public BDPrincipal _bd_prin_administradores;
-	public Vector<Administrador> _contiene_administradores = new Vector<Administrador>();
+    public BDPrincipal _bd_prin_administradores;
+    public Vector<Administrador> _contiene_administradores = new Vector<Administrador>();
 
-	public void editarFoto(String aFoto, int aIdUsuario) throws PersistentException{
-		throw new UnsupportedOperationException();
-	}
+    public void editarFoto(String aFoto, int aIdUsuario) throws PersistentException {
+        throw new UnsupportedOperationException();
+    }
 
-	public void editar_e_mail(String aEmail, int aIdUsuario) throws PersistentException{
+    public void editar_e_mail(String aEmail, int aIdUsuario) throws PersistentException {
 
         Administrador admin = AdministradorDAO.getAdministradorByORMID(aIdUsuario);
 
@@ -38,7 +38,7 @@ public class BD_Administradores {
             t.rollback();
         }
 
-	}
+    }
 
     public void editarFoto(int id, String nombre) throws PersistentException {
         Administrador admin = AdministradorDAO.getAdministradorByORMID(id);
@@ -58,6 +58,13 @@ public class BD_Administradores {
 
         Cancion[] cancions = new Cancion[strings.length];
 
+        admin.cancions.clear();
+
+        for (Cancion cancion : admin.cancions.toArray()) {
+            cancion.setAdministrador(null);
+            CancionDAO.save(cancion);
+        }
+
         for (int i = 0; i < strings.length; i++) {
             Cancion[] j = CancionDAO.listCancionByQuery("titulo='" + strings[i].trim() + "'", "titulo");
             if (j == null || j.length == 0) {
@@ -73,6 +80,7 @@ public class BD_Administradores {
                 c.setAdministrador(admin);
                 CancionDAO.save(c);
             }
+
             admin.setNumCanciones(cancions.length);
             AdministradorDAO.save(admin);
             t.commit();

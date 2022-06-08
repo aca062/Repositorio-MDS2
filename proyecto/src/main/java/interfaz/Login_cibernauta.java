@@ -78,7 +78,7 @@ public class Login_cibernauta extends VistaLogin_cibernauta{
 		String correo = this.getTextFieldCorreo().getValue();
 		String contrasena = this.getTextFieldContrasena().getValue();
 		Cabecera_pagina cab = new Cabecera_pagina();
-		Actor_Comun usuario = cib.getUsuario(correo);
+		Actor_Comun usuario = cib.getUsuarioCorreo(correo);
 		switch(cib.inicioDeSesion(correo, contrasena)){
 			case("admin"):
 			    ControladorVistas.CambiarUsuario(usuario);

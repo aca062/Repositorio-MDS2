@@ -49,8 +49,6 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
             }
         });
         this.getBotonMeGusta().addClickListener(new ComponentEventListener() {
-            
-        	
         	@Override
             public void onComponentEvent(ComponentEvent event) {
                 if (favorita) {
@@ -91,12 +89,13 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
     }
 
     void Inicializar() {
+        this.getAnadirLista().setVisible(false);
         if (favorita) {
             this.getBotonMeGusta().getStyle().set("background-image",
                     "url('https://img.freepik.com/vector-gratis/me-gusta-icono-corazon-estilo-contorno-plano-transmision-video-vivo-chat-me-gusta-redes-sociales-como-botones-web-corazon-rojo-aisladas-sobre-fondo-blanco-dia-san-valentin-illustaration-vector_175838-2893.jpg?w=360')");
         }
         this.getH4NombreCancion().setText(cancion.getTitulo());
-        if (cancion.album.size() == 1) {
+        if (cancion.album.size() >= 1) {
             this.getBotonAlbum().setText(cancion.album.toArray()[0].getTitulo());
         } else {
             this.getBotonAlbum().setVisible(false);
@@ -113,7 +112,6 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
          * this.getLayoutBotones().addComponentAsFirst(_cancion) }
          */
 
-        this.getBotonAlbum().setVisible(true);
         this.getBotonArtista().setVisible(true);
         this.getBotonMeGusta().setVisible(true);
         this.getBotonReproducir().setVisible(true);
@@ -132,11 +130,11 @@ public class Ver_detalle_cancion extends VistaVer_detalle_cancion {
         this.getLayoutPrincipal().as(VerticalLayout.class).add(popup);
         popup.open();
     }
-    
+
     public void IrAlbum() {
-    	_verDetalleAlbum = new Ver_detalle_album();
-    	_verDetalleAlbum.getStyle().set("Width", "100%");
+    	_verDetalleAlbum = new Ver_detalle_album(cancion.album.toArray()[0]);
+    	_verDetalleAlbum.getStyle().set("width", "100%");
     	ControladorVistas.CambiarContenido(_verDetalleAlbum);
     }
-    
+
 }

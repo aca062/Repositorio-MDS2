@@ -13,9 +13,11 @@ public interface iCibernauta {
 
 	public void recuperarContrasena(String aEmail);
 
-	public Cancion[] cargarUltimosExitos(int aNumCanciones);
+	//public Cancion[] cargarUltimosExitos(int aNumCanciones);
 
-    public Actor_Comun getUsuario(String correo);
+    public Actor_Comun getUsuario(int i);
 
     public Cancion[] cargarCancionesAdmin() throws PersistentException;
+
+    public Actor_Comun getUsuarioCorreo(String correo);
 }
