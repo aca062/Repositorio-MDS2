@@ -98,8 +98,8 @@ public class VistaAlta_artistas extends LitTemplate {
 		return contrasena;
 	}
 
-	public void setContrasena(PasswordField contraseña) {
-		this.contrasena = contraseña;
+	public void setContrasena(PasswordField contrasena) {
+		this.contrasena = contrasena;
 	}
 
 	public TextField getNick() {
@@ -114,8 +114,8 @@ public class VistaAlta_artistas extends LitTemplate {
 		return confirmarContrasena;
 	}
 
-	public void setConfirmarContraseña(PasswordField confirmarContraseña) {
-		this.confirmarContrasena = confirmarContraseña;
+	public void setConfirmarContrasena(PasswordField confirmarContrasena) {
+		this.confirmarContrasena = confirmarContrasena;
 	}
 
 	public TextField geteMail() {
