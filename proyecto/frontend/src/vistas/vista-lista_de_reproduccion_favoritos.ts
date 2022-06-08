@@ -1,10 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-select/src/vaadin-select.js';
-import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
-import '@vaadin/vaadin-item/src/vaadin-item.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-cancion';
+import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 
 @customElement('vista-lista_de_reproduccion_favoritos')
 export class VistaLista_de_reproduccion_favoritos extends LitElement {
@@ -22,32 +19,14 @@ export class VistaLista_de_reproduccion_favoritos extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%; padding: var(--lumo-space-xl);" id="layoutPrincipal">
  <vaadin-horizontal-layout theme="spacing-xl" id="layoutTitulo">
   <h1 id="h1Titulo">Lista de favoritos</h1>
-  <vaadin-select value="Opciones" style="align-self: center;" id="opciones">
-   <template>
-    <vaadin-list-box selected="0" id="vaadinListBox">
-     <vaadin-item selected id="vaadinItem">
-       Opciones 
-     </vaadin-item>
-     <vaadin-item id="vaadinItem1">
-       Item two 
-     </vaadin-item>
-     <vaadin-item id="vaadinItem2">
-       Item three 
-     </vaadin-item>
-    </vaadin-list-box>
-   </template>
-  </vaadin-select>
+  <vaadin-combo-box id="comboBox"></vaadin-combo-box>
  </vaadin-horizontal-layout>
  <h3 id="h3Creador">Paco12</h3>
  <vaadin-vertical-layout theme="spacing" style="width: 100%;background-color: var(--lumo-contrast-10pct);" id="layoutLista">
   <vaadin-horizontal-layout theme="spacing" style="align-self: flex-end;" id="layoutNumCanciones">
    <h2 style="margin-right: var(--lumo-space-xl);" id="numCanciones">3/1000</h2>
   </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="listaCanciones">
-   <vista-cancion id="vistaCancion" style="width: 100%;"></vista-cancion>
-   <vista-cancion id="vistaCancion1" style="width: 100%;"></vista-cancion>
-   <vista-cancion id="vistaCancion2" style="width: 100%;"></vista-cancion>
-  </vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="listaCanciones"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

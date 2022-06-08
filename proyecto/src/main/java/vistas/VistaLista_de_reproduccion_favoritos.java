@@ -12,6 +12,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.combobox.ComboBox;
 
 /**
  * A Designer generated component for the vista-lista_de_reproduccion_favoritos template.
@@ -31,8 +32,6 @@ public class VistaLista_de_reproduccion_favoritos extends LitTemplate {
 	private HorizontalLayout layoutTitulo;
 	@Id("h1Titulo")
 	private H1 h1Titulo;
-	@Id("opciones")
-	private Select opciones;
 	@Id("h3Creador")
 	private H3 h3Creador;
 	@Id("layoutLista")
@@ -43,12 +42,8 @@ public class VistaLista_de_reproduccion_favoritos extends LitTemplate {
 	private H2 numCanciones;
 	@Id("listaCanciones")
 	private VerticalLayout listaCanciones;
-	@Id("vistaCancion")
-	private Element vistaCancion;
-	@Id("vistaCancion1")
-	private Element vistaCancion1;
-	@Id("vistaCancion2")
-	private Element vistaCancion2;
+	@Id("comboBox")
+	private ComboBox<String> comboBox;
 
 	/**
      * Creates a new VistaLista_de_reproduccion_favoritos.
@@ -79,14 +74,6 @@ public class VistaLista_de_reproduccion_favoritos extends LitTemplate {
 
 	public void setH1Titulo(H1 h1Titulo) {
 		this.h1Titulo = h1Titulo;
-	}
-
-	public Select getOpciones() {
-		return opciones;
-	}
-
-	public void setOpciones(Select opciones) {
-		this.opciones = opciones;
 	}
 
 	public H3 getH3Creador() {
@@ -129,28 +116,12 @@ public class VistaLista_de_reproduccion_favoritos extends LitTemplate {
 		this.listaCanciones = listaCanciones;
 	}
 
-	public Element getVistaCancion() {
-		return vistaCancion;
+	public ComboBox<String> getComboBox() {
+		return comboBox;
 	}
 
-	public void setVistaCancion(Element vistaCancion) {
-		this.vistaCancion = vistaCancion;
-	}
-
-	public Element getVistaCancion1() {
-		return vistaCancion1;
-	}
-
-	public void setVistaCancion1(Element vistaCancion1) {
-		this.vistaCancion1 = vistaCancion1;
-	}
-
-	public Element getVistaCancion2() {
-		return vistaCancion2;
-	}
-
-	public void setVistaCancion2(Element vistaCancion2) {
-		this.vistaCancion2 = vistaCancion2;
+	public void setComboBox(ComboBox<String> comboBox) {
+		this.comboBox = comboBox;
 	}
 
 	

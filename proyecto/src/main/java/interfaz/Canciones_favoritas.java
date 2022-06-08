@@ -18,7 +18,6 @@ public class Canciones_favoritas extends VistaCanciones_favoritas{
 	public Ver_mas_canciones_favoritas _verMasCanciones;
 	public Vector<Ver_mas_canciones_favoritas> _verMasCancionesFavoritas = new Vector<Ver_mas_canciones_favoritas>();
     iActor_comun bd = new BDPrincipal();
-
 	public Canciones_favoritas() {
 		Inicializar();
         this.getVerMas().addClickListener(new ComponentEventListener() {
@@ -28,7 +27,7 @@ public class Canciones_favoritas extends VistaCanciones_favoritas{
             }
         });
 	}
-
+	
 	protected void VerMas() {
         // TODO Auto-generated method stub
 		_verMasCanciones = new Ver_mas_canciones_favoritas();
@@ -38,7 +37,6 @@ public class Canciones_favoritas extends VistaCanciones_favoritas{
 
     void Inicializar() {
 	    int i = 0;
-
         for (orm.bbdd.Cancion cancion : bd.cargarCancionesFavoritas(ControladorVistas.getUsuario().getId())) {
             i++;
             _cancion.add(new Cancion());

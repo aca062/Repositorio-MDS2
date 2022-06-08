@@ -3,6 +3,7 @@ package interfaz;
 import java.util.Vector;
 
 import com.example.test.ControladorVistas;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bbdd.BDPrincipal;
 import bbdd.iActor_comun;
@@ -19,6 +20,9 @@ public class Ver_mas_canciones_favoritas extends VistaVer_mas_canciones_favorita
 	}
 
 	private void Inicializar() {
+		_listaDeReproduccionFavoritos = new Lista_de_reproduccion_favoritos();
+		VerticalLayout layoutCanciones = this.getLayoutPrincipal().as(VerticalLayout.class);
+		layoutCanciones.add(_listaDeReproduccionFavoritos);
 		
     }
 	

@@ -32,6 +32,7 @@ public class BD_Listas_de_reproduccion {
         try {
             Lista_de_reproduccion lista = Lista_de_reproduccionDAO.getLista_de_reproduccionByORMID(aIdListas);
             correcto = Lista_de_reproduccionDAO.deleteAndDissociate(lista);
+            
             t.commit();
         } catch (Exception e) {
             correcto = false;
