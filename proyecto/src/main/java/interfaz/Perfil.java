@@ -45,18 +45,6 @@ public class Perfil extends VistaPerfil {
                 EditarCorreo();
             }
         });
-        this.getBotonEditarFotoPerfil().addClickListener(new ComponentEventListener() {
-            @Override
-            public void onComponentEvent(ComponentEvent event) {
-                EditarFoto();
-            }
-        });
-        this.getBotonEditarFotoPerfil().addClickListener(new ComponentEventListener() {
-            @Override
-            public void onComponentEvent(ComponentEvent event) {
-                EditarFoto();
-            }
-        });
 
         this.getBotonCrearLista().addClickListener(new ComponentEventListener() {
             @Override
@@ -167,6 +155,7 @@ public class Perfil extends VistaPerfil {
 
     void Inicializar() {
         //this.getLayoutFotoPerfil().as(VerticalLayout.class).add(foto);
+        this.getBotonRecibirNotificaciones().setVisible(false);
         this.getBotonEditarFotoPerfil().setVisible(false);
         foto.setVisible(false);
         this.getTusListas().setVisible(false);

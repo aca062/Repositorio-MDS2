@@ -7,6 +7,8 @@ import org.orm.PersistentTransaction;
 
 import orm.bbdd.Acceso_Dato;
 import orm.bbdd.Acceso_DatoDAO;
+import orm.bbdd.Actor_Comun;
+import orm.bbdd.Actor_ComunDAO;
 import orm.bbdd.AlbumDAO;
 import orm.bbdd.Artista;
 import orm.bbdd.ArtistaCriteria;
@@ -246,8 +248,25 @@ public class BD_Artistas {
         throw new UnsupportedOperationException();
     }
 
-    public void seguir_dejarDeSeguirArtista(int aId, int aIdSeguido) throws PersistentException {
-        throw new UnsupportedOperationException();
+    public int seguir_dejarDeSeguirArtista(int aId, int aIdSeguido) throws PersistentException {
+        Artista artista = ArtistaDAO.getArtistaByORMID(aIdSeguido);
+        Actor_Comun actor = Actor_ComunDAO.getActor_ComunByORMID(aId);
+        PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+        try {
+            if (artista.seguidor.contains(actor)) {
+                artista.seguidor.remove(actor);
+                actor.seguido.remove(artista);
+            } else {
+                artista.seguidor.add(actor);
+                actor.seguido.add(artista);
+            }
+            Actor_ComunDAO.save(actor);
+            ArtistaDAO.save(artista);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        }
+        return artista.seguidor.size();
     }
 
     public void altaAlbum(String aNombreArtista) {

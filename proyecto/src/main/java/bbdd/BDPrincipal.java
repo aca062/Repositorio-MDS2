@@ -373,13 +373,14 @@ public class BDPrincipal implements iActor_comun, iAdministrador, iArtista, iCib
     }
 
     @Override
-    public void seguir_dejarDeSeguirArtista(int aId, int aIdSeguido) {
+    public int seguir_dejarDeSeguirArtista(int aId, int aIdSeguido) {
         try {
             _bd_artistas = new BD_Artistas();
-            _bd_artistas.seguir_dejarDeSeguirArtista(aId, aIdSeguido);
+            return _bd_artistas.seguir_dejarDeSeguirArtista(aId, aIdSeguido);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
+        return -1;
     }
 
     @Override

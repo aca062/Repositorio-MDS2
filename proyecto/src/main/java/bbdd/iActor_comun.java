@@ -25,7 +25,7 @@ public interface iActor_comun {
 
 	public void seguir_dejarDeSeguirUsuario(int aId, int aIdSeguido);
 
-	public void seguir_dejarDeSeguirArtista(int aId, int aIdSeguido);
+	public int seguir_dejarDeSeguirArtista(int aId, int aIdSeguido);
 
 	public Album cargarAlbum(int aIdAlbum);
 
