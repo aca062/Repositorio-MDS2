@@ -37,6 +37,7 @@ public class Perfil_artista_ajeno extends Perfil_artista_comun {
 
     protected void SeguirDejarSeguir() {
         int numero = bd.seguir_dejarDeSeguirArtista(ControladorVistas.getUsuario().getId(), artista.getId());
+        ControladorVistas.CambiarUsuario(cib.getUsuario(ControladorVistas.getUsuario().getId()));
         this.getNumeroSeguidos().setText(Integer.toString(numero));
     }
 

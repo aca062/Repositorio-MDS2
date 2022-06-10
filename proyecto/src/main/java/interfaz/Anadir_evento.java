@@ -16,59 +16,49 @@ import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 
 import bbdd.BDPrincipal;
-import bbdd.iAdministrador;
 import bbdd.iArtista;
 import orm.bbdd.Actor_ComunDAO;
 import vistas.VistaAnadir_evento;
 
-public class Anadir_evento extends VistaAnadir_evento{
-	/*private Label _tituloL;
-	private event _anadir_foto;
-	private Image _imagen;
-	private Button _anadirFotoB;
-	private Label _fechaL;
-	private TextField _fechaTF;
-	private Label _horaL;
-	private TextField _horaTF;
-	private Label _lugarL;
-	private TextField _lugarTF;
-	private Button _cancelarB;
-	private Button _confirmarB;*/
-	public Perfil_artista_propio _perfilArtista;
-	String pathFoto = null;
-	iArtista adm = new BDPrincipal();
-	int id;
-	
-	public Anadir_evento() throws PersistentException {
-		Inicializar();
+public class Anadir_evento extends VistaAnadir_evento {
+    /*
+     * private Label _tituloL; private event _anadir_foto; private Image _imagen;
+     * private Button _anadirFotoB; private Label _fechaL; private TextField
+     * _fechaTF; private Label _horaL; private TextField _horaTF; private Label
+     * _lugarL; private TextField _lugarTF; private Button _cancelarB; private
+     * Button _confirmarB;
+     */
+    public Perfil_artista_propio _perfilArtista;
+    String pathFoto = null;
+    iArtista adm = new BDPrincipal();
+    int id;
+
+    public Anadir_evento() throws PersistentException {
+        Inicializar();
         this.getEliminarFoto().setVisible(false);
         Integer id = Actor_ComunDAO.listActor_ComunByQuery("true=true", "nick").length + 1;
-        //VerticalLayout layoutFoto = this.getLayoutFoto().as(VerticalLayout.class);
+        // VerticalLayout layoutFoto = this.getLayoutFoto().as(VerticalLayout.class);
         MemoryBuffer memoryBuffer = new MemoryBuffer();
         Upload upload = this.getUpload();
         upload.setReceiver(memoryBuffer);
         Image foto = this.getImg();
-		this.getCancelar().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
-				Cancelar();
-			}
-		});
-		this.getConfirmar().addClickListener(new ComponentEventListener(){
-			public void onComponentEvent(ComponentEvent event) {
-				try {
-					Confirmar();
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		});
-		this.getEliminarFoto().addClickListener(new ComponentEventListener() {
+        this.getCancelar().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                Cancelar();
+            }
+        });
+        this.getConfirmar().addClickListener(new ComponentEventListener() {
+            @Override
+            public void onComponentEvent(ComponentEvent event) {
+                Confirmar();
+            }
+        });
+        this.getEliminarFoto().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
                 String UrlCarpeta = "./src/main/resources/META-INF/resources/img/events/";
@@ -89,7 +79,7 @@ public class Anadir_evento extends VistaAnadir_evento{
                 pathFoto = null;
             }
         });
-		upload.addFinishedListener(e -> {
+        upload.addFinishedListener(e -> {
             try {
                 String UrlCarpeta = "./src/main/resources/META-INF/resources/img/events/";
                 File folder = new File(UrlCarpeta);
@@ -109,41 +99,47 @@ public class Anadir_evento extends VistaAnadir_evento{
                 e1.printStackTrace();
             }
         });
-	}
-	
-	protected void CambiarUpload() {
+    }
+
+    protected void CambiarUpload() {
         this.getUpload().interruptUpload();
         this.getUpload().setVisible(true);
         this.getEliminarFoto().setVisible(false);
 
     }
 
-	private void Inicializar() {
-		// TODO Auto-generated method stub
-	}
+    private void Inicializar() {
+        // TODO Auto-generated method stub
+    }
 
-	protected void Confirmar() throws ParseException {
-		if (this.getFecha().isEmpty() || this.getHora().isEmpty() || this.getLugar().isEmpty()) {
-			ControladorVistas.PopUpBasico("No se pueden dejar campos en blanco");
-		}else {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+    protected void Confirmar() {
+        if (this.getFecha().isEmpty() || this.getHora().isEmpty() || this.getLugar().isEmpty()) {
+            ControladorVistas.PopUpBasico("No se pueden dejar campos en blanco");
+        } else {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
             dateFormat.setLenient(false);
-            Date fechaUtil = dateFormat.parse(this.getFecha().getValue());
-            java.sql.Date fecha = new java.sql.Date(fechaUtil.getTime());
-			//Se guarda el evento
-			adm.anadirEvento(fecha, this.getHora().getValue(), this.getLugar().getValue(), pathFoto);
-			_perfilArtista = new Perfil_artista_propio();
-			_perfilArtista.getStyle().set("width", "100%");
-			ControladorVistas.CambiarContenido(_perfilArtista);
-		}
-	}
+            Date fechaUtil;
+            try {
+                fechaUtil = dateFormat.parse(this.getFecha().getValue());
+                java.sql.Date fecha = new java.sql.Date(fechaUtil.getTime());
+                // Se guarda el evento
+                adm.anadirEvento(fecha, this.getHora().getValue(), this.getLugar().getValue(), pathFoto);
+                _perfilArtista = new Perfil_artista_propio();
+                _perfilArtista.getStyle().set("width", "100%");
+                ControladorVistas.CambiarContenido(_perfilArtista);
+            } catch (ParseException e) {
+                ControladorVistas.PopUpBasico("La fecha tiene que tener el formato yyyy-mm-dd");
+            }
+        }
+    }
 
-	protected void Cancelar() {
-		_perfilArtista = new Perfil_artista_propio();
-		_perfilArtista.getStyle().set("width", "100%");
-		ControladorVistas.CambiarContenido(_perfilArtista);
-	}
-	public String Anadir_imagen(MemoryBuffer memoryBuffer) throws PersistentException {
+    protected void Cancelar() {
+        _perfilArtista = new Perfil_artista_propio();
+        _perfilArtista.getStyle().set("width", "100%");
+        ControladorVistas.CambiarContenido(_perfilArtista);
+    }
+
+    public String Anadir_imagen(MemoryBuffer memoryBuffer) throws PersistentException {
         int id = Actor_ComunDAO.listActor_ComunByQuery("true=true", "nick").length + 1;
         String nameImagen = id + "." + FilenameUtils.getExtension(memoryBuffer.getFileName());
         String UrlImagen = "img/users/" + nameImagen;

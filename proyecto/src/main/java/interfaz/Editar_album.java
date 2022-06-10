@@ -74,8 +74,8 @@ public class Editar_album extends VistaEditar_album{
                     if (i == null) {
                         throw new Exception();
                     }
-                    for (String artista : i.getInterpretes()) {
-                        if (actor.getNick().equals(artista.trim())) {
+                    for (orm.bbdd.Artista artista : i.artistas.toArray()) {
+                        if (actor.getNick().toLowerCase().equals(artista.getNick().trim().toLowerCase())) {
                             correcto = true;
                             canciones[index] = i;
                         }
@@ -122,7 +122,7 @@ public class Editar_album extends VistaEditar_album{
 	    this.getNombreArtista().setValue(album.getArtista().getNick());
 	    this.getTitulo().setValue(album.getTitulo());
 	    this.getFechaEdicion().setValue(album.getFechaEdicion().toString());
-        
+
         String cancion = "";
         for(int i=0;i < album.canciones.toArray().length;i++) {
         	cancion += album.canciones.toArray()[i].getTitulo();
@@ -130,6 +130,8 @@ public class Editar_album extends VistaEditar_album{
         		cancion += ", ";
         	}
         }
+        this.getImgAlbum().setSrc(album.getImagen());
+        this.getUpload().setVisible(false);
         this.getListaCanciones().setValue(cancion);
 		this.id = album.getIdAlbum();
 		this.pathFoto = album.getImagen();

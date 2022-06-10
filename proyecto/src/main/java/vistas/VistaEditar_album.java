@@ -23,8 +23,6 @@ import com.vaadin.flow.dom.Element;
 @JsModule("./src/vistas/vista-editar_album.ts")
 public class VistaEditar_album extends LitTemplate {
 
-
-
 	@Id("layoutPrincipal")
 	private Element layoutPrincipal;
 	@Id("h2Titulo")
@@ -163,6 +161,14 @@ public class VistaEditar_album extends LitTemplate {
 
     public void setListaCanciones(TextArea listaCanciones) {
         this.listaCanciones = listaCanciones;
+    }
+
+    public Upload getUpload() {
+        return upload;
+    }
+
+    public void setUpload(Upload upload) {
+        this.upload = upload;
     }
 
 

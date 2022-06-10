@@ -106,7 +106,7 @@ public class Artista_admin extends VistaArtista_admin {
             this.setImgArtista(
                     "https://www.grupoalvic.com/wp-content/plugins/productos-alvic/productos/muestras/ZMD-Gris-nube-con-efecto.jpg");
         } else {
-            this.setImgArtista(artista.getFoto());
+            this.getImgArtista().setSrc(artista.getFoto());
         }
 
     }

@@ -2,6 +2,7 @@ package interfaz;
 
 import org.orm.PersistentException;
 
+import com.example.test.ControladorVistas;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bbdd.BDPrincipal;
@@ -35,6 +36,11 @@ public class Ver_detalle_de_lista_ajena extends Ver_detalle_de_lista_comun {
 
     void Inicializar() throws PersistentException {
         this.getH2Titulo().setText(lista.getNombre());
+        if (lista.getCreador().getNick() == ControladorVistas.getUsuario().getNick()) {
+            this.getIdCreador().setText(lista.getCreador().getNick() + " (Tú)");
+        }else {
+            this.getIdCreador().setText(lista.getCreador().getNick());
+        }
         this.getEliminar().setVisible(false);
         VerticalLayout layoutCanciones = this.getLayoutListaCanciones().as(VerticalLayout.class);
         orm.bbdd.Cancion[] canciones = bd.cargarCancionesLista(lista.getIdLista());

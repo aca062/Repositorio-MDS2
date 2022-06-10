@@ -31,7 +31,10 @@ public class Perfil_artista_propio extends Perfil_artista_comun {
 
     public Perfil_artista_propio() {
         super();
+        this.getBotonEditarFoto().setVisible(false);
         this.getBotonDejarSeguir().setVisible(false);
+        this.getBotonEditarCorreo().setVisible(false);
+        this.getBotonRecibirNotificaciones().setVisible(false);
         this.getBotonDarseBaja().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {

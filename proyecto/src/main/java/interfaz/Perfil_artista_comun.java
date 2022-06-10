@@ -12,6 +12,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bbdd.BDPrincipal;
 import bbdd.iActor_comun;
+import bbdd.iCibernauta;
 import orm.bbdd.Evento;
 import vistas.VistaPerfil_artista_comun;
 
@@ -27,6 +28,7 @@ public class Perfil_artista_comun extends VistaPerfil_artista_comun {
     public Listas_de_reproduccion_en_las_que_aparece _listasDeReproduccionEnLasQueAparece;
     public Artistas_similares _artistasSimilares;
     iActor_comun bd = new BDPrincipal();
+    iCibernauta cib = new BDPrincipal();
 
     public Perfil_artista_comun() {
         InicializarPropio();
@@ -76,9 +78,9 @@ public class Perfil_artista_comun extends VistaPerfil_artista_comun {
                 String event = evento.getLugar() + " | " + evento.getFecha() + " | " + evento.getHora();
                 levento.add(new H5(event));
                 if (i % 2 == 0) {
-                    this.getLayoutFestivalesIzq().as(VerticalLayout.class).add(levento);
-                }else {
                     this.getLayoutFestivalesDer().as(VerticalLayout.class).add(levento);
+                }else {
+                    this.getLayoutFestivalesIzq().as(VerticalLayout.class).add(levento);
                 }
                 i++;
             }
@@ -99,7 +101,7 @@ public class Perfil_artista_comun extends VistaPerfil_artista_comun {
         // this.getLayoutFotoPerfil().as(VerticalLayout.class).add(foto);
         this.getH5Nombre().setText(artista.getNick());
         if (artista.getFoto() != null) {
-            this.getFoto().setSrc(ControladorVistas.getUsuario().getFoto());
+            this.getFoto().setSrc(artista.getFoto());
         } else {
             this.getFoto()
                     .setSrc("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png");
@@ -127,31 +129,5 @@ public class Perfil_artista_comun extends VistaPerfil_artista_comun {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        /*Listas_de_reproduccion_propias _listasDeReproduccionPropia = new Listas_de_reproduccion_propias();
-        _listasDeReproduccionPropia.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());
-        _listasDeReproduccionPropia.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());
-        _listasDeReproduccionPropia.getLayoutListasPropias().add(new Lista_de_reproduccion_propia());
-        this.getLayoutTusListas().add(_listasDeReproduccionPropia);
-        _listasDeReproduccionEnLasQueAparece = new Listas_de_reproduccion_en_las_que_aparece();
-        _listasDeReproduccionEnLasQueAparece.getLayoutListas().add(new Lista_de_reproduccion_ajena());
-        _listasDeReproduccionEnLasQueAparece.getLayoutListas().add(new Lista_de_reproduccion_ajena());
-        _listasDeReproduccionEnLasQueAparece.getLayoutListas().add(new Lista_de_reproduccion_ajena());
-        this.getLayoutListasDondeAparece().add(_listasDeReproduccionEnLasQueAparece);
-        _cancionesMasEscuchadas = new Canciones_mas_escuchadas();
-        _cancionesMasEscuchadas.getLayoutPrincipal().add(new Cancion());
-        _cancionesMasEscuchadas.getLayoutPrincipal().add(new Cancion());
-        _cancionesMasEscuchadas.getLayoutPrincipal().add(new Cancion());
-        this.getLayoutCancionesMasEscuchadas().as(VerticalLayout.class).add(_cancionesMasEscuchadas);
-        _artistasSimilares = new Artistas_similares();
-        _artistasSimilares.getLayoutPrincipal().add(new Artista_elemento());
-        _artistasSimilares.getLayoutPrincipal().add(new Artista_elemento());
-        _artistasSimilares.getLayoutPrincipal().add(new Artista_elemento());
-        this.getLayoutArtistasSimilares().as(VerticalLayout.class).add(_artistasSimilares);
-        _listaAlbum = new Lista_album();
-        _listaAlbum.getLayoutAlbumes().add(new Album());
-        _listaAlbum.getLayoutAlbumes().add(new Album());
-        _listaAlbum.getLayoutAlbumes().add(new Album());
-        this.getLayoutAlbumes().as(VerticalLayout.class).add(_listaAlbum);*/
     }
 }

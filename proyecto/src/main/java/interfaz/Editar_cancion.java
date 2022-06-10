@@ -21,7 +21,6 @@ import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 import bbdd.BDPrincipal;
 import bbdd.iAdministrador;
 import orm.bbdd.Cancion;
-import orm.bbdd.CancionDAO;
 import orm.bbdd.Estilo;
 import vistas.VistaEditar_cancion;
 
@@ -44,13 +43,15 @@ public class Editar_cancion extends VistaEditar_cancion {
 
     public Editar_cancion(Cancion cancion) {
 
+        pathSong = cancion.getRutaImagen();
+
         Inicializar(cancion);
-        
+
         this.getBotonEliminar().setVisible(false);
         MemoryBuffer memoryBufferCancion = new MemoryBuffer();
         Upload uploadCancion = this.getUpload();
         uploadCancion.setReceiver(memoryBufferCancion);
-        
+
         cargarEstilos();
 
         List<String> nombreEstilos = new Vector<String>(estilos.length);
@@ -139,10 +140,9 @@ public class Editar_cancion extends VistaEditar_cancion {
     }
 
     public String Anadir_archivo_multimedia(MemoryBuffer memoryBuffer) throws PersistentException {
-    	int id = CancionDAO.listCancionByQuery("true=true", "titulo").length + 1;
         InputStream is = memoryBuffer.getInputStream();
         String nameCancion = id + "." + FilenameUtils.getExtension(memoryBuffer.getFileName());
-        String UrlCancion = "./src/main/resources/META-INF/resources/songs/" + nameCancion;
+        String UrlCancion = "songs/" + nameCancion;
         try {
             OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/songs/" + nameCancion);
             byte[] buffer = new byte[1024];

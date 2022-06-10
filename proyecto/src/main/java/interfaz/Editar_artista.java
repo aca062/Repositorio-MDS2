@@ -47,7 +47,13 @@ public class Editar_artista extends VistaEditar_artista{
     String pathFoto = null;
     private Estilo[] estilos;
     int id;
+    Artista artista;
+
 	public Editar_artista(Artista artista) throws PersistentException{
+
+	    this.artista = artista;
+
+	    pathFoto = artista.getFoto();
 
 		Inicializar(artista);
 
@@ -84,7 +90,7 @@ public class Editar_artista extends VistaEditar_artista{
 		this.getEliminarFoto().addClickListener(new ComponentEventListener() {
             @Override
             public void onComponentEvent(ComponentEvent event) {
-                String UrlCarpeta = "./src/main/webapp/img/";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/users/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -105,7 +111,7 @@ public class Editar_artista extends VistaEditar_artista{
 
 		upload.addFinishedListener(e -> {
             try {
-                String UrlCarpeta = "./src/main/webapp/img/";
+                String UrlCarpeta = "./src/main/resources/META-INF/resources/img/users/";
                 File folder = new File(UrlCarpeta);
                 File[] listOfFiles = folder.listFiles();
                 for (File file : listOfFiles) {
@@ -168,16 +174,16 @@ public class Editar_artista extends VistaEditar_artista{
 	}
 
 	public String Anadir_imagen(MemoryBuffer memoryBuffer) throws PersistentException {
-        int id = Actor_ComunDAO.listActor_ComunByQuery("true=true", "nick").length + 1;
+        int id = this.artista.getId();
         String nameImagen = id + "." + FilenameUtils.getExtension(memoryBuffer.getFileName());
-        String UrlImagen = "img/" + nameImagen;
+        String UrlImagen = "img/users/" + nameImagen;
         /*
          * File file = new File(UrlImagen); if (file.exists()) { file.delete(); }
          */
         InputStream is = memoryBuffer.getInputStream();
         try {
 
-            OutputStream os = new FileOutputStream("./src/main/webapp/img/" + nameImagen);
+            OutputStream os = new FileOutputStream("./src/main/resources/META-INF/resources/img/users/" + nameImagen);
             byte[] buffer = new byte[1024];
             int bytesRead;
             // read from is to buffer
@@ -195,7 +201,7 @@ public class Editar_artista extends VistaEditar_artista{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "./src/main/webapp/" + UrlImagen;
+        return UrlImagen;
     }
 
 	public void cargarEstilos() {
@@ -206,6 +212,7 @@ public class Editar_artista extends VistaEditar_artista{
 		this.id = artista.getId();
 		this.getContrasena().setValue(artista.getContrasena());
 		this.pathFoto = artista.getFoto();
+		this.getNick().setValue(artista.getNick());
 		this.geteMail().setValue(artista.getEmail());
 		this.getCancelar().setVisible(true);
 		this.getConfirmar().setVisible(true);

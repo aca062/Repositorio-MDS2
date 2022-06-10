@@ -174,7 +174,7 @@ public class Perfil extends VistaPerfil {
         this.getNumeroSeguidos().setText(Integer.toString(ControladorVistas.getUsuario().seguido.size()));
     }
 
-    void EditarCorreo() {
+    public void EditarCorreo() {
         Dialog popup = new Dialog();
         TextField correoNuevo = new TextField("Nuevo correo");
         TextField confirmarCorreo = new TextField("Introduzca de nuevo el correo");
